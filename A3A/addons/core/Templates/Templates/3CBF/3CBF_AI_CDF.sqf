@@ -26,7 +26,7 @@
 ["vehiclesRepairTrucks", ["UK3CB_B_Kamaz_Repair_CDF", "UK3CB_B_Ural_Repair_CDF", "rhsgref_cdf_b_gaz66_repair", "rhsgref_cdf_b_ural_repair"]] call _fnc_saveToTemplate;
 ["vehiclesFuelTrucks", ["rhsgref_cdf_b_ural_fuel"]] call _fnc_saveToTemplate;
 ["vehiclesMedical", ["rhsgref_cdf_b_gaz66_ap2"]] call _fnc_saveToTemplate;
-["vehiclesLightAPCs", ["rhsgref_cdf_b_btr60", "rhsgref_cdf_b_btr70", "rhsgref_cdf_b_btr80"]] call _fnc_saveToTemplate;
+["vehiclesLightAPCs", ["rhsgref_cdf_b_btr60", "rhsgref_cdf_b_btr70", "rhsgref_cdf_b_btr80", "UK3CB_B_BTR90_HQ_CDF", "UK3CB_B_BTR90_CDF"]] call _fnc_saveToTemplate;
 ["vehiclesAirborne", ["rhsgref_cdf_b_bmd1", "rhsgref_cdf_b_bmd1k", "rhsgref_cdf_b_bmd1p", "rhsgref_cdf_b_bmd1pk", "rhsgref_cdf_b_bmd2","rhsgref_cdf_b_bmd2k"]] call _fnc_saveToTemplate;
 ["vehiclesAPCs", ["rhsgref_cdf_b_bmp2e", "rhsgref_cdf_b_bmp2", "rhsgref_cdf_b_bmp2d", "rhsgref_cdf_b_bmp2k", "rhsgref_cdf_b_bmd1", "rhsgref_cdf_b_bmd1p", "rhsgref_cdf_b_bmd1pk", "rhsgref_cdf_b_bmd2", "rhsgref_cdf_b_bmd2k"]] call _fnc_saveToTemplate;
 ["vehiclesIFVs", []] call _fnc_saveToTemplate;
@@ -53,8 +53,8 @@
 ["rhsgref_cdf_b_reg_BM21", ["rhs_mag_m21of_1"]]
 ]] call _fnc_saveToTemplate;
 
-["uavsAttack", ["B_UAV_02_dynamicLoadout_F"]] call _fnc_saveToTemplate;
-["uavsPortable", ["B_UAV_01_F"]] call _fnc_saveToTemplate;
+["uavsAttack", ["B_UAV_02_dynamicLoadout_F", "UK3CB_B_KA137_PKM_CDF"]] call _fnc_saveToTemplate;
+["uavsPortable", ["B_UAV_01_F", "UK3CB_B_KA137_CDF"]] call _fnc_saveToTemplate;
 
 //Config special vehicles - militia vehicles are mostly used in the early game, police cars are being used by troops around cities -- Example:
 ["vehiclesMilitiaLightArmed", ["rhsgref_cdf_b_reg_uaz_dshkm", "rhsgref_cdf_b_reg_uaz_spg9"]] call _fnc_saveToTemplate;
