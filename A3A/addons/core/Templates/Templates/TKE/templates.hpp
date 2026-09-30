@@ -51,6 +51,24 @@
         climate[] = {"arctic"};
     };
 
+    class TKE_Civ_UCN : TKE_Base
+    {
+        side = "Civ";
+        name = "UCN Civilians";
+        file = "TKE_Civ_UCN";
+        description = "";
+        flagTexture = QPATHTOFOLDER(Templates\Templates\TKE\images\flag_ucn_co.paa);
+    };
+
+    class TKE_Reb_FCF : TKE_Base
+    {
+        side = "Reb";
+        name = "FCF";
+        file = "TKE_Reb_FCF";
+        description = "";
+        flagTexture = QPATHTOFOLDER(Templates\Templates\TKE\images\flag_fcf_co.paa);
+    };
+
     // class E22_RAF_Arid : E22_RAF_Base
     // {
     //     side = "Inv";

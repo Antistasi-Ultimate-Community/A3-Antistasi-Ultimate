@@ -10,7 +10,11 @@ class CfgPatches
         units[] = {};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {"TKE_Mod_LoadOrder"};
+        requiredAddons[] = {
+            "TKE_Mod_LoadOrder", // The Kuiper Engagements
+            "TKE_Ext_Heli", // Scifi Vehicles Pack
+            "TKE_Ext_Ships" // Scifi Spaceship Pack
+        };
         author = AUTHOR;
         authors[] = { AUTHORS };
         authorUrl = "";

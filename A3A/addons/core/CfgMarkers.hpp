@@ -335,4 +335,10 @@ class CfgMarkers
 		icon = QPATHTOFOLDER(Pictures\Markers\marker_tke_kmc_ca.paa);
 		texture = QPATHTOFOLDER(Pictures\Markers\marker_tke_kmc_ca.paa);
 	};
+	class a3u_flag_tke_fcf : flag_NATO 
+	{
+		name = "FCF";
+		icon = QPATHTOFOLDER(Pictures\Markers\marker_tke_fcf_ca.paa);
+		texture = QPATHTOFOLDER(Pictures\Markers\marker_tke_fcf_ca.paa);
+	};
 };
