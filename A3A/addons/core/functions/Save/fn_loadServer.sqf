@@ -5,6 +5,25 @@ if (isServer) then {
     Info("Starting Persistent Load.");
 	petros allowdamage false;
 
+	// Tell third party mods we're loading the game. Do this very early in case
+	// they attempt to overwrite stuff we're loading later below.
+	private _saveDataPlugins = ["saveDataPlugins"] call A3A_fnc_getStatVariable;
+	if (isNil "_saveDataPlugins") then {
+		_saveDataPlugins = createHashMap;
+	} else {
+		if (_saveDataPlugins isEqualType []) then {
+			// Possible involuntary conversion from hashmap to array
+			_saveDataPlugins = createHashMapFromArray _saveDataPlugins;
+		};
+	};
+
+	if !assert(_saveDataPlugins isEqualType createHashMap) then {
+		Error_1("Plugins save data has unexpected type ""%1""",typeName _saveDataPlugins);
+		_saveDataPlugins = createHashMap;
+	};
+
+	[CBA_EVENT_SERVER_GAME_LOAD, [_saveDataPlugins]] call FUNCMAIN(triggerLocalEvent);
+
 	// Set all main markers to occupant control by default, overridden by mrkSDK & mrkCSAT
 	{
 		if (sidesX getVariable _x != Occupants) then { sidesX setVariable [_x, Occupants, true] };
