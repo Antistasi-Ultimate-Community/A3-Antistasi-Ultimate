@@ -513,7 +513,6 @@ class CfgFunctions
             class makePlayerBossIfEligible {};
             class memberAdd {};
             class membersList {};
-            class music {};
             class promotePlayer {};
             class radioJam {};
             class ranksMP {};
@@ -831,6 +830,7 @@ class CfgFunctions
 
         class Utility {
             file = QPATHTOFOLDER(functions\Utility);
+            class arrayRange {};
             class attachLight {};
             class attachLightFromConfig {};
             class basicBackpack {};
@@ -843,6 +843,7 @@ class CfgFunctions
             class findAiSpawnPosition {};
             class findSpawnHelperPosition {};
             class getAdmin {};
+            class isDayTime {};
             class isEmplacementMarker {};
             class isEngineer {};
             class isSiteDestroyed {};
@@ -854,6 +855,7 @@ class CfgFunctions
             class nearestFriendlyMarker {};
             class onClientInitDone {};
             class onServerInitDone {};
+            class randomRange {};
             class setIdentity {};
             class setIdentityLocal {};
             class setPos {};
