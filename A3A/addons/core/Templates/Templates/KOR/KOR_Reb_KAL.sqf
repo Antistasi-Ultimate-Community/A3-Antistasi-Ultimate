@@ -8,7 +8,7 @@
 
 ["flag", "Flag_FIA_F"] call _fnc_saveToTemplate;
 ["flagTexture", QPATHTOFOLDER(Templates\Templates\KOR\images\flag_kal_co.paa)] call _fnc_saveToTemplate;
-["flagMarkerType", "flag_FIA"] call _fnc_saveToTemplate;
+["flagMarkerType", "a3u_flag_kal"] call _fnc_saveToTemplate;
 
 ["vehiclesBasic", ["vtf_kf_I_Quadbike_01_F"]] call _fnc_saveToTemplate;
 ["vehiclesLightUnarmed", ["I_G_Offroad_01_F"]] call _fnc_saveToTemplate;
