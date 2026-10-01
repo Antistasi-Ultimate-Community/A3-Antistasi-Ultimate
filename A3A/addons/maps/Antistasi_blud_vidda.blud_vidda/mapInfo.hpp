@@ -20,7 +20,7 @@ class blud_vidda {
 	milAdministrations[] = {
 		{5315.8,1595.1,0},{2655.02,2315.25,0},{658.05,6387.36,0},{6439.11,4345.03,0.494766},{10483.2,6725.65,0},{8478.41,6968.74,1.52588e-005}
 	};
-	climate = "temperate";
+	climate = "arctic";
 	buildObjects[] = {
 		BUILDABLES_HISTORIC,
 		BUILDABLES_UNIVERSAL,
