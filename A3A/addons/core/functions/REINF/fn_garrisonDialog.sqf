@@ -180,6 +180,13 @@ if (_typeX == "rem") then {
 		30
 	] spawn SCRT_fnc_ui_showMessage;
 } else {
+	if (EGVAR(ultimate,useAdvancedGarrisonManager)) exitWith {
+		createDialog QUOTE(TRIPLES(PREFIX,ultimate_garrison_manager,dialog));
+		[{
+			[QUOTE(TRIPLES(PREFIX,ultimate_garrison_manager,event_preselectLocation)), _this] call CBA_fnc_localEvent;
+		}, [_site]] call CBA_fnc_execNextFrame;
+	};
+
 	positionXGarr = _site;
 	[localize "STR_garrison_garrison_header", format ["Info%1",[_site] call A3A_fnc_garrisonInfo]] call A3A_fnc_customHint;
 	createDialog "garrisonRecruit";
