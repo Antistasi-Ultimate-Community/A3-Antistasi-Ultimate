@@ -416,6 +416,7 @@ class CfgFunctions
             class initUtilityItems {};
             class initGarrisons {};
             class initPreJIP { preInit = 1; };
+            class initPricingLists {};
             class initSpawnPlaces {};
             class generateRoadblock {};
 
