@@ -6437,11 +6437,11 @@
                 <Turkish>Oyuncuların YZ askeri almasına izin ver</Turkish>
             </Key>
             <Key ID="STR_params_playerRecruitAI_desc">
-                <Original>Allow players to recruit AI units. When enabled, players can recruit surrendered enemy AI to their faction, either increasing HR or adding personnel to the player's squad.</Original>
-                <Russian>Разрешить игрокам нанимать ИИ-бойцов. При включении игроки могут нанимать сдавшихся врагов ИИ в свою фракцию, либо увеличивая ЛР, либо добавляя личный состав в отряд игрока.</Russian>
-                <Chinesesimp>允许玩家招募人工智能单位。启用时，玩家可以将投降的敌方人工智能招募到其阵营，增加人力资源或向玩家分队增加人员。</Chinesesimp>
-                <Korean>플레이어가 AI 유닛을 모집할 수 있도록 허용합니다. 활성화하면 플레이어는 항복한 적 AI를 자신의 진영으로 모집할 수 있으며, 인적 자원을 늘리거나 플레이어 분대에 인원을 추가할 수 있습니다.</Korean>
-                <French>Autoriser les joueurs à recruter des unités IA. Lorsqu'elle est activée, les joueurs peuvent recruter des IA ennemies reddues à leur faction, augmentant soit les RH, soit ajoutant du personnel à l'escouade du joueur.</French>
+                <Original>Allow players to recruit AI units. When enabled, players can recruit friendly AI at the rebel base from the flagpole, and attempt to recruit surrendered enemy AI to their faction, either increasing HR or adding personnel to the player's squad.</Original>
+                <Russian>Разрешить игрокам нанимать бойцов ИИ. При включении игроки могут нанимать дружественных бойцов ИИ на базе повстанцев у флагштока, а также пытаться завербовать сдавшихся вражеских бойцов ИИ в свою фракцию, пополняя людские ресурсы или добавляя бойцов в отряд игрока.</Russian>
+                <Chinesesimp>允许玩家招募AI单位。启用后，玩家可在叛军基地的旗杆处招募友方AI，也可尝试将投降的敌方AI招募到己方阵营，从而增加人力资源或为玩家小队增添人员。</Chinesesimp>
+                <Korean>플레이어가 AI 유닛을 모집할 수 있도록 허용합니다. 활성화하면 플레이어는 반군 기지의 깃대에서 아군 AI를 모집하고, 항복한 적 AI를 자신의 진영으로 영입해 인적 자원을 늘리거나 플레이어 분대에 추가할 수 있습니다.</Korean>
+                <French>Autoriser les joueurs à recruter des unités IA. Une fois cette option activée, les joueurs peuvent recruter des IA alliées au drapeau de la base rebelle et tenter de rallier les IA ennemies qui se sont rendues à leur faction, afin d'augmenter les ressources humaines ou d'ajouter des effectifs à l'escouade du joueur.</French>
             </Key>
             <Key ID="STR_params_enableVehicleAutoLock">
                 <Original>Enable Enemy Vehicle Locks</Original>
