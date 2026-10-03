@@ -544,7 +544,6 @@ private _riflemanTemplate = {
     ["vests"] call _fnc_setVest;
     ["uniforms"] call _fnc_setUniform;
 
-
     [selectRandom ["rifles", "riflesCarbine"]] call _fnc_setPrimary;
     ["primary", 6] call _fnc_addMagazines;
 
@@ -714,7 +713,7 @@ private _latTemplate = {
     [selectRandomWeighted [[], 1.5, "facewear", 1]] call _fnc_setFacewear;
     ["vests"] call _fnc_setVest;
     ["uniforms"] call _fnc_setUniform;
-    [["atBackpacks", "backpacks"] call _fnc_fallback] call _fnc_setBackpack;
+    [["backpacksAT", "backpacks"] call _fnc_fallback] call _fnc_setBackpack;
 
     [selectRandom ["rifles", "riflesCarbine"]] call _fnc_setPrimary;
     ["primary", 6] call _fnc_addMagazines;
@@ -743,7 +742,7 @@ private _atTemplate = {
     [selectRandomWeighted [[], 1.5, "facewear", 1]] call _fnc_setFacewear;
     ["vests"] call _fnc_setVest;
     ["uniforms"] call _fnc_setUniform;
-    [["atBackpacks", "backpacks"] call _fnc_fallback] call _fnc_setBackpack;
+    [["backpacksAT", "backpacks"] call _fnc_fallback] call _fnc_setBackpack;
 
     [selectRandom ["rifles", "riflesCarbine"]] call _fnc_setPrimary;
     ["primary", 5] call _fnc_addMagazines;
@@ -769,7 +768,7 @@ private _aaTemplate = {
     [selectRandomWeighted [[], 1.5, "facewear", 1]] call _fnc_setFacewear;
     ["vests"] call _fnc_setVest;
     ["uniforms"] call _fnc_setUniform;
-    [["atBackpacks", "backpacks"] call _fnc_fallback] call _fnc_setBackpack;
+    [["backpacksAT", "backpacks"] call _fnc_fallback] call _fnc_setBackpack;
 
     [selectRandom ["rifles", "riflesCarbine"]] call _fnc_setPrimary;
     ["primary", 5] call _fnc_addMagazines;
@@ -822,7 +821,6 @@ private _marksmanTemplate = {
     [["vestsSniper", "vests"] call _fnc_fallback] call _fnc_setVest;
     [["uniformsSniper", "uniforms"] call _fnc_fallback] call _fnc_setUniform;
 
-
     ["riflesMarksman"] call _fnc_setPrimary;
     ["primary", 6] call _fnc_addMagazines;
 
@@ -848,7 +846,6 @@ private _sniperTemplate = {
     [selectRandomWeighted [[], 1, "facewear", 1]] call _fnc_setFacewear;
     [["vestsSniper","vests"] call _fnc_fallback] call _fnc_setVest;
     [["uniformsSniper","uniforms"] call _fnc_fallback] call _fnc_setUniform;
-
 
     [["riflesSniper", "riflesMarksman"] call _fnc_fallback] call _fnc_setPrimary;
     ["primary", 6] call _fnc_addMagazines;
