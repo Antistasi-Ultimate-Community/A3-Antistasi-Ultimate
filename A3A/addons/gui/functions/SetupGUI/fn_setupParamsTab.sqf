@@ -64,31 +64,46 @@ switch (_mode) do
         private _allCtrls = [];
         private _allTextCtrls = [];
         private _allValsCtrls = [];
+        // Should be a hashmap but their arbitrary key order breaks the required
+        // order of the parameters in the GUI. Elements are:
+        // [[configName, [reorderAfterConfigNames...]], ...]
+        private _reorderCtrls = [];
         {
-            private _type = getText (_x/"type");
-            private _title = getText (_x/"title");
-            private _tooltip = getText (_x/"tooltip");
-            private _texts = getArray (_x/"texts");
-            private _vals = getArray (_x/"values");
-            private _default = getNumber (_x/"default");
+            private _type = getText(_x >> "type");
+            private _title = getText(_x >> "title");
+            private _tooltip = getText(_x >> "tooltip");
+            private _texts = getArray(_x >> "texts");
+            private _vals = getArray(_x >> "values");
+            private _default = getNumber(_x >> "default");
             private _defaultIndex = _vals find _default;
+            private _reorderAfter = [_x >> "after", "STRING", false] call CBA_fnc_getConfigEntry;
 
-            if (!isNil "_title") then {
-                private _textCtrl = _display ctrlCreate ["A3A_Text_Small", A3A_IDC_SETUP_PARAMSTEXT + _forEachIndex, _paramsTable];
-                _allTextCtrls pushBack [configName _x, _textCtrl];
-                _textCtrl ctrlEnable false;
-                _textCtrl ctrlSetFade 1;
-                _textCtrl ctrlSetText _title;
-                if (_tooltip isNotEqualTo "") then {
-                    _textCtrl ctrlSetTooltip _tooltip;
+            private _configName = configName _x;
+            private _textCtrl = _display ctrlCreate ["A3A_Text_Small", A3A_IDC_SETUP_PARAMSTEXT + _forEachIndex, _paramsTable];
+            _allTextCtrls pushBack [_configName, _textCtrl];
+            _textCtrl ctrlEnable false;
+            _textCtrl ctrlSetFade 1;
+            _textCtrl ctrlSetText _title;
+            if (_tooltip isNotEqualTo "") then {
+                _textCtrl ctrlSetTooltip _tooltip;
+            };
+            _textCtrl setVariable ["type", _type];
+            _textCtrl ctrlCommit 0;
+
+            if !(_reorderAfter isEqualType true) then {
+                // Nice try
+                if (_reorderAfter isEqualTo _configName) exitWith {};
+                private _reorderAfterIndex = _reorderCtrls findIf { _x select 0 isEqualTo _reorderAfter };
+                if (_reorderAfterIndex < 0) then {
+                    _reorderAfterIndex = _reorderCtrls pushBack[_reorderAfter, []];
                 };
-                _textCtrl setVariable ["type", _type];
-                _textCtrl ctrlCommit 0;
+
+                _reorderCtrls select _reorderAfterIndex select 1 pushBack _configName;
             };
 
             if (_title isNotEqualTo "" && {_texts isNotEqualTo []}) then {
                 private _valsCtrl = _display ctrlCreate ["A3A_ComboBox_Small", A3A_IDC_SETUP_PARAMSVALS + _forEachIndex, _paramsTable];
-                _allValsCtrls pushBack [configName _x, _valsCtrl];
+                _allValsCtrls pushBack [_configName, _valsCtrl];
                 _valsCtrl ctrlEnable false;
                 _valsCtrl ctrlSetFade 1;
                 _valsCtrl setVariable ["config", _x];
@@ -104,7 +119,39 @@ switch (_mode) do
 
                 _valsCtrl ctrlAddEventHandler ["LBSelChanged", { ["paramChangedHandler", _this] call A3A_fnc_setupParamsTab; }];
             };
-        } forEach ("true" configClasses (A3A_SETUP_CONFIGFILE/"A3A"/"Params"));
+        } forEach ("true" configClasses (A3A_SETUP_CONFIGFILE >> "A3A" >> "Params"));
+
+        Trace_1(QFUNCMAIN(setupParamsTab),_reorderCtrls);
+
+        _reorderCtrls apply {
+            _x params["_targetClassName", "_reorderClassNames"];
+
+            _reorderClassNames apply {
+                private _reorderClassName = _x;
+
+                // Find the current index of the element to be reordered
+                // and remove it _before_ finding the target index
+                private _oldIndex = _allTextCtrls findIf { _x select 0 isEqualTo _reorderClassName };
+
+                if !assert(_oldIndex >= 0) then { continue };
+
+                private _element = _allTextCtrls deleteAt _oldIndex;
+
+                // Sadly, this very efficient loop-in-loop-in-loop has to
+                // happen for each reordered element since we don't know
+                // if we're going to insert _before_ or _after_ the target
+                private _targetIndex = _allTextCtrls findIf { _x select 0 isEqualTo _targetClassName };
+
+                if !assert(_targetIndex >= 0) then {
+                    // If the target index is not found, just append the
+                    // element back to the end
+                    _allTextCtrls pushBack _element;
+                    continue;
+                };
+
+                _allTextCtrls insert[_targetIndex + 1, [_element]];
+            };
+        };
 
         _paramsTable setVariable ["allCtrls", _allCtrls];
         _paramsTable setVariable ["allTextCtrls", _allTextCtrls];
@@ -199,15 +246,15 @@ switch (_mode) do
             private _saveExists = !isNil {serverInitDone} || {_savedParams isNotEqualTo [] && {!cbChecked _newGameCtrl || cbChecked _copyGameCtrl}};
             private _thisCtrl = _x;
             private _cfg = _x getVariable "config";
-            private _vals = getArray (_cfg/"values");
-            private _lockOnSave = (getNumber (_cfg/"lockOnSave")) isNotEqualTo 0;
-            /*private _lockInGame = !isNil {serverInitDone} && {(getNumber (_cfg/"lockInGame")) isNotEqualTo 0};
+            private _vals = getArray(_cfg >> "values");
+            private _lockOnSave = (getNumber(_cfg >> "lockOnSave")) isNotEqualTo 0;
+            /*private _lockInGame = !isNil {serverInitDone} && {(getNumber(_cfg >> "lockInGame")) isNotEqualTo 0};
             private _locked = _lockOnSave || _lockInGame;*/
             
             // clear old saved value if not in config options
             if (lbSize _x > count _vals) then { _x lbDelete (lbSize _x - 1) };
 
-            private _saved = if (isNil "_presetParamsHM" || {_lockOnSave && _saveExists}) then { _savedParamsHM } else { _presetParamsHM } getOrDefault [configName _cfg, getNumber (_cfg/"default")];
+            private _saved = if (isNil "_presetParamsHM" || {_lockOnSave && _saveExists}) then { _savedParamsHM } else { _presetParamsHM } getOrDefault [configName _cfg, getNumber(_cfg >> "default")];
             if (_saved isEqualType true) then { _saved = [0, 1] select _saved };            // bool -> number conversion
 
             private "_index";
@@ -412,15 +459,15 @@ switch (_mode) do
         private _cfg = _thisCtrl getVariable "config";
 
         switch true do {
-            case (_saveExists && {getNumber (_cfg/"lockOnSave") isEqualTo 1}): { [true, localize "STR_antistasi_dialogs_setup_param_locked_saveexists"] };
-            case (!isNil {serverInitDone} && {getNumber (_cfg/"lockInGame") isEqualTo 1}): { [true, localize "STR_antistasi_dialogs_setup_param_locked_ingame"] };
+            case (_saveExists && {getNumber(_cfg >> "lockOnSave") isEqualTo 1}): { [true, localize "STR_antistasi_dialogs_setup_param_locked_saveexists"] };
+            case (!isNil {serverInitDone} && {getNumber(_cfg >> "lockInGame") isEqualTo 1}): { [true, localize "STR_antistasi_dialogs_setup_param_locked_ingame"] };
             case (_thisCtrl getVariable ["lockedByDependency", false]): {
                 private _dependencyTooltip = if (!isNil "_depCtrl") then { getTextRaw ((_depCtrl getVariable "config")/"dependencies"/(configName _cfg)/"dependencyTooltip") } else { "" };
                 if (isNil "_dependencyTooltip" || {_dependencyTooltip isEqualTo ""}) then { _dependencyTooltip = "STR_antistasi_dialogs_setup_param_locked_bydependency" };
                 [true, localize _dependencyTooltip]
             };
-            case (call compile getText (_cfg/"lockCondition")): {
-                private _lockCondTooltip = getTextRaw (_cfg/"lockConditionTooltip");
+            case (call compile getText(_cfg >> "lockCondition")): {
+                private _lockCondTooltip = getTextRaw(_cfg >> "lockConditionTooltip");
                 if (isNil "_lockCondTooltip" || {_lockCondTooltip isEqualTo ""}) then { _lockCondTooltip = "STR_antistasi_dialogs_setup_param_locked_bycondition" };
                 [true, localize _lockCondTooltip]
             };
@@ -443,15 +490,15 @@ switch (_mode) do
         {
             private _cfg = _x;
             private _cfgName = configName _cfg;
-            private _value = getNumber (_cfg/"value");
+            private _value = getNumber(_cfg >> "value");
             private _depVal = [_cfg, "dependentValue"] call BIS_fnc_returnConfigEntry;
-            private _lockByDep = getNumber (_cfg/"lockedByDependency") isEqualTo 1;
+            private _lockByDep = getNumber(_cfg >> "lockedByDependency") isEqualTo 1;
 
             private _depCtrl = _allValsCtrls select {_x select 0 isEqualTo _cfgName } select 0 select 1;
             private _depCfg = _depCtrl getVariable "config";
             
             if ((_thisCtrl lbValue _index) isEqualTo _value) then {
-                private _depVals = getArray (_depCfg/"values");
+                private _depVals = getArray(_depCfg >> "values");
                 private _depIdx = _depVals find _depVal;
                 if (!isNil "_depVal" && {_depIdx isNotEqualTo -1}) then { _depCtrl lbSetCurSel _depIdx };
                 _depCtrl setVariable ["lockedByDependency", _lockByDep];
