@@ -80,4 +80,7 @@ if (isClass (configFile/"CfgPatches"/"rhsgref_main")) then {//ToDo: these should
 // Do not localise timeSpan, it is broadcast to all connected clients.
 [localize "STR_antistasi_dialogs_open_clean_garbage_title", format [localize "STR_antistasi_dialogs_open_clean_garbage_success", _timeSinceLastGC]] remoteExec ["A3A_fnc_customHint", 0];
 missionNamespace setVariable ["A3A_lastGarbageCleanTime",serverTime,true];
+
+[CBA_EVENT_SERVER_GARBAGECLEAN_DONE, []] spawn FUNCMAIN(triggerLocalEvent);
+
 Info("Garbage clean completed");

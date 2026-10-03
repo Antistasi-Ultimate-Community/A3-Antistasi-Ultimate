@@ -1,5 +1,7 @@
 params ["_moneyX", ["_hasSound", false]];
 
+[CBA_EVENT_CLIENT_RESOURCE_CHANGE, [_moneyX]] call FUNCMAIN(triggerLocalEvent);
+
 if (_hasSound && {_moneyX > 0}) then {
 	playSound "3DEN_notificationDefault";
 };

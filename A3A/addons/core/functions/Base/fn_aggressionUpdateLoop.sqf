@@ -109,6 +109,8 @@ while {true} do
         };
     };
 
+    [CBA_EVENT_SERVER_AGGROUPDATE_DONE, []] spawn FUNCMAIN(triggerLocalEvent);
+
     sleep 60;
 };
 
