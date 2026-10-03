@@ -13,6 +13,11 @@ Arguments:
     <STRING> Optional: Name of unit
 */
 
+/*
+ * Coalition integration:
+ *    Random identity fallback uses the faction associated with a generated
+ *    coalition unit type when available.
+ */
 #include "..\..\script_component.hpp"
 
 params ["_unit", "_identity"];           // Don't care about the other params here
@@ -28,7 +33,24 @@ if ((isNil "_firstName" || {_firstName isEqualTo ""}) || (isNil "_lastName" || {
     private _lastNames = configProperties [_nameConfig >> "LastNames"] apply { getText(_x) };
 
     private _type = _unit getVariable ["unitType", ""]; // Why do some units *not* have this set? I will never know!
-    private _identity = [Faction(side _unit), _type] call A3A_fnc_createRandomIdentity;
+
+    private _identityFaction = Faction(side _unit);
+
+    if (!isNil "A3A_coalitionTypeFactionMap") then {
+        private _coalitionFaction = A3A_coalitionTypeFactionMap getOrDefault [
+            _type,
+            createHashMap
+        ];
+
+        if (
+            _coalitionFaction isEqualType createHashMap
+            && {count _coalitionFaction > 0}
+        ) then {
+            _identityFaction = _coalitionFaction;
+        };
+    };
+
+    private _identity = [_identityFaction, _type] call A3A_fnc_createRandomIdentity;
 
     // Choose appropriate faction identity if possible, fallback to default names if unavailable
     _firstName = ([_identity getOrDefault ["firstName", ""], selectRandom _firstNames] select {_x != ""}) # 0;

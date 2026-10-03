@@ -2,7 +2,9 @@
 Function: A3A_fnc_setupFactionsTab
     Handles the initialization and tab switching on the setup dialog.
     This function should only be called from setupDialog onLoad and control activation EHs.
-Author: John Jordan (jaj22)
+Author: John Jordan (jaj22) (Updated: SvenBrandt99)
+
+Coalition integration:  Occupant, Invader and Rival listboxes support multiple selections while coalition mode is enabled. The first selected faction remains the primary AU faction; all additional selections are stored as coalition templates.
 
 Environment: Scheduled for onLoad, sendData and serverClose modes. Unscheduled for everything else.
 
@@ -21,7 +23,6 @@ Return Value:
     on mode getFactions - returns array of selected items in dialog in form [_factions, _addons, _dlc]
 
 */
-
 #include "..\..\dialogues\ids.inc"
 #include "..\..\dialogues\defines.hpp"
 #include "..\..\dialogues\textures.inc"
@@ -31,6 +32,9 @@ FIX_LINE_NUMBERS()
 params ["_mode", "_params"];
 
 Debug_1("setupFactionsTab called with mode %1", _mode);
+if (_mode == "onLoad") then {
+    diag_log "[A3A Coalition UI] setupFactionsTab AU-based override active";
+};
 
 private _display = findDisplay A3A_IDD_SETUPDIALOG;
 private _worldName = toLower worldName;
@@ -374,94 +378,376 @@ switch (_mode) do
         _addCGCtrl setVariable ["LBHandler", _addCGHandler];
     };
 
+    case ("coalitionToggle"):
+    {
+        _params params ["_ctrl", "_checked"];
+
+        // Checkbox only controls whether OCC/INV/RIV are interpreted as
+        // multi-selection lists. The controls themselves are always LB_MULTI.
+        // Turning coalition mode off collapses each enemy list to one row.
+        if (_checked == 0) then {
+            {
+                private _list = _display displayCtrl _x;
+                private _sel = lbSelection _list;
+                private _keep = if (_sel isNotEqualTo []) then {
+                    _sel # 0
+                } else {
+                    (lbCurSel _list) max 0
+                };
+
+                {
+                    _list lbSetSelected [_x, false];
+                } forEach _sel;
+
+                _list lbSetSelected [_keep, true];
+                _list lbSetCurSel _keep;
+
+            } forEach [
+                A3A_IDC_SETUP_OCCUPANTSLISTBOX,
+                A3A_IDC_SETUP_INVADERSLISTBOX,
+                A3A_IDC_SETUP_RIVALSLISTBOX
+            ];
+
+            missionNamespace setVariable [
+                "A3A_coalitionConfigNet",
+                [[], [], []],
+                true
+            ];
+        };
+    };
+
     case ("factionSelected"):
     {
         _params params ["_listbox", "_rowIndex"];
         if (_rowIndex == -1) exitWith {};
-        if (_listbox lbData _rowIndex != "") then {
-            _listBox setVariable ["lastSel", _rowIndex];
-        } else {
-            _listbox lbSetCurSel (_listbox getVariable ["lastSel", 0]);
+
+        private _idc = ctrlIDC _listbox;
+        private _coalitionEnabled =
+            cbChecked (_display displayCtrl A3A_IDC_SETUP_COALITIONCHECK);
+
+        private _isCoalitionList = _idc in [
+            A3A_IDC_SETUP_OCCUPANTSLISTBOX,
+            A3A_IDC_SETUP_INVADERSLISTBOX,
+            A3A_IDC_SETUP_RIVALSLISTBOX
+        ];
+
+        // Preserve AU's normal single-select behavior outside coalition mode.
+        if (!_coalitionEnabled || {!_isCoalitionList}) exitWith {
+            if (_listbox lbData _rowIndex != "") then {
+                _listbox setVariable ["lastSel", _rowIndex];
+            } else {
+                _listbox lbSetCurSel (_listbox getVariable ["lastSel", 0]);
+            };
+        };
+
+        // LB_MULTI itself owns the selection state. We only remember the
+        // primary faction as the first valid selected config name.
+        private _selectedNames = (lbSelection _listbox) apply {
+            _listbox lbData _x
+        };
+        _selectedNames = _selectedNames select { _x != "" };
+
+        if (_selectedNames isEqualTo []) exitWith {};
+
+        private _primary = _listbox getVariable [
+            "A3A_primaryFaction",
+            ""
+        ];
+
+        if !(_primary in _selectedNames) then {
+            _listbox setVariable [
+                "A3A_primaryFaction",
+                _selectedNames # 0
+            ];
         };
     };
 
     case ("fillFactions"):
     {
         private _expandLBs = [];
-        
+
+        private _coalitionEnabled =
+            cbChecked (_display displayCtrl A3A_IDC_SETUP_COALITIONCHECK);
+
+        private _savedCoalition = missionNamespace getVariable [
+            "A3A_coalitionConfigNet",
+            [[], [], []]
+        ];
+
+        if ((count _savedCoalition) < 3) then {
+            _savedCoalition pushBack [];
+        };
+
         private _fnc_fillListBox = {
-            params ["_listboxIDC", "_factions", "_selected"];
+            params [
+                "_listboxIDC",
+                "_factions",
+                "_selected",
+                ["_coalitionSelected", []]
+            ];
+
             Debug_1("fillListBox called with %1 selected", _selected);
+
             private _listbox = _display displayCtrl _listboxIDC;
-            if (_selected == "") then { _selected = _listBox lbData lbCurSel _listBox };		// remember previous faction selected
-            _listBox lbSetCurSel -1;
-            lbClear _listBox;
+            private _isCoalitionList = _listboxIDC in [
+                A3A_IDC_SETUP_OCCUPANTSLISTBOX,
+                A3A_IDC_SETUP_INVADERSLISTBOX,
+                A3A_IDC_SETUP_RIVALSLISTBOX
+            ];
+
+            if (_selected == "") then {
+                _selected = _listbox lbData lbCurSel _listbox;
+            };
+
+            _listbox lbSetCurSel -1;
+            lbClear _listbox;
+
             {
-                private _index = _listBox lbAdd getText(_x/"name");
+                private _index = _listbox lbAdd getText(_x/"name");
+
                 if (_x call _fnc_factionLoaded) then {
-                    _listBox lbSetPicture [_index, getText(_x/"flagTexture")];
-                    _listBox lbSetPictureRight [_index, getText(_x/"logo")]; // Perhaps remove this because it looks like a cluster fuck with mods loaded
-                    _listBox lbSetData [_index, configName _x];
-                    _listBox lbSetTooltip [_index, getText(_x/"description")];
-                    if (_selected == configName _x) then { _listBox lbSetCurSel (lbSize _listBox - 1) };
+                    _listbox lbSetPicture [_index, getText(_x/"flagTexture")];
+                    _listbox lbSetPictureRight [_index, getText(_x/"logo")];
+                    _listbox lbSetData [_index, configName _x];
+                    _listbox lbSetTooltip [_index, getText(_x/"description")];
+
+                    if (
+                        _coalitionEnabled
+                        && {_isCoalitionList}
+                    ) then {
+                        if ((configName _x) in _coalitionSelected) then {
+                            _listbox lbSetSelected [_index, true];
+                        };
+                    } else {
+                        if (_selected == configName _x) then {
+                            _listbox lbSetCurSel _index;
+                        };
+                    };
                 } else {
-                    _listBox lbSetPicture [_index, "a3\data_f\flags\flag_white_dmg_co.paa"];
-                    _listBox lbSetPictureColor [_index, [1,1,1,0.3]];
-                    _listBox lbSetTooltip [_index, format[localize "STR_A3AP_setupFactionsTab_noLoaded", (getArray(_x/"requiredAddons")) joinString ", "]];
-                    _listBox lbSetColor [_index, A3A_COLOR_TEXT_DARKER_SQF];
-                    _listBox lbSetSelectColor [_index, A3A_COLOR_TEXT_DARKER_SQF];
+                    _listbox lbSetPicture [_index, "a3\data_f\flags\flag_white_dmg_co.paa"];
+                    _listbox lbSetPictureColor [_index, [1,1,1,0.3]];
+                    _listbox lbSetTooltip [_index, format [
+                        localize "STR_A3AP_setupFactionsTab_noLoaded",
+                        (getArray(_x/"requiredAddons")) joinString ", "
+                    ]];
+                    _listbox lbSetColor [_index, A3A_COLOR_TEXT_DARKER_SQF];
+                    _listbox lbSetSelectColor [_index, A3A_COLOR_TEXT_DARKER_SQF];
                 };
             } forEach _factions;
-            if (lbCurSel _listBox == -1) then { _listBox lbSetCurSel 0 };				// Should always exist
 
-            if (count _factions > 12) then { _expandLBs pushBack _listbox };
+            if (
+                !_coalitionEnabled
+                || {!_isCoalitionList}
+            ) then {
+                if (lbCurSel _listbox == -1) then {
+                    _listbox lbSetCurSel 0;
+                };
+            };
+
+            if (count _factions > 12) then {
+                _expandLBs pushBack _listbox;
+            };
         };
 
-        // Fetch valid factions and filter based on checkboxes
+
+        // AU ORIGINAL FILTERING
         private _factions = +(_display getVariable "validFactions");
+
         if (!cbChecked (_display displayCtrl A3A_IDC_SETUP_IGNORECAMOCHECK)) then {
-            _factions = _factions apply { _x select { getArray (_x/"climate") isEqualTo [] or A3A_climate in getArray (_x/"climate") } };
+            _factions = _factions apply {
+                _x select {
+                    getArray (_x/"climate") isEqualTo []
+                    or A3A_climate in getArray (_x/"climate")
+                }
+            };
         };
-        private _missingFactions = _factions apply { _x select { !(_x call _fnc_factionLoaded) } };
-        _factions = _factions apply { _x select { _x call _fnc_factionLoaded } };
+
+        private _missingFactions = _factions apply {
+            _x select { !(_x call _fnc_factionLoaded) }
+        };
+
+        _factions = _factions apply {
+            _x select { _x call _fnc_factionLoaded }
+        };
 
         if (cbChecked (_display displayCtrl A3A_IDC_SETUP_SWITCHENEMYCHECK)) then {
-            _factions = [_factions#1, _factions#0, _factions#2, _factions#3, _factions#4];
-        };
-        if (cbChecked (_display displayCtrl A3A_IDC_SETUP_ANYENEMYCHECK)) then {
-            _factions = [_factions#0 + _factions#1, _factions#1 + _factions#0, _factions#2, _factions#3, _factions#4];
+            _factions = [
+                _factions#1,
+                _factions#0,
+                _factions#2,
+                _factions#3,
+                _factions#4
+            ];
         };
 
-        // Add saved factions if valid
-        // configNames of the occ/inv/reb/civ factions, written by setupLoadgameTab
-        (_display getVariable "savedFactions") params ["_savedFactions", "_savedAddons", "_savedDLC"];
-        Debug_3("Saved factions: %1 Addons: %2 DLC: %3", _savedFactions, _savedAddons, _savedDLC);
+        if (cbChecked (_display displayCtrl A3A_IDC_SETUP_ANYENEMYCHECK)) then {
+            _factions = [
+                _factions#0 + _factions#1,
+                _factions#1 + _factions#0,
+                _factions#2,
+                _factions#3,
+                _factions#4
+            ];
+        };
+
+
+        // AU ORIGINAL saved primary factions
+        (_display getVariable "savedFactions") params [
+            "_savedFactions",
+            "_savedAddons",
+            "_savedDLC"
+        ];
+
+        Debug_3(
+            "Saved factions: %1 Addons: %2 DLC: %3",
+            _savedFactions,
+            _savedAddons,
+            _savedDLC
+        );
 
         private _failedFactions = [];
+
         {
-            _sfact = A3A_SETUP_CONFIGFILE/"A3A"/"Templates"/_x;
-            if !(isClass _sfact) then { Info_1("Bad saved faction name %1", _x); _failedFactions pushBack _x };
-            if !(_sfact call _fnc_factionLoaded) then { Info_1("Saved faction %1 not loadable", _x); _failedFactions pushBack _x };
-            _factions#_forEachIndex pushBackUnique _sfact;				// does nothing if already in list
+            private _sfact =
+                A3A_SETUP_CONFIGFILE
+                / "A3A"
+                / "Templates"
+                / _x;
+
+            if !(isClass _sfact) then {
+                Info_1("Bad saved faction name %1", _x);
+                _failedFactions pushBack _x;
+                continue;
+            };
+
+            if !(_sfact call _fnc_factionLoaded) then {
+                Info_1("Saved faction %1 not loadable", _x);
+                _failedFactions pushBack _x;
+                continue;
+            };
+
+            _factions#_forEachIndex pushBackUnique _sfact;
+
         } forEach _savedFactions;
+
+
+        // addition: do the same thing for saved coalition extras.
+        {
+            private _bucket = _forEachIndex;
+
+            {
+                if (_x isEqualType [] && {count _x > 0}) then {
+                    private _configName = _x # 0;
+
+                    private _cfg =
+                        A3A_SETUP_CONFIGFILE
+                        / "A3A"
+                        / "Templates"
+                        / _configName;
+
+                    if (
+                        isClass _cfg
+                        && {_cfg call _fnc_factionLoaded}
+                    ) then {
+                        _factions#_bucket pushBackUnique _cfg;
+                    };
+                };
+            } forEach _x;
+
+        } forEach [
+            _savedCoalition param [0, []],
+            _savedCoalition param [1, []],
+            _savedCoalition param [2, []]
+        ];
+
 
         if (_failedFactions isNotEqualTo []) then {
             private _msg = "Couldn't load factions from save:";
-            { _msg = _msg + endl + _x } forEach _failedFactions;
+            {
+                _msg = _msg + endl + _x
+            } forEach _failedFactions;
+
             ["Setup", _msg] spawn A3A_fnc_customHint;
         };
 
-        // Add the non-loadable factions back in
         if (cbChecked (_display displayCtrl A3A_IDC_SETUP_SHOWMISSINGCHECK)) then {
-            { _x append _missingFactions#_forEachIndex } forEach _factions;
+            {
+                _x append _missingFactions#_forEachIndex
+            } forEach _factions;
         };
 
-        if (_savedFactions isEqualTo []) then { _savedFactions = ["", "", "", "", ""] };
-        [A3A_IDC_SETUP_OCCUPANTSLISTBOX, _factions#0, _savedFactions#0] call _fnc_fillListBox;
-        [A3A_IDC_SETUP_INVADERSLISTBOX, _factions#1, _savedFactions#1] call _fnc_fillListBox;
-        [A3A_IDC_SETUP_REBELSLISTBOX, _factions#2, _savedFactions#2] call _fnc_fillListBox;
-        [A3A_IDC_SETUP_CIVILIANSLISTBOX, _factions#3, _savedFactions#3] call _fnc_fillListBox;
-        [A3A_IDC_SETUP_RIVALSLISTBOX, _factions#4, _savedFactions#4] call _fnc_fillListBox;
+        if (_savedFactions isEqualTo []) then {
+            _savedFactions = ["", "", "", "", ""]
+        };
+
+
+        private _occSelected = [_savedFactions#0];
+        private _invSelected = [_savedFactions#1];
+        private _rivSelected = [_savedFactions#4];
+
+        {
+            if (_x isEqualType [] && {count _x > 0}) then {
+                _occSelected pushBackUnique (_x # 0);
+            };
+        } forEach (_savedCoalition param [0, []]);
+
+        {
+            if (_x isEqualType [] && {count _x > 0}) then {
+                _invSelected pushBackUnique (_x # 0);
+            };
+        } forEach (_savedCoalition param [1, []]);
+
+        {
+            if (_x isEqualType [] && {count _x > 0}) then {
+                _rivSelected pushBackUnique (_x # 0);
+            };
+        } forEach (_savedCoalition param [2, []]);
+
+
+        [
+            A3A_IDC_SETUP_OCCUPANTSLISTBOX,
+            _factions#0,
+            _savedFactions#0,
+            _occSelected
+        ] call _fnc_fillListBox;
+
+        [
+            A3A_IDC_SETUP_INVADERSLISTBOX,
+            _factions#1,
+            _savedFactions#1,
+            _invSelected
+        ] call _fnc_fillListBox;
+
+        [
+            A3A_IDC_SETUP_REBELSLISTBOX,
+            _factions#2,
+            _savedFactions#2
+        ] call _fnc_fillListBox;
+
+        [
+            A3A_IDC_SETUP_CIVILIANSLISTBOX,
+            _factions#3,
+            _savedFactions#3
+        ] call _fnc_fillListBox;
+
+        [
+            A3A_IDC_SETUP_RIVALSLISTBOX,
+            _factions#4,
+            _savedFactions#4,
+            _rivSelected
+        ] call _fnc_fillListBox;
+
+
+        // Store explicit primary values for coalition getFactions.
+        (_display displayCtrl A3A_IDC_SETUP_OCCUPANTSLISTBOX)
+            setVariable ["A3A_primaryFaction", _savedFactions#0];
+
+        (_display displayCtrl A3A_IDC_SETUP_INVADERSLISTBOX)
+            setVariable ["A3A_primaryFaction", _savedFactions#1];
+
+        (_display displayCtrl A3A_IDC_SETUP_RIVALSLISTBOX)
+            setVariable ["A3A_primaryFaction", _savedFactions#4];
+
 
         ["update", [_expandLBs]] call A3A_fnc_setupFactionsTab;
     };
@@ -469,13 +755,201 @@ switch (_mode) do
 
     case ("getFactions"):
     {
-        private _factions = [A3A_IDC_SETUP_OCCUPANTSLISTBOX, A3A_IDC_SETUP_INVADERSLISTBOX, A3A_IDC_SETUP_REBELSLISTBOX, A3A_IDC_SETUP_CIVILIANSLISTBOX, A3A_IDC_SETUP_RIVALSLISTBOX] apply {
-            private _factCtrl = _display displayCtrl _x;
-            _factCtrl lbData lbCurSel _factCtrl;
+        private _coalitionEnabled =
+            cbChecked (_display displayCtrl A3A_IDC_SETUP_COALITIONCHECK);
+
+        private _enemyIDCs = [
+            A3A_IDC_SETUP_OCCUPANTSLISTBOX,
+            A3A_IDC_SETUP_INVADERSLISTBOX,
+            A3A_IDC_SETUP_RIVALSLISTBOX
+        ];
+
+        private _allSelections = [];
+
+        {
+            private _ctrl = _display displayCtrl _x;
+
+            private _names = if (_coalitionEnabled) then {
+                (lbSelection _ctrl) apply {
+                    _ctrl lbData _x
+                }
+            } else {
+                [_ctrl lbData lbCurSel _ctrl]
+            };
+
+            _names = _names select { _x != "" };
+
+            if (_names isEqualTo []) then {
+                _names = [_ctrl lbData 0];
+            };
+
+            _allSelections pushBack _names;
+        } forEach _enemyIDCs;
+
+
+        diag_log format [
+            "[A3A Coalition UI] selection counts OCC=%1 INV=%2 RIV=%3 raw=%4",
+            count (_allSelections # 0),
+            count (_allSelections # 1),
+            count (_allSelections # 2),
+            _allSelections
+        ];
+
+        private _fnc_primary = {
+            params [
+                "_ctrl",
+                "_selected"
+            ];
+
+            private _primary = _ctrl getVariable [
+                "A3A_primaryFaction",
+                ""
+            ];
+
+            if !(_primary in _selected) then {
+                _primary = _selected # 0;
+                _ctrl setVariable [
+                    "A3A_primaryFaction",
+                    _primary
+                ];
+            };
+
+            _primary
         };
+
+
+        private _occCtrl =
+            _display displayCtrl A3A_IDC_SETUP_OCCUPANTSLISTBOX;
+        private _invCtrl =
+            _display displayCtrl A3A_IDC_SETUP_INVADERSLISTBOX;
+        private _rivCtrl =
+            _display displayCtrl A3A_IDC_SETUP_RIVALSLISTBOX;
+
+        private _mainOcc = [
+            _occCtrl,
+            _allSelections#0
+        ] call _fnc_primary;
+
+        private _mainInv = [
+            _invCtrl,
+            _allSelections#1
+        ] call _fnc_primary;
+
+        private _mainRiv = [
+            _rivCtrl,
+            _allSelections#2
+        ] call _fnc_primary;
+
+
+        // AU still receives exactly five primary faction config names.
+        private _factions = [
+            _mainOcc,
+            _mainInv,
+
+            (_display displayCtrl A3A_IDC_SETUP_REBELSLISTBOX)
+                lbData
+                lbCurSel (_display displayCtrl A3A_IDC_SETUP_REBELSLISTBOX),
+
+            (_display displayCtrl A3A_IDC_SETUP_CIVILIANSLISTBOX)
+                lbData
+                lbCurSel (_display displayCtrl A3A_IDC_SETUP_CIVILIANSLISTBOX),
+
+            _mainRiv
+        ];
+
+
+        private _fnc_buildExtras = {
+            params [
+                "_selected",
+                "_main"
+            ];
+
+            if (!_coalitionEnabled) exitWith {
+                []
+            };
+
+            private _extras = _selected - [_main];
+            private _result = [];
+
+            {
+                private _cfg =
+                    A3A_SETUP_CONFIGFILE
+                    / "A3A"
+                    / "Templates"
+                    / _x;
+
+                if !(isClass _cfg) then {
+                    continue;
+                };
+
+                private _basePath = getText (_cfg / "basepath");
+                private _file = getText (_cfg / "file");
+
+                if (_basePath == "" || {_file == ""}) then {
+                    continue;
+                };
+
+                private _path = if (
+                    (toLower _file) select [
+                        ((count _file) - 4) max 0
+                    ] == ".sqf"
+                ) then {
+                    format ["%1\%2", _basePath, _file]
+                } else {
+                    format ["%1\%2.sqf", _basePath, _file]
+                };
+
+                _result pushBack [
+                    _x,
+                    _path
+                ];
+
+            } forEach _extras;
+
+            _result
+        };
+
+
+        private _coalitionConfig = [
+            [
+                _allSelections#0,
+                _mainOcc
+            ] call _fnc_buildExtras,
+
+            [
+                _allSelections#1,
+                _mainInv
+            ] call _fnc_buildExtras,
+
+            [
+                _allSelections#2,
+                _mainRiv
+            ] call _fnc_buildExtras
+        ];
+
+        missionNamespace setVariable [
+            "A3A_coalitionConfigNet",
+            _coalitionConfig,
+            true
+        ];
+
+        missionNamespace setVariable [
+            "A3A_coalitionEnabledNet",
+            _coalitionEnabled,
+            true
+        ];
+
+        diag_log format [
+            "[A3A Coalition UI] getFactions enabled=%1 primary=%2 selections=%3 config=%4",
+            _coalitionEnabled,
+            [_mainOcc, _mainInv, _mainRiv],
+            _allSelections,
+            _coalitionConfig
+        ];
 
         _factions;
     };
+
 
     case ("getContent"):
     {

@@ -1,8 +1,8 @@
 /*
     File: fn_createVehicleCrew.sqf
-    Author: Spoffy
+    Author: Spoffy (Updated: SvenBrandt99)
     Date: 2021-02-13
-    Last Update: 2021-02-13
+    Last Update: 2026-10-03
     Public: No
 
     Description:
@@ -21,6 +21,7 @@
 */
 
 params ["_group", "_vehicle", "_unitType"];
+#include "..\..\script_component.hpp"
 
 private _isHeli = _vehicle isKindOf "Helicopter";
 
@@ -39,6 +40,25 @@ if (unitIsUAV _vehicle) then {
 if (isNil "_unitType") then {
 	_unitType = [Rivals, _vehicle] call A3A_fnc_RivalsCrewTypeForVehicle;
 };
+
+_group setVariable [
+    "A3A_coalitionPrefix",
+    "riv",
+    false
+];
+
+private _crewTag = [
+    _group,
+    "riv",
+    [_unitType]
+] call A3A_fnc_selectCoalitionForGroup;
+
+diag_log format [
+    "[A3A Coalition Rivals] vehicleCrew tag='%1' vehicle='%2' crewType='%3'",
+    _crewTag,
+    typeOf _vehicle,
+    _unitType
+];
 
 private _type = typeOf _vehicle;
 private _config = configFile >> "CfgVehicles" >> _type;
