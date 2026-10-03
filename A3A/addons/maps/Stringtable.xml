@@ -33,6 +33,7 @@
                 <Chinesesimp>Antistasi Ultimate - 阿尔蒂斯安魂曲</Chinesesimp>
                 <French>Antistasi Ultimate - Altis Requiem</French>
                 <Korean>안티스타시 얼티밋 - 알티스의 진혼곡</Korean>
+                <Spanish>Antistasi Ultimate - Altis Requiem</Spanish>
                 <Turkish>Antistasi Ultimate - Altis Requiem</Turkish>
             </Key>
             <Key ID="STR_antistasi_mission_info_Altis_mapname_text">
@@ -41,6 +42,7 @@
                 <Russian>Antistasi Ultimate - Реквием по Алтису</Russian>
                 <French>Antistasi Ultimate - Altis Requiem</French>
                 <Korean>안티스타시 얼티밋 - 알티스의 진혼곡</Korean>
+                <Spanish>Antistasi Ultimate - Altis Requiem</Spanish>
                 <Turkish>Antistasi Ultimate - Altis Requiem</Turkish>
             </Key>
             <Key ID="STR_antistasi_mission_info_Altis_description_text">
@@ -62,6 +64,7 @@
                 <German>Ob wir es wollten oder nicht, wir traten in einen Krieg mit Besatzern auf Altis.</German>
                 <Chinesesimp>无论我们愿不愿意, 我们都卷入了一场关于与阿尔蒂斯占领者的战争。</Chinesesimp>
                 <Korean>우리가 원했든 원하지 않았든, 우린 알티스의 점령군들과 침략자와의 전쟁을 시작했습니다.</Korean>
+                <Spanish>Lo quisiéramos o no, entramos en una guerra con ocupantes e invasores en Altis.</Spanish>
                 <French>Que nous le voulions ou non, nous sommes entrés dans une guerre avec les occupants et les envahisseurs d'Altis.</French>
                 <Turkish>İstesek de istemesek de, Altis'teki işgalciler ve istilacılarla bir savaşın içine girdik.</Turkish>
             </Key>
@@ -71,6 +74,7 @@
                 <Chinesesimp>Antistasi Ultimate - Lythium</Chinesesimp>
                 <French>Antistasi Ultimate - Lythium</French>
                 <Korean>안티스타시 얼티밋 - Lythium</Korean>
+                <Spanish>Antistasi Ultimate - Lythium</Spanish>
                 <Turkish>Antistasi Ultimate - Lythium</Turkish>
             </Key>
             <Key ID="STR_antistasi_mission_info_Lythium_mapname_text">
@@ -79,6 +83,7 @@
                 <Russian>Antistasi Ultimate - Lythium</Russian>
                 <French>Antistasi Ultimate - Lythium</French>
                 <Korean>안티스타시 얼티밋 - Lythium</Korean>
+                <Spanish>Antistasi Ultimate - Lythium</Spanish>
                 <Turkish>Antistasi Ultimate - Lythium</Turkish>
             </Key>
             <Key ID="STR_antistasi_mission_info_Lythium_blurb_text">
@@ -86,6 +91,7 @@
                 <Russian>Хотим мы того или нет, но мы начали войну против оккупантов и захвачтиков Lythium.</Russian>
                 <German>Ob wir es wollten oder nicht, wir traten in einen Krieg mit Besatzern auf Lythium.</German>
                 <Korean>우리가 원했든 원하지 않았든, 우린 Lythium의 점령군들과 침략자와의 전쟁을 시작했습니다.</Korean>
+                <Spanish>Lo quisiéramos o no, entramos en una guerra con ocupantes e invasores en Lythium.</Spanish>
                 <French>Que nous le voulions ou non, nous sommes entrés en guerre contre les occupants et les envahisseurs de Lythium.</French>
                 <Chinesesimp>无论我们是否愿意，我们都与 Lythium 的占领者和侵略者展开了战争。</Chinesesimp>
                 <Turkish>İstesek de istemesek de, Lythium'daki işgalciler ve istilacılarla bir savaşın içine girdik.</Turkish>
@@ -96,6 +102,7 @@
                 <Chinesesimp>Antistasi Ultimate - Green Sea</Chinesesimp>
                 <French>Antistasi Ultimate - Mer verte</French>
                 <Korean>안티스타시 얼티밋 - Green Sea</Korean>
+                <Spanish>Antistasi Ultimate - Green Sea</Spanish>
                 <Turkish>Antistasi Ultimate - Green Sea</Turkish>
             </Key>
             <Key ID="STR_antistasi_mission_info_Greensea_mapname_text">
@@ -104,6 +111,7 @@
                 <Russian>Antistasi Ultimate - Green Sea</Russian>
                 <French>Antistasi Ultimate - Mer verte</French>
                 <Korean>안티스타시 얼티밋 - Green Sea</Korean>
+                <Spanish>Antistasi Ultimate - Green Sea</Spanish>
                 <Turkish>Antistasi Ultimate - Green Sea</Turkish>
             </Key>
             <Key ID="STR_antistasi_mission_info_fapovo_mapname_short_text">
@@ -112,6 +120,7 @@
                 <Chinesesimp>Antistasi Ultimate - Fapovo</Chinesesimp>
                 <French>Antistasi Ultimate - Fapovo</French>
                 <Korean>안티스타시 얼티밋 - Fapovo</Korean>
+                <Spanish>Antistasi Ultimate - Fapovo</Spanish>
                 <Turkish>Antistasi Ultimate - Fapovo</Turkish>
             </Key>
             <Key ID="STR_antistasi_mission_info_fapovo_mapname_text">
@@ -120,6 +129,7 @@
                 <Russian>Antistasi Ultimate - Fapovo Остров</Russian>
                 <French>Antistasi Ultimate - Fapovo Île</French>
                 <Korean>안티스타시 얼티밋 - Fapovo 섬</Korean>
+                <Spanish>Antistasi Ultimate - Fapovo Island</Spanish>
                 <Turkish>Antistasi Ultimate - Fapovo Adası</Turkish>
             </Key>
             <Key ID="STR_antistasi_mission_info_Greensea_blurb_text">
@@ -128,6 +138,7 @@
                 <German>Ob wir es wollten oder nicht, wir traten in einen Krieg mit Besatzern auf Green Sea.</German>
                 <French>Que nous l'ayons voulu ou non, nous sommes entrés dans une guerre avec les occupants et les envahisseurs de la mer Verte.</French>
                 <Korean>우리가 원했든 원하지 않았든, 우린 Green Sea의 점령군들과 침략자와의 전쟁을 시작했습니다.</Korean>
+                <Spanish>Lo quisiéramos o no, entramos en una guerra con ocupantes e invasores en Green Sea.</Spanish>
                 <Chinesesimp>无论我们是否愿意，我们都与绿海的占领者和侵略者陷入了战争。</Chinesesimp>
                 <Turkish>İstesek de istemesek de, Green Sea'deki işgalciler ve istilacılarla bir savaşın içine girdik.</Turkish>
             </Key>
@@ -189,6 +200,7 @@
                 <Chinesesimp>Antistasi Ultimate - 马尔登悲歌</Chinesesimp>
                 <French>Antistasi Ultimate - Malden Elegy</French>
                 <Korean>안티스타시 얼티밋 - 몰든의 애가</Korean>
+                <Spanish>Antistasi Ultimate - Malden Elegy</Spanish>
                 <Turkish>Antistasi Ultimate - Malden Elegy</Turkish>
             </Key>
             <Key ID="STR_antistasi_mission_info_Malden_mapname_text">
@@ -198,6 +210,7 @@
                 <Chinesesimp>Antistasi Ultimate - 马尔登悲歌</Chinesesimp>
                 <French>Antistasi Ultimate - Malden Elegy</French>
                 <Korean>안티스타시 얼티밋 - 몰든의 애가</Korean>
+                <Spanish>Antistasi Ultimate - Malden Elegy</Spanish>
                 <Turkish>Antistasi Ultimate - Malden Elegy</Turkish>
             </Key>
             <Key ID="STR_antistasi_mission_info_Malden_blurb_text">
@@ -206,6 +219,7 @@
                 <Chinesesimp>为人民重演。</Chinesesimp>
                 <Russian>Реприза для народа.</Russian>
                 <Korean>국민들을 위한 레프리제.</Korean>
+                <Spanish>Una nueva oportunidad para el pueblo.</Spanish>
                 <French>Reprise pour le peuple.</French>
                 <Turkish>Halk için yeniden.</Turkish>
             </Key>
@@ -216,6 +230,7 @@
                 <Chinesesimp>Antistasi Ultimate - 沙暴</Chinesesimp>
                 <French>Antistasi Ultimate - Sandstorm</French>
                 <Korean>안티스타시 얼티밋 - 모래폭풍</Korean>
+                <Spanish>Antistasi Ultimate - Sandstorm</Spanish>
                 <Turkish>Antistasi Ultimate - Sandstorm</Turkish>
             </Key>
             <Key ID="STR_antistasi_mission_info_sefrouramal_mapname_short_text">
@@ -225,6 +240,7 @@
                 <Chinesesimp>Antistasi Ultimate - 沙暴</Chinesesimp>
                 <French>Antistasi Ultimate - Sandstorm</French>
                 <Korean>안티스타시 얼티밋 - 모래폭풍</Korean>
+                <Spanish>Antistasi Ultimate - Sandstorm</Spanish>
                 <Turkish>Antistasi Ultimate - Sandstorm</Turkish>
             </Key>
             <Key ID="STR_antistasi_mission_info_sefrouramal_blurb_text">
@@ -233,6 +249,7 @@
                 <Chinesesimp>动荡来自沙漠。</Chinesesimp>
                 <Russian>Волнения приходят из пустыни.</Russian>
                 <Korean>불안은 사막으로부터 다가옵니다.</Korean>
+                <Spanish>La revuelta llega desde el desierto.</Spanish>
                 <French>L'agitation vient du désert.</French>
                 <Turkish>Huzursuzluk çölden gelir.</Turkish>
             </Key>
@@ -243,6 +260,7 @@
                 <Chinesesimp>Antistasi Ultimate - 倒塌</Chinesesimp>
                 <French>Antistasi Ultimate - Effondrement</French>
                 <Korean>안티스타시 얼티밋 - 붕괴</Korean>
+                <Spanish>Antistasi Ultimate - Collapse</Spanish>
                 <Turkish>Antistasi Ultimate - Collapse</Turkish>
             </Key>
             <Key ID="STR_antistasi_mission_info_esseker_mapname_short_text">
@@ -252,6 +270,7 @@
                 <Chinesesimp>Antistasi Ultimate - 倒塌</Chinesesimp>
                 <French>Antistasi Ultimate - Effondrement</French>
                 <Korean>안티스타시 얼티밋 - 붕괴</Korean>
+                <Spanish>Antistasi Ultimate - Collapse</Spanish>
                 <Turkish>Antistasi Ultimate - Collapse</Turkish>
             </Key>
             <Key ID="STR_antistasi_mission_info_esseker_blurb_text">
@@ -260,6 +279,7 @@
                 <Russian>Верните все, что было утрачено.</Russian>
                 <Chinesesimp>找回曾经失去的一切</Chinesesimp>
                 <Korean>잃어버린 모든 것을 되찾으십시오.</Korean>
+                <Spanish>Recupera todo lo que se perdió.</Spanish>
                 <French>Regagner tout ce qui a été perdu.</French>
                 <Turkish>Kaybedilen her şeyi geri al.</Turkish>
             </Key>
@@ -270,6 +290,7 @@
                 <Chinesesimp>Antistasi Ultimate - 蓝色收获</Chinesesimp>
                 <French>Antistasi Ultimate - Rouge moisson</French>
                 <Korean>안티스타시 얼티밋 - 하베스트 레드</Korean>
+                <Spanish>Antistasi Ultimate - Harvest Red</Spanish>
                 <Turkish>Antistasi Ultimate - Harvest Red</Turkish>
             </Key>
             <Key ID="STR_antistasi_mission_info_chernarus2020_mapname_short_text">
@@ -279,6 +300,7 @@
                 <Chinesesimp>Antistasi Ultimate - 蓝色收获</Chinesesimp>
                 <French>Antistasi Ultimate - Rouge moisson</French>
                 <Korean>안티스타시 얼티밋 - 하베스트 레드</Korean>
+                <Spanish>Antistasi Ultimate - Harvest Red</Spanish>
                 <Turkish>Antistasi Ultimate - Harvest Red</Turkish>
             </Key>
             <Key ID="STR_antistasi_mission_info_chernarus2020_blurb_text">
@@ -287,6 +309,7 @@
                 <Chinesesimp>Bardak 就在外面。</Chinesesimp>
                 <Russian>Бардак где-то рядом.</Russian>
                 <Korean>Bardak은 저 밖에 있습니다.</Korean>
+                <Spanish>Bardak anda por ahí.</Spanish>
                 <French>Bardak est dehors.</French>
                 <Turkish>Bardak oralarda bir yerde.</Turkish>
             </Key>
@@ -297,6 +320,7 @@
                 <Chinesesimp>Antistasi Ultimate - 扫视地平线</Chinesesimp>
                 <French>Antistasi Ultimate - Analyse de l'horizon</French>
                 <Korean>안티스타시 얼티밋 - 지평선 경계</Korean>
+                <Spanish>Antistasi Ultimate - Horizon Scan</Spanish>
                 <Turkish>Antistasi Ultimate - Horizon Scan</Turkish>
             </Key>
             <Key ID="STR_antistasi_mission_info_livonia_mapname_text">
@@ -306,6 +330,7 @@
                 <Chinesesimp>Antistasi Ultimate - 扫视地平线</Chinesesimp>
                 <French>Antistasi Ultimate - Analyse de l'horizon</French>
                 <Korean>안티스타시 얼티밋 - 지평선 경계</Korean>
+                <Spanish>Antistasi Ultimate - Horizon Scan</Spanish>
                 <Turkish>Antistasi Ultimate - Horizon Scan</Turkish>
             </Key>
             <Key ID="STR_antistasi_mission_info_livonia_description_text">
@@ -314,6 +339,7 @@
                 <German>Sei ein Anführer des Widerstands. Kämpfe gegen einen technologisch und zahlenmäßigen überlegenen Feind. Nutze Guerillataktiken in einer vollständig dynamischen Welt mit 18 möglichen Sekundärmissionen. Es könnte jederzeit und überall alles passieren...</German>
                 <Chinesesimp>成为抵抗军领袖。与技术、数量、资产和载具远胜于你的强大敌人作战。面对完全动态的世界和大约30多个支线任务, 任何时间, 任何地点, 任何情况, 运用游击战术。</Chinesesimp>
                 <Korean>반군 지도자가 되십시오. 차량, 자산, 질적으로 월등한 적과 싸우십시오. 완전 다이나믹한 세계에서 게릴라 전술을 활용하십시오. 약 30개 이상의 사이드 임무가 있으며, 언제 어디서나 무엇이든 가능합니다.</Korean>
+                <Spanish>Sé el líder de la Resistencia. Lucha contra un enemigo superior en tecnología, número, recursos y vehículos. Usa tácticas de guerrilla en un mundo totalmente dinámico, con más de 30 misiones secundarias, en cualquier lugar, en cualquier momento y de cualquier tipo.</Spanish>
                 <French>Soyez le chef de la résistance. Luttez contre un ennemi supérieur en technologie, en nombre, en ressources et en véhicules. Utilisez des tactiques de guérilla dans un monde totalement dynamique, avec plus de 30 missions secondaires, partout, tout le temps, tout ce que vous voulez.</French>
                 <Turkish>Direniş Lideri olun. Teknoloji, sayı, varlık ve araç bakımından üstün bir düşmana karşı savaşın. Her yerde, her zaman ve her koşulda, 30'dan fazla yan görevle tamamen dinamik bir dünyada gerilla taktiklerini kullanın.</Turkish>
             </Key>
@@ -323,6 +349,7 @@
                 <German>"... es ist nur ein weites Feld."</German>
                 <Chinesesimp>"……这是一片开阔的原野。"</Chinesesimp>
                 <Korean>"... 그냥 넓게 펼쳐진 들판일 뿐이야."</Korean>
+                <Spanish>«...no es más que campo abierto.»</Spanish>
                 <French>"...c'est un grand champ d'action."</French>
                 <Turkish>"...her yer dümdüz, uçsuz bucaksız bir arazi."</Turkish>
             </Key>
@@ -333,6 +360,7 @@
                 <Russian>Antistasi Ultimate - Янтарное Восстание</Russian>
                 <French>Antistasi Ultimate - Insurrection de l'ambre</French>
                 <Korean>안티스타시 얼티밋 - 호박색 반란</Korean>
+                <Spanish>Antistasi Ultimate - Amber Insurgency</Spanish>
                 <Turkish>Antistasi Ultimate - Amber Insurgency</Turkish>
             </Key>
             <Key ID="STR_antistasi_mission_info_napf_mapname_short_text">
@@ -342,6 +370,7 @@
                 <Chinesesimp>Antistasi Ultimate - 黄色叛乱</Chinesesimp>
                 <French>Antistasi Ultimate - Insurrection de l'ambre</French>
                 <Korean>안티스타시 얼티밋 - 호박색 반란</Korean>
+                <Spanish>Antistasi Ultimate - Amber Ins.</Spanish>
                 <Turkish>Antistasi Ultimate - Amber Ins.</Turkish>
             </Key>
             <Key ID="STR_antistasi_mission_info_napf_blurb_text">
@@ -350,6 +379,7 @@
                 <Russian>Желтая почва у нас под ногами.</Russian>
                 <Chinesesimp>黄土地就在我们脚下。</Chinesesimp>
                 <Korean>황토는 우리 신발 밑에 있습니다.</Korean>
+                <Spanish>Tierra amarilla bajo nuestras botas.</Spanish>
                 <French>Un sol jaune sous nos bottes.</French>
                 <Turkish>Botlarımızın altında sarı toprak var.</Turkish>
             </Key>
@@ -360,6 +390,7 @@
                 <Chinesesimp>Antistasi Ultimatemate - 夏季战争</Chinesesimp>
                 <French>Antistasi Ultimate - Kesäsota</French>
                 <Korean>안티스타시 얼티밋 - 여름 전쟁</Korean>
+                <Spanish>Antistasi Ultimate - Kesäsota</Spanish>
                 <Turkish>Antistasi Ultimate - Kesäsota</Turkish>
             </Key>
             <Key ID="STR_antistasi_mission_info_vt7_mapname_short_text">
@@ -369,6 +400,7 @@
                 <Chinesesimp>Antistasi Ultimate - 夏季战争</Chinesesimp>
                 <French>Antistasi Ultimate - Kesäsota</French>
                 <Korean>안티스타시 얼티밋 - 여름 전쟁</Korean>
+                <Spanish>Antistasi Ultimate - Kesäsota</Spanish>
                 <Turkish>Antistasi Ultimate - Kesäsota</Turkish>
             </Key>
             <Key ID="STR_antistasi_mission_info_vt7_blurb_text">
@@ -376,6 +408,7 @@
                 <Russian>Туристический поход с оружием на севере.</Russian>
                 <Chinesesimp>带着枪在北方徒步旅行。</Chinesesimp>
                 <Korean>총 들고 북쪽으로 산책하기.</Korean>
+                <Spanish>De excursión por el norte con fusiles.</Spanish>
                 <French>Randonnée dans le Nord avec des armes.</French>
                 <Turkish>Kuzeyde silahlarla doğa yürüyüşü.</Turkish>
             </Key>
@@ -384,6 +417,7 @@
                 <Russian>Ночь светла и полна мятежников.</Russian>
                 <Chinesesimp>夜色璀璨，游击队遍地。</Chinesesimp>
                 <Korean>밤은 밝고 게릴라들로 가득합니다.</Korean>
+                <Spanish>La noche es clara y está llena de guerrilleros.</Spanish>
                 <French>La nuit est claire et pleine de guérilleros.</French>
                 <Turkish>Gece aydınlık ve gerillalarla dolu.</Turkish>
             </Key>
@@ -394,6 +428,7 @@
                 <Chinesesimp>Antistasi Ultimate - 北方守卫</Chinesesimp>
                 <French>Antistasi Ultimate - Nordvakt</French>
                 <Korean>안티스타시 얼티밋 - 노도박</Korean>
+                <Spanish>Antistasi Ultimate - Nordvakt</Spanish>
                 <Turkish>Antistasi Ultimate - Nordvakt</Turkish>
             </Key>
             <Key ID="STR_antistasi_mission_info_vidda_mapname_short_text">
@@ -403,6 +438,7 @@
                 <Chinesesimp>Antistasi Ultimate - 北方守卫</Chinesesimp>
                 <French>Antistasi Ultimate - Nordvakt</French>
                 <Korean>안티스타시 얼티밋 - 노도박</Korean>
+                <Spanish>Antistasi Ultimate - Nordvakt</Spanish>
                 <Turkish>Antistasi Ultimate - Nordvakt</Turkish>
             </Key>
             <Key ID="STR_antistasi_mission_info_takistan_mapname_text">
@@ -411,6 +447,7 @@
                 <Chinesesimp>Antistasi Ultimate - 塔克斯坦</Chinesesimp>
                 <French>Antistasi Ultimate - Takistan</French>
                 <Korean>안티스타시 얼티밋 - 타키스탄</Korean>
+                <Spanish>Antistasi Ultimate - Takistan</Spanish>
                 <Turkish>Antistasi Ultimate - Takistan</Turkish>
             </Key>
             <Key ID="STR_antistasi_mission_info_takistan_mapname_short_text">
@@ -419,6 +456,7 @@
                 <Chinesesimp>Antistasi Ultimate - 塔克斯坦</Chinesesimp>
                 <French>Antistasi Ultimate - Takistan</French>
                 <Korean>안티스타시 얼티밋 - 타키스탄</Korean>
+                <Spanish>Antistasi Ultimate - Takistan</Spanish>
                 <Turkish>Antistasi Ultimate - Takistan</Turkish>
             </Key>
             <Key ID="STR_antistasi_mission_info_takistan_blurb_text">
@@ -426,6 +464,7 @@
                 <Russian>Мы не похожи на вас.</Russian>
                 <Chinesesimp>我们不像你一样</Chinesesimp>
                 <Korean>우린 당신들같은 부류의 사람들이 아닙니다.</Korean>
+                <Spanish>No somos de los tuyos.</Spanish>
                 <French>Nous ne sommes pas des gens comme vous.</French>
                 <Turkish>Biz sizin bildiğiniz insanlardan değiliz.</Turkish>
             </Key>
@@ -435,6 +474,7 @@
                 <Chinesesimp>Antistasi Ultimate - 地平线群岛</Chinesesimp>
                 <French>Antistasi Ultimate - Les îles de l'Horizon</French>
                 <Korean>안티스타시 얼티밋 - 호라이즌 제도</Korean>
+                <Spanish>Antistasi Ultimate - Horizon Islands</Spanish>
                 <Turkish>Antistasi Ultimate - Horizon Islands</Turkish>
             </Key>
             <Key ID="STR_antistasi_mission_info_tanoa_mapname_text">
@@ -443,6 +483,7 @@
                 <Chinesesimp>Antistasi Ultimate - 地平线群岛</Chinesesimp>
                 <French>Antistasi Ultimate - Les îles de l'Horizon</French>
                 <Korean>안티스타시 얼티밋 - 호라이즌 제도</Korean>
+                <Spanish>Antistasi Ultimate - Horizon Islands</Spanish>
                 <Turkish>Antistasi Ultimate - Horizon Islands</Turkish>
             </Key>
             <Key ID="STR_antistasi_mission_info_tanoa_blurb_text">
@@ -450,6 +491,7 @@
                 <Russian>Там, где молодые умирают, в бой идут старики.</Russian>
                 <Chinesesimp>一群老人从事英年早逝的工作。</Chinesesimp>
                 <Korean>사람들이 젊어서 죽는 직업의 노인들.</Korean>
+                <Spanish>Un puñado de viejos en un oficio donde se muere joven.</Spanish>
                 <French>Une bande de vieux dans un métier où l'on meurt jeune.</French>
                 <Turkish>İnsanların genç öldüğü bir işte, bir avuç yaşlı adam.</Turkish>
             </Key>
@@ -459,6 +501,7 @@
                 <Chinesesimp>Antistasi Ultimate - 橙剂</Chinesesimp>
                 <French>Antistasi Ultimate - Agent Orange</French>
                 <Korean>안티스타시 얼티밋 - 오렌지 요원</Korean>
+                <Spanish>Antistasi Ultimate - Agent Orange</Spanish>
                 <Turkish>Antistasi Ultimate - Agent Orange</Turkish>
             </Key>
             <Key ID="STR_antistasi_mission_info_camlaonam_mapname_text">
@@ -467,6 +510,7 @@
                 <Chinesesimp>Antistasi Ultimate - 橙剂</Chinesesimp>
                 <French>Antistasi Ultimate - Agent Orange</French>
                 <Korean>안티스타시 얼티밋 - 오렌지 요원</Korean>
+                <Spanish>Antistasi Ultimate - Agent Orange</Spanish>
                 <Turkish>Antistasi Ultimate - Agent Orange</Turkish>
             </Key>
             <Key ID="STR_antistasi_mission_info_camlaonam_blurb_text">
@@ -474,6 +518,7 @@
                 <Russian>Доброе утро, Вьетнам.</Russian>
                 <Chinesesimp>早安，越南</Chinesesimp>
                 <Korean>좋은 아침입니다, 베트남.</Korean>
+                <Spanish>Buenos días, Vietnam.</Spanish>
                 <French>Bonjour, Vietnam.</French>
                 <Turkish>Günaydın, Vietnam!</Turkish>
             </Key>
@@ -482,6 +527,7 @@
                 <Russian>Antistasi Ultimate - Битва при Кшешани</Russian>
                 <Chinesesimp>Antistasi Ultimate - 溪生之战</Chinesesimp>
                 <Czech>Antistasi Ultimate - Bitva u Khe Sanh</Czech>
+                <Spanish>Antistasi Ultimate - Battle of Khe Sanh</Spanish>
                 <French>Antistasi Ultimate - La bataille de Khe Sanh</French>
                 <Korean>안티스타시 얼티밋 - 케산 전투</Korean>
                 <Turkish>Antistasi Ultimate - Battle of Khe Sanh</Turkish>
@@ -492,6 +538,7 @@
                 <Chinesesimp>Antistasi Ultimate - 溪生之战</Chinesesimp>
                 <French>Antistasi Ultimate - La bataille de Khe Sanh</French>
                 <Korean>안티스타시 얼티밋 - 케산 전투</Korean>
+                <Spanish>Antistasi Ultimate - Battle of KS</Spanish>
                 <Turkish>Antistasi Ultimate - Battle of KS</Turkish>
             </Key>
             <Key ID="STR_antistasi_mission_info_khesanh_blurb_text">
@@ -499,6 +546,7 @@
                 <Russian>“В этом мире человек, сам по себе - ничто. И нет другого мира, кроме этого.”</Russian>
                 <Chinesesimp>只有这个世界，一个人什么都不是。</Chinesesimp>
                 <Korean>"이 세상에서 인간 그 자체는 아무것도 아니다. 그리고 이 세계 외에는 다른 세계는 없다." </Korean>
+                <Spanish>«En este mundo, un hombre por sí solo no es nada. Y no hay más mundo que este.»</Spanish>
                 <French>"Dans ce monde, un homme n'est rien. Et il n'y a pas d'autre monde que celui-ci."</French>
                 <Turkish>“Bu dünyada bir insanın tek başına hiçbir hükmü yoktur. Ve bu dünyadan başka bir dünya da yoktur.”</Turkish>
             </Key>
@@ -508,6 +556,7 @@
                 <Chinesesimp>Antistasi Ultimate - 联盟</Chinesesimp>
                 <French>Antistasi Ultimate - Unité</French>
                 <Korean>안티스타시 얼티밋 - 통일</Korean>
+                <Spanish>Antistasi Ultimate - Unity</Spanish>
                 <Turkish>Antistasi Ultimate - Unity</Turkish>
             </Key>
             <Key ID="STR_antistasi_mission_info_sehreno_mapname_short_text">
@@ -516,6 +565,7 @@
                 <Chinesesimp>Antistasi Ultimate - 联盟</Chinesesimp>
                 <French>Antistasi Ultimate - Unité</French>
                 <Korean>안티스타시 얼티밋 - 통일</Korean>
+                <Spanish>Antistasi Ultimate - Unity</Spanish>
                 <Turkish>Antistasi Ultimate - Unity</Turkish>
             </Key>
             <Key ID="STR_antistasi_mission_info_sehreno_blurb_text">
@@ -523,6 +573,7 @@
                 <Russian>В Епонии такого вообще нет.</Russian>
                 <Chinesesimp>在爱波尼亚中没有这样的东西。</Chinesesimp>
                 <Korean>에포니아에는 그런 건 없습니다.</Korean>
+                <Spanish>Eso no existe en Eponia.</Spanish>
                 <French>Cela n'existe pas à Eponia.</French>
                 <Turkish>Eponia'da böyle bir şey yoktur.</Turkish>
             </Key>
@@ -531,6 +582,7 @@
                 <Russian>Antistasi Ultimate - Код Красный</Russian>
                 <French>Antistasi Ultimate - Code Rouge</French>
                 <Korean>안티스타시 얼티밋 - 코드 레드</Korean>
+                <Spanish>Antistasi Ultimate - Code Red</Spanish>
                 <Chinesesimp>Antistasi Ultimate - Code Red</Chinesesimp>
                 <Turkish>Antistasi Ultimate - Code Red</Turkish>
             </Key>
@@ -539,6 +591,7 @@
                 <Russian>Antistasi Ultimate - Код Красный</Russian>
                 <French>Antistasi Ultimate - Code Rouge</French>
                 <Korean>안티스타시 얼티밋 - 코드 레드</Korean>
+                <Spanish>Antistasi Ultimate - Code Red</Spanish>
                 <Chinesesimp>Antistasi Ultimate - Code Red</Chinesesimp>
                 <Turkish>Antistasi Ultimate - Code Red</Turkish>
             </Key>
@@ -546,6 +599,7 @@
                 <Original>Border crossing never has been so easy.</Original>
                 <Russian>Пересечение границы еще никогда не было таким простым.</Russian>
                 <Korean>국경을 넘는 것이 그렇게 쉬운 적은 없었습니다.</Korean>
+                <Spanish>Cruzar la frontera nunca fue tan fácil.</Spanish>
                 <French>Le passage des frontières n'a jamais été aussi facile.</French>
                 <Chinesesimp>过境从未如此简单。</Chinesesimp>
                 <Turkish>Sınır geçmek hiç bu kadar kolay olmamıştı.</Turkish>
@@ -553,6 +607,7 @@
             <Key ID="STR_antistasi_mission_info_SPE_Normandy_mapname_short_text">
                 <Original>Antistasi Normandy</Original>
                 <Korean>안티스타시 노르망디</Korean>
+                <Spanish>Antistasi Normandy</Spanish>
                 <French>Antistasi Normandie</French>
                 <Chinesesimp>Antistasi Normandy</Chinesesimp>
                 <Turkish>Antistasi Normandy</Turkish>
@@ -560,6 +615,7 @@
             <Key ID="STR_antistasi_mission_info_SPE_Normandy_mapname_text">
                 <Original>Antistasi - The French Resistance</Original>
                 <Korean>안티스타시 - 프랑스 레지스탕스</Korean>
+                <Spanish>Antistasi - The French Resistance</Spanish>
                 <French>Antistasi - La Résistance française</French>
                 <Chinesesimp>Antistasi - The French Resistance</Chinesesimp>
                 <Turkish>Antistasi - The French Resistance</Turkish>
@@ -581,6 +637,7 @@
                 <Original>Vive la résistance!</Original>
                 <Russian>Vive la résistance!</Russian>
                 <Korean>레지스탕스 만세!</Korean>
+                <Spanish>¡Vive la résistance!</Spanish>
                 <French>Vive la résistance !</French>
                 <Chinesesimp>Vive la résistance!</Chinesesimp>
                 <Turkish>Yaşasın direniş!</Turkish>
@@ -589,12 +646,14 @@
                 <Original>Antistasi Mortain</Original>
                 <Chinesesimp>Antistasi Mortain</Chinesesimp>
                 <Korean>안티스타시 모르탱</Korean>
+                <Spanish>Antistasi Mortain</Spanish>
                 <Turkish>Antistasi Mortain</Turkish>
             </Key>
             <Key ID="STR_antistasi_mission_info_sumava_mapname_text">
                 <Original>Antistasi Ultimate - Šumava</Original>
                 <Russian>Antistasi Ultimate - Čумава</Russian>
                 <Korean>안티스타시 얼티밋 - Šumava</Korean>
+                <Spanish>Antistasi Ultimate - Šumava</Spanish>
                 <French>Antistasi Ultimate - Šumava</French>
                 <Chinesesimp>Antistasi Ultimate - Šumava</Chinesesimp>
                 <Turkish>Antistasi Ultimate - Šumava</Turkish>
@@ -603,6 +662,7 @@
                 <Original>The entire country is counting on us and they don't even know it.</Original>
                 <Russian>На нас рассчитывает вся страна и они даже не знают об этом.</Russian>
                 <Korean>온 나라가 우리를 믿고 있지만 그들은 그걸 모르고 있습니다.</Korean>
+                <Spanish>Todo el país cuenta con nosotros y ni siquiera lo sabe.</Spanish>
                 <French>Le pays tout entier compte sur nous et ne le sait même pas.</French>
                 <Chinesesimp>整个国家都指望着我们，但他们却不知道这一点。</Chinesesimp>
                 <Turkish>Tüm ülke bize güveniyor ama bunun farkında bile değiller.</Turkish>
@@ -611,6 +671,7 @@
                 <Original>Antistasi Ultimate - Šumava</Original>
                 <Russian>Antistasi Ultimate - Čумава</Russian>
                 <Korean>안티스타시 얼티밋 - Šumava</Korean>
+                <Spanish>Antistasi Ultimate - Šumava</Spanish>
                 <French>Antistasi Ultimate - Šumava</French>
                 <Chinesesimp>Antistasi Ultimate - Šumava</Chinesesimp>
                 <Turkish>Antistasi Ultimate - Šumava</Turkish>
@@ -619,87 +680,103 @@
                 <Original>Antistasi Ultimate - Gulfcoast Islands</Original>
                 <Chinesesimp>Antistasi Ultimate - Gulfcoast Islands</Chinesesimp>
                 <Korean>안티스타시 얼티밋 - Gulfcoast Islands</Korean>
+                <Spanish>Antistasi Ultimate - Gulfcoast Islands</Spanish>
                 <Turkish>Antistasi Ultimate - Gulfcoast Islands</Turkish>
             </Key>
             <Key ID="STR_antistasi_mission_info_Gulfcoast_mapname_text">
                 <Original>Antistasi Ultimate - Gulfcoast Islands</Original>
                 <Chinesesimp>Antistasi Ultimate - Gulfcoast Islands</Chinesesimp>
                 <Korean>안티스타시 얼티밋 - Gulfcoast Islands</Korean>
+                <Spanish>Antistasi Ultimate - Gulfcoast Islands</Spanish>
                 <Turkish>Antistasi Ultimate - Gulfcoast Islands</Turkish>
             </Key>
             <Key ID="STR_antistasi_mission_info_Gulfcoast_blurb_text">
                 <Original>Paying a visit to the corrupt political leaders' vacation homes.</Original>
                 <Chinesesimp>参观腐败政治领袖的度假屋。</Chinesesimp>
                 <Korean>썩은 정치지도자들의 별장을 방문하세요.</Korean>
+                <Spanish>Una visita a las casas de vacaciones de los políticos corruptos.</Spanish>
                 <Turkish>Yozlaşmış siyasi liderlerin tatil evlerine küçük bir ziyarette bulunuyoruz.</Turkish>
             </Key>
             <Key ID="STR_antistasi_mission_info_stubbhult_mapname_short_text">
                 <Original>Antistasi Ultimate - Stubbhult</Original>
                 <Chinesesimp>Antistasi Ultimate - Stubbhult</Chinesesimp>
                 <Korean>안티스타시 얼티밋 - Stubbhult</Korean>
+                <Spanish>Antistasi Ultimate - Stubbhult</Spanish>
                 <Turkish>Antistasi Ultimate - Stubbhult</Turkish>
             </Key>
             <Key ID="STR_antistasi_mission_info_stubbhult_mapname_text">
                 <Original>Antistasi Ultimate - Stubbhult</Original>
                 <Chinesesimp>Antistasi Ultimate - Stubbhult</Chinesesimp>
                 <Korean>안티스타시 얼티밋 - Stubbhult</Korean>
+                <Spanish>Antistasi Ultimate - Stubbhult</Spanish>
                 <Turkish>Antistasi Ultimate - Stubbhult</Turkish>
             </Key>
             <Key ID="STR_antistasi_mission_info_stubbhult_blurb_text">
                 <Original>Rural warfare, few men, many bunkers</Original>
                 <Chinesesimp>农村战争，士兵稀少，掩体众多</Chinesesimp>
                 <Korean>지방 전쟁, 적은 병력, 많은 벙커</Korean>
+                <Spanish>Guerra rural, pocos hombres, muchos búnkeres</Spanish>
                 <Turkish>Kırsal savaş; az adam, çok sığınak.</Turkish>
             </Key>
             <Key ID="STR_antistasi_mission_info_stubbhult_description_text">
                 <Original>Be the Resistance Leader. Fight against a superior enemy in technology, number, assets and vehicles. Use guerrilla tactics in a totally dynamic world, with around 18 sidemissions, everywhere, anytime, anything.</Original>
                 <Chinesesimp>成为抵抗军领袖。与在技术、数量、资产和车辆方面占优势的敌人作战。在完全动态的世界中运用游击战术，在大约 18 个支线任务中随时随地进行任何任务。</Chinesesimp>
                 <Korean>반군 지도자가 되십시오. 수적 그리고 질적으로 막강한 적과 싸우십시오. 18개의 서브 미션과 함께 언제 어디든지 게릴라 전술을 사용하십시오.</Korean>
+                <Spanish>Sé el líder de la Resistencia. Lucha contra un enemigo superior en tecnología, número, recursos y vehículos. Usa tácticas de guerrilla en un mundo totalmente dinámico, con unas 18 misiones secundarias, en cualquier lugar, en cualquier momento y de cualquier tipo.</Spanish>
                 <Turkish>Direniş Lideri olun. Teknoloji, sayı, varlık ve araç bakımından üstün bir düşmana karşı savaşın. Her yerde, her zaman ve her koşulda, yaklaşık 18 yan görevle tamamen dinamik bir dünyada gerilla taktiklerini kullanın.</Turkish>
             </Key>
             <Key ID="STR_antistasi_mission_info_Pulau_blurb_text">
                 <Original>Revolution on paradise island!</Original>
                 <Chinesesimp>天堂岛上的革命！</Chinesesimp>
                 <Korean>천국의 섬에서의 혁명을!</Korean>
+                <Spanish>¡Revolución en la isla paradisíaca!</Spanish>
                 <Turkish>Cennet adasında devrim!</Turkish>
             </Key>
             <Key ID="STR_antistasi_mission_info_Pulau_description_text">
                 <Original>Be the Resistance Leader. Fight against a superior enemy in technology, number, assets and vehicles. Use guerrilla tactics in a totally dynamic world, with around 18 sidemissions, everywhere, anytime, anything.</Original>
                 <Chinesesimp>成为抵抗军领袖。与在技术、数量、资产和车辆方面占优势的敌人作战。在完全动态的世界中运用游击战术，在大约 18 个支线任务中随时随地进行任何任务。</Chinesesimp>
                 <Korean>반군 지도자가 되십시오. 수적 그리고 질적으로 막강한 적과 싸우십시오. 18개의 서브 미션과 함께 언제 어디든지 게릴라 전술을 사용하십시오.</Korean>
+                <Spanish>Sé el líder de la Resistencia. Lucha contra un enemigo superior en tecnología, número, recursos y vehículos. Usa tácticas de guerrilla en un mundo totalmente dinámico, con unas 18 misiones secundarias, en cualquier lugar, en cualquier momento y de cualquier tipo.</Spanish>
                 <Turkish>Direniş Lideri olun. Teknoloji, sayı, varlık ve araç bakımından üstün bir düşmana karşı savaşın. Her yerde, her zaman ve her koşulda, yaklaşık 18 yan görevle tamamen dinamik bir dünyada gerilla taktiklerini kullanın.</Turkish>
             </Key>
             <Key ID="STR_antistasi_mission_info_Pulau_mapname_short_text">
                 <Original>Antistasi Pulau</Original>
                 <Chinesesimp>Antistasi Pulau</Chinesesimp>
                 <Korean>안티스타시 Pulau</Korean>
+                <Spanish>Antistasi Pulau</Spanish>
                 <Turkish>Antistasi Pulau</Turkish>
             </Key>
             <Key ID="STR_antistasi_mission_info_Pulau_mapname_text">
                 <Original>Antistasi - Liberation of Pulau</Original>
                 <Chinesesimp>Antistasi - Liberation of Pulau</Chinesesimp>
                 <Korean>안티스타시 얼티밋 - Pulau 해방</Korean>
+                <Spanish>Antistasi - Liberation of Pulau</Spanish>
                 <Turkish>Antistasi - Liberation of Pulau</Turkish>
             </Key>
             <Key ID="STR_antistasi_mission_info_Korsac_blurb_text">
                 <Original>We will fight in the Fields!</Original>
+                <Spanish>¡Lucharemos en los campos!</Spanish>
                 <Turkish>Tarlalarda savaşacağız!</Turkish>
             </Key>
             <Key ID="STR_antistasi_mission_info_Korsac_description_text">
                 <Original>Be the Resistance Leader. Fight against a superior enemy in technology, number, assets and vehicles. Use guerrilla tactics in a totally dynamic world, with around 18 sidemissions, everywhere, anytime, anything.</Original>
+                <Spanish>Sé el líder de la Resistencia. Lucha contra un enemigo superior en tecnología, número, recursos y vehículos. Usa tácticas de guerrilla en un mundo totalmente dinámico, con unas 18 misiones secundarias, en cualquier lugar, en cualquier momento y de cualquier tipo.</Spanish>
                 <Turkish>Direniş Lideri olun. Teknoloji, sayı, varlık ve araç bakımından üstün bir düşmana karşı savaşın. Her yerde, her zaman ve her koşulda, yaklaşık 18 yan görevle tamamen dinamik bir dünyada gerilla taktiklerini kullanın.</Turkish>
             </Key>
             <Key ID="STR_antistasi_mission_info_Korsac_mapname_short_text">
                 <Original>Antistasi Ultimate Korsac</Original>
+                <Spanish>Antistasi Ultimate Korsac</Spanish>
                 <Turkish>Antistasi Ultimate Korsac</Turkish>
             </Key>
             <Key ID="STR_antistasi_mission_info_Korsac_mapname_text">
                 <Original>Antistasi Ultimate - Korsac</Original>
+                <Spanish>Antistasi Ultimate - Korsac</Spanish>
                 <Turkish>Antistasi Ultimate - Korsac</Turkish>
             </Key>
             <Key ID="STR_antistasi_mission_info_isladuala3_blurb_text">
               <Original>African Islands under siege</Original>
               <Italian>Isole Africane sott'assedio</Italian>
+              <Spanish>Islas africanas bajo asedio</Spanish>
               <French>Les îles africaines en état de siège</French>
               <Korean>포위당한 아프리카의 섬들</Korean>
               <Russian>Африканские острова в осаде</Russian>
@@ -710,6 +787,7 @@
             <Key ID="STR_antistasi_mission_info_isladuala3_description_text">
               <Original>Be the Resistance Leader. Fight against a superior enemy in technology, number, assets and vehicles. Use guerrilla tactics in a totally dynamic world, with around 18 sidemissions, everywhere, anytime, anything.</Original>
               <Italian>Sii il leader della Resistenza. Combatti contro un nemico superiore in tecnologia, numero, risorse e veicoli. Usa tattiche di guerriglia in un mondo totalmente dinamico, con circa 18 missioni secondarie, ovunque, in qualsiasi momento e con ogni cosa.</Italian>
+              <Spanish>Sé el líder de la Resistencia. Lucha contra un enemigo superior en tecnología, número, recursos y vehículos. Usa tácticas de guerrilla en un mundo totalmente dinámico, con unas 18 misiones secundarias, en cualquier lugar, en cualquier momento y de cualquier tipo.</Spanish>
               <French>Devenez le Chef de la Résistance. Battez-vous contre un ennemi en surnombre et avec un niveau technologique supérieur. Utilisez les tactiques des Guerrillas dans un monde complétement dynamique, avec environ 18 missions secondaires. Quand vous voulez, où vous voulez, avec ce que vous voulez.</French>
               <Korean>반군 지도자가 되어 아군보다 기술, 머릿수, 차량, 자산이 월등한 적과 싸우십시오. 완전 다이나믹한 세계에서 게릴라 전술을 활용하십시오. 약 18개 이상의 사이드 임무가 있으며, 언제 어디서나 무엇이든 가능합니다.</Korean>
               <Russian>Стань лидером Сопротивления. Сражайся против врага превосходящего в технологии, количестве, вооружении и технике. Используй партизанскую тактику в полностью динамическом мире с около 18 побочными заданиями, в любом месте, в любое время, против чего угодно.</Russian>
@@ -721,6 +799,7 @@
             <Key ID="STR_antistasi_mission_info_isladuala3_mapname_short_text">
               <Original>Antistasi Isla Duala</Original>
               <Italian>Antistasi Isla Duala</Italian>
+              <Spanish>Antistasi Isla Duala</Spanish>
               <French>Antistasi Isla Duala</French>
               <Korean>안티스타시 이슬라 듀알라</Korean>
               <Russian>Antistasi Исла Дуала</Russian>
@@ -731,6 +810,7 @@
             <Key ID="STR_antistasi_mission_info_isladuala3_mapname_text">
               <Original>Antistasi - Liberation of Isla Duala</Original>
               <Italian>Antistasi - Liberazione di Isla Duala</Italian>
+              <Spanish>Antistasi - Liberation of Isla Duala</Spanish>
               <French>Antistasi - Libération d'Isla Duala</French>
               <Korean>안티스타시 - 이슬라 듀알라 해방</Korean>
               <Russian>Antistasi - Освобождение Исла Дуала</Russian>
@@ -740,14 +820,17 @@
             </Key>
 			<Key ID="STR_antistasi_mission_info_regero_mapname_text">
                 <Original>Antistasi Ultimate - Kingdom of Regero</Original>
+                <Spanish>Antistasi Ultimate - Kingdom of Regero</Spanish>
                 <Turkish>Antistasi Ultimate - Kingdom of Regero</Turkish>
             </Key>
             <Key ID="STR_antistasi_mission_info_regero_mapname_short_text">
                 <Original>Antistasi Ultimate - Regero</Original>
+                <Spanish>Antistasi Ultimate - Regero</Spanish>
                 <Turkish>Antistasi Ultimate - Regero</Turkish>
             </Key>
             <Key ID="STR_antistasi_mission_info_regero_blurb_text">
                 <Original>It's time for King Petros</Original>
+                <Spanish>Es la hora del rey Petros</Spanish>
                 <Turkish>Kral Petros'un vakti geldi</Turkish>
             </Key>
             <Key ID="STR_antistasi_mission_info_ruha_mapname_text">
@@ -755,6 +838,7 @@
                 <Turkish>Antistasi Ultimate - Ruha</Turkish>
                 <Chinesesimp>Antistasi Ultimate - Ruha</Chinesesimp>
                 <Korean>Antistasi Ultimate - Ruha</Korean>
+                <Spanish>Antistasi Ultimate - Ruha</Spanish>
                 <Russian>Antistasi Ultimate - Руха</Russian>
                 <German>Antistasi Ultimate - Ruha</German>
                 <French>Antistasi Ultimate - Ruha</French>
@@ -764,6 +848,7 @@
                 <Turkish>Antistasi Ultimate Ruha</Turkish>
                 <Chinesesimp>Antistasi Ultimate Ruha</Chinesesimp>
                 <Korean>Antistasi Ultimate Ruha</Korean>
+                <Spanish>Antistasi Ultimate Ruha</Spanish>
                 <Russian>Antistasi Ultimate Ruha</Russian>
                 <German>Antistasi Ultimate Ruha</German>
                 <French>Antistasi Ultimate Ruha</French>
@@ -773,6 +858,7 @@
                 <Turkish>Düzensiz bir Direniş gücüne komuta edin ve sayıca oldukça üstün bir düşmana meydan okuyun. Gölgelerden vurun, operasyonlarını sabote edin ve dinamik görevler ile öngörülemeyen karşılaşmalarla dolu, sürekli değişen bir savaş alanına uyum sağlayın.</Turkish>
                 <Chinesesimp>指挥一支纪律松散的抵抗武装，迎击远比自己强大的敌人。从阴影中发起突袭，破坏敌方行动，并在这片充满动态任务和莫测遭遇、瞬息万变战场上见机行事。</Chinesesimp>
                 <Korean>오합지졸인 저항군을 지휘하여 압도적으로 우세한 적과 맞서 싸우십시오. 어둠 속에서 기습을 감행하고, 적의 작전을 방해하며, 역동적인 임무와 예측할 수 없는 조우로 가득한, 끊임없이 변화하는 전장에 적응해야 합니다.</Korean>
+                <Spanish>Comanda una Resistencia improvisada y enfréntate a un enemigo muy superior. Golpea desde las sombras, sabotea sus operaciones y adáptate a un campo de batalla siempre cambiante, lleno de misiones dinámicas y encuentros imprevisibles.</Spanish>
                 <Russian>Примите командование над разрозненными силами Сопротивления и бросьте вызов значительно превосходящему сопернику. Наносите удары из тени, саботируйте вражеские операции и адаптируйтесь к постоянно меняющимся условиям боя, полным динамических задач и непредсказуемых столкновений.</Russian>
                 <German>Kommandiere eine bunt zusammengewürfelte Widerstandstruppe und nimm es mit einem weitaus überlegenen Feind auf. Schlage aus dem Verborgenen zu, sabotiere feindliche Operationen und passe dich einem ständig wechselnden Schlachtfeld voller dynamischer Missionen und unvorhersehbarer Begegnungen an.</German>
                 <French>Commandez une force de Résistance hétéroclite et affrontez un ennemi largement supérieur. Frappez depuis les ombres, sabotez leurs opérations et adaptez-vous à un champ de bataille en constante évolution, truffé de missions dynamiques et de rencontres imprévisibles.</French>
@@ -782,6 +868,7 @@
                 <Turkish>Finlandiya'nın en iyileri, kontrolü ele geçirmek için savaşın!</Turkish>
                 <Chinesesimp>芬兰的精锐之师，为夺取控制权而战！</Chinesesimp>
                 <Korean>핀란드 최정예 세력, 통제권을 쥐기 위해 투쟁하십시오!</Korean>
+                <Spanish>¡Lo mejor de Finlandia luchando por el control!</Spanish>
                 <Russian>Лучшие сыны Финляндии, боритесь за контроль!</Russian>
                 <German>Finnlands Beste, kämpft um die Kontrolle!</German>
                 <French>La fine fleur de la Finlande, battez-vous pour le contrôle !</French>
@@ -791,6 +878,7 @@
                 <Turkish>Antistasi Ultimate - Al Rayak</Turkish>
                 <Chinesesimp>Antistasi Ultimate - Al Rayak</Chinesesimp>
                 <Korean>Antistasi Ultimate - Al Rayak</Korean>
+                <Spanish>Antistasi Ultimate - Al Rayak</Spanish>
                 <Russian>Antistasi Ultimate - Аль-Раяк</Russian>
                 <German>Antistasi Ultimate - Al Rayak</German>
                 <French>Antistasi Ultimate - Al Rayak</French>
@@ -800,6 +888,7 @@
                 <Turkish>Antistasi Ultimate Al Rayak</Turkish>
                 <Chinesesimp>Antistasi Ultimate Al Rayak</Chinesesimp>
                 <Korean>Antistasi Ultimate Al Rayak</Korean>
+                <Spanish>Antistasi Ultimate Al Rayak</Spanish>
                 <Russian>Antistasi Ultimate Al Rayak</Russian>
                 <German>Antistasi Ultimate Al Rayak</German>
                 <French>Antistasi Ultimate Al Rayak</French>
@@ -809,6 +898,7 @@
                 <Turkish>Güçlü bir işgalci güce karşı bir Direniş hareketi kurun ve yönetin. Her an, her yerde ortaya çıkabilecek düzinelerce dinamik görevin yer aldığı yaşayan bir dünyada gerilla taktikleri, vur-kaç saldırıları ve stratejik planlama kullanın.</Turkish>
                 <Chinesesimp>组建并领导反抗运动，对抗强大的占领军。在充满数十个随时随地可能触发的动态任务的写实世界中，运用游击战术、游击袭扰和战略规划展开对抗。</Chinesesimp>
                 <Korean>강력한 점령군에 맞서 저항 운동을 조직하고 이끄십시오. 언제 어디서나 발생할 수 있는 수십 개의 역동적인 임무가 살아 숨 쉬는 세계에서 게릴라 전술, 치고 빠지기식 습격, 전략적 계획을 활용해야 합니다.</Korean>
+                <Spanish>Crea y lidera un movimiento de Resistencia contra una poderosa fuerza de ocupación. Usa tácticas de guerrilla, ataques relámpago y planificación estratégica en un mundo vivo con decenas de misiones dinámicas que pueden surgir en cualquier lugar y en cualquier momento.</Spanish>
                 <Russian>Создайте и возглавьте движение Сопротивления против могущественных оккупационных сил. Используйте партизанскую тактику, молниеносные налеты и стратегическое планирование в живом мире с десятками динамических миссий, которые могут начаться где угодно и когда угодно.</Russian>
                 <German>Baue eine Widerstandsbewegung gegen eine mächtige Besatzungsmacht auf und führe sie an. Nutze Guerillataktiken, Hit-and-Run-Angriffe und strategische Planung in einer lebendigen Welt mit Dutzenden von dynamischen Missionen, die überall und jederzeit stattfinden können.</German>
                 <French>Bâtissez et dirigez un mouvement de Résistance contre une puissante force d'occupation. Utilisez des tactiques de guérilla, des attaques éclair et une planification stratégique dans un monde vivant proposant des dizaines de missions dynamiques pouvant surgir n'importe où, à tout moment.</French>
@@ -818,6 +908,7 @@
                 <Turkish>Kumu sever misiniz? Öyleyse içinde savaşma vakti!</Turkish>
                 <Chinesesimp>喜欢吃沙子？很好，是时候在漫天黄沙中奋战了！</Chinesesimp>
                 <Korean>모래를 좋아하시나요? 자, 이제 그 속에서 싸울 시간입니다!</Korean>
+                <Spanish>¿Te gusta la arena? Pues toca pelear en ella.</Spanish>
                 <Russian>Любите песок? Что ж, пора за него повоевать!</Russian>
                 <German>Du magst Sand? Tja, Zeit, darin zu kämpfen!</German>
                 <French>Vous aimez le sable ? Eh bien, il est temps de vous y battre !</French>
@@ -827,6 +918,7 @@
                 <Turkish>Antistasi Ultimate - Stozec</Turkish>
                 <Chinesesimp>Antistasi Ultimate - Stozec</Chinesesimp>
                 <Korean>Antistasi Ultimate - Stozec</Korean>
+                <Spanish>Antistasi Ultimate - Stozec</Spanish>
                 <Russian>Antistasi Ultimate - Стожец</Russian>
                 <German>Antistasi Ultimate - Stozec</German>
                 <French>Antistasi Ultimate - Stozec</French>
@@ -836,6 +928,7 @@
                 <Turkish>Antistasi Ultimate Stozec</Turkish>
                 <Chinesesimp>Antistasi Ultimate Stozec</Chinesesimp>
                 <Korean>Antistasi Ultimate Stozec</Korean>
+                <Spanish>Antistasi Ultimate Stozec</Spanish>
                 <Russian>Antistasi Ultimate Stozec</Russian>
                 <German>Antistasi Ultimate Stozec</German>
                 <French>Antistasi Ultimate Stozec</French>
@@ -845,6 +938,7 @@
                 <Turkish>Küçük bir asi grubundan dişli bir Direniş hareketine dönüşün. Gerilla savaşı, stratejik kaynak yönetimi, dinamik etkinlikler ve görevlerle şekillenen bir dünyada; teknoloji, sayı ve teçhizat bakımından üstün olan düşmanları zekanızla alt edin.</Turkish>
                 <Chinesesimp>从一小股起义军一步步成长为令人生畏的反抗运动力量。通过游击战争、战略资源管理，在由动态事件和任务驱使的世界里，用智谋战胜在技术、人数和装备上均占绝对优势的敌人。</Chinesesimp>
                 <Korean>소규모 반군에서 시작해 막강한 저항 운동 세력으로 성장하십시오. 게릴라전, 전략적 자원 관리, 그리고 역동적인 이벤트와 임무로 움직이는 세계를 통해 우수한 기술, 병력, 장비를 지닌 적들을 지략으로 압도해야 합니다.</Korean>
+                <Spanish>Pasa de ser una pequeña banda de insurgentes a un formidable movimiento de Resistencia. Supera con astucia a enemigos con mejor tecnología, más efectivos y mejor equipo mediante la guerra de guerrillas, la gestión estratégica de recursos y un mundo impulsado por eventos y misiones dinámicas.</Spanish>
                 <Russian>Пройдите путь от небольшого отряда повстанцев до грозного движения Сопротивления. Перехитрите врага, превосходящего вас числом, технологиями и оснащением, используя методы партизанской войны, грамотное управление ресурсами и возможности мира, движимого динамическими событиями.</Russian>
                 <German>Steige von einer kleinen Gruppe von Aufständischen zu einer gefürchteten Widerstandsbewegung auf. Überliste Feinde mit überlegener Technologie, Anzahl und Ausrüstung durch Guerillakrieg, strategisches Ressourcenmanagement und eine von dynamischen Ereignissen und Missionen angetriebene Welt.</German>
                 <French>Élevez-vous d'une petite bande d'insurgés à un redoutable mouvement de Résistance. Surprenez des ennemis supérieurs en technologie, en nombre et en équipement grâce à la guerre de guérilla, à la gestion stratégique des ressources et à un monde rythmé par des événements et des missions dynamiques.</French>
@@ -854,6 +948,7 @@
                 <Turkish>Çek Cumhuriyeti'nin topraklarında savaşın!</Turkish>
                 <Chinesesimp>在捷克共和国的田野上纵横驰骋！</Chinesesimp>
                 <Korean>체코 공화국의 들판에서 전투를 벌이십시오!</Korean>
+                <Spanish>¡Lucha en los campos de la República Checa!</Spanish>
                 <Russian>Сражайтесь на полях Чешской Республики!</Russian>
                 <German>Kämpfe auf den Feldern der Tschechischen Republik!</German>
                 <French>Battez-vous dans les plaines de la République tchèque !</French>
@@ -863,6 +958,7 @@
                 <Turkish>Antistasi Ultimate - Isla Abramia</Turkish>
                 <Chinesesimp>Antistasi Ultimate - Isla Abramia</Chinesesimp>
                 <Korean>Antistasi Ultimate - Isla Abramia</Korean>
+                <Spanish>Antistasi Ultimate - Isla Abramia</Spanish>
                 <Russian>Antistasi Ultimate - Исла-Абрамия</Russian>
                 <German>Antistasi Ultimate - Isla Abramia</German>
                 <French>Antistasi Ultimate - Isla Abramia</French>
@@ -872,6 +968,7 @@
                 <Turkish>Antistasi Ultimate Abramia</Turkish>
                 <Chinesesimp>Antistasi Ultimate Abramia</Chinesesimp>
                 <Korean>Antistasi Ultimate Abramia</Korean>
+                <Spanish>Antistasi Ultimate Abramia</Spanish>
                 <Russian>Antistasi Ultimate Abramia</Russian>
                 <German>Antistasi Ultimate Abramia</German>
                 <French>Antistasi Ultimate Abramia</French>
@@ -881,6 +978,7 @@
                 <Turkish>Teknolojik olarak üstün bir düşmana karşı gerilla savaşında Direniş'e liderlik edin. Her oynadığınızda her görevin, savaşın ve fırsatın farklı şekilde geliştiği dinamik bir dünyada mücadele edin.</Turkish>
                 <Chinesesimp>领导抵抗组织，与科技实力占优的劲敌展开一场游击战。在这片动态演变的世界中厮杀，每次游玩的任务、战斗和机遇都将以截然不同的方式铺开。</Chinesesimp>
                 <Korean>기술적으로 우월한 적에 맞서 게릴라전으로 저항군을 이끄십시오. 플레이할 때마다 모든 임무, 전투, 기회가 매번 다르게 전개되는 역동적인 세계에서 싸워나가야 합니다.</Korean>
+                <Spanish>Lidera a la Resistencia en una guerra de guerrillas contra un enemigo tecnológicamente superior. Combate en un mundo dinámico donde cada misión, cada batalla y cada oportunidad se desarrollan de forma distinta en cada partida.</Spanish>
                 <Russian>Возглавьте Сопротивление в партизанской войне против технологически продвинутого противника. Сражайтесь в динамичном мире, где каждая миссия, битва и возможность развиваются совершенно иначе при каждом новом прохождении.</Russian>
                 <German>Führe den Widerstand in einem Guerillakrieg gegen einen technologisch überlegenen Feind an. Kämpfe in einer dynamischen Welt, in der sich jede Mission, jeder Kampf und jede Gelegenheit bei jedem Spielen anders entfaltet.</German>
                 <French>Menez la Résistance dans une guerre de guérilla contre un ennemi technologiquement supérieur. Battez-vous dans un monde dynamique où chaque mission, combat et opportunité se déroule différemment à chaque partie.</French>
@@ -890,6 +988,7 @@
                 <Turkish>Göz alıcı tepeler ve karlı dağlar</Turkish>
                 <Chinesesimp>绝美的丘陵与皑皑白雪覆盖的山峦</Chinesesimp>
                 <Korean>아름다운 구릉과 눈 덮인 산맥</Korean>
+                <Spanish>Colinas preciosas y montañas nevadas</Spanish>
                 <Russian>Живописные холмы и заснеженные горы</Russian>
                 <German>Wunderschöne Hügel und verschneite Berge</German>
                 <French>De magnifiques collines et des montagnes enneigées</French>
@@ -899,6 +998,7 @@
                 <Turkish>Antistasi Ultimate - Republic of Yulakia</Turkish>
                 <Chinesesimp>Antistasi Ultimate - Republic of Yulakia</Chinesesimp>
                 <Korean>Antistasi Ultimate - Republic of Yulakia</Korean>
+                <Spanish>Antistasi Ultimate - Republic of Yulakia</Spanish>
                 <Russian>Antistasi Ultimate - Республика Юлакия</Russian>
                 <German>Antistasi Ultimate - Republic of Yulakia</German>
                 <French>Antistasi Ultimate - Republic of Yulakia</French>
@@ -908,6 +1008,7 @@
                 <Turkish>Antistasi Ultimate Yulakia</Turkish>
                 <Chinesesimp>Antistasi Ultimate Yulakia</Chinesesimp>
                 <Korean>Antistasi Ultimate Yulakia</Korean>
+                <Spanish>Antistasi Ultimate Yulakia</Spanish>
                 <Russian>Antistasi Ultimate Yulakia</Russian>
                 <German>Antistasi Ultimate Yulakia</German>
                 <French>Antistasi Ultimate Yulakia</French>
@@ -917,6 +1018,7 @@
                 <Turkish>Düzensiz bir Direniş gücüne komuta edin ve sayıca oldukça üstün bir düşmana meydan okuyun. Gölgelerden vurun, operasyonlarını sabote edin ve dinamik görevler ile öngörülemeyen karşılaşmalarla dolu, sürekli değişen bir savaş alanına uyum sağlayın.</Turkish>
                 <Chinesesimp>指挥一支纪律松散的抵抗武装，迎击远比自己强大的敌人。从阴影中发起突袭，破坏敌方行动，并在这片充满动态任务和莫测遭遇、瞬息万变战场上见机行事。</Chinesesimp>
                 <Korean>오합지졸인 저항군을 지휘하여 압도적으로 우세한 적과 맞서 싸우십시오. 어둠 속에서 기습을 감행하고, 적의 작전을 방해하며, 역동적인 임무와 예측할 수 없는 조우로 가득한, 끊임없이 변화하는 전장에 적응해야 합니다.</Korean>
+                <Spanish>Comanda una Resistencia improvisada y enfréntate a un enemigo muy superior. Golpea desde las sombras, sabotea sus operaciones y adáptate a un campo de batalla siempre cambiante, lleno de misiones dinámicas y encuentros imprevisibles.</Spanish>
                 <Russian>Примите командование над разрозненными силами Сопротивления и бросьте вызов значительно превосходящему сопернику. Наносите удары из тени, саботируйте вражеские операции и адаптируйтесь к постоянно меняющимся условиям боя, полным динамических задач и непредсказуемых столкновений.</Russian>
                 <German>Kommandiere eine bunt zusammengewürfelte Widerstandstruppe und nimm es mit einem weitaus überlegenen Feind auf. Schlage aus dem Verborgenen zu, sabotiere feindliche Operationen und passe dich einem ständig wechselnden Schlachtfeld voller dynamischer Missionen und unvorhersehbarer Begegnungen an.</German>
                 <French>Commandez une force de Résistance hétéroclite et affrontez un ennemi largement supérieur. Frappez depuis les ombres, sabotez leurs opérations et adaptez-vous à un champ de bataille en constante évolution, truffé de missions dynamiques et de rencontres imprévisibles.</French>
@@ -926,6 +1028,7 @@
                 <Turkish>Baltıklar hiç bu kadar soğuk olmamıştı...</Turkish>
                 <Chinesesimp>波罗的海还从未如此寒冷彻骨……</Chinesesimp>
                 <Korean>발트해 연안이 이토록 추웠던 적은 없었습니다...</Korean>
+                <Spanish>El Báltico nunca había estado tan frío...</Spanish>
                 <Russian>Прибалтика еще никогда не была такой холодной...</Russian>
                 <German>Das Baltikum war noch nie so kalt ...</German>
                 <French>Les Pays baltes n'ont jamais été aussi froids...</French>
@@ -935,6 +1038,7 @@
                 <Turkish>Antistasi Ultimate - Staszow</Turkish>
                 <Chinesesimp>Antistasi Ultimate - Staszow</Chinesesimp>
                 <Korean>Antistasi Ultimate - Staszow</Korean>
+                <Spanish>Antistasi Ultimate - Staszow</Spanish>
                 <Russian>Antistasi Ultimate - Сташув</Russian>
                 <German>Antistasi Ultimate - Staszow</German>
                 <French>Antistasi Ultimate - Staszow</French>
@@ -944,6 +1048,7 @@
                 <Turkish>Antistasi Ultimate Staszow</Turkish>
                 <Chinesesimp>Antistasi Ultimate Staszow</Chinesesimp>
                 <Korean>Antistasi Ultimate Staszow</Korean>
+                <Spanish>Antistasi Ultimate Staszow</Spanish>
                 <Russian>Antistasi Ultimate Staszow</Russian>
                 <German>Antistasi Ultimate Staszow</German>
                 <French>Antistasi Ultimate Staszow</French>
@@ -953,6 +1058,7 @@
                 <Turkish>Çetin bir Direniş'e liderlik edin ve ezici zorluklara karşı göğüs gerin. Gizli saldırılar düzenleyin, düşman operasyonlarını sekteye uğratın ve dinamik tehditlerle dolu, sürekli değişen bir savaş alanında hayatta kalın.</Turkish>
                 <Chinesesimp>率领百折不挠的抵抗力量突击不可战胜的强敌。发起秘密打击，扰乱敌军部署，并在这个充斥着动态威胁、处于持续动态演变中的战场上生存下来。</Chinesesimp>
                 <Korean>투지 넘치는 저항군을 이끌고 압도적인 역경에 맞서십시오. 은밀한 타격을 개시하고, 적의 작전을 교란하며, 역동적인 위협으로 가득 차 끊임없이 요동치는 전장에서 살아남아야 합니다.</Korean>
+                <Spanish>Lidera una Resistencia combativa y enfréntate a una desventaja abrumadora. Lanza ataques encubiertos, desbarata las operaciones enemigas y sobrevive en un campo de batalla en constante cambio, lleno de amenazas dinámicas.</Spanish>
                 <Russian>Возглавьте стойкое Сопротивление перед лицом непреодолимых трудностей. Проводите тайные вылазки, срывайте вражеские планы и выживайте на изменчивом поле боя, полном динамических угроз.</Russian>
                 <German>Führe einen entschlossenen Widerstand an und stelle dich überwältigenden Widrigkeiten. Starte verdeckte Angriffe, störe feindliche Operationen und überlebe ein sich ständig veränderndes Schlachtfeld voller dynamischer Bedrohungen.</German>
                 <French>Dirigez une Résistance acharnée et affrontez des forces disproportionnées. Lancez des frappes clandestines, perturbez les opérations ennemies et survivez sur un champ de bataille en perpétuel mouvement, plein de menaces dynamiques.</French>
@@ -962,6 +1068,7 @@
                 <Turkish>Sahaya inme vakti!</Turkish>
                 <Chinesesimp>靴子落地，即刻开战！</Chinesesimp>
                 <Korean>전장으로 출격하십시오!</Korean>
+                <Spanish>¡Botas sobre el terreno!</Spanish>
                 <Russian>Сапоги на землю, к бою!</Russian>
                 <German>Stiefel auf den Boden!</German>
                 <French>Bottes au sol !</French>
@@ -971,6 +1078,7 @@
                 <Turkish>Antistasi Ultimate - Namalsk</Turkish>
                 <Chinesesimp>Antistasi Ultimate - Namalsk</Chinesesimp>
                 <Korean>Antistasi Ultimate - Namalsk</Korean>
+                <Spanish>Antistasi Ultimate - Namalsk</Spanish>
                 <Russian>Antistasi Ultimate - Намальск</Russian>
                 <German>Antistasi Ultimate - Namalsk</German>
                 <French>Antistasi Ultimate - Namalsk</French>
@@ -980,6 +1088,7 @@
                 <Turkish>Antistasi Ultimate Namalsk</Turkish>
                 <Chinesesimp>Antistasi Ultimate Namalsk</Chinesesimp>
                 <Korean>Antistasi Ultimate Namalsk</Korean>
+                <Spanish>Antistasi Ultimate Namalsk</Spanish>
                 <Russian>Antistasi Ultimate Namalsk</Russian>
                 <German>Antistasi Ultimate Namalsk</German>
                 <French>Antistasi Ultimate Namalsk</French>
@@ -989,6 +1098,7 @@
                 <Turkish>Zayıf durumdaki bir Direniş gücünün komutasını ele alın ve üstün bir düşmana meydan okuyun. Yaşayan ve öngörülemeyen bir savaş alanında gidişatı tersine çevirmek için gizlilik, sabotaj ve uyum sağlama yeteneğinizi kullanın.</Turkish>
                 <Chinesesimp>接管一支处于弱势的反抗组织，向强敌发起严峻挑战。借助潜行、破坏以及强大的应变能力，在充满变数且生机勃勃的交战区中扭转乾坤。</Chinesesimp>
                 <Korean>열세에 놓인 저항군의 지휘권을 잡고 우세한 적에게 도전하십시오. 살아 숨 쉬며 예측할 수 없는 전장에서 전세를 뒤집기 위해 은밀함, 파괴 공작, 그리고 뛰어난 적응력을 발휘해야 합니다.</Korean>
+                <Spanish>Toma el mando de una Resistencia en desventaja y planta cara a un enemigo superior. Usa el sigilo, el sabotaje y la adaptación para dar la vuelta a la situación en una zona de guerra viva e impredecible.</Spanish>
                 <Russian>Возьмите под контроль отстающие силы Сопротивления и бросьте вызов превосходящему противнику. Используйте скрытность, саботаж и гибкость тактики, чтобы переломить ход событий в живой, непредсказуемой зоне боевых действий.</Russian>
                 <German>Übernimm das Kommando über eine unterlegene Widerstandstruppe und fordere einen überlegenen Feind heraus. Nutze Tarnung, Sabotage und Anpassungsfähigkeit, um das Blatt in einem lebendigen, unvorhersehbaren Kriegsgebiet zu wenden.</German>
                 <French>Prenez le commandement d'une force de Résistance outsider et défiez un ennemi supérieur. Utilisez la furtivité, le sabotage et l'adaptabilité pour inverser la tendance dans une zone de guerre vivante et imprévisible.</French>
@@ -998,18 +1108,22 @@
                 <Turkish>Dondurucu bir soğuk, göz kamaştırıcı bir güzellik.</Turkish>
                 <Chinesesimp>凛冽刺骨，却美得令人窒息。</Chinesesimp>
                 <Korean>눈이 멀 정도로 아름다운 지독한 추위.</Korean>
+                <Spanish>Un frío glacial, de una belleza cegadora.</Spanish>
                 <Russian>Лютый холод, ослепительно прекрасный.</Russian>
                 <German>Die bittere Kälte, blendend schön.</German>
                 <French>Le froid glacial, d'une beauté aveuglante.</French>
             </Key>
 			<Key ID="STR_antistasi_mission_info_Armavir_mapname_short_text">
                 <Original>Antistasi Ultimate - Armavir</Original>
+                <Spanish>Antistasi Ultimate - Armavir</Spanish>
             </Key>
             <Key ID="STR_antistasi_mission_info_Armavir_mapname_text">
                 <Original>Antistasi Ultimate - Armavir</Original>
+                <Spanish>Antistasi Ultimate - Armavir</Spanish>
             </Key>
             <Key ID="STR_antistasi_mission_info_Armavir_blurb_text">
                 <Original>Whether we wanted it or not, we stepped into a war with occupants and invaders on Armavir.</Original>
+                <Spanish>Lo quisiéramos o no, entramos en una guerra con ocupantes e invasores en Armavir.</Spanish>
             </Key>
             <Key ID="STR_antistasi_mission_info_ruegen_mapname_short_text">
                 <Original>Antistasi Ultimate - Ruegen</Original>
@@ -1046,6 +1160,7 @@
                 <Original>Automatically load last valid save after delay</Original>
                 <Russian>Автоматически загружать последнее сохранение после задержки</Russian>
                 <Korean>딜레이 후 마지막으로 유효한 저장을 자동으로 로드</Korean>
+                <Spanish>Cargar automáticamente la última partida válida tras un retraso</Spanish>
                 <French>Chargement automatique de la dernière sauvegarde valide après un délai</French>
                 <Chinesesimp>延迟后自动加载上次有效保存</Chinesesimp>
                 <Turkish>Belirli bir gecikmeden sonra son geçerli kaydı otomatik olarak yükle</Turkish>
@@ -1054,6 +1169,7 @@
                 <Original>No automatic load</Original>
                 <Russian>Не загружать автоматически</Russian>
                 <Korean>자동 로드 없음</Korean>
+                <Spanish>Sin carga automática</Spanish>
                 <French>Pas de chargement automatique</French>
                 <Chinesesimp>不自动加载</Chinesesimp>
                 <Turkish>Otomatik yükleme yok</Turkish>
@@ -1062,6 +1178,7 @@
                 <Original>1 min</Original>
                 <Russian>1 мин</Russian>
                 <Korean>1분</Korean>
+                <Spanish>1 min</Spanish>
                 <French>1 min</French>
                 <Chinesesimp>1分钟</Chinesesimp>
                 <Turkish>1 dk</Turkish>
@@ -1070,6 +1187,7 @@
                 <Original>2 min</Original>
                 <Russian>2 мин</Russian>
                 <Korean>2분</Korean>
+                <Spanish>2 min</Spanish>
                 <French>2 min</French>
                 <Chinesesimp>2分钟</Chinesesimp>
                 <Turkish>2 dk</Turkish>
@@ -1078,6 +1196,7 @@
                 <Original>3 min</Original>
                 <Russian>3 мин</Russian>
                 <Korean>3분</Korean>
+                <Spanish>3 min</Spanish>
                 <French>3 min</French>
                 <Chinesesimp>3分钟</Chinesesimp>
                 <Turkish>3 dk</Turkish>
@@ -1086,6 +1205,7 @@
                 <Original>5 min</Original>
                 <Russian>5 мин</Russian>
                 <Korean>5분</Korean>
+                <Spanish>5 min</Spanish>
                 <French>5 min</French>
                 <Chinesesimp>5分钟</Chinesesimp>
                 <Turkish>5 dk</Turkish>
@@ -1094,6 +1214,7 @@
                 <Original>10 min</Original>
                 <Russian>10 мин</Russian>
                 <Korean>10분</Korean>
+                <Spanish>10 min</Spanish>
                 <French>10 min</French>
                 <Chinesesimp>10分钟</Chinesesimp>
                 <Turkish>10 dk</Turkish>
@@ -1102,6 +1223,7 @@
                 <Original>Logging Level during setup</Original>
                 <Russian>Уровень логгирования</Russian>
                 <Korean>설정 중 로그 작성 수준</Korean>
+                <Spanish>Nivel de registro durante la configuración</Spanish>
                 <French>Niveau d'enregistrement</French>
                 <Chinesesimp>设置期间的日志记录级别</Chinesesimp>
                 <Turkish>Kurulum sırasındaki günlükleme (log) seviyesi</Turkish>
@@ -1110,6 +1232,7 @@
                 <Original>Error</Original>
                 <Russian>Ошибки</Russian>
                 <Korean>오류</Korean>
+                <Spanish>Error</Spanish>
                 <French>Erreurs</French>
                 <Chinesesimp>错误</Chinesesimp>
                 <Turkish>Hata</Turkish>
@@ -1118,6 +1241,7 @@
                 <Original>Info</Original>
                 <Russian>Информация</Russian>
                 <Korean>정보</Korean>
+                <Spanish>Información</Spanish>
                 <French>Informations</French>
                 <Chinesesimp>信息</Chinesesimp>
                 <Turkish>Bilgi</Turkish>
@@ -1126,6 +1250,7 @@
                 <Original>Debug</Original>
                 <Russian>Дебаг</Russian>
                 <Korean>디버그</Korean>
+                <Spanish>Depuración</Spanish>
                 <French>Débogage</French>
                 <Chinesesimp>开发</Chinesesimp>
                 <Turkish>Hata Ayıklama</Turkish>
@@ -1134,6 +1259,7 @@
                 <Original>Verbose</Original>
                 <Russian>Подробный</Russian>
                 <Korean>세부 정보</Korean>
+                <Spanish>Detallado</Spanish>
                 <French>Détaillé</French>
                 <Chinesesimp>详细</Chinesesimp>
                 <Turkish>Ayrıntılı</Turkish>
@@ -1142,6 +1268,7 @@
                 <Original>Log debug console use during setup</Original>
                 <Russian>Логгировать использование дебаг консоли</Russian>
                 <Korean>설정 중 디버그 콘솔 사용 기록하기</Korean>
+                <Spanish>Registrar el uso de la consola de depuración durante la configuración</Spanish>
                 <French>Utilisation de la console de débogage pendant l'installation</French>
                 <Chinesesimp>在设置过程中记录调试控制台的使用情况</Chinesesimp>
                 <Turkish>Kurulum sırasında hata ayıklama konsolu kullanımını günlüğe kaydet</Turkish>
@@ -1150,6 +1277,7 @@
                 <Original>None</Original>
                 <Russian>Не логировать никого</Russian>
                 <Korean>없음</Korean>
+                <Spanish>Ninguno</Spanish>
                 <French>N'enregistrez personne</French>
                 <Chinesesimp>无</Chinesesimp>
                 <Turkish>Hiçbiri</Turkish>
@@ -1158,6 +1286,7 @@
                 <Original>All none dev</Original>
                 <Russian>Логгировать не-разработчиков</Russian>
                 <Korean>모두(개발자 버전 제외)</Korean>
+                <Spanish>Todos menos dev</Spanish>
                 <French>Enregistrer les non-développeurs</French>
                 <Chinesesimp>除开发外</Chinesesimp>
                 <Turkish>Geliştirici olmayanların tümü</Turkish>
@@ -1166,6 +1295,7 @@
                 <Original>Dev</Original>
                 <Russian>Логгировать всех</Russian>
                 <Korean>개발자 버전</Korean>
+                <Spanish>Dev</Spanish>
                 <French>Enregistrer tout le monde</French>
                 <Chinesesimp>开发</Chinesesimp>
                 <Turkish>Geliştirici</Turkish>
