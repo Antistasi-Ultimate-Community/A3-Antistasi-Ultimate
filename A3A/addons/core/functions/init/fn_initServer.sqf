@@ -121,10 +121,25 @@ private _startType = A3A_saveData get "startType";
 if (_startType != "new") then
 {
     // Setup save info
-    A3A_saveTarget = [A3A_saveData get "serverID", A3A_saveData get "gameID", worldName];
-    // Sanity checks? hmm
+    private _serverID = A3A_saveData get "serverID";
+    private _campaignID = A3A_saveData get "gameID";
+    A3A_saveTarget = [_serverID, _campaignID, worldName];
 
-    Info_1("Loading campaign with ID %1", A3A_saveData get "gameID");
+    if (_serverID isEqualType false) then {
+        A3A_saveDataHM = fromJSON (missionProfileNamespace getVariable format ["savedata%1", _campaignID]);
+    } else {
+        A3A_saveDataHM = fromJSON (profileNamespace getVariable format["savedata%1%2%3%4",_serverID,_campaignID,"Antistasi",worldName]);
+    };
+
+    // * if this hashmap does not exist, we know we're loading an old save not stored as JSON
+    // * we clear the campaignID so that a new one will get generated for the JSON-saved version of the game
+    // * this way, we maintain save load compatibility with old versions of the mod, but new data will only get saved to the new JSON format
+    if (isNil "A3A_saveDataHM") then {
+        private _newID = [] call A3A_fnc_generateSaveID;
+        A3A_saveTarget set [1, _newID];
+    };
+
+    Info_1("Loading campaign with ID %1", _campaignID);
 
     // Do the actual game loading
     call A3A_fnc_loadServer;
@@ -199,10 +214,7 @@ if (_startType != "load") then {
     private _serverID = profileNamespace getVariable ["ss_serverID", ""];
     _serverID = [_serverID, false] select (A3A_saveData get "useNewNamespace");
 
-    // Create new campaign ID, avoiding collisions
-    private _allIDs = call A3A_fnc_collectSaveData apply { _x get "gameID" };
-    private _newID = str(floor(random(90000) + 10000));
-    while { _newID in _allIDs } do { _newID = str(floor(random(90000) + 10000)) };
+    private _newID = [] call A3A_fnc_generateSaveID;
 
     Info_1("Creating new campaign with ID %1", _newID);
 

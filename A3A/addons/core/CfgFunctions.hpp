@@ -639,6 +639,7 @@ class CfgFunctions
             class loadPlayer {};
             class loadServer {};
             class savePlayer {};
+            class generateSaveID {};
             class getObjectSaveData {};
             class getStatVariable {};
             class loadStat {};

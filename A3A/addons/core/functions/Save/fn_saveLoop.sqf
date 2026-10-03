@@ -33,10 +33,15 @@ if assert(_saveDataPlugins isEqualType createHashMap) then {
 autoSaveTime = time + autoSaveInterval;
 
 // Select save namespace
-A3A_saveTarget params ["_serverID", "_campaignID"];
+A3A_saveTarget params ["_serverID", "_campaignID", "_worldName"];
 private _saveToNewNamespace = _serverID isEqualType false;
 if (!_saveToNewNamespace) then { profileNamespace setVariable ["ss_serverID", _serverID] };			// backwards compatibility
 private _namespace = [profileNamespace, missionProfileNamespace] select _saveToNewNamespace;
+
+// Create a temporary hashmap to hold the saveData before JSON-serializing and storing it
+A3A_saveDataHM = createHashMap;
+A3A_saveDataHM set ["serverID", _serverID];
+A3A_saveDataHM set ["campaignID", _campaignID];
 
 // Build server-to-client wait map
 private _syncStartTick = diag_tickTime;
@@ -273,7 +278,14 @@ if (!isNil "isRallyPointPlaced" && {isRallyPointPlaced}) then {
 
 ["resourcesFIA", _resourcesBackground] call A3A_fnc_setStatVariable;
 ["hr", _hrBackground] call A3A_fnc_setStatVariable;
-["HR_Garage", [] call HR_GRG_fnc_getSaveData] call A3A_fnc_setStatVariable;
+
+// Convert garage data to JSON-serializable format
+([] call HR_GRG_fnc_getSaveData) params ["_garage", "_UID", "_sources"];
+_garage = _garage apply {
+	(toArray _x) params ["_keys", "_values"];
+	(_keys apply {str _x}) createHashMapFromArray _values
+};
+["HR_Garage", [_garage, _UID, _sources]] call A3A_fnc_setStatVariable;
 
 _arrayEst = [];
 
@@ -404,13 +416,13 @@ private _mineChance = 500 / (500 max count allMines);
 	_dirMine = getDir _x;
 	_detected = [];
 	if (_x mineDetectedBy teamPlayer) then {
-		_detected pushBack teamPlayer
+		_detected pushBack 2
 	};
 	if (_x mineDetectedBy Occupants) then {
-		_detected pushBack Occupants
+		_detected pushBack 1
 	};
 	if (_x mineDetectedBy Invaders) then {
-		_detected pushBack Invaders
+		_detected pushBack 0
 	};
 	_arrayMines pushBack [_typeMine,_posMine,_detected,_dirMine];
 } forEach allMines;
@@ -594,7 +606,13 @@ _fuelAmountleftArray = [];
 // Save third-party plugin data
 ["saveDataPlugins", _saveDataPlugins] call A3A_fnc_setStatVariable;
 
+// JSON-serialize the save data and write to the selected namespace
+private _serializedData = toJson A3A_saveDataHM;
+["savedata", _serializedData, true] call A3A_fnc_setStatVariable;
+
 if (_saveToNewNamespace) then { saveMissionProfileNamespace } else { saveProfileNamespace };
+
+[CBA_EVENT_SERVER_GAME_SAVED, [_saveToNewNamespace, _serverID, _campaignID, _worldName]] call FUNCMAIN(triggerLocalEvent);
 
 savingServer = false;
 _saveHintText = [
