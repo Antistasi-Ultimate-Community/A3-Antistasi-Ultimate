@@ -7,7 +7,9 @@ if (isServer) then {
 
 	// Tell third party mods we're loading the game. Do this very early in case
 	// they attempt to overwrite stuff we're loading later below.
-	private _saveDataPlugins = ["saveDataPlugins"] call A3A_fnc_getStatVariable;
+	["saveDataPlugins"] call A3A_fnc_getStatVariable;
+	private _saveDataPlugins = RETNIL(saveDataPlugins);
+
 	if (isNil "_saveDataPlugins") then {
 		_saveDataPlugins = createHashMap;
 	} else {

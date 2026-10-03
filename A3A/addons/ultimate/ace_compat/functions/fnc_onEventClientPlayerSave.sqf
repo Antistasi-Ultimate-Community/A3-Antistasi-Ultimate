@@ -29,10 +29,12 @@ if !assert(params[
 
 private _toSave = createHashMap;
 
-if !([player] call ace_medical_status_fnc_hasStableVitals) then {
-    WARNING("Player does not have stable vitals, skipping medical state serialization");
-} else {
-    _toSave set["medical_state", player call ace_medical_fnc_serializeState];
+if (A3A_hasACEMedical) then {
+    if !([player] call ace_medical_status_fnc_hasStableVitals) then {
+        WARNING("Player does not have stable vitals, skipping medical state serialization");
+    } else {
+        _toSave set["medical_state", player call ace_medical_fnc_serializeState];
+    };
 };
 
 _toSave set["acex_field_rations_hunger", player getVariable["acex_field_rations_hunger", 0]];
