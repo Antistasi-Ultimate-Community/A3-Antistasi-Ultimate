@@ -295,6 +295,69 @@
 #define CBA_EVENT_SERVER_ENTITY_POSTMORTEM QUOTE(TRIPLES(PREFIX_CONST,event,serverEntityPostMortem))
 
 /* -------------------------------------------
+    Event: CBA_EVENT_SERVER_GAME_LOAD
+        Triggered when the game is loaded on the server.
+
+        Third-party plugins (i.e., extenders) should retrieve their previously
+        stored save data from this event's hashmap parameter.
+
+    See:
+        CBA_EVENT_SERVER_GAME_SAVE
+
+    Parameters:
+        0: saveData - save data for plugins <HASHMAP>
+
+    Broadcast:
+        No
+
+    Sent by:
+        Server
+    
+    Recipients:
+        Server
+------------------------------------------- */
+#define CBA_EVENT_SERVER_GAME_LOAD QUOTE(TRIPLES(PREFIX_CONST,event,serverGameLoad))
+
+/* -------------------------------------------
+    Event: CBA_EVENT_SERVER_GAME_SAVE
+        Triggered when the game is saved on the server.
+
+        The hashmap parameter should be written to by any third-party plugins
+        (read: extenders) that need to save their custom data. Refrain from
+        using generic keys like "position" or "object" to avoid conflicts with
+        other plugins, rather, used _tagged_ values.
+
+    Parameters:
+        0: saveData - save data for plugins <HASHMAP>
+
+    See:
+        CBA_EVENT_SERVER_GAME_LOAD
+
+    Example:
+        (begin example)
+        [CBA_EVENT_SERVER_GAME_SAVE, {
+            if !assert(params[
+                ["_saveData", nil, [createHashMap]]
+            ]) exitWith {};
+
+            // _PLEEEASE_ don't use "MYTAG" either; think of something else
+            _saveData setVariable["MYTAG_object", someValue];
+            _saveData setVariable["MYTAG_position", someValue];
+        }] call A3A_fnc_addEventHandler;
+        (end example)
+
+    Broadcast:
+        No
+
+    Sent by:
+        Server
+    
+    Recipients:
+        Server
+------------------------------------------- */
+#define CBA_EVENT_SERVER_GAME_SAVE QUOTE(TRIPLES(PREFIX_CONST,event,serverGameSave))
+
+/* -------------------------------------------
     Event: CBA_EVENT_SERVER_INIT_AI_UNIT
         Triggered when an AI unit is initialized on the server.
 
@@ -472,5 +535,23 @@
         "locationSpawned" event
 ------------------------------------------- */
 #define CBA_EVENT_SERVER_SPAWN_LOCATION QUOTE(TRIPLES(PREFIX_CONST,event,serverSpawnLocation))
+
+/* -------------------------------------------
+    Event: CBA_EVENT_SERVER_STARTUP
+        Triggered very early in `fn_initServer.sqf` when the server starts up.
+
+    Parameters:
+        None
+
+    Broadcast:
+        No
+
+    Sent by:
+        Server
+    
+    Recipients:
+        Server
+------------------------------------------- */
+#define CBA_EVENT_SERVER_STARTUP QUOTE(TRIPLES(PREFIX_CONST,event,serverStartup))
 
 #endif // __HAVE_CBA_EVENTS_HPP__
