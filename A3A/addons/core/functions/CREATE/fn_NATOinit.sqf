@@ -1,4 +1,7 @@
 /*  Inits the given unit with all needed data, flags and weapons
+*   Coalition integration:
+*      If a unit uses a generated coalition type, faces, voices and insignia
+*      are read from that faction instead of the primary side faction.
 *   Params:
 *       _unit : OBJECT : The unit that needs to be initialized
 *       _marker : STRING : The name of the marker (default "")
@@ -23,6 +26,33 @@ private _side = side (group _unit);
 private _isRival = _unit getVariable ["isRival", false];
 private _unitPrefix = _unit getVariable ["unitPrefix", ""];
 private _faction = Faction(_side);
+private _thorneCoalitionFactionFound = false;
+
+// Coalition aliases are registered with an exact type -> faction map.
+// This does not care whether Occupants/Invaders are WEST/EAST, so
+// "Switch enemy sides" cannot change the identity result.
+if (!isNil "A3A_coalitionTypeFactionMap" && {!isNil "_type"}) then {
+    private _coalitionFaction = A3A_coalitionTypeFactionMap getOrDefault [
+        _type,
+        createHashMap
+    ];
+
+    if (
+        _coalitionFaction isEqualType createHashMap
+        && {count _coalitionFaction > 0}
+    ) then {
+        _faction = _coalitionFaction;
+        _thorneCoalitionFactionFound = true;
+
+        diag_log format [
+            "[A3A Coalition Identity] NATOinit type='%1' faction='%2' side=%3",
+            _type,
+            _faction getOrDefault ["name", "UNKNOWN"],
+            _side
+        ];
+    };
+};
+
 _unit setVariable ["originalSide", _side];          // used for delete handler, which is local
 
 if (isNil "_type") then {
@@ -100,7 +130,7 @@ private _face = nil;
 private _voice = nil;
 private _insignia = nil;
 
-if (_isRival) then {
+if (_isRival && {!_thorneCoalitionFactionFound}) then {
     _regularFaces = A3A_faction_riv get "faces";
     _regularVoices = A3A_faction_riv get "voices";
     _regularInsignia = A3A_faction_riv get "insignia";
@@ -113,32 +143,33 @@ if (_isRival) then {
 switch (true) do {
     case (_isRival): {
         _skill = _skill * 0.9;
-        _face = selectRandom (A3A_faction_riv get "faces");
-        _voice = selectRandom (A3A_faction_riv get "voices");
+        _face = selectRandom _regularFaces;
+        _voice = selectRandom _regularVoices;
+        _insignia = selectRandom _regularInsignia;
     };
     case (_unitPrefix isEqualTo "militia"): {
         _skill = _skill * 0.7;
-        _face = selectRandom (_faction getOrDefault ["milFaces", _regularFaces]);
-        _voice = selectRandom (_faction getOrDefault ["milVoices", _regularVoices]);
-        _insignia = selectRandom (_faction getOrDefault ["milInsignia", _regularInsignia]);
+        _face = [_faction, "milFaces", "faces"] call _fnc_selectFactionArrayValue;
+        _voice = [_faction, "milVoices", "voices"] call _fnc_selectFactionArrayValue;
+        _insignia = [_faction, "milInsignia", "insignia"] call _fnc_selectFactionArrayValue;
     };
     case (_unitPrefix isEqualTo "police"): {
         _skill = _skill * 0.5;
         _face = selectRandom (_faction getOrDefault ["polFaces", _regularFaces]);
         _voice = selectRandom (_faction getOrDefault ["polVoices", _regularVoices]);
-        _insignia = selectRandom (_faction getOrDefault ["polInsignia", _regularInsignia]);
+        _insignia = [_faction, "polInsignia", "insignia"] call _fnc_selectFactionArrayValue;
     };
     case (_unitPrefix isEqualTo "elite"): {
         _skill = _skill * 1.1;
         _face = selectRandom (_faction getOrDefault ["eliteFaces", _regularFaces]);
         _voice = selectRandom (_faction getOrDefault ["eliteVoices", _regularVoices]);
-        _insignia = selectRandom (_faction getOrDefault ["eliteInsignia", _regularInsignia]);
+        _insignia = [_faction, "eliteInsignia", "insignia"] call _fnc_selectFactionArrayValue;
     };
     case (_unitPrefix isEqualTo "SF"): {
         _skill = _skill * 1.2;
         _face = selectRandom (_faction getOrDefault ["sfFaces", _regularFaces]);
         _voice = selectRandom (_faction getOrDefault ["sfVoices", _regularVoices]);
-        _insignia = selectRandom (_faction getOrDefault ["sfInsignia", _regularInsignia]);
+        _insignia = [_faction, "sfInsignia", "insignia"] call _fnc_selectFactionArrayValue;
     };
     case ("Traitor" in _type): {
         _face = selectRandom (A3A_faction_reb get "faces");
@@ -147,13 +178,17 @@ switch (true) do {
     default {
         _face = selectRandom _regularFaces;
         _voice = selectRandom _regularVoices;
-        _insignia = selectRandom _regularInsignia;
+        _insignia = [_faction, "insignia", "insignia"] call _fnc_selectFactionArrayValue;
     };
 };
 [_unit, createHashMapFromArray [["face", _face], ["speaker", _voice], ["pitch", (random [0.9, 1, 1.1])]]] call A3A_fnc_setIdentity;
 _unit setSkill _skill;
-if (!isNil "_insignia" && {_insignia isNotEqualTo ""}) then {
-   [_unit, _insignia] call BIS_fnc_setUnitInsignia;
+
+// Removing spawned insignia to make sure correct one is used
+[_unit, ""] call BIS_fnc_setUnitInsignia;
+
+if (_insignia != "") then {
+    [_unit, _insignia] call BIS_fnc_setUnitInsignia;
 };
 
 //Adjusts squadleaders with improved skill
@@ -278,7 +313,4 @@ if (_unit == gunner objectParent _unit or {(secondaryWeapon _unit) in allAA}) th
         if (!isNull driver _x) then { _unit reveal [_x, 1.5] };
     } forEach (_unit nearEntities ["Air", distanceSPWN*1]);
 };
-
-[CBA_EVENT_SERVER_INIT_AI_UNIT, [_unit, _side, _marker, _unit getVariable "spawner"]] call FUNCMAIN(triggerServerEvent);
-
-nil;
+["AIInit", [_unit, _side, _marker, _unit getVariable "spawner"]] call EFUNC(Events,triggerEvent);

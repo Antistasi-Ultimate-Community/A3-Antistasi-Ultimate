@@ -8,6 +8,10 @@
  *    28/07/2023: For example, adding a webknights elite to a squad of OPTRE elites will cause the OPTRE elites to not fire at all. Some mods don't do this, some do!
  *    28/07/2023: Make sure you test it if you do. Helps avoid issues like "Why does half of the squad suddenly become pacifists?"
  *    This version overwrites the Anti Plus version of the createUnit command! hooray!
+ *    03/10/2026: Coalition integration:
+ *    Generated coalition unit types retain a direct mapping to the faction
+ *    that registered them. The mapping is used only for random identity generation;
+ *    normal AU unit creation remains unchanged.
  * Params:
  *    _group - Group to add the AI: Group
  *    _type - A classname in CfgVehicles, or a unit loadout array: String or Array
@@ -72,8 +76,24 @@ if !(_unitDefinition isEqualTo []) exitWith {
     };
 	_unit setVariable ["unitType", _type, true];
 
+	private _identityFaction = Faction(side _unit);
+
+	if (!isNil "A3A_coalitionTypeFactionMap") then {
+		private _coalitionFaction = A3A_coalitionTypeFactionMap getOrDefault [
+			_type,
+			createHashMap
+		];
+
+		if (
+			_coalitionFaction isEqualType createHashMap
+			&& {count _coalitionFaction > 0}
+		) then {
+			_identityFaction = _coalitionFaction;
+		};
+	};
+
 	private _identity = if (isNil "_identity") then {
-		[Faction(side _unit), _type] call A3A_fnc_createRandomIdentity;
+		[_identityFaction, _type] call A3A_fnc_createRandomIdentity;
 	} else {
 		_identity;
 	};
