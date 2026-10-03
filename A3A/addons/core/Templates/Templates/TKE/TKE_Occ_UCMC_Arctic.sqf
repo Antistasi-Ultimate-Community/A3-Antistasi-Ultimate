@@ -4,15 +4,12 @@
 
 #include "..\..\script_template_common.hpp" // Do NOT remove or else you will not be able to use any macros such as QPATH
 
-// Reference LLSTRING in example_faction\stringtable.xml
 ["name", "UCMC"] call _fnc_saveToTemplate; // Name of our faction, in game. NOT for the selection screen.
 ["spawnMarkerName", "UCMC Carrier"] call _fnc_saveToTemplate; // Name of the spawn corridor.
 
 ["flag", DEFAULT_FLAG] call _fnc_saveToTemplate; // Physical flag object classname. Rarely needs to change.
 ["flagTexture", QPATHTOFOLDER(Templates\Templates\TKE\images\flag_ucn_co.paa)] call _fnc_saveToTemplate; // Texture path applied to the physical flag. Can point to external files.
 ["flagMarkerType", "a3u_flag_tke_ucn"] call _fnc_saveToTemplate; // Marker from CfgMarkers.
-
-// Maybe swap ammobox/surrender crate/equipment box
 
 ///////////////////////////
 //       Vehicles       //
@@ -686,7 +683,6 @@ private _riflemanTemplate = {
     ["vests"] call _fnc_setVest;
     ["uniforms"] call _fnc_setUniform;
 
-
     [selectRandom ["rifles", "riflesCarbine"]] call _fnc_setPrimary;
     ["primary", 6] call _fnc_addMagazines;
 
@@ -856,7 +852,7 @@ private _latTemplate = {
     ["facewear"] call _fnc_setFacewear;
     ["vests"] call _fnc_setVest;
     ["uniforms"] call _fnc_setUniform;
-    [["atBackpacks", "backpacks"] call _fnc_fallback] call _fnc_setBackpack;
+    [["backpacksAT", "backpacks"] call _fnc_fallback] call _fnc_setBackpack;
 
     [selectRandom ["rifles", "riflesCarbine"]] call _fnc_setPrimary;
     ["primary", 6] call _fnc_addMagazines;
@@ -885,7 +881,7 @@ private _atTemplate = {
     ["facewear"] call _fnc_setFacewear;
     ["vests"] call _fnc_setVest;
     ["uniforms"] call _fnc_setUniform;
-    [["atBackpacks", "backpacks"] call _fnc_fallback] call _fnc_setBackpack;
+    [["backpacksAT", "backpacks"] call _fnc_fallback] call _fnc_setBackpack;
 
     [selectRandom ["rifles", "riflesCarbine"]] call _fnc_setPrimary;
     ["primary", 5] call _fnc_addMagazines;
@@ -911,7 +907,7 @@ private _aaTemplate = {
     ["facewear"] call _fnc_setFacewear;
     ["vests"] call _fnc_setVest;
     ["uniforms"] call _fnc_setUniform;
-    [["atBackpacks", "backpacks"] call _fnc_fallback] call _fnc_setBackpack;
+    [["backpacksAT", "backpacks"] call _fnc_fallback] call _fnc_setBackpack;
 
     [selectRandom ["rifles", "riflesCarbine"]] call _fnc_setPrimary;
     ["primary", 5] call _fnc_addMagazines;
@@ -964,7 +960,6 @@ private _marksmanTemplate = {
     [["vestsSniper", "vests"] call _fnc_fallback] call _fnc_setVest;
     [["uniformsSniper", "uniforms"] call _fnc_fallback] call _fnc_setUniform;
 
-
     ["riflesMarksman"] call _fnc_setPrimary;
     ["primary", 6] call _fnc_addMagazines;
 
@@ -990,7 +985,6 @@ private _sniperTemplate = {
     ["facewear"] call _fnc_setFacewear;
     [["vestsSniper","vests"] call _fnc_fallback] call _fnc_setVest;
     [["uniformsSniper","uniforms"] call _fnc_fallback] call _fnc_setUniform;
-
 
     [["riflesSniper", "riflesMarksman"] call _fnc_fallback] call _fnc_setPrimary;
     ["primary", 6] call _fnc_addMagazines;

@@ -546,6 +546,7 @@ class planeLoadouts
             mainGun = "TKE_Ext_Cannon_30mm";
             missileLauncher[] = {"missiles_SCALPEL", "missiles_SCALPEL"};
         };
+        class TKE_Ext_GUSA_MDTF_A : TKE_Ext_GUSA_UCMC {};
         class AFR_I_AAF_RHSGREF_A29B_Grey
         {
             loadout[] = {"rhs_mag_AGM114K_2_plane","rhs_mag_FFAR_7_USAF","rhs_mag_mk82","rhs_mag_FFAR_7_USAF","rhs_mag_AGM114N_2_plane","rhsusf_ANALE40_CMFlare_Chaff_Magazine_x2"};
@@ -1137,6 +1138,7 @@ class planeLoadouts
             mainGun = "CMFlareLauncher_Singles";
             missileLauncher[] = {"weapon_AMRAAMLauncher","weapon_BIM9xLauncher"};
         };
+        class TKE_Ext_GUSM_MDTF_A : TKE_Ext_GUSM_UCMC {};
         class AFR_I_AAF_Gripen_Fighter_Grey
         {
             loadout[] = {"magazine_Fighter04_Gun20mm_AA_x250","Laserbatteries","240Rnd_CMFlare_Chaff_Magazine","PylonMissile_Missile_BIM9X_x1","PylonMissile_Missile_BIM9X_x1","PylonRack_Missile_BIM9X_x1","PylonRack_Missile_BIM9X_x1","PylonRack_Missile_AMRAAM_C_x2","PylonRack_Missile_AMRAAM_C_x2"};

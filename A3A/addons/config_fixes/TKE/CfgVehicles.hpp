@@ -183,7 +183,7 @@ class CfgVehicles
     };
     class A3U_CIV_Nomad_Fuel : CIV_Nomad
     {
-        displayName = "Nomad Ranger Repair (Civ/Blue)"
+        displayName = "Nomad Ranger Fuel (Civ/Green)"
         textureList[] = {"Green",1};
         transportFuel = 1e+12;
         animationList[] = {

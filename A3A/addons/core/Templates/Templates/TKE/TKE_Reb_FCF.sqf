@@ -4,8 +4,6 @@
 
 #include "..\..\script_template_common.hpp" // Do NOT remove or else you will not be able to use any macros such as QPATH
 
-// Need to add logistics nodes to the nomad, galea vehicles
-
 ["name", "FCF"] call _fnc_saveToTemplate;
 
 ["flag", DEFAULT_FLAG] call _fnc_saveToTemplate; // Physical flag object classname. Rarely needs to change.
@@ -64,7 +62,7 @@ private _vehiclesCivPlane = ["TKE_Ext_GUSC_Civ"];
 ["vehiclesPlane", _vehiclesPlane] call _fnc_saveToTemplate;
 ["vehiclesCivCar", _vehiclesCivCar] call _fnc_saveToTemplate;
 ["vehiclesCivTruck", _vehiclesCivTruck] call _fnc_saveToTemplate;
-["vehiclesCivSupply", _vehiclesSupply] call _fnc_saveToTemplate;
+["vehiclesCivSupply", _vehiclesCivSupply] call _fnc_saveToTemplate;
 ["vehiclesCivHeli", _vehiclesCivHelicopter] call _fnc_saveToTemplate;
 ["vehiclesCivBoat", _vehiclesCivBoat] call _fnc_saveToTemplate;
 ["vehiclesCivPlane", _vehiclesCivPlane] call _fnc_saveToTemplate;

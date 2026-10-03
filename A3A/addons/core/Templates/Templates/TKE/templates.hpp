@@ -23,20 +23,20 @@
         requiredAddons[] += {"KMC_mod"}; // TKE - Kuiper Mining Corporation
     };
 
-    class TKE_Occ_UCN_Temperate : TKE_Base
+    class TKE_Occ_UCN_Arid : TKE_Base
     {
         side = "Occ";
-        name = "UCN (Temperate)";
-        file = "TKE_Occ_UCN_Temperate";
-        description = "";
-        climate[] = {"temperate", "tropical", "arctic"};
-        flagTexture = QPATHTOFOLDER(Templates\Templates\TKE\images\flag_ucn_co.paa);
-    };
-    class TKE_Occ_UCN_Arid : TKE_Occ_UCN_Temperate
-    {
         name = "UCN (Arid)";
         file = "TKE_Occ_UCN_Arid";
+        description = "";
         climate[] = {"arid"};
+        flagTexture = QPATHTOFOLDER(Templates\Templates\TKE\images\flag_ucn_co.paa);
+    };
+    class TKE_Occ_UCN_Temperate : TKE_Occ_UCN_Arid
+    {
+        name = "UCN (Temperate)";
+        file = "TKE_Occ_UCN_Temperate";
+        climate[] = {"temperate"};
     };
     class TKE_Occ_UCMC : TKE_Occ_UCN_Temperate
     {
@@ -50,6 +50,24 @@
         file = "TKE_Occ_UCMC_Arctic";
         climate[] = {"arctic"};
     };
+
+    class TKE_Inv_MD_Arid : TKE_Base
+    {
+        side = "Inv";
+        name = "MD (Arid)";
+        file = "TKE_Inv_MD_Arid";
+        description = "";
+        climate[] = {"arid"};
+        flagTexture = QPATHTOFOLDER(Templates\Templates\TKE\images\flag_md_co.paa);
+    };
+    /*
+    class TKE_Inv_MD_Temperate : TKE_Inv_MD_Arid
+    {
+        name = "MD (Temperate)";
+        file = "TKE_Inv_MD_Temperate";
+        climate[] = {"temperate"};
+    };
+    */
 
     class TKE_Civ_UCN : TKE_Base
     {
@@ -68,12 +86,3 @@
         description = "";
         flagTexture = QPATHTOFOLDER(Templates\Templates\TKE\images\flag_fcf_co.paa);
     };
-
-    // class E22_RAF_Arid : E22_RAF_Base
-    // {
-    //     side = "Inv";
-    //     name = "RAF (Arid)";
-    //     file = "E22_RAF_Arid";
-    //     description = "";
-    //     climate[] = {"arid"};
-    // };
