@@ -3,8 +3,8 @@
         requiredAddons[] = {
             "aFunnyCfgPatchesClass", // Name of the mod on steam
         }; 
-        logo = QPATHTOFOLDER(Templates\Templates\MYFOLDER\images\mod_name_faction_ca.paa);
-        basepath = QPATHTOFOLDER(Templates\Templates\MYFOLDER);
+        logo = QPATHTOFOLDER(Templates\Templates\MOD\images\mod_name_faction_ca.paa);
+        basepath = QPATHTOFOLDER(Templates\Templates\MOD);
         priority = 70;
         climate[] = {"temperate","tropical","arid","arctic"};
     };
