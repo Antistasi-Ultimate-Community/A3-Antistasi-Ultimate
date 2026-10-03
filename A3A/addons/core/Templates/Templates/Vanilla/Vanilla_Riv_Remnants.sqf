@@ -55,50 +55,14 @@ private _hasEF = "ef" in A3A_enabledDLC;
 private _lightArmedVehicles = ["I_MRAP_03_gmg_F","I_MRAP_03_hmg_F","I_G_Offroad_01_AT_F", "I_G_Offroad_01_armed_F"];
 private _lightUnarmedVehicles = ["I_MRAP_03_F","I_G_Offroad_01_F"];
 private _apc = ["I_APC_Wheeled_03_cannon_F","I_APC_tracked_03_cannon_F"];
-private _tanks = ["I_UGV_01_rcws_F","I_MBT_03_cannon_F"];
+private _tanks = ["I_MBT_03_cannon_F"];
 private _helis = ["I_Heli_Transport_02_F","I_Heli_light_03_dynamicLoadout_F","I_Heli_light_03_unarmed_F"];
 private _uav = ["I_UAV_01_F"];
-private _trucks = ["I_UGV_01_F","I_Truck_02_covered_F","I_Truck_02_transport_F"];
+private _trucks = ["I_Truck_02_covered_F","I_Truck_02_transport_F"];
 
 private _staticLowWeapons = ["I_G_HMG_02_high_F","I_G_HMG_02_F"];
 private _staticAT = ["B_static_AT_F"];
 private _staticMortars = ["I_G_Mortar_01_F"];
-
-if (_hasApex) then {
-	#include "..\DLC_content\vehicles\Apex\Vanilla_Riv_Remnants.sqf" 
-};
-
-if (_hasWs) then {
-	#include "..\DLC_content\vehicles\WS\Vanilla_Riv_Remnants.sqf" 
-};
-
-if (_hasLawsOfWar) then {
-	#include "..\DLC_content\vehicles\Lawsofwar\Vanilla_Riv_Remnants.sqf" 
-};
-
-if (_hasTanks) then {
-	#include "..\DLC_content\vehicles\Tanks\Vanilla_Riv_Remnants.sqf" 
-};
-
-if (isClass (configFile >> "cfgVehicles" >> "gmx_aaf_m113a2dk_wdl") && _hasGM) then {
-	#include "..\DLC_content\vehicles\GM\Vanilla_Riv_Remnants.sqf" 
-};
-
-if (_hasCSLA) then {
-	#include "..\DLC_content\vehicles\CSLA\Vanilla_Riv_Remnants.sqf" 
-};
-
-if (_hasRF) then {
-	#include "..\DLC_content\vehicles\RF\Vanilla_Riv_Remnants.sqf" 
-};
-
-if (_hasSOG) then {
-	#include "..\DLC_content\vehicles\SOG\Vanilla_Rivals.sqf" 
-};
-
-if (_hasSPE) then {
-	#include "..\DLC_content\vehicles\SPE\Vanilla_Rivals.sqf" 
-};
 
 ["mortarMagazineHE", "8Rnd_82mm_Mo_shells"] call _fnc_saveToTemplate;
 ["handGrenadeAmmo", ["GrenadeHand"]] call _fnc_saveToTemplate;
@@ -121,17 +85,10 @@ if (_hasSPE) then {
 ["animations", [
     #include "..\vehicleAnimations\vehicleAnimations_Vanilla.sqf",
     #include "..\vehicleAnimations\vehicleAnimations_WS.sqf",
-    #include "..\vehicleAnimations\vehicleAnimations_RF.sqf",
-    #include "..\vehicleAnimations\vehicleAnimations_GM.sqf",
-    #include "..\vehicleAnimations\vehicleAnimations_GMX_AAF.sqf",
-    #include "..\vehicleAnimations\vehicleAnimations_CSLA.sqf",
-    #include "..\vehicleAnimations\vehicleAnimations_SOG.sqf",
-    #include "..\vehicleAnimations\vehicleAnimations_SPE.sqf"
+    #include "..\vehicleAnimations\vehicleAnimations_RF.sqf"
 ]] call _fnc_saveToTemplate;
 
 ["variants", [
-    #include "..\vehicleVariants\Vanilla_Riv_Remnants\CSLA_Remnants.sqf",
-	#include "..\vehicleVariants\Vanilla_Riv_Remnants\GM_Remnants.sqf",
 	#include "..\vehicleVariants\Vanilla_Riv_Remnants\RF_Remnants.sqf",
 	#include "..\vehicleVariants\Vanilla_Riv_Remnants\Vanilla_Remnants.sqf"
 ]] call _fnc_saveToTemplate;
@@ -187,10 +144,10 @@ private _rpgs = [
 private _pistols = ["hgun_ACPC2_F"];
 
 _loadoutData set ["lightHELaunchers", [
-["launch_NLAW_F","","","",["NLAW_F"],[],""]
+	["launch_NLAW_F","","","",["NLAW_F"],[],""]
 ]];
 _loadoutData set ["AALaunchers", [
-["launch_I_Titan_F","","","",["Titan_AA"],[],""]
+	["launch_I_Titan_F","","","",["Titan_AA"],[],""]
 ]];
 
 _loadoutData set ["ATMines", ["ATMine_Range_Mag"]];
@@ -201,46 +158,6 @@ _loadoutData set ["heavyExplosives", ["IEDLandBig_Remote_Mag"]];
 _loadoutData set ["antiInfantryGrenades", ["HandGrenade", "MiniGrenade"]];
 _loadoutData set ["smokeGrenades", ["SmokeShell"]];
 _loadoutData set ["signalsmokeGrenades", ["SmokeShellYellow", "SmokeShellRed", "SmokeShellPurple", "SmokeShellOrange", "SmokeShellGreen", "SmokeShellBlue"]];
-
-if (_hasGM) then {
-    #include "..\DLC_content\weapons\GM\Vanilla_Riv_Remnants.sqf" 
-};
-
-if (_hasRF) then {
-	#include "..\DLC_content\weapons\RF\Vanilla_Riv_Remnants.sqf" 
-};
-
-if (_hasContact) then {
-	#include "..\DLC_content\weapons\Contact\Vanilla_Riv_Remnants.sqf" 
-};
-
-if (_hasMarksman) then {
-	#include "..\DLC_content\weapons\Marksman\Vanilla_Riv_Remnants.sqf" 
-};
-
-if (_hasApex) then {
-	#include "..\DLC_content\weapons\Apex\Vanilla_Riv_Remnants.sqf" 
-};
-
-if (_hasWs) then {
-	#include "..\DLC_content\weapons\WS\Vanilla_Riv_Remnants.sqf" 
-};
-
-if (_hasCSLA) then {
-    #include "..\DLC_content\weapons\CSLA\Vanilla_Riv_Remnants.sqf" 
-};
-
-if (_hasSOG) then {
-    #include "..\DLC_content\weapons\SOG\Vanilla_Riv_Remnants.sqf" 
-};
-
-if (_hasSPE) then {
-    #include "..\DLC_content\weapons\SPE\Vanilla_Riv_Remnants.sqf" 
-};
-
-if (isClass (configFile >> "cfgVehicles" >> "vnx_b_air_ac119_02_01")) then {
-	#include "..\MOD_content\Nickelsteel\weapons\Vanilla_Rivals.sqf"
-};
 
 _loadoutData set ["rifles", _rifles];
 _loadoutData set ["tunedRifles", _tunedRifles];
@@ -327,54 +244,6 @@ private _pilotLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 _pilotLoadoutData set ["uniforms", ["U_I_HeliPilotCoveralls","U_I_pilotCoveralls"]];
 _pilotLoadoutData set ["vests", _vests];
 _pilotLoadoutData set ["helmets", ["H_PilotHelmetHeli_I", "H_CrewHelmetHeli_I"]];
-
-if (_hasApex) then {
-	#include "..\DLC_content\gear\Apex\Vanilla_Riv_Remnants.sqf" 
-};
-
-if (_hasArtOfWar) then {
-	#include "..\DLC_content\gear\Artofwar\Vanilla_Riv_Remnants.sqf" 
-};
-
-if (_hasContact) then {
-	#include "..\DLC_content\gear\Contact\Vanilla_Riv_Remnants.sqf" 
-};
-
-if (_hasWs) then {
-	#include "..\DLC_content\gear\WS\Vanilla_Riv_Remnants.sqf" 
-};
-
-if (_hasRF) then {
-	#include "..\DLC_content\gear\RF\Vanilla_Riv_Remnants.sqf" 
-};
-
-if (_hasLawsOfWar) then {
-	#include "..\DLC_content\gear\Lawsofwar\Vanilla_Riv_Remnants.sqf" 
-};
-
-if (_hasTanks) then {
-	#include "..\DLC_content\gear\Tanks\Vanilla_Riv_Remnants.sqf" 
-};
-
-if (_hasGM) then {
-	#include "..\DLC_content\gear\GM\Vanilla_Riv_Remnants.sqf" 
-};
-
-if (_hasCSLA) then {
-	#include "..\DLC_content\gear\CSLA\Vanilla_Riv_Remnants.sqf" 
-};
-
-if (_hasSOG) then {
-	#include "..\DLC_content\gear\SOG\Vanilla_Riv_Remnants.sqf" 
-};
-
-if (_hasJets) then {
-	#include "..\DLC_content\gear\Jets\Vanilla_Riv_Remnants.sqf" 
-};
-
-if (_hasEF) then {
-	#include "..\DLC_content\gear\EF\Vanilla_Riv_Remnants.sqf"
-};
 
 _loadoutData set ["offuniforms", _offuniforms]; ///check offuniforms later 
 _loadoutData set ["vests", _vests];

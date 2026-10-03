@@ -30,11 +30,10 @@ private _savedPlayers = _namespace getVariable ["savedPlayers" + _postfix, []];
 // Delete all server data for specified campaign
 {
 	_namespace setVariable [_x + _postfix, nil];
-
 } forEach [
-	"countCA", "gameMode", "difficultyX", "bombRuns", "smallCAmrk", "membersX", "antennas",
+	"countCA", "gameMode", "bombRuns", "membersX", "antennas",
 	"mrkSDK", "mrkCSAT", "posHQ", "dateX", "skillFIA", "destroyedSites", "distanceSPWN",
-	"chopForest", "nextTick", "weather", "destroyedBuildings", "aggressionOccupants",
+	"chopForest", "weather", "destroyedBuildings", "aggressionOccupants",
 	"aggressionInvaders", "resourcesFIA", "hr", "staticsX", "jna_datalist",
 	"prestigeOPFOR", "prestigeBLUFOR", "garrison", "wurzelGarrison", "usesWurzelGarrison", "minesX",
 	"tasks", "killZones", "controlsSDK", "params",

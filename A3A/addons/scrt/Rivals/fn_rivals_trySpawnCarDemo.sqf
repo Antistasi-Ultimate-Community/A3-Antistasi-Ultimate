@@ -28,7 +28,7 @@ params [
 ];
 
 if (_site isEqualTo "") exitWith {
-    Error("Unknown marker, aborting.")
+    Error("Unknown marker, aborting.");
 };
 
 if (!areRivalsEnabled) exitWith {};

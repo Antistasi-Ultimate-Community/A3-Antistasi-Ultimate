@@ -228,7 +228,22 @@ private _fnc_handleUniqueCases = { //handles unique name cases that the stored v
         case "flag";
         case "flagTexture";
         case "currencySymbol";
+        case "petrosHeadgear";
+        case "petrosGoggles";
+        case "petrosUniform";
         case "flagMarkerType": _fnc_validateString;
+
+        //petros weapons
+        case "petrosPrimary";
+        case "petrosHandgun": {
+            if (_y isEqualTo []) exitWith {};
+
+            if !(_y isEqualTypeArray ["", 0]) exitWith {
+                _invalidReasons pushBack ("Entry: "+(str _entry)+" has the wrong data type(s). Expected [<String>Class, <Scalar>MagCount] or []");
+            };
+
+            ["CfgWeapons", _y#0, _entry] call _fnc_validClassCaseSensitive;
+        };
 
         //vehicle class name
         case "ammobox";
@@ -299,6 +314,9 @@ private _fnc_handleUniqueCases = { //handles unique name cases that the stored v
                     if !(_x isEqualTypeArray ["", 0]) then {_invalidReasons pushBack ("Vehicle attribute "+(str _x)+" for "+_veh+" has the wrong data types(s). Expected [<String>Attribute, <Scalar>Value]")};
                 } forEach _x;
             } forEach _y;
+        };
+        case "petrosIdentity": {
+            if !(_y isEqualType createHashmap) exitWith {_invalidReasons pushBack ("Entry "+(str _entry)+" is not a hashmap.")};
         };
         case "diveGear"; //Mixed CFGVehicles and CFGGlasses
         case "flyGear";

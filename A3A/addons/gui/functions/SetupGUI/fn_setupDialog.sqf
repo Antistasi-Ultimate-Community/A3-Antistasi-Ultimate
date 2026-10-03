@@ -45,7 +45,6 @@ private _fnc_getTimeDiffString = {
     format ["%1%2 %3%4", _diffTime#_nzi, _text#_nzi, _diffTime#(_nzi+1), _text#(_nzi+1)];
 };
 
-
 // Get display
 private _display = findDisplay A3A_IDD_SETUPDIALOG;
 
@@ -55,7 +54,7 @@ switch (_mode) do
     {
         if (isNil "A3A_setup_saveData") exitWith { Error("onLoad somehow called without save data") };
         ["fillFactions"] call A3A_fnc_setupFactionsTab;
-        ["fillContent"] call A3A_fnc_setupContentTab; 
+        ["fillContent"] call A3A_fnc_setupFactionsTab; 
 
         ["setSaveData"] call A3A_fnc_setupLoadgameTab;
         ["switchTab", ["loadgame"]] call A3A_fnc_setupDialog;
@@ -67,11 +66,11 @@ switch (_mode) do
     {
         // Restart if it wasn't server-closed
         if (isNil "A3A_setup_saveData") exitWith {};
-        0 spawn {
+        [] spawn {
             sleep 4;
             Debug("Waiting until escape menu is closed");
-            waitUntil { sleep 1; isNull findDisplay 49 and !dialog };       // escape menu or user dialog
-            if (isNil "A3A_setup_saveData") exitWith {};                        // might have been server-closed during the sleep
+            waitUntil { !dialog && { isNull findDisplay 49 } };       // escape menu or user dialog
+            if (isNil "A3A_setup_saveData") exitWith {};              // might have been server-closed during the sleep
             Debug("Restarting setup dialog");
             createDialog "A3A_setupDialog";
         };
@@ -99,20 +98,18 @@ switch (_mode) do
             case "loadgame": { A3A_IDC_SETUP_LOADGAMETAB };
             case "factions": { A3A_IDC_SETUP_FACTIONSTAB };
             case "params": { A3A_IDC_SETUP_PARAMSTAB };
-            case "content": { A3A_IDC_SETUP_CONTENTTAB };
         };
 
         {
             private _ctrl = _display displayCtrl _x;
             _ctrl ctrlShow (_x == _selectedTabIDC);
-        } forEach [A3A_IDC_SETUP_LOADGAMETAB, A3A_IDC_SETUP_FACTIONSTAB, A3A_IDC_SETUP_PARAMSTAB, A3A_IDC_SETUP_CONTENTTAB];
+        } forEach [A3A_IDC_SETUP_LOADGAMETAB, A3A_IDC_SETUP_FACTIONSTAB, A3A_IDC_SETUP_PARAMSTAB];
 
         switch (_selectedTab) do
         {
             case ("loadgame"): { ["update"] call A3A_fnc_setupLoadgameTab };
             case ("factions"): { ["update"] call A3A_fnc_setupFactionsTab };
             case ("params"): { ["update"] call A3A_fnc_setupParamsTab };
-            case ("content"): { ["update"] call A3A_fnc_setupContentTab };
         };
     };
 
@@ -120,28 +117,11 @@ switch (_mode) do
     {
         _params params ["_saveData", "_loadedPatches", "_loadedDLC", "_platform"];
 
-        // Generate user map names
-        private _prettyMapHM = createHashMapFromArray [
-            ["vt7", "Virolahti"]
-            ,["sara", "Sahrani"]
-            ,["cam_lao_nam", "Cam Lao Nam"]
-            ,["vn_khe_sanh", "Khe Sanh"]
-            ,["chernarus_autumn", "Chernarus (A)"]
-            ,["chernarus_summer", "Chernarus (S)"]
-            ,["chernarus_winter", "Chernarus (W)"]
-            ,["enoch", "Livonia"]
-            ,["tem_anizay", "Anizay"]
-            ,["cup_chernarus_a3", "Chernarus 2020"]
-            ,["brf_sumava", "Šumava"]
-            ,["green_sea", "Green Sea"]
-            ,["tem_kujari", "Kujari"]
-            ,["gm_weferlingen_summer", "Weferlingen (S)"]
-            ,["gm_weferlingen_winter", "Weferlingen (W)"]
-            ,["takistan", "Takistan"]
-        ];
-        {
+        _saveData apply {
             private _realMap = _x get "map";
-            _x set ["mapStr", _prettyMapHM getOrDefault [toLower _realMap, _realMap]];
+            private _mapDescription = [_realMap] call SCRT_fnc_misc_getWorldName;
+            _x set ["mapStr", _mapDescription];
+            _x set ["mapStrShort", _realMap];
             _x set ["fileStr", ["Old", "New"] select ((_x get "serverID") isEqualType false)];
             if (!isNil {_x get "ended"}) then { _x set ["timeStr", "Ended"]; continue };
             if (!isNil {_x get "saveTime"}) then {
@@ -150,7 +130,7 @@ switch (_mode) do
             if (!isNil {_x get "version"}) then {
                 _x set ["verStr", (_x get "version") splitString "." select [0, 3] joinString "."];        // cap to a.b.c
             };
-        } forEach _saveData;
+        };
 
         A3A_setup_saveData = _saveData;
         A3A_setup_loadedPatches = _loadedPatches;
@@ -174,7 +154,8 @@ switch (_mode) do
     {
         Debug("Server requested dialog close");
         A3A_setup_saveData = nil;
-        if (!isNull _display) then { closeDialog 0 };
+        // Close ALL dialogs, not just ours
+        while { dialog } do { closeDialog 0 };
     };
 
     default {

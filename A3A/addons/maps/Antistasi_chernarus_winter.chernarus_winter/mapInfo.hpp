@@ -19,9 +19,9 @@ class chernarus_winter {
 	climate = "arctic";
 	buildObjects[] = {
 		BUILDABLES_HISTORIC,
+		BUILDABLES_UNIVERSAL,
 		BUILDABLES_MODERN_GREEN,
 		BUILDABLES_ARCTIC,
-		BUILDABLES_CUP,
-		BUILDABLES_UNIVERSAL
+		BUILDABLES_CUP
 	};
 };

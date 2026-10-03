@@ -20,7 +20,7 @@ Example:
 
 params [["_object", objNull, [objNull]]];
 
-_object setVehicleRadar ([0, 1] select (getNumber(configOf _veh >> "radarType") in [2, 4]));
+_object setVehicleRadar ([0, 1] select (getNumber(configOf _object >> "radarType") in [2, 4]));
 _object setVehicleReceiveRemoteTargets true;
 _object setVehicleReportRemoteTargets true;
 //_object setVehicleReportOwnPosition true;
@@ -52,6 +52,9 @@ if ("loot" in _flags) then {
     };
 };
 
+if ("save" in _flags) then {
+    [_object] call A3A_fnc_addToStaticsToSave;
+};
 
 _object setVariable ["A3A_canGarage", true, true];
 _object setVariable ["A3A_itemPrice", _price, true];

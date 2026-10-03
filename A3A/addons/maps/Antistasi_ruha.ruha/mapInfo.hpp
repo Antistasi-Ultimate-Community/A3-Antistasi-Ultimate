@@ -62,10 +62,10 @@ class ruha {
 	climate = "temperate";
 	buildObjects[] = {
 		BUILDABLES_HISTORIC,
+		BUILDABLES_UNIVERSAL,
 		BUILDABLES_MODERN_GREEN,
 		BUILDABLES_TEMPERATE,
-		BUILDABLES_CUP,
-		BUILDABLES_UNIVERSAL
+		BUILDABLES_CUP
 	};
     // Needs to be re-done when possible
 };

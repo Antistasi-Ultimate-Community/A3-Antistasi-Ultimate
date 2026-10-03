@@ -1,4 +1,6 @@
 #include "\x\a3a\addons\gui\dialogues\ids.inc"
+#include "..\script_component.hpp"
+FIX_LINE_NUMBERS()
 
 params ["_mode"];
 

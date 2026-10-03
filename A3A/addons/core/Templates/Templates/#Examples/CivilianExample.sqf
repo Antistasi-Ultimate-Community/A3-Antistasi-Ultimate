@@ -34,25 +34,10 @@ private _hasEF = "ef" in A3A_enabledDLC; */ ///dlc stuff if your templates needs
 
 ["vehiclesCivFuel", []] call _fnc_saveToTemplate;            //this line determines civilian fuel vehicles
 
-//Example on how to use dlc content
-/* if (_hasKart) then {
-  #include "..\DLC_content\vehicles\Kart\kart.sqf"  
-}; */
-
 
 ["variants", []] call _fnc_saveToTemplate;                 //this line determines particular paintjob/camo for a vehicle --  Example: ["I_Heli_Transport_02_F", ["Dahoman", 1]] -- Array, can contain multiple assets
 
-//or do it like this
-/* ["variants", [
-  #include "..\vehicleVariants\Vanilla_GM_CIV.sqf"
-]] call _fnc_saveToTemplate; */
-
 ["animations", []] call _fnc_saveToTemplate;                //     -- Example: ["vehClass", ["animsourcefromgarage1", 0.3, "animsourcefromgarage2", 0.25, "animsourcefromgarage3", 0.3, "animsourcefromgarage4", 0.3]] -- Array, can contain multiple assets
-
-//or do it like this
-/* ["animations", [
-  #include "..\vehicleAnimations\vehicleAnimations_CSLA.sqf"
-]] call _fnc_saveToTemplate; */
 
 /////////////////////////////////
 ///  Identities and currency  ///
@@ -69,6 +54,8 @@ private _hasEF = "ef" in A3A_enabledDLC; */ ///dlc stuff if your templates needs
 private _civUniforms = [];          //Uniforms given to Normal Civs
 
 private _pressUniforms = [];            //Uniforms given to Press/Journalists
+
+private _vipUniforms = [];            //Uniforms given to VIP
 
 private _workerUniforms = [];           //Uniforms given to Workers at Factories/Resources
 
@@ -102,6 +89,8 @@ _loadoutData set ["maps", ["ItemMap"]];
 _loadoutData set ["watches", ["ItemWatch"]];
 _loadoutData set ["compasses", ["ItemCompass"]];
 
+_loadoutData set ["vipUniforms", _vipUniforms];
+_loadoutData set ["sidearms", []];
 
 private _manTemplate = {
     ["helmets"] call _fnc_setHelmet;
@@ -134,8 +123,21 @@ private _pressTemplate = {
     ["watches"] call _fnc_addWatch;
     ["compasses"] call _fnc_addCompass;
 };
+private _vipTemplate = {
+    ["vipUniforms"] call _fnc_setUniform;
+
+    ["items_medical_standard"] call _fnc_addItemSet;
+
+    ["maps"] call _fnc_addMap;
+    ["watches"] call _fnc_addWatch;
+    ["compasses"] call _fnc_addCompass;
+
+    ["sidearms"] call _fnc_setHandgun;
+    ["handgun", 2] call _fnc_addMagazines;
+};
 private _prefix = "militia";
 private _unitTypes = [
+    ["VIP", _vipTemplate],
     ["Press", _pressTemplate],
     ["Worker", _workerTemplate],
     ["Man", _manTemplate]

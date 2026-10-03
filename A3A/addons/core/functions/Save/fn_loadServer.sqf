@@ -5,6 +5,25 @@ if (isServer) then {
     Info("Starting Persistent Load.");
 	petros allowdamage false;
 
+	// Tell third party mods we're loading the game. Do this very early in case
+	// they attempt to overwrite stuff we're loading later below.
+	private _saveDataPlugins = ["saveDataPlugins"] call A3A_fnc_getStatVariable;
+	if (isNil "_saveDataPlugins") then {
+		_saveDataPlugins = createHashMap;
+	} else {
+		if (_saveDataPlugins isEqualType []) then {
+			// Possible involuntary conversion from hashmap to array
+			_saveDataPlugins = createHashMapFromArray _saveDataPlugins;
+		};
+	};
+
+	if !assert(_saveDataPlugins isEqualType createHashMap) then {
+		Error_1("Plugins save data has unexpected type ""%1""",typeName _saveDataPlugins);
+		_saveDataPlugins = createHashMap;
+	};
+
+	[CBA_EVENT_SERVER_GAME_LOAD, [_saveDataPlugins]] call FUNCMAIN(triggerLocalEvent);
+
 	// Set all main markers to occupant control by default, overridden by mrkSDK & mrkCSAT
 	{
 		if (sidesX getVariable _x != Occupants) then { sidesX setVariable [_x, Occupants, true] };
@@ -110,17 +129,18 @@ if (isServer) then {
 
 	// Set enemy roadblock allegiance to match nearest main marker
 	private _mainMarkers = markersX - controlsX -  watchpostsFIA - roadblocksFIA - aapostsFIA - atpostsFIA - hmgpostsFIA;
-	{
-		if (sidesX getVariable [_x,sideUnknown] != teamPlayer) then {
-			private _nearX = [_mainMarkers, markerPos _x] call BIS_fnc_nearestPosition;
-			private _sideX = sidesX getVariable [_nearX,sideUnknown];
-			sidesX setVariable [_x,_sideX,true];
-		};
-	} forEach controlsX;
+    {
+        if (sidesX getVariable [_x,sideUnknown] != teamPlayer) then {
+            private _nearX = [_mainMarkers, markerPos _x] call BIS_fnc_nearestPosition;
+            private _sideX = sidesX getVariable [_nearX,sideUnknown];
+            sidesX setVariable [_x,_sideX,true];
+        };
+    } forEach controlsX;
 
-	{
-		[_x] call A3A_fnc_mrkUpdate
-	} forEach (markersX - controlsX);
+    [markersX - controlsX] call A3U_fnc_mrkUpdateBulk;
+    if !(milAdministrationsX isEqualTo []) then {[milAdministrationsX] call A3U_fnc_mrkUpdateBulk};
+    if !(mrkAntennas isEqualTo []) then {[mrkAntennas] call A3U_fnc_mrkUpdateBulk};
+    // ---------------------------
 
 	markersX append (watchpostsFIA + roadblocksFIA + aapostsFIA + atpostsFIA + hmgpostsFIA);
 	publicVariable "markersX";
@@ -168,7 +188,7 @@ if (isServer) then {
 		private _playerData = createHashMap;
 		{
 			_playerData set [_x, [_uid, _x] call A3A_fnc_retrievePlayerStat];
-		} forEach ["moneyX", "loadoutPlayer", "scorePlayer", "rankPlayer", "personalGarage"];
+		} forEach ["moneyX", "loadoutPlayer", "scorePlayer", "rankPlayer", "personalGarage", "pluginsData"];
 
 		if (isNil {_playerData get "moneyX"}) then { Error_1("Saved player %1 has no money var", _uid); continue };
 		A3A_playerSaveData set [_uid, _playerData];
@@ -176,7 +196,7 @@ if (isServer) then {
 
     Info("Persistent Load Completed.");
 
-	["locationSpawned", QGVAR(crewLocationStatics), { call A3A_fnc_crewLocationStatics }] call EFUNC(Events,addEventListener);
+	[CBA_EVENT_SERVER_SPAWN_LOCATION, LINKFUNCMAIN(crewLocationStatics)] call FUNCMAIN(addEventHandler);
 
 	statsLoaded = 0; publicVariable "statsLoaded";
 	petros allowdamage true;

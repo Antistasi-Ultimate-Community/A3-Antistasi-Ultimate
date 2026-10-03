@@ -104,7 +104,7 @@ while { isNil "_node" } do {
 
         private _thisNode = _nodes select(_sequenceStart + _n);
 
-        _thisNode params["_free","","","_canCouple"];
+        _thisNode params["_free","","","","_canCouple"];
 
         // Ocupando, break
         if (_free isNotEqualTo 1) then { break };
@@ -127,11 +127,13 @@ if (isNil "_node") exitWith {-8};
 //block loading if crew in node seats
 private _fullCrew = fullCrew _vehicle;
 private _seats = [];
+private _turrets = [];
 if ((_node#0) isEqualType []) then {
-    {_seats append (_x#2)} forEach _node;
+    {_seats append (_x#2); _turrets append (_x#3)} forEach _node;
 } else {
     _seats append (_node#2);
+    _turrets append (_node#3);
 };
-if !(_fullCrew findIf {_x#2 in _seats} isEqualTo -1) exitWith {-9};
+if !(_fullCrew findIf {_x#2 in _seats || {_x#3 in _turrets}} isEqualTo -1) exitWith {-9};
 
 [_object, _vehicle, _node, _weapon]

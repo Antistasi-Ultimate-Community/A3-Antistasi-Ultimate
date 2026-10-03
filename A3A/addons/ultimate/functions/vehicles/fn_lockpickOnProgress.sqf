@@ -35,7 +35,7 @@ if (_closestZone isEqualTo teamPlayer && {_frame >= (_maxFrame / 12)}) then {
     _hintMessage = [localize "STR_A3AU_action_lockpick_title", format [localize "STR_A3AU_action_lockpick_zone_control", _vehicleName]];
 };
 
-if ([_caller, 'ToolKit'] call BIS_fnc_hasItem && {_hintMessage isEqualTo []} && {_frame >= (_maxFrame / 2)}) then {
+if ((items _caller arrayIntersect allToolkits) isNotEqualTo [] && {_hintMessage isEqualTo []} && {_frame >= (_maxFrame / 2)}) then {
     _hintMessage = [localize "STR_A3AU_action_lockpick_title", format [localize "STR_A3AU_action_lockpick_has_toolkit", _vehicleName]];
 };
 

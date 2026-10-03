@@ -261,7 +261,7 @@ _sfLoadoutData set ["sidearms", [
 
 private _eliteLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 _eliteLoadoutData set ["uniforms", ["PRACS_M10_Digital_Commando_OD_uniform"]];
-_eliteLoadoutData set ["slUniform", ["PRACS_M10_Digital_Commando_uniform"]];
+_eliteLoadoutData set ["slUniforms", ["PRACS_M10_Digital_Commando_uniform"]];
 _eliteLoadoutData set ["vests", ["PRACS_O_CIRAS_rifleman"]];
 _eliteLoadoutData set ["mgVests", ["PRACS_O_CIRAS_MG_SF"]];
 _eliteLoadoutData set ["medVests", ["PRACS_O_CIRAS_medic"]];
@@ -317,7 +317,7 @@ _eliteLoadoutData set ["sidearms", [
 
 private _militaryLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 _militaryLoadoutData set ["uniforms", ["PRACS_M10_Fusilier_uniform"]];
-_militaryLoadoutData set ["slUniform", ["PRACS_M10_Fusilier_SL_uniform"]];
+_militaryLoadoutData set ["slUniforms", ["PRACS_M10_Fusilier_SL_uniform"]];
 _militaryLoadoutData set ["vests", ["PRACS_RFP_CIRAS_rifleman"]];
 _militaryLoadoutData set ["mgVests", ["PRACS_RFP_CIRAS_MG"]];
 _militaryLoadoutData set ["medVests", ["PRACS_RFP_CIRAS_G3_medic"]];

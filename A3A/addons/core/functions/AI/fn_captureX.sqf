@@ -18,7 +18,7 @@ private _response = "";
 private _fleeSide = _sideX;
 private _joinPlyGroup = false;
 
-private _unitPrefix = _unit getVariable "unitPrefix";
+private _unitPrefix = _unit getVariable ["unitPrefix", "militia"]; // Some unit types using "other" break (e.g crewman)? Not sure why, bandaid fix here
 
 if (_recruiting) then {
 	_playerX globalChat localize "STR_recruit_text";

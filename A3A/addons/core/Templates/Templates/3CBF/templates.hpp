@@ -34,6 +34,23 @@
         description = $STR_A3AP_setupFactionsTab_ccm_3cbf;
     };
 
+    class 3CBF_EM : 3CBF_Base
+    {
+        side = "Reb";
+        flagTexture = QPATHTOFOLDER(Templates\Templates\CUP\images\flag_old_soviet_co.paa);
+        name = "3CBF Eastern Loyalists";
+        file = "3CBF_Reb_EM";
+        description = "A generic militarized militia using surplus or outdated Soviet technology. Loyal to the East. Consider this a more forgiving start than most.";
+    };
+    class 3CBF_WM : 3CBF_Base
+    {
+        side = "Reb";
+        flagTexture = QPATHTOFOLDER(Templates\Templates\CUP\images\flag_old_nato_co.paa);
+        name = "3CBF Western Loyalists";
+        file = "3CBF_Reb_WM";
+        description = "A generic militarized militia using surplus or outdated NATO technology. Loyal to the West. Consider this a more forgiving start than most.";
+    };
+    
     class 3CBF_TKM : 3CBF_Base
     {
         side = "Reb";

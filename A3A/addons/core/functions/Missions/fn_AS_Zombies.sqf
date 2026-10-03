@@ -65,7 +65,9 @@ waitUntil {
 	((call SCRT_fnc_misc_getRebelPlayers) inAreaArray [_positionX, 600, 600] isNotEqualTo []) || {dateToNumber date > _dateLimitNum}
 };
 
-if (dateToNumber date > _dateLimitNum) exitWith {};
+if (dateToNumber date > _dateLimitNum) exitWith {
+	[_taskId, "AS", "FAILED", true] call A3A_fnc_taskSetState;
+};
 
 private _groupZombies = createGroup Invaders;
 [8, 3, (random [5,7,9]), _positionX, _groupZombies, _taskId] spawn A3U_fnc_spawnZombieWaves;

@@ -1,7 +1,7 @@
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
 
-params ["_unit", ["_preserveIdentity", false]];
+params ["_unit", ["_preserveIdentity", false], ["_equipRebel", true]];
 
 [_unit] call A3A_fnc_initRevive;
 _unit setVariable ["spawner",true,true];
@@ -33,17 +33,17 @@ if (!_preserveIdentity) then {
 };
 
 // FIAinit is called for liberated refugees/hostages. Don't equip them.
-if !(_typeX isEqualTo FactionGet(reb,"unitUnarmed")) then {
+// 23/07/26: Don't equip occ official; they are town VIP and shouldn't have loadout hijacked
+if (!(_typeX isEqualTo FactionGet(reb,"unitUnarmed") || !(_equipRebel))) then {
 	[_unit, [0,1] select (leader _unit != player)] call A3A_fnc_equipRebel;
 };
 _unit selectWeapon (primaryWeapon _unit);
 
-
 if (player == leader _unit) then {
 	_unit setVariable ["owner", player, true];
-	_unit addEventHandler ["killed", {
+	_unit addEventHandler ["Killed", {
 		params ["_victim", "_killer"];
-		[_victim] spawn A3A_fnc_postmortem;
+		call FUNCMAIN(postmortem);
 		if (side _killer == Occupants) then {
 			_nul = [0.25,0,getPos _victim] remoteExec ["A3A_fnc_citySupportChange",2];
 			[Occupants, -1, 30] remoteExec ["A3A_fnc_addAggression",2];
@@ -63,26 +63,33 @@ if (player == leader _unit) then {
 	_unit setVariable ["rearming",false];
 	while {alive _unit} do {
 		sleep 10;
-		if (([player] call A3A_fnc_hasRadio) && {_unit call A3A_fnc_hasARadio}) exitWith {
+
+		private _unitHasRadio = _unit call A3A_fnc_hasARadio;
+
+		if (_unitHasRadio && { [player] call A3A_fnc_hasRadio }) exitWith {
 			_unit groupChat format [localize "STR_A3A_reinf_fiainit_radiocheckok",name _unit]
 		};
-		if (unitReady _unit) then {
+		if (!_unitHasRadio && { unitReady _unit }) then {
 			if ((alive _unit) and (_unit distance (getMarkerPos respawnTeamPlayer) > 50) and (_unit distance leader group _unit > 500) and ((vehicle _unit == _unit) or ((typeOf (vehicle _unit)) in arrayCivVeh))) then {
 				["", format [localize "STR_A3A_reinf_fiainit_lost_comms", name _unit]] call A3A_fnc_customHint;
+
+				_unit setVariable[QGVAR(groupId), groupId _unit];
+				_unit setVariable[QGVAR(assignedTeam), assignedTeam _unit];
 				[_unit] join stragglers;
 				if ((vehicle _unit isKindOf "StaticWeapon") or (isNull (driver (vehicle _unit)))) then {unassignVehicle _unit; [_unit] orderGetIn false};
 				_unit doMove position player;
 				private _timeX = time + 900;
 				waitUntil {sleep 1;(!alive _unit) or (_unit distance player < 500) or (time > _timeX)};
 				if ((_unit distance player >= 500) and (alive _unit)) then {_unit setPos (getMarkerPos respawnTeamPlayer)};
-				[_unit] join group player;
+				[_unit] joinAs[group player, _unit getVariable QGVAR(groupId)];
+				_unit assignTeam(_unit getVariable QGVAR(assignedTeam));
 			};
 		};
 	};
 } else {
-	_unit addEventHandler ["killed", {\
+	_unit addEventHandler ["killed", {
 		params ["_victim", "_killer"];
-		[_victim] remoteExec ["A3A_fnc_postmortem",2];
+		call FUNCMAIN(postmortem);
 		if ((isPlayer _killer) and (side _killer == teamPlayer)) then {
 		} else {
 			if (side _killer == Occupants) then {

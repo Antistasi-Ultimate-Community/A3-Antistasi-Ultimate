@@ -15,6 +15,9 @@ Info_1("Server version: %1", QUOTE(VERSION_FULL));
 if (isClass (missionConfigFile/"CfgFunctions"/"A3A")) exitWith {};          // Pre-mod mission will break. Messaging handled in initPreJIP
 if (call A3A_fnc_modBlacklist) exitWith {};
 
+// Init despawn queue very early
+GVAR(despawnQueue) = [];
+
 // hide all the HQ objects
 {
     _x enableRopeAttach false;
@@ -38,11 +41,11 @@ if (isClass (configFile/"CfgVehicles"/"vn_module_dynamicradiomusic_disable")) th
 */
 
 // Shouldn't be anything with dependencies in here
-call A3A_fnc_initVarCommon;
-call A3A_fnc_initZones;					// needed here because new-game setup needs to know where the markers are
+[] call A3A_fnc_initVarCommon;
+[] call A3A_fnc_initZones;					// needed here because new-game setup needs to know where the markers are
 
 // Start up the monitor to handle the setup UI
-[] spawn A3A_fnc_setupMonitor;
+execFSM QPATHTOF(FSMs\initSetupMonitor.fsm);
 
 // ************************ Background init ***********************************************
 
@@ -87,6 +90,9 @@ private _savedParamsHM = createHashMapFromArray (A3A_saveData get "params");
     };
     missionNamespace setVariable [configName _x, _val, true];                   // just publish them all, doesn't really hurt
 } forEach ("true" configClasses (configFile/"A3A"/"Params"));
+
+// Tell third party mods we're starting up
+[CBA_EVENT_SERVER_STARTUP, []] call FUNCMAIN(triggerLocalEvent);
 
 // Might have params dependency at some point
 if (A3A_hasACEMedical) then { call A3A_fnc_initACEUnconsciousHandler };
@@ -308,7 +314,7 @@ addMissionEventHandler ["EntityKilled", {
     if !(isNil {_victim getVariable "ownerSide"}) then {
         // Antistasi-created vehicle
         [_victim, _killerSide, false, _killer] call A3A_fnc_vehKilledOrCaptured;
-        [_victim] spawn A3A_fnc_postmortem;
+        call FUNCMAIN(postmortem);
     };
 }];
 
@@ -317,6 +323,9 @@ serverInitDone = true; publicVariable "serverInitDone";
 Info("Setting serverInitDone as true");
 A3A_startupState = "completed"; publicVariable "A3A_startupState";
 
+// Because CBA events are blocking, we can't have third party stuff block us 
+// from executing the stuff below. So we spawn it.
+[CBA_EVENT_SERVER_INIT_DONE, []] spawn FUNCMAIN(triggerLocalEvent);
 
 // ********************* Initialize loops *******************************************
 
@@ -324,6 +333,7 @@ A3A_startupState = "completed"; publicVariable "A3A_startupState";
 [] spawn A3A_fnc_resourcecheck;                     // 10-minute loop
 [] spawn A3A_fnc_aggressionUpdateLoop;              // 1-minute loop
 [] spawn A3A_fnc_garbageCleanerTracker;             // 5-minute loop
+[] spawn A3A_fnc_despawnQueueProcessor;
 [] spawn SCRT_fnc_rivals_activityUpdateLoop;
 [] spawn SCRT_fnc_rivals_eventLoop;
 if (areRandomEventsEnabled) then {

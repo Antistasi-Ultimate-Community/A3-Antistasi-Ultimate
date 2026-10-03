@@ -30,6 +30,12 @@ params [["_unit", ObjNull], ["_caller", ObjNull]];
 
 if (_unit isEqualTo ObjNull || _caller isEqualTo ObjNull) exitWith {nil};
 
+// Check if the caller is inside a vehicle
+if !(isNull objectParent _caller) exitWith {
+    [_unit, localize "STR_antistasi_actions_talk_with_civ_in_vehicle_fail"] remoteExec ["globalChat", _caller];
+    false
+};
+
 if (_unit getVariable ["A3U_civDialogHasSpoken", false]) exitWith {
     private _failMessage = selectRandom [
         localize "STR_antistasi_actions_talk_with_civ_fail_alreadyspoken1", 
@@ -39,9 +45,11 @@ if (_unit getVariable ["A3U_civDialogHasSpoken", false]) exitWith {
     [_unit, _failMessage] remoteExec ["globalChat", _caller];
 };
 
+private _city = [citiesX, _unit] call BIS_fnc_nearestPosition; 
+private _citySide = sidesX getVariable [_city, sideUnknown];
 private _possibleMarkers = [citiesX, _unit, true] call A3A_fnc_findIfNearAndHostile;
 
-private _isDialogSuccessful = (captive _caller && (4 >= random 10) && (_possibleMarkers isNotEqualTo []));
+private _isDialogSuccessful = ((captive _caller || _citySide isEqualTo teamPlayer) && (4 >= random 10) && (_possibleMarkers isNotEqualTo []));
 
 if (_isDialogSuccessful) exitWith {
     private _roll = random 100;
@@ -169,7 +177,7 @@ private _failMessage = selectRandom [
     "STR_antistasi_actions_talk_with_civ_fail3"
 ];
 
-if !(captive _caller) then { // {aggressionOccupants >= random [30, 50, 70]}
+if (!(captive _caller) && {_citySide isNotEqualTo teamPlayer}) then {
     _failMessage = selectRandom [
         "STR_antistasi_actions_talk_with_civ_fail_notundercover1",
         "STR_antistasi_actions_talk_with_civ_fail_notundercover2"

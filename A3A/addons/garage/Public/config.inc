@@ -39,7 +39,7 @@ HR_GRG_Cnd_isAirbase  = {
     and (HR_GRG_accessPoint inArea _x)}) > 0 
     || count (milbases select {(sidesX getVariable [_x,sideUnknown] == teamPlayer) 
     and (HR_GRG_accessPoint inArea _x)}) > 0 
-    || count (A3A_buildingsToSave select {typeOf _x in ["A3AU_RebHelipad_Square_F", "A3AU_RebHelipad_Circle_F"] 
+    || count (A3A_buildingsToSave select {typeOf _x isKindOf "A3AU_RebHelipad_base_F"
     && HR_GRG_accessPoint distance2D _x <= 100}) > 0
 };
 
@@ -156,15 +156,6 @@ HR_GRG_addResources = {
     [0,_money] call A3A_fnc_resourcesFIA;
 };
 
-HR_GRG_fnc_addVehicleUAVCompat = {
-    private _veh = _this select 0;
-    if (unitisUAV _veh && {crew _veh isNotEqualTo []}) then {
-        private _moveOutCrewHandle = [_this select 3, _this select 0] spawn A3A_fnc_moveOutCrew;
-        waitUntil { sleep 0.1; scriptDone _moveOutCrewHandle };
-    };
-    _this call HR_GRG_fnc_addVehicle;
-};
-
 HR_GRG_canSell = {_this isEqualTo theBoss};
 
 HR_GRG_getVehicleSellPrice = {
@@ -173,3 +164,27 @@ HR_GRG_getVehicleSellPrice = {
     params ["_veh"];
     [_veh] call A3A_fnc_getVehicleSellPrice;
 };
+
+
+// ! The below ported from Official Antistasi Community as part of APL-ND ports,
+// ! set to false to preserve legacy behavior as some required code for this functionality (outside of garage addon) was not ported
+// ! (for multiple reasons)
+// antistasi resource cargo
+
+HR_GRG_useNewPylonSys = false; // new rearm system, blocks pylons entirely. turn off for old behavior
+HR_GRG_useNewRearmSys = false; // new rearm system
+HR_GRG_useNewRepairSys = false; // new repair system
+HR_GRG_useNewRefuelSys = false; // new refuel system
+HR_GRG_reduceState = false;      // Compress stored state (not fully backwards compatible)
+
+HR_GRG_getResourceCargo = {
+    params ["_veh", "_search"];
+    [_veh, _search, false] call A3A_fnc_getResourceCargo;
+};
+
+HR_GRG_setResourceCargo = {
+    params ["_veh", "_search", "_value"];
+    private _searchVar = format ["A3A_%1Cargo", _search];
+    _veh setVariable [_searchVar, _value, true];
+};
+

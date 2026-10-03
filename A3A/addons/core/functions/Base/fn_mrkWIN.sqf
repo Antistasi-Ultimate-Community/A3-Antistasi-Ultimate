@@ -32,7 +32,7 @@ private _markerX = [airportsX + resourcesX + factories + outposts + seaports + m
 
 // private _hideEnemyMarkers = missionNamespace getVariable ["A3U_setting_hideEnemyMarkers",false];
 if (hideEnemyMarkers) then {
-    "Dum"+_markerX setMarkerAlpha 1;
+    [_markerX] call A3U_fnc_revealZone;
 };
 
 private _markerPos = getMarkerPos _markerX;

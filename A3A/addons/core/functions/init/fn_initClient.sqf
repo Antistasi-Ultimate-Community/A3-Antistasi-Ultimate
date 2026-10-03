@@ -13,6 +13,9 @@ Info_1("Client version: %1", QUOTE(VERSION_FULL));
 
 if (call A3A_fnc_modBlacklist) exitWith {};
 
+private _enableInitMessages = profileNamespace getVariable ["A3U_setting_enableInitMessages", true];
+private _enableIntroAnimation = profileNamespace getVariable ["A3U_setting_enableIntroAnimation", true];
+
 player forceAddUniform "U_C_WorkerCoveralls";
 
 musicON = false;
@@ -163,7 +166,8 @@ private _colorInvaders = Invaders call BIS_fnc_sideColor;
 	_x set [3, 0.33]
 } forEach [_colourTeamPlayer, _colorInvaders];
 
-private _introShot = [
+private _introShot = scriptNull;
+if (_enableIntroAnimation) then { _introShot = [
 	(position petros), // Target position
 	format ["%1, %2 %3", worldName, (localize (rank player)), name player], // SITREP text
 	50, //  altitude
@@ -174,7 +178,7 @@ private _introShot = [
 		["\a3\ui_f\data\map\markers\Nato\o_inf.paa", _colourTeamPlayer, markerPos "insertMrk", 1, 1, 0, "Insertion Point", 0],
 		["\a3\ui_f\data\map\markers\Nato\o_inf.paa", _colorInvaders, markerPos "towerBaseMrk", 1, 1, 0, "Radio Towers", 0]
 	]
-] spawn BIS_fnc_establishingShot;
+] spawn BIS_fnc_establishingShot };
 
 if (playerMarkersEnabled) then {
     [] spawn A3A_fnc_playerMarkers;
@@ -211,7 +215,7 @@ player addEventHandler ["FiredMan", {
         else {
             _city = [citiesX,_player] call BIS_fnc_nearestPosition;
             _size = [_city] call A3A_fnc_sizeMarker;
-            _dataX = server getVariable _city;
+            _dataX = A3A_townData get _city;
             if (random 100 < _dataX select 2) then {
                 if (_player distance getMarkerPos _city < _size * 1.5) then {
                     [_player,false] remoteExec ["setCaptive",0,_player];
@@ -240,7 +244,7 @@ player addEventHandler ["InventoryOpened", {
             else {
                 _city = [citiesX,_playerX] call BIS_fnc_nearestPosition;
                 _size = [_city] call A3A_fnc_sizeMarker;
-                _dataX = server getVariable _city;
+                _dataX = A3A_townData get _city;
                 if (random 100 < _dataX select 2) then {
                     if (_playerX distance getMarkerPos _city < _size * 1.5) then {
                         [_playerX,false] remoteExec ["setCaptive",0,_playerX];
@@ -263,7 +267,7 @@ player addEventHandler ["HandleHeal", {
         else {
             _city = [citiesX,_player] call BIS_fnc_nearestPosition;
             _size = [_city] call A3A_fnc_sizeMarker;
-            _dataX = server getVariable _city;
+            _dataX = A3A_townData get _city;
             if (random 100 < _dataX select 2) then {
                 if (_player distance getMarkerPos _city < _size * 1.5) then {
                     [_player,false] remoteExec ["setCaptive",0,_player];
@@ -284,10 +288,7 @@ player addEventHandler ["WeaponAssembled", {
     private _veh = _this select 1;
     [_veh, teamPlayer] call A3A_fnc_AIVEHinit;		// will flip/capture if already initialized
     if (_veh isKindOf "StaticWeapon") then {
-        if (not(_veh in staticsToSave)) then {
-            staticsToSave pushBack _veh;
-            publicVariable "staticsToSave";
-        };
+        [_veh] call A3A_fnc_addToStaticsToSave;
         _markersX = markersX select {sidesX getVariable [_x,sideUnknown] == teamPlayer};
         _pos = position _veh;
         [_veh] call A3A_Logistics_fnc_addLoadAction;
@@ -296,8 +297,9 @@ player addEventHandler ["WeaponAssembled", {
 }];
 
 player addEventHandler ["WeaponDisassembled", {
-	[_this select 1] remoteExec ["A3A_fnc_postmortem", 2];
-	[_this select 2] remoteExec ["A3A_fnc_postmortem", 2];
+    params["","_primaryBag","_secondaryBag"];
+    [_primaryBag, true] remoteExecCall[QFUNCMAIN(despawnQueueEntity), 2];
+    [_secondaryBag, true] remoteExecCall[QFUNCMAIN(despawnQueueEntity), 2];
 }];
 
 if (areRivalsDiscovered) then {
@@ -335,11 +337,10 @@ player addEventHandler ["GetInMan", {
 
 private _blackMarketStock = call A3U_fnc_grabBlackMarketVehicles;
 
-if ((_blackMarketStock select {(_x select 2) isEqualTo "ARTILLERY"}) isNotEqualTo []) then {
+if ((_blackMarketStock get "ARTILLERY") isNotEqualTo createHashMap) then {
 	player addEventHandler ["GetInMan", {
 		params ["_unit", "_role", "_vehicle"];
-		private _vehType = typeOf _vehicle;
-		private _artyTypes = _blackMarketStock select {(_x select 2) isEqualTo "ARTILLERY"};
+		private _artyTypes = keys (_blackMarketStock get "ARTILLERY");
 
 		if ((typeOf _vehicle) in _artyTypes) then {
 			enableEngineArtillery false;
@@ -348,7 +349,7 @@ if ((_blackMarketStock select {(_x select 2) isEqualTo "ARTILLERY"}) isNotEqualT
 
 	player addEventHandler ["GetOutMan", {
 		params ["_unit", "_role", "_vehicle"];
-        private _artyTypes = _blackMarketStock select {(_x select 2) isEqualTo "ARTILLERY"};
+        private _artyTypes = keys (_blackMarketStock get "ARTILLERY");
 
 		if ((typeOf _vehicle) in _artyTypes) then {
 			enableEngineArtillery true;
@@ -442,14 +443,14 @@ if (membershipEnabled) then {
     };
     if (serverCommandAvailable "#logout") then {
         _isMember = true;
-        [localize "STR_A3A_initClient_general_info", localize "STR_A3A_initClient_server_admin"] call A3A_fnc_customHint;
+        if (_enableInitMessages) then { [localize "STR_A3A_initClient_general_info", localize "STR_A3A_initClient_server_admin"] call A3A_fnc_customHint };
     };
 
     if (_isMember) then {
         membersX pushBack (getPlayerUID player);				// potential race condition, but there's only one admin so chance of hitting this is low
         publicVariable "membersX";
     } else {
-        [localize "STR_A3A_initClient_general_info", localize "STR_A3A_initClient_server_guest"] call A3A_fnc_customHint;
+        if (_enableInitMessages) then { [localize "STR_A3A_initClient_general_info", localize "STR_A3A_initClient_server_guest"] call A3A_fnc_customHint };
     };
 };
 
@@ -462,7 +463,7 @@ if !(isPlayer leader group player) then {
 
 waitUntil { scriptDone _introshot };
 
-cutText ["","BLACK IN", 3];
+if (_enableIntroAnimation) then { cutText ["","BLACK IN", 3] };
 
 [] remoteExecCall ["A3A_fnc_assignBossIfNone", 2];
 
@@ -477,7 +478,7 @@ if (isServer || (!isNil "theBoss" && {player isEqualTo theBoss}) || (call BIS_fn
     private _loadedTemplateInfoXML = A3A_loadedTemplateInfoXML apply {[true,_x#0,_x#1]};	// Remove and simplify when the list above is empty and can be deleted.
     _modsAndLoadText append _loadedTemplateInfoXML;
 
-    if (count _modsAndLoadText isEqualTo 0) exitWith {};
+    if (!_enableInitMessages || {count _modsAndLoadText isEqualTo 0}) exitWith {};
     private _textXML = "<t align='left'>" + ((_modsAndLoadText apply { "<t color='#f0d498'>" + _x#1 + ":</t>" + _x#2 }) joinString "<br/>") + "</t>";
     [localize "STR_A3A_initClient_mods_header",_textXML] call A3A_fnc_customHint;
 };
@@ -582,7 +583,6 @@ mapX addAction [localize "STR_antistasi_actions_ai_load_info", { [] remoteExec [
 } forEach [boxX, flagX, vehicleBox, mapX];
 
 [] call A3A_fnc_unitTraits;
-[] call A3A_fnc_addTeardownActions;
 
 // Get list of buildable objects, has map (and template?) dependency
 call A3A_fnc_initBuildableObjects;
@@ -675,3 +675,26 @@ if (staminaEnabled isEqualTo false) then {
 
 private _newWeaponSway = swayEnabled / 100;
 player setCustomAimCoef _newWeaponSway;
+
+addMissionEventHandler ["Map", A3U_fnc_mapHoverEH];
+
+[markersX + milAdministrationsX + mrkAntennas] call A3U_fnc_mrkUpdateBulk;
+
+// Server requests player to provide their additional save data.
+// We only get a UUID which the server expects to be written to its mission
+// namespace with the relevant data as a notification mechanism.
+[CBA_EVENT_SERVER_PLAYER_SAVE, {
+    if !assert(params[
+        ["_uuid", nil, [""]]
+    ]) exitWith {};
+
+    private _pluginsData = createHashMap;
+
+    [CBA_EVENT_CLIENT_PLAYER_SAVE, [_pluginsData]] call FUNCMAIN(triggerLocalEvent);
+
+    missionNamespace setVariable[_uuid, _pluginsData, 2];
+}] call FUNCMAIN(addEventHandler);
+
+// Notify plugins that client init is done, so they can do any post-init setup
+// that needs to be done after A3U considers itself fully spun up.
+[CBA_EVENT_CLIENT_INIT_DONE, []] call FUNCMAIN(triggerLocalEvent);

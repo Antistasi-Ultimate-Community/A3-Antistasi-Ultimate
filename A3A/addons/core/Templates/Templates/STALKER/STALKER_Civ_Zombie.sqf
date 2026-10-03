@@ -72,7 +72,11 @@ private _civUniforms = [
     "CUP_U_I_GUE_Anorak_02"
 ];
 
-["uniforms", _civUniforms] call _fnc_saveToTemplate;
+private _vipUniforms = [
+    "SE_Scavenger_Coat"
+];
+
+["uniforms", _civUniforms + _vipUniforms] call _fnc_saveToTemplate;
 
 ["headgear", []] call _fnc_saveToTemplate;
 
@@ -89,6 +93,8 @@ _loadoutData set ["pressHelmets", []];
 _loadoutData set ["maps", ["ItemMap"]];
 _loadoutData set ["watches", ["ItemWatch"]];
 _loadoutData set ["compasses", ["ItemCompass"]];
+_loadoutData set ["vipUniforms", _vipUniforms];
+_loadoutData set ["sidearms", ["CUP_hgun_SWM327MP", "CUP_hgun_CZ75", "CUP_hgun_M9","CUP_hgun_TT"]];
 
 private _manTemplate = {
     ["uniforms"] call _fnc_setUniform;
@@ -121,6 +127,18 @@ private _pressTemplate = {
     ["maps"] call _fnc_addMap;
     ["watches"] call _fnc_addWatch;
     ["compasses"] call _fnc_addCompass;
+};
+private _vipTemplate = {
+    ["vipUniforms"] call _fnc_setUniform;
+
+    ["items_medical_standard"] call _fnc_addItemSet;
+
+    ["maps"] call _fnc_addMap;
+    ["watches"] call _fnc_addWatch;
+    ["compasses"] call _fnc_addCompass;
+
+    ["sidearms"] call _fnc_setHandgun;
+    ["handgun", 2] call _fnc_addMagazines;
 };
 
 private _specialUnits = [];
@@ -164,6 +182,7 @@ if (["dev_mutant_asymhuman"] call A3U_fnc_hasAddon) then {
 
 private _prefix = "militia";
 private _unitTypes = [
+    ["VIP", _vipTemplate],
     ["Press", _pressTemplate], // to-do: allow press to spawn but make them special infected
     ["Worker", _workerTemplate], // needed to be normal for resources, factories, etc
     ["Man", _manTemplate],

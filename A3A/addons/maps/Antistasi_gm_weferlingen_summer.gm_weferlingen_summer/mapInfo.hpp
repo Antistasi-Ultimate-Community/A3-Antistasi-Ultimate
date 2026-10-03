@@ -40,8 +40,8 @@ class gm_weferlingen_summer {
 	climate = "temperate";
 	buildObjects[] = {
 		BUILDABLES_HISTORIC,
+		BUILDABLES_UNIVERSAL,
 		BUILDABLES_TEMPERATE,
-		BUILDABLES_GM,
-		BUILDABLES_UNIVERSAL
+		BUILDABLES_GM
 	};
 };

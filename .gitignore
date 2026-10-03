@@ -7,6 +7,7 @@
 *.pbo
 *.pbo.bak
 *.png
+*.blend1
 AntistasiBuilder.cfg
 
 #Ignore mission files that have been copied to A3-Antistasi

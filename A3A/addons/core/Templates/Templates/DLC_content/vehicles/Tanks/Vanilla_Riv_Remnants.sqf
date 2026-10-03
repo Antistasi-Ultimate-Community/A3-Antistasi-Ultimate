@@ -1,1 +1,0 @@
-_tanks append ["I_LT_01_cannon_F","I_LT_01_AT_F"];

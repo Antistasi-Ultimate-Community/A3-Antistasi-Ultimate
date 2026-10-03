@@ -279,7 +279,7 @@ _sfLoadoutData set ["sidearms", [
 
 private _eliteLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 _eliteLoadoutData set ["uniforms", ["cwr3_o_uniform_klmk_1957_birch_v2", "cwr3_o_uniform_klmk_1957_splats_v2"]];
-_eliteLoadoutData set ["slUniform", ["cwr3_o_uniform_klmk_1957_birch_v3"]];
+_eliteLoadoutData set ["slUniforms", ["cwr3_o_uniform_klmk_1957_birch_v3"]];
 _eliteLoadoutData set ["vests", ["cwr3_o_vest_6b2_ak74", "cwr3_o_vest_6b2_ak74", "cwr3_o_vest_6b2_ak74", "cwr3_o_vest_6b2_chicom_ak74", "cwr3_o_vest_6b2_chicom_light_ak74"]];
 _eliteLoadoutData set ["mgVests", ["cwr3_o_vest_6b2_mg"]];
 _eliteLoadoutData set ["medVests", ["cwr3_o_vest_6b2_medic"]];
@@ -334,7 +334,7 @@ _eliteLoadoutData set ["sidearms", [
 
 private _militaryLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 _militaryLoadoutData set ["uniforms", ["cwr3_o_uniform_klmk_1954_birch_v2", "cwr3_o_uniform_klmk_1954_branches_v2", "cwr3_o_uniform_klmk_1954_leaves_v2", "cwr3_o_uniform_klmk_1954_splats_v2"]];
-_militaryLoadoutData set ["slUniform", ["cwr3_o_uniform_klmk_1954_birch_v3"]];
+_militaryLoadoutData set ["slUniforms", ["cwr3_o_uniform_klmk_1954_birch_v3"]];
 _militaryLoadoutData set ["vests", ["cwr3_o_vest_6b2_ak74", "cwr3_o_vest_6b2_ak74", "cwr3_o_vest_6b2_ak74", "cwr3_o_vest_6b2_chicom_ak74", "cwr3_o_vest_6b2_chicom_light_ak74"]];
 _militaryLoadoutData set ["mgVests", ["cwr3_o_vest_6b2_mg"]];
 _militaryLoadoutData set ["medVests", ["cwr3_o_vest_6b2_medic"]];

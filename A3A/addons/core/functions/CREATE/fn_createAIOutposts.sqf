@@ -36,7 +36,7 @@ if (_sideX == Occupants && {_markerX in outposts}) then {
 	};
 };
 
-private _mrk = createMarkerLocal [format ["%1patrolarea", random 100], _positionX];
+private _mrk = createMarkerLocal [format ["patrolarea:%1", _markerX], _positionX];
 _mrk setMarkerShapeLocal "RECTANGLE";
 _mrk setMarkerSizeLocal [(distanceSPWN/2),(distanceSPWN/2)];
 _mrk setMarkerTypeLocal "hd_warning";
@@ -123,33 +123,12 @@ if(random 100 < (40 + tierWar * 3)) then {
 	[_markerX, _large] spawn A3A_fnc_placeIntel;
 };
 
-private _typeVehX = _faction get "flag";
-private _flagX = createVehicle [_typeVehX, _positionX, [],0, "NONE"];
-_flagX allowDamage false;
-[_flagX,"take"] remoteExec ["A3A_fnc_flagaction",[teamPlayer,civilian],_flagX];
+([_markerX] call A3A_fnc_createZoneFlag) params ["_flagX", "_flagSpawn"];
 _vehiclesX pushBack _flagX;
-if (flagTexture _flagX != (_faction get "flagTexture")) then {[_flagX,(_faction get "flagTexture")] remoteExec ["setFlagTexture",_flagX]};
+if (!isNil "_flagSpawn") then { _spawnsUsed pushBack _flagSpawn };
 
-// Only create ammoBox if it's been recharged (see reinforcementsAI)
-private _ammoBox = if (garrison getVariable [_markerX + "_lootCD", 0] == 0) then
-{
-	private _ammoBoxType = _faction get "ammobox";
-	private _ammoBox = [_ammoBoxType, _positionX, 15, 5, true] call A3A_fnc_safeVehicleSpawn;
-	// Otherwise when destroyed, ammoboxes sink 100m underground and are never cleared up
-	_ammoBox addEventHandler ["Killed", { [_this#0] spawn { sleep 10; deleteVehicle (_this#0) } }];
-	[_ammoBox] spawn A3A_fnc_fillLootCrate;
-	[_ammoBox, nil, true] call A3A_Logistics_fnc_addLoadAction;
-
-	if (_markerX in seaports) then {
-		[_ammoBox] spawn {
-			sleep 1;    //make sure fillLootCrate finished clearing the crate
-			{
-				_this#0 addItemCargoGlobal [_x, round random [2,6,8]];
-			} forEach (A3A_faction_reb get "diveGear");
-		};
-	};
-	_ammoBox;
-};
+([_markerX] call A3A_fnc_createZoneAmmoBox) params ["_ammoBox", "_ammoBoxSpawn"];
+if (!isNil "_ammoBoxSpawn") then { _spawnsUsed pushBack _ammoBoxSpawn };
 
 _roads = _positionX nearRoads _size;
 
@@ -262,9 +241,52 @@ if (_spawnParameter isEqualType []) then {
 	sleep 1;
 };
 
+private _countX = 0;
+private _vehCount = round (random [2, 4, 5]);
+while {_countX < _vehCount} do {
+    private _veh = objNull;
+    private _hangar = objNull;
+    private _spawnParameter = [_markerX, "Plane"] call A3A_fnc_findSpawnPosition;
+    if (_spawnParameter isEqualType []) then {
+        private _vehiclesPlanesCAS = _faction get "vehiclesPlanesCAS";
+        private _vehiclesPlanesAA = _faction get "vehiclesPlanesAA";
+        private _vehPool = [];
+        {
+            _vehPool pushBack _x;
+            _vehPool pushBack 1;
+        } forEach _vehiclesPlanesCAS;
+        {
+            _vehPool pushBack _x;
+            _vehPool pushBack 1;
+        } forEach _vehiclesPlanesAA;
+        _spawnsUsed pushBack (_spawnParameter select 2);
+        private _typeVehX = selectRandomWeighted _vehPool;
+        _veh = createVehicle [_typeVehX, (_spawnParameter select 0), [], 0, "CAN_COLLIDE"];
+        _veh setDir (_spawnParameter select 1);
+        sleep 0.5;
+        if !(alive _veh) then {
+            _hangar = (nearestObjects [_veh, ["Static"], 20]) select 0;
+            deleteVehicle _hangar;
+            deleteVehicle _veh;
+            _veh = createVehicle [_typeVehX, (_spawnParameter select 0), [], 0, "CAN_COLLIDE"];
+            _veh setDir (_spawnParameter select 1);
+            _veh allowDamage false;
+            _veh enableSimulation false;
+            sleep 0.5;
+            _veh enableSimulation true;
+            _veh allowDamage true;
+        };
+        _vehiclesX pushBack _veh;
+        [_veh, _sideX] call A3A_fnc_AIVEHinit;
+    } else {
+        _countX = _vehCount;
+    };
+    _countX = _countX + 1;
+};
+
 { _x setVariable ["originalPos", getPos _x] } forEach _vehiclesX;
 
-private _countX = 0;
+_countX = 0;
 
 if (!isNull _antenna) then {
 	if ((typeOf _antenna == "Land_TTowerBig_1_F") or {typeOf _antenna == "Land_TTowerBig_2_F"}) then {
@@ -296,7 +318,7 @@ if (!isNull _antenna) then {
 
 private _array = [];
 private _subArray = [];
-private _countX = 0;
+_countX = 0;
 _radiusX = _radiusX -1;
 while {_countX <= _radiusX} do {
 	_array pushBack (_garrison select [_countX,7]);
@@ -341,7 +363,8 @@ for "_i" from 0 to (count _array - 1) do {
 		[_groupX, "Patrol_Defend", 0, 100, -1, true, _positionX, false] call A3A_fnc_patrolLoop;
 	};
 };
-["locationSpawned", [_markerX, "Outpost", true]] call EFUNC(Events,triggerEvent);
+
+[CBA_EVENT_SERVER_SPAWN_LOCATION, [_markerX, "Outpost", true]] call FUNCMAIN(triggerLocalEvent);
 
 {
 	if (_x isKindOf "Static" || _x isKindOf "StaticWeapon") then {continue};
@@ -374,4 +397,7 @@ if (!isNil "_ammoBox") then {
 	private _lootCD = 120*16 / ([_markerX] call A3A_fnc_garrisonSize);
 	garrison setVariable [_markerX + "_lootCD", _lootCD, true];
 };
-["locationSpawned", [_markerX, "Outpost", false]] call EFUNC(Events,triggerEvent);
+
+[CBA_EVENT_SERVER_SPAWN_LOCATION, [_markerX, "Outpost", false]] call FUNCMAIN(triggerLocalEvent);
+
+nil;

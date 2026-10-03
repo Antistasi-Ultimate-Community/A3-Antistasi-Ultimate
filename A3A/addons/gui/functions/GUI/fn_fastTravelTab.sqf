@@ -31,7 +31,7 @@ switch (_mode) do
 {
     case ("update"):
     {
-        Trace("Updating Fast Travel tab");
+        Debug("Updating Fast Travel tab");
         // Show back button
         private _display = findDisplay A3A_IDD_MAINDIALOG;
         private _backButton = _display displayCtrl A3A_IDC_MAINDIALOGBACKBUTTON;
@@ -195,7 +195,7 @@ switch (_mode) do
         _params params [["_enableHcMode", false], ["_hcGroup", grpNull]];
         private _display = findDisplay A3A_IDD_MAINDIALOG;
         private _fastTravelMap = _display displayCtrl A3A_IDC_FASTTRAVELMAP;
-        Trace_2("Set high command mode: %1, group: %2", _enableHcMode, _hcGroup);
+        Debug_2("Set high command mode: %1, group: %2", _enableHcMode, _hcGroup);
         _fastTravelMap setVariable ["hcMode", _enableHcMode];
         _fastTravelMap setVariable ["hcGroup", _hcGroup];
     };

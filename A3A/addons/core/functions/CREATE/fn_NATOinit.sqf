@@ -92,7 +92,6 @@ _unit addEventHandler ["Deleted", A3A_fnc_enemyUnitDeletedEH];
 
 
 //Calculates the skill of the given unit
-//private _skill = (0.15 * skillMult) + (0.04 * difficultyCoef) + (0.02 * tierWar);
 private _skill = (0.1 * A3A_enemySkillMul) + (0.07 * (1 max A3A_activePlayerCount^0.5)) + (0.01 * tierWar);
 private _regularFaces = nil;
 private _regularVoices = nil;
@@ -279,4 +278,7 @@ if (_unit == gunner objectParent _unit or {(secondaryWeapon _unit) in allAA}) th
         if (!isNull driver _x) then { _unit reveal [_x, 1.5] };
     } forEach (_unit nearEntities ["Air", distanceSPWN*1]);
 };
-["AIInit", [_unit, _side, _marker, _unit getVariable "spawner"]] call EFUNC(Events,triggerEvent);
+
+[CBA_EVENT_SERVER_INIT_AI_UNIT, [_unit, _side, _marker, _unit getVariable "spawner"]] call FUNCMAIN(triggerServerEvent);
+
+nil;

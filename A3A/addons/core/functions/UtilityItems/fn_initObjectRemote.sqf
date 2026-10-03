@@ -74,6 +74,7 @@ if ("unpack" in _flags) then {
 };
 
 if ("build" in _flags) then {
+    _object lockInventory true;
     _object addAction [
         localize "STR_A3A_buildingplacer",
         { [_this#0, 75, _this#0] spawn A3A_fnc_buildingPlacerStart },

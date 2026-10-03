@@ -19,10 +19,10 @@ class iron_excelsior_Tobruk {
 	climate = "arid";
 	buildObjects[] = {
 		BUILDABLES_HISTORIC,
+		BUILDABLES_UNIVERSAL,
 		BUILDABLES_MODERN_SAND,
 		BUILDABLES_ARID,
-		BUILDABLES_CUP,
-		BUILDABLES_UNIVERSAL
+		BUILDABLES_CUP
 	};
 	// Needs to be re-done when possible (?)
 };

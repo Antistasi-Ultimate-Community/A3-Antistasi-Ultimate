@@ -12,8 +12,16 @@ Author:
     UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
 
+// Despawn processor self-relaunch delay
+GVAR(despawnQueueProcessorDelay) = 60;
+
 // Whether statics crewed in outposts should scan their horizon
 GVAR(rebelStaticsScanHorizon) = true;
+
+// How long to wait for clients to respond with their data during a save, in
+// seconds. Increase this if you notice a lot of
+// "Timeout waiting for player data save to complete" server RPT messages.
+GVAR(saveWaitClientDataTimeout) = 10;
 
 // Used as height in calls to SCRT_fnc_common_scanHorizon for A/A units
 GVAR(scanHorizonHeight) = 300;

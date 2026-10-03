@@ -20,7 +20,7 @@ if (isServer) then {
 };
 
 removeAllActions _oldUnit;
-[_oldUnit] spawn A3A_fnc_postmortem;
+[_oldUnit] remoteExecCall[QFUNCMAIN(postmortem), 2];
 
 _oldUnit setVariable ["incapacitated",false,true];
 _newUnit setVariable ["incapacitated",false,true];
@@ -145,7 +145,7 @@ if (side group _newUnit == teamPlayer) then
 			{
 				_city = [citiesX,_player] call BIS_fnc_nearestPosition;
 				_size = [_city] call A3A_fnc_sizeMarker;
-				_dataX = server getVariable _city;
+				_dataX = A3A_townData get _city;
 				if (random 100 < _dataX select 2) then
 				{
 					if (_player distance getMarkerPos _city < _size * 1.5) then
@@ -182,7 +182,7 @@ if (side group _newUnit == teamPlayer) then
 				{
 					_city = [citiesX,_playerX] call BIS_fnc_nearestPosition;
 					_size = [_city] call A3A_fnc_sizeMarker;
-					_dataX = server getVariable _city;
+					_dataX = A3A_townData get _city;
 					if (random 100 < _dataX select 2) then
 					{
 						if (_playerX distance getMarkerPos _city < _size * 1.5) then
@@ -215,7 +215,7 @@ if (side group _newUnit == teamPlayer) then
 			{
 				_city = [citiesX,_player] call BIS_fnc_nearestPosition;
 				_size = [_city] call A3A_fnc_sizeMarker;
-				_dataX = server getVariable _city;
+				_dataX = A3A_townData get _city;
 				if (random 100 < _dataX select 2) then
 				{
 					if (_player distance getMarkerPos _city < _size * 1.5) then
@@ -232,10 +232,7 @@ if (side group _newUnit == teamPlayer) then
 		private _veh = _this select 1;
 		[_veh, teamPlayer] call A3A_fnc_AIVEHinit;		// will flip/capture if already initialized
 		if (_veh isKindOf "StaticWeapon") then {
-			if (not(_veh in staticsToSave)) then {
-				staticsToSave pushBack _veh;
-				publicVariable "staticsToSave";
-			};
+	        [_veh] call A3A_fnc_addToStaticsToSave;
 			_markersX = markersX select {sidesX getVariable [_x,sideUnknown] == teamPlayer};
 			_pos = position _veh;
 			if (_markersX findIf {_pos inArea _x} != -1) then {
@@ -243,12 +240,10 @@ if (side group _newUnit == teamPlayer) then
 			};
 		};
 	}];
-	_newUnit addEventHandler ["WeaponDisassembled",
-	{
-		_bag1 = _this select 1;
-		_bag2 = _this select 2;
-		[_bag1] remoteExec ["A3A_fnc_postmortem", 2];
-		[_bag2] remoteExec ["A3A_fnc_postmortem", 2];
+
+	_newUnit addEventHandler ["WeaponDisassembled", {
+		[_this select 1, true] remoteExecCall[QFUNCMAIN(despawnQueueEntity), 2];
+		[_this select 2, true] remoteExecCall[QFUNCMAIN(despawnQueueEntity), 2];
 	}];
 
 	if (areRivalsDiscovered) then {
@@ -261,7 +256,6 @@ if (side group _newUnit == teamPlayer) then
 	};
 
 	[] call A3A_fnc_unitTraits;
-	[] call A3A_fnc_addTeardownActions;
 	[] spawn A3A_fnc_statistics;
 } else {
 	_oldUnit setVariable ["spawner",nil,true];
@@ -279,4 +273,4 @@ if (staminaEnabled isEqualTo false) then {
 }; 
  
 private _newWeaponSway = swayEnabled / 100;
-_newunit setCustomAimCoef _newWeaponSway;
+_newUnit setCustomAimCoef _newWeaponSway;

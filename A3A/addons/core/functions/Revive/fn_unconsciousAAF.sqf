@@ -5,7 +5,7 @@ params ["_unit", "_injurer"];
 private _bleedOutTime = if (surfaceIsWater (position _unit)) then {time + 60} else {time + 300};
 private _playerNear = false;
 private _group = group _unit;
-private _side = side _group;
+private _side = side _unit;
 
 // This is... quite weird
 if ({if ((isPlayer _x) and {_x distance _unit < distanceSPWN2}) exitWith {1}} count allUnits != 0) then
@@ -16,6 +16,8 @@ if ({if ((isPlayer _x) and {_x distance _unit < distanceSPWN2}) exitWith {1}} co
 };
 
 _unit setFatigue 1;			// Doesn't do anything since Arma stamina rework?
+
+private _helper = objNull;
 
 private _nextRequest = 0;
 while { (alive _unit) && (time < _bleedOutTime) && (_unit getVariable ["incapacitated",false]) } do
@@ -28,7 +30,10 @@ while { (alive _unit) && (time < _bleedOutTime) && (_unit getVariable ["incapaci
     //Ask for help if not already helped
 	private _helped = _unit getVariable ["helped",objNull];
 	if (isNull _helped and _nextRequest < time) then {
-		[_unit] call A3A_fnc_askHelp;
+		_helper = [_unit] call A3A_fnc_askHelp;
+		if (AIrevivesOutsideSquad isNotEqualTo -1 && {isNull _helper}) then {
+			_helper = [_unit] call A3A_fnc_askAnyoneHelp; //in case there is no helper found in _units group
+		};
 		_nextRequest = time + (2 + (_unit getVariable ["helpFailed", 0]))^2;
 	};
 	sleep 3;

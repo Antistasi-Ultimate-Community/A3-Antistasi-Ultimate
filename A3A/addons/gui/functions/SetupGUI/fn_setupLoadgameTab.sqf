@@ -36,7 +36,7 @@ private _saveInfoCtrl = _display displayCtrl A3A_IDC_SETUP_SAVEINFOTEXT;
 
 private _saveBoxColumns = [
     ["gameID", "ID", 0, 9],
-    ["mapStr", localize "STR_antistasi_setup_dialog_table_map", 9, 25],
+    ["mapStr", localize "STR_antistasi_setup_dialog_table_map", 9, 25, "mapStrShort"],
     ["name", localize "STR_antistasi_setup_dialog_table_name", 25, 45],
     ["verStr", localize "STR_antistasi_setup_dialog_table_version", 70, 12],
     ["timeStr", localize "STR_antistasi_setup_dialog_table_time", 82, 15],
@@ -96,37 +96,39 @@ switch (_mode) do
         if (_factions isNotEqualTo (_display getVariable "savedFactions")) then {
             _display setVariable ["savedFactions", _factions];
             ["fillFactions"] call A3A_fnc_setupFactionsTab;
-            ["fillContent"] call A3A_fnc_setupContentTab;
+            ["fillContent"] call A3A_fnc_setupFactionsTab;
         };
 
         // If it's not a new game or load params or copy game is checked, load params
         private _params = _saveData get "params";
         if (isNil "_params") then { _params = [] };               // getOrDefault doesn't work because input code may set nils
         if ((_sameMap and !cbChecked _newGameCtrl) or cbChecked _copyGameCtrl or cbChecked _oldParamsCtrl) then {
-            if (count _params > 0 and _params isNotEqualTo (_display getVariable "savedParams")) then {
+            if (count _params > 0 and _params isNotEqualTo (_display getVariable "savedParams")) then { 
                 _display setVariable ["savedParams", _params];
                 ["fillParams"] call A3A_fnc_setupParamsTab;
             };
         } else {
-            if (cbChecked _newGameCtrl && {!(_display getVariable ["paramsChangedSinceReset", false])}) then {
-                //_display setVariable ["paramsChangedSinceReset", true];
+            if (cbChecked _newGameCtrl && {!(_display getVariable ["paramsChangedSinceReset", false])}) then { 
                 _display setVariable ["savedParams", []];
                 ["fillParams"] call A3A_fnc_setupParamsTab;
             };
         };
+        // ["clearLBSelection", [[_display displayCtrl A3A_IDC_SETUP_PARAMSPRESETS_SIZE, _display displayCtrl A3A_IDC_SETUP_PARAMSPRESETS_DIFF, _display displayCtrl A3A_IDC_SETUP_PARAMSPRESETS_CSTM]]] call A3A_fnc_setupParamsTab;
+        // ["fillParams"] call A3A_fnc_setupParamsTab;
     };
 
     case ("setSaveData"):
     {
         { ctrlDelete _x } forEach allControls _listboxCtrl;             // doesn't touch config controls
         {
-            _x params ["_varname", "", "_xpos", "_width"];
+            _x params ["_varname", "", "_xpos", "_width", ["_toolTip", nil, [""]]];
             private _ctrls = [];
             {
                 private _ctrl = _display ctrlCreate ["A3A_Text_Small", -1, _listboxCtrl];
                 _ctrl ctrlSetPosition [GRID_W*_xpos, GRID_H*_forEachIndex*4, GRID_W*_width, GRID_H*4];
                 _ctrl ctrlCommit 0;
                 _ctrl ctrlSetText (_x getOrDefault [_varname, ""]);
+                if (!isNil "_toolTip") then { _ctrl ctrlSetTooltip(_x getOrDefault[_toolTip, "N/A"]) };
                 if (_x get "map" != worldName) then { _ctrl ctrlSetTextColor [0.6,0.6,0.6,1] };
                 _ctrls pushBack _ctrl;
             } forEach A3A_setup_saveData;
@@ -206,13 +208,14 @@ switch (_mode) do
             };
         };
         if (_saveData get "name" != "") then {
-            _confirmText = _confirmText + format [localize "STR_antistasi_dialogs_setup_confirm_game_name", _saveData get "name"];
+            //extra space because localize trims trailing spaces in these localization keys
+            _confirmText = _confirmText + " " + format [localize "STR_antistasi_dialogs_setup_confirm_game_name", _saveData get "name"];
         };
         _saveData set ["useNewNamespace", cbChecked _newSaveCtrl];
 
         // Factions tab: [factions, addonvics, DLC]
         private _factions = ["getFactions"] call A3A_fnc_setupFactionsTab;
-        private _contentData = ["getContent"] call A3A_fnc_setupContentTab;
+        private _contentData = ["getContent"] call A3A_fnc_setupFactionsTab;
         _saveData set ["factions", _factions];
         _saveData set ["addonVics", _contentData#0];
         _saveData set ["DLC", _contentData#1];

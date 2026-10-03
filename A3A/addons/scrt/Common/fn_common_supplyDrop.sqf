@@ -7,7 +7,8 @@ private _planeVehicle = vehicle _plane;
 
 sleep random 5;
 
-Info_2("Dropping cargo at %1 (near %2)", getPos _planeVehicle, text nearestLocation [getPos _planeVehicle, "NameCity"]);
+private _nearestLocation = nearestLocation [getPos _planeVehicle, "NameCity"];
+Info_2("Dropping cargo at %1 (near %2)", getPos _planeVehicle, text _nearestLocation);
 
 if (alive _planeVehicle) then {
 
@@ -33,6 +34,9 @@ if (alive _planeVehicle) then {
     _para setPos getPos _supplyDrop;
     _supplyDrop attachTo [_para, _paraPos];
 
+    
+	private _startTime = time;
+
     [_supplyDrop, _para] spawn {
         params ["_obj","_para"];
 
@@ -45,6 +49,8 @@ if (alive _planeVehicle) then {
             isNull _para 
             || 
             (count (lineIntersectsWith [getPosASL _obj, (getPosASL _obj) vectorAdd [0, 0, -0.5], _obj, _para])) > 0
+            || 
+            (time - _startTime) > 30
         };
             
         _para disableCollisionWith _obj;

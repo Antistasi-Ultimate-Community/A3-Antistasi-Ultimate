@@ -8,11 +8,11 @@ params ["_type", ["_requester", clientOwner], ["_silent", false]];
 waitUntil {isNil "A3A_missionRequestInProgress"};
 A3A_missionRequestInProgress = true;
 
-if(isNil "_type") then {
+if(isNil "_type" || {!(isNil "_type") && (_type isEqualTo "RAN")}) then {
 	private _types = ["CON","DES","LOG","SUPP","RES","CONVOY"];
 	_type = selectRandom (_types - A3A_activeTasks);
-	_silent = true;
-};
+	_silent = !(_type isEqualTo "RAN");
+}; // tfw you add a "random mission" button just to realize it already checks for isNil anyway
 if (isNil "_type" or leader group petros != petros) exitWith { A3A_missionRequestInProgress = nil };
 if (_type in A3A_activeTasks) exitWith {
 	if (!_silent) then {[petros, "globalChat", localize "STR_chats_mission_request_already_type"] remoteExec ["A3A_fnc_commsMP",_requester]};
@@ -251,7 +251,7 @@ switch (_type) do {
 			private _site = selectRandom _possibleMarkers;
 
 			private _shipwreckPosition = [0,0,0];
-			if (!(toLowerAnsi worldName in ["enoch", "vn_khe_sanh", "esseker", "sefrouramal", "takistan"]) && {random 100 < 20}) then {
+			if (([] call A3A_fnc_isSeaportMap) && {random 100 < 20}) then {
 				_shipwreckPosition = [
 					(getMarkerPos _site),
 					0,

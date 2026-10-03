@@ -16,10 +16,10 @@ params [["_objects",[],[[]]]];
 
 private _constructionObjects = [
     ["Land_WoodenBox_F", 50],
-    ["Land_WoodenBox_02_F", 100],
-    ["Land_WoodenCrate_01_stack_x5_F", 250],
+    ["Land_WoodenCrate_01_F", 100],
+    ["Land_WoodenBox_02_F", 250],
     ["Land_PaperBox_closed_F", 400],
-    ["Land_WoodenCrate_01_F", 999999]
+    ["Land_WoodenCrate_01_stack_x5_F", 999999]
 ];
 
 // other options:

@@ -13,6 +13,9 @@ if (_milAdministrationIndex isEqualTo -1) exitWith {
 
 private _milAdministration = A3A_milAdministrations select _milAdministrationIndex;
 
+if (_marker in townSkirmishes) exitWith {
+	Info("Aborting mil admin spawn; is in town skirmish");
+};
 if (_milAdministration isEqualTo objNull) exitWith {
 	Error_1("For some reason mil administration %1 object is null, aborting.", _marker);
 };
@@ -23,7 +26,7 @@ if (!alive _milAdministration) exitWith {
 private _side = sidesX getVariable [_marker, sideUnknown];
 
 if (_side isEqualTo sideUnknown) exitWith {
-	Error_1("For some reason mil administration %1 side is %2, aborting.", _marker, str _side);
+	Error_2("For some reason mil administration %1 side is %2, aborting.", _marker, str _side);
 };
 
 Info_2("Spawning military administration personel for %1 marker on %2 position.", _marker, str _milAdministrationPos);
@@ -247,17 +250,25 @@ private _ammoBox = if (garrison getVariable [_marker + "_lootCD", 0] == 0) then 
 	_ammoBox;
 };
 
+[CBA_EVENT_SERVER_SPAWN_LOCATION, [_marker, "MilAdmin", true]] call FUNCMAIN(triggerLocalEvent);
+
 waitUntil {sleep 1; spawner getVariable _marker == 2 or {!alive _milAdministration or {!alive _collaborant}}};
 
 switch (true) do {
-	case (!alive _collaborant): {
-		Info_1("Military Administration %1 was captured - collaborant has been killed.", _marker);
-		[_milAdministration, "CAPTURE"] call SCRT_fnc_location_removeMilAdmin;
-	};
-	case (!alive _milAdministration): {
-		Info_1("Military Administration %1 was destroyed.", _marker);
-		[_milAdministration, "DESTROY"] call SCRT_fnc_location_removeMilAdmin;
-	};
+    case (!alive _collaborant): {
+        Info_1("Military Administration %1 was captured - collaborant has been killed.", _marker);
+        [_milAdministration, "CAPTURE"] call SCRT_fnc_location_removeMilAdmin;
+        sleep 1;
+        [_marker] call A3A_fnc_mrkUpdate;
+    };
+    case (!alive _milAdministration): {
+        Info_1("Military Administration %1 was destroyed.", _marker);
+        [_milAdministration, "DESTROY"] call SCRT_fnc_location_removeMilAdmin;
+        destroyedSites pushBackUnique _marker;
+        publicVariable "destroyedSites";
+        sleep 1;
+        [_marker] call A3A_fnc_mrkUpdate;
+    };
 };
 
 waitUntil {sleep 1; (spawner getVariable _marker == 2)};
@@ -292,4 +303,6 @@ if (!isNil "_grpPOW") then {
 	[_grpPOW] spawn A3A_fnc_groupDespawner;
 };
 
-["locationSpawned", [_marker, "MilAdmin", false]] call EFUNC(Events,triggerEvent);
+[CBA_EVENT_SERVER_SPAWN_LOCATION, [_marker, "MilAdmin", false]] call FUNCMAIN(triggerLocalEvent);
+
+nil;

@@ -16,3 +16,91 @@ class lxRF_vehicles_rf_TwinMortar_twinmortar_rf_p3d : TRIPLES(ADDON,Cargo,Base)
     recoil = 2000;
     isWeapon = 1;
 };
+
+class a3a_civ_Pickup_fuel_rf : TRIPLES(ADDON,Cargo,Base)
+{
+    offset[] = {0,0,1.84};
+    rotation[] = {0,1,0};
+    size = 7;
+};
+class C_Pickup_repair_rf : TRIPLES(ADDON,Cargo,Base)
+{
+    offset[] = {0,0,1.84};
+    rotation[] = {0,1,0};
+    size = 7;
+};
+class lxRF_vehicles_rf_pickup_01_pickup_01_hmg_rf_p3d : TRIPLES(ADDON,Cargo,Base)
+{
+    offset[] = {0,0,1.85};
+    rotation[] = {0,1,0};
+    size = 7;
+    recoil = 200;
+    isWeapon = 1;
+};
+class lxRF_vehicles_rf_pickup_01_pickup_01_mmg_rf_p3d: TRIPLES(ADDON,Cargo,Base)
+{
+    offset[] = {0,0,1.85};
+    rotation[] = {0,1,0};
+    size = 7;
+    recoil = 200;
+    isWeapon = 1;
+};
+class lxRF_vehicles_rf_pickup_01_pickup_01_aat_rf_p3d : TRIPLES(ADDON,Cargo,Base)
+{
+    offset[] = {0,0,1.85};
+    rotation[] = {0,1,0};
+    size = 7;
+    recoil = 300;
+    isWeapon = 1;
+};
+class lxRF_vehicles_rf_pickup_01_pickup_01_rocket_rf_p3d : TRIPLES(ADDON,Cargo,Base)
+{
+    offset[] = {0,0,1.85};
+    rotation[] = {0,1,0};
+    size = 7;
+    recoil = 300;
+    isWeapon = 1;
+};
+class lxRF_vehicles_rf_pickup_01_pickup_01_mrl_rf_p3d : TRIPLES(ADDON,Cargo,Base)
+{
+    offset[] = {0,0,1.85};
+    rotation[] = {0,1,0};
+    size = 7;
+    recoil = 500;
+    isWeapon = 1;
+};
+class lxRF_vehicles_rf_pickup_01_pickup_01_unarmed_rf_p3d : TRIPLES(ADDON,Cargo,Base)
+{
+    offset[] = {0,0,1.84};
+    rotation[] = {0,1,0};
+    size = 7;
+};
+class lxRF_vehicles_rf_pickup_01_pickup_01_rcws_rf_p3d : TRIPLES(ADDON,Cargo,Base)
+{
+    offset[] = {0,0,1.85};
+    rotation[] = {0,1,0};
+    size = 7;
+    recoil = 200;
+    isWeapon = 1;
+};
+class lxRF_vehicles_rf_pickup_01_pickup_01_service_rf_p3d : TRIPLES(ADDON,Cargo,Base)
+{
+    offset[] = {0,0,1.84};
+    rotation[] = {0,1,0};
+    size = 7;
+};
+class lxRF_vehicles_rf_pickup_01_pickup_01_comms_rf_p3d : TRIPLES(ADDON,Cargo,Base)
+{
+    offset[] = {0,0,1.84};
+    rotation[] = {0,1,0};
+    size = 7;
+};
+
+class lxrf_vehicles_rf_Truck_01_Truck_01_FTT_RF_p3d : TRIPLES(ADDON,Cargo,Base)
+{
+    offset[] = {0,0,2.02};
+    rotation[] = {0,1,0};
+    size = 10;
+    isWeapon = 1;
+    recoil = 1;
+};

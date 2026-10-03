@@ -85,6 +85,7 @@ Maintainer: DoomMetal
 #define A3A_Icon_Seaport            A3A_GUI_QTEXTURE_PATH_OF(icon_seaport.paa)
 #define A3A_Icon_Clear_Trees        A3A_GUI_QTEXTURE_PATH_OF(icon_clear_trees.paa)
 #define A3A_Icon_Support            A3A_GUI_QTEXTURE_PATH_OF(icon_support.paa)
+#define A3A_Icon_Random             A3A_GUI_QTEXTURE_PATH_OF(icon_conquest.paa)
 
 // New map icons
 #define A3A_Icon_Map_Blank          A3A_GUI_QTEXTURE_PATH_OF(icon_map_blank.paa)
@@ -115,7 +116,7 @@ Maintainer: DoomMetal
 #define A3A_Icon_Box                "\A3\ui_f\data\igui\cfg\simpleTasks\types\box_ca.paa"
 #define A3A_Icon_HealKit            "a3\missions_f_exp\data\img\lobby\ui_campaign_lobby_background_tablet_button_revive02_ca.paa"
 #define A3A_Icon_Repair             "\a3\ui_f\data\igui\cfg\actions\repair_ca.paa"
-
+#define A3A_Icon_Build              "a3\ui_f\data\igui\cfg\simpletasks\types\use_ca.paa"
 
 // Commander picture
 #define A3A_Icon_PlayerCommander    "\A3\Ui_f\data\GUI\Cfg\Ranks\colonel_gs.paa"

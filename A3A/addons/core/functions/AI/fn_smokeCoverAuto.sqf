@@ -2,8 +2,6 @@ private ["_veh"];
 
 _veh = _this select 0;
 
-if (disableAutoSmokeCover) exitWith {};
-
 if !(alive _veh) exitWith {};
 if !(local _veh) exitWith {};
 

@@ -40,8 +40,8 @@ class umb_colombia {
 	climate = "tropical";
 	buildObjects[] = {
 		BUILDABLES_HISTORIC,
+		BUILDABLES_UNIVERSAL,
 		BUILDABLES_MODERN_GREEN,
-		BUILDABLES_TROPIC,
-		BUILDABLES_UNIVERSAL
+		BUILDABLES_TROPIC
 	};
 };

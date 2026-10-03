@@ -15,11 +15,12 @@ class sefrouramal {
 		{4499.87,2902.21,0}, {5565.09,5087.64,0}
 	};
 	climate = "arid";
+	hasRiverPorts = 1;
 	buildObjects[] = {
 		BUILDABLES_HISTORIC,
+		BUILDABLES_UNIVERSAL,
 		BUILDABLES_ARID,
-		BUILDABLES_WS,
-		BUILDABLES_UNIVERSAL
+		BUILDABLES_WS
 	};
     // Needs to be re-done when possible
 };
