@@ -33,7 +33,7 @@ if assert(_saveDataPlugins isEqualType createHashMap) then {
 autoSaveTime = time + autoSaveInterval;
 
 // Select save namespace
-A3A_saveTarget params ["_serverID", "_campaignID"];
+A3A_saveTarget params ["_serverID", "_campaignID", "_worldName"];
 private _saveToNewNamespace = _serverID isEqualType false;
 if (!_saveToNewNamespace) then { profileNamespace setVariable ["ss_serverID", _serverID] };			// backwards compatibility
 private _namespace = [profileNamespace, missionProfileNamespace] select _saveToNewNamespace;
@@ -611,6 +611,8 @@ private _serializedData = toJson A3A_saveDataHM;
 ["savedata", _serializedData, true] call A3A_fnc_setStatVariable;
 
 if (_saveToNewNamespace) then { saveMissionProfileNamespace } else { saveProfileNamespace };
+
+[CBA_EVENT_SERVER_GAME_SAVED, [_saveToNewNamespace, _serverID, _campaignID, _worldName]] call FUNCMAIN(triggerLocalEvent);
 
 savingServer = false;
 _saveHintText = [

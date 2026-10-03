@@ -358,6 +358,27 @@
 #define CBA_EVENT_SERVER_GAME_SAVE QUOTE(TRIPLES(PREFIX_CONST,event,serverGameSave))
 
 /* -------------------------------------------
+    Event: CBA_EVENT_SERVER_GAME_SAVED
+        Triggered when the game is saved on the server, after successfully saving to the appropriate namespace.
+
+    Parameters:
+        0: useMPNamespace - whether to use the missionProfileNamespace (as opposed to legacy ProfileNamespace) <BOOL>
+        1: serverID - the ID of the server that performed the save <BOOL> (false = profileNamespace save) OR <SCALAR> (missionProfileNamespace save)
+        2: campaignID - the ID of the campaign that was active during the save <SCALAR>
+        3: worldName - the name of the world where the save occurred <STRING>
+
+    Broadcast:
+        No
+
+    Sent by:
+        Server
+    
+    Recipients:
+        Server
+------------------------------------------- */
+#define CBA_EVENT_SERVER_GAME_SAVED QUOTE(TRIPLES(PREFIX_CONST,event,serverGameSaved))
+
+/* -------------------------------------------
     Event: CBA_EVENT_SERVER_INIT_AI_UNIT
         Triggered when an AI unit is initialized on the server.
 
@@ -490,9 +511,6 @@
         "markerChange" event
 ------------------------------------------- */
 #define CBA_EVENT_SERVER_MARKER_CHANGE QUOTE(TRIPLES(PREFIX_CONST,event,serverMarkerChange))
-
-// UNUSED
-#define CBA_EVENT_SERVER_GAME_SAVED QUOTE(TRIPLES(PREFIX_CONST,event,serverGameSaved))
 
 /* -------------------------------------------
     Event: CBA_EVENT_SERVER_PLAYER_SAVE
