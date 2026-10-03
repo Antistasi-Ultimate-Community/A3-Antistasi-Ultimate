@@ -52,25 +52,23 @@ private _vehiclesTransportBoats = ["B_Boat_Transport_01_F"];
 private _vehiclesGunBoats = ["B_Boat_Armed_01_minigun_F"];
 
 /* Air Vehicles */
-private _vehiclesPlanesCAS = ["AMF_RAFALE_B_01_F"]; // CAS = Close Air Support, CfgPlaneLoadouts >> CAS and CASDIVE
+private _vehiclesPlanesCAS = ["AMF_RAFALE_B_01_F", "AMF_RAFALE_C_01_F", "AMF_RAFALE_M_01_F"]; // CAS = Close Air Support, CfgPlaneLoadouts >> CAS and CASDIVE
 private _vehiclesPlanesAA = ["AMF_RAFALE_B_01_F", "B_AMF_PLANE_FIGHTER_02_F"]; // AA = Anti-Air, CfgPlaneLoadouts >> AA
 private _vehiclesPlanesTransport = ["B_AMF_PLANE_TRANSPORT_01_F"]; // Troop carriers for paradrop OR VTOL landing
 private _vehiclesPlanesGunship = []; // Self explanatory
 private _vehiclesPlanesLargeCAS = []; // Used for planes that need to spawn on the runway.
 private _vehiclesPlanesLargeAA = []; // Used for planes that need to spawn on the runway.
 
-private _vehiclesHelisLight = ["AMF_gazelle_afte_f"]; // A light transport helicopter.
+private _vehiclesHelisLight = ["AMF_gazelle_afte_f", "AMF_panther_FRA"]; // A light transport helicopter.
 private _vehiclesHelisTransport = ["amf_nh90_tth_transport", "amf_cougar"]; // A transport helicopter.
 private _vehiclesHelisLightAttack = ["AMF_gazelle_hot_f", "AMF_gazelle_minigun_f"]; // A light attack helicopter.
 private _vehiclesHelisAttack = ["AMF_TIGRE_01"]; // An attack helicopter.
-private _vehiclesAirPatrol = ["AMF_gazelle_afte_f"]; // A helicopter that is used to patrol areas.
+private _vehiclesAirPatrol = []; // A helicopter that is used to patrol areas.
 
 /* Special Vehicles */
-private _vehiclesArtillery = ["amf_CAESAR_01_CE_f", "B_T_MBT_01_arty_F", "B_T_MBT_01_mlrs_F"]; // If it has an artillery computer and moves, it's probably vehicular artillery.
+private _vehiclesArtillery = ["amf_CAESAR_01_CE_f"]; // If it has an artillery computer and moves, it's probably vehicular artillery.
 ["magazines", createHashMapFromArray [
-    ["amf_CAESAR_01_CE_f",["32Rnd_155mm_CAESAR_explo"]],
-    ["B_T_MBT_01_arty_F",["32Rnd_155mm_Mo_shells"]],
-    ["B_T_MBT_01_mlrs_F",["12Rnd_230mm_rockets"]] // ["vehicle", ["magazine1", "magazine2"]]. You can add multiple vehicles.
+    ["amf_CAESAR_01_CE_f",["32Rnd_155mm_CAESAR_explo"]] // ["vehicle", ["magazine1", "magazine2"]]. You can add multiple vehicles.
 ]] call _fnc_saveToTemplate;
 
 /* Militia Vehicles */
@@ -88,16 +86,16 @@ private _vehiclesSam = "B_SAM_System_03_F";
 
 /* Statics */
 private _staticMG = ["B_G_HMG_02_high_F"]; // Must fit in a standard Altis defensive tower.
-private _staticAT = ["AMF_WiredGuided_mmp_F"]; // Must fit in a standard Altis defensive tower.
+private _staticAT = ["AMF_TVGuided_mmp_F", "AMF_WiredGuided_mmp_F"]; // Must fit in a standard Altis defensive tower.
 private _staticAA = ["B_static_AA_F"]; // Must fit on a standard Altis HQ military building.
 
-private _staticMortars = ["B_Mortar_01_F"]; // Must fit in a ~2x2 sandbag emplacement.
-["mortarMagazineHE", "8Rnd_82mm_Mo_shells"] call _fnc_saveToTemplate; // Use `magazines cursorObject` whilst looking at your mortar.
-["mortarMagazineSmoke", "8Rnd_82mm_Mo_Smoke_white"] call _fnc_saveToTemplate;
-["mortarMagazineFlare", "8Rnd_82mm_Mo_Flare_white"] call _fnc_saveToTemplate;
+private _staticMortars = ["AMF_Mo120_01_CE_F"]; // Must fit in a ~2x2 sandbag emplacement.
+["mortarMagazineHE", ""] call _fnc_saveToTemplate; // Use `magazines cursorObject` whilst looking at your mortar.
+["mortarMagazineSmoke", ""] call _fnc_saveToTemplate;
+["mortarMagazineFlare", ""] call _fnc_saveToTemplate;
 
 private _staticHowitzers = ["AMF_Mo120_01_CE_F"];
-["howitzerMagazineHE", "AMF_8Rnd_120mm_OE"] call _fnc_saveToTemplate; // Use `magazines cursorObject` whilst looking at your howitzer.
+["howitzerMagazineHE", ""] call _fnc_saveToTemplate; // Use `magazines cursorObject` whilst looking at your howitzer.
 
 /* UAV's */
 private _uavsPortable = ["AMF_Anafi_01_F"]; // A UAV that is packable into a backpack.
@@ -128,9 +126,7 @@ private _loadoutData = call _fnc_createLoadoutData;
 _loadoutData set ["riflesSL", []];
 _loadoutData set ["rifles", []];
 _loadoutData set ["riflesCarbine", []];
-_loadoutData set ["launchersGrenade", [
-   ["AMF_614_long_HK269_01_F", "", "", "AMF_Red_Dot_Sight", ["AMF_30Rnd_556x45_SS109_Tracer_Stanag"], ["1Rnd_HE_Grenade_shell", "UGL_FlareGreen_F", "1Rnd_SmokeGreen_Grenade_shell"], ""]
-]];
+_loadoutData set ["launchersGrenade", []];
 _loadoutData set ["launchersGrenadeDesignated", []];
 _loadoutData set ["SMGs", []];
 _loadoutData set ["riflesAuto", []];
@@ -139,13 +135,8 @@ _loadoutData set ["riflesSniper", []];
 _loadoutData set ["launchersLightAT", []];
 _loadoutData set ["lightHELaunchers", []];
 _loadoutData set ["launchersAT", []];
-_loadoutData set ["launchersMissileAT", [
-    ["AMF_AT4CS_Loaded", "", "", "", [""], [], ""],
-    ["AMF_LRAC89_F", "", "", "", ["AMF_AC89mm_F1"], [], ""]
-]];
-private _AALaunchers = [
-    ["launch_B_Titan_olive_F", "", "", "", ["Titan_AA"], [], ""]
-];
+_loadoutData set ["launchersMissileAT", []];
+private _AALaunchers = [];
 _loadoutData set ["launchersAA", _AALaunchers];
 _loadoutData set ["sidearms", []];
 _loadoutData set ["GLsidearms", []];
@@ -162,17 +153,17 @@ _loadoutData set ["watches", ["ItemWatch"]];
 _loadoutData set ["compasses", ["ItemCompass"]];
 _loadoutData set ["radios", ["ItemRadio"]];
 _loadoutData set ["GPS", ["ItemGPS"]];
-_loadoutData set ["NVG", ["NVGoggles_OPFOR"]];
+_loadoutData set ["NVG", ["NVGoggles"]];
 _loadoutData set ["binoculars", ["Binocular"]];
 _loadoutData set ["rangefinders", ["Rangefinder"]];
-_loadoutData set ["uniformsTraitor", ["amf_uniform_05_RG"]];
-_loadoutData set ["vestsTraitor", ["amf_SMB_AUXSAN"]];
-_loadoutData set ["helmetsTraitor", ["AMF_BERET_MARINE_PARA"]];
-_loadoutData set ["uniformsOfficer", ["amf_uniform_05_MTP"]];
-_loadoutData set ["vestsOfficer", ["amf_SMB_FUS"]];
-_loadoutData set ["helmetsOfficer", ["AMF_BERET_PARA"]];
-_loadoutData set ["uniformsCloak", ["amf_uniform_02_CE_MD"]];
-_loadoutData set ["vestsCloak", ["amf_SMB_TP_HK417"]];
+_loadoutData set ["uniformsTraitor", []];
+_loadoutData set ["vestsTraitor", []];
+_loadoutData set ["helmetsTraitor", []];
+_loadoutData set ["uniformsOfficer", []];
+_loadoutData set ["vestsOfficer", []];
+_loadoutData set ["helmetsOfficer", []];
+_loadoutData set ["uniformsCloak", []];
+_loadoutData set ["vestsCloak", []];
 _loadoutData set ["cloakRifles", []];
 _loadoutData set ["cloakCarbines", []];
 _loadoutData set ["cloakSidearms", []];
@@ -196,12 +187,12 @@ _loadoutData set ["MEDBackpacks", []];
 _loadoutData set ["ENGBackpacks", []];
 _loadoutData set ["EXPBackpacks", []];
 _loadoutData set ["SLBackpacks", []];
-_loadoutData set ["backpacksRadio", ["AMF_FELIN_BACKPACK_RADIO_TDF"]];
+_loadoutData set ["backpacksRadio", []];
 _loadoutData set ["helmets", []];
 _loadoutData set ["helmetsMedic", []];
 _loadoutData set ["helmetsSL", []];
-_loadoutData set ["SLhats", ["AMF_BERET_INFANTERIE"]];
-_loadoutData set ["helmetsSniper", ["AMF_BERET_RPIMa"]];
+_loadoutData set ["SLhats", []];
+_loadoutData set ["helmetsSniper", []];
 _loadoutData set ["items_squadLeader_extras", ["Laserbatteries", "Laserbatteries", "Laserbatteries"]];
 _loadoutData set ["items_rifleman_extras", []];
 _loadoutData set ["items_medic_extras", []];
@@ -297,9 +288,9 @@ _militaryLoadoutData set ["GPS", []];
 _militaryLoadoutData set ["NVG", []];
 _militaryLoadoutData set ["binoculars", ["AMF_APX_M241"]];
 _militaryLoadoutData set ["rangefinders", []];
-_militaryLoadoutData set ["uniforms", ["amf_uniform_01_CE_HX", "amf_uniform_01_RE_CE_MD", "amf_uniform_01_NG_CE_HX"]];
+_militaryLoadoutData set ["uniforms", ["amf_uniform_01_TU_HX", "amf_uniform_01_RE_TU_MD", "amf_uniform_01_RE_NG_TU_MD"]];
 _militaryLoadoutData set ["uniformsHeavy", []];
-_militaryLoadoutData set ["uniformsSL", ["AMF_CRY_G3_RolledSleeve_CCE"]];
+_militaryLoadoutData set ["uniformsSL", ["amf_uniform_05_TAN"]];
 _militaryLoadoutData set ["vests", ["amf_SMB_FUS", "amf_SMB_FUS_FAMAS"]];
 _militaryLoadoutData set ["Hvests", []];
 _militaryLoadoutData set ["vestsMachineGunner", ["amf_SMB_ART"]];
@@ -317,11 +308,11 @@ _militaryLoadoutData set ["ENGBackpacks", ["amf_tecpack_70L"]];
 _militaryLoadoutData set ["EXPBackpacks", ["amf_tecpack_70L"]];
 _militaryLoadoutData set ["SLBackpacks", ["AMF_FELIN_BACKPACK_RADIO_TDF"]];
 _militaryLoadoutData set ["backpacksRadio", []];
-_militaryLoadoutData set ["helmets", ["AMF_FELIN_05_TAN", "AMF_FELIN_05_CE", "AMF_FELIN_06_CE", "AMF_FELIN_06_TAN", "AMF_FELIN_L06_CE", "AMF_FELIN_L06_TAN"]];
+_militaryLoadoutData set ["helmets", ["AMF_FELIN", "AMF_FELIN_02"]];
 _militaryLoadoutData set ["helmetsMedic", []];
 _militaryLoadoutData set ["helmetsSL", []];
 _militaryLoadoutData set ["SLhats", []];
-_militaryLoadoutData set ["helmetsSniper", ["AMF_FELIN_L05_TAN", "AMF_FELIN_L05_CE", "AMF_FELIN_L06_CE", "AMF_FELIN_L06_TAN"]];
+_militaryLoadoutData set ["helmetsSniper", []];
 _militaryLoadoutData set ["facewear", []];
 
 ////////////////////////////////
@@ -383,7 +374,7 @@ _militiaLoadoutData set ["GPS", []];
 _militiaLoadoutData set ["NVG", []];
 _militiaLoadoutData set ["binoculars", []];
 _militiaLoadoutData set ["rangefinders", []];
-_militiaLoadoutData set ["uniforms", ["amf_uniform_01_RE_NG_OD_HX", "amf_uniform_01_NG_OD_HX"]];
+_militiaLoadoutData set ["uniforms", ["amf_uniform_01_RE_NG_TU_MD", "amf_uniform_01_RE_NG_TU_MD"]];
 _militiaLoadoutData set ["uniformsHeavy", []];
 _militiaLoadoutData set ["uniformsSL", []];
 _militiaLoadoutData set ["vests", ["amf_SMB_FUS"]];
@@ -405,7 +396,7 @@ _militiaLoadoutData set ["ENGBackpacks", []];
 _militiaLoadoutData set ["EXPBackpacks", []];
 _militiaLoadoutData set ["SLBackpacks", ["AMF_FELIN_BACKPACK_RADIO_TDF"]];
 _militiaLoadoutData set ["backpacksRadio", []];
-_militiaLoadoutData set ["helmets", ["AMF_FELIN_05_CE", "AMF_FELIN_05_TAN", "AMF_FELIN_06_CE"]];
+_militiaLoadoutData set ["helmets", ["AMF_FELIN_05_CE", "AMF_FELIN", "AMF_FELIN_06_CE"]];
 _militiaLoadoutData set ["helmetsMedic", []];
 _militiaLoadoutData set ["helmetsSL", []];
 _militiaLoadoutData set ["SLhats", []];
@@ -489,7 +480,7 @@ _eliteLoadoutData set ["GPS", []];
 _eliteLoadoutData set ["NVG", []];
 _eliteLoadoutData set ["binoculars", ["AMF_OB72_SOPHIE"]];
 _eliteLoadoutData set ["rangefinders", []];
-_eliteLoadoutData set ["uniforms", ["amf_uniform_01_CE_HX", "amf_uniform_01_RE_NG_CE_HX", "amf_uniform_01_RE_CE_HX", "amf_uniform_01_NG_CE_HX"]];
+_eliteLoadoutData set ["uniforms", ["amf_uniform_01_NG_TC_HX", "amf_uniform_01_TU_LowaZephyr", "amf_uniform_01_RE_TU_HX"]];
 _eliteLoadoutData set ["uniformsSL", []];
 _eliteLoadoutData set ["vests", ["amf_SMB_FUS", "amf_SMB_FUS_FAMAS"]];
 _eliteLoadoutData set ["Hvests", []];
@@ -508,7 +499,7 @@ _eliteLoadoutData set ["ENGBackpacks", ["amf_tecpack_70L"]];
 _eliteLoadoutData set ["EXPBackpacks", ["amf_tecpack_70L"]];
 _eliteLoadoutData set ["SLBackpacks", ["AMF_FELIN_BACKPACK_RADIO_TDF"]];
 _eliteLoadoutData set ["backpacksRadio", []];
-_eliteLoadoutData set ["helmets", ["AMF_FELIN_05_TAN", "AMF_FELIN_06_TAN", "AMF_OPSCORE_TAN_2", "AMF_OPSCORE3_TAN", "AMF_OPSCORE4_TAN"]];
+_eliteLoadoutData set ["helmets", ["AMF_FELIN", "AMF_FELIN_02", "AMF_FELIN_L02"]];
 _eliteLoadoutData set ["helmetsMedic", []];
 _eliteLoadoutData set ["helmetsSL", []];
 _eliteLoadoutData set ["SLhats", []];
@@ -561,11 +552,13 @@ _sfLoadoutData set ["riflesSniper", [
     ["AMF_PGM_Hecate_II_Poly_RIS", "", "", "optic_LRPS", ["AMF_7Rnd_127x99_HECATE2_IMI_661GR_FMJ"], [], ""]
 ]];
 _sfLoadoutData set ["launchersLightAT", ["AMF_NLAW_Loaded"]];
-_sfLoadoutData set ["lightHELaunchers", ["AMF_LRAC89_F"]];
+_sfLoadoutData set ["lightHELaunchers", ["AMF_AT4CS_Loaded"]];
 _sfLoadoutData set ["launchersAT", [
+    ["AMF_LRAC89_F", "", "", "", ["AMF_AC89mm_F1"], [], ""]
+]];
+_sfLoadoutData set ["launchersMissileAT", [
     ["AMF_Eryx", "", "", "", ["Eryx_HEAT"], [], ""]
 ]];
-_sfLoadoutData set ["launchersMissileAT", []];
 _sfLoadoutData set ["launchersAA", []];
 _sfLoadoutData set ["sidearms", [
     ["AMF_PAMAC_50", "", "", "", ["AMF_9Rnd_9x19_PAMC50"], [], ""],
@@ -584,10 +577,10 @@ _sfLoadoutData set ["watches", []];
 _sfLoadoutData set ["compasses", []];
 _sfLoadoutData set ["radios", []];
 _sfLoadoutData set ["GPS", []];
-_sfLoadoutData set ["NVG", ["AMF_BINYX_BLK_NVG"]];
+_sfLoadoutData set ["NVG", ["AMF_ONYX_NVG"]];
 _sfLoadoutData set ["binoculars", ["AMF_OB72_SOPHIE"]];
 _sfLoadoutData set ["rangefinders", []];
-_sfLoadoutData set ["uniforms", ["amf_FELIN_T4S2_CCE_BMJA", "amf_FELIN_T4S2_CCE_HX", "amf_FELIN_T4S2_CCE_LowaZephyr", "amf_FELIN_T4S2_CCE_MD"]];
+_sfLoadoutData set ["uniforms", ["amf_uniform_04_TAN", "amf_uniform_05_TAN"]];
 _sfLoadoutData set ["uniformsHeavy", []];
 _sfLoadoutData set ["uniformsSL", []];
 _sfLoadoutData set ["vests", ["amf_SMB_FUS", "amf_SMB_FUS_FAMAS"]];
@@ -607,11 +600,11 @@ _sfLoadoutData set ["ENGBackpacks", ["amf_tecpack_70L"]];
 _sfLoadoutData set ["EXPBackpacks", ["amf_tecpack_70L"]];
 _sfLoadoutData set ["SLBackpacks", ["AMF_FELIN_BACKPACK_RADIO_TDF"]];
 _sfLoadoutData set ["backpacksRadio", []];
-_sfLoadoutData set ["helmets", ["AMF_OPSCORE_GREY2", "AMF_OPSCORE_GREY2_2"]];
+_sfLoadoutData set ["helmets", ["AMF_OPSCORE3_GREY", "AMF_OPSCORE3_GREY_2"]];
 _sfLoadoutData set ["helmetsMedic", []];
 _sfLoadoutData set ["helmetsSL", []];
 _sfLoadoutData set ["SLhats", ["AMF_BERET_MARINE_PARA"]];
-_sfLoadoutData set ["helmetsSniper", ["AMF_F3_L02"]];
+_sfLoadoutData set ["helmetsSniper", ["AMF_OPSCORE3_GREY1", "AMF_OPSCORE3_GREY1_2"]];
 _sfLoadoutData set ["facewear", []];
 
 ////////////////////////////////
@@ -631,7 +624,7 @@ _policeLoadoutData set ["sidearms", [
 _policeLoadoutData set ["facewear", []];
 
 private _crewLoadoutData = _loadoutData call _fnc_copyLoadoutData;
-_crewLoadoutData set ["uniforms", ["amf_uniform_01_OD_HX"]];
+_crewLoadoutData set ["uniforms", ["amf_uniform_01_TU_HX"]];
 _crewLoadoutData set ["vests", ["amf_SMB"]];
 _crewLoadoutData set ["helmets", ["AMF_ELNO_DH_586"]];
 _crewLoadoutData set ["riflesCarbine", [
@@ -645,7 +638,7 @@ private _pilotLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 _pilotLoadoutData set ["uniforms", ["amf_pilot_01_f"]];
 _pilotLoadoutData set ["vests", ["AMF_Pilot_Vest"]];
 _pilotLoadoutData set ["backpacks", []];
-_pilotLoadoutData set ["helmets", ["AMF_ALPHA900"]];
+_pilotLoadoutData set ["helmets", ["AMF_ALPHA900", "AMF_ALPHA900_02"]];
 _pilotLoadoutData set ["riflesCarbine", [
     ["amf_hk_mp5_01_f", "", "", "", ["AMF_30Rnd_9x19_MP5_BO_123GR"], [], ""],
     ["amf_sig552", "", "", "", ["AMF_30Rnd_556x45_SIG_BO_BT_M196"], [], ""]
