@@ -45,7 +45,6 @@ class CfgFunctions {
             class setupParamsTab {};
             class setupConfirmDialog {};
             class setupHQPosDialog {};
-            class setupImportExportDialog {};
         };
     };
     class ADDON {

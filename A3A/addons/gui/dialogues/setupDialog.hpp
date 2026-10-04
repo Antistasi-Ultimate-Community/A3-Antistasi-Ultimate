@@ -100,7 +100,6 @@ class A3A_SetupDialog : A3A_TabbedDialog
                 class SavedGamesLabel: A3A_SectionLabelRight {
                     idc = -1;
                     text = $STR_antistasi_dialogs_setup_saved_games;
-                    font = A3A_BUTTON_FONT;
                     x = 4 * GRID_W;
                     y = 4 * GRID_H;
                     w = 118 * GRID_W;
@@ -111,7 +110,7 @@ class A3A_SetupDialog : A3A_TabbedDialog
                     x = 4 * GRID_W;
                     y = 8 * GRID_H;
                     w = 118 * GRID_W;
-                    h = 88 * GRID_H;
+                    h = 80 * GRID_H;
                 };
                 class SavedGamesHeader : A3A_ControlsGroupNoScrollbars
                 {
@@ -129,7 +128,7 @@ class A3A_SetupDialog : A3A_TabbedDialog
                     x = 4 * GRID_W;
                     y = 12 * GRID_H;
                     w = 118 * GRID_W;
-                    h = 84 * GRID_H;
+                    h = 76 * GRID_H;
 
                     class Controls
                     {
@@ -144,55 +143,22 @@ class A3A_SetupDialog : A3A_TabbedDialog
                     };
                 };
 
-                // Game edit options
-                class GameEditOptions : A3A_ControlsGroupNoScrollbars {
-                    x = 126 * GRID_W;
-                    y = 70 * GRID_H;
-                    w = 30 * GRID_W;
-                    h = 26 * GRID_H;
-
-                    class controls {
-                        class SaveNameLabel: A3A_Text {
-                            idc = -1;
-                            text = $STR_antistasi_dialogs_setup_new_save_name;
-                            style = ST_CENTER;
-                            font = A3A_BUTTON_FONT;
-                            colorBackground[] = {0,0,0,1};
-                            x = 0 * GRID_W;
-                            y = 0 * GRID_H;
-                            w = 30 * GRID_W;
-                            h = 4 * GRID_H;
-                        };
-                        class SaveNameEditBox: A3A_Edit {
-                            idc = A3A_IDC_SETUP_NAMEEDITBOX;
-                            x = 0 * GRID_W;
-                            y = 4 * GRID_H;
-                            w = 30 * GRID_W;
-                            h = 4 * GRID_H;
-                        };
-                        class DeleteButton: A3A_Button {
-                            idc = A3A_IDC_SETUP_DELETEBUTTON;
-                            text = $STR_antistasi_dialogs_setup_delete_game;
-                            onButtonClick = "['deleteGame'] call A3A_fnc_setupLoadgameTab";
-                            x = 0 * GRID_W;
-                            y = 10 * GRID_H;
-                            w = 30 * GRID_W;
-                            h = 4 * GRID_H;
-                        };
-                        class RenameButton: DeleteButton {
-                            idc = A3A_IDC_SETUP_RENAMEBUTTON;
-                            text = $STR_antistasi_dialogs_setup_rename_game;
-                            onButtonClick = "['renameGame'] call A3A_fnc_setupLoadgameTab";
-                            y = 16 * GRID_H;
-                        };
-                        class ImportExportButton: DeleteButton {
-                            idc = A3A_IDC_SETUP_IMPORTEXPORTBUTTON;
-                            text = $STR_antistasi_dialogs_setup_import_export;
-                            onButtonClick = "['importExportGame'] call A3A_fnc_setupLoadgameTab";
-                            y = 22 * GRID_H;
-                        };
-                    };
+                class SaveNameLabel: A3A_SectionLabelRight {
+                    idc = -1;
+                    text = $STR_antistasi_dialogs_setup_new_save_name;
+                    x = 4 * GRID_W;
+                    y = 91 * GRID_H;
+                    w = 24 * GRID_W;
+                    h = 5 * GRID_H;
                 };
+                class SaveNameEditBox: A3A_Edit {
+                    idc = A3A_IDC_SETUP_NAMEEDITBOX;
+                    x = 28 * GRID_W;
+                    y = 91 * GRID_H;
+                    w = 94 * GRID_W;
+                    h = 5 * GRID_H;
+                };
+
                 // Game load options
                 class GameOptionsGroup : A3A_ControlsGroupNoScrollbars {
                     x = 126 * GRID_W;
@@ -275,6 +241,25 @@ class A3A_SetupDialog : A3A_TabbedDialog
                             h = 5 * GRID_H;
                         };
                     };
+                };
+
+                class DeleteButton: A3A_Button {
+                    idc = A3A_IDC_SETUP_DELETEBUTTON;
+                    text = $STR_antistasi_dialogs_setup_delete_game;
+                    onButtonClick = "['deleteGame'] call A3A_fnc_setupLoadgameTab";
+                    x = 126 * GRID_W;
+                    y = 84 * GRID_H;
+                    w = 30 * GRID_W;
+                    h = 5 * GRID_H;
+                };
+                class RenameButton: A3A_Button {
+                    idc = A3A_IDC_SETUP_RENAMEBUTTON;
+                    text = $STR_antistasi_dialogs_setup_rename_game;
+                    onButtonClick = "['renameGame'] call A3A_fnc_setupLoadgameTab";
+                    x = 126 * GRID_W;
+                    y = 91 * GRID_H;
+                    w = 30 * GRID_W;
+                    h = 5 * GRID_H;
                 };
             };
         };
@@ -811,203 +796,6 @@ class A3A_SetupConfirmDialog
             y = DIALOG_Y + 28 * GRID_H;
             w = 30 * GRID_W;
             h = 5 * GRID_H;
-        };
-    };
-};
-
-class A3A_SetupImportExportDialog
-{
-    idd = A3A_IDD_SETUP_IMPORTEXPORTDIALOG;
-    onLoad = "['onLoad'] spawn A3A_fnc_setupImportExportDialog";
-    onUnload = "['onUnload'] call A3A_fnc_setupImportExportDialog";
-
-    #define DIALOG_X CENTER_X(120) // Global x pos of dialog
-    #define DIALOG_Y CENTER_Y(92) // Global y pos of dialog
-
-    class Controls
-    {
-        class Titlebar : A3A_Text {
-            idc = -1;
-            moving = true;
-            colorBackground[] = A3A_COLOR_TITLEBAR_BACKGROUND;
-            text = $STR_antistasi_dialogs_setup_import_export;
-            style = ST_CENTER + ST_UPPER;
-            font = A3A_BUTTON_FONT;
-            x = DIALOG_X;
-            y = DIALOG_Y;
-            w = 160 * GRID_W;
-            h = 4 * GRID_H;
-        };
-        class CloseButton : A3A_Button {
-            idc = -1;
-            text = $STR_antistasi_dialogs_setup_ie_close;
-            onButtonClick = "closeDialog 0";
-            x = DIALOG_X + 140 * GRID_W;
-            y = DIALOG_Y;
-            w = 18 * GRID_W;
-            h = 4 * GRID_H;
-        };
-        class Background : A3A_Background {
-            idc = -1;
-            x = DIALOG_X;
-            y = DIALOG_Y + 4 * GRID_H;
-            w = 160 * GRID_W;
-            h = 88 * GRID_H;
-        };
-
-        class SaveDataBoxGroup : A3A_ControlsGroupNoScrollbars {
-            x = DIALOG_X;
-            y = DIALOG_Y + 6 * GRID_H;
-            w = 80 * GRID_W;
-            h = 86 * GRID_H;
-
-            class Controls {
-                class SaveDataTitle : A3A_Text {
-                    idc = -1;
-                    text = $STR_antistasi_dialogs_setup_ie_savedata;
-                    colorBackground[] = A3A_COLOR_BLACK;
-                    style = ST_CENTER + ST_UPPERCASE;
-                    font = A3A_BUTTON_FONT;
-                    x = 0;
-                    y = 0;
-                    w = 60 * GRID_W;
-                    h = 4 * GRID_H;
-                };
-                class EditButton : A3A_Button {
-                    idc = A3A_IDC_SETUP_IMPORTEXPORT_EDITBUTTON;
-                    text = $STR_antistasi_dialogs_setup_ie_edit;
-                    onButtonClick = "['toggleEdit'] call A3A_fnc_setupImportExportDialog";
-                    x = 60 * GRID_W;
-                    y = 0;
-                    w = 10 * GRID_W;
-                    h = 4 * GRID_H;
-                };
-                class ClearButton : EditButton {
-                    idc = A3A_IDC_SETUP_IMPORTEXPORT_CLEARBUTTON;
-                    text = $STR_antistasi_dialogs_setup_ie_clear;
-                    onButtonClick = "['clearData'] call A3A_fnc_setupImportExportDialog";
-                    x = 70 * GRID_W;
-                };
-                class SaveDataBox : A3A_Edit {
-                    idc = A3A_IDC_SETUP_IMPORTEXPORT_SAVEDATABOX;
-                    style = ST_LEFT + ST_MULTI;
-                    colorDisabled[] = A3A_COLOR_TEXT;
-                    x = 0;
-                    y = 4 * GRID_H;
-                    w = 80 * GRID_W;
-                    h = 82 * GRID_H;
-                };
-            };
-        };
-        
-        class BasicImportExportGroup : A3A_ControlsGroupNoScrollbars {
-            x = DIALOG_X + 82 * GRID_W;
-            y = DIALOG_Y + 10 * GRID_H;
-            w = 28 * GRID_W;
-            h = 12 * GRID_H;
-
-            class Controls {
-                class ImportButton : A3A_Button {
-                    idc = A3A_IDC_SETUP_IMPORTEXPORT_IMPORTBUTTON;
-                    text = $STR_antistasi_dialogs_setup_ie_import;
-                    tooltip = $STR_antistasi_dialogs_setup_ie_import_tooltip;
-                    onButtonClick = "['importData'] call A3A_fnc_setupImportExportDialog";
-                    x = 0;
-                    y = 0;
-                    w = 28 * GRID_W;
-                    h = 5 * GRID_H;
-                };
-                class ExportButton : ImportButton {
-                    idc = A3A_IDC_SETUP_IMPORTEXPORT_EXPORTBUTTON;
-                    text = $STR_antistasi_dialogs_setup_ie_export;
-                    tooltip = $STR_antistasi_dialogs_setup_ie_export_tooltip;
-                    onButtonClick = "['exportData'] call A3A_fnc_setupImportExportDialog";
-                    y = 7 * GRID_H;
-                };
-            };
-        };
-
-        class PythiaImportExportGroup : A3A_ControlsGroupNoScrollbars {
-            x = DIALOG_X + 82 * GRID_W;
-            y = DIALOG_Y + 26 * GRID_H;
-            w = 28 * GRID_W;
-            h = 12 * GRID_H;
-
-            class Controls {
-                class PythiaImportButton : A3A_Button {
-                    idc = A3A_IDC_SETUP_IMPORTEXPORT_PYTHIA_IMPORTBUTTON;
-                    text = $STR_antistasi_dialogs_setup_ie_pythia_import;
-                    tooltip = $STR_antistasi_dialogs_setup_ie_pythia_import_tooltip;
-                    onButtonClick = "['importPythia'] call A3A_fnc_setupImportExportDialog";
-                    x = 0;
-                    y = 0;
-                    w = 28 * GRID_W;
-                    h = 5 * GRID_H;
-                };
-                class PythiaExportButton : PythiaImportButton {
-                    idc = A3A_IDC_SETUP_IMPORTEXPORT_PYTHIA_EXPORTBUTTON;
-                    text = $STR_antistasi_dialogs_setup_ie_pythia_export;
-                    tooltip = $STR_antistasi_dialogs_setup_ie_pythia_export_tooltip;
-                    onButtonClick = "['exportPythia'] call A3A_fnc_setupImportExportDialog";
-                    y = 7 * GRID_H;
-                };
-            };
-        };
-
-        class Inidbi2ImportExportGroup : A3A_ControlsGroupNoScrollbars {
-            x = DIALOG_X + 82 * GRID_W;
-            y = DIALOG_Y + 42 * GRID_H;
-            w = 28 * GRID_W;
-            h = 12 * GRID_H;
-
-            class Controls {
-                class Inidbi2ImportButton : A3A_Button {
-                    idc = A3A_IDC_SETUP_IMPORTEXPORT_INIDBI2_IMPORTBUTTON;
-                    text = $STR_antistasi_dialogs_setup_ie_inidbi2_import;
-                    tooltip = $STR_antistasi_dialogs_setup_ie_inidbi2_import_tooltip;
-                    onButtonClick = "['importInidbi2'] call A3A_fnc_setupImportExportDialog";
-                    x = 0;
-                    y = 0;
-                    w = 28 * GRID_W;
-                    h = 5 * GRID_H;
-                };
-                class Inidbi2ExportButton : Inidbi2ImportButton {
-                    idc = A3A_IDC_SETUP_IMPORTEXPORT_INIDBI2_EXPORTBUTTON;
-                    text = $STR_antistasi_dialogs_setup_ie_inidbi2_export;
-                    tooltip = $STR_antistasi_dialogs_setup_ie_inidbi2_export_tooltip;
-                    onButtonClick = "['exportInidbi2'] call A3A_fnc_setupImportExportDialog";
-                    y = 7 * GRID_H;
-                };
-            };
-        };
-
-        class FileSystemGroup : A3A_ControlsGroupNoScrollbars {
-            x = DIALOG_X + 110 * GRID_W;
-            y = DIALOG_Y + 2 * GRID_H;
-            w = 50 * GRID_W;
-            h = 92 * GRID_H;
-
-            class Controls {
-                class FileSystemText : A3A_Text {
-                    idc = -1;
-                    text = $STR_antistasi_dialogs_setup_ie_filesystem_text;
-                    colorBackground[] = A3A_COLOR_BLACK;
-                    style = ST_CENTER + ST_UPPERCASE;
-                    font = A3A_BUTTON_FONT;
-                    x = 2 * GRID_W;
-                    y = 4 * GRID_H;
-                    w = 46 * GRID_W;
-                    h = 4 * GRID_H;
-                };
-                class FileSystemTree : A3A_Tree {
-                    idc = A3A_IDC_SETUP_IMPORTEXPORT_FILETREE;
-                    x = 2 * GRID_W;
-                    y = 8 * GRID_H;
-                    w = 46 * GRID_W;
-                    h = 82 * GRID_H;
-                    onTreeSelChanged = "['treeSelChanged', _this] call A3A_fnc_setupImportExportDialog";
-                };
-            };
         };
     };
 };

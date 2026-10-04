@@ -3872,14 +3872,14 @@
                 <Turkish>Karargâh Belirle</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_new_save_name">
-                <Original>Save Name</Original>
-                <Czech>Název uložení</Czech>
+                <Original>New save name</Original>
+                <Czech>Nový název uložení</Czech>
                 <French>Nom de la partie</French>
-                <Italian>Nome del Salvataggio</Italian>
+                <Italian>Nuovo Nome del Salvataggio</Italian>
                 <Korean>새 게임 저장</Korean>
                 <Russian>Имя сохранения</Russian>
-                <Polish>Nazwa Zapisu</Polish>
-                <Portuguese>Nome do Save</Portuguese>
+                <Polish>Nowa Nazwa Zapisu</Polish>
+                <Portuguese>Novo mone save</Portuguese>
                 <Chinesesimp>新的存档名</Chinesesimp>
                 <Turkish>Yeni Kayıt Adı</Turkish>
             </Key>
@@ -3906,81 +3906,6 @@
                 <Portuguese>Apagar jogo</Portuguese>
                 <Chinesesimp>删除存档</Chinesesimp>
                 <Turkish>Oyunu sil</Turkish>
-            </Key>
-            <Key ID="STR_antistasi_dialogs_setup_import_export">
-                <Original>Import / Export Game</Original>
-                <Czech>Importovat / exportovat hru</Czech>
-                <French>Importer / exporter la partie</French>
-                <Italian>Importa / esporta partita</Italian>
-                <Korean>게임 가져오기 / 내보내기</Korean>
-                <Russian>Импорт / экспорт игры</Russian>
-                <Polish>Importuj / eksportuj grę</Polish>
-                <Portuguese>Importar / exportar jogo</Portuguese>
-                <Chinesesimp>导入/导出游戏</Chinesesimp>
-                <Turkish>Oyunu içe aktar / dışa aktar</Turkish>
-            </Key>
-            <Key ID="STR_antistasi_dialogs_setup_ie_savedata">
-                <Original>Save Data</Original>
-            </Key>
-            <Key ID="STR_antistasi_dialogs_setup_ie_clear">
-                <Original>Clear</Original>
-            </Key>
-            <Key ID="STR_antistasi_dialogs_setup_ie_edit">
-                <Original>Edit</Original>
-            </Key>
-            <Key ID="STR_antistasi_dialogs_setup_ie_close">
-                <Original>Close</Original>
-            </Key>
-            <Key ID="STR_antistasi_dialogs_setup_ie_import">
-                <Original>Text Import</Original>
-            </Key>
-            <Key ID="STR_antistasi_dialogs_setup_ie_export">
-                <Original>Text Export</Original>
-            </Key>
-            <Key ID="STR_antistasi_dialogs_setup_ie_copied">
-                <Original>Save data has been copied to your clipboard.</Original>
-            </Key>
-            <Key ID="STR_antistasi_dialogs_setup_ie_import_empty">
-                <Original>Paste JSON-formatted save data into the save data box to import it.</Original>
-            </Key>
-            <Key ID="STR_antistasi_dialogs_setup_ie_import_invalid">
-                <Original>The save data is not valid JSON. Check the data and try again.</Original>
-            </Key>
-            <Key ID="STR_antistasi_dialogs_setup_ie_import_success">
-                <Original>Save data imported as a new campaign save.</Original>
-            </Key>
-            <Key ID="STR_antistasi_dialogs_setup_ie_import_tooltip">
-                <Original>Import the text in the save data box as a new campaign save.</Original>
-            </Key>
-            <Key ID="STR_antistasi_dialogs_setup_ie_export_tooltip">
-                <Original>Copy the text in the save data box to your clipboard.</Original>
-            </Key>
-            <Key ID="STR_antistasi_dialogs_setup_ie_pythia_import">
-                <Original>Pythia Import</Original>
-            </Key>
-            <Key ID="STR_antistasi_dialogs_setup_ie_pythia_export">
-                <Original>Pythia Export</Original>
-            </Key>
-            <Key ID="STR_antistasi_dialogs_setup_ie_pythia_import_tooltip">
-                <Original>Import save data from a JSON file on disk using the Pythia extension.</Original>
-            </Key>
-            <Key ID="STR_antistasi_dialogs_setup_ie_pythia_export_tooltip">
-                <Original>Export save data to a JSON file on disk using the Pythia extension.</Original>
-            </Key>
-            <Key ID="STR_antistasi_dialogs_setup_ie_inidbi2_import">
-                <Original>iniDBI2 Import</Original>
-            </Key>
-            <Key ID="STR_antistasi_dialogs_setup_ie_inidbi2_export">
-                <Original>iniDBI2 Export</Original>
-            </Key>
-            <Key ID="STR_antistasi_dialogs_setup_ie_inidbi2_import_tooltip">
-                <Original>Import save data from an iniDBI2 database using the iniDBI2 extension.</Original>
-            </Key>
-            <Key ID="STR_antistasi_dialogs_setup_ie_inidbi2_export_tooltip">
-                <Original>Export save data to an iniDBI2 database using the iniDBI2 extension.</Original>
-            </Key>
-            <Key ID="STR_antistasi_dialogs_setup_ie_filesystem_text">
-                <Original>Filesystem</Original>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_rebels">
                 <Original>Rebels</Original>

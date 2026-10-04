@@ -180,7 +180,6 @@ switch (_mode) do
         _selectBar ctrlCommit 0;
 
         _listBoxCtrl setVariable ["rowIndex", _rowIndex];
-        uiNamespace setVariable ["A3U_saveIndex", _rowIndex]; // put this in uiNamespace because we may need it for the import / export dialog, which lives in a separate display context
         ["updateSaveInfoText"] call A3A_fnc_setupLoadgameTab;
         ["update"] call A3A_fnc_setupLoadgameTab;
     };
@@ -318,8 +317,7 @@ switch (_mode) do
     {
         private _index = _listboxCtrl getVariable ["rowIndex", -1];
         if (_index == -1) exitWith {};
-        private _nameBoxCtrl = _display displayCtrl A3A_IDC_SETUP_NAMEEDITBOX;
-        private _newName = ctrlText _nameBoxCtrl;
+        private _newName = ctrlText (_display displayCtrl A3A_IDC_SETUP_NAMEEDITBOX);
 
         // Set name in save data
         private _saveData = A3A_setup_saveData select _index;
@@ -332,13 +330,5 @@ switch (_mode) do
         // Set name in the displayed table
         private _nameCtrl = _listboxCtrl getVariable "nameCtrls" select _index;
         _nameCtrl ctrlSetText _newName;
-
-        // Clear the name edit box
-        _nameBoxCtrl ctrlSetText "";
-    };
-
-    case ("importExportGame"):
-    {
-        createDialog "A3A_SetupImportExportDialog";
     };
 };
