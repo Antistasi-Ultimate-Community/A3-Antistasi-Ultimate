@@ -55,12 +55,15 @@ class DOUBLES(ADDON,Cargo)
         recoil = 0; //the recoil a weapon impacts on the vehicle when fired (per projectile)
         isWeapon = 0; //if the cargo is a weapon (needed for proper handling of mounted weapon)
         blackList[] = {}; //specific vehicles or models to blacklist from loading this weapon/cargo
+        cargoValue = 0;
+        isExplosive = 0;
     };
 
     #include "Cargo\3CBFactions.hpp"
     #include "Cargo\ACE.hpp"
     #include "Cargo\Aegis.hpp"
     #include "Cargo\BWA3.hpp"
+    #include "Cargo\Cargo.hpp"
     #include "Cargo\CUP.hpp"
     #include "Cargo\CSLA.hpp"
     #include "Cargo\GM.hpp"
