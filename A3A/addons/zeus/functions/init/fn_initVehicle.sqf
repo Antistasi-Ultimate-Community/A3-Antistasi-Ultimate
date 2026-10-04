@@ -69,4 +69,13 @@ private _veh = _typeX createVehicle _pos;
 private _crewFunc = [A3A_fnc_createVehicleCrew, A3A_fnc_RivalsCreateVehicleCrew] select (_vehFaction isEqualTo "riv");
 if (_withCrew) then { [_side, _veh] call _crewFunc };
 
+// Respect plane loadouts for occupant and invader planes
+// This should already be done automatically when spawned by the support modules as the supports create the vehicles and set their loadouts accordingly
+if (_vehFaction in ["occ", "inv"]) then {
+	switch (_vehType) do {
+		case ("vehiclesPlanesCAS"): { [_veh, "CAS"] call A3A_fnc_setPlaneLoadout };
+		case ("vehiclesPlanesAA"): { [_veh, "AA"] call A3A_fnc_setPlaneLoadout };
+	};
+};
+
 { _x addCuratorEditableObjects [[_veh] + crew _veh, true] } forEach (allCurators); // QoL; required since the vehicle wasn't technically spawned by Zeus (_emptyVeh was)
