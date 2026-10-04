@@ -29,4 +29,4 @@ if !assert(params[
     ["_fileType", nil, [""]]
 ]) exitWith {};
 
-["py3u.save.write_data", [_fileName, _fileContent, _fileType]] call py3_fnc_callExtension;
+["py3u.filesys.write_data", [_fileName, _fileContent, _fileType]] call py3_fnc_callExtension;
