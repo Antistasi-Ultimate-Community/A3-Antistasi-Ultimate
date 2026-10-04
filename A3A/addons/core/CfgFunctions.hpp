@@ -811,6 +811,7 @@ class CfgFunctions
             class shader_ratioToHex {};
             class updateInfoBarShown {};
             class disableInfoBar {};
+            class updateGroupBarShown {};
         };
 
         class uintToHex {
