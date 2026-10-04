@@ -182,41 +182,6 @@ class A3A_ListboxMulti : A3A_Listbox
     style = LB_MULTI;
 };
 
-class A3A_Tree : A3A_Text
-{
-    type = CT_TREE;
-    style = ST_LEFT;
-
-    rowHeight = GUI_TEXT_SIZE_MEDIUM;
-    maxHistoryDelay = 1;
-    expandOnDoubleclick = 1;
-    multiselectEnabled = 0;
-    hiddenTexture = "\A3\ui_f\data\gui\rsccommon\rsctree\hiddenTexture_ca.paa";
-    expandedTexture = "\A3\ui_f\data\gui\rsccommon\rsctree\expandedTexture_ca.paa";
-    colorArrow[] = A3A_COLOR_TEXT;
-    colorBorder[] = A3A_COLOR_TRANSPARENT;
-    colorLines[] = A3A_COLOR_TRANSPARENT;
-    colorMarked[] = A3A_COLOR_TEXT;
-    colorMarkedSelected[] = A3A_COLOR_TEXT;
-    colorMarkedText[] = A3A_COLOR_TEXT;
-    colorMarkedBackground[] = A3A_COLOR_TRANSPARENT;
-    colorPicture[] = A3A_COLOR_WHITE;
-    colorPictureDisabled[] = {1,1,1,0.25};
-    colorPictureRight[] = A3A_COLOR_WHITE;
-    colorPictureRightDisabled[] = {1,1,1,0.25};
-    colorPictureRightSelected[] = A3A_COLOR_WHITE;
-    colorPictureSelected[] = A3A_COLOR_WHITE;
-    colorSearch[] = A3A_COLOR_TEXT;
-    colorSelect[] = A3A_COLOR_BUTTON_FOCUSED;
-    colorSelectBackground[] = A3A_COLOR_TITLEBAR_BACKGROUND;
-    colorSelectText[] = A3A_COLOR_TEXT;
-    colorDisabled[] = A3A_COLOR_BUTTON_TEXT_DISABLED;
-    colorBackground[] = A3A_COLOR_BACKGROUND;
-    colorText[] = A3A_COLOR_TEXT;
-
-    class ScrollBar: ScrollBar {};
-};
-
 class A3A_ListNBox : A3A_Text
 {
     // Note: Doesn't support background color so that has to be added separately
