@@ -317,4 +317,10 @@ class CfgMarkers
 		icon = QPATHTOFOLDER(Pictures\Markers\marker_e22_raf_ca.paa);
 		texture = QPATHTOFOLDER(Pictures\Markers\marker_e22_raf_ca.paa);
 	};
+	class a3u_flag_NFtSCW_fssr : flag_NATO 
+	{
+		name = "FSSR";
+		icon = QPATHTOFOLDER(Pictures\Markers\marker_FSSR_ca.paa);
+		texture = QPATHTOFOLDER(Pictures\Markers\marker_FSSR_ca.paa);
+	};
 };
