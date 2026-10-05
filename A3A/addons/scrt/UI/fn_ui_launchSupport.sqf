@@ -16,7 +16,7 @@ if (supportType in ["NAPALM", "HE", "CLUSTER", "CHEMICAL"] && bombRuns < 1) exit
 	] spawn SCRT_fnc_ui_showMessage;
 };
 
-if (supportType in ["LOOTHELI","SUPPLY", "SMOKE", "FLARE", "VEH_AIRDROP", "RECON", "PARADROP"] && supportPoints < 1) exitWith {
+if (supportType in ["SUPPLY_GROUND", "LOOTHELI","SUPPLY", "SMOKE", "FLARE", "VEH_AIRDROP", "RECON", "PARADROP"] && supportPoints < 1) exitWith {
     [
 		localize "STR_notifiers_fail_type",
 		localize "STR_notifiers_support_header",  
@@ -81,7 +81,7 @@ if (isNil "supportMarkerOrigin") exitWith {
 	] spawn SCRT_fnc_ui_showMessage;
 };
 
-if (!(supportType in ["SMOKE", "FLARE"]) && {isNil "supportMarkerDestination"}) exitWith {
+if (!(supportType in ["SMOKE", "FLARE", "SUPPLY_GROUND"]) && {isNil "supportMarkerDestination"}) exitWith {
     [
 		localize "STR_notifiers_fail_type",
 		localize "STR_notifiers_support_header",  
@@ -133,6 +133,12 @@ if (_exit) exitWith {
 };
 
 switch (supportType) do {
+    case ("SUPPLY_GROUND"): {
+        supportPoints = supportPoints - 1;
+        publicVariable "supportPoints";
+        private _vehCost = [(A3A_faction_reb get "vehiclesTruck") # 0] call A3A_fnc_vehiclePrice;
+        [-3,-_vehCost] remoteExec ["A3A_fnc_resourcesFIA",2];
+    };
     case ("SUPPLY");
     case ("SMOKE");
     case ("FLARE");
@@ -168,6 +174,9 @@ switch (supportType) do {
 [] call SCRT_fnc_ui_updateSupportMenu;
 
 switch (true) do {
+    case (supportType isEqualTo "SUPPLY_GROUND"): {
+        [] spawn SCRT_fnc_support_groundResupply;
+    };
     case (supportType isEqualTo "SMOKE"): {
         [] spawn SCRT_fnc_support_smokeBarrage;
     };
