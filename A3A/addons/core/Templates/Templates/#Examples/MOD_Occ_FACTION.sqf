@@ -360,7 +360,7 @@ _militiaLoadoutData set ["helmetsMachineGunner", []];
 
 /* Unit Misc Gear */
 _militiaLoadoutData set ["facewear", []];
-_militiaLoadoutData set ["NVGs", []];
+_militiaLoadoutData set ["NVG", []];
 
 /* Unit Weapons */
 _militiaLoadoutData set ["rifles", []];
@@ -404,7 +404,7 @@ _militaryLoadoutData set ["helmetsMachineGunner", []];
 
 /* Unit Misc Gear */
 _militaryLoadoutData set ["facewear", []];
-_militaryLoadoutData set ["NVGs", []];
+_militaryLoadoutData set ["NVG", []];
 
 /* Unit Weapons */
 _militaryLoadoutData set ["rifles", []];
@@ -448,7 +448,7 @@ _eliteLoadoutData set ["helmetsMachineGunner", []];
 
 /* Unit Misc Gear */
 _eliteLoadoutData set ["facewear", []];
-_eliteLoadoutData set ["NVGs", []];
+_eliteLoadoutData set ["NVG", []];
 
 /* Unit Weapons */
 _eliteLoadoutData set ["rifles", []];
@@ -492,7 +492,7 @@ _sfLoadoutData set ["helmetsMachineGunner", []];
 
 /* Unit Misc Gear */
 _sfLoadoutData set ["facewear", []];
-_sfLoadoutData set ["NVGs", []];
+_sfLoadoutData set ["NVG", []];
 
 /* Unit Weapons */
 _sfLoadoutData set ["rifles", []];
