@@ -13,7 +13,10 @@ private _hasLawsOfWar = "orange" in A3A_enabledDLC;
 
 ["vehiclesBasic", ["UK3CB_ION_B_Winter_Quadbike"]] call _fnc_saveToTemplate;
 ["vehiclesLightUnarmed", ["UK3CB_ION_B_Winter_Offroad", "UK3CB_ION_B_Winter_Pickup", "UK3CB_ION_B_Winter_SUV", "UK3CB_ION_B_Winter_M998_2DR"]] call _fnc_saveToTemplate;
-["vehiclesLightArmed", ["UK3CB_ION_B_Winter_Offroad_M2", "UK3CB_ION_B_Winter_Hilux_M2", "UK3CB_ION_B_Winter_LR_M2", "UK3CB_ION_B_Winter_Pickup_M2", "UK3CB_ION_B_Winter_M1025_M2", "UK3CB_ION_B_Winter_SUV_Armed"]] call _fnc_saveToTemplate;
+["vehiclesLightArmed", [
+    "UK3CB_ION_B_Winter_Offroad_M2", "UK3CB_ION_B_Winter_Hilux_M2", "UK3CB_ION_B_Winter_LR_Opentop_M240", "UK3CB_ION_B_Winter_LR_Opentop_MG3",
+    "UK3CB_ION_B_Winter_Pickup_M2", "UK3CB_ION_B_Winter_M1025_M2", "UK3CB_ION_B_Winter_SUV_Armed"
+]] call _fnc_saveToTemplate;
 ["vehiclesTruck", ["UK3CB_ION_B_Winter_T810_Open", "UK3CB_NAP_I_Van_Transport"]] call _fnc_saveToTemplate;
 ["vehiclesAT", ["UK3CB_B_G_LandRover_SPG9"]] call _fnc_saveToTemplate;
 ["vehiclesAA", ["UK3CB_KDF_B_Ural_Zu23", "UK3CB_FIA_B_Hilux_Zu23", "UK3CB_FIA_B_Hilux_Zu23_Front"]] call _fnc_saveToTemplate;

@@ -20,8 +20,8 @@
 
 ["vehiclesRivalsLightArmed", ["UK3CB_TKM_O_Hilux_GMG", "UK3CB_TKM_O_Hilux_Dshkm", "UK3CB_TKM_O_Hilux_M2", "UK3CB_TKM_O_Hilux_Pkm", "UK3CB_TKM_O_Hilux_Spg9", "UK3CB_TKM_O_BRDM2", "UK3CB_TKM_O_BRDM2_ATGM", "UK3CB_TKM_O_Pickup_DSHKM", "UK3CB_TKM_O_Pickup_M2", "UK3CB_TKM_O_V3S_Zu23", "UK3CB_TKM_O_Ural_Zu23"]] call _fnc_saveToTemplate;
 ["vehiclesRivalsTrucks", ["UK3CB_TKM_O_V3S_Open", "UK3CB_TKM_O_V3S_Closed", "UK3CB_TKM_O_Ural_Open", "UK3CB_TKM_O_Ural_Covered"]] call _fnc_saveToTemplate;
-["vehiclesRivalsCars", ["UK3CB_TKM_O_BRDM2_UM", "UK3CB_TKM_O_Hilux_Open", "UK3CB_TKM_O_Pickup"]] call _fnc_saveToTemplate;
-["vehiclesRivalsAPCs", ["UK3CB_TKM_O_BMP1", "UK3CB_TKM_O_BTR40_MG", "UK3CB_TKM_O_BTR60", "UK3CB_TKM_O_MTLB_PKT", "UK3CB_TKM_O_MTLB_ZU23"]] call _fnc_saveToTemplate;
+["vehiclesRivalsCars", ["UK3CB_TKM_O_BRDM2_UM", "UK3CB_TKM_O_Hilux_Open", "UK3CB_TKM_O_Pickup", "UK3CB_TKM_O_BTR40"]] call _fnc_saveToTemplate;
+["vehiclesRivalsAPCs", ["UK3CB_TKM_O_BMP1", "UK3CB_TKM_O_BTR40_MG", "UK3CB_TKM_O_BTR60", "UK3CB_TKM_O_MTLB_PKT", "UK3CB_TKM_O_MTLB_ZU23", "UK3CB_TKM_O_BTR40_ZU23", "UK3CB_TKM_O_BTR40_DSHKMS", "UK3CB_TKM_O_BTR40_GMG", "UK3CB_TKM_O_BTR40_MG", "UK3CB_TKM_O_BTR40_Metis", "UK3CB_TKM_O_BTR40_PKM"]] call _fnc_saveToTemplate;
 ["vehiclesRivalsTanks", ["UK3CB_TKM_O_T34", "UK3CB_TKM_O_T55"]] call _fnc_saveToTemplate;
 ["vehiclesRivalsHelis", ["UK3CB_ADA_O_Mi8AMTSh"]] call _fnc_saveToTemplate;			
 ["vehiclesRivalsUavs", ["O_UAV_01_F"]] call _fnc_saveToTemplate;			

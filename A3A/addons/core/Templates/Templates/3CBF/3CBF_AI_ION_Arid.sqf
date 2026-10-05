@@ -27,7 +27,7 @@
 ["vehiclesRepairTrucks", ["UK3CB_ION_B_Desert_T810_Repair"]] call _fnc_saveToTemplate;
 ["vehiclesFuelTrucks", ["UK3CB_ION_B_Desert_T810_Refuel"]] call _fnc_saveToTemplate;
 ["vehiclesMedical", ["UK3CB_ION_B_Desert_Hilux_Ambulance", "UK3CB_ION_B_Desert_Transit_Medevac"]] call _fnc_saveToTemplate;
-["vehiclesLightAPCs", ["UK3CB_ION_B_Desert_M113_M2_90", "UK3CB_ION_B_Desert_M113_M240", "UK3CB_B_LAV25_HQ_US_DES", "UK3CB_B_LAV25_US_DES"]] call _fnc_saveToTemplate;
+["vehiclesLightAPCs", ["UK3CB_ION_B_Desert_M113_M2_90", "UK3CB_ION_B_Desert_M113_M240", "UK3CB_B_LAV25_HQ_US_DES", "UK3CB_B_LAV25_US_DES", "UK3CB_ION_B_Desert_Dingo_GMG", "UK3CB_ION_B_Desert_Dingo_HMG", "UK3CB_ION_B_Desert_Dingo_MG3", "UK3CB_ION_B_Desert_Dingo"]] call _fnc_saveToTemplate;
 ["vehiclesAirborne", ["UK3CB_ARD_B_BTR80a", "UK3CB_ARD_B_MTLB_Cannon", "RHS_M6", "UK3CB_B_AAV_US_DES"]] call _fnc_saveToTemplate;
 ["vehiclesAPCs", ["UK3CB_ARD_B_BTR80a", "UK3CB_KRG_B_MTLB_BMP", "UK3CB_KRG_B_MTLB_Cannon", "UK3CB_B_AAV_US_DES"]] call _fnc_saveToTemplate;
 ["vehiclesIFVs", ["RHS_M2A3_BUSKIII", "UK3CB_ARD_B_BMP2K", "UK3CB_ARD_B_BRM1K"]] call _fnc_saveToTemplate;
@@ -59,7 +59,10 @@ private _vehiclesArtillery = ["a3u_tan_mlrs"];
 ["uavsPortable", ["B_UAV_01_F"]] call _fnc_saveToTemplate;
 
 //Config special vehicles - militia vehicles are mostly used in the early game, police cars are being used by troops around cities -- Example:
-["vehiclesMilitiaLightArmed", ["UK3CB_ION_B_Desert_LR_M2", "UK3CB_ION_B_Desert_MB4WD_LMG"]] call _fnc_saveToTemplate;
+["vehiclesMilitiaLightArmed", [
+    "UK3CB_ION_B_Desert_LR_WMIK_M2", "UK3CB_ION_B_Desert_LR_WMIK_M240", "UK3CB_ION_B_Desert_LR_WMIK_MG3", "UK3CB_ION_B_Desert_LR_WMIK_MK19",
+    "UK3CB_ION_B_Desert_MB4WD_LMG"
+]] call _fnc_saveToTemplate;
 ["vehiclesMilitiaTrucks", ["UK3CB_ION_B_Desert_Transit_Transport"]] call _fnc_saveToTemplate;
 ["vehiclesMilitiaCars", ["UK3CB_ION_B_Desert_LR_Open", "UK3CB_ION_B_Desert_MB4WD_Unarmed"]] call _fnc_saveToTemplate;
 ["vehiclesMilitiaAPCs", ["UK3CB_ION_B_Desert_M113_M240", "UK3CB_ION_B_Desert_MaxxPro_M2"]] call _fnc_saveToTemplate;
