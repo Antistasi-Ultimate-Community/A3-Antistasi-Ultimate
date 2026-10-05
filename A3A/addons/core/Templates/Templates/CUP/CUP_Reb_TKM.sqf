@@ -6,7 +6,7 @@
 
 ["flag", "Flag_FIA_F"] call _fnc_saveToTemplate;
 ["flagTexture", "cup\baseconfigs\cup_baseconfigs\data\flags\flag_tkm_co.paa"] call _fnc_saveToTemplate;
-["flagMarkerType", "flag_FIA"] call _fnc_saveToTemplate;
+["flagMarkerType", "Faction_CUP_TKM"] call _fnc_saveToTemplate;
 
 ["vehiclesBasic", ["I_Quadbike_01_F"]] call _fnc_saveToTemplate;
 ["vehiclesLightUnarmed", ["CUP_I_Hilux_armored_unarmed_NAPA"]] call _fnc_saveToTemplate;
