@@ -183,6 +183,24 @@
 #define CBA_EVENT_CLIENT_PLAYER_SAVE QUOTE(TRIPLES(PREFIX_CONST,event,clientPlayerSave))
 
 /* -------------------------------------------
+    Event: CBA_EVENT_CLIENT_RESOURCE_CHANGE
+        Triggered when player resources (money) are changed.
+
+    Parameters:
+        0: money - the amount of money the player gained or lost <SCALAR>
+
+    Broadcast:
+        No
+
+    Sent by:
+        Client
+    
+    Recipients:
+        Client
+------------------------------------------- */
+#define CBA_EVENT_CLIENT_RESOURCE_CHANGE QUOTE(TRIPLES(PREFIX_CONST,event,clientResourceChange))
+
+/* -------------------------------------------
     Event: CBA_EVENT_CLIENT_TEARDOWN_MODE_CHANGED
         Triggered when the client changes teardown mode.
 
@@ -249,6 +267,24 @@
 ////////////////////////////////////////////////////////////////////////////////
 ///  SERVER CBA EVENTS /////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
+
+/* -------------------------------------------
+    Event: CBA_EVENT_SERVER_AGGROUPDATE_DONE
+        Triggered after completion of the server aggression update loop (every 1min after server startup).
+
+    Parameters:
+        None
+
+    Broadcast:
+        No
+
+    Sent by:
+        Server
+    
+    Recipients:
+        Server
+------------------------------------------- */
+#define CBA_EVENT_SERVER_AGGROUPDATE_DONE QUOTE(TRIPLES(PREFIX_CONST,event,serverAggroupdateDone))
 
 /* -------------------------------------------
     Event: CBA_EVENT_SERVER_CREATE_REBEL_CONTROL
@@ -356,6 +392,24 @@
         Server
 ------------------------------------------- */
 #define CBA_EVENT_SERVER_GAME_SAVE QUOTE(TRIPLES(PREFIX_CONST,event,serverGameSave))
+
+/* -------------------------------------------
+    Event: CBA_EVENT_SERVER_GARBAGECLEAN_DONE
+        Triggered after completion of the server garbage clean.
+
+    Parameters:
+        None
+
+    Broadcast:
+        No
+
+    Sent by:
+        Server
+    
+    Recipients:
+        Server
+------------------------------------------- */
+#define CBA_EVENT_SERVER_GARBAGECLEAN_DONE QUOTE(TRIPLES(PREFIX_CONST,event,serverGarbagecleanDone))
 
 /* -------------------------------------------
     Event: CBA_EVENT_SERVER_INIT_AI_UNIT
@@ -469,6 +523,26 @@
 #define CBA_EVENT_SERVER_INIT_DONE QUOTE(TRIPLES(PREFIX_CONST,event,serverInitDone))
 
 /* -------------------------------------------
+    Event: CBA_EVENT_SERVER_INIT_REBEL_UNIT
+        Triggered when a Rebel unit is initialized on the server.
+
+    Parameters:
+        0: unit - the rebel unit object <OBJECT>
+        1: preserveIdentity - if the unit's identity (name/face/voice) should be left alone instead of re-generated <BOOL>
+        2: equipRebel - if the unit should be equipped with weapons and gear according to their unit type <BOOL>
+
+    Broadcast:
+        No
+
+    Sent by:
+        Server
+    
+    Recipients:
+        Server
+------------------------------------------- */
+#define CBA_EVENT_SERVER_INIT_REBEL_UNIT QUOTE(TRIPLES(PREFIX_CONST,event,serverInitRebelUnit))
+
+/* -------------------------------------------
     Event: CBA_EVENT_SERVER_MARKER_CHANGE
         Triggered when marker ownership changes on the server.
 
@@ -511,6 +585,43 @@
         Client
 ------------------------------------------- */
 #define CBA_EVENT_SERVER_PLAYER_SAVE QUOTE(TRIPLES(PREFIX_CONST,event,serverPlayerSave))
+
+/* -------------------------------------------
+    Event: CBA_EVENT_SERVER_RESOURCE_CHANGE
+        Triggered when faction resources (HR, money) are changed.
+
+    Parameters:
+        0: hr - the amount of HR changed <SCALAR>
+        1: money - the amount of money changed <SCALAR>
+
+    Broadcast:
+        No
+
+    Sent by:
+        Server
+    
+    Recipients:
+        Server
+------------------------------------------- */
+#define CBA_EVENT_SERVER_RESOURCE_CHANGE QUOTE(TRIPLES(PREFIX_CONST,event,serverResourceChange))
+
+/* -------------------------------------------
+    Event: CBA_EVENT_SERVER_RESOURCE_CHECK_DONE
+        Triggered after completion of the server resource check loop (every 10min after server startup).
+
+    Parameters:
+        None
+
+    Broadcast:
+        No
+
+    Sent by:
+        Server
+    
+    Recipients:
+        Server
+------------------------------------------- */
+#define CBA_EVENT_SERVER_RESOURCE_CHECK_DONE QUOTE(TRIPLES(PREFIX_CONST,event,serverResourceCheckDone))
 
 /* -------------------------------------------
     Event: CBA_EVENT_SERVER_SPAWN_LOCATION
