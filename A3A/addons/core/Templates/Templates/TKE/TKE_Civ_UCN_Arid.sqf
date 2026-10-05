@@ -3,7 +3,7 @@
 ///////////////////////////////
 
 ["vehiclesCivCar", [
-    "CIV_Nomad", 1.0
+    "A3U_UCN_BL_Nomad_Rollcage", 1.0
 ]] call _fnc_saveToTemplate;
 
 ["vehiclesCivIndustrial", [
@@ -42,20 +42,11 @@
 /////////////////////////
 
 private _uniformsCiv = [
-    "TKE_CIVOutfit1Black_U_B",
-    "TKE_CIVOutfit1Blue_U_B",
-    "TKE_CIVOutfit1Green_U_B",
-    "TKE_CIVOutfit1Grey_U_B",
-    "TKE_CIVOutfit1Smelvin_U_B",
     "TKE_CIVOutfit1_U_B",
-    "TKE_CIVOutfit2Grey_U_B",
-    "TKE_CIVOutfit2Tan_U_B",
-    "TKE_CIVOutfit2_U_B",
-    "TKE_CIVOutfit3_U_B",
-    "TKE_CIVOutfit3Blue_U_B",
-    "TKE_CIVOutfit3Green_U_B",
-    "TKE_CIVOutfit3_2_U_B",
-    "TKE_CIVOutfit3TanBlack_U_B"
+    "TKE_CIVOutfit1Orange_U_B",
+    "TKE_CIVOutfit1Grey_U_B",
+    "TKE_CIVOutfit1Blue_U_B",
+    "TKE_CIVOutfit2_U_B"
 ];
 
 private _uniformsPress = [
@@ -64,8 +55,8 @@ private _uniformsPress = [
 ];
 
 private _uniformsWorker = [
+    "TKE_CIVOutfit1Worker2_U_B",
     "TKE_CIVOutfit3Worker2_U_B",
-    "TKE_CIVOutfit3Orange_U_B",
     "TKE_VoidSuitCiv_U_B"
 ];
 
@@ -83,13 +74,15 @@ _loadoutData set ["uniformsPress", _uniformsPress];
 _loadoutData set ["uniformsWorker", _uniformsWorker];
 _loadoutData set ["uniformsVIP", _uniformsVIP];
 
-_loadoutData set ["vests", ["TKE_CIVPonchoBlack", "TKE_CIVVest1Black"]];
+_loadoutData set ["vests", ["TKE_CIVVest1Black"]];
 _loadoutData set ["vestsPress", ["TKE_FlakJacket", "TKE_CIVVest1Black"]];
-_loadoutData set ["vestsWorker", ["TKE_CIVPonchoOrange", "TKE_CIVVest1Orange", ""]];
+_loadoutData set ["vestsWorker", ["TKE_CIVVest1Orange", ""]];
 
-_loadoutData set ["headgear", ["H_EarProtectors_black_F","TKE_CIVHatNRBlack","TKE_CIVHatNRGrey","TKE_BoonieHatHSFCFGrey"]];
-_loadoutData set ["headgearPress", ["TKE_CIVHatNRBlack"]];
-_loadoutData set ["headgearWorker", ["TKE_FCrewHelmCiv", "TKE_CIVHatNROrange"]];
+_loadoutData set ["headgear", []];
+_loadoutData set ["headgearPress", []];
+_loadoutData set ["headgearWorker", ["TKE_FCrewHelmCiv"]];
+
+_loadoutData set ["facewear", ["TKE_R35GogglesDownFW"]];
 
 _loadoutData set ["maps", ["ItemMap"]];
 _loadoutData set ["watches", ["ItemWatch"]];
@@ -98,6 +91,7 @@ _loadoutData set ["sidearms", ["WBK_SciFi_Pistol_Black", "TKE_UCNPistol"]];
 
 private _templateMan = {
     ["headgear"] call _fnc_setHelmet;
+    ["facewear"] call _fnc_setFacewear;
     ["vests"] call _fnc_setVest;
     ["uniforms"] call _fnc_setUniform;
 
@@ -122,6 +116,7 @@ private _templateWorker = {
 
 private _templatePress = {
     ["headgearPress"] call _fnc_setHelmet;
+    ["facewear"] call _fnc_setFacewear;
     ["vestsPress"] call _fnc_setVest;
     ["uniformsPress"] call _fnc_setUniform;
 

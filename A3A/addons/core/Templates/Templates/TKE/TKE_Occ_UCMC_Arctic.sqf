@@ -218,8 +218,7 @@ _loadoutData set ["riflesSL", [
 ]]; // Rifle given to Squad Leaders
 _loadoutData set ["riflesAuto", [
     ["TKE_UCNLMG", "", _mountsShared, _opticsShared, ["TKE_150rnd_62x35_magUCN"], [], ""], 2,
-    ["TKE_UCNMMG", "", _mountsShared, _opticsShared, ["TKE_100rnd_ucnmmg_mag"], [], ""], 1,
-    ["WRS_Weapon_LMG", "", "", "", ["200Rnd_556x45_Box_Tracer_F"], [], ""], 0.5
+    ["TKE_UCNMMG", "", _mountsShared, _opticsShared, ["TKE_100rnd_ucnmmg_mag"], [], ""], 1
 ]]; // An LMG or machine gun
 _loadoutData set ["riflesMarksman", [
     ["TKE_UCNDMR", "", _mountsShared, "TKE_10xSight", ["TKE_20rnd_969x51_magUCN"], [], "bipod_03_F_blk"], 1
@@ -287,7 +286,7 @@ _loadoutData set ["vestsOfficer", ["TKE_FlakJacketFEDRA", 0.33, "TKE_GenVest1FED
 _loadoutData set ["helmetsOfficer", ["TKE_PatrolCapCFEDRA", 0.5, "TKE_Beret_UCFA", 0.5]];
 
 /* Cloak: Basically a small patrol sniper team. */
-_loadoutData set ["uniformsCloak", ["TKE_CombatUniRolledV1_U_B", 0.5, "TKE_MercOutfit_U_B", 0.5]];
+_loadoutData set ["uniformsCloak", ["TKE_CombatUniRolledV1_U_B", 0.5, "TKEJAM_U_B_ECWCS_UCNBlue_F", 0.5]];
 _loadoutData set ["vestsCloak", ["TKE_GenVest1", 0.33, "TKE_GenVest1PV1", 0.33, "TKE_FlakJacket", 0.33]];
 _loadoutData set ["helmetsCloak", ["TKE_BoonieHatHS", 0.5, "TKE_BoonieHat", 0.5]];
 
@@ -361,7 +360,7 @@ _loadoutData set ["items_unarmed_extras", _coreItems];
 //////////////////////////
 
 private _crewLoadoutData = _loadoutData call _fnc_copyLoadoutData; 
-_crewLoadoutData set ["uniforms", ["TKE_CombatUniNASnow_U_B"]];
+_crewLoadoutData set ["uniforms", ["TKE_U_B_ECWCS_UCNBlue_F"]];
 _crewLoadoutData set ["vests", ["TKE_GenVest1PV1", "TKE_FlakJacket"]];
 _crewLoadoutData set ["helmets", ["TKE_FCrewHelm_BASE"]];
 _crewLoadoutData set ["rifles", [
@@ -380,7 +379,7 @@ _pilotLoadoutData set ["rifles", [
 // _pilotLoadoutData set ["sidearms", []];
 
 private _policeLoadoutData = _loadoutData call _fnc_copyLoadoutData;
-_policeLoadoutData set ["uniforms", ["TKE_CombatUniNAPolice_U_B", "TKE_MercOutfit_U_B"]];
+_policeLoadoutData set ["uniforms", ["TKEJAM_U_B_IHWCU_combat_Police_F", "TKE_U_B_ECWCS_Police_F", "TKEJAM_U_B_ECWCS_Police_F"]];
 _policeLoadoutData set ["vests", ["TKE_GenVest1Police", "TKE_GenVest1PV1Police", "TKE_FlakJacketPV1Police", "TKE_FlakJacketPolice"]];
 _policeLoadoutData set ["helmets", ["TKE_MercHelmV2Police", "TKE_MercHelmV2VisorPolice"]];
 _policeLoadoutData set ["facewear", ["G_Bandanna_blk", "TKE_FaceCoverGrey"]];
@@ -398,14 +397,15 @@ _policeLoadoutData set ["rifles", [
 /* Unit Gear */
 private _militiaLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 _militiaLoadoutData set ["uniforms", [
-    "TKE_CombatUniSnow_U_B", 1
+    "TKEJAM_U_B_ECWCS_UCNBlue_F", 1,
+    "TKE_U_B_ECWCS_UCNBlue_F", 1
 ]];
-_militiaLoadoutData set ["uniformsSL", ["TKE_CombatUniSnow_U_B", 0.5, "TKE_MercOutfit_U_B", 0.5]];
+_militiaLoadoutData set ["uniformsSL", ["TKE_U_B_ECWCS_UCNBlue_F", 0.5, "TKEJAM_U_B_ECWCS_UCNBlue_F", 0.5]];
 _militiaLoadoutData set ["uniformsHeavy", ["TKE_VoidSuit_U_B", 1]];
-_militiaLoadoutData set ["uniformsSniper", ["TKE_MercOutfit_U_B", 1]];
-_militiaLoadoutData set ["uniformsMedic", ["TKE_CombatUniSnow_U_B", 0.5, "TKE_MercOutfit_U_B", 0.5]];
-_militiaLoadoutData set ["uniformsGrenadier", ["TKE_CombatUniSnow_U_B", 0.5, "TKE_MercOutfit_U_B", 0.5]];
-_militiaLoadoutData set ["uniformsMachineGunner", ["TKE_CombatUniSnow_U_B", 0.5, "TKE_MercOutfit_U_B", 0.5]];
+_militiaLoadoutData set ["uniformsSniper", ["TKEJAM_U_B_ECWCS_UCNBlue_F", 1]];
+_militiaLoadoutData set ["uniformsMedic", ["TKE_U_B_ECWCS_UCNBlue_F", 0.5, "TKEJAM_U_B_ECWCS_UCNBlue_F", 0.5]];
+_militiaLoadoutData set ["uniformsGrenadier", ["TKE_U_B_ECWCS_UCNBlue_F", 0.5, "TKEJAM_U_B_ECWCS_UCNBlue_F", 0.5]];
+_militiaLoadoutData set ["uniformsMachineGunner", ["TKE_U_B_ECWCS_UCNBlue_F", 0.5, "TKEJAM_U_B_ECWCS_UCNBlue_F", 0.5]];
 _militiaLoadoutData set ["vests", [
     "TKE_UCMCArmour1", 0.25,
     "TKE_UCMCArmour2_2", 0.25,
@@ -464,14 +464,14 @@ _militiaLoadoutData set ["riflesAuto", [
 /* Unit Gear */
 private _militaryLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 _militaryLoadoutData set ["uniforms", [
-    "TKE_CombatUniSnow_U_B", 1
+    "TKE_U_B_ECWCS_UCNBlue_F", 1
 ]];
-_militaryLoadoutData set ["uniformsSL", ["TKE_CombatUniSnow_U_B", 0.5, "TKE_MercOutfit_U_B", 0.5]];
+_militaryLoadoutData set ["uniformsSL", ["TKE_U_B_ECWCS_UCNBlue_F", 0.5, "TKEJAM_U_B_ECWCS_UCNBlue_F", 0.5]];
 _militaryLoadoutData set ["uniformsHeavy", ["TKE_VoidSuit_U_B", 1]];
-_militaryLoadoutData set ["uniformsSniper", ["TKE_MercOutfit_U_B", 1]];
-_militaryLoadoutData set ["uniformsMedic", ["TKE_CombatUniSnow_U_B", 0.5, "TKE_MercOutfit_U_B", 0.5]];
-_militaryLoadoutData set ["uniformsGrenadier", ["TKE_CombatUniSnow_U_B", 0.5, "TKE_MercOutfit_U_B", 0.5]];
-_militaryLoadoutData set ["uniformsMachineGunner", ["TKE_CombatUniSnow_U_B", 0.5, "TKE_MercOutfit_U_B", 0.5]];
+_militaryLoadoutData set ["uniformsSniper", ["TKEJAM_U_B_ECWCS_UCNBlue_F", 1]];
+_militaryLoadoutData set ["uniformsMedic", ["TKE_U_B_ECWCS_UCNBlue_F", 0.5, "TKEJAM_U_B_ECWCS_UCNBlue_F", 0.5]];
+_militaryLoadoutData set ["uniformsGrenadier", ["TKE_U_B_ECWCS_UCNBlue_F", 0.5, "TKEJAM_U_B_ECWCS_UCNBlue_F", 0.5]];
+_militaryLoadoutData set ["uniformsMachineGunner", ["TKE_U_B_ECWCS_UCNBlue_F", 0.5, "TKEJAM_U_B_ECWCS_UCNBlue_F", 0.5]];
 _militaryLoadoutData set ["vests", [
     "TKE_UCMCArmour2_2", 0.25,
     "TKE_UCMCArmour6_1", 0.25,
@@ -500,7 +500,7 @@ _militaryLoadoutData set ["facewear", [
     "TKE_FaceCoverGrey", 0.4
 ]];
 
-_militaryLoadoutData set ["NVGs", ["TKE_UCMCNvg", "TKE_UCMCGlasses"]];
+_militaryLoadoutData set ["NVG", ["TKE_UCMCNvg", "TKE_UCMCGlasses"]];
 
 /* Unit Weapons */
 
@@ -532,14 +532,14 @@ _militaryLoadoutData set ["riflesCarbine", [
 /* Unit Gear */
 private _eliteLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 _eliteLoadoutData set ["uniforms", [
-    "TKE_CombatUniSnow_U_B", 1
+    "TKE_U_B_ECWCS_UCNBlue_F", 1
 ]];
-_eliteLoadoutData set ["uniformsSL", ["TKE_CombatUniSnow_U_B", 0.5, "TKE_MercOutfit_U_B", 0.5]];
+_eliteLoadoutData set ["uniformsSL", ["TKE_U_B_ECWCS_UCNBlue_F", 0.5, "TKEJAM_U_B_ECWCS_UCNBlue_F", 0.5]];
 _eliteLoadoutData set ["uniformsHeavy", ["TKE_VoidSuit_U_B", 1]];
-_eliteLoadoutData set ["uniformsSniper", ["TKE_MercOutfit_U_B", 1]];
-_eliteLoadoutData set ["uniformsMedic", ["TKE_CombatUniSnow_U_B", 0.5, "TKE_MercOutfit_U_B", 0.5]];
-_eliteLoadoutData set ["uniformsGrenadier", ["TKE_CombatUniSnow_U_B", 0.5, "TKE_MercOutfit_U_B", 0.5]];
-_eliteLoadoutData set ["uniformsMachineGunner", ["TKE_CombatUniSnow_U_B", 0.5, "TKE_MercOutfit_U_B", 0.5]];
+_eliteLoadoutData set ["uniformsSniper", ["TKEJAM_U_B_ECWCS_UCNBlue_F", 1]];
+_eliteLoadoutData set ["uniformsMedic", ["TKE_U_B_ECWCS_UCNBlue_F", 0.5, "TKEJAM_U_B_ECWCS_UCNBlue_F", 0.5]];
+_eliteLoadoutData set ["uniformsGrenadier", ["TKE_U_B_ECWCS_UCNBlue_F", 0.5, "TKEJAM_U_B_ECWCS_UCNBlue_F", 0.5]];
+_eliteLoadoutData set ["uniformsMachineGunner", ["TKE_U_B_ECWCS_UCNBlue_F", 0.5, "TKEJAM_U_B_ECWCS_UCNBlue_F", 0.5]];
 _eliteLoadoutData set ["vests", [
     "TKE_UCMCArmour6_1", 0.25,
     "TKE_UCMCArmour6_2", 0.25,
@@ -568,7 +568,7 @@ _eliteLoadoutData set ["facewear", [
     "TKE_FaceCoverGrey", 0.4
 ]];
 
-_eliteLoadoutData set ["NVGs", ["TKE_UCMCNvg", "TKE_UCMCGlasses"]];
+_eliteLoadoutData set ["NVG", ["TKE_UCMCNvg", "TKE_UCMCGlasses"]];
 
 /* Unit Weapons */
 
@@ -617,7 +617,7 @@ _sfLoadoutData set ["helmetsMachineGunner", [GEAR_SF_HELM]];
 
 /* Unit Misc Gear */
 _sfLoadoutData set ["facewear", []];
-_sfLoadoutData set ["NVGs", ["TKE_UCMCNvgCamo"]];
+_sfLoadoutData set ["NVG", ["TKE_UCMCNvgCamo"]];
 
 /* Unit Weapons */
 _sfLoadoutData set ["rifles", [

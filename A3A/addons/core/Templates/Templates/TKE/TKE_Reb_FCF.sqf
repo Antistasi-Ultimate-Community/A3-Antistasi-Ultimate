@@ -78,8 +78,8 @@ private _vehiclesCivPlane = ["TKE_Ext_GUSC_Civ"];
 
 private _initialRebelEquipment = [
   "TKE_MDPistolBlack",
-  "TKE_MDStdRifle","TKE_UCNRifle3Camo3",
-  "TKE_MD30rnd_575x45_magTY","TKE_35rnd_62x35_magTY",
+  "TKE_ARX12FCF",
+  "TKE_ARX12_62x35_magTY",
   "TKE_RedDotSight",
   "TKE_MDPistol_mag",
   "TKE_ATRecoilless1MDTFBrown",
@@ -88,9 +88,9 @@ private _initialRebelEquipment = [
   ["IEDUrbanSmall_Remote_Mag", 10], ["IEDLandSmall_Remote_Mag", 10], ["IEDUrbanBig_Remote_Mag", 3], ["IEDLandBig_Remote_Mag", 3],
   "TKE_RuckSackFCF","TKE_Pattern83FCF","TKE_CamelBakMD2","TKE_LightPackMDTF",
   "Binocular",
-  "TKE_CIVPonchoBlack","TKE_CIVPonchoBlue","TKE_CIVPonchoTan",
-  "TKE_CIVVest1Black","TKE_CIVVest1Blue","TKE_CIVVest1Tan",
-  "TKE_FCFWaistPouches","TKE_FCFCombatRig"
+  "TKE_CIVPonchoBlack","TKE_CIVVest1Black",
+  "TKE_FCFWaistPouches","TKE_FCFCombatRig","TKE_TacCrewVestFCF",
+  "TKE_FCFWebbing1","TKE_FCFWebbing2"
 ];
 
 if (A3A_hasTFAR) then {_initialRebelEquipment append ["tf_microdagr","tf_anprc154"]};
@@ -108,16 +108,7 @@ private _uniformsPlayer = [
   "TKE_FCFSweaterV3_U_B",
   "TKE_FCFSweaterV2_U_B",
   "TKE_CIVOutfit3_U_B",
-  "TKE_CIVOutfit3Blue_U_B",
   "TKE_CIVOutfit3_2_U_B"
-];
-
-private _unlocksPlayer = [
-  "TKE_FCFRebelHelm",
-  "TKE_FCFRebelHelmScrim",
-  "TKE_FCFRebelHelmCamo",
-  "TKE_CAGenNVG",
-  "TKE_ReconNVGFCF"
 ];
 
 private _uniformsReb = _uniformsPlayer;
@@ -214,7 +205,3 @@ private _unitTypes = [
 ];
 
 [_prefix, _unitTypes, _loadoutData] call _fnc_generateAndSaveUnitsToTemplate;
-
-waitUntil {sleep 1; !(isNil "jna_datalist")};
-
-_unlocksPlayer apply {[_x, true] call A3A_fnc_unlockEquipment};

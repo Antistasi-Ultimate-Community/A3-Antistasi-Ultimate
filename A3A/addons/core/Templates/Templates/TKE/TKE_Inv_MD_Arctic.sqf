@@ -25,54 +25,54 @@
 
 /* Ground Vehicles */
 private _vehiclesBasic = ["A3U_UCN_BL_Nomad_Rollcage"]; // Absolute basic vehicle. Quadbike, LSV, etc.
-private _vehiclesLightUnarmed = ["MDTF_A_APC_U", "A3U_UCN_BL_Nomad_Light"]; // Fundamental vehicle. Think an unarmoured humvee.
-private _vehiclesLightArmed = ["MDTF_A_APC_IFV"]; // Fundamental vehicle. Think a lightly armoured humvee with an M240.
+private _vehiclesLightUnarmed = ["MDTF_S_APC_U", "A3U_UCN_BL_Nomad_Light"]; // Fundamental vehicle. Think an unarmoured humvee.
+private _vehiclesLightArmed = ["MDTF_S_APC_IFV"]; // Fundamental vehicle. Think a lightly armoured humvee with an M240.
 
-private _vehiclesTrucks = ["MDTF_A_APC_U", "TKE_Ext_Bearcat_Unarmed_MDTF_A"]; // Used for troop carrying.
+private _vehiclesTrucks = ["MDTF_S_APC_U", "TKE_Ext_Bearcat_Unarmed_MDTF_S"]; // Used for troop carrying.
 private _vehiclesCargoTrucks = _vehiclesTrucks; // Used for cargo carrying. Must have logistics nodes.
 private _vehiclesAmmoTrucks = ["A3U_MDMC_APC_U_Ammo"];
 private _vehiclesRepairTrucks = ["A3U_MDMC_APC_U_Repair"];
 private _vehiclesFuelTrucks = ["A3U_MDMC_APC_U_Fuel"];
-private _vehiclesMedicalTrucks = ["MDTF_A_APC_U"];
+private _vehiclesMedicalTrucks = ["MDTF_S_APC_U"];
 
-private _vehiclesLightAPCs = ["MDTF_A_APC_U", "TKE_Ext_Bearcat_Autocannon_MDTF_A"]; // A light APC is an Armoured Personnel Carrier. Generally, light armoured vehicle + light gun.
-private _vehiclesAPCs = ["MDTF_A_APC_IFV", "TKE_Ext_Bearcat_Autocannon_MDTF_A"]; // An APC is a light APC but bigger. Generally, armoured vehicle + medium gun.
-private _vehiclesIFVs = ["MDTF_A_APC_IFV", "TKE_Ext_Bearcat_Autocannon_MDTF_A"]; // An IFV is an Infantry Fighting Vehicle. Generally, armoured vehicle + big gun.
-private _vehiclesAirborne = ["MDTF_A_APC_IFV", "TKE_Ext_Bearcat_Cannon_MDTF_A", "a3a_MBT_02_cannon_grey_F"]; // Vehicles that can be "paradropped". Not *too* strict, but use common sense.
-private _vehiclesAA = ["MDTF_A_APC_AA", "TKE_Ext_Bearcat_AA_MDTF_A"]; // Vehicles that AI crew can use to shoot down aircraft. If they can, it's an AA vehicle!
+private _vehiclesLightAPCs = ["MDTF_S_APC_U", "TKE_Ext_Bearcat_Autocannon_MDTF_S"]; // A light APC is an Armoured Personnel Carrier. Generally, light armoured vehicle + light gun.
+private _vehiclesAPCs = ["MDTF_S_APC_IFV", "TKE_Ext_Bearcat_Autocannon_MDTF_S"]; // An APC is a light APC but bigger. Generally, armoured vehicle + medium gun.
+private _vehiclesIFVs = ["MDTF_S_APC_IFV", "TKE_Ext_Bearcat_Autocannon_MDTF_S"]; // An IFV is an Infantry Fighting Vehicle. Generally, armoured vehicle + big gun.
+private _vehiclesAirborne = ["MDTF_S_APC_IFV", "TKE_Ext_Bearcat_Cannon_MDTF_S"]; // Vehicles that can be "paradropped". Not *too* strict, but use common sense.
+private _vehiclesAA = ["MDTF_S_APC_AA", "TKE_Ext_Bearcat_AA_MDTF_S"]; // Vehicles that AI crew can use to shoot down aircraft. If they can, it's an AA vehicle!
 
-private _vehiclesLightTanks = ["MDTF_A_APC_IFV", "MDTF_A_APC_MGS"]; // A light tank is a tank that is light... Think an american M60 (the tank).
-private _vehiclesTanks = ["MDTF_A_APC_MGS"]; // A tank is a tank. Shocker. Think an M1 Abrams.
+private _vehiclesLightTanks = ["MDTF_S_APC_IFV", "MDTF_S_APC_MGS", "TKE_Ext_Bearcat_Cannon_MDTF_S"]; // A light tank is a tank that is light... Think an american M60 (the tank).
+private _vehiclesTanks = ["MDTF_S_APC_MGS"]; // A tank is a tank. Shocker. Think an M1 Abrams.
 
 /* Sea Vehicles */
 private _vehiclesTransportBoats = ["I_C_Boat_Transport_02_F"];
 private _vehiclesGunBoats = ["B_T_Boat_Armed_01_minigun_F"];
 
 /* Air Vehicles */
-private _vehiclesPlanesCAS = ["TKE_Ext_GUSA_MDTF_A"]; // CAS = Close Air Support, CfgPlaneLoadouts >> CAS and CASDIVE
-private _vehiclesPlanesAA = ["TKE_Ext_GUSM_MDTF_A"]; // AA = Anti-Air, CfgPlaneLoadouts >> AA
-private _vehiclesPlanesTransport = ["TKE_Ext_GUSM_MDTF_A"]; // Troop carriers for paradrop OR VTOL landing
+private _vehiclesPlanesCAS = ["TKE_Ext_GUSA_MDTF_S"]; // CAS = Close Air Support, CfgPlaneLoadouts >> CAS and CASDIVE
+private _vehiclesPlanesAA = ["TKE_Ext_GUSM_MDTF_S"]; // AA = Anti-Air, CfgPlaneLoadouts >> AA
+private _vehiclesPlanesTransport = ["TKE_Ext_GUSM_MDTF_S"]; // Troop carriers for paradrop OR VTOL landing
 private _vehiclesPlanesGunship = ["TKE_Ext_Gunship_OPF"]; // Self explanatory
 private _vehiclesPlanesLargeCAS = ["TKE_Ext_Gunship_OPF"]; // Used for planes that need to spawn on the runway.
 private _vehiclesPlanesLargeAA = ["TKE_Ext_Corvette_OPF"]; // Used for planes that need to spawn on the runway.
 
-private _vehiclesHelisLight = ["TKE_Ext_Dragonfly_T_MDTF_A"]; // A light transport helicopter.
-private _vehiclesHelisTransport = ["TKE_Ext_Dragonfly_T_MDTF_A"]; // A transport helicopter.
-private _vehiclesHelisLightAttack = ["TKE_Ext_Dragonfly_S_MDTF_A"]; // A light attack helicopter.
-private _vehiclesHelisAttack = ["TKE_Ext_Dragonfly_A_MDTF_A"]; // An attack helicopter.
+private _vehiclesHelisLight = ["TKE_Ext_Dragonfly_T_MDTF_S"]; // A light transport helicopter.
+private _vehiclesHelisTransport = ["TKE_Ext_Dragonfly_T_MDTF_S"]; // A transport helicopter.
+private _vehiclesHelisLightAttack = ["TKE_Ext_Dragonfly_S_MDTF_S"]; // A light attack helicopter.
+private _vehiclesHelisAttack = ["TKE_Ext_Dragonfly_A_MDTF_S"]; // An attack helicopter.
 private _vehiclesAirPatrol = _vehiclesHelisLightAttack + _vehiclesHelisAttack; // A helicopter that is used to patrol areas.
 
 /* Special Vehicles */
-private _vehiclesArtillery = ["MDTF_A_APC_MGS"]; // If it has an artillery computer and moves, it's probably vehicular artillery.
+private _vehiclesArtillery = ["MDTF_S_APC_MGS"]; // If it has an artillery computer and moves, it's probably vehicular artillery.
 ["magazines", createHashMapFromArray [
-    ["MDTF_A_APC_MGS", ["TKE_105mm_16Rnd_HE"]] // ["vehicle", ["magazine1", "magazine2"]]. You can add multiple vehicles.
+    ["MDTF_S_APC_MGS", ["TKE_105mm_16Rnd_HE"]] // ["vehicle", ["magazine1", "magazine2"]]. You can add multiple vehicles.
 ]] call _fnc_saveToTemplate;
 
 /* Militia Vehicles */
-private _vehiclesMilitiaLightArmed = ["TKE_Ext_Bearcat_Autocannon_MDTF_A"]; // Think: What would a hastily formed militia use?
-private _vehiclesMilitiaTrucks = ["MDTF_A_APC_U"];
+private _vehiclesMilitiaLightArmed = ["TKE_Ext_Bearcat_Autocannon_MDTF_S"]; // Think: What would a hastily formed militia use?
+private _vehiclesMilitiaTrucks = ["MDTF_S_APC_U"];
 private _vehiclesMilitiaCars = ["A3U_UCN_BL_Nomad"];
-private _vehiclesMilitiaAPCs = ["MDTF_A_APC_IFV"];
+private _vehiclesMilitiaAPCs = ["MDTF_S_APC_IFV"];
 
 /* Police Vehicles */
 private _vehiclesPolice = ["A3U_UCN_BL_Nomad_Rollcage"];
@@ -200,8 +200,7 @@ private _opticsSharedSL = ["TKE_MRCOSight", 0.4, "TKE_4xSight", 0.4, "TKE_RedDot
 private _mountsShared = ["acc_flashlight", 0.2, "acc_pointer_IR", 0.2, "", 0.6];
 private _loadoutData = call _fnc_createLoadoutData;
 _loadoutData set ["rifles", [
-    ["TKE_MDRifle", "", _mountsShared, _opticsShared, ["TKE_35rnd_62x35_magMD", "TKE_35rnd_62x35_magTRMD"], [], ""], 2,
-    ["TKE_MDRifle2Camo", "", _mountsShared, _opticsShared, ["TKE_35rnd_62x35_mag", "TKE_35rnd_62x35_magTR"], [], ""], 0.5
+    ["TKE_MDRifle", "", _mountsShared, _opticsShared, ["TKE_35rnd_62x35_magMD", "TKE_35rnd_62x35_magTRMD"], [], ""], 1
 ]];
 _loadoutData set ["riflesSL", [
     ["TKE_MDRifle", "", _mountsShared, _opticsSharedSL, ["TKE_35rnd_62x35_magMD", "TKE_35rnd_62x35_magTRMD"], [], ""], 5,
@@ -222,7 +221,7 @@ _loadoutData set ["riflesSniper", [
     ["WRS_Weapon_Sniper_Bolt", "", "", ["optic_LRPS", 0.7, "TKE_ThermScope", 0.3], ["WRS_Boomslang_Magazine"], [], ""], 0.5
 ]]; // Designated sniper rifle
 _loadoutData set ["riflesCarbine", [
-    ["TKE_MDStdRifle", "", _mountsShared, _opticsShared, ["TKE_ARX12_62x35_mag", "TKE_ARX12_62x35_magTG"], [], ""], 1
+    ["TKE_MDStdRifleGrey", "", _mountsShared, _opticsShared, ["TKE_ARX12_62x35_mag", "TKE_ARX12_62x35_magTG"], [], ""], 1
 ]]; // A rifle with a shorter barrel length
 _loadoutData set ["launchersGrenade", [
     ["TKE_MDRifleV2", "", _mountsShared, _opticsSharedSL, ["TKE_35rnd_62x35_magMD", "TKE_35rnd_62x35_magTRMD"], ["1Rnd_HE_Grenade_shell", "UGL_FlareGreen_F"], ""], 1
@@ -230,13 +229,13 @@ _loadoutData set ["launchersGrenade", [
 _loadoutData set ["launchersGrenadeDesignated", []]; // A standalone grenade launcher
 
 _loadoutData set ["launchersLightAT", [
-    ["TKE_ATRecoilless1MDTFBrown", "", "", "", ["MRAWS_HE_F"], [], ""], 1
+    ["TKE_ATRecoilless1KMC", "", "", "", ["MRAWS_HE_F"], [], ""], 1
 ]]; // Light launcher that fires a non-missile projectile
 _loadoutData set ["launchersAT", [
-    ["TKE_ATRecoilless1MDTFBrown", "", "", "", ["MRAWS_HEAT55_F"], [], ""], 1
+    ["TKE_ATRecoilless1KMC", "", "", "", ["MRAWS_HEAT55_F"], [], ""], 1
 ]]; // Launcher that fires a non-missile projectile
 _loadoutData set ["launchersMissileAT", [
-    ["TKE_ATRecoilless1MDTFBrown", "", "", "", ["MRAWS_HEAT_F"], [], ""], 1
+    ["TKE_ATRecoilless1KMC", "", "", "", ["MRAWS_HEAT_F"], [], ""], 1
 ]]; // Launcher that fires a missile projectile
 _loadoutData set ["launchersAA", [
     ["launch_B_Titan_olive_F", "", "", "", ["Titan_AA"], [], ""], 1
@@ -265,22 +264,22 @@ _loadoutData set ["binoculars", ["Binocular"]];
 _loadoutData set ["rangefinders", ["TKE_BinoMDTF"]];
 
 /* Traitor: A rebel traitor who has defected to *this* faction. */
-_loadoutData set ["uniformsTraitor", ["TKE_CombatShirtMD_U_B"]];
-_loadoutData set ["vestsTraitor", ["TKE_MDTFArmour1"]];
-_loadoutData set ["helmetsTraitor", []];
+_loadoutData set ["uniformsTraitor", ["TKEJAM_U_B_IHWCU_combat_MDTFSnow_F"]];
+_loadoutData set ["vestsTraitor", ["TKE_MDTFArmour1Snow"]];
+_loadoutData set ["helmetsTraitor", ["H_Watchcap_blk"]];
 _loadoutData set ["facewearTraitor", ["TKE_CombatGlasses"]];
 
 /* Officer: An official who is present at places like Military Administration. */
-_loadoutData set ["uniformsOfficer", ["TKE_CombatUniNARolledMD_U_B"]];
-_loadoutData set ["vestsOfficer", ["TKE_MDTFArmour1"]];
-_loadoutData set ["helmetsOfficer", ["TKE_Beret_MDTF"]];
-_loadoutData set ["facewearOfficer", ["TKE_HeadsetFCGrey"]];
+_loadoutData set ["uniformsOfficer", ["TKEJAM_U_B_IHWCU_combat_shortsleeve_MDTFSnow_F"]];
+_loadoutData set ["vestsOfficer", ["TKE_MDTFArmour1Snow"]];
+_loadoutData set ["helmetsOfficer", ["H_Watchcap_blk"]];
+_loadoutData set ["facewearOfficer", ["G_Bandanna_blk"]];
 
 /* Cloak: Basically a small patrol sniper team. */
-_loadoutData set ["uniformsCloak", ["TKE_CombatUniNAMD_U_B"]];
-_loadoutData set ["vestsCloak", ["TKE_MDTFArmour3_1"]];
-_loadoutData set ["helmetsCloak", ["TKE_MDTFHeavyHelm"]];
-_loadoutData set ["facewearCloak", ["TKE_MDWebbingNetting"]];
+_loadoutData set ["uniformsCloak", ["TKE_U_B_ECWCS_MDTFSnow_F"]];
+_loadoutData set ["vestsCloak", ["TKE_MDTFArmour4_1Snow"]];
+_loadoutData set ["helmetsCloak", ["TKE_MDTFHeavyHelmSnow"]];
+_loadoutData set ["facewearCloak", ["TKE_MDWebbingNettingSnow"]];
 
 /* Core: Shared loadout data. If not overwritten by _tierLoadoutData, it uses these instead. */
 _loadoutData set ["uniforms", []];
@@ -301,9 +300,9 @@ _loadoutData set ["vestsGrenadier", []];
 _loadoutData set ["vestsMachineGunner", []];
 _loadoutData set ["vestsWarbot", []];
 
-_loadoutData set ["backpacks", ["TKE_LightPackMDTF", "TKE_BackPack1MD1", "TKE_CamelBakMD1", "TKE_AlicePackMTDF"]];
-_loadoutData set ["backpacksRadio", ["TKE_RadioPackMD"]];
-_loadoutData set ["backpacksAT", ["TKE_AlicePackMTDF"]];
+_loadoutData set ["backpacks", ["TKE_CamelBakV2MDSnow", "TKE_BackPack1MDSnow", "TKE_BackPack2MDSnow", "TKE_AlicePackMTDFSnow"]];
+_loadoutData set ["backpacksRadio", ["TKE_RadioPackUCN"]];
+_loadoutData set ["backpacksAT", ["TKE_AlicePackMTDFSnow"]];
 
 _loadoutData set ["helmets", []];
 _loadoutData set ["helmetsSL", []];
@@ -356,18 +355,18 @@ _loadoutData set ["items_unarmed_extras", _coreItems];
 //////////////////////////
 
 private _crewLoadoutData = _loadoutData call _fnc_copyLoadoutData; 
-_crewLoadoutData set ["uniforms", ["TKE_CombatUniNARolledMD_U_B"]];
-_crewLoadoutData set ["vests", ["TKE_MDTFArmour1"]];
-_crewLoadoutData set ["helmets", ["TKE_FCrewHelmMD"]];
+_crewLoadoutData set ["uniforms", ["TKE_U_B_ECWCS_MDTFSnow_F"]];
+_crewLoadoutData set ["vests", ["TKE_MDTFArmour1Snow"]];
+_crewLoadoutData set ["helmets", ["TKE_FCrewHelmMDWhite"]];
 
 private _pilotLoadoutData = _loadoutData call _fnc_copyLoadoutData;
-_pilotLoadoutData set ["uniforms", ["TKE_CombatUniNAMD_U_B"]];
-_pilotLoadoutData set ["vests", ["TKE_PilotVestMDTF"]];
-_pilotLoadoutData set ["helmets", ["TKE_MDPilotHelmRVNoPipes"]];
+_pilotLoadoutData set ["uniforms", ["TKEJAM_U_B_IHWCU_combat_shortsleeve_MDTFSnow_F"]];
+_pilotLoadoutData set ["vests", ["TKE_PilotVestMerc"]];
+_pilotLoadoutData set ["helmets", ["TKE_MercHelmClosed_BASE"]];
 
 private _policeLoadoutData = _loadoutData call _fnc_copyLoadoutData;
-_policeLoadoutData set ["uniforms", ["TKE_CombatUniNAMPDF_U_B", "TKEJAM_U_B_IHWCU_combat_shortsleeve_MDTF_F", "TKE_CombatShirtMPDF_U_B"]];
-_policeLoadoutData set ["vests", ["TKE_FlakJacketPV1MPDFCG", "TKE_FlakJacketMPDFCG"]];
+_policeLoadoutData set ["uniforms", ["TKEJAM_U_B_IHWCU_combat_MDTFSnow_F", "TKEJAM_U_B_ECWCS_MDTFSnow_F"]];
+_policeLoadoutData set ["vests", ["TKE_FlakJacketMPDFCG"]];
 _policeLoadoutData set ["helmets", ["TKE_MDTFMilitiaHelmCG"]];
 _policeLoadoutData set ["facewear", ["TKE_MPSleeve"]];
 
@@ -378,39 +377,39 @@ _policeLoadoutData set ["facewear", ["TKE_MPSleeve"]];
 /* Unit Gear */
 private _militiaLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 _militiaLoadoutData set ["uniforms", [
-    "TKE_CombatUniMPDF_U_B", 0.3, 
-    "TKE_CombatUniNAMPDF_U_B", 0.3, 
-    "TKE_CombatShirtMPDF_U_B", 0.4
+    "TKEJAM_U_B_ECWCS_MDTFSnow_F", 0.3, 
+    "TKEJAM_U_B_IHWCU_combat_MDTFSnow_F", 0.3, 
+    "TKEJAM_U_B_IHWCU_combat_shortsleeve_MDTFSnow_F", 0.4
 ]];
-_militiaLoadoutData set ["uniformsSL", ["TKE_CombatUniMPDF_U_B", 1]];
+_militiaLoadoutData set ["uniformsSL", ["TKEJAM_U_B_ECWCS_MDTFSnow_F", 1]];
 _militiaLoadoutData set ["uniformsHeavy", ["TKE_VoidSuitMerc_U_B", 1]];
-_militiaLoadoutData set ["uniformsSniper", ["TKE_CombatShirtMPDF_U_B", 1]];
-_militiaLoadoutData set ["uniformsMedic", ["TKE_CombatUniMPDF_U_B", 0.5, "TKE_CombatUniNAMPDF_U_B", 0.5]];
-_militiaLoadoutData set ["uniformsGrenadier", ["TKE_CombatUniNAMPDF_U_B", 0.5, "TKE_CombatUniNAMPDF_U_B", 0.5]];
-_militiaLoadoutData set ["uniformsMachineGunner", ["TKE_CombatUniNAMPDF_U_B", 0.5, "TKE_CombatUniNAMPDF_U_B", 0.5]];
+_militiaLoadoutData set ["uniformsSniper", ["TKEJAM_U_B_IHWCU_combat_shortsleeve_MDTFSnow_F", 1]];
+_militiaLoadoutData set ["uniformsMedic", ["TKEJAM_U_B_ECWCS_MDTFSnow_F", 0.5, "TKEJAM_U_B_IHWCU_combat_MDTFSnow_F", 0.5]];
+_militiaLoadoutData set ["uniformsGrenadier", ["TKEJAM_U_B_IHWCU_combat_MDTFSnow_F", 0.5, "TKEJAM_U_B_IHWCU_combat_MDTFSnow_F", 0.5]];
+_militiaLoadoutData set ["uniformsMachineGunner", ["TKEJAM_U_B_IHWCU_combat_MDTFSnow_F", 0.5, "TKEJAM_U_B_IHWCU_combat_MDTFSnow_F", 0.5]];
 _militiaLoadoutData set ["vests", [
-    "TKE_MDTFArmour1MPDF", 0.5,
-    "TKE_MDTFArmour3", 0.5
+    "TKE_MDTFArmour1Snow", 0.5,
+    "TKE_MDTFArmour3Snow", 0.5
 ]];
-_militiaLoadoutData set ["vestsSL", ["TKE_MDTFArmour3_1", 1]];
-_militiaLoadoutData set ["vestsHeavy", ["TKE_MDTFArmour3_1", 0.5, "TKE_MDTFArmour3_2", 0.5]];
-_militiaLoadoutData set ["vestsSniper", ["TKE_MDTFArmour3_1", 1]];
-_militiaLoadoutData set ["vestsMedic", ["TKE_MDTFArmour3_1", 1]];
-_militiaLoadoutData set ["vestsGrenadier", ["TKE_MDTFArmour3_2", 1]];
-_militiaLoadoutData set ["vestsMachineGunner", ["TKE_MDTFArmour3_2", 1]];
+_militiaLoadoutData set ["vestsSL", ["TKE_MDTFArmour3_1Snow", 1]];
+_militiaLoadoutData set ["vestsHeavy", ["TKE_MDTFArmour3_1Snow", 0.5, "TKE_MDTFArmour3_1Snow", 0.5]];
+_militiaLoadoutData set ["vestsSniper", ["TKE_MDTFArmour3_1Snow", 1]];
+_militiaLoadoutData set ["vestsMedic", ["TKE_MDTFArmour3_1Snow", 1]];
+_militiaLoadoutData set ["vestsGrenadier", ["TKE_MDTFArmour3_1Snow", 1]];
+_militiaLoadoutData set ["vestsMachineGunner", ["TKE_MDTFArmour3_1Snow", 1]];
 // _militiaLoadoutData set ["backpacks", []];
-_militiaLoadoutData set ["helmets", ["TKE_MDTFMilitiaHelm", 1]];
-_militiaLoadoutData set ["helmetsSL", ["TKE_MDTFHelmClear", 1]];
-_militiaLoadoutData set ["helmetsHeavy", ["TKE_MDTFHelm", 1]];
-_militiaLoadoutData set ["helmetsSniper", ["TKE_MDTFHelm", 0.5, "TKE_MDTFMilitiaHelm", 0.5]];
-_militiaLoadoutData set ["helmetsMedic", ["TKE_MDTFHelmClear", 1]];
-_militiaLoadoutData set ["helmetsGrenadier", ["TKE_MDTFHelmClear", 0.5, "TKE_MDTFMilitiaHelm", 0.5]];
-_militiaLoadoutData set ["helmetsMachineGunner", ["TKE_MDTFHelmClear", 0.5, "TKE_MDTFMilitiaHelm", 0.5]];
+_militiaLoadoutData set ["helmets", ["H_Watchcap_blk", 1]];
+_militiaLoadoutData set ["helmetsSL", ["TKE_MDTFHelmClearSnow", 1]];
+_militiaLoadoutData set ["helmetsHeavy", ["TKE_MDTFHelmSnow", 1]];
+_militiaLoadoutData set ["helmetsSniper", ["TKE_MDTFHelmSnow", 0.5, "H_Watchcap_blk", 0.5]];
+_militiaLoadoutData set ["helmetsMedic", ["TKE_MDTFHelmClearSnow", 1]];
+_militiaLoadoutData set ["helmetsGrenadier", ["TKE_MDTFHelmClearSnow", 0.5, "H_Watchcap_blk", 0.5]];
+_militiaLoadoutData set ["helmetsMachineGunner", ["TKE_MDTFHelmClearSnow", 0.5, "H_Watchcap_blk", 0.5]];
 
 /* Unit Misc Gear */
 _militiaLoadoutData set ["facewear", [
-    "TKE_MDChestPouches1", 0.2,
-    "TKE_MDLegPouch", 0.2,
+    "TKE_MDChestPouches1Snow", 0.2,
+    "TKE_MDLegPouchSnow", 0.2,
     "TKE_UCMCGogglesDown", 0.2,
     "TKE_FaceCoverGrey", 0.4
 ]];
@@ -426,43 +425,43 @@ _militiaLoadoutData set ["facewear", [
 /* Unit Gear */
 private _militaryLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 _militaryLoadoutData set ["uniforms", [
-    "TKE_CombatUniMD_U_B", 0.3, 
-    "TKE_CombatUniRolledV1MD_U_B", 0.3, 
-    "TKE_CombatUniRolledV2MD_U_B", 0.4
+    "TKEJAM_U_B_IHWCU_combat_MDTFSnow_F", 0.3, 
+    "TKEJAM_U_B_ECWCS_MDTFSnow_F", 0.3, 
+    "TKEJAM_U_B_IHWCU_combat_shortsleeve_MDTFSnow_F", 0.4
 ]];
-_militaryLoadoutData set ["uniformsSL", ["TKE_CombatUniRolledV1MD_U_B", 1]];
+_militaryLoadoutData set ["uniformsSL", ["TKEJAM_U_B_ECWCS_MDTFSnow_F", 1]];
 _militaryLoadoutData set ["uniformsHeavy", ["TKE_VoidSuitMerc_U_B", 1]];
-_militaryLoadoutData set ["uniformsSniper", ["TKE_CombatUniRolledV2MD_U_B", 1]];
-_militaryLoadoutData set ["uniformsMedic", ["TKE_CombatUniRolledV1MD_U_B", 0.5, "TKE_CombatUniRolledV2MD_U_B", 0.5]];
-_militaryLoadoutData set ["uniformsGrenadier", ["TKE_CombatUniRolledV1MD_U_B", 0.5, "TKE_CombatUniRolledV2MD_U_B", 0.5]];
-_militaryLoadoutData set ["uniformsMachineGunner", ["TKE_CombatUniRolledV1MD_U_B", 0.5, "TKE_CombatUniRolledV2MD_U_B", 0.5]];
+_militaryLoadoutData set ["uniformsSniper", ["TKEJAM_U_B_IHWCU_combat_shortsleeve_MDTFSnow_F", 1]];
+_militaryLoadoutData set ["uniformsMedic", ["TKEJAM_U_B_ECWCS_MDTFSnow_F", 0.5, "TKEJAM_U_B_IHWCU_combat_shortsleeve_MDTFSnow_F", 0.5]];
+_militaryLoadoutData set ["uniformsGrenadier", ["TKEJAM_U_B_ECWCS_MDTFSnow_F", 0.5, "TKEJAM_U_B_IHWCU_combat_shortsleeve_MDTFSnow_F", 0.5]];
+_militaryLoadoutData set ["uniformsMachineGunner", ["TKEJAM_U_B_ECWCS_MDTFSnow_F", 0.5, "TKEJAM_U_B_IHWCU_combat_shortsleeve_MDTFSnow_F", 0.5]];
 _militaryLoadoutData set ["vests", [
-    "TKE_MDTFArmour3", 0.5,
-    "TKE_MDTFArmour4", 0.5
+    "TKE_MDTFArmour3Snow", 0.5,
+    "TKE_MDTFArmour4Snow", 0.5
 ]];
-_militaryLoadoutData set ["vestsSL", ["TKE_MDTFArmour4_1", 1]];
-_militaryLoadoutData set ["vestsHeavy", ["TKE_MDTFArmour4_1", 0.5, "TKE_MDTFArmour4_2", 0.5]];
-_militaryLoadoutData set ["vestsSniper", ["TKE_MDTFArmour4_1", 1]];
-_militaryLoadoutData set ["vestsMedic", ["TKE_MDTFArmour4_1", 1]];
-_militaryLoadoutData set ["vestsGrenadier", ["TKE_MDTFArmour4_2", 1]];
-_militaryLoadoutData set ["vestsMachineGunner", ["TKE_MDTFArmour4_2", 1]];
+_militaryLoadoutData set ["vestsSL", ["TKE_MDTFArmour4_1Snow", 1]];
+_militaryLoadoutData set ["vestsHeavy", ["TKE_MDTFArmour4_1Snow", 0.5, "TKE_MDTFArmour4_2Snow", 0.5]];
+_militaryLoadoutData set ["vestsSniper", ["TKE_MDTFArmour4_1Snow", 1]];
+_militaryLoadoutData set ["vestsMedic", ["TKE_MDTFArmour4_1Snow", 1]];
+_militaryLoadoutData set ["vestsGrenadier", ["TKE_MDTFArmour4_2Snow", 1]];
+_militaryLoadoutData set ["vestsMachineGunner", ["TKE_MDTFArmour4_2Snow", 1]];
 // _militaryLoadoutData set ["backpacks", []];
-_militaryLoadoutData set ["helmets", ["TKE_MDTFHelmClear", 1]];
-_militaryLoadoutData set ["helmetsSL", ["TKE_MDTFHelmClear", 1]];
-_militaryLoadoutData set ["helmetsHeavy", ["TKE_MDTFHeavyHelm", 1]];
-_militaryLoadoutData set ["helmetsSniper", ["TKE_MDTFHelm", 0.5, "TKE_MDTFHelmClear", 0.5]];
-_militaryLoadoutData set ["helmetsMedic", ["TKE_MDTFHelmClear", 1]];
-_militaryLoadoutData set ["helmetsGrenadier", ["TKE_MDTFHeavyHelm", 0.5, "TKE_MDTFHelmClear", 0.5]];
-_militaryLoadoutData set ["helmetsMachineGunner", ["TKE_MDTFHeavyHelm", 0.5, "TKE_MDTFHelmClear", 0.5]];
+_militaryLoadoutData set ["helmets", ["TKE_MDTFHelmClearSnow", 1]];
+_militaryLoadoutData set ["helmetsSL", ["TKE_MDTFHelmClearSnow", 1]];
+_militaryLoadoutData set ["helmetsHeavy", ["TKE_MDTFHeavyHelmSnow", 1]];
+_militaryLoadoutData set ["helmetsSniper", ["TKE_MDTFHelmSnow", 0.5, "TKE_MDTFHelmClearSnow", 0.5]];
+_militaryLoadoutData set ["helmetsMedic", ["TKE_MDTFHelmClearSnow", 1]];
+_militaryLoadoutData set ["helmetsGrenadier", ["TKE_MDTFHeavyHelmSnow", 0.5, "TKE_MDTFHelmClearSnow", 0.5]];
+_militaryLoadoutData set ["helmetsMachineGunner", ["TKE_MDTFHeavyHelmSnow", 0.5, "TKE_MDTFHelmClearSnow", 0.5]];
 
-_militaryLoadoutData set ["uniformsWarbot", ["TKE_WarbotUniMDTF_U_B"]];
-_militaryLoadoutData set ["vestsWarbot", ["TKE_WarBotArmourMDTF"]];
-_militaryLoadoutData set ["helmetsWarbot", ["TKE_WarBotHeadMDTF"]];
+_militaryLoadoutData set ["uniformsWarbot", ["TKE_WarbotUniMDTFSnow_U_B"]];
+_militaryLoadoutData set ["vestsWarbot", ["TKE_WarBotArmourMDTFSnow"]];
+_militaryLoadoutData set ["helmetsWarbot", ["TKE_WarBotHeadMDTFSnow"]];
 
 /* Unit Misc Gear */
 _militaryLoadoutData set ["facewear", [
-    "TKE_MDWebbingV1", 0.2,
-    "TKE_MDTFNvg2FC", 0.2,
+    "TKE_MDWebbingV1Snow", 0.2,
+    "TKE_MDTFNvg2FCGrey", 0.2,
     "TKE_UCMCGogglesDown", 0.2,
     "TKE_FaceCoverGrey", 0.4
 ]];
@@ -478,43 +477,43 @@ _militaryLoadoutData set ["facewear", [
 /* Unit Gear */
 private _eliteLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 _eliteLoadoutData set ["uniforms", [
-    "TKE_CombatUniMD_U_B", 0.3, 
-    "TKE_CombatUniRolledV1MD_U_B", 0.3, 
-    "TKE_CombatUniRolledV2MD_U_B", 0.4
+    "TKEJAM_U_B_IHWCU_combat_MDTFSnow_F", 0.3, 
+    "TKEJAM_U_B_ECWCS_MDTFSnow_F", 0.3, 
+    "TKEJAM_U_B_IHWCU_combat_shortsleeve_MDTFSnow_F", 0.4
 ]];
-_eliteLoadoutData set ["uniformsSL", ["TKE_CombatUniRolledV1MD_U_B", 1]];
+_eliteLoadoutData set ["uniformsSL", ["TKEJAM_U_B_ECWCS_MDTFSnow_F", 1]];
 _eliteLoadoutData set ["uniformsHeavy", ["TKE_VoidSuitMerc_U_B", 1]];
-_eliteLoadoutData set ["uniformsSniper", ["TKE_CombatUniRolledV2MD_U_B", 1]];
-_eliteLoadoutData set ["uniformsMedic", ["TKE_CombatUniRolledV1MD_U_B", 0.5, "TKE_CombatUniRolledV2MD_U_B", 0.5]];
-_eliteLoadoutData set ["uniformsGrenadier", ["TKE_CombatUniRolledV1MD_U_B", 0.5, "TKE_CombatUniRolledV2MD_U_B", 0.5]];
-_eliteLoadoutData set ["uniformsMachineGunner", ["TKE_CombatUniRolledV1MD_U_B", 0.5, "TKE_CombatUniRolledV2MD_U_B", 0.5]];
+_eliteLoadoutData set ["uniformsSniper", ["TKEJAM_U_B_IHWCU_combat_shortsleeve_MDTFSnow_F", 1]];
+_eliteLoadoutData set ["uniformsMedic", ["TKEJAM_U_B_ECWCS_MDTFSnow_F", 0.5, "TKEJAM_U_B_IHWCU_combat_shortsleeve_MDTFSnow_F", 0.5]];
+_eliteLoadoutData set ["uniformsGrenadier", ["TKEJAM_U_B_ECWCS_MDTFSnow_F", 0.5, "TKEJAM_U_B_IHWCU_combat_shortsleeve_MDTFSnow_F", 0.5]];
+_eliteLoadoutData set ["uniformsMachineGunner", ["TKEJAM_U_B_ECWCS_MDTFSnow_F", 0.5, "TKEJAM_U_B_IHWCU_combat_shortsleeve_MDTFSnow_F", 0.5]];
 _eliteLoadoutData set ["vests", [
-    "TKE_MDTFArmour4", 0.5,
-    "TKE_MDTFArmour4_1", 0.5
+    "TKE_MDTFArmour4Snow", 0.5,
+    "TKE_MDTFArmour2Snow", 0.5
 ]];
-_eliteLoadoutData set ["vestsSL", ["TKE_MDTFArmour2_1", 1]];
-_eliteLoadoutData set ["vestsHeavy", ["TKE_MDTFArmour2_1", 0.5, "TKE_MDTFArmour2_2", 0.5]];
-_eliteLoadoutData set ["vestsSniper", ["TKE_MDTFArmour2_1", 1]];
-_eliteLoadoutData set ["vestsMedic", ["TKE_MDTFArmour2_1", 1]];
-_eliteLoadoutData set ["vestsGrenadier", ["TKE_MDTFArmour2_2", 1]];
-_eliteLoadoutData set ["vestsMachineGunner", ["TKE_MDTFArmour2_2", 1]];
+_eliteLoadoutData set ["vestsSL", ["TKE_MDTFArmour2_1Snow", 1]];
+_eliteLoadoutData set ["vestsHeavy", ["TKE_MDTFArmour2_1Snow", 0.5, "TKE_MDTFArmour2_2Snow", 0.5]];
+_eliteLoadoutData set ["vestsSniper", ["TKE_MDTFArmour2_1Snow", 1]];
+_eliteLoadoutData set ["vestsMedic", ["TKE_MDTFArmour2_1Snow", 1]];
+_eliteLoadoutData set ["vestsGrenadier", ["TKE_MDTFArmour2_2Snow", 1]];
+_eliteLoadoutData set ["vestsMachineGunner", ["TKE_MDTFArmour2_2Snow", 1]];
 // _eliteLoadoutData set ["backpacks", []];
-_eliteLoadoutData set ["helmets", ["TKE_MDTFHelm", 1]];
-_eliteLoadoutData set ["helmetsSL", ["TKE_MDTFHeavyHelm", 1]];
-_eliteLoadoutData set ["helmetsHeavy", ["TKE_MDTFHeavyHelm", 1]];
-_eliteLoadoutData set ["helmetsSniper", ["TKE_MDTFHelm", 0.5, "TKE_MDTFHeavyHelm", 0.5]];
-_eliteLoadoutData set ["helmetsMedic", ["TKE_MDTFHelm", 1]];
-_eliteLoadoutData set ["helmetsGrenadier", ["TKE_MDTFHelm", 0.5, "TKE_MDTFHeavyHelm", 0.5]];
-_eliteLoadoutData set ["helmetsMachineGunner", ["TKE_MDTFHelm", 0.5, "TKE_MDTFHeavyHelm", 0.5]];
+_eliteLoadoutData set ["helmets", ["TKE_MDTFHelmSnow", 1]];
+_eliteLoadoutData set ["helmetsSL", ["TKE_MDTFHeavyHelmSnow", 1]];
+_eliteLoadoutData set ["helmetsHeavy", ["TKE_MDTFHeavyHelmSnow", 1]];
+_eliteLoadoutData set ["helmetsSniper", ["TKE_MDTFHelmSnow", 0.5, "TKE_MDTFHeavyHelmSnow", 0.5]];
+_eliteLoadoutData set ["helmetsMedic", ["TKE_MDTFHelmSnow", 1]];
+_eliteLoadoutData set ["helmetsGrenadier", ["TKE_MDTFHelmSnow", 0.5, "TKE_MDTFHeavyHelmSnow", 0.5]];
+_eliteLoadoutData set ["helmetsMachineGunner", ["TKE_MDTFHelmSnow", 0.5, "TKE_MDTFHeavyHelmSnow", 0.5]];
 
-_eliteLoadoutData set ["uniformsWarbot", ["TKE_WarbotUniMDTF_U_B"]];
-_eliteLoadoutData set ["vestsWarbot", ["TKE_WarBotArmourMDTF"]];
-_eliteLoadoutData set ["helmetsWarbot", ["TKE_WarBotHeadMDTF"]];
+_eliteLoadoutData set ["uniformsWarbot", ["TKE_WarbotUniMDTFSnow_U_B"]];
+_eliteLoadoutData set ["vestsWarbot", ["TKE_WarBotArmourMDTFSnow"]];
+_eliteLoadoutData set ["helmetsWarbot", ["TKE_WarBotHeadMDTFSnow"]];
 
 /* Unit Misc Gear */
 _eliteLoadoutData set ["facewear", [
-    "TKE_MDWebbingV1", 0.2,
-    "TKE_MDTFNvg2FC", 0.2,
+    "TKE_MDWebbingV1Snow", 0.2,
+    "TKE_MDTFNvg2FCGrey", 0.2,
     "TKE_UCMCGogglesDown", 0.2,
     "TKE_FaceCoverGrey", 0.4
 ]];
@@ -548,22 +547,21 @@ _sfLoadoutData set ["vestsMachineGunner", [GEAR_SF_VEST]];
 _sfLoadoutData set ["backpacks", ["TKE_EVAPackMDMC", "TKE_CamelBakV2MDBlack"]];
 _sfLoadoutData set ["helmets", ["TKE_MDTFHelmRed"]];
 _sfLoadoutData set ["helmetsSL", ["TKE_MDTFHelmRed"]];
-_sfLoadoutData set ["helmetsHeavy", ["TKE_MDTFHeavyHelmRed"]];
+_sfLoadoutData set ["helmetsHeavy", ["TKE_MDTFHeavyHelmSnowRed"]];
 _sfLoadoutData set ["helmetsSniper", ["TKE_MDTFHelmRed"]];
 _sfLoadoutData set ["helmetsMedic", ["TKE_MDPilotHelmRVMarineNoPipes"]];
-_sfLoadoutData set ["helmetsGrenadier", ["TKE_MDTFHeavyHelmRed"]];
-_sfLoadoutData set ["helmetsMachineGunner", ["TKE_MDTFHeavyHelmRed"]];
+_sfLoadoutData set ["helmetsGrenadier", ["TKE_MDTFHeavyHelmSnowRed"]];
+_sfLoadoutData set ["helmetsMachineGunner", ["TKE_MDTFHeavyHelmSnowRed"]];
 
 /* Unit Misc Gear */
-_sfLoadoutData set ["facewear", ["TKE_MDWebbingGrey", "TKE_MDWebbingV1Grey", "TKE_MDWebbingNettingGrey", "TKE_MDWebbingV4Grey"]];
+_sfLoadoutData set ["facewear", ["TKE_MDWebbingGrey", "TKE_MDWebbingV1CamoGrey", "TKE_MDWebbingNettingGrey", "TKE_MDWebbingV4Grey"]];
 _sfLoadoutData set ["NVG", ["TKE_MDTFNvg2Red"]];
 
 /* Unit Weapons */
 private _opticsSharedSF = ["TKE_MRCOSight", 0.5, "TKE_4xSight", 0.5];
 private _mountsSharedSF = ["acc_flashlight", 0.4, "acc_pointer_IR", 0.4, "", 0.2];
 _sfLoadoutData set ["rifles", [
-    ["TKE_MDRifle", "muzzle_snds_65_TI_blk_F", _mountsSharedSF, _opticsSharedSF, ["TKE_35rnd_62x35_magMD", "TKE_35rnd_62x35_magTRMD"], [], ""], 2,
-    ["TKE_MDRifle2Camo", "muzzle_snds_65_TI_blk_F", _mountsSharedSF, _opticsSharedSF, ["TKE_35rnd_62x35_mag", "TKE_35rnd_62x35_magTR"], [], ""], 0.5
+    ["TKE_MDRifle", "muzzle_snds_65_TI_blk_F", _mountsSharedSF, _opticsSharedSF, ["TKE_35rnd_62x35_magMD", "TKE_35rnd_62x35_magTRMD"], [], ""], 1
 ]];
 _sfLoadoutData set ["riflesSL", [
     ["TKE_MDRifle", "muzzle_snds_65_TI_blk_F", _mountsSharedSF, _opticsSharedSF, ["TKE_35rnd_62x35_magMD", "TKE_35rnd_62x35_magTRMD"], [], ""], 5,

@@ -218,8 +218,7 @@ _loadoutData set ["riflesSL", [
 ]]; // Rifle given to Squad Leaders
 _loadoutData set ["riflesAuto", [
     ["TKE_UCNLMG", "", _mountsShared, _opticsShared, ["TKE_150rnd_62x35_magUCN"], [], ""], 2,
-    ["TKE_UCNMMG", "", _mountsShared, _opticsShared, ["TKE_100rnd_ucnmmg_mag"], [], ""], 1,
-    ["WRS_Weapon_LMG", "", "", "", ["200Rnd_556x45_Box_Tracer_F"], [], ""], 0.5
+    ["TKE_UCNMMG", "", _mountsShared, _opticsShared, ["TKE_100rnd_ucnmmg_mag"], [], ""], 1
 ]]; // An LMG or machine gun
 _loadoutData set ["riflesMarksman", [
     ["TKE_UCNDMR", "", _mountsShared, "TKE_10xSight", ["TKE_20rnd_969x51_magUCN"], [], "bipod_03_F_blk"], 1
@@ -380,7 +379,7 @@ _pilotLoadoutData set ["rifles", [
 // _pilotLoadoutData set ["sidearms", []];
 
 private _policeLoadoutData = _loadoutData call _fnc_copyLoadoutData;
-_policeLoadoutData set ["uniforms", ["TKE_CombatUniRolledV1Police_U_B", "TKE_CombatUniRolledV2Police_U_B", "TKE_CombatUniNARolledPolice_U_B"]];
+_policeLoadoutData set ["uniforms", ["TKE_CombatUniRolledV1Police_U_B", "TKE_CombatUniRolledV2Police_U_B", "TKEJAM_U_B_IHWCU_combat_shortsleeve_Police_F"]];
 _policeLoadoutData set ["vests", ["TKE_GenVest1Police", "TKE_GenVest1PV1Police", "TKE_FlakJacketPV1Police", "TKE_FlakJacketPolice"]];
 _policeLoadoutData set ["helmets", ["TKE_PatrolCapCPolice", "TKE_MercHelmV2Police", "TKE_MercHelmV2VisorPolice"]];
 _policeLoadoutData set ["rifles", [
@@ -507,7 +506,7 @@ _militaryLoadoutData set ["facewear", [
     "TKE_UCMCGogglesDown", 0.4
 ]];
 
-_militaryLoadoutData set ["NVGs", ["TKE_UCMCNvg", "TKE_UCMCGlasses"]];
+_militaryLoadoutData set ["NVG", ["TKE_UCMCNvg", "TKE_UCMCGlasses"]];
 
 /* Unit Weapons */
 
@@ -579,7 +578,7 @@ _eliteLoadoutData set ["facewear", [
     "TKE_UCMCGogglesDown", 0.4
 ]];
 
-_eliteLoadoutData set ["NVGs", ["TKE_UCMCNvg", "TKE_UCMCGlasses"]];
+_eliteLoadoutData set ["NVG", ["TKE_UCMCNvg", "TKE_UCMCGlasses"]];
 
 /* Unit Weapons */
 
@@ -628,7 +627,7 @@ _sfLoadoutData set ["helmetsMachineGunner", [GEAR_SF_HELM]];
 
 /* Unit Misc Gear */
 _sfLoadoutData set ["facewear", []];
-_sfLoadoutData set ["NVGs", ["TKE_UCMCNvgCamo"]];
+_sfLoadoutData set ["NVG", ["TKE_UCMCNvgCamo"]];
 
 /* Unit Weapons */
 _sfLoadoutData set ["rifles", [
