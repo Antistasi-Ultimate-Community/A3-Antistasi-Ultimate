@@ -14,6 +14,11 @@
         file = "AMF_AI_Army";
         climate[] = {"temperate", "tropical"};
     };
+    class AMF_Army_CE : AMF_Army
+    {
+        name = "French Army (CE)";
+        file = "AMF_AI_Army_CE";
+    };
     class AMF_Army_Tan : AMF_Army
     {
         name = "French Army (DA)";
