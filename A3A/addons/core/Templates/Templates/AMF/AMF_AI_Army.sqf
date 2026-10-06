@@ -316,7 +316,7 @@ _loadoutData set ["items_police_extras", _coreItems];
 _loadoutData set ["items_crew_extras", _coreItems];
 _loadoutData set ["items_unarmed_extras", _coreItems];
 
-if (isClass (configfile >> "CfgPatches" >> "CUP_Weapons_Stinger") || isClass (configFile >> "CfgFactionClasses" >> "rhs_faction_usarmy") || isClass (configfile >> "CfgPatches" >> "Redd_Marder_1A5")) then {
+if (isClass (configfile >> "CfgPatches" >> "CUP_Weapons_Stinger") || isClass (configFile >> "CfgFactionClasses" >> "rhs_faction_usarmy")) then {
 	if (isClass (configfile >> "CfgPatches" >> "CUP_Weapons_Stinger") && !isClass (configFile >> "CfgFactionClasses" >> "rhs_faction_usarmy")) then {
         (_loadoutData get "launchersAA") = [ ["CUP_launch_FIM92Stinger", "", "", "", [""], [], ""] ];
     };
