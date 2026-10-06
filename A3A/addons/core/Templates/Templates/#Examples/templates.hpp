@@ -51,7 +51,6 @@
         flagTexture = QPATHTOFOLDER(Templates\Templates\MOD\images\flag_FACTION_co.paa);
     };
 
-    /*
     class MOD_Riv_FACTION : MOD_Base
     {
         side = "Riv";
@@ -60,4 +59,3 @@
         description = "";
         flagTexture = QPATHTOFOLDER(Templates\Templates\MOD\images\flag_FACTION_co.paa);
     };
-    */
