@@ -14,6 +14,21 @@ savingServer = true;
 Info("Starting persistent save");
 [localize "STR_A3A_save_persisent_save",localize "STR_A3A_save_save_game_starting"] remoteExecCall ["A3A_fnc_customHint",0,false];
 
+// Tell third party mods we're saving the game. Do this very early in case
+// they attempt to overwrite stuff we're saving later below.
+private _saveDataPlugins = createHashMap;
+[CBA_EVENT_SERVER_GAME_SAVE, [_saveDataPlugins]] call FUNCMAIN(triggerLocalEvent);
+
+// Shouldn't be technically possible, but we validate anyways before making the
+// hashmap read-only...
+if assert(_saveDataPlugins isEqualType createHashMap) then {
+	// make it read-only
+	_saveDataPlugins = compileFinal _saveDataPlugins;
+} else {
+	Error_1("Some third-party save event subscriber changed data type of save data to ""%1""",typeName _saveDataPlugins);
+	_saveDataPlugins = createHashMap;
+};
+
 // Set next autosave time, so that we won't run another shortly after a manual save
 autoSaveTime = time + autoSaveInterval;
 
@@ -575,6 +590,9 @@ _fuelAmountleftArray = [];
 
 // Save Petros location
 ["petrosPosition", (getPosATL petros)] call A3A_fnc_setStatVariable;
+
+// Save third-party plugin data
+["saveDataPlugins", _saveDataPlugins] call A3A_fnc_setStatVariable;
 
 if (_saveToNewNamespace) then { saveMissionProfileNamespace } else { saveProfileNamespace };
 
