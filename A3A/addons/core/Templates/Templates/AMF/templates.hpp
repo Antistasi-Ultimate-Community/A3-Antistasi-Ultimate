@@ -1,6 +1,6 @@
     class AMF_Base
     {
-        requiredAddons[] = {"AMF_Patches"};
+        requiredAddons[] = {"AMF_Patches", "hlcweapons_core"};
         basepath = QPATHTOFOLDER(Templates\Templates\AMF);
         logo = QPATHTOFOLDER(Pictures\antistasi_ultimate_logo.paa);
         priority = 80;
@@ -10,13 +10,13 @@
     {
         side = "Occ";
         flagTexture = QPATHTOFOLDER(Templates\Templates\AMF\images\flag_france_co.paa);
-        name = "French Army (Woodland)";
+        name = "French Army (BME)";
         file = "AMF_AI_Army";
         climate[] = {"temperate", "tropical"};
     };
     class AMF_Army_Tan : AMF_Army
     {
-        name = "French Army (Desert)";
+        name = "French Army (DA)";
         file = "AMF_AI_Army_Tan";
         climate[] = {"arid"};
     };
