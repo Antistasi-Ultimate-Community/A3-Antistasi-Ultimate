@@ -249,30 +249,30 @@ _loadoutData set ["helmetsOfficer", ["AMF_BERET_PARA"]];
 /* Cloak: Basically a small patrol sniper team. */
 _loadoutData set ["uniformsCloak", ["amf_uniform_02_CE_MD"]];
 _loadoutData set ["vestsCloak", ["amf_SMB_TP_HK417"]];
-_loadoutData set ["helmetsCloak", []];
+_loadoutData set ["helmetsCloak", ["AMF_BERET_RPIMa"]];
 
 /* Core: Shared loadout data. If not overwritten by _tierLoadoutData, it uses these instead. */
-_loadoutData set ["uniforms", []];
-_loadoutData set ["uniformsSL", []];
+_loadoutData set ["uniforms", ["amf_uniform_01_NG_BM_HX", "amf_uniform_01_RE_NG_BM_HX"]];
+_loadoutData set ["uniformsSL", ["amf_uniform_01_RE_BM_HX", "amf_uniform_01_RE_BM_LowaZephyr"]];
 _loadoutData set ["uniformsHeavy", []];
 _loadoutData set ["uniformsSniper", []];
-_loadoutData set ["uniformsMedic", []];
+_loadoutData set ["uniformsMedic", ["amf_uniform_01_RE_BM_HX", "amf_uniform_01_RE_BM_LowaZephyr"]];
 _loadoutData set ["uniformsGrenadier", []];
 _loadoutData set ["uniformsMachineGunner", []];
 
-_loadoutData set ["vests", []];
-_loadoutData set ["vestsSL", []];
-_loadoutData set ["vestsHeavy", []];
+_loadoutData set ["vests", ["amf_SMB_FUS"]];
+_loadoutData set ["vestsSL", ["amf_SMB_AUXSAN", "amf_SMB_LEADER"]];
+_loadoutData set ["vestsHeavy", ["amf_SMB_ART"]];
 _loadoutData set ["vestsSniper", []];
 _loadoutData set ["vestsMedic", []];
-_loadoutData set ["vestsGrenadier", []];
-_loadoutData set ["vestsMachineGunner", []];
+_loadoutData set ["vestsGrenadier", ["amf_SMB_ART"]];
+_loadoutData set ["vestsMachineGunner", ["amf_SMB_ART"]];
 
-_loadoutData set ["backpacks", ["amf_tecpack_70L", "amf_tecpack_30L"]];
+_loadoutData set ["backpacks", ["amf_tecpack_30L"]];
 _loadoutData set ["backpacksRadio", ["AMF_FELIN_BACKPACK_RADIO_TDF"]];
 _loadoutData set ["backpacksAT", ["AMF_FELIN_BACKPACK"]];
 
-_loadoutData set ["helmets", []];
+_loadoutData set ["helmets", ["AMF_FELIN_05_TAN", "AMF_FELIN_L05_TAN", "AMF_FELIN_06_TAN"]];
 _loadoutData set ["helmetsSL", ["AMF_BERET_INFANTERIE"]];
 _loadoutData set ["helmetsHeavy", []];
 _loadoutData set ["helmetsSniper", ["AMF_BERET_RPIMa"]];
@@ -353,7 +353,7 @@ _pilotLoadoutData set ["sidearms", []];
 
 private _policeLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 _policeLoadoutData set ["uniforms", ["amf_uniform_01_RE_BM_MD", "amf_uniform_01_RE_NG_BM_MD"]];
-_policeLoadoutData set ["vests", ["amf_SMB_FUS", "amf_SMB_AUXSAN_FAMAS"]];
+_policeLoadoutData set ["vests", ["amf_SMB_FUS", "amf_SMB_AUXSAN"]];
 _policeLoadoutData set ["helmets", ["AMF_FELIN_L05_ONU", "AMF_FELIN_03_ONU", "AMF_BERET_ONU"]];
 _policeLoadoutData set ["rifles", [
     ["hlc_rifle_G36C", "", "", "AMF_Red_Dot_Sight", ["hlc_30rnd_556x45_EPR_G36"], [], ""],
@@ -370,33 +370,18 @@ _policeLoadoutData set ["sidearms", [
 /* Unit Gear */
 private _militiaLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 _militiaLoadoutData set ["uniforms", ["amf_uniform_01_RE_NG_OD_HX", "amf_uniform_01_RE_OD_HX", "amf_uniform_01_NG_OD_HX", "amf_uniform_01_OD_HX"]];
-_militiaLoadoutData set ["uniformsSL", []];
-_militiaLoadoutData set ["uniformsHeavy", []];
-_militiaLoadoutData set ["uniformsSniper", []];
-_militiaLoadoutData set ["uniformsMedic", []];
-_militiaLoadoutData set ["uniformsGrenadier", []];
-_militiaLoadoutData set ["uniformsMachineGunner", []];
+_militiaLoadoutData set ["uniformsSL", ["amf_uniform_01_RE_NG_OD_HX", "amf_uniform_01_RE_OD_HX"]];
+_militiaLoadoutData set ["uniformsMedic", ["amf_uniform_01_RE_NG_OD_HX", "amf_uniform_01_RE_OD_HX"]];
 _militiaLoadoutData set ["vests", ["amf_SMB"]];
-_militiaLoadoutData set ["vestsSL", []];
-_militiaLoadoutData set ["vestsHeavy", []];
 _militiaLoadoutData set ["vestsSniper", ["amf_SMB_TP_SCAR"]];
-_militiaLoadoutData set ["vestsMedic", []];
-_militiaLoadoutData set ["vestsGrenadier", []];
-_militiaLoadoutData set ["vestsMachineGunner", []];
 _militiaLoadoutData set ["backpacks", ["amf_tecpack_30L"]];
 _militiaLoadoutData set ["backpacksRadio", ["AMF_FELIN_BACKPACK"]];
 _militiaLoadoutData set ["backpacksAT", ["B_Kitbag_cbr"]];
 _militiaLoadoutData set ["helmets", ["AMF_SPECTRA_CE", "AMF_SPECTRA", "AMF_TCNVG"]];
-_militiaLoadoutData set ["helmetsSL", []];
-_militiaLoadoutData set ["helmetsHeavy", []];
 _militiaLoadoutData set ["helmetsSniper", ["AMF_TCNVG"]];
-_militiaLoadoutData set ["helmetsMedic", []];
-_militiaLoadoutData set ["helmetsGrenadier", []];
-_militiaLoadoutData set ["helmetsMachineGunner", []];
 
 /* Unit Misc Gear */
 _militiaLoadoutData set ["facewear", []];
-_militiaLoadoutData set ["NVG", []];
 
 /* Unit Weapons */
 _militiaLoadoutData set ["rifles", [
@@ -449,30 +434,16 @@ _militiaLoadoutData set ["binoculars", []];
 private _militaryLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 _militaryLoadoutData set ["uniforms", ["amf_uniform_01_NG_BM_MD", "amf_uniform_01_BM_MD", "amf_uniform_01_RE_BM_MD", "amf_uniform_01_RE_NG_BM_MD"]];
 _militaryLoadoutData set ["uniformsSL", ["amf_uniform_01_RE_BM_LowaZephyr"]];
-_militaryLoadoutData set ["uniformsHeavy", []];
-_militaryLoadoutData set ["uniformsSniper", []];
-_militaryLoadoutData set ["uniformsMedic", []];
-_militaryLoadoutData set ["uniformsGrenadier", []];
-_militaryLoadoutData set ["uniformsMachineGunner", []];
 _militaryLoadoutData set ["vests", ["amf_SMB_FUS", "amf_SMB_AUXSAN", "AMF_CRY_JPC_V1_TAN"]];
 _militaryLoadoutData set ["vestsSL", ["amf_SMB_LEADER_FAMAS", "amf_SMB_LEADER"]];
-_militaryLoadoutData set ["vestsHeavy", []];
 _militaryLoadoutData set ["vestsSniper", ["amf_SMB_TP_SCAR", "amf_SMB_TP_HK417", "amf_SMB_TP_FRF2"]];
 _militaryLoadoutData set ["vestsMedic", ["amf_SMB_FUS", "AMF_CRY_JPC_V1_TAN"]];
 _militaryLoadoutData set ["vestsGrenadier", ["amf_SMB_GRE"]];
 _militaryLoadoutData set ["vestsMachineGunner", ["amf_SMB_ART", "AMF_CRY_JPC_V3_MG_TAN"]];
 _militaryLoadoutData set ["backpacks", ["amf_tecpack_30L"]];
-_militaryLoadoutData set ["helmets", ["AMF_FELIN_05_TAN", "AMF_FELIN_05_CE", "AMF_FELIN_06_CE", "AMF_FELIN_06_TAN", "AMF_FELIN_L06_CE", "AMF_FELIN_L06_TAN"]];
-_militaryLoadoutData set ["helmetsSL", []];
-_militaryLoadoutData set ["helmetsHeavy", []];
-_militaryLoadoutData set ["helmetsSniper", ["AMF_FELIN_L05_TAN", "AMF_FELIN_L05_CE", "AMF_FELIN_L06_CE", "AMF_FELIN_L06_TAN"]];
-_militaryLoadoutData set ["helmetsMedic", []];
-_militaryLoadoutData set ["helmetsGrenadier", []];
-_militaryLoadoutData set ["helmetsMachineGunner", []];
 
 /* Unit Misc Gear */
 _militaryLoadoutData set ["facewear", []];
-_militaryLoadoutData set ["NVG", []];
 
 /* Unit Weapons */
 _militaryLoadoutData set ["rifles", [
@@ -537,14 +508,8 @@ _militaryLoadoutData set ["binoculars", ["AMF_APX_M241"]];
 private _eliteLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 _eliteLoadoutData set ["uniforms", ["amf_uniform_01_NG_BM_MD", "amf_uniform_01_BM_MD", "amf_uniform_01_RE_BM_MD", "amf_uniform_01_RE_NG_BM_MD", "amf_uniform_05_MTP"]];
 _eliteLoadoutData set ["uniformsSL", ["amf_uniform_04_TAN"]];
-_eliteLoadoutData set ["uniformsHeavy", []];
-_eliteLoadoutData set ["uniformsSniper", []];
-_eliteLoadoutData set ["uniformsMedic", []];
-_eliteLoadoutData set ["uniformsGrenadier", []];
-_eliteLoadoutData set ["uniformsMachineGunner", []];
 _eliteLoadoutData set ["vests", ["AMF_WA_DCS_V4_MG_TAN", "AMF_WA_DCS_V3_TAN", "AMF_WA_DCS_V5_TAN"]];
 _eliteLoadoutData set ["vestsSL", ["AMF_WA_DCS_V1_TAN", "amf_SMB_LEADER"]];
-_eliteLoadoutData set ["vestsHeavy", []];
 _eliteLoadoutData set ["vestsSniper", ["amf_SMB_TP_SCAR", "amf_SMB_TP_HK417", "amf_SMB_TP_FRF2"]];
 _eliteLoadoutData set ["vestsMedic", ["amf_SMB_AUXSAN", "AMF_WA_DCS_V5_TAN"]];
 _eliteLoadoutData set ["vestsGrenadier", ["amf_SMB_GRE"]];
@@ -552,16 +517,10 @@ _eliteLoadoutData set ["vestsMachineGunner", ["amf_SMB_ART"]];
 _eliteLoadoutData set ["backpacks", ["amf_tecpack_30L", "AMF_FELIN_BACKPACK"]];
 _eliteLoadoutData set ["backpacksRadio", ["AMF_FELIN_BACKPACK_RADIO_TDF"]];
 _eliteLoadoutData set ["helmets", ["AMF_F3", "AMF_F3_02", "AMF_F3_04", "AMF_F3_L04"]];
-_eliteLoadoutData set ["helmetsSL", []];
-_eliteLoadoutData set ["helmetsHeavy", []];
 _eliteLoadoutData set ["helmetsSniper", ["AMF_OPSCORE_TAN_2", "AMF_FELIN_L05_TAN"]];
-_eliteLoadoutData set ["helmetsMedic", []];
-_eliteLoadoutData set ["helmetsGrenadier", []];
-_eliteLoadoutData set ["helmetsMachineGunner", []];
 
 /* Unit Misc Gear */
 _eliteLoadoutData set ["facewear", []];
-_eliteLoadoutData set ["NVG", []];
 
 /* Unit Weapons */
 _eliteLoadoutData set ["rifles", [
@@ -638,27 +597,15 @@ _eliteLoadoutData set ["binoculars", ["AMF_OB72_SOPHIE"]];
 /* Unit Gear */
 private _sfLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 _sfLoadoutData set ["uniforms", ["amf_uniform_04_MTP", "amf_uniform_05_MTP"]];
-_sfLoadoutData set ["uniformsSL", []];
-_sfLoadoutData set ["uniformsHeavy", []];
-_sfLoadoutData set ["uniformsSniper", []];
-_sfLoadoutData set ["uniformsMedic", []];
-_sfLoadoutData set ["uniformsGrenadier", []];
-_sfLoadoutData set ["uniformsMachineGunner", []];
 _sfLoadoutData set ["vests", ["AMF_CRY_JPC_V1_RG", "AMF_WA_DCS_V2_RG"]];
 _sfLoadoutData set ["vestsSL", ["amf_SMB_LEADER_FAMAS", "amf_SMB_LEADER"]];
-_sfLoadoutData set ["vestsHeavy", []];
-_sfLoadoutData set ["vestsSniper", []];
 _sfLoadoutData set ["vestsMedic", ["AMF_WA_DCS_V5_RG"]];
 _sfLoadoutData set ["vestsGrenadier", ["AMF_WA_DCS_V5_RG"]];
 _sfLoadoutData set ["vestsMachineGunner", ["AMF_CRY_JPC_V3_MG_TAN"]];
 _sfLoadoutData set ["backpacks", ["B_AssaultPack_rgr"]];
 _sfLoadoutData set ["helmets", ["AMF_OPSCORE_TAN1", "AMF_OPSCORE3_TAN1"]];
 _sfLoadoutData set ["helmetsSL", ["AMF_OPSCORE_TAN1", "AMF_OPSCORE3_TAN1"]];
-_sfLoadoutData set ["helmetsHeavy", []];
 _sfLoadoutData set ["helmetsSniper", ["AMF_OPSCORE_TAN1", "AMF_OPSCORE3_TAN1", "AMF_F3_L02"]];
-_sfLoadoutData set ["helmetsMedic", []];
-_sfLoadoutData set ["helmetsGrenadier", []];
-_sfLoadoutData set ["helmetsMachineGunner", []];
 
 /* Unit Misc Gear */
 _sfLoadoutData set ["facewear", []];
@@ -671,8 +618,8 @@ _sfLoadoutData set ["rifles", [
     ["hlc_rifle_416D165", "", "hlc_muzzle_SF3P_556", "AMF_specter", ["AMF_30Rnd_556x45_M193_Stanag"], [], ""],
     ["hlc_wp_SCARL_STD_blk", "", "", "AMF_xps3", ["AMF_30Rnd_556x45_M193_Stanag"], [], ""],
     ["AMF_SCAR_L_02_F", "muzzle_snds_M", "AMF_AN_PEQ_15_black", "AMF_specter", ["AMF_30Rnd_556x45_SS109_Tracer_Stanag"], [], ""],
-    ["AMF_614_short_FS3_BLK", "AMF_ROTEX_V", "", "AMF_exps3_magnifier_side", ["30Rnd_556x45_Stanag_Tracer_Green"], [], "amf_acc_614_grip5"],
-    ["AMF_614_short_FS3_BLK", "AMF_ROTEX_V", "", "AMF_EOTECH_553", ["30Rnd_556x45_Stanag_Tracer_Green"], [], ""],
+    ["AMF_614_short_01_F", "AMF_ROTEX_V", "", "AMF_exps3_magnifier_side", ["30Rnd_556x45_Stanag_Tracer_Green"], [], "amf_acc_614_grip5"],
+    ["AMF_614_short_01_F", "AMF_ROTEX_V", "", "AMF_EOTECH_553", ["30Rnd_556x45_Stanag_Tracer_Green"], [], ""],
     ["AMF_614_short_FS4_BLK", "AMF_ROTEX_V", "", "AMF_exps3", ["30Rnd_556x45_Stanag_Tracer_Green"], [], ""]
 ]];
 _sfLoadoutData set ["riflesSL", [
@@ -708,7 +655,7 @@ _sfLoadoutData set ["riflesCarbine", [
     ["hlc_rifle_416C", "", "", "AMF_xps3", ["hlc_30rnd_556x45_EPR_PMAG"], [], ""],
     ["AMF_614_short_FS4_BLK", "", "", "AMF_Eotech_552", ["30Rnd_556x45_Stanag_Tracer_Green"], [], ""],
     ["AMF_614_short_FS_BLK", "", "", "AMF_Red_Dot_Sight", ["30Rnd_556x45_Stanag_Tracer_Green"], [], ""],
-    ["AMF_614_short_FS3_BLK", "", "", "AMF_exps3", ["30Rnd_556x45_Stanag_Tracer_Green"], [], "amf_acc_614_grip4"],
+    ["AMF_614_short_01_F", "", "", "AMF_exps3", ["30Rnd_556x45_Stanag_Tracer_Green"], [], "amf_acc_614_grip4"],
     ["AMF_614_short_FS5_BLK", "", "", "AMF_xps3_magnifier_side", ["30Rnd_556x45_Stanag_Tracer_Green"], [], "amf_acc_614_grip5"],
     ["amf_sig552", "AMF_ROTEX_III", "AMF_AN_PEQ_15_black", "AMF_xps3", ["AMF_30Rnd_556x45_SIG_BO_BT_M196"], [], "amf_acc_sig552_grip3"],
     ["amf_hk_mp5_02_f", "muzzle_snds_L", "", "AMF_Red_Dot_Sight", ["AMF_30Rnd_9x19_MP5_BO_123GR"], [], "amf_acc_hkmp5_grip3"]
@@ -744,10 +691,10 @@ if (isClass (configFile >> "CfgVehicles" >> "clv_Aml20")) then {
 ////////////////////////////////
 
 private _squadLeaderTemplate = {
-    [selectRandomWeighted ["helmets", 2, "helmetsSL", 1]] call _fnc_setHelmet;
+    [["helmetsSL", "helmets"] call _fnc_fallback] call _fnc_setHelmet;
     [selectRandomWeighted [[], 1.5, "facewear", 1]] call _fnc_setFacewear;
-    [selectRandomWeighted ["vestsSL", 2, "vests", 1]] call _fnc_setVest;
-    [selectRandomWeighted ["uniformsSL", 2, "uniforms", 1]] call _fnc_setUniform;
+    [["vestsSL", "vests"] call _fnc_fallback] call _fnc_setVest;
+    [["uniformsSL", "uniforms"] call _fnc_fallback] call _fnc_setUniform;
 
     [["riflesSL", "rifles"] call _fnc_fallback] call _fnc_setPrimary;
     ["primary", 6] call _fnc_addMagazines;
