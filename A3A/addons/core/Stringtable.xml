@@ -6787,12 +6787,12 @@
                 <Chinesesimp>控制哪种类型的敌方AI士兵可以呼叫支援。选择小队长将导致呼叫更多支援，因为在大多数小组组成中，小队长比无线电员更多。</Chinesesimp>
             </Key>
             <Key ID="STR_A3AU_hide_enemy_markers">
-                <Original>Hide Enemy Zone Markers</Original>
-                <Russian>Спрятать маркеры вражеских баз</Russian>
-                <French>Cacher les marqueurs ennemis</French>
-                <Korean>적 구역 마커 숨기기</Korean>
-                <Chinesesimp>隐藏敌方区域标记</Chinesesimp>
-                <Turkish>Düşman Bölge İşaretçilerini Gizle</Turkish>
+                <Original>Map Zones - Fog of War</Original>
+                <Russian>Зоны на карте - туман войны</Russian>
+                <French>Zones de la carte - brouillard de guerre</French>
+                <Korean>지도 구역 - 전장의 안개</Korean>
+                <Chinesesimp>地图区域 - 战争迷雾</Chinesesimp>
+                <Turkish>Harita Bölgeleri - Savaş Sisi</Turkish>
             </Key>
             <Key ID="STR_A3AU_hide_enemy_markers_desc">
                 <Original>Locations of enemy zones (outposts, resources, factories, military bases, sea ports, and airports) will not be shown on the map by default. They can be revealed by discovering them in person, with rebel recon planes, or by gathering intel.</Original>
