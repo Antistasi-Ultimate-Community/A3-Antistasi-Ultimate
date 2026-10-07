@@ -26,7 +26,7 @@
 /* Ground Vehicles */
 private _vehiclesBasic = ["A3U_UCN_BL_Nomad_Light"]; // Absolute basic vehicle. Quadbike, LSV, etc.
 private _vehiclesLightUnarmed = ["UCNFA_B_APC_U", "A3U_UCN_BL_Nomad_Light"]; // Fundamental vehicle. Think an unarmoured humvee.
-private _vehiclesLightArmed = ["UCNFA_B_APC_A"]; // Fundamental vehicle. Think a lightly armoured humvee with an M240.
+private _vehiclesLightArmed = ["A3U_UCN_BL_Nomad_Armed", "A3U_UCN_BL_Nomad_Cabin_Armed", "A3U_UCN_BL_Nomad_Rollcage_Armed"]; // Fundamental vehicle. Think a lightly armoured humvee with an M240.
 
 private _vehiclesTrucks = ["UCNFA_B_APC_U", "A3U_TKE_Ext_Bearcat_Unarmed_UCNFA_B"]; // Used for troop carrying.
 private _vehiclesCargoTrucks = _vehiclesTrucks; // Used for cargo carrying. Must have logistics nodes.
@@ -69,7 +69,7 @@ private _vehiclesArtillery = ["UCNFA_B_APC_Art"]; // If it has an artillery comp
 ]] call _fnc_saveToTemplate;
 
 /* Militia Vehicles */
-private _vehiclesMilitiaLightArmed = ["TKE_Ext_Bearcat_Autocannon_UCMC"]; // Think: What would a hastily formed militia use?
+private _vehiclesMilitiaLightArmed = ["A3U_UCN_BL_Nomad_Rollcage_Armed"]; // Think: What would a hastily formed militia use?
 private _vehiclesMilitiaTrucks = ["FEDRA_APC_U"];
 private _vehiclesMilitiaCars = ["A3U_UCN_BL_Nomad_Light"];
 private _vehiclesMilitiaAPCs = ["FEDRA_APC_A"];
@@ -82,7 +82,8 @@ private _vehiclesRadar = "B_Radar_System_01_F";
 private _vehiclesSam = "PHEN_TurretPack_B_Turret_02";
 
 /* Statics */
-private _staticMG = ["I_G_HMG_02_high_F"]; // Must fit in a standard Altis defensive tower.
+// Add TKE_Turret_M2A9 to logistics
+private _staticMG = ["TKE_Turret_M2A9"]; // Must fit in a standard Altis defensive tower. 
 private _staticAT = ["PHEN_TurretPack_B_Turret_06_cannon", "PHEN_TurretPack_B_Turret_05_AT"]; // Must fit in a standard Altis defensive tower.
 private _staticAA = ["PHEN_TurretPack_B_Turret_03", "PHEN_TurretPack_B_Turret_05"]; // Must fit on a standard Altis HQ military building.
 
@@ -110,26 +111,16 @@ private _minefieldAPERS = ["APERSMine"]; // Mine used for Anti Personnel fields.
 
 // These are the "Military" identities by default. 
 // They also encompass any tier you *don't* define, so these are "fallback" entries too.
-private _faces = [
-    "WhiteHead_03","WhiteHead_04","WhiteHead_05","WhiteHead_06","WhiteHead_07",
-    "WhiteHead_08","WhiteHead_09","WhiteHead_11","WhiteHead_12","WhiteHead_14",
-    "WhiteHead_15","WhiteHead_16","WhiteHead_18","WhiteHead_19","WhiteHead_20",
-    "WhiteHead_21","WhiteHead_23", "WhiteHead_24", "WhiteHead_25","WhiteHead_26", 
-    "WhiteHead_27", "WhiteHead_28", "WhiteHead_29", "WhiteHead_30", "WhiteHead_31",
-    "TanoanHead_A3_02","TanoanHead_A3_04","TanoanHead_A3_03","TanoanHead_A3_05",
-    "TanoanHead_A3_07","TanoanHead_A3_01","TanoanHead_A3_06","TanoanHead_A3_09",
-    "LivonianHead_5","LivonianHead_2","LivonianHead_9","LivonianHead_6","LivonianHead_3",
-    "LivonianHead_1","LivonianHead_10","LivonianHead_8","LivonianHead_4","LivonianHead_7"
-];
-private _voices = [
-    "Male01ENG","Male02ENG","Male03ENG","Male04ENG","Male05ENG","Male06ENG",
-    "Male07ENG","Male08ENG","Male09ENG","Male10ENG","Male11ENG","Male12ENG"
-];
+#include "identities.hpp"
+private _faces = TKE_FACES;
+private _voices = TKE_VOICES;
 private _insignia = [];
 
 ["faces", _faces] call _fnc_saveToTemplate;
 ["voices", _voices] call _fnc_saveToTemplate;
 ["insignia", _insignia] call _fnc_saveToTemplate;
+
+TKE_NAMES call _fnc_saveNames;
 
 /* Police identities | Falls back to the default if not uncommented. */
 

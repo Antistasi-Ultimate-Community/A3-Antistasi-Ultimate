@@ -82,7 +82,7 @@ private _vehiclesRadar = "B_Radar_System_01_F";
 private _vehiclesSam = "PHEN_TurretPack_B_Turret_02_Black_OPFOR";
 
 /* Statics */
-private _staticMG = ["I_G_HMG_02_high_F"]; // Must fit in a standard Altis defensive tower.
+private _staticMG = ["TKE_Turret_M2A9"]; // Must fit in a standard Altis defensive tower.
 private _staticAT = ["PHEN_TurretPack_B_Turret_06_cannon_Black_OPFOR", "PHEN_TurretPack_B_Turret_05_AT_Black_OPFOR"]; // Must fit in a standard Altis defensive tower.
 private _staticAA = ["PHEN_TurretPack_B_Turret_03_Black_OPFOR", "PHEN_TurretPack_B_Turret_05_Black_OPFOR"]; // Must fit on a standard Altis HQ military building.
 
@@ -110,21 +110,16 @@ private _minefieldAPERS = ["APERSMine"]; // Mine used for Anti Personnel fields.
 
 // These are the "Military" identities by default. 
 // They also encompass any tier you *don't* define, so these are "fallback" entries too.
-private _faces = [
-    "WhiteHead_03","WhiteHead_04","WhiteHead_05","WhiteHead_06","WhiteHead_07",
-    "WhiteHead_08","WhiteHead_09","WhiteHead_11","WhiteHead_12","WhiteHead_14",
-    "TanoanHead_A3_02","TanoanHead_A3_04","TanoanHead_A3_03","TanoanHead_A3_05",
-    "TanoanHead_A3_07","TanoanHead_A3_01","TanoanHead_A3_06","TanoanHead_A3_09"
-];
-private _voices = [
-    "Male01ENG","Male02ENG","Male03ENG","Male04ENG","Male05ENG","Male06ENG",
-    "Male07ENG","Male08ENG","Male09ENG","Male10ENG","Male11ENG","Male12ENG"
-];
+#include "identities.hpp"
+private _faces = TKE_FACES;
+private _voices = TKE_VOICES;
 private _insignia = [];
 
 ["faces", _faces] call _fnc_saveToTemplate;
 ["voices", _voices] call _fnc_saveToTemplate;
 ["insignia", _insignia] call _fnc_saveToTemplate;
+
+TKE_NAMES call _fnc_saveNames;
 
 /* Police identities | Falls back to the default if not uncommented. */
 

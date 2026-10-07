@@ -23,6 +23,7 @@
         requiredAddons[] += {"KMC_mod"}; // TKE - Kuiper Mining Corporation
     };
 
+    // KMC Related
     class TKE_Occ_KMC : TKE_KMC_Base
     {
         side = "Occ";
@@ -32,6 +33,30 @@
         flagTexture = QPATHTOFOLDER(Templates\Templates\TKE\images\flag_kmc_co.paa);
     };
 
+    class TKE_Civ_KMC : TKE_KMC_Base
+    {
+        side = "Civ";
+        name = "KMC Civilians";
+        file = "TKE_Civ_KMC";
+        description = "";
+        flagTexture = QPATHTOFOLDER(Templates\Templates\TKE\images\flag_kmc_co.paa);
+    };
+    class TKE_Civ_KMC_Void : TKE_Civ_KMC
+    {
+        name = "KMC Civilians (Voidborne)";
+        file = "TKE_Civ_KMC_Void";
+    };
+
+    class TKE_Reb_WU : TKE_KMC_Base
+    {
+        side = "Reb";
+        name = "KMC Workers Union";
+        file = "TKE_Reb_WU";
+        description = "";
+        flagTexture = QPATHTOFOLDER(Templates\Templates\TKE\images\flag_wu_co.paa);
+    };
+
+    // Base TKE
     class TKE_Occ_UCN_Arid : TKE_Base
     {
         side = "Occ";
@@ -115,13 +140,27 @@
         file = "TKE_Civ_UCN_Arid";
         climate[] = {"arid"};
     };
-    // +Voidborne
+    class TKE_Civ_UCN_Void : TKE_Civ_UCN
+    {
+        name = "UCN Civilians (Voidborne)";
+        file = "TKE_Civ_UCN_Void";
+        climate[] = {"temperate", "tropical", "arid", "arctic"};
+    };
 
     class TKE_Reb_FCF : TKE_Base
     {
         side = "Reb";
         name = "FCF";
         file = "TKE_Reb_FCF";
+        description = "";
+        flagTexture = QPATHTOFOLDER(Templates\Templates\TKE\images\flag_fcf_co.paa);
+    };
+
+    class TKE_Riv_FCF : TKE_Base
+    {
+        side = "Riv";
+        name = "FCF";
+        file = "TKE_Riv_FCF";
         description = "";
         flagTexture = QPATHTOFOLDER(Templates\Templates\TKE\images\flag_fcf_co.paa);
     };

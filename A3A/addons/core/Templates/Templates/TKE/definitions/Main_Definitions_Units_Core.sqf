@@ -3,7 +3,7 @@
 ////////////////////////////
 private _prefix = "SF";
 private _unitTypes = [
-	["SquadLeader", _squadLeaderTemplate, [["baseClass", "WBK_WRS_WGP1_Ver1", true]], [_prefix]],
+	["SquadLeader", _squadLeaderTemplate, [], [_prefix]],
 	["Rifleman", _riflemanTemplate, [], [_prefix]],
 	["Radioman", _radiomanTemplate, [], [_prefix]],
 	["Medic", _medicTemplate, [["medic", true]], [_prefix]],

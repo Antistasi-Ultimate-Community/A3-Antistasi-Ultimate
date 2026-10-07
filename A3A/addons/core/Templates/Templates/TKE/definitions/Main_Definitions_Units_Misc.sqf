@@ -10,7 +10,7 @@
 ["other", [["Official", _officerTemplate, [], ["other"]]], _militaryLoadoutData] call _fnc_generateAndSaveUnitsToTemplate;
 
 // "Kill the Traitor"
-["other", [["Traitor", _traitorTemplate, [], ["other"]]], _militiaLoadoutData] call _fnc_generateAndSaveUnitsToTemplate;
+["other", [["Traitor", _traitorTemplate, [["baseClass", "WBK_WRS_WGP1_Ver1", true]], ["other"]]], _militiaLoadoutData] call _fnc_generateAndSaveUnitsToTemplate;
 
 // "Invader Punishment" Civilians
 ["other", [["Unarmed", _UnarmedTemplate, [], ["other"]]], _militaryLoadoutData] call _fnc_generateAndSaveUnitsToTemplate;

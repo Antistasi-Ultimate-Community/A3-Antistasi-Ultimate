@@ -16,6 +16,7 @@ class CfgVehicles
     class TKE_Ext_Dragonfly_S_UCNFA; // AH-44/S
     class TKE_Ext_Dragonfly_T_UCNFA; // MH-44/T
     class CIV_Nomad; // Nomad Ranger
+    class TKE_Nomad_Ranger_Armed; // Nomad Ranger (Armed)
     class TKE_Ext_GUSA_UCMC; // General Utility Shuttle/A
     class TKE_Ext_GUSM_UCMC; // General Utility Shuttle/M
 

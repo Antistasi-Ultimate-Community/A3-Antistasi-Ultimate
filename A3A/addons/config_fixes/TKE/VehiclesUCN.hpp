@@ -113,3 +113,31 @@
             "hide_bags3",0,"hide_bags4",0,"hide_bags5",0
         };
     };
+
+    class A3U_UCN_BL_Nomad_Armed : TKE_Nomad_Ranger_Armed
+    {
+        displayName = "Nomad Ranger Armed (UCN/Black)";
+        textureList[] = {"Black",1};
+        animationList[] = {
+            "hide_cover_cabin",0,"hide_tailgate",0,"hide_fender",0,"hide_rollcage",0,
+            "hide_bags1",0,"hide_bags2",0,"hide_bags3",0,"hide_bags4",0,"hide_sides",0
+        };
+    };
+    class A3U_UCN_BL_Nomad_Cabin_Armed : TKE_Nomad_Ranger_Armed
+    {
+        displayName = "Nomad Ranger Cabin Armed (UCN/Black)";
+        textureList[] = {"Black",1};
+        animationList[] = {
+            "hide_cover_cabin",0,"hide_tailgate",0,"hide_fender",0,"hide_rollcage",0,
+            "hide_bags1",0,"hide_bags2",0,"hide_bags3",0,"hide_bags4",0,"hide_sides",1
+        };
+    };
+    class A3U_UCN_BL_Nomad_Rollcage_Armed : TKE_Nomad_Ranger_Armed
+    {
+        displayName = "Nomad Ranger Rollcage Armed (UCN/Black)";
+        textureList[] = {"Black",1};
+        animationList[] = {
+            "hide_cover_cabin",1,"hide_tailgate",0,"hide_fender",0,"hide_rollcage",0,
+            "hide_bags1",0,"hide_bags2",0,"hide_bags3",0,"hide_bags4",0,"hide_sides",1
+        };
+    };
