@@ -24,7 +24,7 @@ isNil {
     private _oldTarget = if (!isNil "A3A_saveTarget") then { A3A_saveTarget };
     if (!isNil "_saveTarget") then { A3A_saveTarget = _saveTarget };
 
-    [_varname, _varValue] call A3A_fnc_setStatVariable;
+    [_varName, _varValue] call A3A_fnc_setStatVariable;
 
     if (A3A_saveTarget#0 isEqualType false) then { saveMissionProfileNamespace } else { saveProfileNamespace };
 
