@@ -79,17 +79,8 @@ waitUntil {sleep 0.1; !isNil "A3A_saveData"};
 A3A_startupState = "starting"; publicVariable "A3A_startupState";
 
 // Use true params list in case we're loading an autosave from a different version
-private _savedParamsHM = createHashMapFromArray (A3A_saveData get "params");
-{
-    if (getArray (_x/"texts") isEqualTo [""]) then { continue };                // spacer/title
-    private _val = _savedParamsHM getOrDefault [configName _x, getNumber (_x/"default")];
-    if (getArray (_x/"values") isEqualTo [0,1]) then {
-        if (_val isEqualType 0) then { _val = _val != 0 };                      // number -> bool
-    } else {
-        if (_val isEqualType false) then { _val = [0, 1] select _val };         // bool -> number
-    };
-    missionNamespace setVariable [configName _x, _val, true];                   // just publish them all, doesn't really hurt
-} forEach ("true" configClasses (configFile/"A3A"/"Params"));
+private _savedParamsHM = createHashMapFromArray(A3A_saveData get "params");
+[_savedParamsHM, true] call FUNCMAIN(setGameParameters);
 
 // Tell third party mods we're starting up
 [CBA_EVENT_SERVER_STARTUP, []] call FUNCMAIN(triggerLocalEvent);

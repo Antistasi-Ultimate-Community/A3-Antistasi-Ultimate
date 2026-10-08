@@ -430,6 +430,7 @@ class CfgFunctions
             class playerMarkers {};
             class prepareMarkerArrays {};
             class resourcecheck {};
+            class setGameParameters {};
             class tags {};
             class validateExtenderCompat {};
         };
