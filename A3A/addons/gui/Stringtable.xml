@@ -4334,6 +4334,102 @@
                 <Portuguese>Pesquisa de parâmetros</Portuguese>
                 <Chinesesimp>参数搜索</Chinesesimp>
             </Key>
+            <Key ID="STR_antistasi_dialogs_setup_edit_zones">
+                <Original>Edit Zones</Original>
+                <Italian>Modifica zone</Italian>
+                <Korean>영역 편집</Korean>
+                <Russian>Редактировать зоны</Russian>
+                <Portuguese>Editar zonas</Portuguese>
+                <Chinesesimp>编辑区域</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_ez_feedback_nomarker">
+                <Original>No enemy position nearby</Original>
+                <Italian>Nessuna posizione nemica nelle vicinanze</Italian>
+                <Korean>근처에 적 위치가 없습니다</Korean>
+                <Russian>Рядом нет вражеской позиции</Russian>
+                <Portuguese>Nenhuma posição inimiga próxima</Portuguese>
+                <Chinesesimp>附近没有敌方位置</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_ez_feedback_inwater">
+                <Original>Position is in water</Original>
+                <Italian>Posizione in acqua</Italian>
+                <Korean>위치가 물 속에 있습니다</Korean>
+                <Russian>Позиция в воде</Russian>
+                <Portuguese>Posição na água</Portuguese>
+                <Chinesesimp>位置在水中</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_ez_feedback_outsidemap">
+                <Original>Position is outside the map</Original>
+                <Italian>Posizione fuori dalla mappa</Italian>
+                <Korean>위치가 지도 밖에 있습니다</Korean>
+                <Russian>Позиция за пределами карты</Russian>
+                <Portuguese>Posição fora do mapa</Portuguese>
+                <Chinesesimp>位置在地图外</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_ez_feedback_title">
+                <Original>Edit Map Positions</Original>
+                <Italian>Modifica posizioni mappa</Italian>
+                <Korean>지도 위치 편집</Korean>
+                <Russian>Редактировать позиции на карте</Russian>
+                <Portuguese>Editar posições do mapa</Portuguese>
+                <Chinesesimp>编辑地图位置</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_ez_airports">
+                <Original>Airports</Original>
+                <Italian>Aeroporti</Italian>
+                <Korean>공항</Korean>
+                <Russian>Аэропорты</Russian>
+                <Portuguese>Aeroportos</Portuguese>
+                <Chinesesimp>机场</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_ez_resources">
+                <Original>Resources</Original>
+                <Italian>Risorse</Italian>
+                <Korean>자원</Korean>
+                <Russian>Ресурсы</Russian>
+                <Portuguese>Recursos</Portuguese>
+                <Chinesesimp>资源</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_ez_factories">
+                <Original>Factories</Original>
+                <Italian>Fabbriche</Italian>
+                <Korean>공장</Korean>
+                <Russian>Фабрики</Russian>
+                <Portuguese>Fábricas</Portuguese>
+                <Chinesesimp>工厂</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_ez_outposts">
+                <Original>Outposts</Original>
+                <Italian avviato="true">Avamposti</Italian>
+                <Korean>전초기지</Korean>
+                <Russian>Заставы</Russian>
+                <Portuguese>Postos avançados</Portuguese>
+                <Chinesesimp>前哨</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_ez_milbases">
+                <Original>Military Bases</Original>
+                <Italian>Basi Militari</Italian>
+                <Korean>군사 기지</Korean>
+                <Russian>Военные базы</Russian>
+                <Portuguese>Bases Militares</Portuguese>
+                <Chinesesimp>军事基地</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_ez_map_zones">
+                <Original>Show / Hide Map Zones</Original>
+                <Italian>Mostra / Nascondi zone della mappa</Italian>
+                <Korean>지도 구역 표시 / 숨기기</Korean>
+                <Russian>Показать / Скрыть зоны карты</Russian>
+                <Portuguese>Mostrar / Ocultar zonas do mapa</Portuguese>
+                <Chinesesimp>显示 / 隐藏地图区域</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_ez_howtouse">
+                <Original>How to Use:\n\nClick on a zone to swap its side between invader and occupant.\nClick it again to swap it back.\nUse the "Close" button in the top left\nor use the "ESC" key to exit this dialog.</Original>
+                <Italian>Come usare:\n\nClicca su una zona per cambiare il suo lato tra invasore e occupante.\nCliccaci di nuovo per ripristinarlo.\nUsa il pulsante "Chiudi" in alto a sinistra\noppure usa il tasto "ESC" per uscire da questo dialogo.</Italian>
+                <Korean>사용 방법:\n\n영역을 클릭하여 침략자와 점유자 사이에서 측면을 전환합니다.\n다시 클릭하여 원래대로 되돌립니다.\n왼쪽 상단의 "닫기" 버튼을 사용하거나\n"ESC" 키를 사용하여 이 대화 상자를 종료합니다.</Korean>
+                <Russian>Как использовать:\n\nНажмите на зону, чтобы переключить её сторону между захватчиком и оккупантом.\nНажмите снова, чтобы вернуть обратно.\nИспользуйте кнопку "Закрыть" в верхнем левом углу\nили используйте клавишу "ESC" для выхода из этого диалога.</Russian>
+                <Portuguese>Como usar:\n\nClique em uma zona para alternar seu lado entre invasor e ocupante.\nClique novamente para alternar de volta.\nUse o botão "Fechar" no canto superior esquerdo\nou use a tecla "ESC" para sair deste diálogo.</Portuguese>
+                <Chinesesimp>使用方法:\n\n点击一个区域以在入侵者和占领者之间切换其阵营。\n再次点击以切换回去。\n使用左上角的"关闭"按钮\n或使用"ESC"键退出此对话框。</Chinesesimp>
+            </Key>
         </Container>
         <Container name="setup_dialog_table">
             <Key ID="STR_antistasi_setup_dialog_table_map">

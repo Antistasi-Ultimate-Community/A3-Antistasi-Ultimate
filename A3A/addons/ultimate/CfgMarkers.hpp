@@ -15,6 +15,14 @@ class A3AU_Factory_mrk : n_unknown
 	showEditorMarkerColor = 0;
 };
 
+class A3AU_airport_mrk : A3AU_Factory_mrk
+{
+    name = "Airport";
+    icon = QPATHTOFOLDER(data\A3AU_airport_mrk);
+    texture = QPATHTOFOLDER(data\A3AU_airport_mrk);
+    markerClass = "A3AU_MRK";
+};
+
 class A3AU_city_mrk : A3AU_Factory_mrk
 {
 	name = "City";

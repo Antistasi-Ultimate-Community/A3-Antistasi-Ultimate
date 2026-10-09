@@ -17,6 +17,7 @@ seaMarkers = [];
 seaSpawn = [];
 seaAttackSpawn = [];
 detectionAreas = [];
+fuelStationsX = [];
 
 fnc_sortPlacementMarker =
 {
