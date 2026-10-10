@@ -35,12 +35,12 @@ private _newSaveCtrl = _display displayCtrl A3A_IDC_SETUP_NAMESPACECHECKBOX;
 private _saveInfoCtrl = _display displayCtrl A3A_IDC_SETUP_SAVEINFOTEXT;
 
 private _saveBoxColumns = [
-    ["gameID", "ID", 0, 9],
-    ["mapStr", localize "STR_antistasi_setup_dialog_table_map", 9, 25, "mapStrShort"],
-    ["name", localize "STR_antistasi_setup_dialog_table_name", 25, 45],
-    ["verStr", localize "STR_antistasi_setup_dialog_table_version", 70, 12],
-    ["timeStr", localize "STR_antistasi_setup_dialog_table_time", 82, 15],
-    ["fileStr", localize "STR_antistasi_setup_dialog_table_file", 97, 9]
+    ["gameID", "ID", 0, 12],
+    ["mapStr", localize "STR_antistasi_setup_dialog_table_map", 14, 20, "mapStrShort"],
+    ["name", localize "STR_antistasi_setup_dialog_table_name", 36, 44],
+    ["verStr", localize "STR_antistasi_setup_dialog_table_version", 82, 12],
+    ["timeStr", localize "STR_antistasi_setup_dialog_table_time", 94, 15],
+    ["fileStr", localize "STR_antistasi_setup_dialog_table_file", 110, 8]
 ];
 
 switch (_mode) do
@@ -127,7 +127,9 @@ switch (_mode) do
                 private _ctrl = _display ctrlCreate ["A3A_Text_Small", -1, _listboxCtrl];
                 _ctrl ctrlSetPosition [GRID_W*_xpos, GRID_H*_forEachIndex*4, GRID_W*_width, GRID_H*4];
                 _ctrl ctrlCommit 0;
-                _ctrl ctrlSetText (_x getOrDefault [_varname, ""]);
+                private _ctrlText = _x getOrDefault [_varname, ""];
+                if (_varname isEqualTo "gameID") then { _ctrlText = _ctrlText select[0, 7] };
+                _ctrl ctrlSetText _ctrlText;
                 if (!isNil "_toolTip") then { _ctrl ctrlSetTooltip(_x getOrDefault[_toolTip, "N/A"]) };
                 if (_x get "map" != worldName) then { _ctrl ctrlSetTextColor [0.6,0.6,0.6,1] };
                 _ctrls pushBack _ctrl;
@@ -255,9 +257,9 @@ switch (_mode) do
         private _lbCurSel = _listboxCtrl getVariable "rowIndex";
         switch (true) do {
             case (_lbCurSel isEqualTo -1): { _saveInfoCtrl ctrlSetText localize "STR_antistasi_dialogs_setup_new_save" };
-            case (cbChecked _copyGameCtrl): { _saveInfoCtrl ctrlSetText format [localize "STR_antistasi_dialogs_setup_copy_save", A3A_setup_saveData select _lbCurSel get "gameID"] };
+            case (cbChecked _copyGameCtrl): { _saveInfoCtrl ctrlSetText format [localize "STR_antistasi_dialogs_setup_copy_save", A3A_setup_saveData select _lbCurSel select[0, 4]] };
             case (cbChecked _newGameCtrl): { _saveInfoCtrl ctrlSetText localize "STR_antistasi_dialogs_setup_new_save" };
-            default { _saveInfoCtrl ctrlSetText format [localize "STR_antistasi_dialogs_setup_edit_save", A3A_setup_saveData select _lbCurSel get "gameID"] };
+            default { _saveInfoCtrl ctrlSetText format [localize "STR_antistasi_dialogs_setup_edit_save", A3A_setup_saveData select _lbCurSel get "gameID" select[0, 4]] };
         };
     };
 

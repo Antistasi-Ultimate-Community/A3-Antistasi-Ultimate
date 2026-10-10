@@ -3872,14 +3872,14 @@
                 <Turkish>Karargâh Belirle</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_new_save_name">
-                <Original>New save name</Original>
-                <Czech>Nový název uložení</Czech>
+                <Original>Save Name</Original>
+                <Czech>Název uložení</Czech>
                 <French>Nom de la partie</French>
-                <Italian>Nuovo Nome del Salvataggio</Italian>
+                <Italian>Nome del Salvataggio</Italian>
                 <Korean>새 게임 저장</Korean>
                 <Russian>Имя сохранения</Russian>
-                <Polish>Nowa Nazwa Zapisu</Polish>
-                <Portuguese>Novo mone save</Portuguese>
+                <Polish>Nazwa Zapisu</Polish>
+                <Portuguese>Nome do Save</Portuguese>
                 <Chinesesimp>新的存档名</Chinesesimp>
                 <Turkish>Yeni Kayıt Adı</Turkish>
             </Key>
@@ -3906,6 +3906,378 @@
                 <Portuguese>Apagar jogo</Portuguese>
                 <Chinesesimp>删除存档</Chinesesimp>
                 <Turkish>Oyunu sil</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_import_export">
+                <Original>Import / Export Game</Original>
+                <Czech>Importovat / exportovat hru</Czech>
+                <French>Importer / exporter la partie</French>
+                <Italian>Importa / esporta partita</Italian>
+                <Korean>게임 가져오기 / 내보내기</Korean>
+                <Russian>Импорт / экспорт игры</Russian>
+                <Polish>Importuj / eksportuj grę</Polish>
+                <Portuguese>Importar / exportar jogo</Portuguese>
+                <Chinesesimp>导入/导出游戏</Chinesesimp>
+                <Turkish>Oyunu içe aktar / dışa aktar</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_import_export_params">
+                <Original>Import / Export Parameter Preset</Original>
+                <Czech>Importovat / exportovat přednastavení parametrů</Czech>
+                <French>Importer / exporter le préréglage des paramètres</French>
+                <Italian>Importa / esporta preset dei parametri</Italian>
+                <Korean>매개변수 프리셋 가져오기 / 내보내기</Korean>
+                <Russian>Импорт / экспорт пресета параметров</Russian>
+                <Polish>Importuj / eksportuj preset parametrów</Polish>
+                <Portuguese>Importar / exportar preset de parâmetros</Portuguese>
+                <Chinesesimp>导入/导出参数预设</Chinesesimp>
+                <Turkish>Parametre Ön Ayarını içe aktar / dışa aktar</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_ie_savedata">
+                <Original>Save Data</Original>
+                <Czech>Data uložení</Czech>
+                <French>Données de sauvegarde</French>
+                <Italian>Dati di salvataggio</Italian>
+                <Korean>저장 데이터</Korean>
+                <Russian>Данные сохранения</Russian>
+                <Polish>Dane zapisu</Polish>
+                <Portuguese>Dados de gravação</Portuguese>
+                <Chinesesimp>存档数据</Chinesesimp>
+                <Turkish>Kayıt Verisi</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_ie_paramdata">
+                <Original>Parameter Preset Data</Original>
+                <Czech>Data přednastavení parametrů</Czech>
+                <French>Données du préréglage des paramètres</French>
+                <Italian>Dati del preset dei parametri</Italian>
+                <Korean>매개변수 프리셋 데이터</Korean>
+                <Russian>Данные пресета параметров</Russian>
+                <Polish>Dane presetu parametrów</Polish>
+                <Portuguese>Dados do preset de parâmetros</Portuguese>
+                <Chinesesimp>参数预设数据</Chinesesimp>
+                <Turkish>Parametre Ön Ayar Verisi</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_ie_clear">
+                <Original>Clear</Original>
+                <Czech>Vymazat</Czech>
+                <French>Effacer</French>
+                <Italian>Cancella</Italian>
+                <Korean>지우기</Korean>
+                <Russian>Очистить</Russian>
+                <Polish>Wyczyść</Polish>
+                <Portuguese>Limpar</Portuguese>
+                <Chinesesimp>清除</Chinesesimp>
+                <Turkish>Temizle</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_ie_edit">
+                <Original>Edit</Original>
+                <Czech>Upravit</Czech>
+                <French>Modifier</French>
+                <Italian>Modifica</Italian>
+                <Korean>편집</Korean>
+                <Russian>Изменить</Russian>
+                <Polish>Edytuj</Polish>
+                <Portuguese>Editar</Portuguese>
+                <Chinesesimp>编辑</Chinesesimp>
+                <Turkish>Düzenle</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_ie_close">
+                <Original>Close</Original>
+                <Czech>Zavřít</Czech>
+                <French>Fermer</French>
+                <Italian>Chiudi</Italian>
+                <Korean>닫기</Korean>
+                <Russian>Закрыть</Russian>
+                <Polish>Zamknij</Polish>
+                <Portuguese>Fechar</Portuguese>
+                <Chinesesimp>关闭</Chinesesimp>
+                <Turkish>Kapat</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_ie_import">
+                <Original>Text Import</Original>
+                <Czech>Import textu</Czech>
+                <French>Importer le texte</French>
+                <Italian>Importa testo</Italian>
+                <Korean>텍스트 가져오기</Korean>
+                <Russian>Импорт текста</Russian>
+                <Polish>Import tekstu</Polish>
+                <Portuguese>Importar texto</Portuguese>
+                <Chinesesimp>文本导入</Chinesesimp>
+                <Turkish>Metin İçe Aktar</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_ie_export">
+                <Original>Text Export</Original>
+                <Czech>Export textu</Czech>
+                <French>Exporter le texte</French>
+                <Italian>Esporta testo</Italian>
+                <Korean>텍스트 내보내기</Korean>
+                <Russian>Экспорт текста</Russian>
+                <Polish>Eksport tekstu</Polish>
+                <Portuguese>Exportar texto</Portuguese>
+                <Chinesesimp>文本导出</Chinesesimp>
+                <Turkish>Metin Dışa Aktar</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_ie_copied">
+                <Original>Save data has been copied to your clipboard.</Original>
+                <Czech>Data uložení byla zkopírována do schránky.</Czech>
+                <French>Les données de sauvegarde ont été copiées dans votre presse-papiers.</French>
+                <Italian>I dati di salvataggio sono stati copiati negli appunti.</Italian>
+                <Korean>저장 데이터가 클립보드에 복사되었습니다.</Korean>
+                <Russian>Данные сохранения скопированы в буфер обмена.</Russian>
+                <Polish>Dane zapisu zostały skopiowane do schowka.</Polish>
+                <Portuguese>Os dados de gravação foram copiados para a área de transferência.</Portuguese>
+                <Chinesesimp>存档数据已复制到剪贴板。</Chinesesimp>
+                <Turkish>Kayıt verisi panoya kopyalandı.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_ie_params_copied">
+                <Original>Parameter preset data has been copied to your clipboard.</Original>
+                <Czech>Data přednastavení parametrů byla zkopírována do schránky.</Czech>
+                <French>Les données du préréglage des paramètres ont été copiées dans votre presse-papiers.</French>
+                <Italian>I dati del preset dei parametri sono stati copiati negli appunti.</Italian>
+                <Korean>매개변수 프리셋 데이터가 클립보드에 복사되었습니다.</Korean>
+                <Russian>Данные пресета параметров скопированы в буфер обмена.</Russian>
+                <Polish>Dane presetu parametrów zostały skopiowane do schowka.</Polish>
+                <Portuguese>Os dados do preset de parâmetros foram copiados para a área de transferência.</Portuguese>
+                <Chinesesimp>参数预设数据已复制到剪贴板。</Chinesesimp>
+                <Turkish>Parametre ön ayar verisi panoya kopyalandı.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_ie_import_empty">
+                <Original>Paste JSON-formatted save data into the save data box to import it.</Original>
+                <Czech>Chcete-li data importovat, vložte data uložení ve formátu JSON do pole dat uložení.</Czech>
+                <French>Collez les données de sauvegarde au format JSON dans la zone de données de sauvegarde pour les importer.</French>
+                <Italian>Incolla i dati di salvataggio in formato JSON nella casella dei dati di salvataggio per importarli.</Italian>
+                <Korean>가져오려면 JSON 형식의 저장 데이터를 저장 데이터 상자에 붙여넣으세요.</Korean>
+                <Russian>Вставьте данные сохранения в формате JSON в поле данных сохранения, чтобы импортировать их.</Russian>
+                <Polish>Wklej dane zapisu w formacie JSON do pola danych zapisu, aby je zaimportować.</Polish>
+                <Portuguese>Cole os dados de gravação em formato JSON na caixa de dados de gravação para importá-los.</Portuguese>
+                <Chinesesimp>将 JSON 格式的存档数据粘贴到存档数据框中以导入。</Chinesesimp>
+                <Turkish>İçe aktarmak için JSON biçimli kayıt verisini kayıt verisi kutusuna yapıştırın.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_ie_import_invalid">
+                <Original>The save data is not valid JSON. Check the data and try again.</Original>
+                <Czech>Data uložení nejsou platný JSON. Zkontrolujte data a zkuste to znovu.</Czech>
+                <French>Les données de sauvegarde ne sont pas un JSON valide. Vérifiez les données et réessayez.</French>
+                <Italian>I dati di salvataggio non sono un JSON valido. Controlla i dati e riprova.</Italian>
+                <Korean>저장 데이터가 올바른 JSON이 아닙니다. 데이터를 확인한 후 다시 시도하세요.</Korean>
+                <Russian>Данные сохранения не являются корректным JSON. Проверьте данные и повторите попытку.</Russian>
+                <Polish>Dane zapisu nie są prawidłowym JSON. Sprawdź dane i spróbuj ponownie.</Polish>
+                <Portuguese>Os dados de gravação não são um JSON válido. Verifique os dados e tente novamente.</Portuguese>
+                <Chinesesimp>存档数据不是有效的 JSON。请检查数据后重试。</Chinesesimp>
+                <Turkish>Kayıt verisi geçerli bir JSON değil. Veriyi kontrol edip tekrar deneyin.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_ie_import_malformed">
+                <Original>Malformed save data:&lt;br/&gt;%1</Original>
+                <Czech>Poškozená data uložení:&lt;br/&gt;%1</Czech>
+                <French>Données de sauvegarde malformées :&lt;br/&gt;%1</French>
+                <Italian>Dati di salvataggio malformati:&lt;br/&gt;%1</Italian>
+                <Korean>저장 데이터 형식이 올바르지 않습니다:&lt;br/&gt;%1</Korean>
+                <Russian>Некорректные данные сохранения:&lt;br/&gt;%1</Russian>
+                <Polish>Nieprawidłowe dane zapisu:&lt;br/&gt;%1</Polish>
+                <Portuguese>Dados de gravação malformados:&lt;br/&gt;%1</Portuguese>
+                <Chinesesimp>存档数据格式错误：&lt;br/&gt;%1</Chinesesimp>
+                <Turkish>Hatalı biçimlendirilmiş kayıt verisi:&lt;br/&gt;%1</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_ie_import_missing_key">
+                <Original>Missing key: "%1"</Original>
+                <Czech>Chybějící klíč: "%1"</Czech>
+                <French>Clé manquante : "%1"</French>
+                <Italian>Chiave mancante: "%1"</Italian>
+                <Korean>누락된 키: "%1"</Korean>
+                <Russian>Отсутствующий ключ: "%1"</Russian>
+                <Polish>Brakujący klucz: "%1"</Polish>
+                <Portuguese>Chave ausente: "%1"</Portuguese>
+                <Chinesesimp>缺少键: "%1"</Chinesesimp>
+                <Turkish>Eksik anahtar: "%1"</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_ie_import_empty_key">
+                <Original>Value for key "%1" is empty</Original>
+                <Czech>Hodnota pro klíč "%1" je prázdná</Czech>
+                <French>La valeur pour la clé "%1" est vide</French>
+                <Italian>Il valore per la chiave "%1" è vuoto</Italian>
+                <Korean>키 "%1"의 값이 비어 있습니다</Korean>
+                <Russian>Значение для ключа "%1" пусто</Russian>
+                <Polish>Wartość dla klucza "%1" jest pusta</Polish>
+                <Portuguese>O valor para a chave "%1" está vazio</Portuguese>
+                <Chinesesimp>键 "%1" 的值为空</Chinesesimp>
+                <Turkish>Anahtar "%1" için değer boş</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_ie_import_type_mismatch">
+                <Original>Value for key "%1" has type %2, expected %3</Original>
+                <Czech>Hodnota pro klíč "%1" má typ %2, očekáván typ %3</Czech>
+                <French>La valeur pour la clé "%1" a le type %2, type attendu %3</French>
+                <Italian>Il valore per la chiave "%1" ha il tipo %2, previsto %3</Italian>
+                <Korean>키 "%1"의 값은 %2 형식이며, 예상 형식은 %3입니다</Korean>
+                <Russian>Значение для ключа "%1" имеет тип %2, ожидаемый тип %3</Russian>
+                <Polish>Wartość dla klucza "%1" ma typ %2, oczekiwano typu %3</Polish>
+                <Portuguese>O valor para a chave "%1" tem o tipo %2, esperado %3</Portuguese>
+                <Chinesesimp>键 "%1" 的值类型为 %2，预期类型为 %3</Chinesesimp>
+                <Turkish>Anahtar "%1" için değer %2 türünde, beklenen tür %3</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_ie_import_error">
+                <Original>Error occurred while validating save data for import: %1</Original>
+                <Czech>Došlo k chybě při ověřování dat uložení pro import: %1</Czech>
+                <French>Une erreur s'est produite lors de la validation des données de sauvegarde pour l'importation : %1</French>
+                <Italian>Si è verificato un errore durante la convalida dei dati di salvataggio per l'importazione: %1</Italian>
+                <Korean>가져오기용 저장 데이터 검증 중 오류가 발생했습니다: %1</Korean>
+                <Russian>Произошла ошибка при проверке данных сохранения для импорта: %1</Russian>
+                <Polish>Wystąpił błąd podczas weryfikacji danych zapisu do importu: %1</Polish>
+                <Portuguese>Ocorreu um erro ao validar os dados de salvamento para importação: %1</Portuguese>
+                <Chinesesimp>验证导入存档数据时发生错误：%1</Chinesesimp>
+                <Turkish>İçe aktarma için kayıt verilerini doğrularken bir hata oluştu: %1</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_ie_import_params_invalid">
+                <Original>The parameter preset data is not valid JSON. Check the data and try again.</Original>
+                <Czech>Data přednastavení parametrů nejsou platný JSON. Zkontrolujte data a zkuste to znovu.</Czech>
+                <French>Les données du préréglage des paramètres ne sont pas un JSON valide. Vérifiez les données et réessayez.</French>
+                <Italian>I dati del preset dei parametri non sono un JSON valido. Controlla i dati e riprova.</Italian>
+                <Korean>매개변수 프리셋 데이터가 올바른 JSON이 아닙니다. 데이터를 확인한 후 다시 시도하세요.</Korean>
+                <Russian>Данные пресета параметров не являются корректным JSON. Проверьте данные и повторите попытку.</Russian>
+                <Polish>Dane presetu parametrów nie są prawidłowym JSON. Sprawdź dane i spróbuj ponownie.</Polish>
+                <Portuguese>Os dados do preset de parâmetros não são um JSON válido. Verifique os dados e tente novamente.</Portuguese>
+                <Chinesesimp>参数预设数据不是有效的 JSON。请检查数据后重试。</Chinesesimp>
+                <Turkish>Parametre ön ayar verisi geçerli bir JSON değil. Veriyi kontrol edip tekrar deneyin.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_ie_import_success">
+                <Original>Save data imported as a new campaign save.</Original>
+                <Czech>Data uložení byla importována jako nové uložení kampaně.</Czech>
+                <French>Les données de sauvegarde ont été importées comme nouvelle sauvegarde de campagne.</French>
+                <Italian>Dati di salvataggio importati come nuovo salvataggio della campagna.</Italian>
+                <Korean>저장 데이터를 새 캠페인 저장으로 가져왔습니다.</Korean>
+                <Russian>Данные сохранения импортированы как новое сохранение кампании.</Russian>
+                <Polish>Dane zapisu zaimportowano jako nowy zapis kampanii.</Polish>
+                <Portuguese>Dados de gravação importados como uma nova gravação de campanha.</Portuguese>
+                <Chinesesimp>存档数据已导入为新的战役存档。</Chinesesimp>
+                <Turkish>Kayıt verisi yeni bir görev kaydı olarak içe aktarıldı.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_ie_import_param_success">
+                <Original>Parameter preset imported successfully.</Original>
+                <Czech>Přednastavení parametrů bylo úspěšně importováno.</Czech>
+                <French>Préréglage des paramètres importé avec succès.</French>
+                <Italian>Preset dei parametri importato con successo.</Italian>
+                <Korean>매개변수 프리셋을 성공적으로 가져왔습니다.</Korean>
+                <Russian>Пресет параметров успешно импортирован.</Russian>
+                <Polish>Preset parametrów został pomyślnie zaimportowany.</Polish>
+                <Portuguese>Preset de parâmetros importado com sucesso.</Portuguese>
+                <Chinesesimp>参数预设导入成功。</Chinesesimp>
+                <Turkish>Parametre ön ayarı başarıyla içe aktarıldı.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_ie_import_tooltip">
+                <Original>Import the text in the save data box as a new campaign save.</Original>
+                <Czech>Importovat text v poli dat uložení jako nové uložení kampaně.</Czech>
+                <French>Importer le texte de la zone de données de sauvegarde comme nouvelle sauvegarde de campagne.</French>
+                <Italian>Importa il testo nella casella dei dati di salvataggio come nuovo salvataggio della campagna.</Italian>
+                <Korean>저장 데이터 상자의 텍스트를 새 캠페인 저장으로 가져옵니다.</Korean>
+                <Russian>Импортировать текст из поля данных сохранения как новое сохранение кампании.</Russian>
+                <Polish>Importuj tekst z pola danych zapisu jako nowy zapis kampanii.</Polish>
+                <Portuguese>Importar o texto da caixa de dados de gravação como uma nova gravação de campanha.</Portuguese>
+                <Chinesesimp>将存档数据框中的文本导入为新的战役存档。</Chinesesimp>
+                <Turkish>Kayıt verisi kutusundaki metni yeni bir görev kaydı olarak içe aktarır.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_ie_import_params_tooltip">
+                <Original>Import the text in the preset data box as a new parameter preset.</Original>
+                <Czech>Importovat text v poli dat přednastavení jako nové přednastavení parametrů.</Czech>
+                <French>Importer le texte de la zone de données de préréglage comme nouveau préréglage de paramètres.</French>
+                <Italian>Importa il testo nella casella dei dati del preset come nuovo preset dei parametri.</Italian>
+                <Korean>프리셋 데이터 상자의 텍스트를 새 매개변수 프리셋으로 가져옵니다.</Korean>
+                <Russian>Импортировать текст из поля данных пресета как новый пресет параметров.</Russian>
+                <Polish>Importuj tekst z pola danych presetu jako nowy preset parametrów.</Polish>
+                <Portuguese>Importar o texto da caixa de dados do preset como um novo preset de parâmetros.</Portuguese>
+                <Chinesesimp>将预设数据框中的文本导入为新的参数预设。</Chinesesimp>
+                <Turkish>Ön ayar verisi kutusundaki metni yeni bir parametre ön ayarı olarak içe aktarır.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_ie_import_params_empty">
+                <Original>Paste JSON-formatted preset data into the preset data box to import it.</Original>
+                <Czech>Chcete-li data importovat, vložte data přednastavení ve formátu JSON do pole dat přednastavení.</Czech>
+                <French>Collez les données de préréglage au format JSON dans la zone de données de préréglage pour les importer.</French>
+                <Italian>Incolla i dati del preset in formato JSON nella casella dei dati del preset per importarli.</Italian>
+                <Korean>가져오려면 JSON 형식의 프리셋 데이터를 프리셋 데이터 상자에 붙여넣으세요.</Korean>
+                <Russian>Вставьте данные пресета в формате JSON в поле данных пресета, чтобы импортировать их.</Russian>
+                <Polish>Wklej dane presetu w formacie JSON do pola danych presetu, aby je zaimportować.</Polish>
+                <Portuguese>Cole os dados do preset em formato JSON na caixa de dados do preset para importá-los.</Portuguese>
+                <Chinesesimp>将 JSON 格式的预设数据粘贴到预设数据框中以导入。</Chinesesimp>
+                <Turkish>İçe aktarmak için JSON biçimli ön ayar verisini ön ayar verisi kutusuna yapıştırın.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_ie_export_tooltip">
+                <Original>Copy the text in the save data box to your clipboard.</Original>
+                <Czech>Zkopírovat text v poli dat uložení do schránky.</Czech>
+                <French>Copier le texte de la zone de données de sauvegarde dans le presse-papiers.</French>
+                <Italian>Copia il testo nella casella dei dati di salvataggio negli appunti.</Italian>
+                <Korean>저장 데이터 상자의 텍스트를 클립보드에 복사합니다.</Korean>
+                <Russian>Скопировать текст из поля данных сохранения в буфер обмена.</Russian>
+                <Polish>Skopiuj tekst z pola danych zapisu do schowka.</Polish>
+                <Portuguese>Copiar o texto da caixa de dados de gravação para a área de transferência.</Portuguese>
+                <Chinesesimp>将存档数据框中的文本复制到剪贴板。</Chinesesimp>
+                <Turkish>Kayıt verisi kutusundaki metni panoya kopyalar.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_ie_export_params_tooltip">
+                <Original>Copy the text in the preset data box to your clipboard.</Original>
+                <Czech>Zkopírovat text v poli dat přednastavení do schránky.</Czech>
+                <French>Copier le texte de la zone de données de préréglage dans le presse-papiers.</French>
+                <Italian>Copia il testo nella casella dei dati del preset negli appunti.</Italian>
+                <Korean>프리셋 데이터 상자의 텍스트를 클립보드에 복사합니다.</Korean>
+                <Russian>Скопировать текст из поля данных пресета в буфер обмена.</Russian>
+                <Polish>Skopiuj tekst z pola danych presetu do schowka.</Polish>
+                <Portuguese>Copiar o texto da caixa de dados do preset para a área de transferência.</Portuguese>
+                <Chinesesimp>将预设数据框中的文本复制到剪贴板。</Chinesesimp>
+                <Turkish>Ön ayar verisi kutusundaki metni panoya kopyalar.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_ie_export_button_disabled">
+                <Original>This button does not work when using a dedicated server due to Arma 3 security restrictions.<br/>Please copy the data manually.</Original>
+                <Czech>Toto tlačítko nefunguje při použití dedikovaného serveru kvůli bezpečnostním omezením Arma 3.<br/>Zkopírujte data ručně.</Czech>
+                <French>Ce bouton ne fonctionne pas sur un serveur dédié en raison des restrictions de sécurité d'Arma 3.<br/>Veuillez copier les données manuellement.</French>
+                <Italian>Questo pulsante non funziona con un server dedicato a causa delle restrizioni di sicurezza di Arma 3.<br/>Copia i dati manualmente.</Italian>
+                <Korean>Arma 3 보안 제한으로 인해 전용 서버에서는 이 버튼이 작동하지 않습니다.<br/>데이터를 수동으로 복사하세요.</Korean>
+                <Russian>Эта кнопка не работает на выделенном сервере из-за ограничений безопасности Arma 3.<br/>Скопируйте данные вручную.</Russian>
+                <Polish>Ten przycisk nie działa na serwerze dedykowanym z powodu ograniczeń bezpieczeństwa Arma 3.<br/>Skopiuj dane ręcznie.</Polish>
+                <Portuguese>Este botão não funciona num servidor dedicado devido às restrições de segurança do Arma 3.<br/>Copie os dados manualmente.</Portuguese>
+                <Chinesesimp>由于 Arma 3 的安全限制，使用专用服务器时此按钮无效。<br/>请手动复制数据。</Chinesesimp>
+                <Turkish>Arma 3 güvenlik kısıtlamaları nedeniyle bu düğme özel sunucuda çalışmaz.<br/>Lütfen veriyi elle kopyalayın.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_ie_savelist_text">
+                <Original>Save List</Original>
+                <Czech>Seznam uložení</Czech>
+                <French>Liste des sauvegardes</French>
+                <Italian>Elenco salvataggi</Italian>
+                <Korean>저장 목록</Korean>
+                <Russian>Список сохранений</Russian>
+                <Polish>Lista zapisów</Polish>
+                <Portuguese>Lista de gravações</Portuguese>
+                <Chinesesimp>存档列表</Chinesesimp>
+                <Turkish>Kayıt Listesi</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_ie_paramlist_text">
+                <Original>Parameter Preset List</Original>
+                <Czech>Seznam přednastavení parametrů</Czech>
+                <French>Liste des préréglages de paramètres</French>
+                <Italian>Elenco preset dei parametri</Italian>
+                <Korean>매개변수 프리셋 목록</Korean>
+                <Russian>Список пресетов параметров</Russian>
+                <Polish>Lista presetów parametrów</Polish>
+                <Portuguese>Lista de presets de parâmetros</Portuguese>
+                <Chinesesimp>参数预设列表</Chinesesimp>
+                <Turkish>Parametre Ön Ayar Listesi</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_ie_savedata_loading">
+                <Original>Loading Save Data.</Original>
+                <Czech>Načítání dat uložení.</Czech>
+                <French>Chargement des données de sauvegarde.</French>
+                <Italian>Caricamento dei dati di salvataggio.</Italian>
+                <Korean>저장 데이터 불러오는 중.</Korean>
+                <Russian>Загрузка данных сохранения.</Russian>
+                <Polish>Wczytywanie danych zapisu.</Polish>
+                <Portuguese>A carregar dados de gravação.</Portuguese>
+                <Chinesesimp>正在加载存档数据。</Chinesesimp>
+                <Turkish>Kayıt verisi yükleniyor.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_ie_paramdata_loading">
+                <Original>Loading Preset Data.</Original>
+                <Czech>Načítání dat přednastavení.</Czech>
+                <French>Chargement des données du préréglage.</French>
+                <Italian>Caricamento dei dati del preset.</Italian>
+                <Korean>프리셋 데이터 불러오는 중.</Korean>
+                <Russian>Загрузка данных пресета.</Russian>
+                <Polish>Wczytywanie danych presetu.</Polish>
+                <Portuguese>A carregar dados do preset.</Portuguese>
+                <Chinesesimp>正在加载预设数据。</Chinesesimp>
+                <Turkish>Ön ayar verisi yükleniyor.</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_rebels">
                 <Original>Rebels</Original>
@@ -4322,6 +4694,17 @@
                 <Polish>Zmień nazwę ustawienia predefiniowanego</Polish>
                 <Portuguese>Renomear predefinição</Portuguese>
                 <Chinesesimp>重命名预设</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_params_presets_import_export">
+                <Original>Import / Export Preset</Original>
+                <Czech>Import / export přednastavení</Czech>
+                <French>Importer / exporter le préréglage</French>
+                <Italian>Importa / esporta preset</Italian>
+                <Korean>매개변수 프리셋 가져오기 / 내보내기</Korean>
+                <Russian>Импорт / экспорт пресета параметров</Russian>
+                <Polish>Importuj / eksportuj preset</Polish>
+                <Portuguese>Importar / exportar preset</Portuguese>
+                <Chinesesimp>导入/导出参数预设</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_params_search">
                 <Original>Parameter Search</Original>

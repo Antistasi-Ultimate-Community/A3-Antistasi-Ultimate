@@ -100,6 +100,7 @@ class A3A_SetupDialog : A3A_TabbedDialog
                 class SavedGamesLabel: A3A_SectionLabelRight {
                     idc = -1;
                     text = $STR_antistasi_dialogs_setup_saved_games;
+                    font = A3A_BUTTON_FONT;
                     x = 4 * GRID_W;
                     y = 4 * GRID_H;
                     w = 118 * GRID_W;
@@ -110,7 +111,7 @@ class A3A_SetupDialog : A3A_TabbedDialog
                     x = 4 * GRID_W;
                     y = 8 * GRID_H;
                     w = 118 * GRID_W;
-                    h = 80 * GRID_H;
+                    h = 88 * GRID_H;
                 };
                 class SavedGamesHeader : A3A_ControlsGroupNoScrollbars
                 {
@@ -128,7 +129,7 @@ class A3A_SetupDialog : A3A_TabbedDialog
                     x = 4 * GRID_W;
                     y = 12 * GRID_H;
                     w = 118 * GRID_W;
-                    h = 76 * GRID_H;
+                    h = 84 * GRID_H;
 
                     class Controls
                     {
@@ -143,22 +144,55 @@ class A3A_SetupDialog : A3A_TabbedDialog
                     };
                 };
 
-                class SaveNameLabel: A3A_SectionLabelRight {
-                    idc = -1;
-                    text = $STR_antistasi_dialogs_setup_new_save_name;
-                    x = 4 * GRID_W;
-                    y = 91 * GRID_H;
-                    w = 24 * GRID_W;
-                    h = 5 * GRID_H;
-                };
-                class SaveNameEditBox: A3A_Edit {
-                    idc = A3A_IDC_SETUP_NAMEEDITBOX;
-                    x = 28 * GRID_W;
-                    y = 91 * GRID_H;
-                    w = 94 * GRID_W;
-                    h = 5 * GRID_H;
-                };
+                // Game edit options
+                class GameEditOptions : A3A_ControlsGroupNoScrollbars {
+                    x = 126 * GRID_W;
+                    y = 70 * GRID_H;
+                    w = 30 * GRID_W;
+                    h = 26 * GRID_H;
 
+                    class controls {
+                        class SaveNameLabel: A3A_Text {
+                            idc = -1;
+                            text = $STR_antistasi_dialogs_setup_new_save_name;
+                            style = ST_CENTER;
+                            font = A3A_BUTTON_FONT;
+                            colorBackground[] = {0,0,0,1};
+                            x = 0 * GRID_W;
+                            y = 0 * GRID_H;
+                            w = 30 * GRID_W;
+                            h = 4 * GRID_H;
+                        };
+                        class SaveNameEditBox: A3A_Edit {
+                            idc = A3A_IDC_SETUP_NAMEEDITBOX;
+                            x = 0 * GRID_W;
+                            y = 4 * GRID_H;
+                            w = 30 * GRID_W;
+                            h = 4 * GRID_H;
+                        };
+                        class DeleteButton: A3A_Button {
+                            idc = A3A_IDC_SETUP_DELETEBUTTON;
+                            text = $STR_antistasi_dialogs_setup_delete_game;
+                            onButtonClick = "['deleteGame'] call A3A_fnc_setupLoadgameTab";
+                            x = 0 * GRID_W;
+                            y = 10 * GRID_H;
+                            w = 30 * GRID_W;
+                            h = 4 * GRID_H;
+                        };
+                        class RenameButton: DeleteButton {
+                            idc = A3A_IDC_SETUP_RENAMEBUTTON;
+                            text = $STR_antistasi_dialogs_setup_rename_game;
+                            onButtonClick = "['renameGame'] call A3A_fnc_setupLoadgameTab";
+                            y = 16 * GRID_H;
+                        };
+                        class ImportExportButton: DeleteButton {
+                            idc = A3A_IDC_SETUP_IMPORTEXPORTBUTTON;
+                            text = $STR_antistasi_dialogs_setup_import_export;
+                            onButtonClick = "createDialog 'A3A_SetupImportExportDialog'";
+                            y = 22 * GRID_H;
+                        };
+                    };
+                };
                 // Game load options
                 class GameOptionsGroup : A3A_ControlsGroupNoScrollbars {
                     x = 126 * GRID_W;
@@ -241,25 +275,6 @@ class A3A_SetupDialog : A3A_TabbedDialog
                             h = 5 * GRID_H;
                         };
                     };
-                };
-
-                class DeleteButton: A3A_Button {
-                    idc = A3A_IDC_SETUP_DELETEBUTTON;
-                    text = $STR_antistasi_dialogs_setup_delete_game;
-                    onButtonClick = "['deleteGame'] call A3A_fnc_setupLoadgameTab";
-                    x = 126 * GRID_W;
-                    y = 84 * GRID_H;
-                    w = 30 * GRID_W;
-                    h = 5 * GRID_H;
-                };
-                class RenameButton: A3A_Button {
-                    idc = A3A_IDC_SETUP_RENAMEBUTTON;
-                    text = $STR_antistasi_dialogs_setup_rename_game;
-                    onButtonClick = "['renameGame'] call A3A_fnc_setupLoadgameTab";
-                    x = 126 * GRID_W;
-                    y = 91 * GRID_H;
-                    w = 30 * GRID_W;
-                    h = 5 * GRID_H;
                 };
             };
         };
@@ -596,7 +611,7 @@ class A3A_SetupDialog : A3A_TabbedDialog
                     x = 124 * GRID_W;
                     y = 34 * GRID_H;
                     w = 30 * GRID_W;
-                    h = 26 * GRID_H;
+                    h = 32 * GRID_H;
 
                     class controls {
                         class PresetNameLabel: A3A_SectionLabelRight {
@@ -626,23 +641,23 @@ class A3A_SetupDialog : A3A_TabbedDialog
                             w = 30 * GRID_W;
                             h = 4 * GRID_H;
                         };
-                        class PresetRenameButton: A3A_Button {
+                        class PresetRenameButton: PresetSaveButton {
                             idc = A3A_IDC_SETUP_PARAMSPRESETS_CSTM_RENAMEBUTTON;
                             text = $STR_antistasi_dialogs_setup_params_presets_rename_preset;
                             onButtonClick = "['renamePreset', []] call A3A_fnc_setupParamsTab";
-                            x = 0;
                             y = 16 * GRID_H;
-                            w = 30 * GRID_W;
-                            h = 4 * GRID_H;
                         };
-                        class PresetDeleteButton: A3A_Button {
+                        class PresetDeleteButton: PresetSaveButton {
                             idc = A3A_IDC_SETUP_PARAMSPRESETS_CSTM_DELETEBUTTON;
                             text = $STR_antistasi_dialogs_setup_params_presets_delete_preset;
                             onButtonClick = "['deletePreset', []] call A3A_fnc_setupParamsTab";
-                            x = 0;
                             y = 22 * GRID_H;
-                            w = 30 * GRID_W;
-                            h = 4 * GRID_H;
+                        };
+                        class PresetImportExportButton: PresetSaveButton {
+                            idc = A3A_IDC_SETUP_PARAMSPRESETS_CSTM_IMPORTEXPORTBUTTON;
+                            text = $STR_antistasi_dialogs_setup_params_presets_import_export;
+                            onButtonClick = "createDialog 'A3A_SetupImportExportParamsDialog'";
+                            y = 28 * GRID_H;
                         };
                     };
                 };
@@ -767,7 +782,7 @@ class A3A_SetupConfirmDialog
             x = DIALOG_X;
             y = DIALOG_Y;
             w = 80 * GRID_W;
-            h = 40 * GRID_H;
+            h = 44 * GRID_H;
         };
         class ConfirmText : A3A_TextMultiCenter
         {
@@ -775,7 +790,7 @@ class A3A_SetupConfirmDialog
             x = DIALOG_X + 4 * GRID_W;
             y = DIALOG_Y + 4 * GRID_H;
             w = 72 * GRID_W;
-            h = 20 * GRID_H;
+            h = 24 * GRID_H;
         };
         class CancelButton : A3A_Button
         {

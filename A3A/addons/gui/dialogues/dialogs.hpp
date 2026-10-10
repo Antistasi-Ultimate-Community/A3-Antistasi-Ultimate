@@ -15,3 +15,4 @@ Maintainer: DoomMetal
 #include "setupDialog.hpp"
 #include "teamLeaderBuilder.hpp"
 #include "extendersWarningDialog.hpp"
+#include "setupImportExportDialog.hpp"
