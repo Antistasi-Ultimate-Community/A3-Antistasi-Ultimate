@@ -317,4 +317,34 @@ class CfgMarkers
 		icon = QPATHTOFOLDER(Pictures\Markers\marker_e22_raf_ca.paa);
 		texture = QPATHTOFOLDER(Pictures\Markers\marker_e22_raf_ca.paa);
 	};
+	class a3u_flag_tke_ucn : flag_NATO 
+	{
+		name = "UCN";
+		icon = QPATHTOFOLDER(Pictures\Markers\marker_tke_ucn_ca.paa);
+		texture = QPATHTOFOLDER(Pictures\Markers\marker_tke_ucn_ca.paa);
+	};
+	class a3u_flag_tke_md : flag_NATO 
+	{
+		name = "MD";
+		icon = QPATHTOFOLDER(Pictures\Markers\marker_tke_md_ca.paa);
+		texture = QPATHTOFOLDER(Pictures\Markers\marker_tke_md_ca.paa);
+	};
+	class a3u_flag_tke_kmc : flag_NATO 
+	{
+		name = "KMC";
+		icon = QPATHTOFOLDER(Pictures\Markers\marker_tke_kmc_ca.paa);
+		texture = QPATHTOFOLDER(Pictures\Markers\marker_tke_kmc_ca.paa);
+	};
+	class a3u_flag_tke_wu : flag_NATO 
+	{
+		name = "KMC WU";
+		icon = QPATHTOFOLDER(Pictures\Markers\marker_tke_kmc_ca.paa);
+		texture = QPATHTOFOLDER(Pictures\Markers\marker_tke_kmc_ca.paa);
+	};
+	class a3u_flag_tke_fcf : flag_NATO 
+	{
+		name = "FCF";
+		icon = QPATHTOFOLDER(Pictures\Markers\marker_tke_fcf_ca.paa);
+		texture = QPATHTOFOLDER(Pictures\Markers\marker_tke_fcf_ca.paa);
+	};
 };
