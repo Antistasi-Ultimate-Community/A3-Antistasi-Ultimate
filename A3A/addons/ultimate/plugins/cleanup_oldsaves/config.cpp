@@ -1,3 +1,5 @@
+// ! Plugin disabled until new save system thoroughly tested
+/*
 #include "script_component.hpp"
 
 class CfgPatches {
@@ -10,3 +12,4 @@ class CfgPatches {
 };
 
 #include "CfgEventHandlers.hpp"
+*/
