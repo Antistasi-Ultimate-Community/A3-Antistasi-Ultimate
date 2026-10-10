@@ -182,7 +182,7 @@ switch (_mode) do
     {
         _params params [["_saveDataHM", createHashMap, [createHashMap]]];
 
-        // [key, valid types, allow empty]. Missing keys are errors; the loader cannot restore a campaign without these.
+        // [key, valid types, allow empty]
         // Required just means we need these *at minimum* just for functionality throughout the pre-game setup, import / export routines
         private _requiredKeys = [
             ["addonVics", [[]], true],
@@ -247,7 +247,6 @@ switch (_mode) do
             ["wurzelGarrison", [[]], true]
         ];
 
-        // Returns an error string, or "" if the entry is fine
         private _fnc_check = {
             params ["_key", "_validTypes", "_allowEmpty", "_isRequired"];
             private _value = _saveDataHM get _key;
