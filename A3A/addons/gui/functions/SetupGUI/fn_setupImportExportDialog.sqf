@@ -169,9 +169,118 @@ switch (_mode) do
             [localize "STR_antistasi_dialogs_setup_import_export", localize "STR_antistasi_dialogs_setup_ie_import_invalid"] call A3A_fnc_customHint;
         };
 
-        // TODO: Validate required keys in the imported save data (e.g., "campaignID", "name", etc)
+        (["validateSaveData", [_saveDataHM]] call A3A_fnc_setupImportExportDialog) params ["_invalid", "_errors"];
+        if (_invalid) exitWith {
+            { Error_1(format [localize "STR_antistasi_dialogs_setup_ie_import_error", _x]) } forEach _errors;
+            [localize "STR_antistasi_dialogs_setup_import_export", format [localize "STR_antistasi_dialogs_setup_ie_import_malformed", _errors joinString "<br/>"]] call A3A_fnc_customHint;
+        };
 
         ["registerSaveData", [_saveDataHM]] remoteExec ["A3A_fnc_setupImportExportDialog", 2];
+    };
+
+    case ("validateSaveData"):
+    {
+        _params params [["_saveDataHM", createHashMap, [createHashMap]]];
+
+        // [key, valid types, allow empty]. Missing keys are errors; the loader cannot restore a campaign without these.
+        // Required just means we need these *at minimum* just for functionality throughout the pre-game setup, import / export routines
+        private _requiredKeys = [
+            ["addonVics", [[]], true],
+            ["campaignID", [""], false],
+            ["dateX", [[]], false],
+            ["DLC", [[]], true],
+            ["factions", [[]], false],
+            ["gameMode", [0], true],
+            ["map", [""], false],
+            ["membersX", [[]], true], // ! save list treats a missing membersX as "no game"
+            ["name", [""], true],
+            ["params", [[]], false],
+            ["saveTime", [[]], false],
+            ["serverID", ["", false], true],
+            ["version", [""], false]
+        ];
+
+        // Optional here just means these aren't used in the pre-game setup, import / export routines
+        // Many / most of them are still required for the game to function correctly, so we at least check their types and content presence, *if* they exist in the save data
+        private _optionalKeys = [
+            ["aapostsFIA", [[]], true],
+            ["aggressionInvaders", [[]], false],
+            ["aggressionOccupants", [[]], false],
+            ["areInvadersDefeated", [false], true],
+            ["areOccupantsDefeated", [false], true],
+            ["atpostsFIA", [[]], true],
+            ["bombRuns", [0], true],
+            ["chopForest", [false], true],
+            ["constructionsX", [[]], true],
+            ["controlsSDK", [[]], true],
+            ["destroyedBuildings", [[]], true],
+            ["destroyedSites", [[]], true],
+            ["enemyResources", [[]], false],
+            ["garrison", [[]], false], // ? can this be empty on a freshly-loaded save if not close enough to any enemy outpost?
+            ["hmgpostsFIA", [[]], true],
+            ["HQKnowledge", [[]], false],
+            ["HR_Garage", [[]], false],
+            ["hr", [0], true],
+            ["jna_dataList", [[]], false],
+            ["killZones", [[]], true],
+            ["minesX", [[]], true],
+            ["mrkCSAT", [[]], true],
+            ["mrkSDK", [[]], true],
+            ["petrosPosition", [[]], false],
+            ["posHQ", [[]], false],
+            ["prestigeBLUFOR", [[]], false],
+            ["prestigeOPFOR", [[]], false],
+            ["rebelLoadouts", [createHashMap], true],
+            ["resourcesFIA", [0], true],
+            ["revealedZones", [[]], true],
+            ["rivalsLocationsMap", [createHashMap], true],
+            ["roadblocksFIA", [[]], true],
+            ["saveDataPlugins", [createHashMap], true],
+            ["skillFIA", [0], true],
+            ["staticsX", [[]], true],
+            ["supportPoints", [0], true],
+            ["traderPosition", [[]], true],
+            ["unlockedVehicleTypes", [[]], true],
+            ["usesWurzelGarrison", [false], true],
+            ["watchpostsFIA", [[]], true],
+            ["weather", [[]], false],
+            ["wurzelGarrison", [[]], true]
+        ];
+
+        // Returns an error string, or "" if the entry is fine
+        private _fnc_check = {
+            params ["_key", "_validTypes", "_allowEmpty", "_isRequired"];
+            private _value = _saveDataHM get _key;
+
+            if (isNil "_value") exitWith {
+                if (_isRequired) then { // key does not exist and is required; save data is malformed
+                    [true, format [localize "STR_antistasi_dialogs_setup_ie_import_missing_key", _key]]
+                } else { // key does not exist, but is not required; save data is ok
+                    [false]
+                };
+            };
+
+            if !(_value isEqualTypeAny _validTypes) exitWith { // key exists but its value is not the expected type; save data is malformed
+                [true, format [localize "STR_antistasi_dialogs_setup_ie_import_type_mismatch", _key, typeName _value, (_validTypes apply { typeName _x }) joinString "/"]]
+            };
+
+            if (!(_allowEmpty) && { count _value == 0 }) exitWith { // key exists and value is correct type, but value cannot be an empty string/array/hashmap; save data is malformed
+                [true, format [localize "STR_antistasi_dialogs_setup_ie_import_empty_key", _key]]
+            };
+            
+            [false]; // save data format is ok
+        };
+
+        private _errors = [];
+        {
+            _x params [["_invalid", false, [false]], ["_message", "", [""]]];
+            if (_invalid) then { _errors pushBack _message };
+        } forEach (
+            (_requiredKeys apply { (_x + [true]) call _fnc_check }) +
+            (_optionalKeys apply { (_x + [false]) call _fnc_check })
+        );
+
+        [_errors isNotEqualTo [], _errors];
     };
 
     case ("registerSaveData"):

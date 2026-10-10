@@ -4063,6 +4063,66 @@
                 <Chinesesimp>存档数据不是有效的 JSON。请检查数据后重试。</Chinesesimp>
                 <Turkish>Kayıt verisi geçerli bir JSON değil. Veriyi kontrol edip tekrar deneyin.</Turkish>
             </Key>
+            <Key ID="STR_antistasi_dialogs_setup_ie_import_malformed">
+                <Original>Malformed save data:&lt;br/&gt;%1</Original>
+                <Czech>Poškozená data uložení:&lt;br/&gt;%1</Czech>
+                <French>Données de sauvegarde malformées :&lt;br/&gt;%1</French>
+                <Italian>Dati di salvataggio malformati:&lt;br/&gt;%1</Italian>
+                <Korean>저장 데이터 형식이 올바르지 않습니다:&lt;br/&gt;%1</Korean>
+                <Russian>Некорректные данные сохранения:&lt;br/&gt;%1</Russian>
+                <Polish>Nieprawidłowe dane zapisu:&lt;br/&gt;%1</Polish>
+                <Portuguese>Dados de gravação malformados:&lt;br/&gt;%1</Portuguese>
+                <Chinesesimp>存档数据格式错误：&lt;br/&gt;%1</Chinesesimp>
+                <Turkish>Hatalı biçimlendirilmiş kayıt verisi:&lt;br/&gt;%1</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_ie_import_missing_key">
+                <Original>Missing key: "%1"</Original>
+                <Czech>Chybějící klíč: "%1"</Czech>
+                <French>Clé manquante : "%1"</French>
+                <Italian>Chiave mancante: "%1"</Italian>
+                <Korean>누락된 키: "%1"</Korean>
+                <Russian>Отсутствующий ключ: "%1"</Russian>
+                <Polish>Brakujący klucz: "%1"</Polish>
+                <Portuguese>Chave ausente: "%1"</Portuguese>
+                <Chinesesimp>缺少键: "%1"</Chinesesimp>
+                <Turkish>Eksik anahtar: "%1"</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_ie_import_empty_key">
+                <Original>Value for key "%1" is empty</Original>
+                <Czech>Hodnota pro klíč "%1" je prázdná</Czech>
+                <French>La valeur pour la clé "%1" est vide</French>
+                <Italian>Il valore per la chiave "%1" è vuoto</Italian>
+                <Korean>키 "%1"의 값이 비어 있습니다</Korean>
+                <Russian>Значение для ключа "%1" пусто</Russian>
+                <Polish>Wartość dla klucza "%1" jest pusta</Polish>
+                <Portuguese>O valor para a chave "%1" está vazio</Portuguese>
+                <Chinesesimp>键 "%1" 的值为空</Chinesesimp>
+                <Turkish>Anahtar "%1" için değer boş</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_ie_import_type_mismatch">
+                <Original>Value for key "%1" has type %2, expected %3</Original>
+                <Czech>Hodnota pro klíč "%1" má typ %2, očekáván typ %3</Czech>
+                <French>La valeur pour la clé "%1" a le type %2, type attendu %3</French>
+                <Italian>Il valore per la chiave "%1" ha il tipo %2, previsto %3</Italian>
+                <Korean>키 "%1"의 값은 %2 형식이며, 예상 형식은 %3입니다</Korean>
+                <Russian>Значение для ключа "%1" имеет тип %2, ожидаемый тип %3</Russian>
+                <Polish>Wartość dla klucza "%1" ma typ %2, oczekiwano typu %3</Polish>
+                <Portuguese>O valor para a chave "%1" tem o tipo %2, esperado %3</Portuguese>
+                <Chinesesimp>键 "%1" 的值类型为 %2，预期类型为 %3</Chinesesimp>
+                <Turkish>Anahtar "%1" için değer %2 türünde, beklenen tür %3</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_ie_import_error">
+                <Original>Error occurred while validating save data for import: %1</Original>
+                <Czech>Došlo k chybě při ověřování dat uložení pro import: %1</Czech>
+                <French>Une erreur s'est produite lors de la validation des données de sauvegarde pour l'importation : %1</French>
+                <Italian>Si è verificato un errore durante la convalida dei dati di salvataggio per l'importazione: %1</Italian>
+                <Korean>가져오기용 저장 데이터 검증 중 오류가 발생했습니다: %1</Korean>
+                <Russian>Произошла ошибка при проверке данных сохранения для импорта: %1</Russian>
+                <Polish>Wystąpił błąd podczas weryfikacji danych zapisu do importu: %1</Polish>
+                <Portuguese>Ocorreu um erro ao validar os dados de salvamento para importação: %1</Portuguese>
+                <Chinesesimp>验证导入存档数据时发生错误：%1</Chinesesimp>
+                <Turkish>İçe aktarma için kayıt verilerini doğrularken bir hata oluştu: %1</Turkish>
+            </Key>
             <Key ID="STR_antistasi_dialogs_setup_ie_import_params_invalid">
                 <Original>The parameter preset data is not valid JSON. Check the data and try again.</Original>
                 <Czech>Data přednastavení parametrů nejsou platný JSON. Zkontrolujte data a zkuste to znovu.</Czech>
