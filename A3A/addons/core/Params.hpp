@@ -2111,6 +2111,15 @@ class Params
         };
         default = 1;
     };
+    class A3A_showGroupBar: MiscBalanceParams
+    {
+        title = $STR_params_showGroupBar;
+        tooltip = $STR_params_showGroupBar_desc;
+        values[] = {0,1};
+        texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
+        default = 1;
+        lockInGame = 1;
+    };
     class loadoutArsenalDefaultOverride : MiscBalanceParams
     {
         title = $STR_params_loadoutArsenalDefaultOverride;
