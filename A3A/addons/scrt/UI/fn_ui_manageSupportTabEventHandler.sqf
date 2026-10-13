@@ -36,6 +36,10 @@ if(_mode isEqualTo "ADD") then {
                         supportMarkerOrigin setMarkerColorLocal "ColorBlue";
                         supportMarkerOrigin setMarkerTextLocal (localize "STR_support_supply_run_init");
                     };
+                    case ("SUPPLY_GROUND"): {
+                        supportMarkerOrigin setMarkerColorLocal "ColorBlue";
+                        supportMarkerOrigin setMarkerTextLocal (localize "STR_support_supply_run_ground");
+                    };
                     case ("SMOKE");
                     case ("FLARE"): {
                         supportMarkerOrigin setMarkerColorLocal "ColorGrey";
@@ -63,7 +67,7 @@ if(_mode isEqualTo "ADD") then {
                     };
                 };
             } else {
-                if !(supportType in ["SMOKE", "FLARE"]) then {
+                if !(supportType in ["SMOKE", "FLARE", "SUPPLY_GROUND"]) then {
                     if (supportType == "PARADROP") then {
                         private _nearMarker = [forbiddenParadropZones, _pos] call BIS_fnc_nearestPosition;
                         if ((getMarkerPos _nearMarker) distance2D _pos < 500) then {
