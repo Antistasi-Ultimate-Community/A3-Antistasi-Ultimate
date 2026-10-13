@@ -65,6 +65,29 @@ private _fnc_generateAndSaveUnitToTemplate = {
 
 private _fnc_generateAndSaveUnitsToTemplate = {
 	params ["_prefix", "_unitTemplates", "_loadoutData"];
+	
+	private _unitTemplatesHM = createHashMapFromArray _unitTemplates;
+	if (A3U_Zombies && {"Man" in keys _unitTemplatesHM}) then { // zombies enabled and this is a civilian template
+		_dataStore set ["attributeCivNonHuman", true];
+
+		private _specialUnits = [
+			"Zombie_O_Walker_Civ",
+			"Zombie_O_Shambler_Civ",
+			"Zombie_O_RC_Civ",
+			"Zombie_Special_OPFOR_Screamer",
+			"Zombie_Special_OPFOR_Leaper_2"
+		];
+
+		private _specialUnitsWeights = [
+			1.0,
+			0.8,
+			0.3,
+			0.15,
+			0.05
+		];
+		_unitTemplates pushBack ["Special", _unitTemplatesHM get "Man", [["baseClass", [_specialUnits, _specialUnitsWeights], false]]]
+	};
+
 	{
 		_x params ["_name", "_template", ["_traits", []], ["_unitProperties", []]];
 		private _finalName = format ["%1_%2", _prefix, _name];

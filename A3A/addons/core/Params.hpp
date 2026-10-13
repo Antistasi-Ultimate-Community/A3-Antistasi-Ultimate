@@ -3172,6 +3172,18 @@ class Params
         texts[] = {"25", "50", "75", "100", $STR_params_afk_disabled};
         default = -1;
     };
+    class A3U_Zombies : ExperimentalParams
+    {
+        title = $STR_params_A3U_Zombies;
+        tooltip = $STR_params_A3U_Zombies_desc;
+        values[] = {0, 1};
+        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        lockOnSave = 0;
+        lockInGame = 1;
+        lockCondition = "!(['WBK_ZombieCreatures'] call A3U_fnc_hasAddon);";
+        lockConditionTooltip = $STR_antistasi_dialogs_setup_zombies_param_locked;
+        default = 0;
+    };
 
     class DevelopmentParamsSpacer : AllParams
     {
