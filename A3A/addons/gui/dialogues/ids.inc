@@ -498,6 +498,8 @@ Maintainer: DoomMetal
 
 #define A3A_IDD_SETUPHQPOSDIALOG 6500
 
+#define A3A_IDC_SETUP_COALITIONCHECK 78201
+
 #define A3A_SETUP_CONFIGFILE configFile
 
 //teamLeaderBuilder

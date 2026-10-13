@@ -2,6 +2,9 @@
     Handles the initialization and tab switching on the setup dialog.
     This function should only be called from setupDialog onLoad and control activation EHs.
 
+
+Coalition integration: Stores and restores coalition configuration using the same setup-save flow as factions, DLC and addon vehicle selections.
+
 Environment: Scheduled for onLoad mode / Unscheduled for everything else unless specified
 
 Arguments:
@@ -14,8 +17,8 @@ Return Value:
 */
 
 #include "..\..\dialogues\ids.inc"
-#include "..\..\dialogues\defines.hpp"
-#include "..\..\dialogues\textures.inc"
+#include "\x\A3A\addons\gui\dialogues\defines.hpp"
+#include "\x\A3A\addons\gui\dialogues\textures.inc"
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
 
@@ -36,7 +39,7 @@ private _saveInfoCtrl = _display displayCtrl A3A_IDC_SETUP_SAVEINFOTEXT;
 
 private _saveBoxColumns = [
     ["gameID", "ID", 0, 9],
-    ["mapStr", localize "STR_antistasi_setup_dialog_table_map", 9, 25, "mapStrShort"],
+    ["mapStr", localize "STR_antistasi_setup_dialog_table_map", 9, 25],
     ["name", localize "STR_antistasi_setup_dialog_table_name", 25, 45],
     ["verStr", localize "STR_antistasi_setup_dialog_table_version", 70, 12],
     ["timeStr", localize "STR_antistasi_setup_dialog_table_time", 82, 15],
@@ -49,6 +52,7 @@ switch (_mode) do
     {
         _display setVariable ["savedFactions", [[], [], []]];
         _display setVariable ["savedParams", []];
+        _display setVariable ["savedFactionOverrideMask", 0];
         _listboxCtrl setVariable ["rowIndex", -1];
 
         private _platformIsWindows = A3A_setup_platform isEqualTo "Windows";
@@ -93,7 +97,105 @@ switch (_mode) do
         private _factions = [_saveData get "factions", _saveData get "addonVics", _saveData get "DLC"];
         if (isNil {_factions#0}) then { _factions = [[], [], []] };
         if ((cbChecked _newGameCtrl and !cbChecked _copyGameCtrl) or !_sameMap) then { _factions = [[], [], []] };
-        if (_factions isNotEqualTo (_display getVariable "savedFactions")) then {
+
+        private _coalitionEnabled = _saveData getOrDefault [
+            "coalitionEnabled",
+            false
+        ];
+
+        private _coalitionConfig = _saveData getOrDefault [
+            "coalitionConfig",
+            [[], [], []]
+        ];
+
+        if !(_coalitionConfig isEqualType []) then {
+            _coalitionConfig = [[], [], []];
+        };
+
+        if ((count _coalitionConfig) < 3) then {
+            _coalitionConfig pushBack [];
+        };
+
+        if ((cbChecked _newGameCtrl and !cbChecked _copyGameCtrl) or !_sameMap) then {
+            _coalitionEnabled = false;
+            _coalitionConfig = [[], [], []];
+        };
+
+        (_display displayCtrl A3A_IDC_SETUP_COALITIONCHECK)
+            cbSetChecked _coalitionEnabled;
+
+        missionNamespace setVariable [
+            "A3A_coalitionConfigNet",
+            _coalitionConfig,
+            true
+        ];
+
+        // setup-only override state.
+        //
+        // AU itself does not persist these checkboxes. Keep them as one scalar
+        // selector value so they follow exactly the same save path as factions.
+        //
+        // bit 0: Switch enemy sides
+        // bit 1: Override side limits
+        // bit 2: Override camo limits
+        private _overrideMask = _saveData getOrDefault [
+            "factionOverrideMask",
+            0
+        ];
+
+        if !(_overrideMask isEqualType 0) then {
+            _overrideMask = 0;
+        };
+
+        if ((cbChecked _newGameCtrl and !cbChecked _copyGameCtrl) or !_sameMap) then {
+            _overrideMask = 0;
+        };
+
+        private _oldOverrideMask = _display getVariable [
+            "savedFactionOverrideMask",
+            -1
+        ];
+
+        private _overridesChanged = _overrideMask != _oldOverrideMask;
+
+        if (_overridesChanged) then {
+            private _switchEnemySides = (_overrideMask mod 2) >= 1;
+            private _overrideSideLimits = (floor (_overrideMask / 2) mod 2) >= 1;
+            private _overrideCamoLimits = (floor (_overrideMask / 4) mod 2) >= 1;
+
+            (_display displayCtrl A3A_IDC_SETUP_SWITCHENEMYCHECK)
+                cbSetChecked _switchEnemySides;
+
+            (_display displayCtrl A3A_IDC_SETUP_ANYENEMYCHECK)
+                cbSetChecked _overrideSideLimits;
+
+            (_display displayCtrl A3A_IDC_SETUP_IGNORECAMOCHECK)
+                cbSetChecked _overrideCamoLimits;
+
+            _display setVariable [
+                "savedFactionOverrideMask",
+                _overrideMask
+            ];
+
+            missionNamespace setVariable [
+                "A3A_factionOverrideMaskNet",
+                _overrideMask,
+                true
+            ];
+
+            diag_log format [
+                "[A3A Faction Overrides] mask=%1 switch=%2 sideLimits=%3 camo=%4",
+                _overrideMask,
+                _switchEnemySides,
+                _overrideSideLimits,
+                _overrideCamoLimits
+            ];
+        };
+
+        if (
+            _factions isNotEqualTo (_display getVariable "savedFactions")
+            || {_overridesChanged}
+        ) then {
             _display setVariable ["savedFactions", _factions];
             ["fillFactions"] call A3A_fnc_setupFactionsTab;
             ["fillContent"] call A3A_fnc_setupFactionsTab;
@@ -220,14 +322,278 @@ switch (_mode) do
         _saveData set ["addonVics", _contentData#0];
         _saveData set ["DLC", _contentData#1];
 
+        // selector metadata. This follows AU's own pattern:
+        // put it into A3A_saveData at start, then saveLoop persists it.
+        private _coalitionEnabled = missionNamespace getVariable [
+            "A3A_coalitionEnabledNet",
+            cbChecked (_display displayCtrl A3A_IDC_SETUP_COALITIONCHECK)
+        ];
+
+        private _coalitionConfig = missionNamespace getVariable [
+            "A3A_coalitionConfigNet",
+            [[], [], []]
+        ];
+
+        if ((count _coalitionConfig) < 3) then {
+            _coalitionConfig pushBack [];
+        };
+
+        _saveData set [
+            "coalitionEnabled",
+            _coalitionEnabled
+        ];
+
+        _saveData set [
+            "coalitionConfig",
+            _coalitionConfig
+        ];
+
+        private _overrideMask = 0;
+
+        if (cbChecked (_display displayCtrl A3A_IDC_SETUP_SWITCHENEMYCHECK)) then {
+            _overrideMask = _overrideMask + 1;
+        };
+
+        if (cbChecked (_display displayCtrl A3A_IDC_SETUP_ANYENEMYCHECK)) then {
+            _overrideMask = _overrideMask + 2;
+        };
+
+        if (cbChecked (_display displayCtrl A3A_IDC_SETUP_IGNORECAMOCHECK)) then {
+            _overrideMask = _overrideMask + 4;
+        };
+
+        _saveData set [
+            "factionOverrideMask",
+            _overrideMask
+        ];
+
+        missionNamespace setVariable [
+            "A3A_factionOverrideMaskNet",
+            _overrideMask,
+            true
+        ];
+
+        diag_log format [
+            "[A3A Coalition Save] setup save enabled=%1 factions=%2 config=%3 overrideMask=%4",
+            _coalitionEnabled,
+            _factions,
+            _coalitionConfig,
+            _overrideMask
+        ];
+
         private _invEnabled = ctrlEnabled A3A_IDC_SETUP_INVADERSLISTBOX;
         private _rivEnabled = ctrlEnabled A3A_IDC_SETUP_RIVALSLISTBOX;
+
+
+        // ------------------------------------------------------------
+        // Normal faction display names
+        // ------------------------------------------------------------
+
+        private _rebelName =
+            getText (
+                A3A_SETUP_CONFIGFILE
+                / "A3A"
+                / "Templates"
+                / (_factions # 2)
+                / "name"
+            );
+
+        private _civName =
+            getText (
+                A3A_SETUP_CONFIGFILE
+                / "A3A"
+                / "Templates"
+                / (_factions # 3)
+                / "name"
+            );
+
+        private _occMainName =
+            getText (
+                A3A_SETUP_CONFIGFILE
+                / "A3A"
+                / "Templates"
+                / (_factions # 0)
+                / "name"
+            );
+
+        private _invMainName =
+            getText (
+                A3A_SETUP_CONFIGFILE
+                / "A3A"
+                / "Templates"
+                / (_factions # 1)
+                / "name"
+            );
+
+        private _rivalName =
+            getText (
+                A3A_SETUP_CONFIGFILE
+                / "A3A"
+                / "Templates"
+                / (_factions # 4)
+                / "name"
+            );
+
+
+        // ------------------------------------------------------------
+        // Coalition data
+        //
+        // Format:
+        // [
+        //     OCC extras,
+        //     INV extras,
+        //     RIV extras
+        // ]
+        //
+        // Extra entry:
+        // [configName, templatePath]
+        // ------------------------------------------------------------
+
+        private _coalitionData = missionNamespace getVariable [
+            "A3A_coalitionConfigNet",
+            [[], [], []]
+        ];
+
+        private _occExtras = _coalitionData param [
+            0,
+            []
+        ];
+
+        private _invExtras = _coalitionData param [
+            1,
+            []
+        ];
+
+        private _rivExtras = _coalitionData param [
+            2,
+            []
+        ];
+
+
+        // ------------------------------------------------------------
+        // Resolve configName -> display name
+        // ------------------------------------------------------------
+
+        private _fnc_getFactionDisplayName = {
+            params ["_configName"];
+
+            private _cfg =
+                A3A_SETUP_CONFIGFILE
+                / "A3A"
+                / "Templates"
+                / _configName;
+
+            if (isClass _cfg) exitWith {
+                getText (_cfg / "name")
+            };
+
+            _configName
+        };
+
+
+        // ------------------------------------------------------------
+        // Build OCC list
+        // ------------------------------------------------------------
+
+        private _occNames = [
+            _occMainName
+        ];
+
+        {
+            _x params [
+                "_configName",
+                ["_templatePath", ""]
+            ];
+
+            private _displayName = [
+                _configName
+            ] call _fnc_getFactionDisplayName;
+
+            _occNames pushBackUnique _displayName;
+
+        } forEach _occExtras;
+
+
+        // ------------------------------------------------------------
+        // Build INV list
+        // ------------------------------------------------------------
+
+        private _invNames = [
+            _invMainName
+        ];
+
+        {
+            _x params [
+                "_configName",
+                ["_templatePath", ""]
+            ];
+
+            private _displayName = [
+                _configName
+            ] call _fnc_getFactionDisplayName;
+
+            _invNames pushBackUnique _displayName;
+
+        } forEach _invExtras;
+
+        private _rivNames = [
+            _rivalName
+        ];
+
+        {
+            _x params [
+                "_configName",
+                ["_templatePath", ""]
+            ];
+
+            _rivNames pushBackUnique (
+                [_configName] call _fnc_getFactionDisplayName
+            );
+
+        } forEach _rivExtras;
+
+
+        // ------------------------------------------------------------
+        // Convert to confirmation text
+        // ------------------------------------------------------------
+
+        private _occDisplay =
+            _occNames joinString ", ";
+
+        private _invDisplay =
+            _invNames joinString ", ";
+
+        private _rivDisplay =
+            _rivNames joinString ", ";
+
+
+        // ------------------------------------------------------------
+        // Build same array AU expects
+        // ------------------------------------------------------------
+
         private _factionNames = [
-            getText (A3A_SETUP_CONFIGFILE/"A3A"/"Templates"/_factions#2/"name"),
-            getText (A3A_SETUP_CONFIGFILE/"A3A"/"Templates"/_factions#3/"name"),
-            getText (A3A_SETUP_CONFIGFILE/"A3A"/"Templates"/_factions#0/"name"),
-            [(localize "STR_params_afk_disabled"), getText (A3A_SETUP_CONFIGFILE/"A3A"/"Templates"/_factions#1/"name")] select (_invEnabled),
-            [(localize "STR_params_afk_disabled"), getText (A3A_SETUP_CONFIGFILE/"A3A"/"Templates"/_factions#4/"name")] select (_rivEnabled)
+
+            // Rebels
+            _rebelName,
+
+            // Civilians
+            _civName,
+
+            // Occupants
+            _occDisplay,
+
+            // Invaders
+            [
+                localize "STR_params_afk_disabled",
+                _invDisplay
+            ] select _invEnabled,
+
+            // Rivals
+            [
+                localize "STR_params_afk_disabled",
+                _rivDisplay
+            ] select _rivEnabled
+
         ];
         _confirmText = _confirmText + endl + format [localize "STR_antistasi_dialogs_setup_confirm_factions", _factionNames#0, _factionNames#1, _factionNames#2, _factionNames#3, _factionNames#4];
 

@@ -4334,6 +4334,28 @@
                 <Portuguese>Pesquisa de parâmetros</Portuguese>
                 <Chinesesimp>参数搜索</Chinesesimp>
             </Key>
+            <Key ID="STR_antistasi_dialogs_setup_enable_faction_coalitions">
+                <Original>Enable faction coalitions</Original>
+                <Czech>Povolit koalice frakcí</Czech>
+                <French>Activer les coalitions de factions</French>
+                <Italian>Abilita le coalizioni tra fazioni</Italian>
+                <Korean>세력 연합 활성화</Korean>
+                <Russian>Включить коалиции фракций</Russian>
+                <Polish>Włącz koalicje frakcji</Polish>
+                <Portuguese>Ativar coalizões de facções</Portuguese>
+                <Chinesesimp>啟用派系聯盟</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_enable_faction_coalitions_tooltip">
+                <Original>Allow multiple Occupant and Invader factions. (Hold CTRL/SHIFT to select multiple factions.)</Original>
+                <Czech>Umožněte účast více frakcí okupantů a vetřelců. (Pro výběr více frakcí podržte klávesu CTRL nebo SHIFT.)</Czech>
+                <French>Autoriser plusieurs factions d'occupants et d'envahisseurs. (Maintenez la touche Ctrl ou Maj enfoncée pour sélectionner plusieurs factions.)</French>
+                <Italian>Consenti più fazioni di Occupanti e Invasori. (Tieni premuto CTRL/SHIFT per selezionare più fazioni.)</Italian>
+                <Korean>여러 점령군 및 침략군 세력을 허용합니다. (CTRL/SHIFT를 누른 채로 여러 세력을 선택하세요.)</Korean>
+                <Russian>Разрешить использование нескольких фракций оккупантов и захватчиков. (Удерживайте CTRL или SHIFT, чтобы выбрать несколько фракций.)</Russian>
+                <Polish>Zezwalaj na wiele frakcji Okupantów i Najeźdźców. (Przytrzymaj CTRL/SHIFT, aby wybrać wiele frakcji).</Polish>
+                <Portuguese>Permitir múltiplas facções de Ocupantes e Invasores. (Mantenha premida a tecla CTRL/SHIFT para seleccionar várias facções.)</Portuguese>
+                <Chinesesimp>允許存在多個佔領者和入侵者陣營。 （按住 CTRL/SHIFT 鍵可選擇多個陣營。）</Chinesesimp>
+            </Key>
         </Container>
         <Container name="setup_dialog_table">
             <Key ID="STR_antistasi_setup_dialog_table_map">

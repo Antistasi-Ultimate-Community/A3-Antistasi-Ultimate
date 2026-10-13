@@ -8,7 +8,10 @@
  *    28/07/2023: For example, adding a webknights elite to a squad of OPTRE elites will cause the OPTRE elites to not fire at all. Some mods don't do this, some do!
  *    28/07/2023: Make sure you test it if you do. Helps avoid issues like "Why does half of the squad suddenly become pacifists?"
  *    This version overwrites the Anti Plus version of the createUnit command! hooray!
- * Params:
+ *    03/10/2026: Coalition integration:
+ *    Generated coalition unit types retain a direct mapping to the faction
+ *    that registered them. The mapping is used only for random identity generation;
+ *    normal AU unit creation remains unchanged.* Params:
  *    _group - Group to add the AI: Group
  *    _type - A classname in CfgVehicles, or a unit loadout array: String or Array
  *    _position - Position to create at: Position, Position2D, Object, Group
@@ -22,6 +25,30 @@
 */
 
 params ["_group", "_type", "_position", ["_markers", []], ["_placement", 0], ["_special", "NONE"]];
+#include "..\..\script_component.hpp"
+
+private _requestedType = _type;
+
+_group setVariable [
+    "A3A_coalitionPrefix",
+    "riv",
+    false
+];
+
+if ((_group getVariable ["A3A_coalitionTag", ""]) == "") then {
+    [
+        _group,
+        "riv",
+        [_type]
+    ] call A3A_fnc_selectCoalitionForGroup;
+};
+
+_type = [
+    _group,
+    "riv",
+    _type
+] call A3A_fnc_resolveCoalitionType;
+
 
 private _unitDefinition = A3A_customUnitTypes getVariable [_type, []];
 
@@ -62,6 +89,46 @@ if !(_unitDefinition isEqualTo []) exitWith {
 	    _unit setUnitLoadout selectRandom _loadouts;
     };
 	_unit setVariable ["unitType", _type, true];
+    _unit setVariable ["A3A_originalUnitType", _requestedType, true];
+    _unit setVariable [
+        "A3A_coalitionPrefix",
+        "riv",
+        true
+    ];
+    _unit setVariable [
+        "A3A_coalitionTag",
+        _group getVariable ["A3A_coalitionTag", "BASE"],
+        true
+    ];
+
+    // RivalCreateUnit bypasses normal A3A_fnc_createUnit identity creation.
+    // Resolve identity directly from the exact generated coalition type.
+    private _identityFaction = A3A_faction_riv;
+
+    if (!isNil "A3A_coalitionTypeFactionMap") then {
+        private _coalitionFaction =
+            A3A_coalitionTypeFactionMap getOrDefault [
+                _type,
+                createHashMap
+            ];
+
+        if (
+            _coalitionFaction isEqualType createHashMap
+            && {count _coalitionFaction > 0}
+        ) then {
+            _identityFaction = _coalitionFaction;
+        };
+    };
+
+    private _identity = [
+        _identityFaction,
+        _type
+    ] call A3A_fnc_createRandomIdentity;
+
+    [
+        _unit,
+        _identity
+    ] call A3A_fnc_setIdentity;
 
 	//it's very fragile and non-extensible (adding second bool or string value into template will break this)
 	{
@@ -85,4 +152,11 @@ if !(_unitDefinition isEqualTo []) exitWith {
 
 private _unit = _group createUnit [_type, _position, _markers, _placement, _special];
 _unit setVariable ["unitType", _type, true];
+_unit setVariable ["A3A_originalUnitType", _requestedType, true];
+_unit setVariable ["A3A_coalitionPrefix", "riv", true];
+_unit setVariable [
+    "A3A_coalitionTag",
+    _group getVariable ["A3A_coalitionTag", "BASE"],
+    true
+];
 _unit

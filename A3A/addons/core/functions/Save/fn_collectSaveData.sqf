@@ -1,16 +1,41 @@
 /*
-
-
-    Warning: Destroys A3A_saveTarget so shouldn't be used after a game is started
-*/
-
+ *  Warning: Destroys A3A_saveTarget so shouldn't be used after a game is started
+ *
+ *  Coalition integration:
+ *    Coalition setup metadata is included in the data returned to the setup
+ *    screen so a campaign can restore its faction selections.
+ */
 // Optional (new) save vars used by the selector
-private _optionalVars = ["name", "version", "saveTime", "ended", "params", "factions", "DLC", "addonVics"];
+private _optionalVars = [
+    "name",
+    "version",
+    "saveTime",
+    "ended",
+    "params",
+    "factions",
+    "DLC",
+    "addonVics",
+    "coalitionEnabled",
+    "coalitionConfig",
+    "factionOverrideMask"
+];
 
 private _fnc_gameMissing = { isNil {"membersX" call A3A_fnc_returnSavedStat} };
 private _saveData = [];
 private _campaignIDs = [];
 private _serverID = profileNameSpace getVariable ["ss_ServerID",""];
+
+private _fnc_logCoalitionRead = {
+    params ["_game"];
+
+    diag_log format [
+        "[A3A Coalition Save READ] gameID='%1' enabled=%2 config=%3 overrides=%4",
+        _game getOrDefault ["gameID", ""],
+        _game getOrDefault ["coalitionEnabled", false],
+        _game getOrDefault ["coalitionConfig", [[], [], []]],
+        _game getOrDefault ["factionOverrideMask", [false, false, false]]
+    ];
+};
 
 // Old Plus saves
 private _saveList = [profileNamespace getVariable "antistasiUltimate2SavedGames"] param [0, [], [[]]];
@@ -23,6 +48,7 @@ private _saveList = [profileNamespace getVariable "antistasiUltimate2SavedGames"
 
     private _game = createHashMapFromArray [["serverID", _serverID], ["gameID", _cid], ["map", _map]];
     { _game set [_x, _x call A3A_fnc_returnSavedStat] } forEach _optionalVars;
+    [_game] call _fnc_logCoalitionRead;
     _saveData pushBack _game;
 
 } forEach _saveList;
@@ -44,6 +70,7 @@ private _saveList2 = [missionProfileNamespace getVariable "antistasiUltimate2Sav
 
     private _game = createHashMapFromArray [["serverID", false], ["gameID", _cid], ["map", _map]];
     { _game set [_x, _x call A3A_fnc_returnSavedStat] } forEach _optionalVars;
+    [_game] call _fnc_logCoalitionRead;
     _saveData pushBack _game;
 
 } forEach _saveList2;

@@ -307,6 +307,7 @@ class A3A_SetupDialog : A3A_TabbedDialog
                 };
                 class OccupantsListBox: RebelsListBox {
                     idc = A3A_IDC_SETUP_OCCUPANTSLISTBOX;
+                    style = 32; // LB_MULTI
                     x = 44 * GRID_W;
                     h = 88 * GRID_H;
                 };
@@ -318,6 +319,7 @@ class A3A_SetupDialog : A3A_TabbedDialog
                 };
                 class InvadersListBox: RebelsListBox {
                     idc = A3A_IDC_SETUP_INVADERSLISTBOX;
+                    style = 32; // LB_MULTI
                     x = 84 * GRID_W;
                 };
 
@@ -329,6 +331,7 @@ class A3A_SetupDialog : A3A_TabbedDialog
                 };
                 class RivalsListBox: RebelsListBox {
                     idc = A3A_IDC_SETUP_RIVALSLISTBOX;
+                    style = 32; // LB_MULTI
                     x = 84 * GRID_W;
                     y = 54 * GRID_H;
                     h = 42 * GRID_H;
@@ -340,7 +343,7 @@ class A3A_SetupDialog : A3A_TabbedDialog
                     x = 124 * GRID_W;
                     y = 4 * GRID_H;
                     w = 32 * GRID_W;
-                    h = 20 * GRID_H;
+                    h = 24 * GRID_H;
 
                     class controls {
                         class Label: A3A_SectionLabelRight {
@@ -356,7 +359,7 @@ class A3A_SetupDialog : A3A_TabbedDialog
                             x = 0;
                             y = 4 * GRID_H;
                             w = 32 * GRID_W;
-                            h = 16 * GRID_H;
+                            h = 20 * GRID_H;
                         };
                         class SwitchEnemyCheck: A3A_Checkbox {
                             idc = A3A_IDC_SETUP_SWITCHENEMYCHECK;
@@ -398,13 +401,24 @@ class A3A_SetupDialog : A3A_TabbedDialog
                             text = $STR_antistasi_dialogs_setup_show_missing_mods;
                             y = 16 * GRID_H;
                         };
+
+                        class CoalitionCheck: SwitchEnemyCheck {
+                            idc = A3A_IDC_SETUP_COALITIONCHECK;
+                            onCheckedChanged = "['coalitionToggle', _this] call A3A_fnc_setupFactionsTab";
+                            y = 20 * GRID_H;
+                        };
+                        class CoalitionText: SwitchEnemyText {
+                            text = $STR_antistasi_dialogs_setup_enable_faction_coalitions;
+                            y = 20 * GRID_H;
+                            tooltip = $STR_antistasi_dialogs_setup_enable_faction_coalitions_tooltip;
+                        };
                     };
                 };                
 
                 // DLC Content
                 class DLCContentGroup : ModifiersGroup {
                     idc = A3A_IDC_SETUP_DLCCONTENT;
-                    y = 26 * GRID_H;
+                    y = 30 * GRID_H;
                     h = 22 * GRID_H;
 
                     class controls : controls {
@@ -429,8 +443,8 @@ class A3A_SetupDialog : A3A_TabbedDialog
                 // Addon Content
                 class AddonContentGroup : DLCContentGroup {
                     idc = A3A_IDC_SETUP_ADDONCONTENT;
-                    y = 50 * GRID_H;
-                    h = 46 * GRID_H;
+                    y = 54 * GRID_H;
+                    h = 42 * GRID_H;
 
                     class controls : controls {
                         class Label: Label {
@@ -439,11 +453,11 @@ class A3A_SetupDialog : A3A_TabbedDialog
                         };
                         class Background: Background {
                             idc = A3A_IDC_SETUP_ADDONCONTENT_BG;
-                            h = 42 * GRID_H;
+                            h = 38 * GRID_H;
                         };
                         class Box: Box {
                             idc = A3A_IDC_SETUP_ADDONCONTENT_BOX;
-                            h = 42 * GRID_H;
+                            h = 38 * GRID_H;
                         };
                     };
                 };

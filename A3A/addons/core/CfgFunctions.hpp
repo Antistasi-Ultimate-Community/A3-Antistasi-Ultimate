@@ -233,6 +233,22 @@ class CfgFunctions
             class terrainSmoother {};
         };
 
+        class Coalition
+        {
+            file = QPATHTOFOLDER(functions\Coalition);
+
+            class initCoalition
+            {
+                preInit = 1;
+            };
+
+            class loadCoalitionFaction {};
+            class loadCoalitionForSide {};
+            class resolveCoalitionType {};
+            class selectCoalitionForGroup {};
+            class mergeCoalitionVehicles {};
+        };
+
         class Collections {
             file = QPATHTOFOLDER(functions\Collections);
             class getNestedObject {};
