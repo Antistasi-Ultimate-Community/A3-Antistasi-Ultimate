@@ -192,11 +192,10 @@ switch (_mode) do
         
         // Should be array of [varname, value] pairs
         // Written by setupLoadgameTab
-		private _savedParams = _display getVariable ["savedParams", []];
-        private _savedParamsHM = createHashMapFromArray _savedParams;
+		private _savedParams = _display getVariable ["savedParams", createHashMap];
+        private _saveExists = !isNil {serverInitDone} || {keys _savedParams isNotEqualTo [] && {!cbChecked _newGameCtrl || cbChecked _copyGameCtrl}};
 
         {
-            private _saveExists = !isNil {serverInitDone} || {_savedParams isNotEqualTo [] && {!cbChecked _newGameCtrl || cbChecked _copyGameCtrl}};
             private _thisCtrl = _x;
             private _cfg = _x getVariable "config";
             private _vals = getArray (_cfg/"values");
@@ -207,7 +206,7 @@ switch (_mode) do
             // clear old saved value if not in config options
             if (lbSize _x > count _vals) then { _x lbDelete (lbSize _x - 1) };
 
-            private _saved = if (isNil "_presetParamsHM" || {_lockOnSave && _saveExists}) then { _savedParamsHM } else { _presetParamsHM } getOrDefault [configName _cfg, getNumber (_cfg/"default")];
+            private _saved = if (isNil "_presetParamsHM" || {_lockOnSave && _saveExists}) then { _savedParams } else { _presetParamsHM } getOrDefault [configName _cfg, getNumber (_cfg/"default")];
             if (_saved isEqualType true) then { _saved = [0, 1] select _saved };            // bool -> number conversion
 
             private "_index";
@@ -231,12 +230,11 @@ switch (_mode) do
 
     case ("getParams"):
     {
-        private _params = (_paramsTable getVariable "allCtrls") apply {
+        createHashMapFromArray(_paramsTable getVariable "allCtrls" apply {
             private _cfg = _x getVariable "config";
             private _val = _x lbValue lbCurSel _x;
             [configName _cfg, _val];
-        };
-        _params;
+        });
     };
 
     case ("getPresetParams"):

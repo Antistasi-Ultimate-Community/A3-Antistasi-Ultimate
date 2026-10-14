@@ -48,7 +48,7 @@ switch (_mode) do
     case ("onLoad"):
     {
         _display setVariable ["savedFactions", [[], [], []]];
-        _display setVariable ["savedParams", []];
+        _display setVariable ["savedParams", createHashMap];
         _listboxCtrl setVariable ["rowIndex", -1];
 
         private _platformIsWindows = A3A_setup_platform isEqualTo "Windows";
@@ -100,8 +100,8 @@ switch (_mode) do
         };
 
         // If it's not a new game or load params or copy game is checked, load params
-        private _params = _saveData get "params";
-        if (isNil "_params") then { _params = [] };               // getOrDefault doesn't work because input code may set nils
+        private _params = if ("params" in _saveData) then [{ _saveData get "params" }, { createHashMap }];
+
         if ((_sameMap and !cbChecked _newGameCtrl) or cbChecked _copyGameCtrl or cbChecked _oldParamsCtrl) then {
             if (count _params > 0 and _params isNotEqualTo (_display getVariable "savedParams")) then { 
                 _display setVariable ["savedParams", _params];
@@ -109,7 +109,7 @@ switch (_mode) do
             };
         } else {
             if (cbChecked _newGameCtrl && {!(_display getVariable ["paramsChangedSinceReset", false])}) then { 
-                _display setVariable ["savedParams", []];
+                _display setVariable ["savedParams", createHashMap];
                 ["fillParams"] call A3A_fnc_setupParamsTab;
             };
         };
@@ -232,8 +232,8 @@ switch (_mode) do
         _confirmText = _confirmText + endl + format [localize "STR_antistasi_dialogs_setup_confirm_factions", _factionNames#0, _factionNames#1, _factionNames#2, _factionNames#3, _factionNames#4];
 
         // Params tab: Array of [name, value]
-        private _paramsData = ["getParams"] call A3A_fnc_setupParamsTab;
-        _saveData set ["params", _paramsData];
+        private _savedParams = ["getParams"] call A3A_fnc_setupParamsTab;
+        _saveData set["params", _savedParams];
 
         // Set data & function for confirmation, then open confirmation box
         _display setVariable ["confirmData", [_confirmText, A3A_fnc_setupLoadgameTab, "startGameConfirm"]];
