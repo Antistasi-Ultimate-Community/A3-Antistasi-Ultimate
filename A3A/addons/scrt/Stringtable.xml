@@ -74,6 +74,46 @@
                 <Chinesesimp>医疗箱</Chinesesimp>
                 <Turkish>Tıbbi Malzeme Kutusu</Turkish>
             </Key>
+            <Key ID="STR_A3AP_buyvehdialog_BuildBoxExtraSmall">
+                <Original>Build Box (Extra Small)</Original>
+                <Russian>Строительный ящик (Очень малый)</Russian>
+                <Korean>빌드 박스 (특소형)</Korean>
+                <French>Caisse de construction (Très petite)</French>
+                <Chinesesimp>建造箱 (超小型)</Chinesesimp>
+                <Turkish>İnşaat Kutusu (Çok Küçük)</Turkish>
+            </Key>
+            <Key ID="STR_A3AP_buyvehdialog_BuildBoxSmall">
+                <Original>Build Box (Small)</Original>
+                <Russian>Строительный ящик (Малый)</Russian>
+                <Korean>빌드 박스 (소형)</Korean>
+                <French>Caisse de construction (Petite)</French>
+                <Chinesesimp>建造箱 (小型)</Chinesesimp>
+                <Turkish>İnşaat Kutusu (Küçük)</Turkish>
+            </Key>
+            <Key ID="STR_A3AP_buyvehdialog_BuildBoxMeduim">
+                <Original>Build Box (Medium)</Original>
+                <Russian>Строительный ящик (Средний)</Russian>
+                <Korean>빌드 박스 (중형)</Korean>
+                <French>Caisse de construction (Moyenne)</French>
+                <Chinesesimp>建造箱 (中型)</Chinesesimp>
+                <Turkish>İnşaat Kutusu (Orta)</Turkish>
+            </Key>
+            <Key ID="STR_A3AP_buyvehdialog_BuildBoxLarge">
+                <Original>Build Box (Large)</Original>
+                <Russian>Строительный ящик (Большой)</Russian>
+                <Korean>빌드 박스 (대형)</Korean>
+                <French>Caisse de construction (Grande)</French>
+                <Chinesesimp>建造箱 (大型)</Chinesesimp>
+                <Turkish>İnşaat Kutusu (Büyük)</Turkish>
+            </Key>
+            <Key ID="STR_A3AP_buyvehdialog_BuildBoxHumongous">
+                <Original>Build Box (Humongous)</Original>
+                <Russian>Строительный ящик (Огромный)</Russian>
+                <Korean>빌드 박스 (대형)</Korean>
+                <French>Caisse de construction (Grande)</French>
+                <Chinesesimp>建造箱 (大型)</Chinesesimp>
+                <Turkish>İnşaat Kutusu (Dev)</Turkish>
+            </Key>
         </Container>
         <Container name="arsenal">
             <Key ID="STR_A3AP_vehArsenal_desc">
@@ -6397,11 +6437,11 @@
                 <Turkish>Oyuncuların YZ askeri almasına izin ver</Turkish>
             </Key>
             <Key ID="STR_params_playerRecruitAI_desc">
-                <Original>Allow players to recruit AI units. When enabled, players can recruit surrendered enemy AI to their faction, either increasing HR or adding personnel to the player's squad.</Original>
-                <Russian>Разрешить игрокам нанимать ИИ-бойцов. При включении игроки могут нанимать сдавшихся врагов ИИ в свою фракцию, либо увеличивая ЛР, либо добавляя личный состав в отряд игрока.</Russian>
-                <Chinesesimp>允许玩家招募人工智能单位。启用时，玩家可以将投降的敌方人工智能招募到其阵营，增加人力资源或向玩家分队增加人员。</Chinesesimp>
-                <Korean>플레이어가 AI 유닛을 모집할 수 있도록 허용합니다. 활성화하면 플레이어는 항복한 적 AI를 자신의 진영으로 모집할 수 있으며, 인적 자원을 늘리거나 플레이어 분대에 인원을 추가할 수 있습니다.</Korean>
-                <French>Autoriser les joueurs à recruter des unités IA. Lorsqu'elle est activée, les joueurs peuvent recruter des IA ennemies reddues à leur faction, augmentant soit les RH, soit ajoutant du personnel à l'escouade du joueur.</French>
+                <Original>Allow players to recruit AI units. When enabled, players can recruit friendly AI at the rebel base from the flagpole, and attempt to recruit surrendered enemy AI to their faction, either increasing HR or adding personnel to the player's squad.</Original>
+                <Russian>Разрешить игрокам нанимать бойцов ИИ. При включении игроки могут нанимать дружественных бойцов ИИ на базе повстанцев у флагштока, а также пытаться завербовать сдавшихся вражеских бойцов ИИ в свою фракцию, пополняя людские ресурсы или добавляя бойцов в отряд игрока.</Russian>
+                <Chinesesimp>允许玩家招募AI单位。启用后，玩家可在叛军基地的旗杆处招募友方AI，也可尝试将投降的敌方AI招募到己方阵营，从而增加人力资源或为玩家小队增添人员。</Chinesesimp>
+                <Korean>플레이어가 AI 유닛을 모집할 수 있도록 허용합니다. 활성화하면 플레이어는 반군 기지의 깃대에서 아군 AI를 모집하고, 항복한 적 AI를 자신의 진영으로 영입해 인적 자원을 늘리거나 플레이어 분대에 추가할 수 있습니다.</Korean>
+                <French>Autoriser les joueurs à recruter des unités IA. Une fois cette option activée, les joueurs peuvent recruter des IA alliées au drapeau de la base rebelle et tenter de rallier les IA ennemies qui se sont rendues à leur faction, afin d'augmenter les ressources humaines ou d'ajouter des effectifs à l'escouade du joueur.</French>
             </Key>
             <Key ID="STR_params_enableVehicleAutoLock">
                 <Original>Enable Enemy Vehicle Locks</Original>
@@ -7981,6 +8021,21 @@
                 <Chinesesimp>一般敌方 AI 技能修改器。总技能还受叛军训练等级的影响，且不能超过 Arma 3 server.cfg 中配置的 AI 技能。</Chinesesimp>
                 <Korean>일반 적 인공지능 숙련도 수정자. 총 숙련도는 반군 훈련 수준의 영향을 받으며 Arma 3 server.cfg에서 구성된 AI 숙련도를 초과할 수 없습니다.</Korean>
                 <French>Modificateur général de compétence de l'IA ennemie. La compétence totale est également affectée par le niveau d'entraînement des rebelles et ne peut pas dépasser la compétence de l'IA configurée dans Arma 3 server.cfg.</French>
+            </Key>
+            <Key ID="STR_params_A3A_roadBlocksBaseChance">
+                <Original>Base chance of roadblocks</Original>
+                <Russian>Базовая вероятность появления блокпостов на дорогах</Russian>
+                <Chinesesimp>路障的基本几率</Chinesesimp>
+                <Korean>도로 차단의 기본 확률</Korean>
+                <French>Chance de base des barrages routiers</French>
+                <Turkish>Yol engellerinin temel olasılığı</Turkish>
+            </Key>
+            <Key ID="STR_params_A3A_roadBlocksBaseChance_desc">
+                <Original>Base chance of roadblocks appearing on roads. Actual chance is affected by enemy aggression level and this baseline.</Original>
+                <Russian>Базовая вероятность появления блокпостов на дорогах. Фактическая вероятность зависит от уровня агрессии врага и этой базовой линии.</Russian>
+                <Chinesesimp>路障出现在道路上的基本几率。实际几率受敌方攻击等级和此基线的影响。</Chinesesimp>
+                <Korean>도로에 차단기가 나타날 기본 확률입니다. 실제 확률은 적의 공격 수준과 이 기준선에 의해 영향을 받습니다.</Korean>
+                <French>Chance de base d'apparition de barrages routiers sur les routes. La chance réelle est affectée par le niveau d'agression de l'ennemi et cette ligne de base.</French>
             </Key>
             <Key ID="STR_params_equipment_header">
                 <Original>EQUIPMENT OPTIONS</Original>
@@ -10608,12 +10663,25 @@
                 <French>Le mode démolition vous permet de détruire les constructions que vous avez placées au QG.</French>
                 <Turkish>Yıkım modu, karargâhta yerleştirdiğiniz yapıları yok etmenizi sağlar.</Turkish>
             </Key>
+            <Key ID="STR_commander_menu_tracklist_editor_button">
+                <Original>TRACKLIST EDITOR</Original>
+                <Russian>РЕДАКТОР ПЛЕЙЛИСТА</Russian>
+                <Chinesesimp>曲目列表编辑器</Chinesesimp>
+                <Korean>트랙리스트 편집기</Korean>
+                <French>ÉDITEUR DE LISTE DE LECTURE</French>
+            </Key>
             <Key ID="STR_commander_menu_victory_check_button">
                 <Original>CHECK VICTORY</Original>
                 <Russian>ПРОВЕРИТЬ ПОБЕДУ</Russian>
                 <Chinesesimp>检查胜利</Chinesesimp>
                 <Korean>승리 확인</Korean>
                 <Turkish>ZAFERİ KONTROL ET</Turkish>
+            </Key>
+            <Key ID="STR_commander_menu_tracklist_editor_button_tooltip">
+                <Original>Change tracklists for day-time, night-time and combat music.</Original>
+                <Russian>Измените плейлисты для дневной, ночной и боевой музыки.</Russian>
+                <Chinesesimp>更改白天、夜晚和战斗音乐的曲目列表。</Chinesesimp>
+                <Korean>주간, 야간 및 전투 음악의 트랙리스트를 변경합니다.</Korean>
             </Key>
             <Key ID="STR_commander_menu_victory_check_button_tooltip">
                 <Original>Use this option to check if you have achieved the victory conditions and ends mission if you have.</Original>
@@ -12512,6 +12580,11 @@
                 <Original>a binder labeled 'Master Plan' with only page numbers inside.</Original>
                 <Russian>папку с надписью 'Генеральный План', внутри только пронумерованные пустые листы.</Russian>
                 <Turkish>üzerinde 'Büyük Plan' yazan ve içinde sadece sayfa numaraları olan bir klasör.</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_intel_not_found_073">
+                <Original>a plethora of cat GIFs on a flash drive labelled 'Shhhhhh!'</Original>
+                <Russian>флешку с кучей GIF-ок с котиками, на которой написано 'Тсссс!'.</Russian>
+                <Turkish>üzerinde 'Şşşşş!' yazan ve içinde bir sürü kedi GIF'i olan bir flash bellek.</Turkish>
             </Key>
         </Container>
         <Container name="tasks">

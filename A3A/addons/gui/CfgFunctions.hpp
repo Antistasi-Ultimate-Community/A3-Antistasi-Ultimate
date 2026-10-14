@@ -36,6 +36,9 @@ class CfgFunctions {
         };
         class SetupGUI {
             file = QPATHTOFOLDER(functions\SetupGUI);
+            class onExtendersWarningDialogLoad {};
+            class onExtendersWarningDialogUnload {};
+            class setupCheckExtenders {};
             class setupDialog {};
             class setupFactionsTab {};
             class setupLoadgameTab {};

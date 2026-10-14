@@ -1,7 +1,7 @@
 <hr>
 <div align="center">
   <a href="https://antistasiultimate.com">
-    <img alt="Antistasi Ultimate" width="150" height="150" src="https://github.com/Antistasi-Ultimate-Community/A3-Antistasi-Ultimate/assets/78276788/10d6e9f2-66bc-47a7-9ff5-2054b65b0e26">
+    <img alt="Antistasi Ultimate" width="150" height="150" src="https://antistasiultimate.com/images/logos/lrg/Yellow.webp">
   </a>
   <h1>Antistasi Ultimate</h1>
   <p>
@@ -11,10 +11,10 @@
   </p>
   <hr>
 
-[![FAQ](https://antistasiultimate.com/images/banners/images_banner_faq.png)](https://antistasiultimate.com/FAQ)
-[![Features](https://antistasiultimate.com/images/banners/images_banner_features.png)](https://antistasiultimate.com/#features)
-[![Mods](https://antistasiultimate.com/images/banners/images_banner_mods.png)](https://antistasiultimate.com/#mods-section)
-[![Maps](https://antistasiultimate.com/images/banners/images_banner_maps.png)](https://antistasiultimate.com/#maps-section)
+[![FAQ](https://antistasiultimate.com/images/banners/lrg/images_banner_faq.webp)](https://antistasiultimate.com/FAQ)
+[![Features](https://antistasiultimate.com/images/banners/lrg/images_banner_features.webp)](https://antistasiultimate.com/#features)
+[![Mods](https://antistasiultimate.com/images/banners/lrg/images_banner_mods.webp)](https://antistasiultimate.com/#mods-section)
+[![Maps](https://antistasiultimate.com/images/banners/lrg/images_banner_maps.webp)](https://antistasiultimate.com/#maps-section)
 
 <hr>
 

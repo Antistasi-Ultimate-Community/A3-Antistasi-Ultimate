@@ -82,7 +82,7 @@ switch (true) do {
 		garrison setVariable [_marker,_garrison,true];
 		staticPositions setVariable [_marker, [_position, _direction], true];
 		[_taskId, "outpostTask", "SUCCEEDED"] call A3A_fnc_taskSetState;
-		["RebelControlCreated", [_marker, "aaemplacement"]] call EFUNC(Events,triggerEvent);
+		[CBA_EVENT_SERVER_CREATE_REBEL_CONTROL, [_marker, "aaemplacement"]] call FUNCMAIN(triggerLocalEvent);
 		[_marker] remoteExec ["A3A_fnc_mrkUpdate", 0, true];
 	};
 	default {

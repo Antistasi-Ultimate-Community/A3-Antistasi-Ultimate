@@ -59,7 +59,7 @@ if (_crewManIndex != -1) then {
     _crewMan lookAt (_crewMan getRelPos [100, _dirveh]);
 };
 
-["locationSpawned", [_markerX, "RebelRoadblock", true]] call EFUNC(Events,triggerEvent);
+[CBA_EVENT_SERVER_SPAWN_LOCATION, [_markerX, "RebelRoadblock", true]] call FUNCMAIN(triggerLocalEvent);
 
 waitUntil {
 	sleep 1; 
@@ -89,4 +89,6 @@ if (!isNull _veh) then {
 } forEach units _groupX;
 deleteGroup _groupX;
 
-["locationSpawned", [_markerX, "RebelRoadblock", false]] call EFUNC(Events,triggerEvent);
+[CBA_EVENT_SERVER_SPAWN_LOCATION, [_markerX, "RebelRoadblock", false]] call FUNCMAIN(triggerLocalEvent);
+
+nil;

@@ -80,8 +80,8 @@ private _vehiclePool = [];
 
 // * Cleanup the civilian and rebel equipment hashmaps (remove vehicle arrays that are nil or empty) before attempting to select a vehicle from them
 {
-    if (_x in keys _civFaction && {(_civFaction get _x) isEqualTo []}) then { _civFaction deleteAt _x };
-    if (_x in keys _rebFaction && {(_rebFaction get _x) isEqualTo []}) then { _rebFaction deleteAt _x };
+    if (_x in _civFaction && {(_civFaction get _x) isEqualTo []}) then { _civFaction deleteAt _x };
+    if (_x in _rebFaction && {(_rebFaction get _x) isEqualTo []}) then { _rebFaction deleteAt _x };
 } forEach ["vehiclesCivMedical", "vehiclesCivIndustrial", "vehiclesCivSupply"];
 
 //// add check for warlevel vehicles and replace stuff with militia vehicles and/or do randomization vehicle groups like vehiclesArmor

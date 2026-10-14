@@ -33,6 +33,7 @@ class vn_khe_sanh {
 		{10884.1,3920.57,2.28882e-005}
 	};
 	climate = "tropical";
+	hasRiverPorts = 1;
 	buildObjects[] = {
 		BUILDABLES_HISTORIC,
 		BUILDABLES_UNIVERSAL,

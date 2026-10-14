@@ -36,7 +36,7 @@ if (_sideX == Occupants && {_markerX in outposts}) then {
 	};
 };
 
-private _mrk = createMarkerLocal [format ["%1patrolarea", random 100], _positionX];
+private _mrk = createMarkerLocal [format ["patrolarea:%1", _markerX], _positionX];
 _mrk setMarkerShapeLocal "RECTANGLE";
 _mrk setMarkerSizeLocal [(distanceSPWN/2),(distanceSPWN/2)];
 _mrk setMarkerTypeLocal "hd_warning";
@@ -363,7 +363,8 @@ for "_i" from 0 to (count _array - 1) do {
 		[_groupX, "Patrol_Defend", 0, 100, -1, true, _positionX, false] call A3A_fnc_patrolLoop;
 	};
 };
-["locationSpawned", [_markerX, "Outpost", true]] call EFUNC(Events,triggerEvent);
+
+[CBA_EVENT_SERVER_SPAWN_LOCATION, [_markerX, "Outpost", true]] call FUNCMAIN(triggerLocalEvent);
 
 {
 	if (_x isKindOf "Static" || _x isKindOf "StaticWeapon") then {continue};
@@ -396,4 +397,7 @@ if (!isNil "_ammoBox") then {
 	private _lootCD = 120*16 / ([_markerX] call A3A_fnc_garrisonSize);
 	garrison setVariable [_markerX + "_lootCD", _lootCD, true];
 };
-["locationSpawned", [_markerX, "Outpost", false]] call EFUNC(Events,triggerEvent);
+
+[CBA_EVENT_SERVER_SPAWN_LOCATION, [_markerX, "Outpost", false]] call FUNCMAIN(triggerLocalEvent);
+
+nil;

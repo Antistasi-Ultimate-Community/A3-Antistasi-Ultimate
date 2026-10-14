@@ -236,10 +236,24 @@ class rebelMenu
 					};		
 				};
 
+				class musicTrackEditorButton: ButtonBase
+				{			
+					idc = 5310;
+					text = $STR_commander_menu_tracklist_editor_button;
+					tooltip = $STR_commander_menu_tracklist_editor_button_tooltip;
+					x = "1 * pixelGridNoUIScale * pixelW";
+					y = "7.5 * pixelGridNoUIScale * pixelH";
+					w = "22 * pixelGridNoUIScale * pixelW";	
+					h = "3 * pixelGridNoUIScale * pixelH";	
+					sizeEx = "((pixelH * (pixelGridNoUIScale) * 2) * 1.25) * 0.5";	
+					shadow = 2;
+					action = QUOTE(while {dialog} do {closeDialog 0}; createDialog QQEGVAR(DOUBLES(ultimate,tracklist_editor),dialog));
+				};
+
 				class paradropButton: ScrtRscControlsGroupNoScrollbarsMain 
 				{
 					idc = 5400;
-					y = "7.5 * pixelGridNoUIScale * pixelH";
+					y = "11 * pixelGridNoUIScale * pixelH";
 					class Controls 
 					{
 						class SwitchPic: switchButtonPic
@@ -270,7 +284,7 @@ class rebelMenu
 					idc = 6521;			
 					text = $STR_commander_menu_paradrop_tooltip_noncomm;
 					x = "1 * pixelGridNoUIScale * pixelW";
-					y = "11 * pixelGridNoUIScale * pixelH";	
+					y = "14.5 * pixelGridNoUIScale * pixelH";	
 					w = "22 * pixelGridNoUIScale * pixelW";	
 					h = "10 * pixelGridNoUIScale * pixelH";
 					colorText[] = {1,1,1,0.7};
