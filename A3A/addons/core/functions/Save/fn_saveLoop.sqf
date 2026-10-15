@@ -141,13 +141,7 @@ if (!_saveToNewNamespace) then { _namespace setVariable ["ss_campaignID", _campa
 
 
 // Save persistent global variables defined in params config
-private _savedParams = [];
-{
-    if (getArray (_x/"texts") isEqualTo [""]) then { continue };       // spacer/title
-	_savedParams pushBack [configName _x, missionNameSpace getVariable configName _x];
-} forEach ("true" configClasses (configFile/"A3A"/"Params"));
-Debug_1("Saving params: %1", _savedParams);
-
+private _savedParams = A3A_saveData get "params";
 ["params", _savedParams] call A3A_fnc_setStatVariable;
 
 // Save vars from save selector
