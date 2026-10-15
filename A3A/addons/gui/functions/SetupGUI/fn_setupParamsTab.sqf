@@ -234,8 +234,7 @@ switch (_mode) do
             case (lbCurSel _presetDiffCtrl isNotEqualTo -1): { [lbCurSel _presetSizeCtrl, lbCurSel _presetDiffCtrl] };
             case (lbCurSel _presetCstmCtrl isNotEqualTo -1): { [lbCurSel _presetCstmCtrl] };
         };
-        private _presetParams = if (_selectedPreset isEqualType []) then { ["getPresetParams", [_selectedPreset]] call A3A_fnc_setupParamsTab };
-        private _presetParamsHM = if (!isNil "_presetParams") then { createHashmapFromArray _presetParams } else { nil };
+        private _presetParamsHM = if (_selectedPreset isEqualType []) then { ["getPresetParams", [_selectedPreset]] call A3A_fnc_setupParamsTab } else { nil };
         
         // Should be array of [varname, value] pairs
         // Written by setupLoadgameTab
@@ -290,25 +289,22 @@ switch (_mode) do
     {
         _params params ["_index"];
         
-        private _presetParams = [];
-
-        if (count _index > 1) then {
+        private _presetParams = if (count _index > 1) then {
             _index params ["_sizeIndex", "_diffIndex"];
             private _presetSize = ["solo", "small", "medium", "large"] select (_sizeIndex);
             private _presetDiff = ["easy", "medium", "hard"] select (_diffIndex);
             
-            {
-                private _thisCtrl = _x;
+            createHashMapFromArray(_paramsTable getVariable "allCtrls" apply {
                 private _cfg = _x getVariable "config";
                 private _presetClass = _cfg >> "difficulty" >> _presetSize;
                 private _val = getNumber ([_cfg >> "default", _presetClass >> _presetDiff] select (isClass _presetClass));
-                _presetParams pushBackUnique [configName _cfg, _val];
-            } forEach (_paramsTable getVariable "allCtrls");
+                [configName _cfg, _val];
+            });
         } else {
-            _presetParams = (parseSimpleArray (lbData [A3A_IDC_SETUP_PARAMSPRESETS_CSTM, _index select 0])) select 1;
+            (parseSimpleArray (lbData [A3A_IDC_SETUP_PARAMSPRESETS_CSTM, _index select 0])) select 1;
         };
 
-        _presetParams;
+        if (_presetParams isEqualType []) then { createHashMapFromArray _presetParams } else { _presetParams };
     };
 
     case ("populatePresetLB"):

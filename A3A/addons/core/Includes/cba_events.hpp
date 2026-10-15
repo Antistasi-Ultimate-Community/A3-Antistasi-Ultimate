@@ -91,6 +91,43 @@
 #define CBA_EVENT_CLIENT_HQ_PLACED QUOTE(TRIPLES(PREFIX_CONST,event,clientHqPlaced))
 
 /* -------------------------------------------
+    Event: CBA_EVENT_CLIENT_IMPORTEXPORT_DIALOG_LOADED
+        Triggered when import / export dialog is loaded, in case extenders want to ...extend... the functionality of the dialog.
+
+    Parameters:
+        None
+
+    Broadcast:
+        No
+
+    Sent by:
+        Client (setup player)
+    
+    Recipients:
+        Client (setup player)
+------------------------------------------- */
+#define CBA_EVENT_CLIENT_IMPORTEXPORT_DIALOG_LOADED QUOTE(TRIPLES(PREFIX_CONST,event,clientImportExportDialogLoaded))
+
+/* -------------------------------------------
+    Event: CBA_EVENT_CLIENT_IMPORTEXPORT_HASHMAPTOJSON
+        Triggered after save data is converted into a json-serializable format, but before it is actually serialized to JSON.
+        Extenders needing to modify their data stored in the A3A_saveData_<UUID> hashmap to a json-serializable format should do so here.
+
+    Parameters:
+        0: saveDataHM - the hashmap containing the save data <HASHMAP>
+
+    Broadcast:
+        No
+
+    Sent by:
+        Client (setup player)
+    
+    Recipients:
+        Client (setup player)
+------------------------------------------- */
+#define CBA_EVENT_CLIENT_IMPORTEXPORT_HASHMAPTOJSON QUOTE(TRIPLES(PREFIX_CONST,event,clientImportExportHashmapToJson))
+
+/* -------------------------------------------
     Event: CBA_EVENT_CLIENT_INIT_DONE
         Triggered after `A3A_fnc_clientInit` finished and client is fully set up.
 
@@ -107,6 +144,25 @@
         Client
 ------------------------------------------- */
 #define CBA_EVENT_CLIENT_INIT_DONE QUOTE(TRIPLES(PREFIX_CONST,event,clientInitDone))
+
+/* -------------------------------------------
+    Event: CBA_EVENT_CLIENT_IMPORTEXPORT_JSONTOHASHMAP
+        Triggered after JSON-serialized save data is converted back to a hashmap, but before the local hashmap is passed to any further logic.
+        Extenders needing to convert their json-compatible data back into its original Arma-native format (e.g. SIDE or OBJECT) should do so here.
+
+    Parameters:
+        0: saveDataHM - the hashmap containing the save data <HASHMAP>
+
+    Broadcast:
+        No
+
+    Sent by:
+        Client (setup player)
+    
+    Recipients:
+        Client (setup player)
+------------------------------------------- */
+#define CBA_EVENT_CLIENT_IMPORTEXPORT_JSONTOHASHMAP QUOTE(TRIPLES(PREFIX_CONST,event,clientImportExportJsonToHashmap))
 
 /* -------------------------------------------
     Event: CBA_EVENT_CLIENT_PLAYER_LOAD

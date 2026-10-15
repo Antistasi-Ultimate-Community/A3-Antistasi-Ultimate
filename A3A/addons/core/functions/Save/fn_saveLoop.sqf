@@ -599,6 +599,9 @@ _fuelAmountleftArray = [];
 // Save third-party plugin data
 ["saveDataPlugins", _saveDataPlugins] call A3A_fnc_setStatVariable;
 
+// Save world name for use in import / export functionality
+["map", _worldName] call A3A_fnc_setStatVariable;
+
 // Store the entire save data hashmap as a single hashmap in the selected namespace
 _namespace setVariable [format ["A3A_saveData_%1", _campaignID], A3A_saveDataHM];
 
