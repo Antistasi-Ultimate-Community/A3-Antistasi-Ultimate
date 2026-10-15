@@ -88,6 +88,7 @@ switch (_mode) do
         (_display displayCtrl A3A_IDC_SETUP_OLDPARAMSTEXT) ctrlShow _newGame;
         (_display displayCtrl A3A_IDC_SETUP_NAMESPACETEXT) ctrlShow _newGame;
         (_display displayCtrl A3A_IDC_SETUP_HQPOSBUTTON) ctrlShow (_newGame && !cbChecked _copyGameCtrl);
+        (_display displayCtrl A3A_IDC_SETUP_EDITZONES_BUTTON) ctrlShow (_newGame && !cbChecked _copyGameCtrl);
 
         // If we're selecting a game to load, load factions if available
         private _factions = [_saveData get "factions", _saveData get "addonVics", _saveData get "DLC"];
@@ -291,6 +292,11 @@ switch (_mode) do
     case ("setHQPos"):
     {
         createDialog "A3A_SetupHQPosDialog";
+    };
+
+    case ("editZones"):
+    {
+        createDialog "A3A_SetupEditZonesDialog";
     };
 
     case ("deleteGame"):

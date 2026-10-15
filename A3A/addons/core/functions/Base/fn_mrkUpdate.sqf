@@ -1,4 +1,5 @@
 #include "..\..\script_component.hpp"
+#include "\x\A3A\addons\gui\dialogues\ids.inc"
 /* ----------------------------------------------------------------------------
 Function: A3A_fnc_mrkUpdate
 
@@ -34,6 +35,8 @@ FIX_LINE_NUMBERS()
 
 params [["_markerName", "", [""]]];
 if (_markerName == "") exitWith {};
+
+private _editingZones = !isNull findDisplay A3A_IDD_EDITZONES_DIALOG;
 
 private _originalName = _markerName;
 private _dummyName = format ["Dum%1", _markerName];
@@ -93,7 +96,7 @@ private _markerColor = "";
 
 if (_originalName in airportsX) then {
     _markerType = _markerFaction getOrDefault ["flagMarkerType", ""];
-    _markerColor = "Default";
+    _markerColor = ["Default", [colorInvaders, colorOccupants] select (sidesX getVariable [_originalName, Occupants] isEqualTo Occupants)] select (_editingZones);
 } else {
     if (_isDestroyed) then {
         _markerColor = "ColorBlack";
@@ -298,6 +301,9 @@ private _isUISilentUpdate = missionNamespace getVariable ["A3U_suppressNetworkFo
 
 if (!_isUISilentUpdate) then {
     [_hoverMarkers] remoteExecCall ["A3U_fnc_handleMrkUpdate", 2]; 
+
+    // Don't show marker name while in highly-cluttered edit zones dialog
+    if (_editingZones) exitWith { _visibleMarkerName setMarkerText "" };
 
     // ENFORCE VISIBILITY RULE: HQ, Trader, and Rally Points always show text labels
     if (RETDEF(A3AU_setting_alwaysShowMarkerName,false) || {_originalName in (airportsX + milbases)} || {_isSyndicateHeadquarters} || {_isTraderMarker} || {_isRallyPointMarker}) then {
