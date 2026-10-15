@@ -23,7 +23,7 @@ if (_menuImage isEqualTo "Random") then {
     private _image = selectRandom [
         "intro_maps", "intro_rebellion", "intro_interaction", "intro_roadblock", "intro_garrison", "intro_victory", "intro_chase", // Modern
         "intro_merc", "intro_clearsky", "intro_zombies", // STALKER/Zombie
-        "intro_vanguard", "intro_unsc", "intro_star_clone", "intro_star_empire" // Sci-Fi
+        "intro_vanguard", "intro_unsc", "intro_tke_md", "intro_tke_ucn" // Sci-Fi
     ];
     private _path = getText (configFile >> "A3AU_Images" >> _image >> "path");
     _menuImage = _path;
