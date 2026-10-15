@@ -394,6 +394,30 @@
 #define CBA_EVENT_SERVER_GAME_SAVE QUOTE(TRIPLES(PREFIX_CONST,event,serverGameSave))
 
 /* -------------------------------------------
+    Event: CBA_EVENT_SERVER_GAME_SAVED
+        Triggered when the game is saved on the server, after successfully saving to the appropriate namespace.
+
+    Parameters:
+        0: useMPNamespace - whether to use the missionProfileNamespace (as opposed to legacy profileNamespace) <BOOL>
+        1: serverID - the server ID <STRING> (profileNamespace save) or false <BOOL> (missionProfileNamespace save)
+        2: campaignID - the ID of the campaign that was active during the save <STRING> (UUID)
+        3: worldName - the name of the world where the save occurred <STRING>
+        
+    Optional:
+        4: oldCampaignID - the ID of the legacy campaign being migrated <STRING> (5-digit numeric ID)
+
+    Broadcast:
+        No
+
+    Sent by:
+        Server
+    
+    Recipients:
+        Server
+------------------------------------------- */
+#define CBA_EVENT_SERVER_GAME_SAVED QUOTE(TRIPLES(PREFIX_CONST,event,serverGameSaved))
+
+/* -------------------------------------------
     Event: CBA_EVENT_SERVER_GARBAGECLEAN_DONE
         Triggered after completion of the server garbage clean.
 
@@ -564,9 +588,6 @@
         "markerChange" event
 ------------------------------------------- */
 #define CBA_EVENT_SERVER_MARKER_CHANGE QUOTE(TRIPLES(PREFIX_CONST,event,serverMarkerChange))
-
-// UNUSED
-#define CBA_EVENT_SERVER_GAME_SAVED QUOTE(TRIPLES(PREFIX_CONST,event,serverGameSaved))
 
 /* -------------------------------------------
     Event: CBA_EVENT_SERVER_PLAYER_SAVE
