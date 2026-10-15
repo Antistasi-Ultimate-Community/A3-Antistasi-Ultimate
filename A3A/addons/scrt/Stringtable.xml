@@ -5515,14 +5515,6 @@
                 <French>Vous ne pouvez pas ajouter de mortiers à un barrage routier, à un poste de guet, à une garnison AA, AT, mortier, HMG.</French>
                 <Turkish>Barikat, Gözlem Noktası, AA, AT, Havan veya HMG mevzi garnizonlarına havan ekleyemezsin.</Turkish>
             </Key>
-            <Key ID="STR_garrison_error_still_updating">
-                <Original>This garrison is still updating, please try again in a few seconds.</Original>
-                <Russian>Этот гарнизон всё ещё обновляется, повторите попытку через несколько секунд.</Russian>
-                <Chinesesimp>驻军还在刷新中，请过几秒再试。</Chinesesimp>
-                <Korean>이 주둔지는 아직 업데이트 중이니 잠시 후에 다시 시도하십시오.</Korean>
-                <French>Cette garnison est en cours de mise à jour, veuillez réessayer dans quelques secondes.</French>
-                <Turkish>Bu garnizon hâlâ güncelleniyor, lütfen birkaç saniye içinde tekrar dene.</Turkish>
-            </Key>
             <Key ID="STR_garrison_error_enemies_near">
                 <Original>You can't recruit units into garrison when enemies are near the zone.</Original>
                 <Russian>Вы не можете нанимать новых бойцов в гарнизон, когда враги находятся рядом с зоной.</Russian>
