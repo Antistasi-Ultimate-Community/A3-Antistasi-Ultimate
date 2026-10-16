@@ -726,4 +726,8 @@ class Templates
     // ***************************** AFR *****************************
 
     #include "Templates\AFR\templates.hpp"
+
+    // ***************************** TKE *****************************
+
+    #include "Templates\TKE\templates.hpp"
 };
