@@ -67,7 +67,6 @@ if (_additionalGarrison isNotEqualTo []) then {
 		private _groupTypes = _additionalGarrison select _i;
 		private _group = [_positionX, _sideX, _groupTypes, false, true] call A3A_fnc_spawnGroup;
 		if !(isNull _group) then {
-			sleep 1;
 			[_group, "Patrol_Area", 25, 150, 300, false, [], false] call A3A_fnc_patrolLoop;
 			_groups pushBack _group;
 			{[_x] call A3A_fnc_NATOinit; _soldiers pushBack _x} forEach units _group;
@@ -86,6 +85,11 @@ if (_radiusX < ([_markerX] call A3A_fnc_garrisonSize)) then {
 	//No patrol if patrol area overlaps with an enemy site
 	_patrol = ((markersX findIf {(getMarkerPos _x inArea _mrk) && {sidesX getVariable [_x, sideUnknown] != _sideX}}) == -1);
 };
+
+([_markerX, _sideX, _garrison, _size] call A3A_fnc_createZoneGarrison) params ["_garrisonGroups", "_garrisonSoldiers"];
+_groups append _garrisonGroups;
+_soldiers append _garrisonSoldiers;
+
 if (_patrol) then {
 	[_markerX, _positionX, _sideX, _faction] call SCRT_fnc_location_createPatrols;
 };
@@ -107,7 +111,6 @@ if (_frontierX and {_markerX in outposts} && {!A3U_disableMortars}) then {
 		_groups pushBack _groupX;
 		_soldiers pushBack _unit;
 		_vehiclesX pushBack _veh;
-		sleep 1;
 	};
 };
 
@@ -147,7 +150,6 @@ if (_markerX in seaports) then {
 		[_groupVeh, "Patrol_Water", 25, 200, -1, true, _pos] call A3A_fnc_patrolLoop;
 		_groups pushBack _groupVeh;
 		_vehiclesX pushBack _veh;
-		sleep 1;
 	} else {
 		Error_1("Could not find seaSpawn marker on %1!", _markerX);
 	};
@@ -238,51 +240,59 @@ if (_spawnParameter isEqualType []) then {
 	};
 	_vehiclesX pushBack _veh;
 	[_veh, _sideX] call A3A_fnc_AIVEHinit;
-	sleep 1;
 };
 
 private _countX = 0;
 private _vehCount = round (random [2, 4, 5]);
+private _hangarPlanes = [];
 while {_countX < _vehCount} do {
     private _veh = objNull;
     private _hangar = objNull;
     private _spawnParameter = [_markerX, "Plane"] call A3A_fnc_findSpawnPosition;
     if (_spawnParameter isEqualType []) then {
-        private _vehiclesPlanesCAS = _faction get "vehiclesPlanesCAS";
-        private _vehiclesPlanesAA = _faction get "vehiclesPlanesAA";
-        private _vehPool = [];
-        {
-            _vehPool pushBack _x;
-            _vehPool pushBack 1;
-        } forEach _vehiclesPlanesCAS;
-        {
-            _vehPool pushBack _x;
-            _vehPool pushBack 1;
-        } forEach _vehiclesPlanesAA;
+        private _vehPool = [_faction, ["vehiclesPlanesCAS", "vehiclesPlanesAA"], [1, 1]] call A3A_fnc_createZoneVehiclesPool;
         _spawnsUsed pushBack (_spawnParameter select 2);
         private _typeVehX = selectRandomWeighted _vehPool;
         _veh = createVehicle [_typeVehX, (_spawnParameter select 0), [], 0, "CAN_COLLIDE"];
         _veh setDir (_spawnParameter select 1);
-        sleep 0.5;
-        if !(alive _veh) then {
-            _hangar = (nearestObjects [_veh, ["Static"], 20]) select 0;
-            deleteVehicle _hangar;
-            deleteVehicle _veh;
-            _veh = createVehicle [_typeVehX, (_spawnParameter select 0), [], 0, "CAN_COLLIDE"];
-            _veh setDir (_spawnParameter select 1);
-            _veh allowDamage false;
-            _veh enableSimulation false;
-            sleep 0.5;
-            _veh enableSimulation true;
-            _veh allowDamage true;
-        };
-        _vehiclesX pushBack _veh;
-        [_veh, _sideX] call A3A_fnc_AIVEHinit;
+        _hangarPlanes pushBack [_veh, _typeVehX, _spawnParameter];
     } else {
         _countX = _vehCount;
     };
     _countX = _countX + 1;
 };
+
+// Hangar plane replacement if destroyed on spawn by collision with hangar (presumably)
+// Call it once here for all planes spawned in hangar instead of per plane as before,
+// and run it in the background instead of blocking the main garrison spawn script
+if (_hangarPlanes isNotEqualTo []) then { [_sideX, _vehiclesX, _hangarPlanes] spawn {
+	params ["_sideX", "_vehiclesX", "_hangarPlanes"];
+	sleep 0.5;
+	private _fixedPlanes = [];
+	{
+		_x params ["_veh", "_typeVehX", "_spawnParameter"];
+		if !(alive _veh) then {
+			private _hangar = (nearestObjects [_veh, ["Static"], 20]) select 0;
+			deleteVehicle _hangar;
+			deleteVehicle _veh;
+			_veh = createVehicle [_typeVehX, (_spawnParameter select 0), [], 0, "CAN_COLLIDE"];
+			_veh setDir (_spawnParameter select 1);
+			_veh allowDamage false;
+			_veh enableSimulation false;
+			_fixedPlanes pushBack _veh;
+		};
+		_vehiclesX pushBack _veh;
+		[_veh, _sideX] call A3A_fnc_AIVEHinit;
+	} forEach _hangarPlanes;
+
+	if (_fixedPlanes isNotEqualTo []) then {
+		sleep 0.5;
+		{
+			_x enableSimulation true;
+			_x allowDamage true;
+		} forEach _fixedPlanes;
+	};
+}};
 
 { _x setVariable ["originalPos", getPos _x] } forEach _vehiclesX;
 
@@ -313,54 +323,6 @@ if (!isNull _antenna) then {
 		[_unit,_markerX] call A3A_fnc_NATOinit;
 		_soldiers pushBack _unit;
 		_groups pushBack _groupX;
-	};
-};
-
-private _array = [];
-private _subArray = [];
-_countX = 0;
-_radiusX = _radiusX -1;
-while {_countX <= _radiusX} do {
-	_array pushBack (_garrison select [_countX,7]);
-	_countX = _countX + 8;
-};
-
-for "_i" from 0 to (count _array - 1) do {
-
-	private _groupX = grpNull;
-
-	if (plusGarrison isEqualTo false) then {
-		_array = (selectRandom ([_faction, "groupsTierSquads"] call SCRT_fnc_unit_flattenTier));
-		_groupX = if (_i == 0) then {
-			[_positionX, _sideX, _array, true, false] call A3A_fnc_spawnGroup;
-		} else {
-			private _spawnPosition = [_positionX, 10, 100, 2, 0, -1, 0] call A3A_fnc_getSafePos;
-			[_spawnPosition, _sideX, _array, false, true] call A3A_fnc_spawnGroup;
-		};
-	} else {
-		_groupX = if (_i == 0) then {
-			[_positionX, _sideX, (_array select _i), true, false] call A3A_fnc_spawnGroup;
-		} else {
-			private _spawnPosition = [_positionX, 10, 100, 2, 0, -1, 0] call A3A_fnc_getSafePos;
-			[_spawnPosition, _sideX, (_array select _i), false, true] call A3A_fnc_spawnGroup;
-		};
-	};
-
-	_groups pushBack _groupX;
-
-	{
-		[_x,_markerX] call A3A_fnc_NATOinit;
-		_soldiers pushBack _x;
-	} forEach units _groupX;
-
-	// Garrison the first group into buildings
-	if (_i == 0) then {
-		private _garrisonGroup = [_groupX, getMarkerPos _markerX, _size] call A3A_fnc_patrolGroupGarrison;
-		if (count _garrisonGroup > 0) then {
-			_groups append _garrisonGroup;
-		};
-	} else {
-		[_groupX, "Patrol_Defend", 0, 100, -1, true, _positionX, false] call A3A_fnc_patrolLoop;
 	};
 };
 

@@ -98,7 +98,6 @@ if (_isControl) then
             _unit = [_groupE, _typeUnit, _positionX, [], 0, "NONE"] call A3A_fnc_createUnit;
             _unit moveInGunner _veh;
             _soldiers pushBack _unit;
-            sleep 1;
             _pos = [getPos (_roads select 0), 7, _dirveh + 90] call BIS_Fnc_relPos;
             if (worldname == "SPE_Normandy") then {
                 _bunker = "Land_SPE_Sandbag_Nest" createVehicle _pos;
@@ -128,11 +127,9 @@ if (_isControl) then
             if (flagTexture _veh != (_faction get "flagTexture")) then {[_veh,(_faction get "flagTexture")] remoteExec ["setFlagTexture",_veh]};
             _veh setPosATL _pos;
             _veh setDir _dirVeh;
-            sleep 1;
             _unit = [_groupE, _typeUnit, _positionX, [], 0, "NONE"] call A3A_fnc_createUnit;
             _unit moveInGunner _veh;
             _soldiers pushBack _unit;
-            sleep 1;
             { [_x, _sideX] call A3A_fnc_AIVEHinit } forEach _vehiclesX;
         };
         private _typeGroup = selectRandom (_faction get "groupsMilitiaMedium");
@@ -188,7 +185,6 @@ if (_isControl) then
         _veh setDir _dirveh + 90;
         [_veh, _sideX] call A3A_fnc_AIVEHinit;
         _vehiclesX pushBack _veh;
-        sleep 1;
         private _unitType = if (_vehicleCategory isEqualTo "vehiclesPolice") then {_faction get "unitPoliceOfficer"} else {
             [_faction get "unitTierStaticCrew"] call SCRT_fnc_unit_getTiered;
         };
@@ -234,7 +230,6 @@ else
         _typeVehX = selectRandom (_faction get "uavsPortable");
         if !(isNil "_typeVehX") then
         {
-            sleep 1;
             {_soldiers pushBack _x} forEach units _groupX;
             _uav = createVehicle [_typeVehX, _positionX, [], 0, "FLY"];
             [_sideX, _uav] call A3A_fnc_createVehicleCrew;
