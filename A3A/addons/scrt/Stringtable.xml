@@ -17707,6 +17707,22 @@
                 <French>Faire un don d'argent</French>
                 <Turkish>Para Bağışla</Turkish>
             </Key>
+            <key ID="STR_A3A_OrgPlayers_donateMoney_Insufficient_funds">
+                <original>Insufficient funds. You only have %1%2.</original>
+                <Russian>Недостаточно средств. У вас есть только %1%2.</Russian>
+                <Chinesesimp>资金不足。您仅有 %1%2。</Chinesesimp>
+                <Korean>잔액이 부족합니다. 현재 잔액은 %1%2입니다.</Korean>
+                <French>Fonds insuffisants. Vous ne disposez que de %1%2.</French>
+                <Turkish>Yetersiz bakiye. Sadece %1%2 tutarınız var.</Turkish>
+            </key>
+            <key ID="STR_A3A_OrgPlayers_donateMoney_less_then_0">
+                <original>Amount must be greater than zero.</original>
+                <Russian>Сумма должна быть больше нуля.</Russian>
+                <Chinesesimp>金额必须大于零。</Chinesesimp>
+                <Korean>금액은 0보다 커야 합니다.</Korean>
+                <French>Le montant doit être supérieur à zéro.</French>
+                <Turkish>Tutar sıfırdan büyük olmalıdır.</Turkish>
+            </key>
             <Key ID="STR_A3A_OrgPlayers_donateMoney_less250">
                 <Original>You have less than 250%1 to donate.</Original>
                 <Russian>У вас при себе меньше чем 250%1.</Russian>

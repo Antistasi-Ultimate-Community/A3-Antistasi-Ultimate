@@ -22,14 +22,14 @@ private _currency = A3A_faction_civ getOrDefault ["currencySymbol", "$"];
 
 // Error: Trying to send 0 or negative money
 if (_amount <= 0) exitWith {
-    [localize "STR_A3A_OrgPlayers_donateMoney_header", "Amount must be greater than zero."] call SCRT_fnc_misc_deniedHint;
+    [localize "STR_A3A_OrgPlayers_donateMoney_header", "STR_A3A_OrgPlayers_donateMoney_less_then_0"] call SCRT_fnc_misc_deniedHint;
 };
 
 // Error: Player doesn't have enough money for the requested amount
 if (_resourcesPlayer < _amount) exitWith {
     [
         localize "STR_A3A_OrgPlayers_donateMoney_header", 
-        format ["Insufficient funds. You only have %1%2.", _resourcesPlayer, _currency]
+        format [localize "STR_A3A_OrgPlayers_donateMoney_Insufficient_funds", _resourcesPlayer, _currency]
     ] call SCRT_fnc_misc_deniedHint;
 };
 

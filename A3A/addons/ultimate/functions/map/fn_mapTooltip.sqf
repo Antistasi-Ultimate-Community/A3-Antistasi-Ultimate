@@ -175,7 +175,7 @@ if (_nearestMarker != "" && {_nearestDistanceSquared <= _thresholdSq}) then {
             _hoverTextRaw = markerText _origNearest;
         };
     } else {
-        if !(_markerMetadata isEqualTo [] || {count _markerMetadata < 1}) then {
+        if (count _markerMetadata > 1) then {
             _hoverTextRaw = _markerMetadata param [0, "", [""]];
             _flagMarkerType = _markerMetadata param [1, "", [""]];
         } else {
