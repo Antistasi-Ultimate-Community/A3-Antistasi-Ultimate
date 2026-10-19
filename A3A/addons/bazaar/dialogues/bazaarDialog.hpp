@@ -28,6 +28,7 @@
 // at every aspect ratio / Interface Size / UI scale).
 ////////////////////////////////////////////////////////////////////
 
+#include "ids.inc"
 #define QUOTE(s) #s
 #define ABZ_FW (safeZoneW min (safeZoneH * 1.75))
 #define ABZ_X(NUM) safeZoneX + (safeZoneW - ABZ_FW) / 2 + ABZ_FW * (0.015 + 0.97 * (NUM))
@@ -392,7 +393,7 @@ class ABZ_Shop
 		};
 		class TitleBar: ABZ_RscText
 		{
-			idc = 78807;
+			idc = ABZ_IDC_TITLEBAR;
 			text = "ANTISTASI BAZAAR";
 			x = ABZ_X(0);
 			y = ABZ_Y(0);
@@ -409,7 +410,7 @@ class ABZ_Shop
 		// ---- left column: what's on the table ----
 		class CategoryCombo: ABZ_RscCombo
 		{
-			idc = 78801;
+			idc = ABZ_IDC_CATEGORYCOMBO;
 			x = ABZ_X(0.015);
 			y = ABZ_Y(0.075);
 			w = ABZ_W(0.5);
@@ -420,7 +421,7 @@ class ABZ_Shop
 		};
 		class ItemList: ABZ_RscListNBox
 		{
-			idc = 78802;
+			idc = ABZ_IDC_ITEMLIST;
 			x = ABZ_X(0.015);
 			y = ABZ_Y(0.13);
 			w = ABZ_W(0.5);
@@ -430,7 +431,7 @@ class ABZ_Shop
 		};
 		class RestockText: ABZ_RscText
 		{
-			idc = 78808;
+			idc = ABZ_IDC_RESTOCKTEXT;
 			x = ABZ_X(0.015);
 			y = ABZ_Y(0.795);
 			w = ABZ_W(0.22);
@@ -440,7 +441,7 @@ class ABZ_Shop
 		};
 		class WantedEdit: ABZ_RscEdit
 		{
-			idc = 78815;
+			idc = ABZ_IDC_WANTEDEDIT;
 			tooltip = "Type part of an item's name (as the arsenal shows it), then PIN IT.";
 			text = "";
 			x = ABZ_X(0.015);
@@ -451,7 +452,7 @@ class ABZ_Shop
 		};
 		class ButtonWantedAdd: ABZ_RscButton
 		{
-			idc = 78816;
+			idc = ABZ_IDC_BUTTONWANTEDADD;
 			text = "PIN IT";
 			tooltip = "Search every loaded mod for gear with this name and pin the best match.";
 			x = ABZ_X(0.43);
@@ -465,7 +466,7 @@ class ABZ_Shop
 		// ---- right column: the selected item ----
 		class PreviewPic: ABZ_RscPicture
 		{
-			idc = 78803;
+			idc = ABZ_IDC_PREVIEWPIC;
 			x = ABZ_X(0.535);
 			y = ABZ_Y(0.075);
 			w = ABZ_W(0.45);
@@ -481,7 +482,7 @@ class ABZ_Shop
 			{
 				class InfoText: ABZ_RscStructuredText
 				{
-					idc = 78804;
+					idc = ABZ_IDC_INFOTEXT;
 					x = QUOTE(0);
 					y = QUOTE(0);
 					w = ABZ_W(0.45) - ABZ_SBW;
@@ -492,7 +493,7 @@ class ABZ_Shop
 		};
 		class MoneyText: ABZ_RscText
 		{
-			idc = 78805;
+			idc = ABZ_IDC_MONEYTEXT;
 			x = ABZ_X(0.535);
 			y = ABZ_Y(0.683);
 			w = ABZ_W(0.45);
@@ -510,7 +511,7 @@ class ABZ_Shop
 			{
 				class HelpText: ABZ_RscStructuredText
 				{
-					idc = 78806;
+					idc = ABZ_IDC_HELPTEXT;
 					x = QUOTE(0);
 					y = QUOTE(0);
 					w = ABZ_W(0.45) - ABZ_SBW;
@@ -524,7 +525,7 @@ class ABZ_Shop
 		// ---- bottom bar ----
 		class QtyEdit: ABZ_RscEdit
 		{
-			idc = 78809;
+			idc = ABZ_IDC_QTYEDIT;
 			tooltip = "How many to buy - type any number up to what the trader has left. Bulk crates are always one per buy.";
 			text = "1";
 			x = ABZ_X(0.015);
@@ -535,7 +536,7 @@ class ABZ_Shop
 		};
 		class DestCombo: ABZ_RscCombo
 		{
-			idc = 78812;
+			idc = ABZ_IDC_DESTCOMBO;
 			tooltip = "Where single-item purchases go: straight into your kit, into the cargo of a vehicle parked within 15m of you, or into an open crate beside the stall (repeat buys fill the same crate). Bulk crates always come sealed.";
 			x = ABZ_X(0.1);
 			y = ABZ_Y(0.86);
@@ -546,7 +547,7 @@ class ABZ_Shop
 		};
 		class ButtonBuy: ABZ_RscButton
 		{
-			idc = 78810;
+			idc = ABZ_IDC_BUTTONBUY;
 			text = "BUY";
 			x = ABZ_X(0.365);
 			y = ABZ_Y(0.86);
@@ -558,7 +559,7 @@ class ABZ_Shop
 		};
 		class ButtonPin: ABZ_RscButton
 		{
-			idc = 78814;
+			idc = ABZ_IDC_BUTTONPIN;
 			text = "PIN";
 			tooltip = "Wanted List: pin the selected item and hear in chat the moment any trader has it (as a single, a sealed crate, or a job asking for it). Up to 10 pins, kept in your profile. Press again to unpin.";
 			x = ABZ_X(0.515);
@@ -570,7 +571,7 @@ class ABZ_Shop
 		};
 		class ButtonRumours: ABZ_RscButton
 		{
-			idc = 78811;
+			idc = ABZ_IDC_BUTTONRUMOURS ;
 			text = "RUMOURS";
 			tooltip = "Where else are traders set up right now, when do they restock, who has your Wanted List pins, and how are the smuggling runs going?";
 			x = ABZ_X(0.625);
@@ -582,7 +583,7 @@ class ABZ_Shop
 		};
 		class ButtonClose: ABZ_RscButton
 		{
-			idc = 78813;
+			idc = ABZ_IDC_BUTTONCLOSE;
 			text = "CLOSE";
 			x = ABZ_X(0.805);
 			y = ABZ_Y(0.86);
