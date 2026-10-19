@@ -1,0 +1,64 @@
+// Client: BUY button / double-click. Pre-checks funds for instant feedback,
+// then asks the server (which does the binding checks and the charge).
+private _d = findDisplay 78800;
+if (isNull _d) exitWith {};
+if ((uiNamespace getVariable ["ABZ_shopMode", "stock"]) == "sellcargo") exitWith { call ABZ_fnc_shopSellCargo };
+if (uiNamespace getVariable ["ABZ_shopSell", false]) exitWith { call ABZ_fnc_shopSell };
+private _mode = uiNamespace getVariable ["ABZ_shopMode", "stock"];
+if (_mode == "run") exitWith { call ABZ_fnc_shopRun };
+if (_mode == "wanted") exitWith {
+	private _row = lnbCurSelRow (_d displayCtrl 78802);
+	private _map = uiNamespace getVariable ["ABZ_shopMap", []];
+	if (_row >= 0 && {_row < count _map}) then {
+		[_map select _row] call ABZ_fnc_wantedToggle;
+		call ABZ_fnc_shopFillList;
+	};
+};
+private _shop = uiNamespace getVariable ["ABZ_shop", []];
+private _lnb = _d displayCtrl 78802;
+private _row = lnbCurSelRow _lnb;
+private _map = uiNamespace getVariable ["ABZ_shopMap", []];
+if (_shop isEqualTo [] || {_row < 0} || {_row >= count _map}) exitWith { ["Select an item first."] call ABZ_fnc_notify };
+
+private _idx = _map select _row;
+private _slot = (_shop select 3) select _idx;
+_slot params ["_class", "_price", "_tier", "_qty", "_bulk"];
+if (_qty <= 0) exitWith { ["SOLD OUT - come back after the restock."] call ABZ_fnc_notify };
+
+// typed quantity, clamped to 1..what's left (the server clamps again)
+private _qtyc = _d displayCtrl 78809;
+private _n = round parseNumber (ctrlText _qtyc);
+if (_n < 1) then { _n = 1 };
+private _capped = _n > _qty;
+if (_capped) then { _n = _qty };
+private _isVeh = (_slot param [5, ""]) isEqualTo "vehicle";
+if (_bulk || {_isVeh}) then { _n = 1; _capped = false };
+_qtyc ctrlSetText str _n;
+
+// a vehicle the rebels can't take delivery of yet: say why straight away
+// (the server checks again)
+if (_isVeh && {!(([_slot param [6, ""]] call ABZ_fnc_vehReq) select 0)}) exitWith {
+	[format ["Locked: the trader won't hand it over until your side can keep it running - it %1.", ([_slot param [6, ""]] call ABZ_fnc_vehReq) select 2]] call ABZ_fnc_notify;
+};
+
+(call ABZ_fnc_getFunds) params ["_m", "_fac"];
+if (_m >= 0 && {_m < _price * _n}) exitWith {
+	private _afford = floor (_m / (_price max 1));
+	[format ["Not enough %1money - %2x is $%3 and you have $%4%5", ["", "FACTION "] select _fac, _n, _price * _n, _m,
+		["", format [" (you can afford %1).", _afford]] select (_afford >= 1)]] call ABZ_fnc_notify;
+};
+if (_capped) then { systemChat format ["[Bazaar] Only %1 left - buying %1.", _n] };
+
+// delivery destination (single items only; bulk always comes sealed)
+private _dest = (lbCurSel (_d displayCtrl 78812)) max 0;
+uiNamespace setVariable ["ABZ_shopDest", _dest];	// remembered for the next visit
+if (_isVeh) then { _dest = 0 };	// the destination box is for single items
+private _veh = objNull;
+if (!_bulk && {_dest == 1}) then { _veh = call ABZ_fnc_cargoTarget };
+if (!_bulk && {_dest == 1} && {isNull _veh}) exitWith {
+	["No vehicle with cargo space within 15m of you - park it closer, or pick another destination."] call ABZ_fnc_notify;
+};
+
+// class and price go along so the server can tell if the table changed under
+// this menu (restock) - it never buys "whatever is in that row now"
+["ABZ_buy", [player, _shop select 0, _idx, _n, _dest, _veh, _class, _price]] call CBA_fnc_serverEvent;
