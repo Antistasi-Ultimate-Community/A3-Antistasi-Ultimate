@@ -394,7 +394,7 @@ class ABZ_Shop
 		class TitleBar: ABZ_RscText
 		{
 			idc = ABZ_IDC_TITLEBAR;
-			text = STR_A3U_Bazaar_GUI_Title;
+			text = $STR_A3U_Bazaar_GUI_Title;
 			x = ABZ_X(0);
 			y = ABZ_Y(0);
 			w = ABZ_W(1);
@@ -442,7 +442,7 @@ class ABZ_Shop
 		class WantedEdit: ABZ_RscEdit
 		{
 			idc = ABZ_IDC_WANTEDEDIT;
-			tooltip = STR_A3U_Bazaar_GUI_WantedEdit;
+			tooltip = $STR_A3U_Bazaar_GUI_WantedEdit;
 			text = "";
 			x = ABZ_X(0.015);
 			y = ABZ_Y(0.795);
@@ -453,8 +453,8 @@ class ABZ_Shop
 		class ButtonWantedAdd: ABZ_RscButton
 		{
 			idc = ABZ_IDC_BUTTONWANTEDADD;
-			text = STR_A3U_Bazaar_GUI_WantedAdd;
-			tooltip = STR_A3U_Bazaar_GUI_WantedAdd_Tooltip;
+			text = $STR_A3U_Bazaar_GUI_WantedAdd;
+			tooltip = $STR_A3U_Bazaar_GUI_WantedAdd_Tooltip;
 			x = ABZ_X(0.43);
 			y = ABZ_Y(0.795);
 			w = ABZ_W(0.085);
@@ -517,7 +517,7 @@ class ABZ_Shop
 					w = ABZ_W(0.45) - ABZ_SBW;
 					h = ABZ_H(0.11);
 					size = ABZ_F(0.026);
-					text = STR_A3U_Bazaar_GUI_HelpText;
+					text = $STR_A3U_Bazaar_GUI_HelpText;
 				};
 			};
 		};
@@ -526,7 +526,7 @@ class ABZ_Shop
 		class QtyEdit: ABZ_RscEdit
 		{
 			idc = ABZ_IDC_QTYEDIT;
-			tooltip = STR_A3U_Bazaar_GUI_QtyEdit_Tooltip;
+			tooltip = $STR_A3U_Bazaar_GUI_QtyEdit_Tooltip;
 			text = "1";
 			x = ABZ_X(0.015);
 			y = ABZ_Y(0.86);
@@ -537,7 +537,7 @@ class ABZ_Shop
 		class DestCombo: ABZ_RscCombo
 		{
 			idc = ABZ_IDC_DESTCOMBO;
-			tooltip = STR_A3U_Bazaar_GUI_DestCombo_Tooltip;
+			tooltip = $STR_A3U_Bazaar_GUI_DestCombo_Tooltip;
 			x = ABZ_X(0.1);
 			y = ABZ_Y(0.86);
 			w = ABZ_W(0.255);
@@ -548,7 +548,7 @@ class ABZ_Shop
 		class ButtonBuy: ABZ_RscButton
 		{
 			idc = ABZ_IDC_BUTTONBUY;
-			text = STR_A3U_Bazaar_GUI_ButtonBuy;
+			text = $STR_A3U_Bazaar_GUI_ButtonBuy;
 			x = ABZ_X(0.365);
 			y = ABZ_Y(0.86);
 			w = ABZ_W(0.14);
@@ -560,8 +560,8 @@ class ABZ_Shop
 		class ButtonPin: ABZ_RscButton
 		{
 			idc = ABZ_IDC_BUTTONPIN;
-			text = STR_A3U_Bazaar_GUI_ButtonPin;
-			tooltip = STR_A3U_Bazaar_GUI_ButtonPin_Tooltip;
+			text = $STR_A3U_Bazaar_GUI_ButtonPin;
+			tooltip = $STR_A3U_Bazaar_GUI_ButtonPin_Tooltip;
 			x = ABZ_X(0.515);
 			y = ABZ_Y(0.86);
 			w = ABZ_W(0.1);
@@ -572,8 +572,8 @@ class ABZ_Shop
 		class ButtonRumours: ABZ_RscButton
 		{
 			idc = ABZ_IDC_BUTTONRUMOURS ;
-			text = STR_A3U_Bazaar_GUI_ButtonRumours;
-			tooltip = STR_A3U_Bazaar_GUI_ButtonRumours_Tooltip;
+			text = $STR_A3U_Bazaar_GUI_ButtonRumours;
+			tooltip = $STR_A3U_Bazaar_GUI_ButtonRumours_Tooltip;
 			x = ABZ_X(0.625);
 			y = ABZ_Y(0.86);
 			w = ABZ_W(0.17);
@@ -584,7 +584,7 @@ class ABZ_Shop
 		class ButtonClose: ABZ_RscButton
 		{
 			idc = ABZ_IDC_BUTTONCLOSE;
-			text = STR_A3U_Bazaar_GUI_ButtonClose;
+			text = $STR_A3U_Bazaar_GUI_ButtonClose;
 			x = ABZ_X(0.805);
 			y = ABZ_Y(0.86);
 			w = ABZ_W(0.18);
