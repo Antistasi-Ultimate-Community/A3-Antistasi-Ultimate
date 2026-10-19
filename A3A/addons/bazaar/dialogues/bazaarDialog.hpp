@@ -394,7 +394,7 @@ class ABZ_Shop
 		class TitleBar: ABZ_RscText
 		{
 			idc = ABZ_IDC_TITLEBAR;
-			text = "ANTISTASI BAZAAR";
+			text = STR_A3U_Bazaar_GUI_Title;
 			x = ABZ_X(0);
 			y = ABZ_Y(0);
 			w = ABZ_W(1);
@@ -442,7 +442,7 @@ class ABZ_Shop
 		class WantedEdit: ABZ_RscEdit
 		{
 			idc = ABZ_IDC_WANTEDEDIT;
-			tooltip = "Type part of an item's name (as the arsenal shows it), then PIN IT.";
+			tooltip = STR_A3U_Bazaar_GUI_WantedEdit;
 			text = "";
 			x = ABZ_X(0.015);
 			y = ABZ_Y(0.795);
@@ -453,8 +453,8 @@ class ABZ_Shop
 		class ButtonWantedAdd: ABZ_RscButton
 		{
 			idc = ABZ_IDC_BUTTONWANTEDADD;
-			text = "PIN IT";
-			tooltip = "Search every loaded mod for gear with this name and pin the best match.";
+			text = STR_A3U_Bazaar_GUI_WantedAdd;
+			tooltip = STR_A3U_Bazaar_GUI_WantedAdd_Tooltip;
 			x = ABZ_X(0.43);
 			y = ABZ_Y(0.795);
 			w = ABZ_W(0.085);
@@ -517,7 +517,7 @@ class ABZ_Shop
 					w = ABZ_W(0.45) - ABZ_SBW;
 					h = ABZ_H(0.11);
 					size = ABZ_F(0.026);
-					text = "<t color='#f1c27d'>THE BAZAAR</t><br/>Stock rotates on the timer - what you see is what they have today. Single items go straight into your kit. <t color='#d98cff'>BULK CRATES</t> are sealed: haul them to HQ and unpack them into the arsenal. Lose the crate, lose the goods.";
+					text = STR_A3U_Bazaar_GUI_HelpText;
 				};
 			};
 		};
@@ -526,7 +526,7 @@ class ABZ_Shop
 		class QtyEdit: ABZ_RscEdit
 		{
 			idc = ABZ_IDC_QTYEDIT;
-			tooltip = "How many to buy - type any number up to what the trader has left. Bulk crates are always one per buy.";
+			tooltip = STR_A3U_Bazaar_GUI_QtyEdit_Tooltip;
 			text = "1";
 			x = ABZ_X(0.015);
 			y = ABZ_Y(0.86);
@@ -537,7 +537,7 @@ class ABZ_Shop
 		class DestCombo: ABZ_RscCombo
 		{
 			idc = ABZ_IDC_DESTCOMBO;
-			tooltip = "Where single-item purchases go: straight into your kit, into the cargo of a vehicle parked within 15m of you, or into an open crate beside the stall (repeat buys fill the same crate). Bulk crates always come sealed.";
+			tooltip = STR_A3U_Bazaar_GUI_DestCombo_Tooltip;
 			x = ABZ_X(0.1);
 			y = ABZ_Y(0.86);
 			w = ABZ_W(0.255);
@@ -548,7 +548,7 @@ class ABZ_Shop
 		class ButtonBuy: ABZ_RscButton
 		{
 			idc = ABZ_IDC_BUTTONBUY;
-			text = "BUY";
+			text = STR_A3U_Bazaar_GUI_ButtonBuy;
 			x = ABZ_X(0.365);
 			y = ABZ_Y(0.86);
 			w = ABZ_W(0.14);
@@ -560,8 +560,8 @@ class ABZ_Shop
 		class ButtonPin: ABZ_RscButton
 		{
 			idc = ABZ_IDC_BUTTONPIN;
-			text = "PIN";
-			tooltip = "Wanted List: pin the selected item and hear in chat the moment any trader has it (as a single, a sealed crate, or a job asking for it). Up to 10 pins, kept in your profile. Press again to unpin.";
+			text = STR_A3U_Bazaar_GUI_ButtonPin;
+			tooltip = STR_A3U_Bazaar_GUI_ButtonPin_Tooltip;
 			x = ABZ_X(0.515);
 			y = ABZ_Y(0.86);
 			w = ABZ_W(0.1);
@@ -572,8 +572,8 @@ class ABZ_Shop
 		class ButtonRumours: ABZ_RscButton
 		{
 			idc = ABZ_IDC_BUTTONRUMOURS ;
-			text = "RUMOURS";
-			tooltip = "Where else are traders set up right now, when do they restock, who has your Wanted List pins, and how are the smuggling runs going?";
+			text = STR_A3U_Bazaar_GUI_ButtonRumours;
+			tooltip = STR_A3U_Bazaar_GUI_ButtonRumours_Tooltip;
 			x = ABZ_X(0.625);
 			y = ABZ_Y(0.86);
 			w = ABZ_W(0.17);
@@ -584,7 +584,7 @@ class ABZ_Shop
 		class ButtonClose: ABZ_RscButton
 		{
 			idc = ABZ_IDC_BUTTONCLOSE;
-			text = "CLOSE";
+			text = STR_A3U_Bazaar_GUI_ButtonClose;
 			x = ABZ_X(0.805);
 			y = ABZ_Y(0.86);
 			w = ABZ_W(0.18);

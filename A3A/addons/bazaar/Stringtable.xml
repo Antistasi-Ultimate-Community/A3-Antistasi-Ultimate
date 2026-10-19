@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="A3-Antistasi">
+    <Package name="A3-Antistasi-Ultimate-Bazaar">
+        <Container name="GUI">
+            <Key ID="STR_A3U_Bazaar_GUI_Title">
+                <Original>ANTISTASI BAZAAR</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_GUI_WantedEdit">
+                <Original>Type part of an item's name (as the arsenal shows it), then PIN IT.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_GUI_WantedAdd">
+                <Original>PIN IT</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_GUI_WantedAdd_Tooltip">
+                <Original>Search every loaded mod for gear with this name and pin the best match.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_GUI_HelpText">
+                <Original>&lt;t color='#f1c27d'&gt;THE BAZAAR&lt;/t&gt;&lt;br/&gt;Stock rotates on the timer - what you see is what they have today. Single items go straight into your kit. &lt;t color='#d98cff'&gt;BULK CRATES&lt;/t&gt; are sealed: haul them to HQ and unpack them into the arsenal. Lose the crate, lose the goods.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_GUI_QtyEdit_Tooltip">
+                <Original>How many to buy - type any number up to what the trader has left. Bulk crates are always one per buy.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_GUI_DestCombo_Tooltip">
+                <Original>Where single-item purchases go: straight into your kit, into the cargo of a vehicle parked within 15m of you, or into an open crate beside the stall (repeat buys fill the same crate). Bulk crates always come sealed.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_GUI_ButtonBuy">
+                <Original>BUY</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_GUI_ButtonPin">
+                <Original>PIN</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_GUI_ButtonPin_Tooltip">
+                <Original>Wanted List: pin the selected item and hear in chat the moment any trader has it (as a single, a sealed crate, or a job asking for it). Up to 10 pins, kept in your profile. Press again to unpin.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_GUI_ButtonRumours">
+                <Original>RUMOURS</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_GUI_ButtonRumours_Tooltip">
+                <Original>Where else are traders set up right now, when do they restock, who has your Wanted List pins, and how are the smuggling runs going?</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_GUI_ButtonClose">
+                <Original>CLOSE</Original>
+            </Key>
+        </Container>
+    </Package>
+</Project>
