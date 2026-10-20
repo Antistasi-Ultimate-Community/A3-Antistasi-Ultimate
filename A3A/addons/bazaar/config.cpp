@@ -18,4 +18,4 @@ class CfgPatches
 
 #include "CfgEventHandlers.hpp"
 #include "CfgFunctions.hpp"
-#include "dialogues/bazaarDialog.hpp"
+#include "dialogues\bazaarDialog.hpp"
