@@ -28,9 +28,9 @@ while { true } do {
 					private _job = _e param [12, []];
 					private _jobTxt = "";
 					if (_job isNotEqualTo []) then {
-						_jobTxt = format [" Looking for %1x %2 - pays $%3 apiece.", _job select 1, [_job select 0] call ABZ_fnc_displayNameOf, _job select 3];
+						_jobTxt = format [localize "STR_A3U_Bazaar_Chat_LookingFor", _job select 1, [_job select 0] call ABZ_fnc_displayNameOf, _job select 3];
 					};
-					["ABZ_chat", [format ["[Bazaar] Word on the street: %1 has set up a stall near %2.%3", _e select 5, _e select 1, _jobTxt]]] call CBA_fnc_globalEvent;
+					["ABZ_chat", [format [localize "STR_A3U_Bazaar_Chat_WordOnTheStreet", _e select 5, _e select 1, _jobTxt]]] call CBA_fnc_globalEvent;
 				};
 				diag_log format ["[ABZ] New trader %1 (#%2) at %3", _e select 5, _e select 0, _e select 1];
 				call ABZ_fnc_queueSave;

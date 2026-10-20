@@ -10,7 +10,7 @@ if (_shop isEqualTo [] || {_row < 0} || {_row >= count _map}) exitWith {};
 (_shop param [7, [[], []]]) params [["_offer", []], ["_myRun", []]];
 switch (_map select _row) do {
 	case "offer": {
-		if (_myRun isNotEqualTo []) exitWith { ["You already have a run going - one at a time."] call ABZ_fnc_notify };
+		if (_myRun isNotEqualTo []) exitWith { [localize "STR_A3U_Bazaar_Runs_AlreadyGoing"] call ABZ_fnc_notify };
 		if (_offer isEqualTo []) exitWith {};
 		["ABZ_runAccept", [player, _shop select 0, _offer select 0, _offer select 4]] call CBA_fnc_serverEvent;
 	};
@@ -18,6 +18,6 @@ switch (_map select _row) do {
 		["ABZ_runDeliver", [player]] call CBA_fnc_serverEvent;
 	};
 	default {
-		["Your crate goes to the trader marked on your map - Shift+K away from a stall shows the clock."] call ABZ_fnc_notify;
+		[localize "STR_A3U_Bazaar_Runs_DeliveryInfo"] call ABZ_fnc_notify;
 	};
 };

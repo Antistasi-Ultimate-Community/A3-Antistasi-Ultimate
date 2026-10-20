@@ -7,12 +7,12 @@ private _shop = uiNamespace getVariable ["ABZ_shop", []];
 private _row = lnbCurSelRow (_d displayCtrl 78802);
 private _map = uiNamespace getVariable ["ABZ_shopMap", []];
 private _box = uiNamespace getVariable ["ABZ_sellBox", objNull];
-if (isNull _box || {!alive _box}) exitWith { ["No vehicle or crate within reach - park within 15m of you, or stand by a crate."] call ABZ_fnc_notify };
-if (_shop isEqualTo [] || {_row < 0} || {_row >= count _map}) exitWith { ["Select something to sell first."] call ABZ_fnc_notify };
+if (isNull _box || {!alive _box}) exitWith { [localize "STR_A3U_Bazaar_Notify_NoVehicleOrCrate"] call ABZ_fnc_notify };
+if (_shop isEqualTo [] || {_row < 0} || {_row >= count _map}) exitWith { [localize "STR_A3U_Bazaar_Notify_SelectSomethingFirst"] call ABZ_fnc_notify };
 
 (_map select _row) params ["_class", "_have"];
 ([_class] call ABZ_fnc_jobPrice) params ["_price", "_isJob", ["_bbN", 0]];
-if (_price <= 0 && {_bbN <= 0}) exitWith { ["The trader won't buy that."] call ABZ_fnc_notify };
+if (_price <= 0 && {_bbN <= 0}) exitWith { [localize "STR_A3U_Bazaar_Notify_TraderWontBuy"] call ABZ_fnc_notify };
 
 private _n = round parseNumber (ctrlText (_d displayCtrl 78809));
 if (_n < 1) then { _n = 1 };

@@ -31,7 +31,7 @@ if !(_toArsenal && {_tab >= 0}) exitWith {
 	_crate lockInventory false;
 	[_crate, _class, _count] call ABZ_fnc_addCargo;
 	diag_log format ["[ABZ] %1 opened a crate of %2x %3 (no arsenal to feed)", name _player, _count, _class];
-	[true, format ["Crate opened - %1 inside.", _label], false, _label]
+	[true, format [localize "STR_A3U_Bazaar_Crate_Opened", _label], false, _label]
 };
 
 // the arsenal counts magazines in rounds, not mags
@@ -40,14 +40,14 @@ if (_isMag) then { _amount = _count * (1 max getNumber (_cm >> "count")) };
 [_tab, _class, _amount] call jn_fnc_arsenal_addItem;
 [_crate] call ABZ_fnc_crateRemove;
 
-private _msg = format ["%1 unpacked into the arsenal.", _label];
+private _msg = format [localize "STR_A3U_Bazaar_Crate_Unpacked", _label];
 private _manage = false;
 private _min = missionNamespace getVariable ["minWeaps", -1];
 if !(_min isEqualType 0) then { _min = -1 };
 if (_min >= 0) then {
 	// unlocks ON: Antistasi's own unlock pass runs right away (the caller spawns it once)
 	_manage = !isNil "A3A_fnc_arsenalManage";
-	if (_min > 0 && {_count >= _min}) then { _msg = _msg + " That's a full unlock's worth - check the arsenal." };
+	if (_min > 0 && {_count >= _min}) then { _msg = _msg + localize "STR_A3U_Bazaar_Notify_FullUnlock" };
 } else {
 	// unlocks DISABLED on this server (minWeaps = -1)
 	if ((missionNamespace getVariable ["ABZ_bulkUnlockAnyway", false]) && {_count >= (call ABZ_fnc_bulkSize)} && {!isNil "A3A_fnc_unlockEquipment"}) then {
@@ -60,14 +60,14 @@ if (_min >= 0) then {
 			|| {("Explosives" in _cats) && {(missionNamespace getVariable ["allowUnlockedExplosives", 1]) == 0}}
 			|| {"StaticWeaponParts" in _cats};
 		if (_blocked) then {
-			_msg = _msg + " It can't be unlocked on this server (Antistasi's own rules) - it's in as stock.";
+			_msg = _msg + localize "STR_A3U_Bazaar_Notify_CantBeUnlocked";
 		} else {
 			[_class] call A3A_fnc_unlockEquipment;
-			_msg = _msg + " UNLOCKED in the arsenal.";
+			_msg = _msg + localize "STR_A3U_Bazaar_Notify_UnlockedArsenal";
 			diag_log format ["[ABZ] %1 unlocked via bulk crate on an unlocks-disabled server", _class];
 		};
 	} else {
-		_msg = _msg + " (No arsenal unlocks on this server - it's in as stock.)";
+		_msg = _msg + localize "STR_A3U_Bazaar_Notify_NoArsenalUnlocks";
 	};
 };
 diag_log format ["[ABZ] %1 unpacked %2x %3 into the arsenal (tab %4, amount %5)", name _player, _count, _class, _tab, _amount];

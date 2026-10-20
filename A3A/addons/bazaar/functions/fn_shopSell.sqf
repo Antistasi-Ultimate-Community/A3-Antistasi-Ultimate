@@ -7,11 +7,11 @@ private _shop = uiNamespace getVariable ["ABZ_shop", []];
 private _lnb = _d displayCtrl 78802;
 private _row = lnbCurSelRow _lnb;
 private _map = uiNamespace getVariable ["ABZ_shopMap", []];
-if (_shop isEqualTo [] || {_row < 0} || {_row >= count _map}) exitWith { ["Select something to sell first."] call ABZ_fnc_notify };
+if (_shop isEqualTo [] || {_row < 0} || {_row >= count _map}) exitWith { [localize "STR_A3U_Bazaar_Sell_SelectSomethingFirst"] call ABZ_fnc_notify };
 
 (_map select _row) params ["_class", "_have"];
 ([_class] call ABZ_fnc_jobPrice) params ["_price", "_isJob", ["_bbN", 0]];
-if (_price <= 0 && {_bbN <= 0}) exitWith { ["The trader won't buy that."] call ABZ_fnc_notify };
+if (_price <= 0 && {_bbN <= 0}) exitWith { [localize "STR_A3U_Bazaar_Notify_TraderWontBuy"] call ABZ_fnc_notify };
 
 private _qtyc = _d displayCtrl 78809;
 private _n = round parseNumber (ctrlText _qtyc);
@@ -35,10 +35,10 @@ if (_not != "") exitWith { [_not] call ABZ_fnc_notify };
 
 ([_class, _n] call ABZ_fnc_removeMine) params ["_removed", "_rounds", ["_whyNot", ""]];
 if (_removed <= 0) exitWith {
-	[["Couldn't hand that over - empty it first if it's a uniform, vest or backpack.", format ["The trader can't take it out: %1.", _whyNot]] select (_whyNot != "")] call ABZ_fnc_notify;
+	[[localize "STR_A3U_Bazaar_Notify_CouldNotHandOver", format [localize "STR_A3U_Bazaar_Notify_TraderCantTakeOut", _whyNot]] select (_whyNot != "")] call ABZ_fnc_notify;
 };
 if (_removed < _n) then {
-	systemChat format ["[Bazaar] Only %1 could be handed over (the rest is worn, or not empty).", _removed];
+	systemChat format [localize "STR_A3U_Bazaar_Shop_OnlyHandedOver", _removed];
 };
 
 // tell the server what this menu promised for job items, so a job that

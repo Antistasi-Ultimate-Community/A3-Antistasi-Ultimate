@@ -35,15 +35,15 @@ call ABZ_fnc_publishStalls;
 		private _p = allPlayers findIf { getPlayerUID _x == _uid };
 		if (_p > -1) then {
 			["ABZ_notify", [[
-				format ["Your contact %1 at %2 has been killed. Keep the crate safe - someone will take it when they set up again elsewhere (you'll be told where).", _e select 5, _e select 1],
-				format ["Your own side shot your contact %1 at %2. Someone may take the crate when they set up again elsewhere - but your deadline stands.", _e select 5, _e select 1]
+				format [localize "STR_A3U_Bazaar_Runs_ContactKilled", _e select 5, _e select 1],
+				format [localize "STR_A3U_Bazaar_Runs_ContactShot", _e select 5, _e select 1]
 			] select _ownSide], allPlayers select _p] call CBA_fnc_targetEvent;
 		};
 	};
 } forEach ABZ_runs;
 
 if (missionNamespace getVariable ["ABZ_announce", true]) then {
-	["ABZ_chat", [format ["[Bazaar] %1, the trader at %2, has been killed. The stall is gone - someone else may set up elsewhere in half an hour.", _e select 5, _e select 1]]] call CBA_fnc_globalEvent;
+	["ABZ_chat", [format [localize "STR_A3U_Bazaar_Chat_ContactKilled", _e select 5, _e select 1]]] call CBA_fnc_globalEvent;
 };
 diag_log format ["[ABZ] Trader %1 (#%2) killed at %3", _e select 5, _id, _e select 1];
 

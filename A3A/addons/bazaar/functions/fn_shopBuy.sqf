@@ -47,7 +47,7 @@ if (_m >= 0 && {_m < _price * _n}) exitWith {
 	[format [localize "STR_A3U_Bazaar_Notify_NotEnoughMoney_Multiple", ["", localize "STR_A3U_Bazaar_Misc_Faction"] select _fac, _n, _price * _n, _m,
 		["", format [localize "STR_A3U_Bazaar_Notify_CanAfford", _afford]] select (_afford >= 1)]] call ABZ_fnc_notify;
 };
-if (_capped) then { systemChat format ["[Bazaar] Only %1 left - buying %1.", _n] };
+if (_capped) then { systemChat format [localize "STR_A3U_Bazaar_Shop_OnlyLeft", _n] };
 
 // delivery destination (single items only; bulk always comes sealed)
 private _dest = (lbCurSel (_d displayCtrl 78812)) max 0;

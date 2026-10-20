@@ -22,19 +22,19 @@ private _fnc_say = {
 	private _k = toLower _cls;
 	if (_k in _said) exitWith {};
 	_said pushBack _k;
-	systemChat format ["[Bazaar] WANTED: %1 - %2 near %3 %4.", [_cls] call ABZ_fnc_displayNameOf, _vname, _town, _how];
+	systemChat format [localize "STR_A3U_Bazaar_Shop_Wanted", [_cls] call ABZ_fnc_displayNameOf, _vname, _town, _how];
 };
 {
 	_x params [["_c", "", [""]], ["_kind", "single", [""]]];
 	if ((toLower _c) in _keys || {(toLower ([_c] call ABZ_fnc_wantedBase)) in _keys}) then {
 		[_c, switch (true) do {
-			case (_why == "sold"): { "just got one in (sold to him)" };
-			case (_kind == "crate"): { "has a sealed crate of it" };
-			case (_why == "new"): { "has it - a new stall" };
-			default { "has it after the restock" };
+			case (_why == "sold"): { localize "STR_A3U_Bazaar_Shop_Sold" };
+			case (_kind == "crate"): { localize "STR_A3U_Bazaar_Shop_SealedCrate" };
+			case (_why == "new"): { localize "STR_A3U_Bazaar_Shop_NewStall" };
+			default { localize "STR_A3U_Bazaar_Shop_AfterRestock" };
 		}] call _fnc_say;
 	};
 } forEach _items;
 if (_jobClass != "" && {(toLower _jobClass) in _keys || {(toLower ([_jobClass] call ABZ_fnc_wantedBase)) in _keys}}) then {
-	[_jobClass, "wants it - a job, paid well (bring it to him)"] call _fnc_say;
+	[_jobClass, localize "STR_A3U_Bazaar_Shop_TraderWantsIt"] call _fnc_say;
 };

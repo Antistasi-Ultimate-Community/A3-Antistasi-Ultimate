@@ -39,7 +39,7 @@ for "_k" from 1 to ((count _entry) - 1) do {
 		};
 	};
 };
-if (_isDisposable && {!_rocket}) exitWith { ["", [], [], "it's spent - the trader only takes it with the rocket still in it"] };
+if (_isDisposable && {!_rocket}) exitWith { ["", [], [], localize "STR_A3U_Bazaar_Hands_Spent"] };
 
 // built-in parts stay with the gun; anything else fitted comes back
 ([_entry] call ABZ_fnc_weaponParts) params ["_left", "_extras", "_all"];
@@ -56,5 +56,5 @@ if (_left isNotEqualTo []) then {
 		_why = format ["it's missing parts it came with (%1)", (_left apply { [_x select 2] call ABZ_fnc_displayNameOf }) joinString ", "];
 	};
 };
-if (_sold != "" && {([_sold] call ABZ_fnc_sellClass) isEqualTo ""}) then { _sold = ""; _why = "the trader won't buy that" };
+if (_sold != "" && {([_sold] call ABZ_fnc_sellClass) isEqualTo ""}) then { _sold = ""; _why = localize "STR_A3U_Bazaar_Notify_TraderWontBuy" };
 [_sold, [[], _extras] select (_sold != ""), [[], _mags] select (_sold != ""), _why]

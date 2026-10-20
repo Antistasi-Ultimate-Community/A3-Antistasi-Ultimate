@@ -20,7 +20,7 @@ if ((_active findIf _fnc_is) > -1) then {
 	// unpin
 	private _i = _all findIf _fnc_is;
 	if (_i > -1) then { _all deleteAt _i };
-	[format ["Unpinned %1 from your Wanted List.", _name]] call ABZ_fnc_notify;
+	[format [localize "STR_A3U_Bazaar_Notify_WantedUnpinned", _name]] call ABZ_fnc_notify;
 } else {
 	private _i = _all findIf _fnc_is;
 	if (_i > -1) then {
@@ -28,15 +28,15 @@ if ((_active findIf _fnc_is) > -1) then {
 		private _p = _all deleteAt _i;
 		_all = [_p] + _all;
 		_pinned = true;
-		[format ["%1 was already pinned, beyond your %2 active pins - moved up into them.", _name, ABZ_wantedMax]] call ABZ_fnc_notify;
+		[format [localize "STR_A3U_Bazaar_Notify_WantedAlreadyPinned", _name, ABZ_wantedMax]] call ABZ_fnc_notify;
 	} else {
 		if ((count _active) >= ABZ_wantedMax) then {
-			[format ["Your Wanted List is full (%1 pins) - unpin something first (category 'Wanted List').", ABZ_wantedMax]] call ABZ_fnc_notify;
+			[format [localize "STR_A3U_Bazaar_Notify_WantedFull", ABZ_wantedMax]] call ABZ_fnc_notify;
 		} else {
 			// in front of any idle pins from other modsets, so it's active at once
 			_all = [_base] + _all;
 			_pinned = true;
-			[format ["Pinned %1. You'll hear in chat the moment a trader has it - as a single, a sealed crate, or a job asking for it.", _name]] call ABZ_fnc_notify;
+			[format [localize "STR_A3U_Bazaar_Notify_WantedPinned", _name]] call ABZ_fnc_notify;
 		};
 	};
 };

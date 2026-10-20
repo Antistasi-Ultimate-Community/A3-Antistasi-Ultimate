@@ -14,7 +14,7 @@ if (_mode == 2 && {!isNil "sidesX"}) then {
 };
 if (_held) exitWith { "" };
 
-[
-	"The trader looks at your gear and shakes their head. Come back UNDERCOVER - civilian clothes, no weapon in hand.",
-	"The trader looks at your gear and shakes their head. Come back UNDERCOVER - or take this town first, then they'll deal with you armed."
+localize [
+	"STR_A3U_Bazaar_Undercover_ComeBackUndercover",
+	"STR_A3U_Bazaar_Undercover_TakeTownFirst"
 ] select (_mode == 2)

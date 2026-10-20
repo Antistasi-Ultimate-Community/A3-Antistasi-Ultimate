@@ -60,6 +60,12 @@
             <Key ID="STR_A3U_Bazaar_Crate_BoughtBy">
                 <Original>Bought by %1</Original>
             </Key>
+            <Key ID="STR_A3U_Bazaar_Crate_Opened">
+                <Original>Crate opened - %1 inside.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Crate_Unpacked">
+                <Original>%1 unpacked into the arsenal.</Original>
+            </Key>
         </Container>
         <Container name="Hands">
             <Key ID="STR_A3U_Bazaar_Hands_Empty">
@@ -117,6 +123,9 @@
             </Key>
             <Key ID="STR_A3U_Bazaar_Notify_NoVehCargo">
                 <Original>No vehicle with cargo space within 15m of you - park it closer, or deliver to your kit or a crate.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Notify_NoVehicleOrCrate">
+                <Original>No vehicle or crate within reach - park within 15m of you, or stand by a crate.</Original>
             </Key>
             <Key ID="STR_A3U_Bazaar_Notify_CrateBought">
                 <Original>Bought a sealed crate: %1x %2 for $%3.\nIt's beside the stall. Load it up, get it to HQ, and UNPACK it into the arsenal.</Original>
@@ -256,6 +265,63 @@
             <Key ID="STR_A3U_Bazaar_Notify_CouldNotOpenMenu">
                 <Original>Couldn't open the Bazaar menu - close any other open menu and try again.</Original>
             </Key>
+            <Key ID="STR_A3U_Bazaar_Notify_SelectItemFirst">
+                <Original>Select an item first.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Notify_SelectSomethingFirst">
+                <Original>Select something to sell first.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Notify_CantAddWanted">
+                <Original>That can't go on the Wanted List.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Notify_CouldNotHandOver">
+                <Original>Couldn't hand that over - empty it first if it's a uniform, vest or backpack.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Notify_TraderCantTakeOut">
+                <Original>The trader can't take it out: %1.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Notify_FullUnlock">
+                <Original>That's a full unlock's worth - check the arsenal.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Notify_CantBeUnlocked">
+                <Original> It can't be unlocked on this server (Antistasi's own rules) - it's in as stock.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Notify_UnlockedArsenal">
+                <Original> UNLOCKED in the arsenal.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Notify_NoArsenalUnlocks">
+                <Original> (No arsenal unlocks on this server - it's in as stock.)</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Notify_ContactRelocated">
+                <Original>Your contact moved: hand the crate to %1 near %2 now - %3 min left, pays $%4.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Notify_WantedUnpinned">
+                <Original>Unpinned %1 from your Wanted List.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Notify_WantedAlreadyPinned">
+                <Original>%1 was already pinned, beyond your %2 active pins - moved up into them.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Notify_WantedFull">
+                <Original>Your Wanted List is full (%1 pins) - unpin something first (category 'Wanted List').</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Notify_WantedPinned">
+                <Original>Pinned %1. You'll hear in chat the moment a trader has it - as a single, a sealed crate, or a job asking for it.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Notify_WantedTooShort">
+                <Original>Type at least 3 characters of the item's name.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Notify_WantedSearching">
+                <Original>Searching every loaded mod for that name...</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Notify_WantedList">
+                <Original>Wanted List</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Notify_WantedNotFound">
+                <Original>Nothing a trader deals in is called '%1'. Try part of the name as it shows in the arsenal.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Notify_WantedAlreadyOnList">
+                <Original>%1 is already on your Wanted List.</Original>
+            </Key>
         </Container>
         <Container name="Chat">
             <Key ID="STR_A3U_Bazaar_Chat_RunFailed">
@@ -282,6 +348,24 @@
             <Key ID="STR_A3U_Bazaar_Chat_CratesDelivered">
                 <Original>[Bazaar] %1 delivered %2 crate%3 to the arsenal: %4.</Original>
             </Key>
+            <Key ID="STR_A3U_Bazaar_Chat_ContactKilled">
+                <Original>[Bazaar] %1, the trader at %2, has been killed. The stall is gone - someone else may set up elsewhere in half an hour.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Chat_LookingFor">
+                <Original> Looking for %1x %2 - pays $%3 apiece.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Chat_AlsoLookingFor">
+                <Original> Also looking for %1x %2 - pays $%3 apiece.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Chat_WordOnTheStreet">
+                <Original>[Bazaar] Word on the street: %1 has set up a stall near %2.%3</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Chat_ContactRelocated">
+                <Original>[Bazaar] The trader from %1 has moved on. Word is a new stall opened near %2.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Chat_FreshStock">
+                <Original>[Bazaar] %1 at %2 has fresh stock.%3</Original>
+            </Key>
         </Container>
         <Container name="Misc">
             <Key ID="STR_A3U_Bazaar_Misc_Rarity_Common">
@@ -301,6 +385,9 @@
             </Key>
             <Key ID="STR_A3U_Bazaar_Misc_Location_Coast">
                 <Original>the coast</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Misc_Location_BackRoads">
+                <Original>the back roads</Original>
             </Key>
             <Key ID="STR_A3U_Bazaar_Misc_Faction">
                 <Original>FACTION </Original>
@@ -346,6 +433,12 @@
             <Key ID="STR_A3U_Bazaar_Runs_ContactNotSetup">
                 <Original>Your contact isn't set up anywhere right now - Shift+K shows where they are.</Original>
             </Key>
+            <Key ID="STR_A3U_Bazaar_Runs_ContactKilled">
+                <Original>Your contact %1 at %2 has been killed. Keep the crate safe - someone will take it when they set up again elsewhere (you'll be told where).</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Runs_ContactShot">
+                <Original>Your own side shot your contact %1 at %2. Someone may take the crate when they set up again elsewhere - but your deadline stands.</Original>
+            </Key>
             <Key ID="STR_A3U_Bazaar_Runs_BringToStall">
                 <Original>Bring the crate to the stall - it has to be within 30m of %1 (on the ground or still in your vehicle). It's %2m away.</Original>
             </Key>
@@ -354,6 +447,9 @@
             </Key>
             <Key ID="STR_A3U_Bazaar_Runs_Delivered">
                 <Original>DELIVERED. %1 takes the crate off your hands - $%2.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Runs_DeliveryInfo">
+                <Original>Your crate goes to the trader marked on your map - Shift+K away from a stall shows the clock.</Original>
             </Key>
         </Container>
         <Container name="Sell">
@@ -488,6 +584,56 @@
             </Key>
             <Key ID="STR_A3U_Bazaar_Shop_Locked">
                 <Original>LOCKED</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Shop_OnlyLeft">
+                <Original>Only %1 left - buying %1.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Shop_OnlyHandedOver">
+                <Original>[Bazaar] Only %1 could be handed over (the rest is worn, or not empty).</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Shop_RestockIn">
+                <Original>Restock in %1:%2</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Shop_Restocking">
+                <Original>Restocking - reopen in a moment.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Shop_MoneyNA">
+                <Original>Money: n/a - the Bazaar trades for free</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Shop_FactionMoney">
+                <Original>Faction war chest: $%1</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Shop_YourMoney">
+                <Original>Your money: $%1</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Shop_Wanted">
+                <Original>[Bazaar] WANTED: %1 - %2 near %3 %4.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Shop_TraderWantsIt">
+                <Original>wants it - a job, paid well (bring it to him)</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Shop_Pinned">
+                <Original>[Bazaar] Pinned '%1'. Also matching: %2 - type more of the name to pin one of those instead.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Shop_Sold">
+                <Original>just got one in (sold to him)</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Shop_SealedCrate">
+                <Original>has a sealed crate of it</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Shop_NewStall">
+                <Original>has it - a new stall</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Shop_AfterRestock">
+                <Original>has it after the restock</Original>
+            </Key>
+        </Container>
+        <Container name="Undercover">
+            <Key ID="STR_A3U_Bazaar_Undercover_ComeBackUndercover">
+                <Original>The trader looks at your gear and shakes their head. Come back UNDERCOVER - civilian clothes, no weapon in hand.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Undercover_TakeTownFirst">
+                <Original>The trader looks at your gear and shakes their head. Come back UNDERCOVER - or take this town first, then they'll deal with you armed.</Original>
             </Key>
         </Container>
     </Package>

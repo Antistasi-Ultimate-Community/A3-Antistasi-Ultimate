@@ -12,9 +12,9 @@ private _map = uiNamespace getVariable ["ABZ_shopMap", []];
 
 (call ABZ_fnc_getFunds) params ["_m", "_fac"];
 _money ctrlSetText (switch (true) do {
-	case (_m < 0): { "Money: n/a - the Bazaar trades for free" };
-	case (_fac): { format ["Faction war chest: $%1", _m] };
-	default { format ["Your money: $%1", _m] };
+	case (_m < 0): { localize "STR_A3U_Bazaar_Shop_MoneyNA" };
+	case (_fac): { format [localize "STR_A3U_Bazaar_Shop_FactionMoney", _m] };
+	default { format [localize "STR_A3U_Bazaar_Shop_YourMoney", _m] };
 });
 
 _qtyc ctrlSetText "1";

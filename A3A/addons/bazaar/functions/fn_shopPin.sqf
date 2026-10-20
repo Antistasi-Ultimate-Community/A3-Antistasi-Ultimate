@@ -5,7 +5,7 @@ if (isNull _d) exitWith {};
 private _shop = uiNamespace getVariable ["ABZ_shop", []];
 private _row = lnbCurSelRow (_d displayCtrl 78802);
 private _map = uiNamespace getVariable ["ABZ_shopMap", []];
-if (_shop isEqualTo [] || {_row < 0} || {_row >= count _map}) exitWith { ["Select an item first."] call ABZ_fnc_notify };
+if (_shop isEqualTo [] || {_row < 0} || {_row >= count _map}) exitWith { [localize "STR_A3U_Bazaar_Notify_SelectItemFirst"] call ABZ_fnc_notify };
 private _mode = uiNamespace getVariable ["ABZ_shopMode", "stock"];
 private _class = switch (_mode) do {
 	case "sell";
@@ -16,6 +16,6 @@ private _class = switch (_mode) do {
 	};
 	default { "" };
 };
-if (_class == "") exitWith { ["That can't go on the Wanted List."] call ABZ_fnc_notify };
+if (_class == "") exitWith { [localize "STR_A3U_Bazaar_Notify_CantAddWanted"] call ABZ_fnc_notify };
 [_class] call ABZ_fnc_wantedToggle;
 call ABZ_fnc_shopUpdateInfo;	// PIN / UNPIN label

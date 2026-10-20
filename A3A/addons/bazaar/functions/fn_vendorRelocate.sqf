@@ -54,14 +54,14 @@ ABZ_vendors pushBack _new;
 		private _p = allPlayers findIf { getPlayerUID _x == ((ABZ_runs select _forEachIndex) select 1) };
 		if (_p > -1) then {
 			private _pl = allPlayers select _p;
-			["ABZ_notify", [format ["Your contact moved: hand the crate to %1 near %2 now - %3 min left, pays $%4.", _new select 5, _new select 1, ceil (((_x select 6) - time) / 60), _x select 5]], _pl] call CBA_fnc_targetEvent;
+			["ABZ_notify", [format [localize "STR_A3U_Bazaar_Notify_ContactRelocated", _new select 5, _new select 1, ceil (((_x select 6) - time) / 60), _x select 5]], _pl] call CBA_fnc_targetEvent;
 			["ABZ_runMark", [_new select 2, format ["Run: %1 (%2)", _new select 5, _new select 1]], _pl] call CBA_fnc_targetEvent;
 		};
 	};
 } forEach ABZ_runs;
 
 if (missionNamespace getVariable ["ABZ_announce", true]) then {
-	["ABZ_chat", [format ["[Bazaar] The trader from %1 has moved on. Word is a new stall opened near %2.", _old select 1, _new select 1]]] call CBA_fnc_globalEvent;
+	["ABZ_chat", [format [localize "STR_A3U_Bazaar_Chat_ContactRelocated", _old select 1, _new select 1]]] call CBA_fnc_globalEvent;
 };
 diag_log format ["[ABZ] Trader #%1 relocated: %2 -> %3 (now %4)", _id, _old select 1, _new select 1, _new select 5];
 call ABZ_fnc_queueSave;
