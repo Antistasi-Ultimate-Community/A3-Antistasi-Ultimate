@@ -14,12 +14,12 @@ call ABZ_fnc_syncCommit;	// Antistasi just saved? commit that state first
 params [["_player", objNull, [objNull]], ["_id", -1, [0]], ["_box", objNull, [objNull]], ["_class", "", [""]], ["_n", 1, [0]], ["_expJobN", 0, [0]], ["_expReward", 0, [0]]];
 if (isNull _player || {_class == ""}) exitWith {};
 private _fnc_say = { params ["_m"]; ["ABZ_notify", [_m], _player] call CBA_fnc_targetEvent };
-if !([_box] call ABZ_fnc_sellBoxOk) exitWith { ["You can't sell out of that."] call _fnc_say };
-if (_player distance _box > 20) exitWith { ["Bring the vehicle or crate closer - within 15m of you."] call _fnc_say };
+if !([_box] call ABZ_fnc_sellBoxOk) exitWith { [localize "STR_A3U_Bazaar_Notify_CantSellOut"] call _fnc_say };
+if (_player distance _box > 20) exitWith { [localize "STR_A3U_Bazaar_Notify_BringCloser"] call _fnc_say };
 private _e = [_id] call ABZ_fnc_vendorEntry;
 private _why = [_player, _e] call ABZ_fnc_serverCanTrade;
 if (_why != "") exitWith { [_why] call _fnc_say };
-if (([_class] call ABZ_fnc_sellClass) isEqualTo "") exitWith { ["The trader won't buy that."] call _fnc_say };
+if (([_class] call ABZ_fnc_sellClass) isEqualTo "") exitWith { [localize "STR_A3U_Bazaar_Notify_TraderWontBuy"] call _fnc_say };
 _n = (round _n) max 1;
 
 private _taken = 0;
@@ -56,8 +56,8 @@ switch (true) do {
 			_taken = count _rounds;
 		};
 	};
-	case (isClass (configFile >> "CfgVehicles" >> _class)): { _whyNot = "take the backpack out first" };
-	case ((getNumber (configFile >> "CfgWeapons" >> _class >> "ItemInfo" >> "type")) in [701, 801]): { _whyNot = "take uniforms and vests out first - their pockets would be lost" };
+	case (isClass (configFile >> "CfgVehicles" >> _class)): { _whyNot = localize "STR_A3U_Bazaar_Notify_TakeOutBackpack" };
+	case ((getNumber (configFile >> "CfgWeapons" >> _class >> "ItemInfo" >> "type")) in [701, 801]): { _whyNot = localize "STR_A3U_Bazaar_Notify_TakeOutClothing" };
 	default {
 		// CBA_fnc_removeItemCargo rebuilds every uniform and vest in there:
 		// magazines and items come back, but a weapon in one could come back
@@ -69,7 +69,7 @@ switch (true) do {
 		};
 		private _before = { _x == _class } count (itemCargo _box);
 		if (_deep isNotEqualTo []) then {
-			_whyNot = format ["the %1 in there has a weapon or a packed uniform/vest in it - take that out first", [(_deep select 0) select 0] call ABZ_fnc_displayNameOf];
+			_whyNot = format [localize "STR_A3U_Bazaar_Notify_DeepContainer", [(_deep select 0) select 0] call ABZ_fnc_displayNameOf];
 		} else {
 			if (_before > 0) then {
 				[_box, _class, _n min _before] call CBA_fnc_removeItemCargo;	// keeps everything else, stored uniforms/vests included
@@ -79,7 +79,7 @@ switch (true) do {
 	};
 };
 if (_taken <= 0) exitWith {
-	[["Nothing like that in there the trader would take.", format ["The trader won't take it: %1.", _whyNot]] select (_whyNot != "")] call _fnc_say;
+	[[localize "STR_A3U_Bazaar_Notify_NothingLikeThat", format [localize "STR_A3U_Bazaar_Notify_TraderWontTake", _whyNot]] select (_whyNot != "")] call _fnc_say;
 };
 diag_log format ["[ABZ] %1 sells %2x %3 out of %4 (%5) to trader #%6", name _player, _taken, _class, typeOf _box, _box, _id];
 // the sale itself - refunds go back into the same cargo

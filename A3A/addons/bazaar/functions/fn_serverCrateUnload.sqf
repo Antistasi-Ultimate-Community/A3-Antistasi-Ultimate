@@ -7,7 +7,7 @@ if (isNull _veh) exitWith {};
 private _loaded = (_veh getVariable ["ABZ_loaded", []]) select { !isNull _x && {(attachedTo _x) isEqualTo _veh} };
 if (_loaded isEqualTo []) exitWith {};
 if (speed _veh > 5) exitWith {
-	["ABZ_notify", ["Stop the vehicle first."], _player] call CBA_fnc_targetEvent;
+	["ABZ_notify", [localize "STR_A3U_Bazaar_Notify_StopVehicle"], _player] call CBA_fnc_targetEvent;
 };
 
 private _back = abs (((boundingBoxReal _veh) select 0) select 1);
@@ -19,4 +19,4 @@ private _back = abs (((boundingBoxReal _veh) select 0) select 1);
 } forEach _loaded;
 _veh setVariable ["ABZ_loaded", [], true];
 
-["ABZ_notify", [format ["%1 crate(s) unloaded behind the vehicle.", count _loaded]], _player] call CBA_fnc_targetEvent;
+["ABZ_notify", [format [localize "STR_A3U_Bazaar_Notify_CrateUnloaded", count _loaded]], _player] call CBA_fnc_targetEvent;

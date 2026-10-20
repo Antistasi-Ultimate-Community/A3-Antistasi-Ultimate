@@ -29,7 +29,7 @@ private _mode = switch (true) do {
 private _sell = _mode in ["sell", "sellcargo"];
 uiNamespace setVariable ["ABZ_shopSell", _sell];
 uiNamespace setVariable ["ABZ_shopMode", _mode];
-(_d displayCtrl 78810) ctrlSetText (switch (_mode) do { case "sell"; case "sellcargo": { "SELL" }; case "run": { "ACCEPT" }; case "wanted": { "UNPIN" }; default { "BUY" } });
+(_d displayCtrl 78810) ctrlSetText (localize switch (_mode) do { case "sell"; case "sellcargo": { "STR_A3U_Bazaar_Shop_Sell" }; case "run": { "STR_A3U_Bazaar_Shop_Accept" }; case "wanted": { "STR_A3U_Bazaar_Shop_Unpin" }; default { "STR_A3U_Bazaar_Shop_Buy" } });
 (_d displayCtrl 78812) ctrlEnable (_mode == "stock");
 (_d displayCtrl 78814) ctrlShow (_mode in ["stock", "sell", "sellcargo"]);
 { (_d displayCtrl _x) ctrlShow (_mode == "wanted") } forEach [78815, 78816];
@@ -60,8 +60,8 @@ if (_sell) exitWith {
 		([_class] call ABZ_fnc_jobPrice) params ["_p", "_isJob", ["_bbN", 0], ["_bbPrice", 0]];
 		if (_p <= 0 && {_bbN <= 0}) then { continue };
 		private _label = [[[_class] call ABZ_fnc_displayNameOf, 0]];
-		if (_isJob) then { _label = [["[JOB] ", 1]] + _label };
-		if (_bbN > 0) then { _label = [["[BUY-BACK] ", 1]] + _label };
+		if (_isJob) then { _label = [[localize "STR_A3U_Bazaar_Shop_Job", 1]] + _label };
+		if (_bbN > 0) then { _label = [[localize "STR_A3U_Bazaar_Shop_BuyBack", 1]] + _label };
 		private _priceTxt = if (_bbN > 0) then { format ["$%1", _bbPrice] } else { format ["$%1", _p] };
 		private _row = ["lnbRow", _lnb, [_label, _priceTxt, format ["x%1", _have]], _room] call ABZ_fnc_uiFit;
 		([_class] call ABZ_fnc_itemKind) params ["_kind", "_sub"];
@@ -84,10 +84,10 @@ if (_mode == "run") exitWith {
 		private _mins = ceil (((_endsAt - time) max 0) / 60);
 		private _row = if (_destId == (_shop select 0)) then {
 			_map pushBack "deliver";
-			["lnbRow", _lnb, [[["[DELIVER] ", 1], [format ["Smuggled crate from %1", _srcTown], 0]], format ["$%1", _pay], format ["%1 min", _mins]], _room] call ABZ_fnc_uiFit
+			["lnbRow", _lnb, [[ [localize "STR_A3U_Bazaar_Shop_Deliver", 1], [format ["Smuggled crate from %1", _srcTown], 0]], format ["$%1", _pay], format ["%1 min", _mins]], _room] call ABZ_fnc_uiFit
 		} else {
 			_map pushBack "mine";
-			["lnbRow", _lnb, [[["[YOUR RUN] ", 1], [format ["To %1 near %2", _destName, _destTown], 0]], format ["$%1", _pay], format ["%1 min", _mins]], _room] call ABZ_fnc_uiFit
+			["lnbRow", _lnb, [[ [localize "STR_A3U_Bazaar_Shop_YourRun", 1], [format ["To %1 near %2", _destName, _destTown], 0]], format ["$%1", _pay], format ["%1 min", _mins]], _room] call ABZ_fnc_uiFit
 		};
 		_lnb lnbSetColor [[_row, 0], [1, 0.69, 0.38, 1]];
 		_lnb lnbSetColor [[_row, 1], [0.63, 1, 0.63, 1]];
@@ -95,7 +95,7 @@ if (_mode == "run") exitWith {
 	};
 	if (_offer isNotEqualTo []) then {
 		_offer params ["_destId", "_destName", "_destTown", "_km", "_pay", "_mins", "_enemy"];
-		private _row = ["lnbRow", _lnb, [[["[CONTRACT] ", 1], [format ["Crate to %1 near %2", _destName, _destTown], 0]], format ["$%1", _pay], format ["%1 km", _km]], _room] call ABZ_fnc_uiFit;
+		private _row = ["lnbRow", _lnb, [[ [localize "STR_A3U_Bazaar_Shop_Contract", 1], [format ["Crate to %1 near %2", _destName, _destTown], 0]], format ["$%1", _pay], format ["%1 km", _km]], _room] call ABZ_fnc_uiFit;
 		_map pushBack "offer";
 		_lnb lnbSetColor [[_row, 0], [[1, 0.8, 0.5, 1], [0.6, 0.6, 0.6, 1]] select (_myRun isNotEqualTo [])];
 		_lnb lnbSetColor [[_row, 1], [0.63, 1, 0.63, 1]];
@@ -111,7 +111,7 @@ if (_mode == "wanted") exitWith {
 		private _here = _stock findIf { private _sc = _x select 0; (_sc == _c || {_sc == _cb} || {([_sc] call ABZ_fnc_wantedBase) == _cb}) && {(_x select 3) > 0} };
 		private _job = _shop param [6, []];
 		private _status = switch (true) do {
-			case (_here > -1): { ["HERE!", "CRATE HERE"] select ((_stock select _here) select 4) };
+			case (_here > -1): { localize ["STR_A3U_Bazaar_Shop_Here", "STR_A3U_Bazaar_Shop_CrateHere"] select ((_stock select _here) select 4) };
 			case (_job isNotEqualTo [] && {(_job select 0) == _c || {(_job select 0) == _cb} || {([_job select 0] call ABZ_fnc_wantedBase) == _cb}} && {(_job select 2) < (_job select 1)}): { "his JOB" };
 			default { "-" };
 		};
@@ -140,12 +140,12 @@ if (_mode == "wanted") exitWith {
 	if (_bulk) then { _name = [[format ["[BULK x%1] ", _shop select 5], 1]] + _name };
 	private _locked = false;
 	if (_isVeh) then {
-		_name = [["[VEH] ", 1]] + _name;
+		_name = [[localize "STR_A3U_Bazaar_Shop_VEH", 1]] + _name;
 		_locked = !(([_x param [6, ""]] call ABZ_fnc_vehReq) select 0);
 	};
 	private _qtyTxt = switch (true) do {
-		case (_qty <= 0): { "SOLD OUT" };
-		case (_locked): { "LOCKED" };
+		case (_qty <= 0): { localize "STR_A3U_Bazaar_Shop_SoldOut" };
+		case (_locked): { localize "STR_A3U_Bazaar_Shop_Locked" };
 		default { format ["%1 left", _qty] };
 	};
 	private _row = ["lnbRow", _lnb, [_name, format ["$%1", _price], _qtyTxt], _room] call ABZ_fnc_uiFit;

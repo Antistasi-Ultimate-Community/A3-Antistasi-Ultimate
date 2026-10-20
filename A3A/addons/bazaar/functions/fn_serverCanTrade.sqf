@@ -3,13 +3,13 @@
 if (!isServer) exitWith { "Server only." };
 params [["_player", objNull, [objNull]], ["_e", [], [[]]]];
 
-if (isNull _player || {_e isEqualTo []} || {(_e select 9) != "ok"}) exitWith { "That trader isn't doing business right now." };
+if (isNull _player || {_e isEqualTo []} || {(_e select 9) != "ok"}) exitWith { localize "STR_A3U_Bazaar_Trader_NotNow" };
 private _stall = _e select 2;
 private _u = [_e select 0] call ABZ_fnc_vendorUnit;
-if (isNull _u || {!alive _u}) exitWith { "The trader stepped away for a moment - try again in a few seconds." };
-if (_player distance _u > 10 && {_player distance2D _stall > 8}) exitWith { "Get closer to the trader." };
+if (isNull _u || {!alive _u}) exitWith { localize "STR_A3U_Bazaar_Trader_SteppedAway" };
+if (_player distance _u > 10 && {_player distance2D _stall > 8}) exitWith { localize "STR_A3U_Bazaar_Trader_GetCloser" };
 if (!alive _player || {lifeState _player == "INCAPACITATED"} || {_player getVariable ["incapacitated", false]}) exitWith {
-	"Not while you're down."
+	localize "STR_A3U_Bazaar_Trader_NotWhileDown"
 };
 
 // the undercover waiver is decided by the trader's own town (its centre),
@@ -26,6 +26,6 @@ if (_r > 0) then {
 	};
 };
 if (_eyes isNotEqualTo []) exitWith {
-	"'Not now - too many eyes around.' Move that enemy patrol along first."
+	localize "STR_A3U_Bazaar_Trader_TooManyEyes"
 };
 ""

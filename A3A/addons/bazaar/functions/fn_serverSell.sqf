@@ -37,10 +37,10 @@ private _fnc_refund = {
 	} else {
 		[_backTo, _back, _qty, _rounds, _player] call ABZ_fnc_cargoGive;
 	};
-	["ABZ_notify", [_msg + "\n(Your items were handed back.)"], _player] call CBA_fnc_targetEvent;
+	["ABZ_notify", [_msg + localize "STR_A3U_Bazaar_Notify_HandedBack"], _player] call CBA_fnc_targetEvent;
 };
 
-if (_class == "") exitWith { ["The trader won't buy that."] call _fnc_refund };
+if (_class == "") exitWith { [localize "STR_A3U_Bazaar_Notify_TraderWontBuy"] call _fnc_refund };
 
 private _e = [_id] call ABZ_fnc_vendorEntry;
 private _why = [_player, _e] call ABZ_fnc_serverCanTrade;
@@ -56,13 +56,13 @@ private _rcLive = ((ABZ_receipts getOrDefault [getPlayerUID _player, []]) findIf
 	time < ((_x select 4) + 3) && {(_x select 2) > 0} && {(_x select 0) == _id} && {(_x select 1) == _class} && {_x param [6, false]}
 }) > -1;
 if (_unl && {!_rcLive}) exitWith {
-	["Your arsenal has these unlimited - no trader pays for something you can take for free."] call _fnc_refund;
+	[localize "STR_A3U_Bazaar_Notify_UnlimitedArsenal"] call _fnc_refund;
 };
 // faction mode: the war chest is paid in this same step (fn_serverPay), so
 // never while Antistasi is halfway through changing it - otherwise a save
 // could hold the sale without its payment
 if ((missionNamespace getVariable ["ABZ_funds", 0]) == 1 && {missionNamespace getVariable ["resourcesIsChanging", false]}) exitWith {
-	["The war chest is being counted right now - try again in a moment."] call _fnc_refund;
+	[localize "STR_A3U_Bazaar_Notify_WarChestCounting"] call _fnc_refund;
 };
 [_e] call ABZ_fnc_entryPad;
 
@@ -81,7 +81,7 @@ if (_job isNotEqualTo [] && {(_job select 0) == _class} && {(_job select 2) < (_
 };
 if (_unl) then { _srvJobN = 0 };	// unlimited gear never fills a job
 if (_expJobN > 0 && {_srvJobN < _expJobN || {(_job param [3, 0]) < _expReward}}) exitWith {
-	["The trader's job changed while you were looking. Here's the new table."] call _fnc_refund;
+	[localize "STR_A3U_Bazaar_Notify_JobChanged"] call _fnc_refund;
 	["ABZ_shopData", [_e, _player] call ABZ_fnc_shopPayload, _player] call CBA_fnc_targetEvent;
 };
 
@@ -116,7 +116,7 @@ if ((missionNamespace getVariable ["ABZ_buyBackSeconds", 60]) > 0) then {
 };
 if (_bbN > 0) then {
 	_total = _total + _bbPay;
-	_msgs pushBack format ["BUY-BACK: %1x %2 taken back at the $%3 you paid.", _bbN, _name, _bbPay];
+	_msgs pushBack format [localize "STR_A3U_Bazaar_Notify_BuyBack", _bbN, _name, _bbPay];
 };
 
 // --- job delivery first (whole items / full magazines only) ---
@@ -126,13 +126,13 @@ if (_jobN > 0) then {
 	_delivered = _delivered + _jobN;
 	_job set [2, _delivered];
 	_total = _total + _jobN * _reward;
-	_msgs pushBack format ["JOB: %1x %2 delivered (%3/%4) for $%5.", _jobN, _name, _delivered, _wanted, _jobN * _reward];
+	_msgs pushBack format [localize "STR_A3U_Bazaar_Notify_JobDelivered", _jobN, _name, _delivered, _wanted, _jobN * _reward];
 	if (_delivered >= _wanted) then {
 		private _bonus = round (0.5 * _wanted * _reward);
 		_total = _total + _bonus;
-		_msgs pushBack format ["JOB DONE - $%1 bonus on top.", _bonus];
+		_msgs pushBack format [localize "STR_A3U_Bazaar_Notify_JobBonus", _bonus];
 		if (missionNamespace getVariable ["ABZ_announce", true]) then {
-			["ABZ_chat", [format ["[Bazaar] %1 finished %2's job at %3: %4x %5 delivered.", name _player, _e select 5, _e select 1, _wanted, _name]]] call CBA_fnc_globalEvent;
+			["ABZ_chat", [format [localize "STR_A3U_Bazaar_Chat_JobFinished", name _player, _e select 5, _e select 1, _wanted, _name]]] call CBA_fnc_globalEvent;
 		};
 	};
 };
@@ -161,9 +161,9 @@ if (_price <= 0 && {_restFull > 0 || {_partRounds > 0}}) then {
 			[_backTo, _back, _backN, _backRounds, _player] call ABZ_fnc_cargoGive;
 		};
 		_msgs pushBack format [switch (true) do {
-			case (_unl): { "Your arsenal has these unlimited - only what you bought here comes back. %1x %2 handed back." };
-			case (_bbN > 0 && {_jobN == 0}): { "He only takes back what you bought here - %1x %2 handed back." };
-			default { "The trader only wanted what the job needed - %1x %2 handed back." };
+			case (_unl): { localize "STR_A3U_Bazaar_Notify_UnlimitedHandedBack" };
+			case (_bbN > 0 && {_jobN == 0}): { localize "STR_A3U_Bazaar_Notify_NotBoughtHereHandedBack" };
+			default { localize "STR_A3U_Bazaar_Notify_NotNeededHandedBack" };
 		}, _backN, _name];
 	};
 	_restFull = 0;
@@ -174,9 +174,9 @@ if (_partRounds > 0) then { _restPay = _restPay + round (_price * _partRounds / 
 if (_restFull > 0 || {_partRounds > 0}) then {
 	_total = _total + _restPay;
 	if (_partRounds > 0) then {
-		_msgs pushBack format ["Sold %1x %2 for $%3 (part-used magazines paid by the round).", _qty - _jobN - _bbN, _name, _restPay];
+		_msgs pushBack format [localize "STR_A3U_Bazaar_Notify_MagazinesSold", _qty - _jobN - _bbN, _name, _restPay];
 	} else {
-		_msgs pushBack format ["Sold %1x %2 for $%3.", _restFull, _name, _restPay];
+		_msgs pushBack format [localize "STR_A3U_Bazaar_Notify_ItemsSold", _restFull, _name, _restPay];
 	};
 };
 

@@ -23,7 +23,7 @@ if (_shop isEqualTo [] || {_row < 0} || {_row >= count _map}) exitWith { ["Selec
 private _idx = _map select _row;
 private _slot = (_shop select 3) select _idx;
 _slot params ["_class", "_price", "_tier", "_qty", "_bulk"];
-if (_qty <= 0) exitWith { ["SOLD OUT - come back after the restock."] call ABZ_fnc_notify };
+if (_qty <= 0) exitWith { [localize "STR_A3U_Bazaar_Notify_SoldOut"] call ABZ_fnc_notify };
 
 // typed quantity, clamped to 1..what's left (the server clamps again)
 private _qtyc = _d displayCtrl 78809;
@@ -38,14 +38,14 @@ _qtyc ctrlSetText str _n;
 // a vehicle the rebels can't take delivery of yet: say why straight away
 // (the server checks again)
 if (_isVeh && {!(([_slot param [6, ""]] call ABZ_fnc_vehReq) select 0)}) exitWith {
-	[format ["Locked: the trader won't hand it over until your side can keep it running - it %1.", ([_slot param [6, ""]] call ABZ_fnc_vehReq) select 2]] call ABZ_fnc_notify;
+	[format [localize "STR_A3U_Bazaar_Notify_VehReq", ([_slot param [6, ""]] call ABZ_fnc_vehReq) select 2]] call ABZ_fnc_notify;
 };
 
 (call ABZ_fnc_getFunds) params ["_m", "_fac"];
 if (_m >= 0 && {_m < _price * _n}) exitWith {
 	private _afford = floor (_m / (_price max 1));
-	[format ["Not enough %1money - %2x is $%3 and you have $%4%5", ["", "FACTION "] select _fac, _n, _price * _n, _m,
-		["", format [" (you can afford %1).", _afford]] select (_afford >= 1)]] call ABZ_fnc_notify;
+	[format [localize "STR_A3U_Bazaar_Notify_NotEnoughMoney_Multiple", ["", localize "STR_A3U_Bazaar_Misc_Faction"] select _fac, _n, _price * _n, _m,
+		["", format [localize "STR_A3U_Bazaar_Notify_CanAfford", _afford]] select (_afford >= 1)]] call ABZ_fnc_notify;
 };
 if (_capped) then { systemChat format ["[Bazaar] Only %1 left - buying %1.", _n] };
 
@@ -56,7 +56,7 @@ if (_isVeh) then { _dest = 0 };	// the destination box is for single items
 private _veh = objNull;
 if (!_bulk && {_dest == 1}) then { _veh = call ABZ_fnc_cargoTarget };
 if (!_bulk && {_dest == 1} && {isNull _veh}) exitWith {
-	["No vehicle with cargo space within 15m of you - park it closer, or pick another destination."] call ABZ_fnc_notify;
+	[localize "STR_A3U_Bazaar_Notify_NoVehCargo"] call ABZ_fnc_notify;
 };
 
 // class and price go along so the server can tell if the table changed under

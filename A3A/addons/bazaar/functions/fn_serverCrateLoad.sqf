@@ -7,12 +7,12 @@ if (isNull _crate || {isNull _veh}) exitWith {};
 if ((_crate getVariable ["ABZ_crate", []]) isEqualTo []) exitWith {};
 if (!isNull attachedTo _crate) exitWith {};
 if (speed _veh > 5) exitWith {
-	["ABZ_notify", ["Stop the vehicle first."], _player] call CBA_fnc_targetEvent;
+	["ABZ_notify", [localize "STR_A3U_Bazaar_Notify_StopVehicle"], _player] call CBA_fnc_targetEvent;
 };
 
 private _loaded = (_veh getVariable ["ABZ_loaded", []]) select { !isNull _x && {(attachedTo _x) isEqualTo _veh} };
 if (count _loaded >= 4) exitWith {
-	["ABZ_notify", ["No room - this vehicle already carries 4 crates."], _player] call CBA_fnc_targetEvent;
+	["ABZ_notify", [localize "STR_A3U_Bazaar_Notify_NoRoom"], _player] call CBA_fnc_targetEvent;
 };
 
 private _bb = boundingBoxReal _veh;
@@ -27,4 +27,4 @@ _crate setVariable ["ABZ_slot", _s];
 _loaded pushBack _crate;
 _veh setVariable ["ABZ_loaded", _loaded, true];
 
-["ABZ_notify", ["Crate loaded. Unload it from the scroll menu when you reach HQ."], _player] call CBA_fnc_targetEvent;
+["ABZ_notify", [localize "STR_A3U_Bazaar_Notify_CrateLoaded"], _player] call CBA_fnc_targetEvent;

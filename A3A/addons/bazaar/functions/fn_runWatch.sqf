@@ -16,7 +16,7 @@
 	private _isVeh = !isNull _v && {!(_v isKindOf "CAManBase")} && {!(_v isKindOf "ParachuteBase")};
 	if (_isVeh && {!alive _v}) then {
 		// still strapped to a fresh wreck (Antistasi logistics doesn't let go)
-		[_runId, "the crate went up with the vehicle carrying it"] call ABZ_fnc_runFail;
+		[_runId, localize "STR_A3U_Bazaar_Runs_LostWithVehicle"] call ABZ_fnc_runFail;
 		continue;
 	};
 	if (!isNull _v) then {
@@ -26,7 +26,7 @@
 		if (!isNull _lc) then {
 			_crate setVariable ["ABZ_carrier", nil];
 			if (!alive _lc) then {
-				[_runId, "the crate went up with the vehicle carrying it"] call ABZ_fnc_runFail;
+				[_runId, localize "STR_A3U_Bazaar_Runs_LostWithVehicle"] call ABZ_fnc_runFail;
 				continue;
 			};
 		};
@@ -38,7 +38,7 @@
 		_last params ["_lp", "_lt"];
 		private _dt = time - _lt;
 		if (_dt > 0 && {_dt < 5} && {(_p distance2D _lp) > (50 + 350 * _dt)}) then {
-			[_runId, "the contact won't touch a crate that skipped the roads (fast travel)"] call ABZ_fnc_runFail;
+			[_runId, localize "STR_A3U_Bazaar_Runs_FastTravel"] call ABZ_fnc_runFail;
 		};
 	};
 } forEach +ABZ_runs;

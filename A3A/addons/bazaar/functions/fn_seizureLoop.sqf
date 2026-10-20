@@ -28,9 +28,9 @@ while { true } do {
 		// went up with the vehicle
 		if (!isNull _carrier && {!alive _carrier} && {!(_carrier isKindOf "CAManBase")}) then {	// a dead player carrying it just drops it
 			if (_runId >= 0) then {
-				isNil { [_runId, "the crate went up with the vehicle carrying it"] call ABZ_fnc_runFail };
+				isNil { [_runId, localize "STR_A3U_Bazaar_Runs_LostWithVehicle"] call ABZ_fnc_runFail };
 			} else {
-				["ABZ_chat", [format ["[Bazaar] A sealed crate (%1x %2) was destroyed along with the vehicle carrying it.", _n, _name]]] call CBA_fnc_globalEvent;
+				["ABZ_chat", [format [localize "STR_A3U_Bazaar_Chat_RunLostWithVehicle", _n, _name]]] call CBA_fnc_globalEvent;
 				diag_log format ["[ABZ] Crate of %1x %2 destroyed with vehicle %3", _n, _cls, typeOf _carrier];
 				isNil { [_c] call ABZ_fnc_crateRemove };
 			};
@@ -66,14 +66,14 @@ while { true } do {
 
 		if (_spotted && {_heat == 1}) then {
 			{
-				["ABZ_notify", ["You've been spotted with contraband! Break contact or the crate gets seized."], _x] call CBA_fnc_targetEvent;
+				["ABZ_notify", [localize "STR_A3U_Bazaar_Notify_Spotted"], _x] call CBA_fnc_targetEvent;
 			} forEach (allPlayers select { _x distance _target < 30 });
 		};
 		if (_heat >= _ticks) then {
 			if (_runId >= 0) then {
-				isNil { [_runId, format ["the crate was seized near %1", [_pos] call ABZ_fnc_townName]] call ABZ_fnc_runFail };
+				isNil { [_runId, format [localize "STR_A3U_Bazaar_Runs_Seized", [_pos] call ABZ_fnc_townName]] call ABZ_fnc_runFail };
 			} else {
-				["ABZ_chat", [format ["[Bazaar] CONTRABAND SEIZED - a sealed crate (%1x %2) was confiscated near %3.", _n, _name, [_pos] call ABZ_fnc_townName]]] call CBA_fnc_globalEvent;
+				["ABZ_chat", [format [localize "STR_A3U_Bazaar_Chat_RunSeized", _n, _name, [_pos] call ABZ_fnc_townName]]] call CBA_fnc_globalEvent;
 				diag_log format ["[ABZ] Crate of %1x %2 seized at %3", _n, _cls, _pos];
 				isNil { [_c] call ABZ_fnc_crateRemove };
 			};

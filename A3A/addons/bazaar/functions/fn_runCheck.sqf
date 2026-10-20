@@ -4,9 +4,9 @@
 {
 	_x params ["_runId", "", "", "", "_destId", "", "_deadline", "_crate"];
 	switch (true) do {
-		case (isNull _crate): { [_runId, "the crate was lost"] call ABZ_fnc_runFail };
-		case (time > _deadline): { [_runId, "the deadline passed"] call ABZ_fnc_runFail };
-		case (([_destId] call ABZ_fnc_vendorEntry) isEqualTo []): { [_runId, "the contact on the other end vanished", true] call ABZ_fnc_runFail };
+		case (isNull _crate): { [_runId, localize "STR_A3U_Bazaar_Runs_NoCrate"] call ABZ_fnc_runFail };
+		case (time > _deadline): { [_runId, localize "STR_A3U_Bazaar_Runs_DeadlinePassed"] call ABZ_fnc_runFail };
+		case (([_destId] call ABZ_fnc_vendorEntry) isEqualTo []): { [_runId, localize "STR_A3U_Bazaar_Runs_ContactVanished", true] call ABZ_fnc_runFail };
 	};
 } forEach +ABZ_runs;
 

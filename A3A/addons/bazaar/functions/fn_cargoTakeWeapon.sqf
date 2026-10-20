@@ -44,7 +44,7 @@ private _stuck = "";
 	_plan pushBack [_as, _x];
 } forEach _all;
 if (_stuck != "") exitWith {
-	format ["the %1 in there has a built-in part taken off - put it back, or take that gun out first", [_stuck] call ABZ_fnc_displayNameOf]
+	format [localize "STR_A3U_Bazaar_Cargo_Stuck", [_stuck] call ABZ_fnc_displayNameOf]
 };
 
 clearWeaponCargoGlobal _box;

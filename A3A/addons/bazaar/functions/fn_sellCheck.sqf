@@ -13,4 +13,4 @@ if (([_c] call ABZ_fnc_weaponStored) isNotEqualTo []) exitWith { "" };
 if (_c in [primaryWeapon player, secondaryWeapon player, handgunWeapon player, binocular player]) exitWith {
 	[_c] call ABZ_fnc_handsCheck
 };
-"Keep it in your backpack, or sell it from your vehicle - the trader strips it himself."
+localize "STR_A3U_Bazaar_Sell_TraderStrip"

@@ -23,10 +23,10 @@ if ((missionNamespace getVariable ["ABZ_funds", 0]) == 1) then {
 		// only while it holds resourcesIsChanging - clear means nobody is
 		// halfway through a change. If it's held, refuse rather than wait.
 		if (missionNamespace getVariable ["resourcesIsChanging", false]) then {
-			["ABZ_notify", ["The war chest is being counted right now - try again in a moment. Nothing was charged."], _player] call CBA_fnc_targetEvent;
+			["ABZ_notify", [localize "STR_A3U_Bazaar_Notify_WarChestChanging"], _player] call CBA_fnc_targetEvent;
 		} else {
 			if (_f < _price) then {
-				["ABZ_notify", [format ["Not enough FACTION money - this costs $%1 and the war chest holds $%2.", _price, _f]], _player] call CBA_fnc_targetEvent;
+				["ABZ_notify", [format [localize "STR_A3U_Bazaar_Notify_NotEnoughWarChest", _price, _f]], _player] call CBA_fnc_targetEvent;
 			} else {
 				_srv setVariable ["resourcesFIA", round ((_f - _price) max 0), true];
 				_ok = true;
@@ -43,14 +43,14 @@ if !(_mx isEqualType 0) exitWith { true };
 if (_mx < 0) exitWith {
 	if (!isNil "A3A_fnc_resourcesPlayer") then {
 		// Antistasi, but this player's money hasn't synced yet - never hand out free gear
-		["ABZ_notify", ["Purchase refused - your money isn't synced yet (just joined?). Try again in a few seconds."], _player] call CBA_fnc_targetEvent;
+		["ABZ_notify", [localize "STR_A3U_Bazaar_Notify_MoneyNotSynced"], _player] call CBA_fnc_targetEvent;
 		false
 	} else {
 		true	// non-Antistasi mission: the Bazaar trades for free by design
 	};
 };
 if (_mx < _price) exitWith {
-	["ABZ_notify", [format ["Not enough money - this costs $%1 and you have $%2.", _price, _mx]], _player] call CBA_fnc_targetEvent;
+	["ABZ_notify", [format [localize "STR_A3U_Bazaar_Notify_NotEnoughMoney", _price, _mx]], _player] call CBA_fnc_targetEvent;
 	false
 };
 

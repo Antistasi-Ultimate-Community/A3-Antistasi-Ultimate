@@ -8,7 +8,7 @@ private _name = [_class] call ABZ_fnc_displayNameOf;
 
 if (_spot isEqualTo []) exitWith {
 	[[_class], ""] call HR_GRG_fnc_addVehiclesByClass;	// "" = unlocked faction vehicle
-	["ABZ_notify", [format ["%1 bought - it's waiting for you in the HQ garage.", _name]], _player] call CBA_fnc_targetEvent;
+	["ABZ_notify", [format [localize "STR_A3U_Bazaar_Notify_VehDelivered", _name]], _player] call CBA_fnc_targetEvent;
 	diag_log format ["[ABZ] %1 bought vehicle %2 -> HQ garage", name _player, _class];
 };
 
@@ -76,5 +76,5 @@ private _dist = round (_player distance2D _veh);
 private _brg = _player getDir _veh;
 private _compass = ["north", "north-east", "east", "south-east", "south", "south-west", "west", "north-west"] select ((round (_brg / 45)) mod 8);
 ["ABZ_vehMark", [getPosATL _veh, _name], _player] call CBA_fnc_targetEvent;
-["ABZ_notify", [format ["%1 bought - parked about %2m %3 of you (marked on your map).\nIt's military: getting in breaks your cover. Drive it into rebel territory or garage it - Antistasi only keeps vehicles inside your zones.", _name, _dist, _compass]], _player] call CBA_fnc_targetEvent;
+["ABZ_notify", [format [localize "STR_A3U_Bazaar_Notify_VehBought", _name, _dist, _compass]], _player] call CBA_fnc_targetEvent;
 diag_log format ["[ABZ] %1 bought vehicle %2 -> parked at %3", name _player, _class, _pos];

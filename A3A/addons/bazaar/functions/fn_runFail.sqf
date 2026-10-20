@@ -11,7 +11,7 @@ if (!isNull _crate) then { [_crate] call ABZ_fnc_crateRemove };
 call ABZ_fnc_runPublish;
 
 private _d = [_destId] call ABZ_fnc_vendorEntry;
-private _txt = format ["%1's smuggling run from %2 to %3 failed - %4.", _owner, _srcTown, _d param [1, "the coast"], _reason];
+private _txt = format [localize "STR_A3U_Bazaar_Chat_RunFailed", _owner, _srcTown, _d param [1, localize "STR_A3U_Bazaar_Misc_Location_Coast"], _reason];
 if (!_quiet) then {
 	[_txt] call ABZ_fnc_runNews;
 	if (missionNamespace getVariable ["ABZ_announce", true]) then {

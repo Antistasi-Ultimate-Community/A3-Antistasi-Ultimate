@@ -8,7 +8,7 @@ if (isNull _player) exitWith {};
 
 private _allowed = ((admin (owner _player)) > 0) || {isServer && hasInterface && {_player isEqualTo player}};
 if (!_allowed) exitWith {
-	["ABZ_notify", ["Only the host or a logged-in admin can reset the Bazaar."], _player] call CBA_fnc_targetEvent;
+	["ABZ_notify", [localize "STR_A3U_Bazaar_Notify_ResetNotAllowed"], _player] call CBA_fnc_targetEvent;
 };
 
 { deleteMarker format ["ABZ_vendor_%1", _x select 0] } forEach ABZ_vendors;
@@ -25,6 +25,6 @@ call ABZ_fnc_buildPool;
 call ABZ_fnc_buildVehPool;
 call ABZ_fnc_publishStalls;
 
-["ABZ_chat", [format ["[Bazaar] Reset by %1 - traders and crates cleared. New stalls will open shortly.", name _player]]] call CBA_fnc_globalEvent;
+["ABZ_chat", [format [localize "STR_A3U_Bazaar_Chat_Reset", name _player]]] call CBA_fnc_globalEvent;
 diag_log format ["[ABZ] Reset by %1", name _player];
 call ABZ_fnc_queueSave;

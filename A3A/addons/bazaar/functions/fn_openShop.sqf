@@ -38,7 +38,7 @@ ABZ_shopPending = 1;	// > 0 = a request is waiting; ended by its answer or the t
 			&& {(missionNamespace getVariable ["ABZ_shopPending", -1]) > 0}
 			&& {isNull (findDisplay 78800)}) then {
 			ABZ_shopPending = -1;
-			["The trader didn't answer. Try again in a moment - if it keeps happening, the server .rpt has an [ABZ] line about it."] call ABZ_fnc_notify;
+			[localize "STR_A3U_Bazaar_Notify_NoAnswer"] call ABZ_fnc_notify;
 		};
 	};
 };

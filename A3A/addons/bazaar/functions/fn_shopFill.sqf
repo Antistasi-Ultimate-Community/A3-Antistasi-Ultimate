@@ -13,7 +13,7 @@ if (isNull _d && {(missionNamespace getVariable ["ABZ_shopPending", -1]) > 0}) t
 		_d = findDisplay 78800;
 		[_d] call ABZ_fnc_uiScale;	// v1.1.2: labels and buttons that would be cut get a smaller font
 		if (isNull _d) then {
-			["Couldn't open the Bazaar menu - close any other open menu and try again."] call ABZ_fnc_notify;
+			[localize "STR_A3U_Bazaar_Notify_CouldNotOpenMenu"] call ABZ_fnc_notify;
 		};
 	};
 };
@@ -27,13 +27,13 @@ uiNamespace setVariable ["ABZ_shop", [_id, _vname, _town, _stock, time + _secs, 
 [_d displayCtrl 78807] call ABZ_fnc_uiScale;
 
 // the help box doubles as the JOB board
-private _help = "<t color='#f1c27d'>THE BAZAAR</t><br/>Stock rotates on the timer - what you see is what they have today. Single items go straight into your kit. <t color='#d98cff'>BULK CRATES</t> are sealed: haul them to HQ and unpack them into the arsenal. Lose the crate, lose the goods.";
+private _help = localize "STR_A3U_Bazaar_Shop_Help";
 if (_job isNotEqualTo []) then {
 	_job params ["_jc", "_jw", "_jd", "_jr"];
 	_help = if (_jd >= _jw) then {
-		format ["<t color='#f1c27d'>JOB DONE</t><br/>%1 got the %2x %3 they wanted. A new job comes with the next restock.", _vname, _jw, [_jc] call ABZ_fnc_displayNameOf]
+		format [localize "STR_A3U_Bazaar_Shop_JobDone", _vname, _jw, [_jc] call ABZ_fnc_displayNameOf]
 	} else {
-		format ["<t color='#f1c27d'>JOB: %1 wants %2x %3</t><br/>Pays <t color='#ffd080'>$%4 apiece</t> plus half again as a bonus when it's done. Delivered %5/%2. Hand them over under 'SELL your gear'. Not in the arsenal - you'll have to find them.", _vname, _jw, [_jc] call ABZ_fnc_displayNameOf, _jr, _jd]
+		format [localize "STR_A3U_Bazaar_Shop_JobWanted", _vname, _jw, [_jc] call ABZ_fnc_displayNameOf, _jr, _jd]
 	};
 };
 [_help, _d displayCtrl 78806] call ABZ_fnc_uiText;
@@ -48,7 +48,7 @@ _combo lbSetCurSel (_keep max 0);	// triggers shopFillList
 private _dest = _d displayCtrl 78812;
 if (lbSize _dest == 0) then {
 	private _room = ["room", _dest] call ABZ_fnc_uiFit;
-	{ ["lbAdd", _dest, _x, _room] call ABZ_fnc_uiFit } forEach ["To my kit", "Vehicle nearby", "As a crate"];
+	{ ["lbAdd", _dest, _x, _room] call ABZ_fnc_uiFit } forEach [localize "STR_A3U_Bazaar_Shop_DestinationKit", localize "STR_A3U_Bazaar_Shop_DestinationVehicle", localize "STR_A3U_Bazaar_Shop_DestinationCrate"];
 	_dest lbSetCurSel (uiNamespace getVariable ["ABZ_shopDest", 0]);
 };
 

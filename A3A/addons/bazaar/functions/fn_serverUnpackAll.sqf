@@ -7,7 +7,7 @@ call ABZ_fnc_syncCommit;	// Antistasi just saved? commit that state before the c
 params [["_player", objNull, [objNull]]];
 if (isNull _player || {!alive _player}) exitWith {};
 if !([_player] call ABZ_fnc_atHQ) exitWith {
-	["ABZ_notify", ["Crates can only be unpacked at HQ, near the arsenal."], _player] call CBA_fnc_targetEvent;
+	["ABZ_notify", [localize "STR_A3U_Bazaar_Notify_HQOnly_2"], _player] call CBA_fnc_targetEvent;
 };
 
 // 2D distance to the crate itself (an ACE-loaded one hangs 100m under its
@@ -38,9 +38,9 @@ private _busy = _here select {
 _here = _here - _busy;
 if (_here isEqualTo []) exitWith {
 	["ABZ_notify", [switch (true) do {
-		case (_busy isNotEqualTo []): { "That vehicle is loading or unloading - try again in a moment." };
-		case (_outside > 0): { "That crate is outside HQ - bring it closer to the arsenal." };
-		default { "No sealed Bazaar crates within 20m of you - on the ground or loaded in a vehicle." };
+		case (_busy isNotEqualTo []): { localize "STR_A3U_Bazaar_Notify_VehicleLoading" };
+		case (_outside > 0): { localize "STR_A3U_Bazaar_Notify_BringCloser_Arsenal" };
+		default { localize "STR_A3U_Bazaar_Notify_NoCratesNearby" };
 	}], _player] call CBA_fnc_targetEvent;
 };
 
@@ -58,9 +58,9 @@ private _manage = false;
 if (_labels isEqualTo []) exitWith {};
 if (_manage) then { [] spawn { sleep 1; call A3A_fnc_arsenalManage } };
 
-["ABZ_notify", [format ["Unpacked %1 crate%2:\n%3", count _labels, ["s", ""] select (count _labels == 1), _notes joinString "\n"]], _player] call CBA_fnc_targetEvent;
+["ABZ_notify", [format [localize "STR_A3U_Bazaar_Notify_CrateUnpacked", count _labels, ["s", ""] select (count _labels == 1), _notes joinString "\n"]], _player] call CBA_fnc_targetEvent;
 if (missionNamespace getVariable ["ABZ_announce", true]) then {
-	["ABZ_chat", [format ["[Bazaar] %1 delivered %2 crate%3 to the arsenal: %4.", name _player, count _labels, ["s", ""] select (count _labels == 1), _labels joinString ", "]]] call CBA_fnc_globalEvent;
+	["ABZ_chat", [format [localize "STR_A3U_Bazaar_Chat_CratesDelivered", name _player, count _labels, ["s", ""] select (count _labels == 1), _labels joinString ", "]]] call CBA_fnc_globalEvent;
 };
 diag_log format ["[ABZ] %1 unpacked %2 crate(s) at once: %3", name _player, count _labels, _labels];
 call ABZ_fnc_queueSave;
