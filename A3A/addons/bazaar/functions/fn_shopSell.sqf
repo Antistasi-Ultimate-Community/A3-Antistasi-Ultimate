@@ -2,7 +2,7 @@
 // off the player HERE (inventory is local), then asks the server to pay.
 // The server re-checks everything and hands the items back on any refusal.
 #include "..\dialogues\ids.inc"
-private _d = findDisplay 78800;
+private _d = findDisplay ABZ_IDD_SHOP;
 if (isNull _d) exitWith {};
 private _shop = uiNamespace getVariable ["ABZ_shop", []];
 private _lnb = _d displayCtrl ABZ_IDC_ITEMLIST;

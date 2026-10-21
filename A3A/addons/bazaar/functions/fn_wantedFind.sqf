@@ -12,7 +12,7 @@ if (count _t < 3) exitWith { [localize "STR_A3U_Bazaar_Notify_WantedTooShort"] c
 // nothing can leave it stuck (uiNamespace would outlive the mission)
 if (time < (missionNamespace getVariable ["ABZ_wantedBusyUntil", -1])) exitWith {};
 ABZ_wantedBusyUntil = time + 30;
-private _btn = (findDisplay 78800) displayCtrl ABZ_IDC_BUTTONWANTEDADD;
+private _btn = (findDisplay ABZ_IDD_SHOP) displayCtrl ABZ_IDC_BUTTONWANTEDADD;
 if (!isNull _btn) then { _btn ctrlEnable false };
 [localize "STR_A3U_Bazaar_Notify_WantedSearching", localize "STR_A3U_Bazaar_Notify_WantedList"] call ABZ_fnc_notify;
 
@@ -47,7 +47,7 @@ private _seen = createHashMap;	// lowercase class -> true (one hit per class)
 
 private _fnc_done = {
 	ABZ_wantedBusyUntil = -1;
-	private _b = (findDisplay 78800) displayCtrl ABZ_IDC_BUTTONWANTEDADD;
+	private _b = (findDisplay ABZ_IDD_SHOP) displayCtrl ABZ_IDC_BUTTONWANTEDADD;
 	if (!isNull _b) then { _b ctrlEnable true };
 };
 if (_hits isEqualTo []) exitWith {
@@ -73,4 +73,4 @@ if (_pinned && {_others isNotEqualTo []}) then {
 	systemChat format [localize "STR_A3U_Bazaar_Shop_Pinned", _best select 3, _others joinString ", "];
 };
 call _fnc_done;
-if (!isNull (findDisplay 78800)) then { isNil { call ABZ_fnc_shopFillList } };
+if (!isNull (findDisplay ABZ_IDD_SHOP)) then { isNil { call ABZ_fnc_shopFillList } };

@@ -2,7 +2,7 @@
 // server checks everything again (undercover, one run per player, the
 // contract still being the one shown, the crate within 30m on delivery).
 #include "..\dialogues\ids.inc"
-private _d = findDisplay 78800;
+private _d = findDisplay ABZ_IDD_SHOP;
 if (isNull _d) exitWith {};
 private _shop = uiNamespace getVariable ["ABZ_shop", []];
 private _row = lnbCurSelRow (_d displayCtrl ABZ_IDC_ITEMLIST);

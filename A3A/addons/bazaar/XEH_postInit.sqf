@@ -1,11 +1,12 @@
 // Antistasi Bazaar - postInit
+#include "dialogues\ids.inc"
 
 if (hasInterface) then {
 	[
 		"Antistasi Bazaar", "ABZ_rumours",
 		["$STR_A3U_Bazaar_Keybinds_Rumours", "$STR_A3U_Bazaar_Keybinds_Rumours_Tooltip"],
 		{
-			if (isNull (findDisplay 49) && {isNull (findDisplay 78800)} && {alive player}) then {
+			if (isNull (findDisplay 49) && {isNull (findDisplay ABZ_IDD_SHOP)} && {alive player}) then {
 				private _id = [call CBA_fnc_currentUnit] call ABZ_fnc_nearVendor;
 				if (_id >= 0) then { [_id] call ABZ_fnc_openShop } else { call ABZ_fnc_rumours };
 			};

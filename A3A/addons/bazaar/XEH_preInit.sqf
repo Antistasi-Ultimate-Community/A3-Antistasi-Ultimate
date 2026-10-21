@@ -1,5 +1,6 @@
 // Antistasi Bazaar - preInit
 // Runs on every machine before mission init.
+#include "dialogues\ids.inc"
 
 ABZ_vendors = [];		// server: vendor entries (plain arrays - see fn_vendorCreate for the layout)
 ABZ_vendorObjs = createHashMap;	// server: vendor id -> [unit, [props]]
@@ -120,7 +121,7 @@ if (hasInterface) then {
 			_x params ["_tid", "_cls", "_q", "_pr", "_secs"];
 			[_tid, _cls, _q, _pr, time + _secs]
 		};
-		if (!isNull (findDisplay 78800)) then { call ABZ_fnc_shopFillList };
+		if (!isNull (findDisplay ABZ_IDD_SHOP)) then { call ABZ_fnc_shopFillList };
 	}] call CBA_fnc_addEventHandler;
 	// a smuggling run's destination on my map (until it ends)
 	["ABZ_runMark", {
@@ -131,7 +132,7 @@ if (hasInterface) then {
 			private _s = uiNamespace getVariable ["ABZ_shop", []];
 			if (count _s > 7 && {(_s select 7) isEqualType []} && {count (_s select 7) > 1}) then {
 				(_s select 7) set [1, []];
-				if (!isNull (findDisplay 78800)) then { call ABZ_fnc_shopFillList };
+				if (!isNull (findDisplay ABZ_IDD_SHOP)) then { call ABZ_fnc_shopFillList };
 			};
 		};
 		if (count _pos >= 2) then {

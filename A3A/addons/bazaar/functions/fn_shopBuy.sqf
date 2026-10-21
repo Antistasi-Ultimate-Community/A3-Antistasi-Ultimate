@@ -1,7 +1,7 @@
 // Client: BUY button / double-click. Pre-checks funds for instant feedback,
 // then asks the server (which does the binding checks and the charge).
 #include "..\dialogues\ids.inc"
-private _d = findDisplay 78800;
+private _d = findDisplay ABZ_IDD_SHOP;
 if (isNull _d) exitWith {};
 if ((uiNamespace getVariable ["ABZ_shopMode", "stock"]) == "sellcargo") exitWith { call ABZ_fnc_shopSellCargo };
 if (uiNamespace getVariable ["ABZ_shopSell", false]) exitWith { call ABZ_fnc_shopSell };

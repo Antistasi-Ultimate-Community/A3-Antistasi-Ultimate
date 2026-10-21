@@ -5,7 +5,7 @@
 //   wanted (ABZ_catWanted) my Wanted List - rows map to pinned classes
 //   sell   (last)       my own inventory - rows map to [class, how many]
 #include "..\dialogues\ids.inc"
-private _d = findDisplay 78800;
+private _d = findDisplay ABZ_IDD_SHOP;
 if (isNull _d) exitWith {};
 private _shop = uiNamespace getVariable ["ABZ_shop", []];
 if (_shop isEqualTo []) exitWith {};

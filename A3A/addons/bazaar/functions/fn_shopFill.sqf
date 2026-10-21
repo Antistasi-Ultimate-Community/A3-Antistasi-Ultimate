@@ -6,12 +6,12 @@
 params [["_id", -1, [0]], ["_vname", "", [""]], ["_town", "", [""]], ["_stock", [], [[]]], ["_secs", 0, [0]], ["_bulk", 25, [0]], ["_job", [], [[]]], ["_run", [[], []], [[]]]];
 if (!hasInterface) exitWith {};
 
-private _d = findDisplay 78800;
+private _d = findDisplay ABZ_IDD_SHOP;
 if (isNull _d && {(missionNamespace getVariable ["ABZ_shopPending", -1]) > 0}) then {
 	ABZ_shopPending = -1;	// this answer ends the request, whatever happens next
 	if (alive player) then {
 		createDialog "ABZ_Shop";
-		_d = findDisplay 78800;
+		_d = findDisplay ABZ_IDD_SHOP;
 		[_d] call ABZ_fnc_uiScale;	// v1.1.2: labels and buttons that would be cut get a smaller font
 		if (isNull _d) then {
 			[localize "STR_A3U_Bazaar_Notify_CouldNotOpenMenu"] call ABZ_fnc_notify;

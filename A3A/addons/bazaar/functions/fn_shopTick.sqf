@@ -1,10 +1,10 @@
 // Client: keeps the restock countdown and money readout live while the
 // Bazaar dialog is open.
 #include "..\dialogues\ids.inc"
-while { !isNull (findDisplay 78800) } do {
+while { !isNull (findDisplay ABZ_IDD_SHOP) } do {
 	// one unscheduled step (v1.1.2): a relabel and its font fit land in the same frame
 	isNil {
-	private _d = findDisplay 78800;
+	private _d = findDisplay ABZ_IDD_SHOP;
 	private _shop = uiNamespace getVariable ["ABZ_shop", []];
 	if (_shop isNotEqualTo []) then {
 		private _left = ((_shop select 4) - time) max 0;

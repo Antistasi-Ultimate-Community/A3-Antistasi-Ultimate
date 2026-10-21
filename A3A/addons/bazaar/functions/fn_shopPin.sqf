@@ -1,7 +1,7 @@
 // Client: PIN button - pins (or unpins) the selected item on my Wanted List.
 // On the SELL side it pins the item as the traders deal it.
 #include "..\dialogues\ids.inc"
-private _d = findDisplay 78800;
+private _d = findDisplay ABZ_IDD_SHOP;
 if (isNull _d) exitWith {};
 private _shop = uiNamespace getVariable ["ABZ_shop", []];
 private _row = lnbCurSelRow (_d displayCtrl ABZ_IDC_ITEMLIST);

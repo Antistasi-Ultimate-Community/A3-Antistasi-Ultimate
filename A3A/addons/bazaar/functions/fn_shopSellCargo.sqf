@@ -2,7 +2,7 @@
 // taken here - the server takes the items out of the vehicle or crate itself
 // (fn_serverSellCargo), so nothing has to be carried or drawn.
 #include "..\dialogues\ids.inc"
-private _d = findDisplay 78800;
+private _d = findDisplay ABZ_IDD_SHOP;
 if (isNull _d) exitWith {};
 private _shop = uiNamespace getVariable ["ABZ_shop", []];
 private _row = lnbCurSelRow (_d displayCtrl ABZ_IDC_ITEMLIST);
@@ -42,4 +42,4 @@ if (_isJob) then {
 };
 ["ABZ_sellCargo", [player, _shop select 0, _box, _class, _n, _expJobN, _expReward]] call CBA_fnc_serverEvent;
 // the cargo changes on the server - re-read it once that has reached us
-[] spawn { sleep 0.75; if (!isNull (findDisplay 78800)) then { isNil { call ABZ_fnc_shopFillList } } };
+[] spawn { sleep 0.75; if (!isNull (findDisplay ABZ_IDD_SHOP)) then { isNil { call ABZ_fnc_shopFillList } } };

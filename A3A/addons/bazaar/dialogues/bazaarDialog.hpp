@@ -372,7 +372,7 @@ class ABZ_RscControlsGroup
 
 class ABZ_Shop
 {
-	idd = 78800;
+	idd = ABZ_IDD_SHOP;
 	movingEnable = 0;
 	enableSimulation = 1;
 	onUnload = "uiNamespace setVariable ['ABZ_shop', nil];";
@@ -460,7 +460,7 @@ class ABZ_Shop
 			w = ABZ_W(0.085);
 			h = ABZ_H(0.045);
 			sizeEx = ABZ_FC(0.034,0.045);
-			action = "[ctrlText ((findDisplay 78800) displayCtrl 78815)] spawn ABZ_fnc_wantedFind";
+			action = "[ctrlText ((findDisplay ABZ_IDD_SHOP) displayCtrl 78815)] spawn ABZ_fnc_wantedFind";
 		};
 
 		// ---- right column: the selected item ----
