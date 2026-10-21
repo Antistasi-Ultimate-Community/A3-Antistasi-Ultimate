@@ -3,7 +3,7 @@
 if (hasInterface) then {
 	[
 		"Antistasi Bazaar", "ABZ_rumours",
-		["Bazaar: trade / rumours", "At a trader's stall: opens his menu (always works, whatever the scroll menu is doing). Anywhere else: lists every trader on the map, where they are, and when they restock."],
+		["$STR_A3U_Bazaar_Keybinds_Rumours", "$STR_A3U_Bazaar_Keybinds_Rumours_Tooltip"],
 		{
 			if (isNull (findDisplay 49) && {isNull (findDisplay 78800)} && {alive player}) then {
 				private _id = [call CBA_fnc_currentUnit] call ABZ_fnc_nearVendor;
@@ -17,7 +17,7 @@ if (hasInterface) then {
 
 	[
 		"Antistasi Bazaar", "ABZ_reset",
-		["Reset the Bazaar (host/admin)", "Removes every trader and sealed crate and rolls fresh traders in new towns. Host or logged-in admin only; press twice within 8 seconds to confirm."],
+		["$STR_A3U_Bazaar_Keybinds_Reset", "$STR_A3U_Bazaar_Keybinds_Reset_Tooltip"],
 		{
 			private _t = missionNamespace getVariable ["ABZ_resetArm", -100];
 			if (time - _t < 8) then {

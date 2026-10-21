@@ -252,6 +252,20 @@
                 <Original>Strict</Original>
             </Key>
         </Container>
+        <Container name="Keybinds">
+            <Key ID="STR_A3U_Bazaar_Keybinds_Rumours">
+                <Original>Bazaar: trade / rumours</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Keybinds_Rumours_Tooltip">
+                <Original>At a trader's stall: opens his menu (always works, whatever the scroll menu is doing). Anywhere else: lists every trader on the map, where they are, and when they restock.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Keybinds_Reset">
+                <Original>Reset the Bazaar (host/admin)</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Keybinds_Reset_Tooltip">
+                <Original>Removes every trader and sealed crate and rolls fresh traders in new towns. Host or logged-in admin only; press twice within 8 seconds to confirm.</Original>
+            </Key>
+        </Container>
         <Container name="GUI">
             <Key ID="STR_A3U_Bazaar_GUI_Title">
                 <Original>ANTISTASI BAZAAR</Original>
