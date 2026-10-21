@@ -172,7 +172,7 @@ private _abzReprice = {
 // v1.1.2 - per client (isGlobal 0): the dialog's fonts read it (config.cpp ABZ_S)
 [
 	"ABZ_uiScale", "SLIDER",
-	["UI scale (this client)", "Text size in the Bazaar menu. The menu fills the screen at any Interface Size; a bigger text shows fewer list rows, and long descriptions scroll. Takes effect the next time the menu is opened."],
+	["$STR_A3U_Bazaar_Settings_UIScale", "$STR_A3U_Bazaar_Settings_UIScale_Tooltip"],
 	"Antistasi Bazaar|General",
 	[0.7, 1.8, 1, 2],
 	0, {}
@@ -180,7 +180,7 @@ private _abzReprice = {
 
 [
 	"ABZ_vendorCount", "SLIDER",
-	["Number of traders", "How many Bazaar traders are set up on the map at once. Each one gets a town of their own."],
+	["$STR_A3U_Bazaar_Settings_VendorCount", "$STR_A3U_Bazaar_Settings_VendorCount_Tooltip"],
 	"Antistasi Bazaar|General",
 	[1, 8, 3, 0],
 	1, {}
@@ -188,7 +188,7 @@ private _abzReprice = {
 
 [
 	"ABZ_rotationMinutes", "SLIDER",
-	["Restock timer (minutes)", "How often every trader shuffles their stock. What you see in the menu is what they have until the timer runs out - buy it or wait for the next roll."],
+	["$STR_A3U_Bazaar_Settings_RotationMinutes", "$STR_A3U_Bazaar_Settings_RotationMinutes_Tooltip"],
 	"Antistasi Bazaar|General",
 	[5, 360, 90, 0],
 	1, {}
@@ -196,7 +196,7 @@ private _abzReprice = {
 
 [
 	"ABZ_relocateEvery", "SLIDER",
-	["Traders move every N restocks", "After this many restocks a trader packs up and reappears in a different town (0 = they never move). A killed trader is always replaced elsewhere."],
+	["$STR_A3U_Bazaar_Settings_RelocateEvery", "$STR_A3U_Bazaar_Settings_RelocateEvery_Tooltip"],
 	"Antistasi Bazaar|General",
 	[0, 20, 3, 0],
 	1, {}
@@ -204,15 +204,15 @@ private _abzReprice = {
 
 [
 	"ABZ_markerMode", "LIST",
-	["Map markers", "How much the map gives away. 'Town only' drops a marker on the town; 'Exact position' marks the stall itself; 'None' means you rely on Bazaar Rumours (Shift+K) and your own eyes."],
+	["$STR_A3U_Bazaar_Settings_MarkerMode", "$STR_A3U_Bazaar_Settings_MarkerMode_Tooltip"],
 	"Antistasi Bazaar|General",
-	[[0, 1, 2], ["None - rumours only", "Town only", "Exact position"], 1],
+	[[0, 1, 2], ["$STR_A3U_Bazaar_Settings_MarkerMode_None", "$STR_A3U_Bazaar_Settings_MarkerMode_Town", "$STR_A3U_Bazaar_Settings_MarkerMode_Exact"], 1],
 	1, {}
 ] call CBA_fnc_addSetting;
 
 [
 	"ABZ_announce", "CHECKBOX",
-	["Announce restocks and moves in chat", "When ON, everyone gets a system chat line when a trader restocks, moves town, or is killed."],
+	["$STR_A3U_Bazaar_Settings_Announce", "$STR_A3U_Bazaar_Settings_Announce_Tooltip"],
 	"Antistasi Bazaar|General",
 	true,
 	1, {}
@@ -220,7 +220,7 @@ private _abzReprice = {
 
 [
 	"ABZ_persistence", "CHECKBOX",
-	["Persistent traders & crates", "Restore trader locations, their stock, timers and jobs, and any sealed crates still in the world, when the campaign is loaded (server/host profile, per campaign). On Antistasi the Bazaar is saved together with Antistasi's own save (autosave or manual save), so loading a save brings the Bazaar back exactly as it was then. Off = every load starts fresh traders (the state is still saved, so switching this back on restores your latest save)."],
+	["$STR_A3U_Bazaar_Settings_Persistence", "$STR_A3U_Bazaar_Settings_Persistence_Tooltip"],
 	"Antistasi Bazaar|General",
 	true,
 	1, {}
@@ -229,15 +229,15 @@ private _abzReprice = {
 // STOCK
 [
 	"ABZ_stockSource", "LIST",
-	["Stock source", "'Factions in play' builds the catalog from the gear of every faction in the campaign (occupiers, invaders, rebels, rivals) - so a Faction Forger faction, RHS, 3CB, whatever is fighting, is what the traders fence. 'Everything loaded' scans every mod on the server instead (falls back to this outside Antistasi)."],
+	["$STR_A3U_Bazaar_Settings_StockSource", "$STR_A3U_Bazaar_Settings_StockSource_Tooltip"],
 	"Antistasi Bazaar|Stock",
-	[[0, 1], ["Factions in play (Antistasi)", "Everything loaded"], 0],
+	[[0, 1], ["$STR_A3U_Bazaar_Settings_StockSource_Factions", "$STR_A3U_Bazaar_Settings_StockSource_Everything"], 0],
 	1, {}
 ] call CBA_fnc_addSetting;
 
 [
 	"ABZ_slotCount", "SLIDER",
-	["Single-item slots per trader", "How many different single items a trader offers per restock. Each slot has a limited quantity."],
+	["$STR_A3U_Bazaar_Settings_SlotCount", "$STR_A3U_Bazaar_Settings_SlotCount_Tooltip"],
 	"Antistasi Bazaar|Stock",
 	[4, 24, 12, 0],
 	1, {}
@@ -245,7 +245,7 @@ private _abzReprice = {
 
 [
 	"ABZ_bulkSlots", "SLIDER",
-	["Bulk crate slots per trader", "How many sealed bulk crates a trader offers per restock. Bulk crates hold one unlock's worth of an item and must be hauled home."],
+	["$STR_A3U_Bazaar_Settings_BulkSlots", "$STR_A3U_Bazaar_Settings_BulkSlots_Tooltip"],
 	"Antistasi Bazaar|Stock",
 	[0, 4, 2, 0],
 	1, {}
@@ -253,7 +253,7 @@ private _abzReprice = {
 
 [
 	"ABZ_bulkSize", "SLIDER",
-	["Bulk crate size", "How many of an item a bulk crate holds. 0 = match Antistasi's own unlock count (minWeaps, 25 by default) so one crate = one arsenal unlock."],
+	["$STR_A3U_Bazaar_Settings_BulkSize", "$STR_A3U_Bazaar_Settings_BulkSize_Tooltip"],
 	"Antistasi Bazaar|Stock",
 	[0, 100, 0, 0],
 	1, _abzReprice
@@ -261,7 +261,7 @@ private _abzReprice = {
 
 [
 	"ABZ_tierScaling", "CHECKBOX",
-	["Stock grows with war tier", "Antistasi only. When ON, the slot counts above are the WAR TIER 5 baseline: a tier-1 trader carries about three quarters of that and one bulk crate, a tier-10 trader roughly double the single items, two to three times the bulk crates, and deeper quantities. OFF = the sliders are used as-is at every tier."],
+	["$STR_A3U_Bazaar_Settings_TierScaling", "$STR_A3U_Bazaar_Settings_TierScaling_Tooltip"],
 	"Antistasi Bazaar|Stock",
 	true,
 	1, {}
@@ -269,7 +269,7 @@ private _abzReprice = {
 
 [
 	"ABZ_bulkUnlockAnyway", "CHECKBOX",
-	["Bulk crates unlock anyway (unlocks-disabled servers)", "Only matters on Antistasi servers that run with arsenal unlocks DISABLED (minWeaps = -1). OFF (default): a crate is just its contents - the items go into the arsenal as a finite stock, and the crate is priced as a volume discount, not an unlock. ON: unpacking a full crate unlocks the item for the arsenal anyway, Antistasi's own forbidden-item and guided-launcher rules still applying - the Bazaar becomes the one way to unlock gear on a limited-arsenal server."],
+	["$STR_A3U_Bazaar_Settings_BulkUnlockAnyway", "$STR_A3U_Bazaar_Settings_BulkUnlockAnyway_Tooltip"],
 	"Antistasi Bazaar|Stock",
 	false,
 	1, _abzReprice
@@ -277,7 +277,7 @@ private _abzReprice = {
 
 [
 	"ABZ_bulkUnlockedToo", "CHECKBOX",
-	["Offer bulk crates of already-unlocked gear", "OFF (default): bulk crates are only rolled for gear the arsenal has NOT unlocked yet, so every crate is progress. ON: anything can show up in bulk."],
+	["$STR_A3U_Bazaar_Settings_BulkUnlockedToo", "$STR_A3U_Bazaar_Settings_BulkUnlockedToo_Tooltip"],
 	"Antistasi Bazaar|Stock",
 	false,
 	1, {}
@@ -286,7 +286,7 @@ private _abzReprice = {
 // JOBS
 [
 	"ABZ_jobs", "CHECKBOX",
-	["Trader jobs", "Every restock, each trader asks for a few of some item - one the arsenal has NOT unlocked, so you can't just pull it from the box - and pays a bounty per piece on delivery, plus a bonus when the job is done. Hand the goods over in the 'SELL your gear' category. The job lasts until the next restock."],
+	["$STR_A3U_Bazaar_Settings_Jobs", "$STR_A3U_Bazaar_Settings_Jobs_Tooltip"],
 	"Antistasi Bazaar|Jobs",
 	true,
 	1, {}
@@ -294,7 +294,7 @@ private _abzReprice = {
 
 [
 	"ABZ_jobReward", "SLIDER",
-	["Job payout (x buy price)", "What a job pays per delivered item, as a multiple of what the trader would SELL that item for (default 1.5x). Completing the job pays an extra half of the total on top. Much better than the normal sell payout - that's the point of doing the legwork."],
+	["$STR_A3U_Bazaar_Settings_JobReward", "$STR_A3U_Bazaar_Settings_JobReward_Tooltip"],
 	"Antistasi Bazaar|Jobs",
 	[0.5, 3, 1.5, 2],
 	1, {}
@@ -303,7 +303,7 @@ private _abzReprice = {
 // VEHICLES
 [
 	"ABZ_vehSlots", "SLIDER",
-	["Military vehicle slots per trader", "How many 'stolen' enemy military vehicles a trader offers per restock, taken from the vehicle lists of the factions you are fighting. Scales with war tier when 'Stock grows with war tier' is on (half at tier 1, one and a half times at tier 10). 0 = no vehicles. Antistasi only."],
+	["$STR_A3U_Bazaar_Settings_VehSlots", "$STR_A3U_Bazaar_Settings_VehSlots_Tooltip"],
 	"Antistasi Bazaar|Vehicles",
 	[0, 4, 2, 0],
 	1, {}
@@ -311,23 +311,23 @@ private _abzReprice = {
 
 [
 	"ABZ_vehRequirements", "LIST",
-	["Vehicle facility requirements", "'Same as Antistasi's black market': buying needs the rebels to hold the same facilities Antistasi Ultimate's own black market asks for - boats a seaport, light vehicles factories and a resource site, helicopters an airport or military base, tanks a military base and three factories, and so on (capped at what the map has). Vehicles you can't take yet still show up, marked LOCKED - something to fight for. 'None': anything on the table can be bought."],
+	["$STR_A3U_Bazaar_Settings_VehRequirements", "$STR_A3U_Bazaar_Settings_VehRequirements_Tooltip"],
 	"Antistasi Bazaar|Vehicles",
-	[[0, 1], ["Same as Antistasi's black market", "None"], 0],
+	[[0, 1], ["$STR_A3U_Bazaar_Settings_VehRequirements_Same", "$STR_A3U_Bazaar_Settings_VehRequirements_None"], 0],
 	1, {}
 ] call CBA_fnc_addSetting;
 
 [
 	"ABZ_vehDelivery", "LIST",
-	["Vehicle delivery", "'Parked near the stall': the vehicle is waiting near the trader (boats at the nearest deep water) and you drive it home - it's military, so getting in breaks undercover. 'Into the HQ garage': it goes straight into Antistasi's garage (respects the garage cap; falls back to parking when there is no garage)."],
+	["$STR_A3U_Bazaar_Settings_VehDelivery", "$STR_A3U_Bazaar_Settings_VehDelivery_Tooltip"],
 	"Antistasi Bazaar|Vehicles",
-	[[0, 1], ["Parked near the stall - drive it home", "Into the HQ garage"], 0],
+	[[0, 1], ["$STR_A3U_Bazaar_Settings_VehDelivery_Parked", "$STR_A3U_Bazaar_Settings_VehDelivery_HQ"], 0],
 	1, {}
 ] call CBA_fnc_addSetting;
 
 [
 	"ABZ_vehMarkup", "SLIDER",
-	["Vehicle price (x black-market price)", "Multiplier on Antistasi Ultimate's own black-market price for each vehicle (classes it doesn't list are priced from Antistasi's resource cost for them). The global price multiplier applies on top. A vehicle is never sold for less than 1.5x what Antistasi pays back for it at HQ."],
+	["$STR_A3U_Bazaar_Settings_VehMarkup", "$STR_A3U_Bazaar_Settings_VehMarkup_Tooltip"],
 	"Antistasi Bazaar|Vehicles",
 	[0.25, 3, 1, 2],
 	1, {}
@@ -336,7 +336,7 @@ private _abzReprice = {
 // MONEY
 [
 	"ABZ_priceMultiplier", "SLIDER",
-	["Price multiplier", "Multiplies every Bazaar price. 0 = everything is free - except anything Antistasi's Arms Dealer buys back, which never goes below his price (no free money; until he has been found, the highest price any of his possible stores lists)."],
+	["$STR_A3U_Bazaar_Settings_PriceMultiplier", "$STR_A3U_Bazaar_Settings_PriceMultiplier_Tooltip"],
 	"Antistasi Bazaar|Money",
 	[0, 10, 1, 2],
 	1, _abzReprice
@@ -344,7 +344,7 @@ private _abzReprice = {
 
 [
 	"ABZ_sellFraction", "SLIDER",
-	["Sell payout (fraction of buy price)", "Traders buy your gear too - the 'Sell your gear' category in the menu. This is what they pay as a fraction of what they would sell the same item for (default 0.3 = 30 cents on the dollar; a fence is not a charity). What you sell shows up on their table for others to buy. 0 = they don't buy."],
+	["$STR_A3U_Bazaar_Settings_SellFraction", "$STR_A3U_Bazaar_Settings_SellFraction_Tooltip"],
 	"Antistasi Bazaar|Money",
 	[0, 1, 0.3, 2],
 	1, {}
@@ -352,7 +352,7 @@ private _abzReprice = {
 
 [
 	"ABZ_bulkMultiplier", "SLIDER",
-	["Bulk crate markup (when a crate is an unlock)", "Multiplier on bulk crates on top of (unit price x crate size) when unpacking the crate UNLOCKS the item - Antistasi with unlocks on, or 'Bulk crates unlock anyway'. Bulk is supposed to be expensive then: it is a whole arsenal unlock in one box."],
+	["$STR_A3U_Bazaar_Settings_BulkMultiplier", "$STR_A3U_Bazaar_Settings_BulkMultiplier_Tooltip"],
 	"Antistasi Bazaar|Money",
 	[0.5, 5, 1.5, 2],
 	1, _abzReprice
@@ -360,7 +360,7 @@ private _abzReprice = {
 
 [
 	"ABZ_bulkDiscount", "SLIDER",
-	["Bulk crate price (when a crate is NOT an unlock)", "Multiplier on (unit price x crate size) when a crate can't unlock anything - Antistasi with arsenal unlocks disabled, or outside Antistasi. Then a crate is just 25 rifles and ammo in a box, so it gets a volume DISCOUNT (default 0.6 = 40% off buying them one at a time) instead of the unlock markup."],
+	["$STR_A3U_Bazaar_Settings_BulkDiscount", "$STR_A3U_Bazaar_Settings_BulkDiscount_Tooltip"],
 	"Antistasi Bazaar|Money",
 	[0.2, 2, 0.6, 2],
 	1, _abzReprice
@@ -368,24 +368,24 @@ private _abzReprice = {
 
 [
 	"ABZ_funds", "LIST",
-	["Purchases paid from", "'Personal money' charges the buyer. 'Faction money' spends the shared Antistasi war chest instead (falls back to personal money outside Antistasi)."],
+	["$STR_A3U_Bazaar_Settings_Funds", "$STR_A3U_Bazaar_Settings_Funds_Tooltip"],
 	"Antistasi Bazaar|Money",
-	[[0, 1], ["Personal money", "Faction money"], 0],
+	[[0, 1], ["$STR_A3U_Bazaar_Settings_Funds_Personal", "$STR_A3U_Bazaar_Settings_Funds_Faction"], 0],
 	1, {}
 ] call CBA_fnc_addSetting;
 
 // RISK
 [
 	"ABZ_undercoverMode", "LIST",
-	["Undercover rule", "Antistasi only. 'Always required': a trader refuses anyone who is not undercover - civilian clothes, rifle left in the car. 'Not in rebel-held towns': the same, except in towns your side already controls, where you can walk up armed. 'Never required': anyone can trade."],
+	["$STR_A3U_Bazaar_Settings_UndercoverMode", "$STR_A3U_Bazaar_Settings_UndercoverMode_Tooltip"],
 	"Antistasi Bazaar|Risk",
-	[[0, 1, 2], ["Never required", "Always required", "Not in rebel-held towns"], 1],
+	[[0, 1, 2], ["$STR_A3U_Bazaar_Settings_UndercoverMode_Never", "$STR_A3U_Bazaar_Settings_UndercoverMode_Always", "$STR_A3U_Bazaar_Settings_UndercoverMode_NotInRebelTowns"], 1],
 	1, {}
 ] call CBA_fnc_addSetting;
 
 [
 	"ABZ_enemyRadius", "SLIDER",
-	["Trader refuses when enemies within (m)", "No business while enemy units are this close to the stall. 0 disables the check."],
+	["$STR_A3U_Bazaar_Settings_EnemyRadius", "$STR_A3U_Bazaar_Settings_EnemyRadius_Tooltip"],
 	"Antistasi Bazaar|Risk",
 	[0, 300, 60, 0],
 	1, {}
@@ -393,7 +393,7 @@ private _abzReprice = {
 
 [
 	"ABZ_seizure", "CHECKBOX",
-	["Contraband seizure", "When ON, a sealed crate that enemy units have spotted (you or your vehicle, while the crate is away from HQ) for long enough is confiscated - gone. Crates also go up with the vehicle carrying them."],
+	["$STR_A3U_Bazaar_Settings_Seizure", "$STR_A3U_Bazaar_Settings_Seizure_Tooltip"],
 	"Antistasi Bazaar|Risk",
 	true,
 	1, {}
@@ -401,7 +401,7 @@ private _abzReprice = {
 
 [
 	"ABZ_seizureSeconds", "SLIDER",
-	["Seizure: seconds spotted before a crate is lost", "How long enemy units must keep eyes on you (or your ride) with a sealed crate before it is seized. Breaking contact resets the clock."],
+	["$STR_A3U_Bazaar_Settings_SeizureSeconds", "$STR_A3U_Bazaar_Settings_SeizureSeconds_Tooltip"],
 	"Antistasi Bazaar|Risk",
 	[15, 300, 60, 0],
 	1, {}
@@ -410,7 +410,7 @@ private _abzReprice = {
 // MONEY (v1.1.0)
 [
 	"ABZ_buyBackSeconds", "SLIDER",
-	["Buy-back window (seconds)", "Bought the wrong thing? For this long after a single-item purchase, the same trader takes it back at the FULL price you paid (sell it back under 'SELL your gear'). After that it is a sale like any other. Bulk crates and vehicles have no buy-back. 0 = off."],
+	["$STR_A3U_Bazaar_Settings_BuyBackSeconds", "$STR_A3U_Bazaar_Settings_BuyBackSeconds_Tooltip"],
 	"Antistasi Bazaar|Money",
 	[0, 300, 60, 0],
 	1, {}
@@ -419,7 +419,7 @@ private _abzReprice = {
 // SMUGGLING RUNS (v1.1.0)
 [
 	"ABZ_runsEnabled", "CHECKBOX",
-	["Smuggling runs", "Traders offer contracts: carry a sealed crate to another trader on the far side of the map before the deadline. Pays by distance, by how much enemy ground the straight line crosses, and by war tier. Spotted long enough with it, or the vehicle carrying it destroyed, and the run fails - and everyone hears about it. One active run per player."],
+	["$STR_A3U_Bazaar_Settings_RunsEnabled", "$STR_A3U_Bazaar_Settings_RunsEnabled_Tooltip"],
 	"Antistasi Bazaar|Smuggling Runs",
 	true,
 	1, {}
@@ -427,7 +427,7 @@ private _abzReprice = {
 
 [
 	"ABZ_runPayout", "SLIDER",
-	["Run payout (x)", "Multiplier on what a smuggling run pays (default 1x: roughly $300 + $300 per km, up to double over enemy ground, more as the war goes on)."],
+	["$STR_A3U_Bazaar_Settings_RunPayout", "$STR_A3U_Bazaar_Settings_RunPayout_Tooltip"],
 	"Antistasi Bazaar|Smuggling Runs",
 	[0.25, 3, 1, 2],
 	1, {}
@@ -436,8 +436,8 @@ private _abzReprice = {
 // PROGRESSION (v1.1.0)
 [
 	"ABZ_progression", "LIST",
-	["Rarity gate by war tier", "Antistasi only. Holds the strongest stock back until the war has moved on, so the Bazaar can stand in for a disabled Arms Dealer without handing out endgame gear on day one. Applies to rolled stock, bulk crates (arsenal unlocks) and vehicles. 'Gentle': Rare items from war tier 3 and Exotic from 5; Rare crates from 4 and Exotic crates from 6. 'Strict': Rare items from 4 and Exotic from 7; Rare crates from 6 and Exotic crates from 8."],
+	["$STR_A3U_Bazaar_Settings_Progression", "$STR_A3U_Bazaar_Settings_Progression_Tooltip"],
 	"Antistasi Bazaar|Progression",
-	[[0, 1, 2], ["Off - every rarity from day one", "Gentle", "Strict"], 0],
+	[[0, 1, 2], ["$STR_A3U_Bazaar_Settings_Progression_Off", "$STR_A3U_Bazaar_Settings_Progression_Gentle", "$STR_A3U_Bazaar_Settings_Progression_Strict"], 0],
 	1, {}
 ] call CBA_fnc_addSetting;

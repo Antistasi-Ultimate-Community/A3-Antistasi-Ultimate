@@ -1,6 +1,257 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="A3-Antistasi">
     <Package name="A3-Antistasi-Ultimate-Bazaar">
+        <Container name="Settings">
+            <Key ID="STR_A3U_Bazaar_Settings_UIScale">
+                <Original>UI Scale (this client)</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_UIScale_Tooltip">
+                <Original>Text size in the Bazaar menu. The menu fills the screen at any Interface Size; a bigger text shows fewer list rows, and long descriptions scroll. Takes effect the next time the menu is opened.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_VendorCount">
+                <Original>Number of traders</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_VendorCount_Tooltip">
+                <Original>How many Bazaar traders are set up on the map at once. Each one gets a town of their own.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_RotationMinutes">
+                <Original>Restock timer (minutes)</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_RotationMinutes_Tooltip">
+                <Original>How often every trader shuffles their stock. What you see in the menu is what they have until the timer runs out - buy it or wait for the next roll.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_RelocateEvery">
+                <Original>Traders move every N restocks</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_RelocateEvery_Tooltip">
+                <Original>After this many restocks a trader packs up and reappears in a different town (0 = they never move). A killed trader is always replaced elsewhere.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_MarkerMode">
+                <Original>Map markers</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_MarkerMode_Tooltip">
+                <Original>How much the map gives away. 'Town only' drops a marker on the town; 'Exact position' marks the stall itself; 'None' means you rely on Bazaar Rumours (Shift+K) and your own eyes.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_MarkerMode_None">
+                <Original>None - rumours only</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_MarkerMode_Town">
+                <Original>Town only</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_MarkerMode_Exact">
+                <Original>Exact position</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_Announce">
+                <Original>Announce restocks and moves in chat</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_Announce_Tooltip">
+                <Original>When ON, everyone gets a system chat line when a trader restocks, moves town, or is killed.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_Persistence">
+                <Original>Persistent traders & crates</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_Persistence_Tooltip">
+                <Original>Restore trader locations, their stock, timers and jobs, and any sealed crates still in the world, when the campaign is loaded (server/host profile, per campaign). On Antistasi the Bazaar is saved together with Antistasi's own save (autosave or manual save), so loading a save brings the Bazaar back exactly as it was then. Off = every load starts fresh traders (the state is still saved, so switching this back on restores your latest save).</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_StockSource">
+                <Original>Stock source</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_StockSource_Tooltip">
+                <Original>'Factions in play' builds the catalog from the gear of every faction in the campaign (occupiers, invaders, rebels, rivals) - so a Faction Forger faction, RHS, 3CB, whatever is fighting, is what the traders fence. 'Everything loaded' scans every mod on the server instead (falls back to this outside Antistasi).</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_StockSource_Factions">
+                <Original>Factions in play (Antistasi)</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_StockSource_Everything">
+                <Original>Everything loaded</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_SlotCount">
+                <Original>Single-item slots per trader</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_SlotCount_Tooltip">
+                <Original>How many different single items a trader offers per restock. Each slot has a limited quantity.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_BulkSlots">
+                <Original>Bulk crate slots per trader</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_BulkSlots_Tooltip">
+                <Original>How many sealed bulk crates a trader offers per restock. Bulk crates hold one unlock's worth of an item and must be hauled home.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_BulkSize">
+                <Original>Bulk crate size</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_BulkSize_Tooltip">
+                <Original>How many of an item a bulk crate holds. 0 = match Antistasi's own unlock count (minWeaps, 25 by default) so one crate = one arsenal unlock.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_TierScaling">
+                <Original>Stock grows with war tier</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_TierScaling_Tooltip">
+                <Original>Antistasi only. When ON, the slot counts above are the WAR TIER 5 baseline: a tier-1 trader carries about three quarters of that and one bulk crate, a tier-10 trader roughly double the single items, two to three times the bulk crates, and deeper quantities. OFF = the sliders are used as-is at every tier.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_BulkUnlockAnyway">
+                <Original>Bulk crates unlock anyway (unlocks-disabled servers)</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_BulkUnlockAnyway_Tooltip">
+                <Original>Only matters on Antistasi servers that run with arsenal unlocks DISABLED (minWeaps = -1). OFF (default): a crate is just its contents - the items go into the arsenal as a finite stock, and the crate is priced as a volume discount, not an unlock. ON: unpacking a full crate unlocks the item for the arsenal anyway, Antistasi's own forbidden-item and guided-launcher rules still applying - the Bazaar becomes the one way to unlock gear on a limited-arsenal server.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_BulkUnlockedToo">
+                <Original>Offer bulk crates of already-unlocked gear</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_BulkUnlockedToo_Tooltip">
+                <Original>OFF (default): bulk crates are only rolled for gear the arsenal has NOT unlocked yet, so every crate is progress. ON: anything can show up in bulk.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_Jobs">
+                <Original>Trader jobs</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_Jobs_Tooltip">
+                <Original>Every restock, each trader asks for a few of some item - one the arsenal has NOT unlocked, so you can't just pull it from the box - and pays a bounty per piece on delivery, plus a bonus when the job is done. Hand the goods over in the 'SELL your gear' category. The job lasts until the next restock.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_JobReward">
+                <Original>Job payout (x buy price)</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_JobReward_Tooltip">
+                <Original>What a job pays per delivered item, as a multiple of what the trader would SELL that item for (default 1.5x). Completing the job pays an extra half of the total on top. Much better than the normal sell payout - that's the point of doing the legwork.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_VehSlots">
+                <Original>Military vehicle slots per trader</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_VehSlots_Tooltip">
+                <Original>How many 'stolen' enemy military vehicles a trader offers per restock, taken from the vehicle lists of the factions you are fighting. Scales with war tier when 'Stock grows with war tier' is on (half at tier 1, one and a half times at tier 10). 0 = no vehicles. Antistasi only.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_VehRequirements">
+                <Original>Vehicle facility requirements</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_VehRequirements_Tooltip">
+                <Original>'Same as Antistasi's black market': buying needs the rebels to hold the same facilities Antistasi Ultimate's own black market asks for - boats a seaport, light vehicles factories and a resource site, helicopters an airport or military base, tanks a military base and three factories, and so on (capped at what the map has). Vehicles you can't take yet still show up, marked LOCKED - something to fight for. 'None': anything on the table can be bought.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_VehRequirements_Same">
+                <Original>Same as Antistasi's black market</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_VehRequirements_None">
+                <Original>None</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_VehDelivery">
+                <Original>Vehicle delivery</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_VehDelivery_Tooltip">
+                <Original>'Parked near the stall': the vehicle is waiting near the trader (boats at the nearest deep water) and you drive it home - it's military, so getting in breaks undercover. 'Into the HQ garage': it goes straight into Antistasi's garage (respects the garage cap; falls back to parking when there is no garage).</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_VehDelivery_Parked">
+                <Original>Parked near the stall - drive it home</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_VehDelivery_HQ">
+                <Original>Into the HQ garage</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_VehMarkup">
+                <Original>Vehicle price (x black-market price)</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_VehMarkup_Tooltip">
+                <Original>Multiplier on Antistasi Ultimate's own black-market price for each vehicle (classes it doesn't list are priced from Antistasi's resource cost for them). The global price multiplier applies on top. A vehicle is never sold for less than 1.5x what Antistasi pays back for it at HQ.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_PriceMultiplier">
+                <Original>Price multiplier</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_PriceMultiplier_Tooltip">
+                <Original>Multiplies every Bazaar price. 0 = everything is free - except anything Antistasi's Arms Dealer buys back, which never goes below his price (no free money; until he has been found, the highest price any of his possible stores lists).</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_SellFraction">
+                <Original>Sell payout (fraction of buy price)</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_SellFraction_Tooltip">
+                <Original>Traders buy your gear too - the 'Sell your gear' category in the menu. This is what they pay as a fraction of what they would sell the same item for (default 0.3 = 30 cents on the dollar; a fence is not a charity). What you sell shows up on their table for others to buy. 0 = they don't buy.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_BulkMultiplier">
+                <Original>Bulk crate markup (when a crate is an unlock)</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_BulkMultiplier_Tooltip">
+                <Original>Multiplier on bulk crates on top of (unit price x crate size) when unpacking the crate UNLOCKS the item - Antistasi with unlocks on, or 'Bulk crates unlock anyway'. Bulk is supposed to be expensive then: it is a whole arsenal unlock in one box.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_BulkDiscount">
+                <Original>Bulk crate price (when a crate is NOT an unlock)</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_BulkDiscount_Tooltip">
+                <Original>Multiplier on (unit price x crate size) when a crate can't unlock anything - Antistasi with arsenal unlocks disabled, or outside Antistasi. Then a crate is just 25 rifles and ammo in a box, so it gets a volume DISCOUNT (default 0.6 = 40% off buying them one at a time) instead of the unlock markup.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_Funds">
+                <Original>Purchases paid from</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_Funds_Tooltip">
+                <Original>'Personal money' charges the buyer. 'Faction money' spends the shared Antistasi war chest instead (falls back to personal money outside Antistasi).</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_Funds_Personal">
+                <Original>Personal money</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_Funds_Faction">
+                <Original>Faction money</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_UndercoverMode">
+                <Original>Undercover rule</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_UndercoverMode_Tooltip">
+                <Original>Antistasi only. 'Always required': a trader refuses anyone who is not undercover - civilian clothes, rifle left in the car. 'Not in rebel-held towns': the same, except in towns your side already controls, where you can walk up armed. 'Never required': anyone can trade.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_UndercoverMode_Never">
+                <Original>Never required</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_UndercoverMode_Always">
+                <Original>Always required</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_UndercoverMode_NotInRebelTowns">
+                <Original>Not in rebel-held towns</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_EnemyRadius">
+                <Original>Trader refuses when enemies within (m)</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_EnemyRadius_Tooltip">
+                <Original>No business while enemy units are this close to the stall. 0 disables the check.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_Seizure">
+                <Original>Contraband seizure</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_Seizure_Tooltip">
+                <Original>When ON, a sealed crate that enemy units have spotted (you or your vehicle, while the crate is away from HQ) for long enough is confiscated - gone. Crates also go up with the vehicle carrying them.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_SeizureSeconds">
+                <Original>Seizure: seconds spotted before a crate is lost</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_SeizureSeconds_Tooltip">
+                <Original>How long enemy units must keep eyes on you (or your ride) with a sealed crate before it is seized. Breaking contact resets the clock.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_BuyBackSeconds">
+                <Original>Buy-back window (seconds)</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_BuyBackSeconds_Tooltip">
+                <Original>Bought the wrong thing? For this long after a single-item purchase, the same trader takes it back at the FULL price you paid (sell it back under 'SELL your gear'). After that it is a sale like any other. Bulk crates and vehicles have no buy-back. 0 = off.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_RunsEnabled">
+                <Original>Smuggling runs</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_RunsEnabled_Tooltip">
+                <Original>Traders offer contracts: carry a sealed crate to another trader on the far side of the map before the deadline. Pays by distance, by how much enemy ground the straight line crosses, and by war tier. Spotted long enough with it, or the vehicle carrying it destroyed, and the run fails - and everyone hears about it. One active run per player.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_RunPayout">
+                <Original>Run payout (x)</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_RunPayout_Tooltip">
+                <Original>Multiplier on what a smuggling run pays (default 1x: roughly $300 + $300 per km, up to double over enemy ground, more as the war goes on).</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_Progression">
+                <Original>Rarity gate by war tier</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_Progression_Tooltip">
+                <Original>Antistasi only. Holds the strongest stock back until the war has moved on, so the Bazaar can stand in for a disabled Arms Dealer without handing out endgame gear on day one. Applies to rolled stock, bulk crates (arsenal unlocks) and vehicles. 'Gentle': Rare items from war tier 3 and Exotic from 5; Rare crates from 4 and Exotic crates from 6. 'Strict': Rare items from 4 and Exotic from 7; Rare crates from 6 and Exotic crates from 8.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_Progression_Off">
+                <Original>Off - every rarity from day one</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_Progression_Gentle">
+                <Original>Gentle</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_Progression_Strict">
+                <Original>Strict</Original>
+            </Key>
+        </Container>
         <Container name="GUI">
             <Key ID="STR_A3U_Bazaar_GUI_Title">
                 <Original>ANTISTASI BAZAAR</Original>
