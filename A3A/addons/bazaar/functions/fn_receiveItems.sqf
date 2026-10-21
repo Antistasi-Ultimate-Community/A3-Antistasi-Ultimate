@@ -109,5 +109,5 @@ for "_i" from 1 to (_qty max 1) do {
 };
 
 if (_dropped > 0) then {
-	systemChat format [localize "STR_A3U_Bazaar_Misc_NoRoom", _dropped];
+	systemChat format [localize "STR_A3U_Bazaar_Chat_NoRoom", _dropped];
 };

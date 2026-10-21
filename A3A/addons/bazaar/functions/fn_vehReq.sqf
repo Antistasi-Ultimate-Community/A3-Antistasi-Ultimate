@@ -16,12 +16,12 @@
 // destroyed site does not count until it is rebuilt.
 params [["_cat", "", [""]]];
 if ((missionNamespace getVariable ["ABZ_vehRequirements", 0]) == 1) exitWith {
-	[true, "<t color='#a0ffa0'>No facility requirement on this server.</t>", "No facility requirement on this server."]
+	[true, format ["<t color='#a0ffa0'>%1</t>", localize "STR_A3U_Bazaar_Notify_NoFacilityReq"], localize "STR_A3U_Bazaar_Notify_NoFacilityReq"]
 };
 if (!(call ABZ_fnc_isAntistasi) || {isNil "sidesX"}) exitWith { [true, "", ""] };
 private _ign = missionNamespace getVariable ["blackMarketIgnoreRequirements", 0];
 if (_ign isEqualTo true || {_ign isEqualTo 1}) exitWith {
-	[true, "<t color='#a0ffa0'>Requirements waived on this server.</t>", "Requirements waived on this server."]
+	[true, format ["<t color='#a0ffa0'>%1</t>", localize "STR_A3U_Bazaar_Notify_ReqWaived"], localize "STR_A3U_Bazaar_Notify_ReqWaived"]
 };
 
 private _clauses = switch (_cat) do {
@@ -53,7 +53,7 @@ private _plain = [];
 		private _own = { (sidesX getVariable [_x, sideUnknown]) == teamPlayer && {!(_x in _destroyed)} } count _arr;
 		if (_own >= (_n min (count _arr))) then { _clauseMet = true };
 		(_names get _type) params ["_one", "_many"];
-		_opts pushBack format ["%1 %2 (you hold %3)", _n, [_many, _one] select (_n == 1), _own];
+		_opts pushBack format [localize "STR_A3U_Bazaar_Misc_YouHold", _n, [_many, _one] select (_n == 1), _own];
 	} forEach _x;
 	if (!_clauseMet) then { _allMet = false };
 	_rich pushBack format ["<t color='%1'>%2</t>", ["#ff8a6a", "#a0ffa0"] select _clauseMet, _opts joinString " or "];
@@ -61,4 +61,4 @@ private _plain = [];
 } forEach _clauses;
 
 if (_clauses isEqualTo []) exitWith { [true, "", ""] };
-[_allMet, "Needs " + (_rich joinString " and "), "needs " + (_plain joinString " and ")]
+[_allMet, localize "STR_A3U_Bazaar_Misc_Needs" + (_rich joinString localize "STR_A3U_Bazaar_Misc_And"), toLower localize "STR_A3U_Bazaar_Misc_Needs" + (_plain joinString localize "STR_A3U_Bazaar_Misc_And")]

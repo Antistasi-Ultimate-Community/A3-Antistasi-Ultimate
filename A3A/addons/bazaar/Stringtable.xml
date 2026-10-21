@@ -322,6 +322,12 @@
             <Key ID="STR_A3U_Bazaar_Notify_WantedAlreadyOnList">
                 <Original>%1 is already on your Wanted List.</Original>
             </Key>
+            <Key ID="STR_A3U_Bazaar_Notify_NoFacilityReq">
+                <Original>No facility requirement on this server.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Notify_ReqWaived">
+                <Original>Requirements waived on this server.</Original>
+            </Key>
         </Container>
         <Container name="Chat">
             <Key ID="STR_A3U_Bazaar_Chat_RunFailed">
@@ -366,6 +372,9 @@
             <Key ID="STR_A3U_Bazaar_Chat_FreshStock">
                 <Original>[Bazaar] %1 at %2 has fresh stock.%3</Original>
             </Key>
+            <Key ID="STR_A3U_Bazaar_Chat_NoRoom">
+                <Original>[Bazaar] No room for %1 of them - they're on the ground beside you.</Original>
+            </Key>
         </Container>
         <Container name="Misc">
             <Key ID="STR_A3U_Bazaar_Misc_Rarity_Common">
@@ -380,17 +389,44 @@
             <Key ID="STR_A3U_Bazaar_Misc_Rarity_Exotic">
                 <Original>Exotic</Original>
             </Key>
-            <Key ID="STR_A3U_Bazaar_Misc_NoRoom">
-                <Original>[Bazaar] No room for %1 of them - they're on the ground beside you.</Original>
-            </Key>
             <Key ID="STR_A3U_Bazaar_Misc_Location_Coast">
                 <Original>the coast</Original>
             </Key>
             <Key ID="STR_A3U_Bazaar_Misc_Location_BackRoads">
                 <Original>the back roads</Original>
             </Key>
+            <Key ID="STR_A3U_Bazaar_Misc_Kind_Weapon">
+                <Original>Weapon</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Misc_Kind_Ammo">
+                <Original>Ammunition / explosives</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Misc_Kind_Gear">
+                <Original>Gear</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Misc_Kind_Clothing">
+                <Original>Clothing / carry</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Misc_Kind_Item">
+                <Original>Item</Original>
+            </Key>
             <Key ID="STR_A3U_Bazaar_Misc_Faction">
                 <Original>FACTION </Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Misc_YouHold">
+                <Original>%1 %2 (you hold %3)</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Misc_Needs">
+                <Original>Needs </Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Misc_And">
+                <Original> and </Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Misc_YouCarry">
+                <Original>you carry</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Misc_InThere">
+                <Original>in there:</Original>
             </Key>
         </Container>
         <Container name="Runs">
@@ -552,8 +588,17 @@
             <Key ID="STR_A3U_Bazaar_Shop_Unpin">
                 <Original>UNPIN</Original>
             </Key>
+            <Key ID="STR_A3U_Bazaar_Shop_Pin">
+                <Original>PIN</Original>
+            </Key>
             <Key ID="STR_A3U_Bazaar_Shop_Buy">
                 <Original>BUY</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Shop_Sold">
+                <Original>SOLD</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Shop_OneAvailable">
+                <Original>1 available</Original>
             </Key>
             <Key ID="STR_A3U_Bazaar_Shop_Job">
                 <Original>[JOB] </Original>
@@ -626,6 +671,99 @@
             </Key>
             <Key ID="STR_A3U_Bazaar_Shop_AfterRestock">
                 <Original>has it after the restock</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Shop_NothingOnYou">
+                <Original>&lt;t color='#c8c8c8'&gt;Nothing on you the trader would pay for.&lt;/t&gt;</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Shop_NothingInThere">
+                <Original>&lt;t color='#c8c8c8'&gt;Nothing in there the trader would pay for.&lt;/t&gt;</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Shop_SellFromVehicleOrCrate">
+                <Original>&lt;t color='#f1c27d'&gt;SELL FROM A VEHICLE OR CRATE&lt;/t&gt;&lt;br/&gt;&lt;t color='#c8c8c8'&gt;Park a vehicle within 15m of you, or stand by a crate or box (6m), and the trader buys straight out of it - no need to carry anything, or draw a weapon and break cover. Weapons are stripped by him: fitted parts and loaded magazines go back in.&lt;/t&gt;</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Shop_SmugglingRunsOff">
+                <Original>&lt;t color='#c8c8c8'&gt;Smuggling runs are switched off on this server.&lt;/t&gt;</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Shop_SmugglingRuns">
+                <Original>&lt;t color='#ffb060'&gt;SMUGGLING RUNS&lt;/t&gt;&lt;br/&gt;&lt;t color='#c8c8c8'&gt;No contract here this rotation - the trader needs a partner at least 1.5km away. Ask around (RUMOURS), or come back after the restock.&lt;/t&gt;</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Shop_WantedList">
+                <Original>&lt;t color='#7fd4ff'&gt;WANTED LIST&lt;/t&gt;&lt;br/&gt;Empty. Pin an item with PIN in any category, or type part of its name below and press PIN IT. Up to %1 pins, kept in your profile between campaigns. You'll hear in chat the moment any trader has one - as a single, a sealed crate, or a job asking for it - and RUMOURS lists who has them.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Shop_NothingToday">
+                <Original>&lt;t color='#c8c8c8'&gt;Nothing in this category today. Try another, or wait for the restock.&lt;/t&gt;</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Shop_SmugglingContract">
+                <Original>&lt;t size='1.15' color='#ffb060'&gt;SMUGGLING CONTRACT&lt;/t&gt;&lt;br/&gt;Carry a sealed crate to the destination as instructed by the trader. Follow the route, avoid enemy detection, and deliver it within the time limit.&lt;br/&gt;Pays on delivery.&lt;br/&gt;&lt;t size='0.85' color='#c8c8c8'&gt;The crate appears beside the stall, tagged as yours. Load it, drive it, hand it over at the other stall (scroll menu there, within 30m). Spotted with it long enough, or the vehicle carrying it destroyed: the run fails and everyone hears about it. One run at a time.&lt;/t&gt;</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Shop_AlreadyGoing">
+                <Original> You already have one going.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Shop_YourSmuggledCrate">
+                <Original>&lt;t size='1.15' color='#ffb060'&gt;YOUR SMUGGLED CRATE&lt;/t&gt;&lt;br/&gt;From %1 - this is where it goes. Pays &lt;t color='#a0ffa0'&gt;$%2&lt;/t&gt;.&lt;br/&gt;%3 min left.&lt;br/&gt;&lt;t size='0.85' color='#c8c8c8'&gt;The crate has to be within 30m of the stall - on the ground or still in your vehicle.&lt;/t&gt;</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Shop_YourSmugglingRun">
+                <Original>&lt;t size='1.15' color='#ffb060'&gt;YOUR SMUGGLING RUN&lt;/t&gt;&lt;br/&gt;Crate from %1 to &lt;t color='#f1c27d'&gt;%2&lt;/t&gt; near %3 (marked on your map). %4 min left. Pays &lt;t color='#a0ffa0'&gt;$%5&lt;/t&gt;.&lt;br/&gt;&lt;t size='0.85' color='#c8c8c8'&gt;One run at a time - finish this one before taking another contract.&lt;/t&gt;</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Shop_YourWantedList">
+                <Original>&lt;t size='1.15' color='#7fd4ff'&gt;%1&lt;/t&gt;&lt;br/&gt;On your Wanted List (%2/%3).&lt;br/&gt;&lt;t size='0.85' color='#c8c8c8'&gt;You'll hear in chat the moment any trader has it - as a single, a sealed crate, or a job asking for it. RUMOURS lists who has your pins right now. UNPIN takes it off.&lt;/t&gt;</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Shop_JobItem">
+                <Original>&lt;t color='#ffd080'&gt;JOB ITEM&lt;/t&gt; - the trader wants these: %1 more to go, then a bonus. Delivered pieces stay with him. Only full magazines count.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Shop_SellInfo">
+                <Original>A weapon in your hands goes bare and unloaded; one in your uniform, vest or backpack is stripped by the trader - fitted parts and the loaded magazine go back in the pack. A worn uniform, vest or backpack must be empty. Part-used magazines are paid by the round. Gear your arsenal has unlimited isn't worth anything here. What you sell goes on the table.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Shop_SellInfoFromBox">
+                <Original>Straight out of the %1 (%2m away). Weapons are stripped by the trader - fitted parts and loaded magazines go back in. Part-used magazines are paid by the round. Uniforms, vests and backpacks: take them out to sell them. What you sell goes on the table.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Shop_BuyBack">
+                <Original>&lt;t color='#9fffe6'&gt;BUY-BACK: you bought %1 of these here moments ago - he takes them back at the full $%2 you paid (whole items / full magazines) for another %3s.&lt;/t&gt; Any more than that sell at the normal price.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Shop_TraderPays">
+                <Original>&lt;t size='1.15' color='#f1c27d'&gt;%1&lt;/t&gt;&lt;br/&gt;&lt;t color='%2'&gt;%3&lt;/t&gt;&lt;br/&gt;The trader pays &lt;t color='#ffd080'&gt;$%4&lt;/t&gt; each  -  %7 %5&lt;br/&gt;&lt;t size='0.85' color='#c8c8c8'&gt;%6&lt;/t&gt;</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Shop_HowManyToSell">
+                <Original>How many to sell - 1 to %1.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Shop_VehDeliveredGarage">
+                <Original>Delivered into the HQ garage.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Shop_VehDeliveredLand">
+                <Original>Delivered near the stall - you drive it home. It's military: getting in breaks your cover.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Shop_VehDeliveredWater">
+                <Original>Delivered at the nearest deep water - you sail it home.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Shop_VehicleInfo">
+                <Original>&lt;t size='1.15' color='#f1c27d'&gt;%1&lt;/t&gt;&lt;br/&gt;&lt;t color='%2'&gt;%3&lt;/t&gt;  -  %4 passenger seats&lt;br/&gt;Price: &lt;t color='#a0ffa0'&gt;$%5&lt;/t&gt;  -  %6&lt;br/&gt;%7&lt;br/&gt;&lt;t size='0.85' color='#c8c8c8'&gt;%8&lt;/t&gt;</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Shop_VehiclesOnePer">
+                <Original>Vehicles are one per buy.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Shop_UnlocksEnabled">
+                <Original>Unpack it at HQ and the item is UNLOCKED in the arsenal.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Shop_UnlocksDisabled">
+                <Original>No arsenal unlocks on this server: unpack it at HQ and the whole lot goes into the arsenal as stock, at a volume discount.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Shop_NotAntistasi">
+                <Original>Unpack it and the crate opens with the whole lot inside, at a volume discount.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Shop_SealedBulkCrate">
+                <Original>&lt;t color='#d98cff'&gt;SEALED BULK CRATE: %1x %2&lt;/t&gt;&lt;br/&gt;Price: &lt;t color='#a0ffa0'&gt;$%3&lt;/t&gt; per crate  -  %4&lt;br/&gt;&lt;t size='0.85'&gt;%5 Hauling required - enemy eyes on you = seizure risk.&lt;/t&gt;</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Shop_PriceEach">
+                <Original>Price: &lt;t color='#a0ffa0'&gt;$%1&lt;/t&gt; each  -  %2</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Shop_AmountLeft">
+                <Original>%1 left</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Shop_HowManyToBuy">
+                <Original>How many to buy - anything from 1 to %1 (what's left).</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Shop_BulkCratesOnePer">
+                <Original>Bulk crates are one per buy.</Original>
             </Key>
         </Container>
         <Container name="Undercover">
