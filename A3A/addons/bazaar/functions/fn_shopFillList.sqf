@@ -30,7 +30,7 @@ private _mode = switch (true) do {
 private _sell = _mode in ["sell", "sellcargo"];
 uiNamespace setVariable ["ABZ_shopSell", _sell];
 uiNamespace setVariable ["ABZ_shopMode", _mode];
-(_d displayCtrl ABZ_IDC_BUTTONBUY) ctrlSetText (localize switch (_mode) do { case "sell"; case "sellcargo": { "STR_A3U_Bazaar_Shop_Sell" }; case "run": { "STR_A3U_Bazaar_Shop_Accept" }; case "wanted": { "STR_A3U_Bazaar_Shop_Unpin" }; default { "STR_A3U_Bazaar_Shop_Buy" } });
+(_d displayCtrl ABZ_IDC_BUTTONBUY) ctrlSetText localize (switch (_mode) do { case "sell"; case "sellcargo": { "STR_A3U_Bazaar_Shop_Sell" }; case "run": { "STR_A3U_Bazaar_Shop_Accept" }; case "wanted": { "STR_A3U_Bazaar_Shop_Unpin" }; default { "STR_A3U_Bazaar_Shop_Buy" } });
 (_d displayCtrl ABZ_IDC_DESTCOMBO) ctrlEnable (_mode == "stock");
 (_d displayCtrl ABZ_IDC_BUTTONPIN) ctrlShow (_mode in ["stock", "sell", "sellcargo"]);
 { (_d displayCtrl _x) ctrlShow (_mode == "wanted") } forEach [ABZ_IDC_WANTEDEDIT, ABZ_IDC_BUTTONWANTEDADD];
@@ -112,7 +112,7 @@ if (_mode == "wanted") exitWith {
 		private _here = _stock findIf { private _sc = _x select 0; (_sc == _c || {_sc == _cb} || {([_sc] call ABZ_fnc_wantedBase) == _cb}) && {(_x select 3) > 0} };
 		private _job = _shop param [6, []];
 		private _status = switch (true) do {
-			case (_here > -1): { localize ["STR_A3U_Bazaar_Shop_Here", "STR_A3U_Bazaar_Shop_CrateHere"] select ((_stock select _here) select 4) };
+			case (_here > -1): { localize (["STR_A3U_Bazaar_Shop_Here", "STR_A3U_Bazaar_Shop_CrateHere"] select ((_stock select _here) select 4)) };
 			case (_job isNotEqualTo [] && {(_job select 0) == _c || {(_job select 0) == _cb} || {([_job select 0] call ABZ_fnc_wantedBase) == _cb}} && {(_job select 2) < (_job select 1)}): { "his JOB" };
 			default { "-" };
 		};

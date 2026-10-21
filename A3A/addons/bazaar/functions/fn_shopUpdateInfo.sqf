@@ -101,7 +101,7 @@ if (_sell) exitWith {
 	private _fromBox = _mode == "sellcargo";
 	private _dealAs = [_class] call ABZ_fnc_sellClass;
 	private _dealBase = [_dealAs] call ABZ_fnc_wantedBase;
-	(_d displayCtrl ABZ_IDC_BUTTONPIN) ctrlSetText (localize ["STR_A3U_Bazaar_Shop_Pin", "STR_A3U_Bazaar_Shop_Unpin"] select (((call ABZ_fnc_wantedList) findIf { _x == _dealAs || {_x == _dealBase} }) > -1));
+	(_d displayCtrl ABZ_IDC_BUTTONPIN) ctrlSetText localize (["STR_A3U_Bazaar_Shop_Pin", "STR_A3U_Bazaar_Shop_Unpin"] select (((call ABZ_fnc_wantedList) findIf { _x == _dealAs || {_x == _dealBase} }) > -1));
 	([_class] call ABZ_fnc_itemKind) params ["_kind", "_sub"];
 	private _tier = [[_class, _kind, _sub] call ABZ_fnc_itemPrice] call ABZ_fnc_tierOf;
 	([_tier] call ABZ_fnc_rarityInfo) params ["_rName", "_rHex"];
@@ -133,7 +133,7 @@ _slot params ["_class", "_price", "_tier", "_qty", "_bulk", "_kind"];
 private _pinBtn = _d displayCtrl ABZ_IDC_BUTTONPIN;
 _pinBtn ctrlEnable !(_kind isEqualTo "vehicle");
 private _classBase = [_class] call ABZ_fnc_wantedBase;
-_pinBtn ctrlSetText (localize ["STR_A3U_Bazaar_Shop_Pin", "STR_A3U_Bazaar_Shop_Unpin"] select (((call ABZ_fnc_wantedList) findIf { _x == _class || {_x == _classBase} }) > -1));
+_pinBtn ctrlSetText localize (["STR_A3U_Bazaar_Shop_Pin", "STR_A3U_Bazaar_Shop_Unpin"] select (((call ABZ_fnc_wantedList) findIf { _x == _class || {_x == _classBase} }) > -1));
 
 _pic ctrlSetText ([_class] call ABZ_fnc_pictureOf);
 private _name = [_class] call ABZ_fnc_displayNameOf;
@@ -157,24 +157,24 @@ if (_kind isEqualTo "vehicle") exitWith {
 	_qtyc ctrlSetTooltip localize "STR_A3U_Bazaar_Shop_VehiclesOnePer";
 };
 
-private _kindTxt = localize switch (_kind) do {
+private _kindTxt = localize (switch (_kind) do {
 	case "weapon": { "STR_A3U_Bazaar_Misc_Kind_Weapon" };
 	case "ammo": { "STR_A3U_Bazaar_Misc_Kind_Ammo" };
 	case "gear": { "STR_A3U_Bazaar_Misc_Kind_Gear" };
 	case "clothing": { "STR_A3U_Bazaar_Misc_Kind_Clothing" };
 	default { "STR_A3U_Bazaar_Misc_Kind_Item" };
-};
+});
 private _txt = format ["<t size='1.15' color='#f1c27d'>%1</t><br/><t color='%2'>%3</t>  -  %4<br/>", _name, _rHex, _rName, _kindTxt];
 if (_bulk) then {
-	private _what = localize switch (true) do {
+	private _what = localize (switch (true) do {
 		case (call ABZ_fnc_unlocksEnabled): { "STR_A3U_Bazaar_Shop_UnlocksEnabled" };
 		case (call ABZ_fnc_isAntistasi): { "STR_A3U_Bazaar_Shop_UnlocksDisabled" };
 		default { "STR_A3U_Bazaar_Shop_NotAntistasi" };
-	};
+	});
 	_txt = _txt + format [localize "STR_A3U_Bazaar_Shop_SealedBulkCrate",
-		_shop select 5, _name, _price, localize ["STR_A3U_Bazaar_Shop_SoldOut", "STR_A3U_Bazaar_Shop_OneAvailable"] select (_qty > 0), _what];
+		_shop select 5, _name, _price, localize (["STR_A3U_Bazaar_Shop_SoldOut", "STR_A3U_Bazaar_Shop_OneAvailable"] select (_qty > 0)), _what];
 } else {
-	_txt = _txt + format [localize "STR_A3U_Bazaar_Shop_PriceEach", _price, localize ["STR_A3U_Bazaar_Shop_SoldOut", format [localize "STR_A3U_Bazaar_Shop_AmountLeft", _qty]] select (_qty > 0)];
+	_txt = _txt + format [localize "STR_A3U_Bazaar_Shop_PriceEach", _price, [localize "STR_A3U_Bazaar_Shop_SoldOut", format [localize "STR_A3U_Bazaar_Shop_AmountLeft", _qty]] select (_qty > 0)];
 };
 [_txt, _info] call ABZ_fnc_uiText;
 

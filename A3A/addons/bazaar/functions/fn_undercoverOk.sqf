@@ -14,7 +14,7 @@ if (_mode == 2 && {!isNil "sidesX"}) then {
 };
 if (_held) exitWith { "" };
 
-localize [
+localize ([
 	"STR_A3U_Bazaar_Undercover_ComeBackUndercover",
 	"STR_A3U_Bazaar_Undercover_TakeTownFirst"
-] select (_mode == 2)
+] select (_mode == 2))
