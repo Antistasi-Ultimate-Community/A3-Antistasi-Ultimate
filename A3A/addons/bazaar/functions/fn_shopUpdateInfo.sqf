@@ -56,7 +56,7 @@ if (_mode == "run") exitWith {
 		case "offer": {
 			_offer params ["_destId", "_destName", "_destTown", "_km", "_pay", "_mins", "_enemy"];
 			[format [
-				localize "STR_A3U_Bazaar_Shop_SmugglingContract"
+				localize "STR_A3U_Bazaar_Shop_SmugglingContract",
 				_destName, _destTown, _km, _enemy, _mins, _pay, ["", localize "STR_A3U_Bazaar_Shop_AlreadyGoing"] select (_myRun isNotEqualTo [])
 			], _info] call ABZ_fnc_uiText;
 			_buyBtn ctrlSetText localize "STR_A3U_Bazaar_Shop_Accept";
