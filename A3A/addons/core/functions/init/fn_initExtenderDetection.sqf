@@ -22,7 +22,7 @@ Author:
     UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
 private _ignore = [
-    //QUOTE(DOUBLES(PREFIX,bazaar)),
+    QUOTE(DOUBLES(PREFIX,bazaar)),
     QUOTE(DOUBLES(PREFIX,config_fixes)),
     QUOTE(DOUBLES(PREFIX,core)),
     QUOTE(DOUBLES(PREFIX,events)),
