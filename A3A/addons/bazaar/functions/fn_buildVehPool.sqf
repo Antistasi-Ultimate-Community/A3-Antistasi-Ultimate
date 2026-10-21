@@ -5,10 +5,11 @@
 // Categories match Antistasi Ultimate's own black market so the facility
 // requirements line up with it (see fn_vehReq).
 // Antistasi only - outside it there are no factions or facilities.
+#include "..\script_component.hpp"
 if (!isServer) exitWith {};
 ABZ_vehPool = [];
 if !(call ABZ_fnc_isAntistasi) exitWith {
-	diag_log "[ABZ] Vehicle catalog: not an Antistasi mission - no military vehicles";
+	Error("[ABZ] Vehicle catalog: not an Antistasi mission - no military vehicles");
 };
 
 // category -> template keys. Order inside a category does not matter; a
@@ -70,5 +71,4 @@ private _counts = createHashMap;
 	_counts set [_y select 0, (_counts getOrDefault [_y select 0, 0]) + 1];
 } forEach _found;
 
-diag_log format ["[ABZ] Vehicle catalog: %1 military vehicles %2 (%3 template entries skipped: UAV/artillery/supply/static/invalid)",
-	count ABZ_vehPool, toArray _counts, _skipped];
+Debug_3("[ABZ] Vehicle catalog: %1 military vehicles %2 (%3 template entries skipped: UAV/artillery/supply/static/invalid)",count ABZ_vehPool,toArray _counts,_skipped);

@@ -1,5 +1,6 @@
 // SERVER: puts the trader and their stall into the world (only done while
 // players are nearby - see fn_vendorLoop).
+#include "..\script_component.hpp"
 params [["_e", [], [[]]]];
 if (_e isEqualTo []) exitWith {};
 _e params ["_id", "_town", "_pos", "_dir", "_civ", "_vname"];
@@ -39,7 +40,7 @@ _u addEventHandler ["Local", {
 		[_unit] call ABZ_fnc_vendorPrep;
 	} else {
 		if (isServer && {!isNull group _unit}) then {
-			diag_log format ["[ABZ] Trader #%1 left the server (owner %2) - taking him back", _unit getVariable ["ABZ_vendorId", -1], owner _unit];
+			Warning_2("[ABZ] Trader #%1 left the server (owner %2) - taking him back",_unit getVariable ["ABZ_vendorId", -1],owner _unit);
 			(group _unit) setGroupOwner 2;
 		};
 	};
@@ -71,4 +72,4 @@ private _fnc_prop = {
 ["Land_Sunshade_F", [0.9, 2.3], 0] call _fnc_prop;
 
 ABZ_vendorObjs set [_id, [_u, _props]];
-diag_log format ["[ABZ] Trader %1 (#%2) spawned at %3", _vname, _id, _town];
+Info_3("[ABZ] Trader %1 (#%2) spawned at %3",_vname,_id,_town);

@@ -4,6 +4,7 @@
 // unscheduled CBA event - can never land half-way through it and leave an
 // orphaned trader behind.
 // [_id, _humans]
+#include "..\script_component.hpp"
 params [["_id", -1, [0]], ["_humans", [], [[]]]];
 private _e = [_id] call ABZ_fnc_vendorEntry;
 if (_e isEqualTo []) exitWith {};	// removed (reset/relocation) since the loop took its copy
@@ -39,16 +40,16 @@ if (!isNull _u) then {
 	};
 	private _off = _u distance2D _pos;
 	if ((_u getVariable ["ABZ_vendorId", -1]) != _id || {_off > 15}) exitWith {
-		diag_log format ["[ABZ] Watchdog: trader #%1 untagged or %2m off his stall (local %3, owner %4) - respawning", _id, round _off, local _u, owner _u];
+		Warning_4("[ABZ] Watchdog: trader #%1 untagged or %2m off his stall (local %3, owner %4) - respawning",_id,round _off,local _u,owner _u);
 		[_id] call ABZ_fnc_vendorDespawn;
 		_u = objNull;
 	};
 	if (!local _u) exitWith {
-		diag_log format ["[ABZ] Watchdog: trader #%1 not server-local (owner %2) - taking him back", _id, owner _u];
+		Warning_2("[ABZ] Watchdog: trader #%1 not server-local (owner %2) - taking him back",_id,owner _u);
 		(group _u) setGroupOwner 2;
 	};
 	if (!captive _u) then {
-		diag_log format ["[ABZ] Watchdog: trader #%1 lost captive - restored", _id];
+		Warning_1("[ABZ] Watchdog: trader #%1 lost captive - restored",_id);
 		[_u] call ABZ_fnc_vendorPrep;
 	};
 	if (_off > 1.5) then {

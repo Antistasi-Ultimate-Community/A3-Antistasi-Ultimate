@@ -5,6 +5,7 @@
 //   7 crate   8 source town   9 source trader name   10 source stall pos
 //   11 the contact was shot by the rebels' own side (no more extensions)
 // [player, source trader id, destination id + payout the menu showed]
+#include "..\script_component.hpp"
 if (!isServer) exitWith {};
 call ABZ_fnc_syncCommit;	// Antistasi just saved? commit that state first
 params [["_player", objNull, [objNull]], ["_id", -1, [0]], ["_wantDest", -1, [0]], ["_wantPay", -1, [0]]];
@@ -51,5 +52,7 @@ call ABZ_fnc_runPublish;
 [format [localize "STR_A3U_Bazaar_Runs_ContractTaken",
 	_d select 5, _d select 1, _km, ceil (_secs / 60), _pay]] call _fnc_say;
 call _fnc_refresh;
+//ServerInfo_9("[ABZ] %1 took smuggling run #%2: trader #%3 (%4) -> #%5 (%6), %7 km, $%8, %9 s",name _player,_runId,_id,_e select 1,_destId,_d select 1,_km,_pay,_secs);
+// ! Leaving this for now only because we don't have a _9 macro
 diag_log format ["[ABZ] %1 took smuggling run #%2: trader #%3 (%4) -> #%5 (%6), %7 km, $%8, %9 s", name _player, _runId, _id, _e select 1, _destId, _d select 1, _km, _pay, _secs];
 call ABZ_fnc_queueSave;

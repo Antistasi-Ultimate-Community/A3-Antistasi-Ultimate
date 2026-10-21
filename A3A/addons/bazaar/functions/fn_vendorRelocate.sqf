@@ -1,5 +1,6 @@
 // SERVER: a trader packs up and reappears in a different town with fresh
 // stock (scheduled moves, and replacements for killed traders).
+#include "..\script_component.hpp"
 params [["_id", -1, [0]]];
 private _i = ABZ_vendors findIf { (_x select 0) == _id };
 if (_i < 0) exitWith {};
@@ -11,7 +12,7 @@ ABZ_vendors deleteAt _i;
 
 private _new = [_id, _old select 11, _old select 6] call ABZ_fnc_vendorCreate;
 if (_new isEqualTo []) exitWith {
-	diag_log format ["[ABZ] Trader #%1 found no free town to move to - dropped (the loop will re-create one)", _id];
+	Warning_1("[ABZ] Trader #%1 found no free town to move to - dropped (the loop will re-create one)",_id);
 	call ABZ_fnc_queueSave;
 };
 ABZ_vendors pushBack _new;
@@ -63,5 +64,5 @@ ABZ_vendors pushBack _new;
 if (missionNamespace getVariable ["ABZ_announce", true]) then {
 	["ABZ_chat", [format [localize "STR_A3U_Bazaar_Chat_ContactRelocated", _old select 1, _new select 1]]] call CBA_fnc_globalEvent;
 };
-diag_log format ["[ABZ] Trader #%1 relocated: %2 -> %3 (now %4)", _id, _old select 1, _new select 1, _new select 5];
+Info_4("[ABZ] Trader #%1 relocated: %2 -> %3 (now %4)",_id,_old select 1,_new select 1,_new select 5);
 call ABZ_fnc_queueSave;

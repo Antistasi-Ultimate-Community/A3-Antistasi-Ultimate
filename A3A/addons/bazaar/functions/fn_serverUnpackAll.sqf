@@ -2,6 +2,7 @@
 // sealed bulk crate within 20m of the player: on the ground, strapped on,
 // in Antistasi's logistics or in ACE cargo. Smuggling-run crates are left
 // alone (they're for handing over, not unpacking).
+#include "..\script_component.hpp"
 if (!isServer) exitWith {};
 call ABZ_fnc_syncCommit;	// Antistasi just saved? commit that state before the crates go
 params [["_player", objNull, [objNull]]];
@@ -62,5 +63,5 @@ if (_manage) then { [] spawn { sleep 1; call A3A_fnc_arsenalManage } };
 if (missionNamespace getVariable ["ABZ_announce", true]) then {
 	["ABZ_chat", [format [localize "STR_A3U_Bazaar_Chat_CratesDelivered", name _player, count _labels, ["s", ""] select (count _labels == 1), _labels joinString ", "]]] call CBA_fnc_globalEvent;
 };
-diag_log format ["[ABZ] %1 unpacked %2 crate(s) at once: %3", name _player, count _labels, _labels];
+ServerInfo_3("[ABZ] %1 unpacked %2 crate(s) at once: %3",name _player,count _labels,_labels);
 call ABZ_fnc_queueSave;

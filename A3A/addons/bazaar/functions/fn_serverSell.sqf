@@ -10,6 +10,7 @@
 // [player, id, heldClass, qty, expJobN, expReward, rounds]
 //   expJobN/expReward: what the player's menu said would count toward the
 //   job, and at what bounty. rounds: per-magazine round counts (magazines only).
+#include "..\script_component.hpp"
 if (!isServer) exitWith {};
 call ABZ_fnc_syncCommit;	// Antistasi just saved? commit that state before this sale changes it
 // _backTo (v1.1.1): a vehicle or crate the items were taken out of
@@ -218,7 +219,7 @@ if (_toTable > 0) then {
 if (_total > 0) then { [_player, _total] call ABZ_fnc_serverPay };
 if (_bbN > 0) then { [_player] call ABZ_fnc_receiptSync };
 ["ABZ_notify", [_msgs joinString "\n"], _player] call CBA_fnc_targetEvent;
-diag_log format ["[ABZ] %1 handed %2x %3 (as %4) to trader #%5: $%6 (job %7, part rounds %8)", name _player, _qty, _held, _class, _id, _total, _jobN, _partRounds];
+ServerInfo_8("[ABZ] %1 handed %2x %3 (as %4) to trader #%5: $%6 (job %7, part rounds %8)",name _player,_qty,_held,_class,_id,_total,_jobN,_partRounds);
 
 // the seller's menu gets the updated table and job too
 ["ABZ_shopData", [_e, _player] call ABZ_fnc_shopPayload, _player] call CBA_fnc_targetEvent;

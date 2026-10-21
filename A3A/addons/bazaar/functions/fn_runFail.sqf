@@ -2,6 +2,7 @@
 // holder is told, and - unless it wasn't the runner's doing (_quiet) -
 // everyone hears it: chat (with announcements on) and the rumours.
 // [runId, reason, quiet]
+#include "..\script_component.hpp"
 params [["_runId", -1, [0]], ["_reason", "", [""]], ["_quiet", false, [false]]];
 private _i = ABZ_runs findIf { (_x select 0) == _runId };
 if (_i < 0) exitWith {};
@@ -24,5 +25,5 @@ if (_p > -1) then {
 	["ABZ_notify", [format ["RUN %1: %2.", ["FAILED", "CALLED OFF"] select _quiet, _reason]], _pl] call CBA_fnc_targetEvent;
 	["ABZ_runMark", [[], ""], _pl] call CBA_fnc_targetEvent;
 };
-diag_log format ["[ABZ] Smuggling run #%1 (%2) ended: %3", _runId, _owner, _reason];
+Info_3("[ABZ] Smuggling run #%1 (%2) ended: %3",_runId,_owner,_reason);
 call ABZ_fnc_queueSave;

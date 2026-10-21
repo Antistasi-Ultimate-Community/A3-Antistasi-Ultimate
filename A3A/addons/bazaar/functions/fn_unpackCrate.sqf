@@ -5,6 +5,7 @@
 // No messages or chat here: the callers (fn_serverUnpack, one crate;
 // fn_serverUnpackAll, every crate around) report.
 // [crate, player] -> [ok, what happened, run Antistasi's unlock pass, "25x Name"]
+#include "..\script_component.hpp"
 params [["_crate", objNull, [objNull]], ["_player", objNull, [objNull]]];
 private _d = _crate getVariable ["ABZ_crate", []];
 if (isNull _crate || {_d isEqualTo []}) exitWith { [false, "", false, ""] };
@@ -30,7 +31,7 @@ if !(_toArsenal && {_tab >= 0}) exitWith {
 	isNil { private _i = ABZ_crates find _crate; if (_i > -1) then { ABZ_crates deleteAt _i } };
 	_crate lockInventory false;
 	[_crate, _class, _count] call ABZ_fnc_addCargo;
-	diag_log format ["[ABZ] %1 opened a crate of %2x %3 (no arsenal to feed)", name _player, _count, _class];
+	Info_3("[ABZ] %1 opened a crate of %2x %3 (no arsenal to feed)",name _player,_count,_class);
 	[true, format [localize "STR_A3U_Bazaar_Crate_Opened", _label], false, _label]
 };
 
@@ -64,11 +65,11 @@ if (_min >= 0) then {
 		} else {
 			[_class] call A3A_fnc_unlockEquipment;
 			_msg = _msg + localize "STR_A3U_Bazaar_Notify_UnlockedArsenal";
-			diag_log format ["[ABZ] %1 unlocked via bulk crate on an unlocks-disabled server", _class];
+			Info_1("[ABZ] %1 unlocked via bulk crate on an unlocks-disabled server",_class);
 		};
 	} else {
 		_msg = _msg + localize "STR_A3U_Bazaar_Notify_NoArsenalUnlocks";
 	};
 };
-diag_log format ["[ABZ] %1 unpacked %2x %3 into the arsenal (tab %4, amount %5)", name _player, _count, _class, _tab, _amount];
+Info_5("[ABZ] %1 unpacked %2x %3 into the arsenal (tab %4, amount %5)",name _player,_count,_class,_tab,_amount);
 [true, _msg, _manage, _label]

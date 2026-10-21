@@ -7,10 +7,11 @@
 // its money is missing from Antistasi's, and a host who saves and quits at
 // once still has both saves agree.
 // Does nothing outside Antistasi (ABZ_saveStampLast is never set there).
+#include "..\script_component.hpp"
 if (!isServer || {isNil "ABZ_saveStampLast"}) exitWith {};
 private _now = call ABZ_fnc_saveStamp;
 if (_now isEqualTo ABZ_saveStampLast) exitWith {};
 ABZ_saveStampLast = _now;
 ABZ_saveDirty = false;
 isNil { call ABZ_fnc_save };
-diag_log "[ABZ] Antistasi saved - Bazaar state committed with it";
+Info("[ABZ] Antistasi saved - Bazaar state committed with it");

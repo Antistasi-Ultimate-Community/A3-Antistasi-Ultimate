@@ -3,6 +3,7 @@
 // unit only while a player is within 900m).
 // Every step that changes ABZ_vendors / ABZ_vendorObjs runs UNSCHEDULED
 // (isNil) so it can't interleave with an admin reset or a purchase.
+#include "..\script_component.hpp"
 if (!isServer) exitWith {};
 if (!isNil "ABZ_loopRunning") exitWith {};
 ABZ_loopRunning = true;
@@ -32,7 +33,7 @@ while { true } do {
 					};
 					["ABZ_chat", [format [localize "STR_A3U_Bazaar_Chat_WordOnTheStreet", _e select 5, _e select 1, _jobTxt]]] call CBA_fnc_globalEvent;
 				};
-				diag_log format ["[ABZ] New trader %1 (#%2) at %3", _e select 5, _e select 0, _e select 1];
+				Info_3("[ABZ] New trader %1 (#%2) at %3", _e select 5, _e select 0, _e select 1);
 				call ABZ_fnc_queueSave;
 			};
 		};

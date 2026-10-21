@@ -3,13 +3,14 @@
 // [_player, _class, _sideVar, _spot, _personal]
 //   _spot []           -> into the Antistasi HQ garage
 //   _spot [pos, dir]   -> parked there, the buyer drives it home
+#include "..\script_component.hpp"
 params [["_player", objNull, [objNull]], ["_class", "", [""]], ["_sideVar", "", [""]], ["_spot", [], [[]]], ["_personal", false, [false]]];
 private _name = [_class] call ABZ_fnc_displayNameOf;
 
 if (_spot isEqualTo []) exitWith {
 	[[_class], ""] call HR_GRG_fnc_addVehiclesByClass;	// "" = unlocked faction vehicle
 	["ABZ_notify", [format [localize "STR_A3U_Bazaar_Notify_VehDelivered", _name]], _player] call CBA_fnc_targetEvent;
-	diag_log format ["[ABZ] %1 bought vehicle %2 -> HQ garage", name _player, _class];
+	ServerInfo_2("[ABZ] %1 bought vehicle %2 -> HQ garage",name _player,_class);
 };
 
 _spot params ["_pos", "_dir"];
@@ -77,4 +78,4 @@ private _brg = _player getDir _veh;
 private _compass = ["north", "north-east", "east", "south-east", "south", "south-west", "west", "north-west"] select ((round (_brg / 45)) mod 8);
 ["ABZ_vehMark", [getPosATL _veh, _name], _player] call CBA_fnc_targetEvent;
 ["ABZ_notify", [format [localize "STR_A3U_Bazaar_Notify_VehBought", _name, _dist, _compass]], _player] call CBA_fnc_targetEvent;
-diag_log format ["[ABZ] %1 bought vehicle %2 -> parked at %3", name _player, _class, _pos];
+ServerInfo_3("[ABZ] %1 bought vehicle %2 -> parked at %3",name _player,_class,_pos);

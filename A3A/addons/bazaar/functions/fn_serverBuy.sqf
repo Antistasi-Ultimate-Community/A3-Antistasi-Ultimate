@@ -3,6 +3,7 @@
 // items straight into the buyer's kit, bulk as a sealed crate by the stall,
 // military vehicles parked nearby or into the HQ garage.
 // Crates are set down 5m out to the trader's side, never at his feet.
+#include "..\script_component.hpp"
 if (!isServer) exitWith {};
 call ABZ_fnc_syncCommit;	// Antistasi just saved? commit that state before this purchase changes it
 // _dest: 0 = into the buyer's kit, 1 = into _veh's cargo, 2 = into an open crate by the stall
@@ -77,7 +78,7 @@ if (_kind isEqualTo "vehicle") exitWith {
 	if !([_player, _price] call ABZ_fnc_serverCharge) exitWith {};
 	_slotArr set [3, 0];
 	[_player, _class, _sideVar, _spot, _personal] call ABZ_fnc_serverDeliverVeh;
-	diag_log format ["[ABZ] %1 bought vehicle %2 (%3) for $%4 from trader #%5", name _player, _class, _cat, _price, _id];
+	ServerInfo_5("[ABZ] %1 bought vehicle %2 (%3) for $%4 from trader #%5",name _player,_class,_cat,_price,_id);
 	["ABZ_shopData", [_e, _player] call ABZ_fnc_shopPayload, _player] call CBA_fnc_targetEvent;
 	call ABZ_fnc_queueSave;
 };
@@ -100,7 +101,7 @@ if (_bulk) then {
 	private _n = call ABZ_fnc_bulkSize;
 	[_drop, _class, _n, _player] call ABZ_fnc_serverDeliverCrate;
 	["ABZ_notify", [format [localize "STR_A3U_Bazaar_Notify_CrateBought", _n, _name, _total]], _player] call CBA_fnc_targetEvent;
-	diag_log format ["[ABZ] %1 bought a bulk crate of %2x %3 for $%4 from trader #%5", name _player, _n, _class, _total, _id];
+	ServerInfo_5("[ABZ] %1 bought a bulk crate of %2x %3 for $%4 from trader #%5",name _player,_n,_class,_total,_id);
 } else {
 	switch (_dest) do {
 		case 1: {
@@ -116,7 +117,7 @@ if (_bulk) then {
 			["ABZ_notify", [format [localize "STR_A3U_Bazaar_Notify_ItemBought", _qty, _name, _currency, _total]], _player] call CBA_fnc_targetEvent;
 		};
 	};
-	diag_log format ["[ABZ] %1 bought %2x %3 for $%4 from trader #%5 (dest %6)", name _player, _qty, _class, _total, _id, _dest];
+	ServerInfo_6("[ABZ] %1 bought %2x %3 for $%4 from trader #%5 (dest %6)",name _player,_qty,_class,_total,_id,_dest);
 	// the buy-back window: this trader takes them back at this price for a minute
 	[_player, _id, _class, _qty, _price] call ABZ_fnc_receiptAdd;
 };

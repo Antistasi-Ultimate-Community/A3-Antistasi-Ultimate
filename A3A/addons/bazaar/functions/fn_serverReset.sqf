@@ -1,6 +1,7 @@
 // SERVER: host/admin reset - every trader and sealed crate is removed, the
 // catalog is rebuilt (in case the stock source setting changed), and the
 // loop opens fresh stalls in new towns.
+#include "..\script_component.hpp"
 if (!isServer) exitWith {};
 call ABZ_fnc_syncCommit;
 params [["_player", objNull, [objNull]]];
@@ -26,5 +27,5 @@ call ABZ_fnc_buildVehPool;
 call ABZ_fnc_publishStalls;
 
 ["ABZ_chat", [format [localize "STR_A3U_Bazaar_Chat_Reset", name _player]]] call CBA_fnc_globalEvent;
-diag_log format ["[ABZ] Reset by %1", name _player];
+ServerInfo_1("[ABZ] Reset by %1",name _player);
 call ABZ_fnc_queueSave;

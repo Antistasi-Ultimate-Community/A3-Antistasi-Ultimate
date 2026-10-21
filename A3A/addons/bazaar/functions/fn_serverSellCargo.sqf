@@ -9,6 +9,7 @@
 // Then it is an ordinary sale (fn_serverSell: price, job, buy-back, table),
 // with refunds handed back into the same vehicle or crate.
 // [player, trader id, container, class, how many, expJobN, expReward]
+#include "..\script_component.hpp"
 if (!isServer) exitWith {};
 call ABZ_fnc_syncCommit;	// Antistasi just saved? commit that state first
 params [["_player", objNull, [objNull]], ["_id", -1, [0]], ["_box", objNull, [objNull]], ["_class", "", [""]], ["_n", 1, [0]], ["_expJobN", 0, [0]], ["_expReward", 0, [0]]];
@@ -81,6 +82,6 @@ switch (true) do {
 if (_taken <= 0) exitWith {
 	[[localize "STR_A3U_Bazaar_Notify_NothingLikeThat", format [localize "STR_A3U_Bazaar_Notify_TraderWontTake", _whyNot]] select (_whyNot != "")] call _fnc_say;
 };
-diag_log format ["[ABZ] %1 sells %2x %3 out of %4 (%5) to trader #%6", name _player, _taken, _class, typeOf _box, _box, _id];
+ServerInfo_6("[ABZ] %1 sells %2x %3 out of %4 (%5) to trader #%6",name _player,_taken,_class,typeOf _box,_box,_id);
 // the sale itself - refunds go back into the same cargo
 [_player, _id, _class, _taken, _expJobN, _expReward, _rounds, _box] call ABZ_fnc_serverSell;

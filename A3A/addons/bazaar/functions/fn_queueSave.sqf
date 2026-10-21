@@ -13,6 +13,7 @@
 // money that paid for it (otherwise quitting without saving would keep the
 // crate AND the money).
 // Elsewhere: saved 5 seconds after anything changes.
+#include "..\script_component.hpp"
 if (!isServer) exitWith {};
 if !(missionNamespace getVariable ["ABZ_loaded", false]) exitWith {};
 
@@ -23,7 +24,7 @@ if (isNil "ABZ_saveLoop") then {
 	if (_withAU) then {
 		ABZ_saveStampLast = call ABZ_fnc_saveStamp;	// the save just restored
 		ABZ_saveEH = addMissionEventHandler ["EachFrame", { call ABZ_fnc_syncCommit }];
-		diag_log "[ABZ] Saving together with Antistasi's saves";
+		Info("[ABZ] Saving together with Antistasi's saves");
 	} else {
 		[] spawn {
 			while { true } do {

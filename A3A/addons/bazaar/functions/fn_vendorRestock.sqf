@@ -1,5 +1,6 @@
 // SERVER: the restock timer ran out - roll fresh stock, or move town when
 // the "traders move every N restocks" setting says it's time.
+#include "..\script_component.hpp"
 params [["_id", -1, [0]]];
 private _e = [_id] call ABZ_fnc_vendorEntry;
 if (_e isEqualTo []) exitWith {};
@@ -28,5 +29,5 @@ if (missionNamespace getVariable ["ABZ_announce", true]) then {
 	};
 	["ABZ_chat", [format [localize "STR_A3U_Bazaar_Chat_FreshStock", _e select 5, _e select 1, _jobTxt]]] call CBA_fnc_globalEvent;
 };
-diag_log format ["[ABZ] Trader %1 (#%2) restocked at %3 (%4 slots)", _e select 5, _id, _e select 1, count (_e select 6)];
+Info_4("[ABZ] Trader %1 (#%2) restocked at %3 (%4 slots)",_e select 5,_id,_e select 1,count (_e select 6));
 call ABZ_fnc_queueSave;

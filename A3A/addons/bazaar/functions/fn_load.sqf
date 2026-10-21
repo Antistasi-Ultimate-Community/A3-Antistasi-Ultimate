@@ -1,4 +1,5 @@
 // SERVER: restores traders and sealed crates from the profile save.
+#include "..\script_component.hpp"
 if (!isServer) exitWith {};
 if (ABZ_loaded) exitWith {};
 ABZ_loaded = true;
@@ -14,7 +15,7 @@ if (!isNil "_sd" && {_sd isEqualType createHashMap} && {(_sd getOrDefault ["star
 	if (_gid isEqualType "" && {_gid != ""}) then {
 		private _srcKey = format ["%1_%2", worldName, _gid];
 		if (!isNil { profileNamespace getVariable format ["ABZ_vendors_%1", _srcKey] }) then {
-			diag_log format ["[ABZ] Copied campaign: restoring the Bazaar from %1", _srcKey];
+			Info_1("[ABZ] Copied campaign: restoring the Bazaar from %1",_srcKey);
 			_key = _srcKey;
 		};
 	};
@@ -64,7 +65,7 @@ private _jobNames = createHashMap;
 	private _j = _x select 12;
 	if (_j isNotEqualTo []) then {
 		if ((toLower (_j select 0)) in _dealerReach) then {
-			diag_log format ["[ABZ] Dropped trader #%1's saved job (%2): the Arms Dealer sells it", _x select 0, _j select 0];
+			Debug_2("[ABZ] Dropped trader #%1's saved job (%2): the Arms Dealer sells it",_x select 0,_j select 0);
 			_x set [12, []];
 		} else {
 			if ((_j select 2) < (_j select 1)) then { _jobNames set [toLower (_j select 0), true] };
@@ -77,7 +78,7 @@ if (count _jobNames > 0) then {
 			!((_x select 0) isEqualType "") || {(([_x select 0] call ABZ_fnc_yields) findIf { _x in _jobNames }) == -1}
 		};
 		if (count _keep < count (_x select 6)) then {
-			diag_log format ["[ABZ] Trader #%1: %2 saved row(s) set aside for an open job", _x select 0, (count (_x select 6)) - (count _keep)];
+			Debug_2("[ABZ] Trader #%1: %2 saved row(s) set aside for an open job",_x select 0,(count (_x select 6)) - (count _keep));
 			_x set [6, _keep];
 		};
 	} forEach ABZ_vendors;
@@ -120,7 +121,7 @@ if !(_rs isEqualType []) then { _rs = [] };
 } forEach _rs;
 call ABZ_fnc_runPublish;
 
-diag_log format ["[ABZ] Restored %1 trader(s), %2 sealed crate(s) and %3 smuggling run(s) on %4 (key %5)", _n, _m, count ABZ_runs, worldName, _key];
+Info_5("[ABZ] Restored %1 trader(s), %2 sealed crate(s) and %3 smuggling run(s) on %4 (key %5)",_n,_m,count ABZ_runs,worldName,_key);
 if (_n > 0 || {_m > 0}) then {
 	["ABZ_chat", [format ["[Bazaar] Restored %1 trader(s) and %2 sealed crate(s).", _n, _m]]] call CBA_fnc_globalEvent;
 };

@@ -2,6 +2,7 @@
 // setting: the gear of every faction in the campaign (default, Antistasi
 // only - works with any template, Faction Forger factions included) or a
 // scan of everything loaded. Entries: [class, basePrice, tier, kind, subtype].
+#include "..\script_component.hpp"
 if (!isServer) exitWith {};
 
 private _source = missionNamespace getVariable ["ABZ_stockSource", 0];
@@ -9,7 +10,7 @@ private _classes = [];
 if (_source == 0 && {call ABZ_fnc_isAntistasi}) then {
 	_classes = call ABZ_fnc_poolFromFactions;
 	if (count _classes < 20) then {
-		diag_log format ["[ABZ] Faction gear scan found only %1 classes - falling back to a full config scan", count _classes];
+		Warning_1("[ABZ] Faction gear scan found only %1 classes - falling back to a full config scan",count _classes);
 		_classes = [];
 	};
 };
@@ -62,5 +63,4 @@ ABZ_poolSource = ["configs", "factions"] select _fromFactions;
 
 private _counts = [0, 0, 0, 0];
 { _counts set [_x select 2, (_counts select (_x select 2)) + 1] } forEach _pool;
-diag_log format ["[ABZ] Stock catalog: %1 sellable items from %2 (common %3 / uncommon %4 / rare %5 / exotic %6)",
-	count _pool, ABZ_poolSource, _counts select 0, _counts select 1, _counts select 2, _counts select 3];
+Debug_6("[ABZ] Stock catalog: %1 sellable items from %2 (common %3 / uncommon %4 / rare %5 / exotic %6)",count _pool,ABZ_poolSource,_counts select 0,_counts select 1,_counts select 2,_counts select 3);

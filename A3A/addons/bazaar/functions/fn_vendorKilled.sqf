@@ -1,5 +1,6 @@
 // SERVER: a trader died. The stall closes; half an hour later a new trader
 // sets up in a different town (fn_vendorLoop handles the relocation).
+#include "..\script_component.hpp"
 params [["_id", -1, [0]], ["_unit", objNull, [objNull]], ["_by", objNull, [objNull]]];
 // shot by the rebels themselves (a player, or one of their AI)?
 private _ownSide = !isNull _by && {isPlayer _by || {(side group _by) isEqualTo (missionNamespace getVariable ["teamPlayer", sideUnknown])}};
@@ -45,7 +46,7 @@ call ABZ_fnc_publishStalls;
 if (missionNamespace getVariable ["ABZ_announce", true]) then {
 	["ABZ_chat", [format [localize "STR_A3U_Bazaar_Chat_ContactKilled", _e select 5, _e select 1]]] call CBA_fnc_globalEvent;
 };
-diag_log format ["[ABZ] Trader %1 (#%2) killed at %3", _e select 5, _id, _e select 1];
+Info_3("[ABZ] Trader %1 (#%2) killed at %3",_e select 5,_id,_e select 1);
 
 // the body lies there a while, then the stall is cleared - but only if it is
 // still THIS trader's stall (a reset or relocation may have reused the slot)

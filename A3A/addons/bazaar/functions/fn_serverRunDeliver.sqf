@@ -2,6 +2,7 @@
 // stall. The crate must be within 30m of the stall - on the ground or
 // still in the vehicle - and the destination trader must be willing to
 // deal (the same undercover / patrol rules as trading).
+#include "..\script_component.hpp"
 if (!isServer) exitWith {};
 call ABZ_fnc_syncCommit;	// Antistasi just saved? commit that state first
 params [["_player", objNull, [objNull]]];
@@ -56,5 +57,5 @@ private _txt = format [localize "STR_A3U_Bazaar_Chat_RunSucceeded", _owner, _src
 if (missionNamespace getVariable ["ABZ_announce", true]) then {
 	["ABZ_chat", ["[Bazaar] " + _txt]] call CBA_fnc_globalEvent;
 };
-diag_log format ["[ABZ] Smuggling run #%1 delivered by %2 at trader #%3 (%4): $%5", _runId, name _player, _destId, _d select 1, _pay];
+ServerInfo_5("[ABZ] Smuggling run #%1 delivered by %2 at trader #%3 (%4): $%5",_runId,name _player,_destId,_d select 1,_pay);
 call ABZ_fnc_queueSave;

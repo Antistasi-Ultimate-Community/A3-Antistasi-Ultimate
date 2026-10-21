@@ -3,6 +3,7 @@
 // rebel standing beside it) for long enough, it is confiscated. A crate on
 // a destroyed vehicle is lost with it. Smuggling-run crates run the same
 // risk (their run fails - fn_runFail), and runs past their deadline end.
+#include "..\script_component.hpp"
 if (!isServer) exitWith {};
 if (!isNil "ABZ_seizureRunning") exitWith {};
 ABZ_seizureRunning = true;
@@ -31,7 +32,7 @@ while { true } do {
 				isNil { [_runId, localize "STR_A3U_Bazaar_Runs_LostWithVehicle"] call ABZ_fnc_runFail };
 			} else {
 				["ABZ_chat", [format [localize "STR_A3U_Bazaar_Chat_RunLostWithVehicle", _n, _name]]] call CBA_fnc_globalEvent;
-				diag_log format ["[ABZ] Crate of %1x %2 destroyed with vehicle %3", _n, _cls, typeOf _carrier];
+				Info_3("[ABZ] Crate of %1x %2 destroyed with vehicle %3",_n,_cls,typeOf _carrier);
 				isNil { [_c] call ABZ_fnc_crateRemove };
 			};
 			continue;
@@ -74,7 +75,7 @@ while { true } do {
 				isNil { [_runId, format [localize "STR_A3U_Bazaar_Runs_Seized", [_pos] call ABZ_fnc_townName]] call ABZ_fnc_runFail };
 			} else {
 				["ABZ_chat", [format [localize "STR_A3U_Bazaar_Chat_RunSeized", _n, _name, [_pos] call ABZ_fnc_townName]]] call CBA_fnc_globalEvent;
-				diag_log format ["[ABZ] Crate of %1x %2 seized at %3", _n, _cls, _pos];
+				Info_3("[ABZ] Crate of %1x %2 seized at %3",_n,_cls,_pos);
 				isNil { [_c] call ABZ_fnc_crateRemove };
 			};
 		};
