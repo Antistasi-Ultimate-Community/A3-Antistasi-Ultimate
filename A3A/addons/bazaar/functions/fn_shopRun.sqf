@@ -1,10 +1,11 @@
 // Client: ACCEPT / DELIVER in the "Smuggling Run" category (v1.1.0). The
 // server checks everything again (undercover, one run per player, the
 // contract still being the one shown, the crate within 30m on delivery).
+#include "..\dialogues\ids.inc"
 private _d = findDisplay 78800;
 if (isNull _d) exitWith {};
 private _shop = uiNamespace getVariable ["ABZ_shop", []];
-private _row = lnbCurSelRow (_d displayCtrl 78802);
+private _row = lnbCurSelRow (_d displayCtrl ABZ_IDC_ITEMLIST);
 private _map = uiNamespace getVariable ["ABZ_shopMap", []];
 if (_shop isEqualTo [] || {_row < 0} || {_row >= count _map}) exitWith {};
 (_shop param [7, [[], []]]) params [["_offer", []], ["_myRun", []]];

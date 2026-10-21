@@ -2,6 +2,7 @@
 // the open dialog, or opens it - but only if this player actually asked
 // (ABZ_shopPending), so a refresh after a trade never re-opens a menu the
 // player already closed.
+#include "..\dialogues\ids.inc"
 params [["_id", -1, [0]], ["_vname", "", [""]], ["_town", "", [""]], ["_stock", [], [[]]], ["_secs", 0, [0]], ["_bulk", 25, [0]], ["_job", [], [[]]], ["_run", [[], []], [[]]]];
 if (!hasInterface) exitWith {};
 
@@ -23,8 +24,8 @@ if (isNull _d) exitWith {};
 _run params [["_offer", [], [[]]], ["_myRun", [], [[]]]];
 if (count _myRun >= 7) then { _myRun = +_myRun; _myRun set [4, time + (_myRun select 4)] } else { _myRun = [] };
 uiNamespace setVariable ["ABZ_shop", [_id, _vname, _town, _stock, time + _secs, _bulk, _job, [_offer, _myRun]]];
-(_d displayCtrl 78807) ctrlSetText format ["ANTISTASI BAZAAR - %1 (%2)", toUpper _vname, toUpper _town];
-[_d displayCtrl 78807] call ABZ_fnc_uiScale;
+(_d displayCtrl ABZ_IDC_TITLEBAR) ctrlSetText format ["ANTISTASI BAZAAR - %1 (%2)", toUpper _vname, toUpper _town];
+[_d displayCtrl ABZ_IDC_TITLEBAR] call ABZ_fnc_uiScale;
 
 // the help box doubles as the JOB board
 private _help = localize "STR_A3U_Bazaar_Shop_Help";
@@ -36,16 +37,16 @@ if (_job isNotEqualTo []) then {
 		format [localize "STR_A3U_Bazaar_Shop_JobWanted", _vname, _jw, [_jc] call ABZ_fnc_displayNameOf, _jr, _jd]
 	};
 };
-[_help, _d displayCtrl 78806] call ABZ_fnc_uiText;
+[_help, _d displayCtrl ABZ_IDC_HELPTEXT] call ABZ_fnc_uiText;
 
-private _combo = _d displayCtrl 78801;
+private _combo = _d displayCtrl ABZ_IDC_CATEGORYCOMBO;
 private _keep = lbCurSel _combo;
 lbClear _combo;
 { _combo lbAdd _x } forEach ABZ_shopCats;
 _combo lbSetCurSel (_keep max 0);	// triggers shopFillList
 
 // delivery destination for single items (remembered across refills)
-private _dest = _d displayCtrl 78812;
+private _dest = _d displayCtrl ABZ_IDC_DESTCOMBO;
 if (lbSize _dest == 0) then {
 	private _room = ["room", _dest] call ABZ_fnc_uiFit;
 	{ ["lbAdd", _dest, _x, _room] call ABZ_fnc_uiFit } forEach [localize "STR_A3U_Bazaar_Shop_DestinationKit", localize "STR_A3U_Bazaar_Shop_DestinationVehicle", localize "STR_A3U_Bazaar_Shop_DestinationCrate"];

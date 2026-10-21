@@ -4,14 +4,15 @@
 //   run    (ABZ_catRun) smuggling contract / my run - rows map to "offer" | "deliver" | "mine"
 //   wanted (ABZ_catWanted) my Wanted List - rows map to pinned classes
 //   sell   (last)       my own inventory - rows map to [class, how many]
+#include "..\dialogues\ids.inc"
 private _d = findDisplay 78800;
 if (isNull _d) exitWith {};
 private _shop = uiNamespace getVariable ["ABZ_shop", []];
 if (_shop isEqualTo []) exitWith {};
 
 private _stock = _shop select 3;
-private _combo = _d displayCtrl 78801;
-private _lnb = _d displayCtrl 78802;
+private _combo = _d displayCtrl ABZ_IDC_CATEGORYCOMBO;
+private _lnb = _d displayCtrl ABZ_IDC_ITEMLIST;
 private _cat = lbCurSel _combo;
 private _keepRow = lnbCurSelRow _lnb;
 
@@ -29,11 +30,11 @@ private _mode = switch (true) do {
 private _sell = _mode in ["sell", "sellcargo"];
 uiNamespace setVariable ["ABZ_shopSell", _sell];
 uiNamespace setVariable ["ABZ_shopMode", _mode];
-(_d displayCtrl 78810) ctrlSetText (localize switch (_mode) do { case "sell"; case "sellcargo": { "STR_A3U_Bazaar_Shop_Sell" }; case "run": { "STR_A3U_Bazaar_Shop_Accept" }; case "wanted": { "STR_A3U_Bazaar_Shop_Unpin" }; default { "STR_A3U_Bazaar_Shop_Buy" } });
-(_d displayCtrl 78812) ctrlEnable (_mode == "stock");
-(_d displayCtrl 78814) ctrlShow (_mode in ["stock", "sell", "sellcargo"]);
-{ (_d displayCtrl _x) ctrlShow (_mode == "wanted") } forEach [78815, 78816];
-(_d displayCtrl 78808) ctrlShow (_mode != "wanted");
+(_d displayCtrl ABZ_IDC_BUTTONBUY) ctrlSetText (localize switch (_mode) do { case "sell"; case "sellcargo": { "STR_A3U_Bazaar_Shop_Sell" }; case "run": { "STR_A3U_Bazaar_Shop_Accept" }; case "wanted": { "STR_A3U_Bazaar_Shop_Unpin" }; default { "STR_A3U_Bazaar_Shop_Buy" } });
+(_d displayCtrl ABZ_IDC_DESTCOMBO) ctrlEnable (_mode == "stock");
+(_d displayCtrl ABZ_IDC_BUTTONPIN) ctrlShow (_mode in ["stock", "sell", "sellcargo"]);
+{ (_d displayCtrl _x) ctrlShow (_mode == "wanted") } forEach [ABZ_IDC_WANTEDEDIT, ABZ_IDC_BUTTONWANTEDADD];
+(_d displayCtrl ABZ_IDC_RESTOCKTEXT) ctrlShow (_mode != "wanted");
 
 private _fnc_finish = {
 	uiNamespace setVariable ["ABZ_shopMap", _map];

@@ -1,12 +1,13 @@
 // Client: preview / info / money / quantity choices for the selected row.
+#include "..\dialogues\ids.inc"
 private _d = findDisplay 78800;
 if (isNull _d) exitWith {};
 private _shop = uiNamespace getVariable ["ABZ_shop", []];
-private _lnb = _d displayCtrl 78802;
-private _pic = _d displayCtrl 78803;
-private _info = _d displayCtrl 78804;
-private _money = _d displayCtrl 78805;
-private _qtyc = _d displayCtrl 78809;
+private _lnb = _d displayCtrl ABZ_IDC_ITEMLIST;
+private _pic = _d displayCtrl ABZ_IDC_PREVIEWPIC;
+private _info = _d displayCtrl ABZ_IDC_INFOTEXT;
+private _money = _d displayCtrl ABZ_IDC_MONEYTEXT;
+private _qtyc = _d displayCtrl ABZ_IDC_QTYEDIT;
 private _row = lnbCurSelRow _lnb;
 private _map = uiNamespace getVariable ["ABZ_shopMap", []];
 
@@ -21,9 +22,9 @@ _qtyc ctrlSetText "1";
 _qtyc ctrlEnable false;
 private _sell = uiNamespace getVariable ["ABZ_shopSell", false];
 private _mode = uiNamespace getVariable ["ABZ_shopMode", "stock"];
-private _buyBtn = _d displayCtrl 78810;
+private _buyBtn = _d displayCtrl ABZ_IDC_BUTTONBUY;
 _buyBtn ctrlEnable true;
-(_d displayCtrl 78814) ctrlEnable true;	// PIN - only a vehicle row disables it again
+(_d displayCtrl ABZ_IDC_BUTTONPIN) ctrlEnable true;	// PIN - only a vehicle row disables it again
 if (_shop isEqualTo [] || {_row < 0} || {_row >= count _map}) exitWith {
 	_pic ctrlSetText "";
 	[(switch (_mode) do {
@@ -100,7 +101,7 @@ if (_sell) exitWith {
 	private _fromBox = _mode == "sellcargo";
 	private _dealAs = [_class] call ABZ_fnc_sellClass;
 	private _dealBase = [_dealAs] call ABZ_fnc_wantedBase;
-	(_d displayCtrl 78814) ctrlSetText (localize ["STR_A3U_Bazaar_Shop_Pin", "STR_A3U_Bazaar_Shop_Unpin"] select (((call ABZ_fnc_wantedList) findIf { _x == _dealAs || {_x == _dealBase} }) > -1));
+	(_d displayCtrl ABZ_IDC_BUTTONPIN) ctrlSetText (localize ["STR_A3U_Bazaar_Shop_Pin", "STR_A3U_Bazaar_Shop_Unpin"] select (((call ABZ_fnc_wantedList) findIf { _x == _dealAs || {_x == _dealBase} }) > -1));
 	([_class] call ABZ_fnc_itemKind) params ["_kind", "_sub"];
 	private _tier = [[_class, _kind, _sub] call ABZ_fnc_itemPrice] call ABZ_fnc_tierOf;
 	([_tier] call ABZ_fnc_rarityInfo) params ["_rName", "_rHex"];
@@ -129,7 +130,7 @@ if (_sell) exitWith {
 private _slot = (_shop select 3) select (_map select _row);
 _slot params ["_class", "_price", "_tier", "_qty", "_bulk", "_kind"];
 ([_tier] call ABZ_fnc_rarityInfo) params ["_rName", "_rHex"];
-private _pinBtn = _d displayCtrl 78814;
+private _pinBtn = _d displayCtrl ABZ_IDC_BUTTONPIN;
 _pinBtn ctrlEnable !(_kind isEqualTo "vehicle");
 private _classBase = [_class] call ABZ_fnc_wantedBase;
 _pinBtn ctrlSetText (localize ["STR_A3U_Bazaar_Shop_Pin", "STR_A3U_Bazaar_Shop_Unpin"] select (((call ABZ_fnc_wantedList) findIf { _x == _class || {_x == _classBase} }) > -1));

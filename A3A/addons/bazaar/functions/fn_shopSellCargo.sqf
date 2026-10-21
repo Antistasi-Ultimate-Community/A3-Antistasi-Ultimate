@@ -1,10 +1,11 @@
 // Client: SELL pressed in "SELL from vehicle / crate" (v1.1.1). Nothing is
 // taken here - the server takes the items out of the vehicle or crate itself
 // (fn_serverSellCargo), so nothing has to be carried or drawn.
+#include "..\dialogues\ids.inc"
 private _d = findDisplay 78800;
 if (isNull _d) exitWith {};
 private _shop = uiNamespace getVariable ["ABZ_shop", []];
-private _row = lnbCurSelRow (_d displayCtrl 78802);
+private _row = lnbCurSelRow (_d displayCtrl ABZ_IDC_ITEMLIST);
 private _map = uiNamespace getVariable ["ABZ_shopMap", []];
 private _box = uiNamespace getVariable ["ABZ_sellBox", objNull];
 if (isNull _box || {!alive _box}) exitWith { [localize "STR_A3U_Bazaar_Notify_NoVehicleOrCrate"] call ABZ_fnc_notify };
@@ -14,7 +15,7 @@ if (_shop isEqualTo [] || {_row < 0} || {_row >= count _map}) exitWith { [locali
 ([_class] call ABZ_fnc_jobPrice) params ["_price", "_isJob", ["_bbN", 0]];
 if (_price <= 0 && {_bbN <= 0}) exitWith { [localize "STR_A3U_Bazaar_Notify_TraderWontBuy"] call ABZ_fnc_notify };
 
-private _n = round parseNumber (ctrlText (_d displayCtrl 78809));
+private _n = round parseNumber (ctrlText (_d displayCtrl ABZ_IDC_QTYEDIT));
 if (_n < 1) then { _n = 1 };
 if (_n > _have) then { _n = _have };
 // a trader who pays nothing for the rest takes only what he must

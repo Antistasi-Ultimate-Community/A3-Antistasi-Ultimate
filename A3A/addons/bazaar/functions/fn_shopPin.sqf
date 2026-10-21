@@ -1,9 +1,10 @@
 // Client: PIN button - pins (or unpins) the selected item on my Wanted List.
 // On the SELL side it pins the item as the traders deal it.
+#include "..\dialogues\ids.inc"
 private _d = findDisplay 78800;
 if (isNull _d) exitWith {};
 private _shop = uiNamespace getVariable ["ABZ_shop", []];
-private _row = lnbCurSelRow (_d displayCtrl 78802);
+private _row = lnbCurSelRow (_d displayCtrl ABZ_IDC_ITEMLIST);
 private _map = uiNamespace getVariable ["ABZ_shopMap", []];
 if (_shop isEqualTo [] || {_row < 0} || {_row >= count _map}) exitWith { [localize "STR_A3U_Bazaar_Notify_SelectItemFirst"] call ABZ_fnc_notify };
 private _mode = uiNamespace getVariable ["ABZ_shopMode", "stock"];

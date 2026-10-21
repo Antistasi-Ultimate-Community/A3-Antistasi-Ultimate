@@ -1,10 +1,11 @@
 // Client: SELL pressed in the "Sell your gear" category. Takes the items
 // off the player HERE (inventory is local), then asks the server to pay.
 // The server re-checks everything and hands the items back on any refusal.
+#include "..\dialogues\ids.inc"
 private _d = findDisplay 78800;
 if (isNull _d) exitWith {};
 private _shop = uiNamespace getVariable ["ABZ_shop", []];
-private _lnb = _d displayCtrl 78802;
+private _lnb = _d displayCtrl ABZ_IDC_ITEMLIST;
 private _row = lnbCurSelRow _lnb;
 private _map = uiNamespace getVariable ["ABZ_shopMap", []];
 if (_shop isEqualTo [] || {_row < 0} || {_row >= count _map}) exitWith { [localize "STR_A3U_Bazaar_Sell_SelectSomethingFirst"] call ABZ_fnc_notify };
@@ -13,7 +14,7 @@ if (_shop isEqualTo [] || {_row < 0} || {_row >= count _map}) exitWith { [locali
 ([_class] call ABZ_fnc_jobPrice) params ["_price", "_isJob", ["_bbN", 0]];
 if (_price <= 0 && {_bbN <= 0}) exitWith { [localize "STR_A3U_Bazaar_Notify_TraderWontBuy"] call ABZ_fnc_notify };
 
-private _qtyc = _d displayCtrl 78809;
+private _qtyc = _d displayCtrl ABZ_IDC_QTYEDIT;
 private _n = round parseNumber (ctrlText _qtyc);
 if (_n < 1) then { _n = 1 };
 if (_n > _have) then { _n = _have };
