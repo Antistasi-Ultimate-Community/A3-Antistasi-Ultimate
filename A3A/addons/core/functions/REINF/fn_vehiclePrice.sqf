@@ -1,11 +1,9 @@
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
 
-params ["_typeX"];
+params ["_typeX", ["_defaultPrice", 1000]];
 
 private _costs = server getVariable _typeX;
-
-private _defaultPrice = 1000;
 
 _costs = if (isNil "_costs") then {
 	Error_1("Invalid vehicle price :%1.", _typeX);
@@ -31,16 +29,24 @@ private _costsBM = [_typeX] call A3U_fnc_blackMarketVehiclePrice;
 
 if (isNil "_costsBM") then {_costsBM = 0};
 
-if (_costs isNotEqualTo 0 && {_costsBM isNotEqualTo 0}) then {
-	_costs = _costs min _costsBM;
-};
+if (_typeX in A3A_rebelVehicleCosts) then {
+	if (_costs isNotEqualTo 0 && {_costsBM isNotEqualTo 0}) then {
+		_costs = _costs min _costsBM;
+	};
 
-if (_costs isEqualTo 0 && {_costsBM isNotEqualTo 0}) then {
-	_costs = _costsBM;
+	if (_costs isEqualTo 0 && {_costsBM isNotEqualTo 0}) then {
+		_costs = _costsBM;
+	};
+} else {
+	// For non-rebel vehicles, use whichever is greater as there is no infinite money hack possible
+	// as these vehicles can only be bought with the BM cost.
+	if (_costsBM > _costs) then {
+		_costs = _costsBM;
+	};
 };
 
 if (_costs <= 0) then { // if the cost is less than 0
-	Error_2("%1 was an invalid price. Defaulting to %2", _costs, _defaultPrice);
+	Error_3("Invalid vehicle price for %1. Got: %2. Defaulting to %3", _typeX, _costs, _defaultPrice);
 	_costs = _defaultPrice; // reset the cost to the default price
 };
 
