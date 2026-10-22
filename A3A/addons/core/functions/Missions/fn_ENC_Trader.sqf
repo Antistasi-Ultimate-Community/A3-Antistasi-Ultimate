@@ -73,6 +73,7 @@ _smokeEffect setParticleClass "BigDestructionSmoke";
 //everywhere in hope that it will be delivered to heckin server (because clientId 2 does not work at all)
 [traderX] remoteExecCall ["SCRT_fnc_trader_setStockType", 0];
 [traderX] remoteExecCall ["SCRT_fnc_trader_addVehicleMarketAction", 0, true];
+[traderX] remoteExecCall ["SCRT_fnc_trader_addRequestMissionAction", 0, true];
 
 _worldName = [] call SCRT_fnc_misc_getWorldName;
 
