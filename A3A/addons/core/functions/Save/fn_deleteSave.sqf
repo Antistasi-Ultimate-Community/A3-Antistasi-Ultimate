@@ -8,50 +8,57 @@ Info_1("Deleting saved game with parameters %1", _this);
 
 private _namespace = [profileNamespace, missionProfileNamespace] select (_serverID isEqualType false);
 
-private _postfix = if (_serverID isEqualTo false) then { 
-	_campaignID 
+private _saveDataHM = _namespace getVariable format ["A3A_saveData_%1", _campaignID];
+if (!isNil "_saveDataHM") then {
+	// Simple single-hashmap delete for new saves
+	_namespace setVariable [format ["A3A_saveData_%1", _campaignID], nil];
+	[_namespace, _campaignID] call _removeFromSaveList;
 } else {
-	format["%1%2Antistasi%3",_serverID,_campaignID,_worldName]; 
-};
+	// Legacy saves with save variables stored directly in the namespace
+	private _postfix = if (_serverID isEqualTo false) then { 
+		_campaignID 
+	} else {
+		format["%1%2Antistasi%3",_serverID,_campaignID,_worldName]; 
+	};
 
-// Delete all known player data for specified campaign
-private _savedPlayers = _namespace getVariable ["savedPlayers" + _postfix, []];
-{
-	private _playerID = _x;
+	// Delete all known player data for specified campaign
+	private _savedPlayers = _namespace getVariable ["savedPlayers" + _postfix, []];
 	{
-		private _varName = format ["player_%1_%2", _playerID, _x];
-		_namespace setVariable [_varname + _postfix, nil];
+		private _playerID = _x;
+		{
+			private _varName = format ["player_%1_%2", _playerID, _x];
+			_namespace setVariable [_varname + _postfix, nil];
 
-	} forEach ["loadoutPlayer", "scorePlayer", "rankPlayer", "personalGarage", "moneyX"];
+		} forEach ["loadoutPlayer", "scorePlayer", "rankPlayer", "personalGarage", "moneyX"];
 
-} forEach _savedPlayers;
+	} forEach _savedPlayers;
 
 
-// Delete all server data for specified campaign
-{
-	_namespace setVariable [_x + _postfix, nil];
-} forEach [
-	"countCA", "gameMode", "bombRuns", "membersX", "antennas",
-	"mrkSDK", "mrkCSAT", "posHQ", "dateX", "skillFIA", "destroyedSites", "distanceSPWN",
-	"chopForest", "weather", "destroyedBuildings", "aggressionOccupants",
-	"aggressionInvaders", "resourcesFIA", "hr", "staticsX", "jna_datalist",
-	"prestigeOPFOR", "prestigeBLUFOR", "garrison", "wurzelGarrison", "usesWurzelGarrison", "minesX",
-	"tasks", "killZones", "controlsSDK", "params",
-	"attackCountdownOccupants", "attackCountdownInvaders",
-	"savedPlayers", "testingTimerIsActive", "HR_Garage", "A3A_fuelAmountleftArray", "HQKnowledge", "enemyResources",
-	"version", "name", "saveTime", "ended", "factions", "addonVics", "DLC",
-	
-	"supportPoints",
-    "constructionsX",
-    "watchpostsFIA", "roadblocksFIA", "aapostsFIA", "atpostsFIA", "hmgpostsFIA",
-    "traderDiscount", "isTraderQuestAssigned", "isTraderQuestCompleted", "traderPosition",
-    "areOccupantsDefeated", "areInvadersDefeated",
-    "destroyedMilAdmins",
-    "rebelLoadouts", "randomizeRebelLoadoutUniforms",
-    "areRivalsDefeated", "areRivalsDiscovered", "inactivityRivals", "rivalsLocationsMap", "rivalsExcludedLocations",
-    "nextRivalsLocationReveal", "isRivalsDiscoveryQuestAssigned"
-];
-
+	// Delete all server data for specified campaign
+	{
+		_namespace setVariable [_x + _postfix, nil];
+	} forEach [
+		"countCA", "gameMode", "bombRuns", "membersX", "antennas",
+		"mrkSDK", "mrkCSAT", "posHQ", "dateX", "skillFIA", "destroyedSites", "distanceSPWN",
+		"chopForest", "weather", "destroyedBuildings", "aggressionOccupants",
+		"aggressionInvaders", "resourcesFIA", "hr", "staticsX", "jna_datalist",
+		"prestigeOPFOR", "prestigeBLUFOR", "garrison", "wurzelGarrison", "usesWurzelGarrison", "minesX",
+		"tasks", "killZones", "controlsSDK", "params",
+		"attackCountdownOccupants", "attackCountdownInvaders",
+		"savedPlayers", "testingTimerIsActive", "HR_Garage", "A3A_fuelAmountleftArray", "HQKnowledge", "enemyResources",
+		"version", "name", "saveTime", "ended", "factions", "addonVics", "DLC",
+		
+		"supportPoints",
+		"constructionsX",
+		"watchpostsFIA", "roadblocksFIA", "aapostsFIA", "atpostsFIA", "hmgpostsFIA",
+		"traderDiscount", "isTraderQuestAssigned", "isTraderQuestCompleted", "traderPosition",
+		"areOccupantsDefeated", "areInvadersDefeated",
+		"destroyedMilAdmins",
+		"rebelLoadouts", "randomizeRebelLoadoutUniforms",
+		"areRivalsDefeated", "areRivalsDiscovered", "inactivityRivals", "rivalsLocationsMap", "rivalsExcludedLocations",
+		"nextRivalsLocationReveal", "isRivalsDiscoveryQuestAssigned"
+	];
+};
 
 // Remove this campaign from the save list, if present
 private _saveList = [_namespace getVariable "antistasiUltimate2SavedGames"] param [0, [], [[]]];

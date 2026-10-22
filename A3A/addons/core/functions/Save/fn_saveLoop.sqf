@@ -33,10 +33,15 @@ if assert(_saveDataPlugins isEqualType createHashMap) then {
 autoSaveTime = time + autoSaveInterval;
 
 // Select save namespace
-A3A_saveTarget params ["_serverID", "_campaignID"];
+A3A_saveTarget params ["_serverID", "_campaignID", "_worldName", "_oldCampaignID"];
 private _saveToNewNamespace = _serverID isEqualType false;
 if (!_saveToNewNamespace) then { profileNamespace setVariable ["ss_serverID", _serverID] };			// backwards compatibility
 private _namespace = [profileNamespace, missionProfileNamespace] select _saveToNewNamespace;
+
+// Create a temporary hashmap to hold the saveData before storing it as a single hashmap
+A3A_saveDataHM = createHashMap;
+A3A_saveDataHM set ["serverID", _serverID];
+A3A_saveDataHM set ["campaignID", _campaignID];
 
 // Build server-to-client wait map
 private _syncStartTick = diag_tickTime;
@@ -594,7 +599,16 @@ _fuelAmountleftArray = [];
 // Save third-party plugin data
 ["saveDataPlugins", _saveDataPlugins] call A3A_fnc_setStatVariable;
 
+// Save world name for use in import / export functionality
+["map", _worldName] call A3A_fnc_setStatVariable;
+
+// Store the entire save data hashmap as a single hashmap in the selected namespace
+_namespace setVariable [format ["A3A_saveData_%1", _campaignID], A3A_saveDataHM];
+
 if (_saveToNewNamespace) then { saveMissionProfileNamespace } else { saveProfileNamespace };
+
+// Trigger local (server) event informing listeners that we're done saving the game, allowing them to perform actions with the finalized data
+[CBA_EVENT_SERVER_GAME_SAVED, [_saveToNewNamespace, _serverID, _campaignID, _worldName, RETNIL(_oldCampaignID)]] call FUNCMAIN(triggerLocalEvent);
 
 savingServer = false;
 _saveHintText = [
