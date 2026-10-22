@@ -89,7 +89,6 @@ if (_additionalGarrison isNotEqualTo []) then {
 		private _groupTypes = _additionalGarrison select _i;
 		private _group = [_positionX, _sideX, _groupTypes, false, true] call A3A_fnc_spawnGroup;
 		if !(isNull _group) then {
-			sleep 1;
 			[_group, "Patrol_Area", 25, 150, 300, false, [], false] call A3A_fnc_patrolLoop;
 			_groups pushBack _group;
 			{[_x] call A3A_fnc_NATOinit; _soldiers pushBack _x} forEach units _group;
@@ -108,6 +107,11 @@ if (_radiusX < ([_markerX] call A3A_fnc_garrisonSize)) then {
 	//No patrol if patrol area overlaps with an enemy site
 	_patrol = ((markersX findIf {(getMarkerPos _x inArea _mrk) && {sidesX getVariable [_x, sideUnknown] != _sideX}}) == -1);
 };
+
+([_markerX, _sideX, _garrison, _size] call A3A_fnc_createZoneGarrison) params ["_garrisonGroups", "_garrisonSoldiers"];
+_groups append _garrisonGroups;
+_soldiers append _garrisonSoldiers;
+
 if (_patrol) then {
 	[_markerX, _positionX, _sideX, _faction, 4] call SCRT_fnc_location_createPatrols;
 };
@@ -150,43 +154,9 @@ if (_spawnParameter isEqualType []) then {
 	};
 	_vehiclesX pushBack _veh;
 	[_veh, _sideX] call A3A_fnc_AIVEHinit;
-	sleep 1;
 };
 
 { _x setVariable ["originalPos", getPos _x] } forEach _vehiclesX;
-
-private _array = [];
-private _subArray = [];
-private _countX = 0;
-_radiusX = _radiusX -1;
-while {_countX <= _radiusX} do {
-	_array pushBack (_garrison select [_countX,7]);
-	_countX = _countX + 8;
-};
-
-for "_i" from 0 to (count _array - 1) do {
-	_groupX = if (_i == 0) then {
-		[_positionX,_sideX, (_array select _i),true, false] call A3A_fnc_spawnGroup;
-	} else {
-		private _spawnPosition = [_positionX, 10, 50, 5, 0, -1, 0] call A3A_fnc_getSafePos;
-		[_spawnPosition, _sideX, (_array select _i), false, true] call A3A_fnc_spawnGroup
-	};
-	_groups pushBack _groupX;
-
-	{
-		[_x, _markerX] call A3A_fnc_NATOinit;
-		_soldiers pushBack _x;
-	} forEach units _groupX;
-
-	if (_i == 0) then {
-		private _garrisonGroup = [_groupX, getMarkerPos _markerX, _size] call A3A_fnc_patrolGroupGarrison;
-		if (count _garrisonGroup > 0) then {
-			_groups append _garrisonGroup;
-		};
-	} else {
-		[_groupX, "Patrol_Defend", 0, 100, -1, true, _positionX, false] call A3A_fnc_patrolLoop;
-	};
-};
 
 [CBA_EVENT_SERVER_SPAWN_LOCATION, [_markerX, "Resource", true]] call FUNCMAIN(triggerLocalEvent);
 
