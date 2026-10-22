@@ -1,4 +1,5 @@
 // Antistasi Bazaar - postInit
+#include "script_component.hpp"
 #include "dialogues\ids.inc"
 
 if (hasInterface) then {
@@ -164,6 +165,25 @@ if (hasInterface) then {
 };
 
 if (isServer) then {
+	// The following functions replaced by new server game save  / server init done event handlers (see below)
+	// Make sure they don't do anything inadvertently, in case we missed a call to them
+	OBSOLETE_SYS(ABZ_fnc_load,{});
+	OBSOLETE_SYS(ABZ_fnc_queueSave,{});
+	OBSOLETE_SYS(ABZ_fnc_syncCommit,{});
+	OBSOLETE_SYS(ABZ_fnc_save,{});
+
+	// Boot function replaced with a simple(r) event handler for AU server init done event,
+	// since we're not concerned about non-AU functionality
+	INFO("[ABZ] Hooking into CBA server init done event");
+	[CBA_EVENT_SERVER_INIT_DONE, { spawn ABZ_fnc_onEventServerInitDone }] call FUNCMAIN(addEventHandler);
+
+	// Periodic autosave loop (queueSave --> syncCommit --> save) disabled as we now rely on AU Server Game Save event
+	// No need to queue save data and sync it after an AU campaign save, if the bazaar save data is now part of the campaign save, right?
+	INFO("[ABZ] Hooking into CBA server game save event");
+	[CBA_EVENT_SERVER_GAME_SAVE, { call ABZ_fnc_onEventServerGameSave }] call FUNCMAIN(addEventHandler);
+
+	// ! Leaving the rest of this commented (for now) in case of implementation issues.
+	/*
 	missionNamespace setVariable ["ABZ_bootFunc", {
 		[] spawn {
 			sleep 5;	// let Antistasi finish stamping its factions/arsenal
@@ -197,4 +217,5 @@ if (isServer) then {
 			call ABZ_fnc_queueSave;
 		};
 	};
+	*/
 };

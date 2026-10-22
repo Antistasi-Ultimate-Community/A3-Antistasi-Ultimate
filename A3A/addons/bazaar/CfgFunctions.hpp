@@ -173,6 +173,10 @@ class CfgFunctions
 			class loadTarget {};
 			class cargoTarget {};
 			class rumours {};
+
+			// --- Event Handlers ---
+			class onEventServerGameSave {};
+			class onEventServerInitDone {};
 		};
 	};
 };
