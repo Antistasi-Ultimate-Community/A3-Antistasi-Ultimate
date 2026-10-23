@@ -48,7 +48,7 @@
 ["vehiclesRivalsAPCs", ["rhsgref_ins_btr60", "rhsgref_ins_btr70", "rhsgref_ins_bmd1", "rhsgref_ins_bmd1p", "rhsgref_ins_bmd2", "rhsgref_ins_bmp1", "rhsgref_ins_bmp1d", "rhsgref_ins_bmp1k", "rhsgref_ins_bmp1p", "rhsgref_ins_bmp2e", "rhsgref_ins_bmp2", "rhsgref_ins_bmp2d", "rhsgref_ins_bmp2k"]] call _fnc_saveToTemplate;
 ["vehiclesRivalsTanks", ["rhsgref_ins_t72ba", "rhsgref_ins_t72bb"]] call _fnc_saveToTemplate;
 ["vehiclesRivalsHelis", ["RHS_Mi8MTV3_vdv"]] call _fnc_saveToTemplate;			
-["vehiclesRivalsUavs", ["O_UAV_01_F"]] call _fnc_saveToTemplate;			
+["vehiclesRivalsUavs", ["O_UAV_01_F", "UK3CB_CPD_O_KA137", "UK3CB_CPD_O_KA137_PKM"]] call _fnc_saveToTemplate;			
 
 ["staticLowWeapons", [
 	"rhsgref_ins_DSHKM_Mini_TriPod", 
