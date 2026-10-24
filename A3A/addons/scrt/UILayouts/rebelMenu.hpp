@@ -316,6 +316,7 @@ class rebelMenu
 					sizeEx = "((pixelH * (pixelGridNoUIScale) * 2) * 1.25) * 0.5";	
 					shadow = 2;
 					action = "['onLoad'] spawn SCRT_fnc_ui_editParamsMenu;";
+					onLoad = "_this params [""_ctrl"",""""]; if !(isServer || {(call BIS_fnc_admin) isEqualTo 2}) exitWith {_ctrl ctrlEnable false; _ctrl ctrlSetTooltip (localize ""STR_generic_admin_only"")};";
 				};
 
 				class saveGameButton: ButtonBase
