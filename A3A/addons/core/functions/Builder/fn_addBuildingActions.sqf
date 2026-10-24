@@ -57,7 +57,7 @@ _plankObject addAction [
 ];
 
 _plankObject addAction [
-    localize "STR_magRepack_cancel",
+    localize "str_disp_cancel",
     {
         params ["_target"];
         [_target, false] remoteExecCall ["A3A_fnc_buildingComplete", 2];
