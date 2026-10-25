@@ -66,6 +66,7 @@ private _fnc_spawngroups = {
 			_UAVtype = selectRandom (_faction get "uavsPortable");
 			_uav = createVehicle [_UAVtype, _skirmishpositionActuall, [], 0, "FLY"];
 			[_side, _uav] call A3A_fnc_createVehicleCrew;
+			[_uav, _side] call A3A_fnc_AIVEHinit;
 			_vehiclesArray pushBack _uav;
 			_groupUAV = group (crew _uav select 1);
 			{[_x] joinSilent _InfGroup} forEach units _groupUAV;

@@ -43,12 +43,27 @@ private _isAI = !isPlayer _unit || !hasInterface || {!(_unit isEqualTo player)};
 
 if (_isAI && !_addToAI) exitWith {true};
 
+// Zeus Exemption: Ignore if the source or remote controller is a Curator
+#define HANDLE_ZEUS_EXCEPTION(unitVar1) \
+    if (!isNull(unitVar1) && { !isNull getAssignedCuratorLogic(unitVar1) || { !isNull getAssignedCuratorLogic remoteControlled(unitVar1) } }) exitWith {}
+
 _unit addEventHandler ["Killed", {
     params ["_unit", "_killer", "_instigator", "_useEffects"];
+    
+    // Zeus Exemption: Ignore if the killer or remote controller is a Curator
+
+    private _suspect = [_instigator, _killer] select isNull _instigator;
+    HANDLE_ZEUS_EXCEPTION(_suspect);
+
+
     [[_instigator,_killer], 60, 0.4, _unit] remoteExecCall ["A3A_fnc_punishment_evaluateEvent",2,false];
 }];
 _unit addEventHandler ["Hit", {
     params ["_unit", "_source", "_damage", "_instigator"];
+
+    private _suspect = [_instigator, _killer] select isNull _instigator;
+    HANDLE_ZEUS_EXCEPTION(_suspect);
+
     [[_instigator,_source], 60, 0.4, _unit] remoteExecCall ["A3A_fnc_punishment_evaluateEvent",2,false];
 }];
 
@@ -57,19 +72,31 @@ if (_isAI) exitWith {true};
 if (A3A_hasACE) then {
     ["ace_firedPlayer", {
         params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile"];
+
+        HANDLE_ZEUS_EXCEPTION(_unit);
+
         [_unit,_weapon,_projectile] call A3A_fnc_punishment_FF_checkNearHQ;
     }] call CBA_fnc_addEventHandler;
     ["ace_explosives_place", {
         params ["_explosive","_dir","_pitch","_unit"];
+
+        HANDLE_ZEUS_EXCEPTION(_unit);
+
         [_unit,"Put",_explosive] call A3A_fnc_punishment_FF_checkNearHQ;
     }] call CBA_fnc_addEventHandler;
     ["ace_throwableThrown", {
         params ["_unit", "_throwable"];
+
+        HANDLE_ZEUS_EXCEPTION(_unit);
+
         [_unit,"Throw",_throwable] call A3A_fnc_punishment_FF_checkNearHQ;
     }] call CBA_fnc_addEventHandler;
 } else {
     _unit addEventHandler ["FiredMan", {
         params ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_vehicle"];
+
+        HANDLE_ZEUS_EXCEPTION(_unit);
+
         [_unit,_weapon,_projectile] call A3A_fnc_punishment_FF_checkNearHQ;
     }];
 };

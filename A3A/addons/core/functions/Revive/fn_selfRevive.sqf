@@ -1,3 +1,5 @@
+#include "..\..\script_component.hpp"
+FIX_LINE_NUMBERS()
 /*
     A3A_fnc_selfRevive
     Attempt to self-revive the local player (needs FAK, 5min timeout) 
@@ -34,6 +36,7 @@ player setVariable ["A3A_selfReviveTimeout", _timeout + time];
 [_hintTitle, localize "STR_A3A_selfRevive_success"] call A3A_fnc_customHint;
 
 private _aimCoef = missionNamespace getVariable ["A3A_selfReviveAimCoef", 3];
+player setVariable[QGVAR(restoreAimCoef), getCustomAimCoef player];
 player setCustomAimCoef _aimCoef;
 
 // Some bog standard desaturation

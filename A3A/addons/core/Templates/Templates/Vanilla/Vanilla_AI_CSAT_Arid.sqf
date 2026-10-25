@@ -60,10 +60,14 @@ private _planesCAS = ["O_Plane_CAS_02_dynamicLoadout_F"];
 private _planesAA = ["O_Plane_CAS_02_dynamicLoadout_F"];
 
 private _planesTransport = [];
-private _gunship = [];
+private _planesGunship = [];
 
 private _helisLight = ["O_Heli_Light_02_unarmed_F"];
 private _transportHelicopters = ["O_Heli_Light_02_unarmed_F"];
+
+if (_hasHelicopters) then {
+    _transportHelicopters pushBack "O_Heli_Transport_04_F";
+};
 
 ["vehiclesHelisTransport", _transportHelicopters] call _fnc_saveToTemplate;
 private _helisLightAttack = ["O_Heli_Light_02_dynamicLoadout_F"];
@@ -94,6 +98,27 @@ private _staticAA = ["O_static_AA_F"];
 ["staticMortars", ["O_Mortar_01_F"]] call _fnc_saveToTemplate;
 private _howitzers = [];
 
+if (_hasTanks) then {
+    _tanks append ["O_MBT_04_cannon_F", "O_MBT_04_command_F"];
+};
+
+if (_hasRF) then {
+    _basic pushBack "B_Pickup_rf";
+    _unarmedVehicles append ["B_Pickup_rf", "B_Pickup_Comms_rf"];
+    _armedVehicles append ["B_Pickup_mmg_rf"];
+    _policeVehs append ["B_GEN_Pickup_covered_rf"];
+};
+
+if (_hasEF) then {
+    _transportBoat pushBack "EF_B_CombatBoat_Unarmed_MJTF_Des";
+    _gunBoat pushBack "EF_B_CombatBoat_HMG_MJTF_Des";
+    _policeVehs append ["EF_B_Gyra_GEN", "EF_B_Gyra_HMG_GEN"];
+};
+
+if (_hasWS) then {
+    _policeVehs pushBack "B_GEN_APC_Wheeled_02_hmg_lxWS";
+};
+
 ["mortarMagazineHE", "8Rnd_82mm_Mo_shells"] call _fnc_saveToTemplate;
 ["mortarMagazineSmoke", "8Rnd_82mm_Mo_Smoke_white"] call _fnc_saveToTemplate;
 ["mortarMagazineFlare", "8Rnd_82mm_Mo_Flare_white"] call _fnc_saveToTemplate;
@@ -105,7 +130,7 @@ private _howitzers = [];
 
 ["vehiclesAirPatrol", _airPatrol] call _fnc_saveToTemplate;
 ["vehiclesGunBoats", _gunBoat] call _fnc_saveToTemplate;
-["vehiclesPlanesGunship", _gunship] call _fnc_saveToTemplate;
+["vehiclesPlanesGunship", _planesGunship] call _fnc_saveToTemplate;
 ["vehiclesTransportBoats", _transportBoat] call _fnc_saveToTemplate;
 ["staticHowitzers", _howitzers] call _fnc_saveToTemplate;
 ["vehiclesAA", _aa] call _fnc_saveToTemplate;

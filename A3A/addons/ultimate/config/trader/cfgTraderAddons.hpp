@@ -432,3 +432,8 @@
         addons[] = {"rus_weapon_rifles"};
         weapons = "weapons_rearma_ru";
     };
+    class addons_rearma_cn : addons_base
+    {
+        addons[] = {"cn_weapon"};
+        weapons = "weapons_rearma_cn";
+    };

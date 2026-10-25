@@ -1,3 +1,5 @@
+#ifndef __HAS_A3ACORE_UI_CONST_HPP__
+#define __HAS_A3ACORE_UI_CONST_HPP__
 // Control types
 #define CT_STATIC           0
 #define CT_BUTTON           1
@@ -16,6 +18,7 @@
 #define CT_CONTEXT_MENU     14
 #define CT_CONTROLS_GROUP   15
 #define CT_SHORTCUTBUTTON   16
+#define CT_HITZONES         17
 #define CT_XKEYDESC         40
 #define CT_XBUTTON          41
 #define CT_XLISTBOX         42
@@ -31,6 +34,8 @@
 #define CT_MAP              100
 #define CT_MAP_MAIN         101
 #define CT_LISTNBOX         102
+#define CT_ITEMSLOT         103
+#define CT_CHECKBOX         77
 
 // Static styles
 #define ST_POS            0x0F
@@ -46,7 +51,6 @@
 #define ST_GROUP_BOX2      112
 #define ST_ROUNDED_CORNER  ST_GROUP_BOX + ST_CENTER
 #define ST_ROUNDED_CORNER2 ST_GROUP_BOX2 + ST_CENTER
-#define ST_UPPERCASE      0xC0
 
 #define ST_TYPE           0xF0
 #define ST_SINGLE         0x00
@@ -61,6 +65,8 @@
 #define ST_TILE_PICTURE   0x90
 #define ST_WITH_RECT      0xA0
 #define ST_LINE           0xB0
+#define ST_UPPERCASE      0xC0
+#define ST_LOWERCASE      0xD0
 
 #define ST_SHADOW         0x100
 #define ST_NO_RECT        0x200
@@ -72,7 +78,6 @@
 #define SL_DIR            0x400
 #define SL_VERT           0
 #define SL_HORZ           0x400
-
 #define SL_TEXTURES       0x10
 
 // progress bar
@@ -91,3 +96,5 @@
 #define MB_BUTTON_OK      1
 #define MB_BUTTON_CANCEL  2
 #define MB_BUTTON_USER    4
+
+#endif // __HAS_A3ACORE_UI_CONST_HPP__

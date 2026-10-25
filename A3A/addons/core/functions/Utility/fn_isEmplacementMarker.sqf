@@ -30,7 +30,7 @@ if !assert(params[
     ["_marker", nil, [""]]
 ]) exitWith { false };
 
-if (markerShape _marker isEqualTo "") exitWith {
+if !(MARKER_EXISTS(_marker)) exitWith {
     Warning_1("No such marker %1",str _marker);
     false;
 };

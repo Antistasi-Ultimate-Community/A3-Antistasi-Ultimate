@@ -53,7 +53,7 @@ private _topPadding = if (_vehicleCount < 7) then {5 * GRID_H} else {1 * GRID_H}
 private _added = 0;
 private _bmData = _buyableVehiclesHM apply {
     private _className = _x;
-    private _price = _y;
+    private _price = [_className] call A3U_fnc_blackMarketVehiclePrice;
     [getText(configFile >> "CfgVehicles" >> _className >> "displayName"), _className, _price];
 };
 

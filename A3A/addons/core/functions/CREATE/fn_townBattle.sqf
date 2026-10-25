@@ -76,7 +76,7 @@ private _posDest = getMarkerPos _mrkDest;
 private _posOrigin = getMarkerPos _mrkOrigin;
 private _size = [_mrkDest] call A3A_fnc_sizeMarker;
 private _sizeSpawn = 50 min _size;
-private _sizeFail = 50 max _size; // Minimum size of 50m
+private _sizeFail = 200 max _size; // Minimum size of 200m
 
 private _faction = Faction(_side);
 private _factionReb = A3A_faction_reb;

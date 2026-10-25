@@ -1,13 +1,33 @@
+// Context: server
+// Environment: unscheduled
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
 if (!isServer) exitWith {
     Error("Miscalled server-only function");
 };
 
+// Suspend ourselves so while-loops don't get suicidal.
+if !(canSuspend) exitWith { _this spawn FUNCMAIN(saveLoop) };
+
 if (savingServer) exitWith {[localize "STR_A3A_save_persisent_save", localize "STR_A3A_save_save_game_desc"] remoteExecCall ["A3A_fnc_customHint",theBoss]};
 savingServer = true;
 Info("Starting persistent save");
 [localize "STR_A3A_save_persisent_save",localize "STR_A3A_save_save_game_starting"] remoteExecCall ["A3A_fnc_customHint",0,false];
+
+// Tell third party mods we're saving the game. Do this very early in case
+// they attempt to overwrite stuff we're saving later below.
+private _saveDataPlugins = createHashMap;
+[CBA_EVENT_SERVER_GAME_SAVE, [_saveDataPlugins]] call FUNCMAIN(triggerLocalEvent);
+
+// Shouldn't be technically possible, but we validate anyways before making the
+// hashmap read-only...
+if assert(_saveDataPlugins isEqualType createHashMap) then {
+	// make it read-only
+	_saveDataPlugins = compileFinal _saveDataPlugins;
+} else {
+	Error_1("Some third-party save event subscriber changed data type of save data to ""%1""",typeName _saveDataPlugins);
+	_saveDataPlugins = createHashMap;
+};
 
 // Set next autosave time, so that we won't run another shortly after a manual save
 autoSaveTime = time + autoSaveInterval;
@@ -18,11 +38,79 @@ private _saveToNewNamespace = _serverID isEqualType false;
 if (!_saveToNewNamespace) then { profileNamespace setVariable ["ss_serverID", _serverID] };			// backwards compatibility
 private _namespace = [profileNamespace, missionProfileNamespace] select _saveToNewNamespace;
 
+// Build server-to-client wait map
+private _syncStartTick = diag_tickTime;
+private _waitData = createHashMapFromArray([] call FUNCMAIN(playableUnits) select {
+	// The `skipSaveOnce` variable is usually set on theBoss when a global save
+	// is triggered via the commander menu; here, the initiating player is
+	// always saved first, so we skip them here but reset the flag.
+	// (not really true anymore, but keep the check anyways for future needs...)
+	if (isNil { _x getVariable QGVAR(skipSaveOnce) }) then {
+		true;
+	} else {
+		_x setVariable[QGVAR(skipSaveOnce), nil];
+		false;
+	};
+} apply {
+	private _uuid = [] call CBA_fnc_createUUID;
 
-// Save each player with global flag
-{
-	[getPlayerUID _x, _x, true] call A3A_fnc_savePlayer;
-} forEach (call A3A_fnc_playableUnits);
+	[CBA_EVENT_SERVER_PLAYER_SAVE, [_uuid], _x] call FUNCMAIN(triggerTargetEvent);
+
+	[
+		_uuid, createHashMapFromArray[
+			["uid", getPlayerUID _x],
+			["uuid", _uuid],
+			["player", _x]
+		]
+	]
+});
+
+// Start checking for clients' responses. Wait a maximum of 10 seconds, which
+// should be enough for plugins data to be synched to from clients to server.
+// If you notice a lot of "Timeout waiting for player data save to complete"
+// errors after a save, consider increasing this in "varsHardcoded.hpp".
+private _waitUntil = diag_tickTime + GVAR(saveWaitClientDataTimeout);
+private _loops = 0;
+
+while { keys _waitData isNotEqualTo [] } do {
+	INC(_loops);
+	SNOOZE();
+
+	keys _waitData select {
+		!isNil { missionNamespace getVariable _x }
+	} apply {
+		private _uuid = _x;
+		private _uid = _waitData get _uuid get "uid";
+		private _player = _waitData get _uuid get "player";
+		private _pluginsData = missionNamespace getVariable _uuid;
+
+		_waitData deleteAt _uuid;
+		missionNamespace setVariable[_uuid, nil];
+
+		Debug_2("Received save acknowledgement from player %1 with UID %2",_player,_uid);
+		Verbose_2("UID=%1; pluginsData=%2",_uid,_pluginsData);
+
+		[_uid, _player, true, _pluginsData] call A3A_fnc_savePlayer;
+	};
+
+	if (diag_tickTime > _waitUntil) then {
+		Error("Timeout waiting for player data saves to complete. Continuing with main save.");
+		break;
+	};
+};
+
+if (keys _waitData isNotEqualTo []) then {
+	Error("Some clients failed to respond to server's save request.");
+	keys _waitData apply {
+		private _uuid = _x;
+		private _uid = _waitData get _uuid get "uid";
+		private _player = _waitData get _uuid get "player";
+
+		Error_3("No save data received from player %1 with UID %2 (UUID=%3)",_player,_uid,_uuid);
+	};
+};
+
+Info_2("Spent %1 seconds and %2 loops waiting for player data saves to complete",diag_tickTime - _syncStartTick,_loops);
 
 // Now write back all the player data
 {
@@ -196,8 +284,7 @@ vehicles select {
 		!(typeOf _x in A3A_utilityItemHM) &&
 		{ fullCrew[_x, "", true] isNotEqualTo [] } && // no crew seats, not in utilityItems, not saved
 		{ crew _x findIf { (alive _x) && (!isPlayer _x) } == -1 } // no AI-crewed vehicles, those are refunded
-	} ||
-	{ "save" in ((A3A_utilityItemHM get typeOf _x) select 4) } 
+	}
 } apply {
     _arrayEst pushBackUnique _x;
 };
@@ -233,6 +320,12 @@ _arrayEst = _arrayEst apply {
 			[_x] call BIS_fnc_getVehicleCustomization,
 			_x in staticsToFlip
 		];
+	};
+
+	private _saveData = [_x] call A3A_fnc_getObjectSaveData;
+
+	if !(isNil "_saveData") then {
+		_properties pushBack _saveData;
 	};
 
 	_properties;
@@ -497,6 +590,9 @@ _fuelAmountleftArray = [];
 
 // Save Petros location
 ["petrosPosition", (getPosATL petros)] call A3A_fnc_setStatVariable;
+
+// Save third-party plugin data
+["saveDataPlugins", _saveDataPlugins] call A3A_fnc_setStatVariable;
 
 if (_saveToNewNamespace) then { saveMissionProfileNamespace } else { saveProfileNamespace };
 

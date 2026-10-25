@@ -11,6 +11,7 @@ class Params
             values[] = {0,1,2,3}; // integer values for the actual parameter value. If values is {0,1} they will be converted to boolean when loading the save.
             texts[] = {}; // string values for the parameter options, shown in the setup GUI dropdown
             default = 0; // default integer value for the parameter
+            after = ""; // the config name of the parameter after which this one should be placed in the GUI (optional)
             lockOnSave = 0; // Set to 1 if parameter should not be changeable after saving a game (optional, default 0)
             lockInGame = 0; // Set to 1 if parameter value should not be changeable while in-game (optional, default 0)
             lockCondition = "false;"; // SQF code run while setup GUI is open that returns true/false to determine if the parameter should be changeable (optional, default "false;" (meaning, not locked))
@@ -604,6 +605,26 @@ class Params
             class large : solo {};
         };
         default = 300;
+    };
+    class A3A_roadBlocksBaseChance: AIParams
+    {
+        title = $STR_params_A3A_roadBlocksBaseChance;
+        tooltip = $STR_params_A3A_roadBlocksBaseChance_desc;
+        values[] = {0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
+        texts[] = {"0%", "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%"};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 0;
+                medium = 50;
+                hard = 100;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
+        default = 0;
     };
     class globalCivilianMax: AIParams
     {

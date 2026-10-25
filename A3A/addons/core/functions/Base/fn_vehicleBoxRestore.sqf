@@ -110,7 +110,7 @@ private _finalStringVariant = [
 
 private _finalString = format [_finalStringVariant, _finalAdditiveString];
 
-["vehicleBoxRestore", [_posHQ]] call EFUNC(Events,triggerEvent);
+[CBA_EVENT_CLIENT_VEHICLE_BOX_RESTORE, [_posHQ]] call FUNCMAIN(triggerLocalEvent);
 [localize "STR_A3A_base_vehicleBoxRestore_restoration_title", _finalString] call A3A_fnc_customHint;
 
 [] remoteExec ["SCRT_fnc_common_updateArsenal", 2];

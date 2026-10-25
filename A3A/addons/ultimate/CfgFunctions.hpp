@@ -49,15 +49,15 @@ class CfgFunctions
         class map
         {
             file = QPATHTOFOLDER(functions\map);
-            class mapHoverEH {};
             class handleMrkUpdate {};
             class isMarkerHidden {};
             class mapHover {};
+            class mapHoverEH {};
             class mapTooltip {};
-            class tooltipCreate {};
             class markerBrowser {};
             class markerContextMenu {};
             class mrkUpdateBulk {};
+            class tooltipCreate {};
         };
         class REINF
         {

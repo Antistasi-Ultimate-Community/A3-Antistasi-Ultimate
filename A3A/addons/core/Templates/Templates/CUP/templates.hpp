@@ -196,7 +196,7 @@
     class CUP_TKM : CUP_Base
     {
         side = "Reb";
-        flagTexture = "\CUP\BaseConfigs\CUP_BaseConfigs\data\Flags\flag_tka_co.paa";
+        flagTexture = "cup\baseconfigs\cup_baseconfigs\data\flags\flag_tkm_co.paa";
         name = "CUP TKM";
         file = "CUP_Reb_TKM";
     };
