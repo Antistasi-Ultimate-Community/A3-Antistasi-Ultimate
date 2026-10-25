@@ -88,6 +88,7 @@ switch (_mode) do
         (_display displayCtrl A3A_IDC_SETUP_OLDPARAMSTEXT) ctrlShow _newGame;
         (_display displayCtrl A3A_IDC_SETUP_NAMESPACETEXT) ctrlShow _newGame;
         (_display displayCtrl A3A_IDC_SETUP_HQPOSBUTTON) ctrlShow (_newGame && !cbChecked _copyGameCtrl);
+        (_display displayCtrl A3A_IDC_SETUP_EDITZONES_BUTTON) ctrlShow (_newGame && !cbChecked _copyGameCtrl);
 
         // If we're selecting a game to load, load factions if available
         private _factions = [_saveData get "factions", _saveData get "addonVics", _saveData get "DLC"];
@@ -293,6 +294,11 @@ switch (_mode) do
         createDialog "A3A_SetupHQPosDialog";
     };
 
+    case ("editZones"):
+    {
+        createDialog "A3A_SetupEditZonesDialog";
+    };
+
     case ("deleteGame"):
     {
         private _index = _listboxCtrl getVariable ["rowIndex", -1];
@@ -317,7 +323,8 @@ switch (_mode) do
     {
         private _index = _listboxCtrl getVariable ["rowIndex", -1];
         if (_index == -1) exitWith {};
-        private _newName = ctrlText (_display displayCtrl A3A_IDC_SETUP_NAMEEDITBOX);
+        private _nameBoxCtrl = _display displayCtrl A3A_IDC_SETUP_NAMEEDITBOX;
+        private _newName = ctrlText _nameBoxCtrl;
 
         // Set name in save data
         private _saveData = A3A_setup_saveData select _index;
@@ -330,5 +337,8 @@ switch (_mode) do
         // Set name in the displayed table
         private _nameCtrl = _listboxCtrl getVariable "nameCtrls" select _index;
         _nameCtrl ctrlSetText _newName;
+
+        // Clear the name edit box
+        _nameBoxCtrl ctrlSetText "";
     };
 };

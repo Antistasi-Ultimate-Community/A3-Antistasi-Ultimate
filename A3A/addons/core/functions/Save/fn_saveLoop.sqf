@@ -14,6 +14,21 @@ savingServer = true;
 Info("Starting persistent save");
 [localize "STR_A3A_save_persisent_save",localize "STR_A3A_save_save_game_starting"] remoteExecCall ["A3A_fnc_customHint",0,false];
 
+// Tell third party mods we're saving the game. Do this very early in case
+// they attempt to overwrite stuff we're saving later below.
+private _saveDataPlugins = createHashMap;
+[CBA_EVENT_SERVER_GAME_SAVE, [_saveDataPlugins]] call FUNCMAIN(triggerLocalEvent);
+
+// Shouldn't be technically possible, but we validate anyways before making the
+// hashmap read-only...
+if assert(_saveDataPlugins isEqualType createHashMap) then {
+	// make it read-only
+	_saveDataPlugins = compileFinal _saveDataPlugins;
+} else {
+	Error_1("Some third-party save event subscriber changed data type of save data to ""%1""",typeName _saveDataPlugins);
+	_saveDataPlugins = createHashMap;
+};
+
 // Set next autosave time, so that we won't run another shortly after a manual save
 autoSaveTime = time + autoSaveInterval;
 
@@ -269,8 +284,7 @@ vehicles select {
 		!(typeOf _x in A3A_utilityItemHM) &&
 		{ fullCrew[_x, "", true] isNotEqualTo [] } && // no crew seats, not in utilityItems, not saved
 		{ crew _x findIf { (alive _x) && (!isPlayer _x) } == -1 } // no AI-crewed vehicles, those are refunded
-	} ||
-	{ "save" in ((A3A_utilityItemHM get typeOf _x) select 4) } 
+	}
 } apply {
     _arrayEst pushBackUnique _x;
 };
@@ -306,6 +320,12 @@ _arrayEst = _arrayEst apply {
 			[_x] call BIS_fnc_getVehicleCustomization,
 			_x in staticsToFlip
 		];
+	};
+
+	private _saveData = [_x] call A3A_fnc_getObjectSaveData;
+
+	if !(isNil "_saveData") then {
+		_properties pushBack _saveData;
 	};
 
 	_properties;
@@ -570,6 +590,9 @@ _fuelAmountleftArray = [];
 
 // Save Petros location
 ["petrosPosition", (getPosATL petros)] call A3A_fnc_setStatVariable;
+
+// Save third-party plugin data
+["saveDataPlugins", _saveDataPlugins] call A3A_fnc_setStatVariable;
 
 if (_saveToNewNamespace) then { saveMissionProfileNamespace } else { saveProfileNamespace };
 

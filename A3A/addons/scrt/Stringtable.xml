@@ -83,6 +83,46 @@
                 <Chinesesimp>医疗箱</Chinesesimp>
                 <Turkish>Tıbbi Malzeme Kutusu</Turkish>
             </Key>
+            <Key ID="STR_A3AP_buyvehdialog_BuildBoxExtraSmall">
+                <Original>Build Box (Extra Small)</Original>
+                <Russian>Строительный ящик (Очень малый)</Russian>
+                <Korean>빌드 박스 (특소형)</Korean>
+                <French>Caisse de construction (Très petite)</French>
+                <Chinesesimp>建造箱 (超小型)</Chinesesimp>
+                <Turkish>İnşaat Kutusu (Çok Küçük)</Turkish>
+            </Key>
+            <Key ID="STR_A3AP_buyvehdialog_BuildBoxSmall">
+                <Original>Build Box (Small)</Original>
+                <Russian>Строительный ящик (Малый)</Russian>
+                <Korean>빌드 박스 (소형)</Korean>
+                <French>Caisse de construction (Petite)</French>
+                <Chinesesimp>建造箱 (小型)</Chinesesimp>
+                <Turkish>İnşaat Kutusu (Küçük)</Turkish>
+            </Key>
+            <Key ID="STR_A3AP_buyvehdialog_BuildBoxMeduim">
+                <Original>Build Box (Medium)</Original>
+                <Russian>Строительный ящик (Средний)</Russian>
+                <Korean>빌드 박스 (중형)</Korean>
+                <French>Caisse de construction (Moyenne)</French>
+                <Chinesesimp>建造箱 (中型)</Chinesesimp>
+                <Turkish>İnşaat Kutusu (Orta)</Turkish>
+            </Key>
+            <Key ID="STR_A3AP_buyvehdialog_BuildBoxLarge">
+                <Original>Build Box (Large)</Original>
+                <Russian>Строительный ящик (Большой)</Russian>
+                <Korean>빌드 박스 (대형)</Korean>
+                <French>Caisse de construction (Grande)</French>
+                <Chinesesimp>建造箱 (大型)</Chinesesimp>
+                <Turkish>İnşaat Kutusu (Büyük)</Turkish>
+            </Key>
+            <Key ID="STR_A3AP_buyvehdialog_BuildBoxHumongous">
+                <Original>Build Box (Humongous)</Original>
+                <Russian>Строительный ящик (Огромный)</Russian>
+                <Korean>빌드 박스 (대형)</Korean>
+                <French>Caisse de construction (Grande)</French>
+                <Chinesesimp>建造箱 (大型)</Chinesesimp>
+                <Turkish>İnşaat Kutusu (Dev)</Turkish>
+            </Key>
         </Container>
         <Container name="arsenal">
             <Key ID="STR_A3AP_vehArsenal_desc">
@@ -6165,15 +6205,6 @@
                 <French>Vous ne pouvez pas ajouter de mortiers à un barrage routier, à un poste de guet, à une garnison AA, AT, mortier, HMG.</French>
                 <Turkish>Barikat, Gözlem Noktası, AA, AT, Havan veya HMG mevzi garnizonlarına havan ekleyemezsin.</Turkish>
             </Key>
-            <Key ID="STR_garrison_error_still_updating">
-                <Original>This garrison is still updating, please try again in a few seconds.</Original>
-                <Russian>Этот гарнизон всё ещё обновляется, повторите попытку через несколько секунд.</Russian>
-                <Chinesesimp>驻军还在刷新中，请过几秒再试。</Chinesesimp>
-                <Korean>이 주둔지는 아직 업데이트 중이니 잠시 후에 다시 시도하십시오.</Korean>
-                <Spanish>Esta guarnición todavía se está actualizando, inténtalo de nuevo en unos segundos.</Spanish>
-                <French>Cette garnison est en cours de mise à jour, veuillez réessayer dans quelques secondes.</French>
-                <Turkish>Bu garnizon hâlâ güncelleniyor, lütfen birkaç saniye içinde tekrar dene.</Turkish>
-            </Key>
             <Key ID="STR_garrison_error_enemies_near">
                 <Original>You can't recruit units into garrison when enemies are near the zone.</Original>
                 <Russian>Вы не можете нанимать новых бойцов в гарнизон, когда враги находятся рядом с зоной.</Russian>
@@ -7208,12 +7239,12 @@
                 <Turkish>Oyuncuların YZ askeri almasına izin ver</Turkish>
             </Key>
             <Key ID="STR_params_playerRecruitAI_desc">
-                <Original>Allow players to recruit AI units. When enabled, players can recruit surrendered enemy AI to their faction, either increasing HR or adding personnel to the player's squad.</Original>
-                <Russian>Разрешить игрокам нанимать ИИ-бойцов. При включении игроки могут нанимать сдавшихся врагов ИИ в свою фракцию, либо увеличивая ЛР, либо добавляя личный состав в отряд игрока.</Russian>
-                <Chinesesimp>允许玩家招募人工智能单位。启用时，玩家可以将投降的敌方人工智能招募到其阵营，增加人力资源或向玩家分队增加人员。</Chinesesimp>
-                <Korean>플레이어가 AI 유닛을 모집할 수 있도록 허용합니다. 활성화하면 플레이어는 항복한 적 AI를 자신의 진영으로 모집할 수 있으며, 인적 자원을 늘리거나 플레이어 분대에 인원을 추가할 수 있습니다.</Korean>
-                <Spanish>Permite que los jugadores recluten unidades de IA. Si está activado, los jugadores pueden reclutar IA enemiga rendida para su facción, aumentando los RH o añadiendo efectivos a su escuadra.</Spanish>
-                <French>Autoriser les joueurs à recruter des unités IA. Lorsqu'elle est activée, les joueurs peuvent recruter des IA ennemies reddues à leur faction, augmentant soit les RH, soit ajoutant du personnel à l'escouade du joueur.</French>
+                <Original>Allow players to recruit AI units. When enabled, players can recruit friendly AI at the rebel base from the flagpole, and attempt to recruit surrendered enemy AI to their faction, either increasing HR or adding personnel to the player's squad.</Original>
+                <Russian>Разрешить игрокам нанимать бойцов ИИ. При включении игроки могут нанимать дружественных бойцов ИИ на базе повстанцев у флагштока, а также пытаться завербовать сдавшихся вражеских бойцов ИИ в свою фракцию, пополняя людские ресурсы или добавляя бойцов в отряд игрока.</Russian>
+                <Chinesesimp>允许玩家招募AI单位。启用后，玩家可在叛军基地的旗杆处招募友方AI，也可尝试将投降的敌方AI招募到己方阵营，从而增加人力资源或为玩家小队增添人员。</Chinesesimp>
+                <Korean>플레이어가 AI 유닛을 모집할 수 있도록 허용합니다. 활성화하면 플레이어는 반군 기지의 깃대에서 아군 AI를 모집하고, 항복한 적 AI를 자신의 진영으로 영입해 인적 자원을 늘리거나 플레이어 분대에 추가할 수 있습니다.</Korean>
+                <Spanish>Permite que los jugadores recluten unidades de IA. Si está activado, los jugadores pueden reclutar IA aliada en la bandera de la base rebelde e intentar reclutar IA enemiga rendida para su facción, aumentando los RH o añadiendo efectivos a su escuadra.</Spanish>
+                <French>Autoriser les joueurs à recruter des unités IA. Une fois cette option activée, les joueurs peuvent recruter des IA alliées au drapeau de la base rebelle et tenter de rallier les IA ennemies qui se sont rendues à leur faction, afin d'augmenter les ressources humaines ou d'ajouter des effectifs à l'escouade du joueur.</French>
             </Key>
             <Key ID="STR_params_enableVehicleAutoLock">
                 <Original>Enable Enemy Vehicle Locks</Original>
@@ -11923,6 +11954,13 @@
                 <French>Le mode démolition vous permet de détruire les constructions que vous avez placées au QG.</French>
                 <Turkish>Yıkım modu, karargâhta yerleştirdiğiniz yapıları yok etmenizi sağlar.</Turkish>
             </Key>
+            <Key ID="STR_commander_menu_tracklist_editor_button">
+                <Original>TRACKLIST EDITOR</Original>
+                <Russian>РЕДАКТОР ПЛЕЙЛИСТА</Russian>
+                <Chinesesimp>曲目列表编辑器</Chinesesimp>
+                <Korean>트랙리스트 편집기</Korean>
+                <French>ÉDITEUR DE LISTE DE LECTURE</French>
+            </Key>
             <Key ID="STR_commander_menu_victory_check_button">
                 <Original>CHECK VICTORY</Original>
                 <Russian>ПРОВЕРИТЬ ПОБЕДУ</Russian>
@@ -11930,6 +11968,12 @@
                 <Korean>승리 확인</Korean>
                 <Spanish>COMPROBAR VICTORIA</Spanish>
                 <Turkish>ZAFERİ KONTROL ET</Turkish>
+            </Key>
+            <Key ID="STR_commander_menu_tracklist_editor_button_tooltip">
+                <Original>Change tracklists for day-time, night-time and combat music.</Original>
+                <Russian>Измените плейлисты для дневной, ночной и боевой музыки.</Russian>
+                <Chinesesimp>更改白天、夜晚和战斗音乐的曲目列表。</Chinesesimp>
+                <Korean>주간, 야간 및 전투 음악의 트랙리스트를 변경합니다.</Korean>
             </Key>
             <Key ID="STR_commander_menu_victory_check_button_tooltip">
                 <Original>Use this option to check if you have achieved the victory conditions and ends mission if you have.</Original>

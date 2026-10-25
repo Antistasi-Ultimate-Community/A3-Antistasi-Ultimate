@@ -513,7 +513,6 @@ class CfgFunctions
             class makePlayerBossIfEligible {};
             class memberAdd {};
             class membersList {};
-            class music {};
             class promotePlayer {};
             class radioJam {};
             class ranksMP {};
@@ -631,12 +630,15 @@ class CfgFunctions
 
         class Save {
             file = QPATHTOFOLDER(functions\Save);
+            class addToStaticsToSave {};
+            class applyObjectSaveData {};
             class collectParamPresetData {};
             class collectSaveData {};
             class deleteSave {};
             class loadPlayer {};
             class loadServer {};
             class savePlayer {};
+            class getObjectSaveData {};
             class getStatVariable {};
             class loadStat {};
             class resetPlayer {};
@@ -828,6 +830,7 @@ class CfgFunctions
 
         class Utility {
             file = QPATHTOFOLDER(functions\Utility);
+            class arrayRange {};
             class attachLight {};
             class attachLightFromConfig {};
             class basicBackpack {};
@@ -840,6 +843,7 @@ class CfgFunctions
             class findAiSpawnPosition {};
             class findSpawnHelperPosition {};
             class getAdmin {};
+            class isDayTime {};
             class isEmplacementMarker {};
             class isEngineer {};
             class isSiteDestroyed {};
@@ -848,12 +852,15 @@ class CfgFunctions
             class isWithinNearestFriendlyMarker {};
             class localLog {};
             class log {};
+            class makeObjectLocal {};
             class nearestFriendlyMarker {};
             class onClientInitDone {};
             class onServerInitDone {};
+            class randomRange {};
             class setIdentity {};
             class setIdentityLocal {};
             class setPos {};
+            class vehicleHasCargo {};
             class vehicleTextureSync {};
             class vehicleWillCollideAtPosition {};
             class getRoadDirection {};
@@ -862,10 +869,12 @@ class CfgFunctions
 
         class UtilityItems {
             file = QPATHTOFOLDER(functions\UtilityItems);
+            class applyObjectSaveData_BuildBox {};
             class attachedObjects {};
             class buyItem {};
             class carryItem {};
             class dropItem {};
+            class getObjectSaveData_BuildBox {};
             class initMovableObject {};
             class initObject {};
             class initObjectRemote {};
