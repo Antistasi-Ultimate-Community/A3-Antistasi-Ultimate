@@ -1,15 +1,16 @@
+#include "..\UILayouts\ids.inc"
 #include "\A3\Ui_f\hpp\defineResinclDesign.inc"
 
 disableSerialization;
 
-private _display = findDisplay 60000;
+private _display = findDisplay A3A_IDD_COMMANDER_MENU;
 
 if (str (_display) == "no display") exitWith {};
 
-private _costTextBox = _display displayCtrl 2761;
-private _comboBox = _display displayCtrl 2758;
+private _costTextBox = _display displayCtrl A3A_IDC_COMMANDER_MENU_MINEFIELD_COST_TEXT;
+private _comboBox = _display displayCtrl A3A_IDC_COMMANDER_MENU_MINE_TYPE_COMBOBOX;
 private _index = lbCurSel _comboBox;
-private _minefieldType = lbData [2758, _index];
+private _minefieldType = lbData [A3A_IDC_COMMANDER_MENU_MINE_TYPE_COMBOBOX, _index];
 
 minefieldType = _minefieldType;
 private _costs = 0;
