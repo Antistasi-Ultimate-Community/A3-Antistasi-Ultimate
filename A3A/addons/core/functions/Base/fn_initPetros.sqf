@@ -18,7 +18,7 @@ if (_vest isEqualTo "") then {
         _vest = selectRandomWeighted (A3A_rebelGear get "CivilianVests");
     };
 };
-petros addVest _vest;
+if (_vest isNotEqualTo "") then { petros addVest _vest };
 
 // Headgear
 removeHeadgear petros;
