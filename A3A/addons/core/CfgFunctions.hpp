@@ -472,6 +472,7 @@ class CfgFunctions
             class LOG_Crashsite {};
             class LOG_Helicrash {};
             class LOG_Stash {};
+            class LOG_stash_beep {};
             class missionRequest {};
             class REP_Antenna {};
             class RES_Deserters {};

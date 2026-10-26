@@ -361,10 +361,13 @@ class A3AU_Stash: ReammoBox_F {
     editorSubcategory = "EdSubcat_Storage";
 
     displayName = "Stash";
-    model = QPATHTOFOLDER(data\models\A3AU_Stash.p3d);
+    model = QPATHTOFOLDER(data\models\Stash\A3AU_Stash.p3d);
 
-    hiddenSelections[] = {"camo"};
-    hiddenSelectionsTextures[] = {"#(argb,8,8,3)color(0.5,0.5,0.5,1)"};
+    hiddenSelections[] = {"camo1","camo2"};
+    hiddenSelectionsTextures[] = {
+        "#(argb,8,8,3)color(0.5,0.5,0.5,1)",
+        QPATHTOFOLDER(data\models\Stash\A3U_Stash_co.paa)
+    };
 
     maximumLoad = 999999;
     transportMaxWeapons = 9999;
