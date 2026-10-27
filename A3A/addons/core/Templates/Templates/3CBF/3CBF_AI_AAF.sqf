@@ -28,7 +28,7 @@ private _hasLawsOfWar = "orange" in A3A_enabledDLC;
 ["vehiclesRepairTrucks", ["UK3CB_AAF_B_MTVR_Repair", "UK3CB_AAF_B_M977A4_Repair"]] call _fnc_saveToTemplate;
 ["vehiclesFuelTrucks", ["UK3CB_AAF_B_MTVR_Refuel", "UK3CB_AAF_B_M977A4_Fuel"]] call _fnc_saveToTemplate;
 ["vehiclesMedical", ["UK3CB_AAF_B_M113_AMB", "UK3CB_AAF_O_GAZ_Vodnik"]] call _fnc_saveToTemplate;
-["vehiclesLightAPCs", ["UK3CB_AAF_O_GAZ_Vodnik", "UK3CB_AAF_B_M1117", "UK3CB_AAF_B_M113_M2", "UK3CB_AAF_B_M113_M240", "UK3CB_AAF_B_M113_MK19", "UK3CB_AAF_B_LAV25_HQ"]] call _fnc_saveToTemplate;
+["vehiclesLightAPCs", ["UK3CB_AAF_O_GAZ_Vodnik", "UK3CB_AAF_B_M1117", "UK3CB_AAF_B_M113_M2", "UK3CB_AAF_B_M113_M240", "UK3CB_AAF_B_M113_MK19", "UK3CB_AAF_B_LAV25_HQ", "UK3CB_AAF_B_Dingo_GMG", "UK3CB_AAF_B_Dingo_HMG", "UK3CB_AAF_B_Dingo_MG3", "UK3CB_AAF_B_Dingo"]] call _fnc_saveToTemplate;
 ["vehiclesAirborne", ["UK3CB_AAF_B_M113_M2", "UK3CB_AAF_B_M113_M240", "UK3CB_AAF_B_LAV25"]] call _fnc_saveToTemplate;
 ["vehiclesAPCs", ["UK3CB_AAF_O_BMP1", "UK3CB_AAF_B_LAV25", "UK3CB_AAF_B_AAV"]] call _fnc_saveToTemplate;
 ["vehiclesIFVs", []] call _fnc_saveToTemplate;
@@ -57,14 +57,17 @@ private _hasLawsOfWar = "orange" in A3A_enabledDLC;
     ["UK3CB_AAF_I_2S1", ["rhs_mag_3of56_10"]]
 ]] call _fnc_saveToTemplate;
 
-["uavsAttack", ["B_UAV_02_dynamicLoadout_F"]] call _fnc_saveToTemplate;
-["uavsPortable", ["B_UAV_01_F"]] call _fnc_saveToTemplate;
+["uavsAttack", ["B_UAV_02_dynamicLoadout_F", "UK3CB_AAF_O_KA137_PKM"]] call _fnc_saveToTemplate;
+["uavsPortable", ["B_UAV_01_F", "UK3CB_AAF_O_KA137"]] call _fnc_saveToTemplate;
 
 //Config special vehicles - militia vehicles are mostly used in the early game, police cars are being used by troops around cities -- Example:
-["vehiclesMilitiaLightArmed", ["UK3CB_AAF_B_LR_M2", "UK3CB_AAF_B_Pickup_M2", "UK3CB_AAF_B_Offroad_M2"]] call _fnc_saveToTemplate;
+["vehiclesMilitiaLightArmed", [
+    "UK3CB_AAF_B_LR_M2", "UK3CB_AAF_B_LR_WMIK_M2", "UK3CB_AAF_B_LR_WMIK_M240", "UK3CB_AAF_B_LR_WMIK_MG3", "UK3CB_AAF_B_LR_WMIK_MK19",
+    "UK3CB_AAF_B_Pickup_M2", "UK3CB_AAF_B_Offroad_M2"
+]] call _fnc_saveToTemplate;
 ["vehiclesMilitiaTrucks", ["UK3CB_AAF_B_M939_Guntruck", "UK3CB_AAF_B_M939", "UK3CB_AAF_B_M939_Open"]] call _fnc_saveToTemplate;
 ["vehiclesMilitiaCars", ["UK3CB_AAF_B_LR_Open", "UK3CB_AAF_B_LR_Closed", "UK3CB_AAF_B_Pickup", "UK3CB_AAF_B_Offroad"]] call _fnc_saveToTemplate;
-["vehiclesMilitiaAPCs", ["UK3CB_AAF_B_M113_M2", "UK3CB_AAF_B_M113_M240", "UK3CB_AAF_B_M113_MK19", "UK3CB_AAF_I_MTLB_PKT", "UK3CB_AAF_I_BTR70"]] call _fnc_saveToTemplate;
+["vehiclesMilitiaAPCs", ["UK3CB_AAF_B_M113_M2", "UK3CB_AAF_B_M113_M240", "UK3CB_AAF_B_M113_MK19", "UK3CB_AAF_I_MTLB_PKT", "UK3CB_AAF_I_BTR70", "UK3CB_AAF_O_BTR90_HQ", "UK3CB_AAF_O_BTR90"]] call _fnc_saveToTemplate;
 
 ["vehiclesPolice", ["UK3CB_ADP_B_LandRover_Open", "UK3CB_ADP_B_LandRover_Closed", "UK3CB_ADP_B_Hilux_Open", "UK3CB_ADP_B_Hilux_Closed"]] call _fnc_saveToTemplate;
 

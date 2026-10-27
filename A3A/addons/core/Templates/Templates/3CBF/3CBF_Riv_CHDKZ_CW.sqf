@@ -44,8 +44,11 @@
 
 ["vehiclesRivalsLightArmed", ["rhsgref_ins_uaz_ags", "rhsgref_ins_uaz_dshkm", "rhsgref_ins_uaz_spg9", "rhsgref_BRDM2_ins", "rhsgref_BRDM2_ATGM_ins", "rhsgref_BRDM2_HQ_ins"]] call _fnc_saveToTemplate;
 ["vehiclesRivalsTrucks", ["rhsgref_ins_zil131", "rhsgref_ins_zil131_open"]] call _fnc_saveToTemplate;
-["vehiclesRivalsCars", ["rhsgref_BRDM2UM_ins", "rhsgref_ins_uaz_open", "rhsgref_ins_uaz"]] call _fnc_saveToTemplate;
-["vehiclesRivalsAPCs", ["rhsgref_ins_btr60", "rhsgref_ins_btr70", "rhsgref_ins_bmd1", "rhsgref_ins_bmd1p", "rhsgref_ins_bmd2", "rhsgref_ins_bmp1", "rhsgref_ins_bmp1d", "rhsgref_ins_bmp1k", "rhsgref_ins_bmp1p", "rhsgref_ins_bmp2e", "rhsgref_ins_bmp2", "rhsgref_ins_bmp2d", "rhsgref_ins_bmp2k"]] call _fnc_saveToTemplate;
+["vehiclesRivalsCars", ["rhsgref_BRDM2UM_ins", "rhsgref_ins_uaz_open", "rhsgref_ins_uaz", "UK3CB_CHD_O_BTR40"]] call _fnc_saveToTemplate;
+["vehiclesRivalsAPCs", [
+	"rhsgref_ins_btr60", "rhsgref_ins_btr70", "rhsgref_ins_bmd1", "rhsgref_ins_bmd1p", "rhsgref_ins_bmd2", "rhsgref_ins_bmp1", "rhsgref_ins_bmp1d", "rhsgref_ins_bmp1k", "rhsgref_ins_bmp1p", "rhsgref_ins_bmp2e", "rhsgref_ins_bmp2", "rhsgref_ins_bmp2d", "rhsgref_ins_bmp2k",
+	"UK3CB_CHD_O_BTR40_ZU23", "UK3CB_CHD_O_BTR40_DSHKMS", "UK3CB_CHD_O_BTR40_GMG", "UK3CB_CHD_O_BTR40_MG", "UK3CB_CHD_O_BTR40_Metis", "UK3CB_CHD_O_BTR40_PKM"	
+]] call _fnc_saveToTemplate;
 ["vehiclesRivalsTanks", ["rhsgref_ins_t72ba", "rhsgref_ins_t72bb"]] call _fnc_saveToTemplate;
 ["vehiclesRivalsHelis", ["RHS_Mi8MTV3_vdv"]] call _fnc_saveToTemplate;			
 ["vehiclesRivalsUavs", ["rhs_pchela1t_vvsc"]] call _fnc_saveToTemplate;			
