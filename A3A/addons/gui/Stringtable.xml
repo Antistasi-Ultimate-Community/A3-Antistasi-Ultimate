@@ -3630,6 +3630,18 @@
                 <Chinesesimp>扩展器参数</Chinesesimp>
                 <Turkish>Genişletici Parametreler</Turkish>
             </Key>
+            <Key ID="STR_antistasi_dialogs_setup_params_dep_label">
+                <Original>Deprecated Parameters</Original>
+                <Czech>Zastaralé parametry</Czech>
+                <French>Paramètres obsolètes</French>
+                <Italian>Parametri deprecati</Italian>
+                <Korean>사용되지 않는 매개 변수</Korean>
+                <Russian>Устаревшие параметры</Russian>
+                <Polish>Przestarzałe parametry</Polish>
+                <Portuguese>Parâmetros obsoletos</Portuguese>
+                <Chinesesimp>已弃用参数</Chinesesimp>
+                <Turkish>Eski Parametreler</Turkish>
+            </Key>
             <Key ID="STR_antistasi_dialogs_setup_params_preset_size">
                 <Original>Group</Original>
                 <Czech>Skupina</Czech>
