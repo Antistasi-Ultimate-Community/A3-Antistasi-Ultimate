@@ -35,8 +35,6 @@ private _declareServerVariable = {
 ////////////////////////////////////////
 Info("initialising general server variables");
 
-//time to delete dead bodies, vehicles etc..
-DECLARE_SERVER_VAR(cleantime, 3600);
 //initial spawn distance. Less than 1Km makes parked vehicles spawn in your nose while you approach.
 //User-adjustable variables are now declared in initParams
 //DECLARE_SERVER_VAR(distanceSPWN, 1000);

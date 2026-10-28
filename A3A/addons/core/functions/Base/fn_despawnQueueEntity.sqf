@@ -19,7 +19,7 @@ Optional:
     1: _alwaysDespawn - Whether the entity should always be despawned regardless of its alive status <BOOL>
         Default: `false`
     2: _ttl - Time to live for the entity in the despawn queue after its death <NUMBER>
-        Default: `cleantime` server variable
+        Default: `A3A_GCThreshold` parameter value
 
 Example:
     (begin example)
@@ -53,7 +53,10 @@ _this spawn {
     waitUntil { isNil QGVAR(despawnerRunning) };
 
     private _alwaysDespawn = param[1, false, [true]];
-    private _ttl = param[2, cleantime, [0]];
+    private _ttl = param[2, A3A_GCThreshold, [0]];
+
+    // Garbage cleaner disabled, don't queue entity for despawn
+    if (_ttl isEqualTo -1) exitWith {};
 
     _entity setVariable[QGVAR(despawnAlways), _alwaysDespawn];
     _entity setVariable[QGVAR(despawnTTL), _ttl];
