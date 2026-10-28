@@ -150,3 +150,5 @@ private _marker = "respawn_guerrila";
 _marker setMarkerType "A3AU_RebelHQ_mrk";
 
 Info("initPetros completed");
+
+[CBA_EVENT_SERVER_INIT_PETROS, []] call FUNCMAIN(triggerServerEvent);
