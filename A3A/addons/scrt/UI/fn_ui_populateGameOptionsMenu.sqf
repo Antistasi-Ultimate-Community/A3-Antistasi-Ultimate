@@ -41,7 +41,7 @@ ctrlSetText [A3A_IDC_COMMANDER_MENU_GAME_INFO_DESCRIPTION_TEXT, _gameInfoText];
 ctrlSetText [A3A_IDC_COMMANDER_MENU_GAME_INFO_SERVER_MEMBERS_TEXT, ([] call A3A_fnc_membersList)];
 
 
-private _fiaTrainingText = format [localize "STR_commander_menu_skill_level_title", A3A_faction_reb get "name", skillFIA];
+private _fiaTrainingText = format [localize "STR_commander_menu_skill_level_title", A3A_faction_reb get "name", skillFIA, 40];
 ctrlSetText [A3A_IDC_COMMANDER_MENU_HQ_REBEL_SKILL_TITLE, _fiaTrainingText];
 
 //hiding reroll button if conditions are not met
