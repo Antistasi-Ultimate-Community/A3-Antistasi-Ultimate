@@ -1,13 +1,17 @@
+#include "..\UILayouts\ids.inc"
+#include "..\script_component.hpp"
+FIX_LINE_NUMBERS()
+
 disableSerialization;
 
-private _display = findDisplay 60000;
+private _display = findDisplay A3A_IDD_COMMANDER_MENU;
 
 if (str (_display) == "no display") exitWith {};
 
-private _costTextBox = _display displayCtrl 1751;
-private _comboBox = _display displayCtrl 1750;
+private _costTextBox = _display displayCtrl A3A_IDC_COMMANDER_MENU_SUPPORT_COSTS_TEXT;
+private _comboBox = _display displayCtrl A3A_IDC_COMMANDER_MENU_SUPPORT_TYPE_COMBOBOX;
 private _index = lbCurSel _comboBox;
-private _supportType =  lbData [1750, _index];
+private _supportType =  lbData [A3A_IDC_COMMANDER_MENU_SUPPORT_TYPE_COMBOBOX, _index];
 
 supportType = _supportType;
 

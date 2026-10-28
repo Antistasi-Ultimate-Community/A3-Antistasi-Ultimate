@@ -1,54 +1,55 @@
+#include "..\UILayouts\ids.inc"
 #include "..\script_component.hpp"
 FIX_LINE_NUMBERS()
 
 disableSerialization;
 
 menuSliderArray = [
-    [localize "STR_commander_menu_game_options_header_upper", 1140],
-    [localize "STR_commander_menu_game_info_header_upper", 2000]
+    [localize "STR_commander_menu_game_options_header_upper", A3A_IDC_REBEL_MENU_OPTIONS_TAB],
+    [localize "STR_commander_menu_game_info_header_upper", A3A_IDC_REBEL_MENU_GAME_INFO_TAB]
 ];
 
 if (areRivalsDiscovered) then {
     private _rivTitle = format [(localize "STR_antistasi_rivals_tab_header"), (toUpper (A3A_faction_riv get "name"))];
 
    menuSliderArray = [
-        [_rivTitle, 7000],
-        [localize "STR_commander_menu_game_options_header_upper", 1140],
-        [localize "STR_commander_menu_game_info_header_upper", 2000]
+        [_rivTitle, A3A_IDC_MENU_RIVALS_TAB],
+        [localize "STR_commander_menu_game_options_header_upper", A3A_IDC_REBEL_MENU_OPTIONS_TAB],
+        [localize "STR_commander_menu_game_info_header_upper", A3A_IDC_REBEL_MENU_GAME_INFO_TAB]
     ];
-    ((findDisplay 70000) displayCtrl 1101) ctrlSetText _rivTitle;
+    ctrlSetText [A3A_IDC_MENU_TAB_SELECTOR_TITLE, _rivTitle];
 };
 
 menuSliderCurrent = 0;
 
-ctrlSetFocus ((findDisplay 70000) displayCtrl 1151);
+ctrlSetFocus ((findDisplay A3A_IDD_REBEL_MENU) displayCtrl A3A_IDC_MENU_TAB_SELECTOR_RIGHT_BUTTON);
 
 if (areRivalsDiscovered) then {
     private _knownLocationsCount = count (["KNOWN"] call SCRT_fnc_rivals_getLocations);
 
-	((findDisplay 70000) displayCtrl 7703) ctrlSetText format [(localize "STR_antistasi_rivals_total_locations_label"), (count rivalsLocationsMap)];
-	((findDisplay 70000) displayCtrl 7704) ctrlSetText format [(localize "STR_antistasi_rivals_attackable_locations_label"), _knownLocationsCount];
+	ctrlSetText [A3A_IDC_MENU_RIVALS_TOTAL_LOCATIONS_TEXT, format [(localize "STR_antistasi_rivals_total_locations_label"), (count rivalsLocationsMap)]];
+	ctrlSetText [A3A_IDC_MENU_RIVALS_KNOWN_LOCATIONS_TEXT, format [(localize "STR_antistasi_rivals_attackable_locations_label"), _knownLocationsCount]];
 
-	((findDisplay 70000) displayCtrl 7700) ctrlSetText format [(localize "STR_antistasi_rivals_network_header"), A3A_faction_riv get "name"];
-	((findDisplay 70000) displayCtrl 7701) ctrlSetText format [(localize "STR_antistasi_rivals_network_description"), A3A_faction_riv get "name"];
+	ctrlSetText [A3A_IDC_MENU_RIVALS_DESCRIPTION_TITLE, format [(localize "STR_antistasi_rivals_network_header"), A3A_faction_riv get "name"]];
+	ctrlSetText [A3A_IDC_MENU_RIVALS_DESCRIPTION_TEXT, format [(localize "STR_antistasi_rivals_network_description"), A3A_faction_riv get "name"]];
 
-	((findDisplay 70000) displayCtrl 7750) progressSetPosition (nextRivalsLocationReveal / 100);
-	((findDisplay 70000) displayCtrl 7750) ctrlSetTooltip format [(localize "STR_antistasi_rivals_network_progress_bar_tooltip"), A3A_faction_riv get "name"];
+	((findDisplay A3A_IDD_REBEL_MENU) displayCtrl A3A_IDC_MENU_RIVALS_PROGRESS_BAR) progressSetPosition (nextRivalsLocationReveal / 100);
+	((findDisplay A3A_IDD_REBEL_MENU) displayCtrl A3A_IDC_MENU_RIVALS_PROGRESS_BAR) ctrlSetTooltip format [(localize "STR_antistasi_rivals_network_progress_bar_tooltip"), A3A_faction_riv get "name"];
 
-    ((findDisplay 70000) displayCtrl 7762) ctrlSetText format [(localize "STR_antistasi_rivals_show_activity_title"), A3A_faction_riv get "name"];
-    ((findDisplay 70000) displayCtrl 7762) ctrlSetTooltip format [(localize "STR_antistasi_rivals_show_activity_tooltip"), A3A_faction_riv get "name"];
+    ctrlSetText [A3A_IDC_MENU_RIVALS_SHOW_LOCATIONS_BUTTON, format [(localize "STR_antistasi_rivals_show_activity_title"), A3A_faction_riv get "name"]];
+    ((findDisplay A3A_IDD_REBEL_MENU) displayCtrl A3A_IDC_MENU_RIVALS_SHOW_LOCATIONS_BUTTON) ctrlSetTooltip format [(localize "STR_antistasi_rivals_show_activity_tooltip"), A3A_faction_riv get "name"];
 };
 
 {	
-	if (ctrlIDC _x != 1055 && {ctrlIDC _x != 1056}) then {
-		((findDisplay 70000) displayCtrl (ctrlIDC _x)) ctrlSetFade 0;
+	if (ctrlIDC _x != A3A_IDC_MENU_MESSAGEBOX_TITLE && {ctrlIDC _x != A3A_IDC_MENU_MESSAGEBOX_TEXT}) then {
+		((findDisplay A3A_IDD_REBEL_MENU) displayCtrl (ctrlIDC _x)) ctrlSetFade 0;
 	};
 
-	((findDisplay 70000) displayCtrl (ctrlIDC _x)) ctrlCommit 0.3;	
-} forEach (allControls findDisplay 70000);
+	((findDisplay A3A_IDD_REBEL_MENU) displayCtrl (ctrlIDC _x)) ctrlCommit 0.3;	
+} forEach (allControls findDisplay A3A_IDD_REBEL_MENU);
 
-["MAIN", 5100, false] call SCRT_fnc_ui_switchButton;
-["MAIN", 5400, false] call SCRT_fnc_ui_switchButton;
+["MAIN", A3A_IDC_MENU_MUSIC_SWITCH_BUTTON, false] call SCRT_fnc_ui_switchButton;
+["MAIN", A3A_IDC_MENU_PARADROP_SWITCH_BUTTON, false] call SCRT_fnc_ui_switchButton;
 
 private _gameInfoText = format [
     localize "STR_commander_menu_about_text", 
@@ -59,28 +60,28 @@ private _gameInfoText = format [
 	([[serverTime-A3A_lastGarbageCleanTime] call A3A_fnc_secondsToTimeSpan,1,0,false,2,false,true] call A3A_fnc_timeSpan_format)
 ];
 
-((findDisplay 70000) displayCtrl 2011) ctrlSetText _gameInfoText;
+ctrlSetText [A3A_IDC_REBEL_MENU_GAME_INFO_DESCRIPTION_TEXT, _gameInfoText];
 
 if (isServer || {(call BIS_fnc_admin) isEqualTo 2}) then {
-    ctrlShow [5200, true];
-	ctrlEnable [5200, true];
-	(_display displayCtrl 5200) ctrlSetTooltip (localize "STR_commander_menu_edit_params_button_tooltip");
+    ctrlShow [A3A_IDC_MENU_EDIT_PARAMS_BUTTON, true];
+	ctrlEnable [A3A_IDC_MENU_EDIT_PARAMS_BUTTON, true];
+	(_display displayCtrl A3A_IDC_MENU_EDIT_PARAMS_BUTTON) ctrlSetTooltip (localize "STR_commander_menu_edit_params_button_tooltip");
 } else {
-    ctrlShow [5200, false];
-	ctrlEnable [5200, false];
-	(_display displayCtrl 5200) ctrlSetTooltip (localize "STR_generic_admin_only");
+    ctrlShow [A3A_IDC_MENU_EDIT_PARAMS_BUTTON, false];
+	ctrlEnable [A3A_IDC_MENU_EDIT_PARAMS_BUTTON, false];
+	(_display displayCtrl A3A_IDC_MENU_EDIT_PARAMS_BUTTON) ctrlSetTooltip (localize "STR_generic_admin_only");
 };
 
 if (player distance2D (getMarkerPos "Synd_HQ") > 50) then {
-    ((findDisplay 70000) displayCtrl 5300) ctrlShow false;
+    ctrlShow [A3A_IDC_MENU_SAVE_GAME_BUTTON, false];
 };
 
 // Hide "toggle teardown mode" button
 if !([player] call FUNCMAIN(isEngineer)) then {
-    ctrlShow[5190, false];
-    ctrlEnable[5190, false];
+    ctrlShow[A3A_IDC_MENU_TEARDOWN_MODE_BUTTON, false];
+    ctrlEnable[A3A_IDC_MENU_TEARDOWN_MODE_BUTTON, false];
 };
 
-[70000,'RIGHT'] spawn SCRT_fnc_ui_changeTab;
-[70000,'RIGHT'] spawn SCRT_fnc_ui_changeTab;
-[70000,'RIGHT'] spawn SCRT_fnc_ui_changeTab;
+[A3A_IDD_REBEL_MENU,'RIGHT'] spawn SCRT_fnc_ui_changeTab;
+[A3A_IDD_REBEL_MENU,'RIGHT'] spawn SCRT_fnc_ui_changeTab;
+[A3A_IDD_REBEL_MENU,'RIGHT'] spawn SCRT_fnc_ui_changeTab;

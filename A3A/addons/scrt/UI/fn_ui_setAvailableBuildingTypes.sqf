@@ -1,13 +1,14 @@
+#include "..\UILayouts\ids.inc"
 #include "..\script_component.hpp"
 FIX_LINE_NUMBERS()
 
 disableSerialization;
 
-private _display = findDisplay 80000;
+private _display = findDisplay A3A_IDD_CONSTRUCTION_MENU;
 
 if (str (_display) == "no display") exitWith {};
 
-private _buildingTypeCombobox = _display displayCtrl 505;
+private _buildingTypeCombobox = _display displayCtrl A3A_IDC_CONSTRUCTION_MENU_BUILD_TYPE_COMBO_BOX;
 private _index = lbCurSel _buildingTypeCombobox;
 private _constructionType = _buildingTypeCombobox lbData _index;
 private _shopLookupArray = nil;
@@ -38,7 +39,7 @@ if (isNil "_shopLookupArray") exitWith {
 };
 
 
-private _buildingCombobox = _display displayCtrl 506;
+private _buildingCombobox = _display displayCtrl A3A_IDC_CONSTRUCTION_MENU_BUILDING_COMBO_BOX;
 lbClear _buildingCombobox;
 
 private _fillCombo = {
