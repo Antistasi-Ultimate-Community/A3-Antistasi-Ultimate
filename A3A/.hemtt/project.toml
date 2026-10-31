@@ -10,32 +10,12 @@ include = [
     "mod.cpp"
 ]
 
-[preprocessor]
-runtime_macros = true
-
-[hemtt.launch.default]
-workshop = [
-    "450814997", # CBA_A3
-]
-
-[hemtt.launch.debugging]
-extends = "default"
-workshop = [
-    "1779063631", # ZEN
-    "3499977893", # Advanced Developer Tools
-]
-
-[version]
-path = "addons/core/Includes/script_version.hpp"
-git_hash = 0
-
-# Legacy code predates HEMTT; downgrade these until the underlying code is cleaned up
 [lints.sqf]
-reasign_reserved_variable = "Warning"
-format_args = "Warning"
-banned_commands = "Warning"
-invalid_comparisons = "Warning"
-direct_private = false
+reasign_reserved_variable = "Warning" # All existing cleaned up, warn on new instance
+format_args = "Warning" # All existing cleaned up, warn on new instance
+invalid_comparisons = "Warning" # All existing cleaned up, warn on new instance
+banned_commands = "Warning" # Still fires on single instance of addPublicVariableEventHandler, yet to be refactored
+direct_private = false # Too much to clean up / refactor for no real gain
 
 [lints.sqf.var_all_caps]
 options.ignore = [
@@ -43,4 +23,11 @@ options.ignore = [
 ]
 
 [lints.stringtables]
-usage = false
+usage = false # Enabling causes HEMTT to crash; accept that we'll just have unused keys
+
+[preprocessor]
+runtime_macros = true
+
+[version]
+path = "addons/core/Includes/script_version.hpp"
+git_hash = 0
