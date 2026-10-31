@@ -16,10 +16,10 @@
 // [container, entry, put-back container, parts, magazines [[class, rounds]]]
 //   -> "" when taken, otherwise why not
 params [["_box", objNull, [objNull]], ["_entry", [], [[]]], ["_back", objNull, [objNull]], ["_parts", [], [[]]], ["_mags", [], [[]]]];
-if (isNull _box || {_entry isEqualTo []}) exitWith { "it isn't there any more" };
+if (isNull _box || {_entry isEqualTo []}) exitWith { localize "STR_A3U_Bazaar_Cargo_NotThere" };
 private _all = weaponsItemsCargo _box;
 private _i = _all findIf { _x isEqualTo _entry };
-if (_i < 0) exitWith { "it isn't there any more" };
+if (_i < 0) exitWith { localize "STR_A3U_Bazaar_Cargo_NotThere" };
 _all deleteAt _i;
 
 // how each other weapon goes back - all worked out before anything is touched

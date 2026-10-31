@@ -311,6 +311,9 @@
             <Key ID="STR_A3U_Bazaar_Cargo_Stuck">
                 <Original>the %1 in there has a built-in part taken off - put it back, or take that gun out first</Original>
             </Key>
+            <Key ID="STR_A3U_Bazaar_Cargo_NotThere">
+                <Original>it isn't there anymore</Original>
+            </Key>
         </Container>
         <Container name="Crate">
             <Key ID="STR_A3U_Bazaar_Crate_Contraband">
@@ -330,6 +333,12 @@
             </Key>
             <Key ID="STR_A3U_Bazaar_Crate_Unpacked">
                 <Original>%1 unpacked into the arsenal.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Crate_Sealed">
+                <Original>Sealed Bazaar crate</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Crate_Smuggled">
+                <Original>Smuggled crate</Original>
             </Key>
         </Container>
         <Container name="Hands">
