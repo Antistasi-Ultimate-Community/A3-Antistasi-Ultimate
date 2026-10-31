@@ -44,7 +44,7 @@ if (!isNil "traderMarker") then {
 };
 private _inArea = _friendlyMarkers findIf { count ([_player, _vehicle] inAreaArray _x) > 1 || {count ([_player, _vehicle] inAreaArray [(getMarkerPos _x), 50, 50]) > 1} };
 private _nearHelipads = nearestObjects [_vehicle, ["A3AU_RebHelipad_base_F"], 30, true];
-private _isNearHelipad = (count _nearHelipads > 0) && (_vehicle isKindOf "Helicopter");
+private _isNearHelipad = (_nearHelipads isNotEqualTo []) && (_vehicle isKindOf "Helicopter");
 if (_inArea == -1 && {!_isNearHelipad}) exitWith {["STR_HR_GRG_Feedback_addVehicle_badLocation",[FactionGet(reb,"name")]] remoteExec ["HR_GRG_fnc_Hint", _client]; false };
 
     //No hostiles near
@@ -60,7 +60,7 @@ private _utilityRefund = {
     params ["_object"];
 
     // canGarage true means it's in the utilityItem lists
-    private _flags = (A3A_utilityItemHM get typeof _object) # 4;
+    private _flags = (A3A_utilityItemHM get typeOf _object) # 4;
 
     if ("cmmdr" in _flags && _player isNotEqualTo theBoss) exitWith {
         ["STR_HR_GRG_Feedback_addVehicle_commander_only"] remoteExec ["HR_GRG_fnc_Hint", _client];
@@ -94,10 +94,10 @@ private _utilityRefund = {
     [_feedBack] remoteExec ["HR_GRG_fnc_Hint", _client];
     true;
 };
-if (_vehicle getVariable ['A3A_canGarage', false]) exitwith { [_vehicle] call _utilityRefund };
+if (_vehicle getVariable ['A3A_canGarage', false]) exitWith { [_vehicle] call _utilityRefund };
 
     //Towing
-if !((_vehicle getVariable ["SA_Tow_Ropes",objNull]) isEqualTo objNull) exitWith {["STR_HR_GRG_Feedback_addVehicle_SATow"] remoteExec ["HR_GRG_fnc_Hint", _client]; false };
+if ((_vehicle getVariable ["SA_Tow_Ropes",objNull]) isNotEqualTo objNull) exitWith {["STR_HR_GRG_Feedback_addVehicle_SATow"] remoteExec ["HR_GRG_fnc_Hint", _client]; false };
 
     //crewed
 private _isUAV = unitIsUAV _vehicle;
@@ -116,7 +116,7 @@ if (_cat < 0) exitWith { ["STR_HR_GRG_Feedback_addVehicle_GenericFail"] remoteEx
 private _capacity = 0;
 { _capacity = _capacity + count _x } forEach HR_GRG_Vehicles;
 
-private _countStatics = {_x isKindOf "StaticWeapon"} count (attachedObjects _vehicle);
+private _countStatics = "StaticWeapon" countType (attachedObjects _vehicle);
 if ((call HR_GRG_VehCap - _capacity) < (_countStatics + 1)) exitWith { ["STR_HR_GRG_Feedback_addVehicle_Capacity"] remoteExec ["HR_GRG_fnc_Hint", _client]; false };//HR_GRG_VehCap is defined in config.inc
 
 /* //Block air garage outside of airbase
@@ -188,10 +188,10 @@ private _addVehicle = {
         [_sourceIndex] call HR_GRG_fnc_declairSources;
     };
 
-    Info_6("By: %1 [%2] | Type: %3 | Vehicle ID: %4 | Lock: %5 | Source: %6", name _player, getPlayerUID _player, cfgDispName(_class), _vehUID, _locking, _sourceIndex);
+    Info_6("By: %1 [%2] | Type: %3 | Vehicle ID: %4 | Lock: %5 | Source: %6",name _player,getPlayerUID _player,cfgDispName(_class),_vehUID,_locking,_sourceIndex);
 };
 
-private _locking = if (_lockUID isEqualTo "") then {false} else {true};
+private _locking = (_lockUID isNotEqualTo "");
 private _lockName = if (_locking) then { name _player } else { "" };
 private _catsRequiringUpdate = [];
 
@@ -227,7 +227,7 @@ private _refreshCode = {
     call HR_GRG_fnc_updateVehicleCount;
 };
 
-if !(HR_GRG_Users isEqualTo []) then {
+if (HR_GRG_Users isNotEqualTo []) then {
     [ _catsRequiringUpdate, _refreshCode ] remoteExecCall ["call", HR_GRG_Users];
 };
 

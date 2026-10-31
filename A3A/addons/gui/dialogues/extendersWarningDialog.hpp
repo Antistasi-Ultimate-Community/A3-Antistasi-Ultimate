@@ -77,7 +77,7 @@ class GVAR(ExtendersWarningDialog) {
 			h = QUOTE(0.11 * safezoneH);
 			colorText[] = {0.8,0,0,1};
 		};
-		class ListExtenders: RscListbox
+		class ListExtenders: RscListBox
 		{
 			type = CT_LISTNBOX;
 			idcLeft = -1;
@@ -91,7 +91,7 @@ class GVAR(ExtendersWarningDialog) {
 			w = QUOTE(0.489844 * safezoneW);
 			h = QUOTE(0.264 * safezoneH);
 		};
-		class CheckConfirm: RscCheckbox
+		class CheckConfirm: RscCheckBox
 		{
 			idc = IDC_ANTISTASI_EXTENDERS_WARNING_DIALOG_CHECKCONFIRM;
 			x = QUOTE(0.262812 * safezoneW + safezoneX);

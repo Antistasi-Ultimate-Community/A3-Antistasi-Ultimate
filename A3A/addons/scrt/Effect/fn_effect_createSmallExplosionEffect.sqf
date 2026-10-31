@@ -131,7 +131,7 @@ _light setLightAttenuation [
 _emitters pushBack [ _light, 0.2];
 
 private _time = time;
-while {count _emitters > 0} do {
+while {_emitters isNotEqualTo []} do {
     {
         _x params[ "_source", "_length" ];
         if ( time > _time + _length ) then {

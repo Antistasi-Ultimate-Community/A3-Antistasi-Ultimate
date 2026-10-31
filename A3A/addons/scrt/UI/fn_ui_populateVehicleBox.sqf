@@ -208,7 +208,7 @@ switch (_category) do {
 		_vehicleClasses = _statics;
 	};
 	default {
-		Error_1("Invalid vehicle category, given was %1", _category);
+		Error_1("Invalid vehicle category, given was %1",_category);
 	};
 };
 

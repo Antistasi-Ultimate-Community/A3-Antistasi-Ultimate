@@ -304,11 +304,11 @@ class RscItemCtrlGroup {
 	h = 1;
 	shadow = 0;
 
-	class VScrollBar: ScrollBar {
+	class VScrollbar: ScrollBar {
 		width = 0.021;
 	};
 
-	class HScrollBar: ScrollBar {
+	class HScrollbar: ScrollBar {
 		height = 0.028;
 	};
 
@@ -316,11 +316,11 @@ class RscItemCtrlGroup {
 };
 
 class RscItemCtrlGroupNoScrollbars: RscItemCtrlGroup {
-	class VScrollbar: VScrollBar {
+	class VScrollbar: VScrollbar {
 		width = 0;
 	};
 
-	class HScrollbar: HScrollBar {
+	class HScrollbar: HScrollbar {
 		height = 0;
 	};
 };

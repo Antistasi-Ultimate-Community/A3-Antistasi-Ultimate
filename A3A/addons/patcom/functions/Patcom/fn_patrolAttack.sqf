@@ -39,7 +39,7 @@ params [
 ];
 
 if (count _knownEnemies < 1) exitWith {
-    ServerDebug_1("PATCOM | patrolAttack | Previous orders on Group: %1", _group);
+    ServerDebug_1("PATCOM | patrolAttack | Previous orders on Group: %1",_group);
     private _previousOrders = _group getVariable "PATCOM_Previous_Orders";
     _group setVariable ["PATCOM_Current_Orders", _previousOrders];
     _group setVariable ["PATCOM_Group_State", "CALM"];

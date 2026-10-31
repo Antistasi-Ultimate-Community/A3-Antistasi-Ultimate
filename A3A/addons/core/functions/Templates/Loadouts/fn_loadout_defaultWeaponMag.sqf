@@ -17,11 +17,11 @@ private _magazines = getArray (configFile >> "CfgWeapons" >> _class >> "Magazine
 if ("CBA_FakeLauncherMagazine" in _magazines) exitWith {[]};
 private _magazineType = "";
 
-if (count _magazines > 0) then {
+if (_magazines isNotEqualTo []) then {
 	_magazineType = _magazines select 0;
 };
 
-if !(_magazineType isEqualTo "") exitWith {
+if (_magazineType isNotEqualTo "") exitWith {
 	[_magazineType, getNumber (configFile >> "CfgMagazines" >> _magazineType >> "count")]
 };
 

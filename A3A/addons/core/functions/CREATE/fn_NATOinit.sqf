@@ -15,7 +15,7 @@ FIX_LINE_NUMBERS()
 //TODO we may want to rename that file to AIinit or something
 if ((isNil "_unit") || (isNull _unit)) exitWith
 {
-    Error_1("Bad init parameter: %1", _this);
+    Error_1("Bad init parameter: %1",_this);
 };
 
 private _type = _unit getVariable "unitType";
@@ -26,7 +26,7 @@ private _faction = Faction(_side);
 _unit setVariable ["originalSide", _side];          // used for delete handler, which is local
 
 if (isNil "_type") then {
-    Warning_2("Unit does not have a type assigned: %1, vehicle: %2", typeOf _unit, typeOf vehicle _unit);
+    Warning_2("Unit does not have a type assigned: %1, vehicle: %2",typeOf _unit,typeOf vehicle _unit);
     _type = typeOf _unit;
 };
 
@@ -158,8 +158,8 @@ if (!isNil "_insignia" && {_insignia isNotEqualTo ""}) then {
 
 //Adjusts squadleaders with improved skill
 if (_type in FactionGet(all,"SquadLeaders")) then {
-    _unit setskill ["courage",_skill + 0.2];
-    _unit setskill ["commanding",_skill + 0.2];
+    _unit setSkill ["courage",_skill + 0.2];
+    _unit setSkill ["commanding",_skill + 0.2];
 
     [_unit, 10] call SCRT_fnc_common_addRandomMoneyMagazine;
     [_unit, _type, _isRival] call SCRT_fnc_common_selectAndApplyLeaderIntel;
@@ -237,7 +237,7 @@ if (sunOrMoon < 1) then { // Night time conditions
         private _lamps = _weaponItems arrayIntersect allLightAttachments;
         if (_lamps isEqualTo []) then {
             private _compatibleLamps = (compatibleItems (primaryWeapon _unit)) arrayIntersect allLightAttachments;
-            if !(_compatibleLamps isEqualTo []) then {
+            if (_compatibleLamps isNotEqualTo []) then {
                 _lamp = selectRandom _compatibleLamps;
                 _unit addPrimaryWeaponItem _lamp;
                 _unit assignItem _lamp;
@@ -249,8 +249,8 @@ if (sunOrMoon < 1) then { // Night time conditions
             _unit enableGunLights "AUTO";
         };
         // Reduce their magical night-time spotting powers
-        _unit setskill ["spotDistance", _skill * 0.7];
-        _unit setskill ["spotTime", _skill * 0.5];
+        _unit setSkill ["spotDistance", _skill * 0.7];
+        _unit setSkill ["spotTime", _skill * 0.5];
     };
 } else { // Day time conditions
     if (_unitPrefix isNotEqualTo "SF" && {_unitPrefix isNotEqualTo "elite"}) then { // Regular units
@@ -263,7 +263,7 @@ if (sunOrMoon < 1) then { // Night time conditions
         };
     } else { // Elite units handling
         private _arr = (allNVGs arrayIntersect (items _unit));
-        if (count _arr > 0) then {
+        if (_arr isNotEqualTo []) then {
             _hmd = _arr select 0;
             _unit removeItem _hmd;
         };

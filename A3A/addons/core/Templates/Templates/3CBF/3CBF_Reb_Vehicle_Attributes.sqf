@@ -1,3 +1,5 @@
+#pragma hemtt ignore_variables ["_fnc_saveToTemplate"]
+
 ["attributesVehicles", [
     // smaller plane, AKA cheaper
     ["UK3CB_C_AC500", ["rebCost", 4000]],

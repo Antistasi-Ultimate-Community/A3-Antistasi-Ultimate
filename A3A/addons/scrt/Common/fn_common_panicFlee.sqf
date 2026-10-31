@@ -8,7 +8,7 @@ if !(local _unit) exitWith {
 	[_unit] remoteExec ["SCRT_fnc_common_panicFlee", _unit];
 };
 
-if (vehicle _unit != _unit) exitWith {}; 				//fleeing vehicles is hilarious
+if (!isNull objectParent _unit) exitWith {}; 				//fleeing vehicles is hilarious
 
 if (_unit getVariable ["surrendered", false]) exitWith {};
 _unit setVariable ["surrendered", true, true];
@@ -23,7 +23,7 @@ _unit disableAI "AUTOTARGET";
 _unit disableAI "TARGET";
 _unit setSkill 0;
 unassignVehicle _unit;			// stop them getting back into vehicles
-[_unit] orderGetin false;
+[_unit] orderGetIn false;
 _unit setUnitPos "UP";
 _unit setSpeaker "NoVoice";
 
@@ -45,7 +45,7 @@ waitUntil {(stance _unit) isEqualTo "STAND" || {time > _sTime}};
 sleep 0.5;
 
 private _weapons = weaponsItems _unit;
-if (count _weapons > 0) then {
+if (_weapons isNotEqualTo []) then {
 	private _weaponHolder = "WeaponHolderSimulated" createVehicle [0,0,0];
 	_weaponHolder addWeaponWithAttachmentsCargoGlobal [_weapons select 0, 1];
 	_weaponHolder setPos (_unit modelToWorld [0,.2,1.2]);

@@ -24,7 +24,7 @@ FIX_LINE_NUMBERS()
 if !(params [
       ["_event", "", [""]]
     , ["_id", "", [""]]
-]) exitWith { Error_1("Invalid params passed: %1", _this)};
+]) exitWith { Error_1("Invalid params passed: %1",_this)};
 
 Warning_1("backwards compatibility to remove event with ID ""%1"" invoked.",_id);
 Warning("please update your event system implementation. The old event system WILL be removed.");

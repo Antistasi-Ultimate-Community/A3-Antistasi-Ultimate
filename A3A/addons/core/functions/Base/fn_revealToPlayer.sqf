@@ -10,7 +10,7 @@ if (count _this == 0) then
 				{
 				{
 				_LeaderX = leader _x;
-				if (((side _LeaderX == Invaders) or (side _LeaderX == Occupants)) and (vehicle _LeaderX != _LeaderX) and (player knowsAbout _LeaderX < 1.5)) then
+				if (((side _LeaderX == Invaders) or (side _LeaderX == Occupants)) and (!isNull objectParent _LeaderX) and (player knowsAbout _LeaderX < 1.5)) then
 					{
 					player reveal [_LeaderX,4];
 					sleep 1;

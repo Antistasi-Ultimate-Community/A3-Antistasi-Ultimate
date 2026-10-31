@@ -1,3 +1,5 @@
+#pragma hemtt ignore_variables ["_addon"]
+
 _addon set ["vehiclesCivCar", [
 	"C_Pickup_covered_rf" , 0.5
 	,"C_Pickup_rf" ,0.5

@@ -54,7 +54,7 @@ private _dayState = [] call A3A_fnc_getDayState;
 
 _buildings = nearestObjects [_positionX, ["House"], _locationRadius];
 
-Info_2("Spawning City Civilians in %1 with a radius of %2", _markerX, _locationRadius);
+Info_2("Spawning City Civilians in %1 with a radius of %2",_markerX,_locationRadius);
 
 private _city = if (_positionX isEqualType "") then {_positionX} else {[citiesX, _positionX] call BIS_fnc_nearestPosition};
 private _cityData = A3A_townData get _city;
@@ -73,7 +73,7 @@ if (_faction isEqualTo A3A_faction_reb && {_civNonHuman}) exitWith {
     for "_i" from 1 to _numCiv do {
         private _groupX = createGroup _groupSide;
         private _spawnPosition = [_positionX, 10, 150, 3, 0, -1, 0] call A3A_fnc_getSafePos;
-        private _civUnit = [_groupX, FactionGet(civ, "unitMan"), _spawnPosition, [],0, "NONE"] call A3A_fnc_createUnit;
+        private _civUnit = [_groupX, FactionGet(civ,"unitMan"), _spawnPosition, [],0, "NONE"] call A3A_fnc_createUnit;
         _civUnit setPosATL _spawnPosition;
         _civilianGroups pushBack _groupX;
         _civilians pushBack _civUnit;
@@ -121,7 +121,7 @@ if (_civNonHuman) exitWith
         private _groupX = createGroup _groupSide;
         private _spawnPosition = [_positionX, 10, 30, 3, 0, -1, 0] call A3A_fnc_getSafePos;
 
-        private _civUnit = [_groupX, FactionGet(civ, "unitSpecial"), _spawnPosition, [],0, "NONE"] call A3A_fnc_createUnit;
+        private _civUnit = [_groupX, FactionGet(civ,"unitSpecial"), _spawnPosition, [],0, "NONE"] call A3A_fnc_createUnit;
 
         _civUnit setPosATL _spawnPosition;
         _civilianGroups pushBack _groupX;
@@ -143,7 +143,7 @@ if (random 100 < ((aggressionOccupants) + (aggressionInvaders)) && {_civNonHuman
     private _spawnPosition = [_positionX, 10, 150, 3, 0, -1, 0] call A3A_fnc_getSafePos;
     private _groupX = createGroup _groupSide;
     _civilianGroups pushBack _groupX;
-    private _civPress = [_groupX, FactionGet(civ, "unitPress"), _spawnPosition, [],0, "NONE"] call A3A_fnc_createUnit;
+    private _civPress = [_groupX, FactionGet(civ,"unitPress"), _spawnPosition, [],0, "NONE"] call A3A_fnc_createUnit;
     [_civPress] spawn A3A_fnc_civilianInitEH;
     _civilians pushBack _civPress;
     [_groupX, "Patrol_Area", 5, 50, 300, false, [], false] call A3A_fnc_patrolLoop;
@@ -156,12 +156,12 @@ for "_i" from 1 to _numCiv do {
 
     private _posHouse = [];
 
-    if (count _buildings > 0 && {_civNonHuman isEqualTo false}) then {
+    if (_buildings isNotEqualTo [] && {_civNonHuman isEqualTo false}) then {
         _building = selectRandom _buildings;
         private _housePositions = [_building] call BIS_fnc_buildingPositions;
         _buildings deleteAt (_buildings find _building);
 
-        if !(_housePositions isEqualTo []) then {
+        if (_housePositions isNotEqualTo []) then {
             _posHouse = selectRandom _housePositions;
         } else {
             _posHouse = [_positionX, 10, 150, 3, 0, -1, 0] call A3A_fnc_getSafePos;
@@ -169,7 +169,7 @@ for "_i" from 1 to _numCiv do {
 
         private _groupX = createGroup _groupSide;
 
-        private _civUnit = [_groupX, FactionGet(civ, "unitMan"), _posHouse, [], 0, "NONE"] call A3A_fnc_createUnit;
+        private _civUnit = [_groupX, FactionGet(civ,"unitMan"), _posHouse, [], 0, "NONE"] call A3A_fnc_createUnit;
 
         _civUnit setPosATL _posHouse;
         _civilianGroups pushBack _groupX;
@@ -207,7 +207,7 @@ for "_i" from 1 to _numCiv do {
         private _groupX = createGroup _groupSide;
         private _spawnPosition = [_positionX, 10, 150, 3, 0, -1, 0] call A3A_fnc_getSafePos;
 
-        private _civUnit = [_groupX, FactionGet(civ, "unitMan"), _posHouse, [], 0, "NONE"] call A3A_fnc_createUnit;
+        private _civUnit = [_groupX, FactionGet(civ,"unitMan"), _posHouse, [], 0, "NONE"] call A3A_fnc_createUnit;
 
         _civUnit setPosATL _spawnPosition;
         _civilianGroups pushBack _groupX;

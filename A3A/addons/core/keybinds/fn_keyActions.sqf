@@ -42,9 +42,9 @@ switch (_key) do {
     #ifdef UseDoomGUI
         ERROR("Disabled due to UseDoomGUI Switch.")
     #else
-        if (isNull (uiNameSpace getVariable "H8erHUD")) exitWith {};
+        if (isNull (uiNamespace getVariable "H8erHUD")) exitWith {};
 
-        private _display = uiNameSpace getVariable "H8erHUD";
+        private _display = uiNamespace getVariable "H8erHUD";
         private _infoBarControl = _display displayCtrl 1001;
         private _keyName = actionKeysNames QGVAR(infoBar);
         _keyName = _keyName select [1, count _keyName - 2];
@@ -89,7 +89,7 @@ switch (_key) do {
     };
 
     default {
-        Error_1("Key action not registered: %1", _key);
+        Error_1("Key action not registered: %1",_key);
     };
 };
 

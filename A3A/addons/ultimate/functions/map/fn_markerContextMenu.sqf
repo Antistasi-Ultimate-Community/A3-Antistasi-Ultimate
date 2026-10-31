@@ -78,7 +78,7 @@ if (_markerMetadata isEqualTo []) then {
 
 private _bodyText = if (_markerMetadata isEqualTo [] || {count _markerMetadata < 1}) then {
     private _markerLabel = markerText _originalMarkerName;
-    if (_markerLabel == "") then { _originalMarkerName } else { _markerLabel }
+    [_markerLabel, _originalMarkerName] select (_markerLabel == "")
 } else {
     _markerMetadata # 0
 };

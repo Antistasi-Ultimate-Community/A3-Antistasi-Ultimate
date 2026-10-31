@@ -40,24 +40,24 @@ Debug("Getting possible magazine with arsenal check.");
 {
     private _unit = _x;
 
-    private _primaryMagazines = getArray(configfile >> "CfgWeapons" >> primaryWeapon _unit >> "magazines");
-    if(count _primaryMagazines > 0) then {
+    private _primaryMagazines = getArray(configFile >> "CfgWeapons" >> primaryWeapon _unit >> "magazines");
+    if(_primaryMagazines isNotEqualTo []) then {
         _mag = _primaryMagazines select 0;
         if(_mag in _unlockedMagazines) then {
             _possibleMagazines pushBack _mag;
         };
     };
 
-    private _secondaryMagazines = getArray(configfile >> "CfgWeapons" >> secondaryWeapon _unit >> "magazines");
-    if(count _secondaryMagazines > 0) then {
+    private _secondaryMagazines = getArray(configFile >> "CfgWeapons" >> secondaryWeapon _unit >> "magazines");
+    if(_secondaryMagazines isNotEqualTo []) then {
         _mag = _secondaryMagazines select 0;
         if(_mag in _unlockedMagazines) then {
             _possibleMagazines pushBack _mag;
         };
     };
 
-    private _handgunMagazines = getArray(configfile >> "CfgWeapons" >> handgunWeapon _unit >> "magazines");
-    if(count _handgunMagazines > 0) then {
+    private _handgunMagazines = getArray(configFile >> "CfgWeapons" >> handgunWeapon _unit >> "magazines");
+    if(_handgunMagazines isNotEqualTo []) then {
         _mag = _handgunMagazines select 0;
         if(_mag in _unlockedMagazines) then {
             _possibleMagazines pushBack _mag;
@@ -75,7 +75,7 @@ Debug("Filling supply crate with ammo, grenades and first aid kits.");
 _firstAidCount = round random [6,10,16];
 _box addItemCargoGlobal ["FirstAidKit", _firstAidCount];
 
-if(count _unlockedThrowables > 0) then {
+if(_unlockedThrowables isNotEqualTo []) then {
     private _randomThrowables = [selectRandom _unlockedThrowables, selectRandom _unlockedThrowables, selectRandom _unlockedThrowables];
     {
         _throwable = _x;

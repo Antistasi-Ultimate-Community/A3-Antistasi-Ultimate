@@ -63,7 +63,7 @@ _lightSource attachTo [_object, [0, 0, 0]];
 
 sleep 11;
 
-if (typeOf _object in (_faction get "vehiclesDropPod") ) then {
+if (typeOf _object in FactionGet(all,"vehiclesDropPod") ) then {
 
 	setAperture 10;
 	waitUntil {sleep 0.1; getPos _object select 2 < 2500};
@@ -71,11 +71,11 @@ if (typeOf _object in (_faction get "vehiclesDropPod") ) then {
 
 	player spawn {
 		for "_i" from 0 to 200 do {
-			_vx = vectorup _this select 0;
-			_vy = vectorup _this select 1;
-			_vz = vectorup _this select 2;
+			_vx = vectorUp _this select 0;
+			_vy = vectorUp _this select 1;
+			_vz = vectorUp _this select 2;
 			_coef = 0.01 - (0.0001 * _i);
-			_this setvectorup [
+			_this setVectorUp [
 			_vx+(-_coef+random (2*_coef)),
 			_vy+(-_coef+random (2*_coef)),
 			_vz+(-_coef+random (2*_coef))

@@ -14,10 +14,10 @@ private _groups = [];
 
 private _missionOriginPos = getMarkerPos _missionOrigin;
 private _difficult = random 10 < tierWar;
-private _sideX = if (sidesX getVariable [_missionOrigin,sideUnknown] == Occupants) then {Occupants} else {Invaders};
+private _sideX = [Invaders, Occupants] select (sidesX getVariable [_missionOrigin,sideUnknown] == Occupants);
 private _faction = Faction(_sideX);
 
-Info_3("Origin: %1, Hardmode: %2, Controlling Side: %3", _missionOrigin, _difficult, str _sideX);
+Info_3("Origin: %1, Hardmode: %2, Controlling Side: %3",_missionOrigin,_difficult,str _sideX);
 
 private _limit = if (_difficult) then {
 	45 call SCRT_fnc_misc_getTimeLimit
@@ -45,7 +45,7 @@ private _potentialSites = (outposts + milbases + airportsX + resourcesX + factor
 };
 
 private _destinationSite = nil;
-if(count _potentialSites > 0) then {
+if(_potentialSites isNotEqualTo []) then {
     _destinationSite = selectRandom _potentialSites;
 };
 
@@ -57,7 +57,7 @@ if (isNil "_destinationSite") exitWith {
 private _destinationName = [_destinationSite] call A3A_fnc_localizar;
 private _destinationPosition = getMarkerPos _destinationSite;
 
-private _markerColor = if(_sideX == Occupants) then {"colorBLUFOR"} else {"colorOPFOR"};
+private _markerColor = ["colorOPFOR", "colorBLUFOR"] select (_sideX == Occupants);
 private _markerPosition = [_destinationPosition select 0, (_destinationPosition select 1) + 50, _destinationPosition select 2];
 
 private _officerDestinationMarker = createMarker ["OfficerDestinationMarker", _markerPosition];
@@ -67,7 +67,7 @@ _officerDestinationMarker setMarkerText (localize "STR_officer_dest_pos");
 _officerDestinationMarker setMarkerColor _markerColor;
 _officerDestinationMarker setMarkerAlpha 1;
 
-Info_2("Origin: %1, Destination: %2", str _missionOrigin, str _destinationSite);
+Info_2("Origin: %1, Destination: %2",str _missionOrigin,str _destinationSite);
 
 // selecting classnames
 private _officerClass = _faction get "unitOfficial";
@@ -80,7 +80,7 @@ if (isNil "_officerClass" || {isNil "_officerVehicleClass" || {isNil "_escortVeh
     ["AS"] remoteExec ["A3A_fnc_missionRequest",2];
 };
 
-Info_4("Officer: %1, officer vehicle: %2, escort vehicle: %3, infantry squad: %4", _officerClass, _officerVehicleClass, _escortVehicleClass, str _infantrySquadArray);
+Info_4("Officer: %1, officer vehicle: %2, escort vehicle: %3, infantry squad: %4",_officerClass,_officerVehicleClass,_escortVehicleClass,str _infantrySquadArray);
 
 ////////////////
 //convoy spawn//
@@ -181,7 +181,7 @@ if (alive _officer) then {
     private _officerWP = _officerVehicleGroup addWaypoint [_destinationPosition, 5];
     _officerWP setWaypointType "MOVE";
     _officerWP setWaypointBehaviour "SAFE";
-    Info_1("Officer Vehicle Waypoint: %1", str _destinationPosition);
+    Info_1("Officer Vehicle Waypoint: %1",str _destinationPosition);
 };
 
 sleep 5;
@@ -190,7 +190,7 @@ if ((units _escortVehicleGroup) findIf {alive _x} != -1) then {
     private _escortWP = _escortVehicleGroup addWaypoint [_destinationPosition, 5];
     _escortWP setWaypointType "MOVE";
     _escortWP setWaypointBehaviour "SAFE";
-    Info_1("Escort Vehicle Waypoint: %1", str _destinationPosition);
+    Info_1("Escort Vehicle Waypoint: %1",str _destinationPosition);
 };
 
 waitUntil {

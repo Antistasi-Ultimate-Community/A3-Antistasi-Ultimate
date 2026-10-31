@@ -32,8 +32,8 @@ private _countCiv = 0;
 private _performanceLog = format [
 	"%10 ServerFPS=%1 Players=%11 DeadUnits=%2 AllUnits=%3 UnitsAwareOfEnemies=%14 AllVehicles=%4 WreckedVehicles=%12 Entities=%13 GroupsRebels=%5 GroupsInvaders=%6 GroupsOccupants=%7 GroupsCiv=%8 GroupsTotal=%9 GroupsCombatBehaviour=%15 FactionCash=%16 HR=%17 OccAggro=%18 InvAggro=%19 Warlevel=%20 RivalsActivityLevel=%21"
 	,diag_fps
-	,(count alldead)
-	,count allunits
+	,(count allDead)
+	,count allUnits
 	,count vehicles
 	,_countRebels
 	,_countInvaders

@@ -101,10 +101,10 @@ private _readHoverMetadata = {
     private _dummy = [_original] call _toDummyMarkerName;
 
     private _meta = _hoverMetaMap getOrDefault [_original, []];
-    if !(_meta isEqualTo []) exitWith { _meta };
+    if (_meta isNotEqualTo []) exitWith { _meta };
     
     _meta = _hoverMetaMap getOrDefault [_dummy, []];
-    if !(_meta isEqualTo []) exitWith { _meta };
+    if (_meta isNotEqualTo []) exitWith { _meta };
 
     missionNamespace setVariable ["A3U_suppressNetworkForUI", true];
     [_original] call A3A_fnc_mrkUpdate;
@@ -185,9 +185,9 @@ private _getFactionName = {
     private _factionName = [_markerSide] call _getFactionDisplayNameBySide;
 
     switch (_markerSide) do {
-        case teamPlayer; case resistance: { format ["%1 (reb)", if (_factionName == "") then {"Rebels"} else {_factionName}] };
-        case Occupants: { format ["%1 (occ)", if (_factionName == "") then {"Occupiers"} else {_factionName}] };
-        case Invaders: { format ["%1 (inv)", if (_factionName == "") then {"Invaders"} else {_factionName}] };
+        case teamPlayer; case resistance: { format ["%1 (reb)", [_factionName, "Rebels"] select (_factionName == "")] };
+        case Occupants: { format ["%1 (occ)", [_factionName, "Occupiers"] select (_factionName == "")] };
+        case Invaders: { format ["%1 (inv)", [_factionName, "Invaders"] select (_factionName == "")] };
         default { "Unknown" };
     };
 };
@@ -347,7 +347,7 @@ private _refreshList = {
             ];
         } forEach _markerNames;
 
-        if !(_validMarkers isEqualTo []) then {
+        if (_validMarkers isNotEqualTo []) then {
             
             _validMarkers sort true; 
             

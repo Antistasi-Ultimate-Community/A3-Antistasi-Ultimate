@@ -68,7 +68,7 @@ if (_color == "White") then {
 [(str _Unit), "onEachFrame", 
 {
     params ["_Unit", "_text", "_TimerEXP", "_red", "_green", "_blue"];
-    private _pos = getposATL _Unit;
+    private _pos = getPosATL _Unit;
     _pos set [2,3];
     call compile format ['drawIcon3D["", [%1,%2,%3,1], %4, 0, 0, 0, %5, 2, 0.04, "PuristaMedium", "center", false];', _red, _green, _blue, _pos, (str _text)];
 

@@ -3,34 +3,12 @@ class CfgFunctions {
     class A3A {
         class GUI {
             file = QPATHTOFOLDER(functions\GUI);
-            class adminTab {};
-            class aiManagementTab {};
-            class airSupportTab {};
             class arsenalLimitsDialog {};
             class buyVehicleDialog {};
             class buyVehicleTabs {};
             class blackMarketDialog {};
             class blackMarketTabs {};
-            class commanderTab {};
-            class configColorToArray {};
-            class constructTab {};
-            class donateTab {};
-            class fastTravelTab {};
-            class fireMissionEH {};
-            class getGroupInfo {};
-            class getGroupVehicle {};
             class getVehicleCrewCount {};
-            class hqDialog {};
-            class mainDialog {};
-            class mapDrawHcGroupsEH {};
-            class mapDrawOutpostsEH {};
-            class mapDrawSelectEH {};
-            class mapDrawUserMarkersEH {};
-            class playerManagementTab {};
-            class playerTab {};
-            class recruitDialog {};
-            class recruitSquadDialog {};
-            class requestMissionDialog {};
             class setUpPlacerHints {};
             class teamLeaderRTSPlacerDialog {};
         };

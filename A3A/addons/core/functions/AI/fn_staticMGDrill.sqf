@@ -10,7 +10,7 @@ private _veh = objNull;
 private _sideX = side _groupX;
 private _faction = Faction(_sideX);
 private _typeVehX = selectRandom (if !(_isMortar) then { _faction get "staticMGs" } else { _faction get "staticMortars" });
-private _backpckG = backPack _gunner;
+private _backpckG = backpack _gunner;
 private _backpckA = backpack _helperX;
 while {(alive _gunner)} do
 	{
@@ -18,7 +18,7 @@ while {(alive _gunner)} do
 	if (!(isNull _veh) and !(alive _veh)) exitWith {};
 	_objectivesX = _groupX getVariable ["objectivesX",[]];
 	_enemyX = objNull;
-	if (!(_objectivesX isEqualTo []) and (((_objectivesX select 0) select 4) distance _gunner > 150))  then
+	if (_objectivesX isNotEqualTo [] and (((_objectivesX select 0) select 4) distance _gunner > 150))  then
 		{
 		if !(_isMortar) then
 			{
@@ -92,7 +92,7 @@ while {(alive _gunner)} do
 					{
 					[_gunner] orderGetIn false;
 					[_gunner] allowGetIn false;
-					waitUntil {sleep 1; (vehicle _gunner == _gunner) or !(alive _gunner)};
+					waitUntil {sleep 1; (isNull objectParent _gunner) or !(alive _gunner)};
 					if (alive _gunner) then
 						{
 						_mounted = false;

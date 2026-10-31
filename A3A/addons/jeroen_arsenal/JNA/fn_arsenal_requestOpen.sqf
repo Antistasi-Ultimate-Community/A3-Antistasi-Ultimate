@@ -19,6 +19,6 @@ _temp = server getVariable ["jna_playersInArsenal",[]];
 _temp pushBackUnique _clientOwner;
 server setVariable ["jna_playersInArsenal",_temp,true];
 
-Info_1("_open arsenal for: clientOwner ",_clientOwner);
+Info_1("_open arsenal for: clientOwner %1",_clientOwner);
 ["Open",[jna_dataList]] remoteExecCall ["jn_fnc_arsenal", _clientOwner];
 

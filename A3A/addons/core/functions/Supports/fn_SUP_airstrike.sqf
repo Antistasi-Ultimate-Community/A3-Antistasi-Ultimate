@@ -22,13 +22,13 @@ FIX_LINE_NUMBERS()
 params ["_supportName", "_side", "_resPool", "_maxSpend", "_target", "_targPos", "_reveal", "_delay"];
 
 private _airport = [_side, _targPos] call A3A_fnc_availableBasesAir;
-if(isNil "_airport") exitWith { Debug_1("No airport found for %1 support", _supportName); -1; };
+if(isNil "_airport") exitWith { Debug_1("No airport found for %1 support",_supportName); -1; };
 
-private _aggroValue = if(_side == Occupants) then {aggressionOccupants} else {aggressionInvaders};
-private _weightHE = if (_side == Occupants) then {2} else {1};             // occupants less likely to use the wide-area stuff
+private _aggroValue = [aggressionInvaders, aggressionOccupants] select (_side == Occupants);
+private _weightHE = [1, 2] select (_side == Occupants);             // occupants less likely to use the wide-area stuff
 private _weightCluster = 0 max ((tierWar - 5) / 10 + _aggroValue / 200);           // 1 at max warlevel and aggro
-private _weightNapalm = if (napalmEnabled) then {_weightCluster} else {0};
-private _weightChemical = if (_side == Invaders) then {_weightCluster} else {0};
+private _weightNapalm = [0, _weightCluster] select (napalmEnabled);
+private _weightChemical = [0, _weightCluster] select (_side == Invaders);
 
 private _bombType = selectRandomWeighted ["HE", _weightHE, "CLUSTER", _weightCluster, "NAPALM", _weightNapalm, "CHEMICAL", _weightChemical];
 
@@ -36,7 +36,7 @@ private _faction = Faction(_side);
 private _planeType = selectRandom ((_faction get "vehiclesPlanesCAS") + (_faction get "vehiclesPlanesLargeCAS"));
 if (_delay < 0) then { _delay = (0.5 + random 1) * (300 - 15*tierWar - 1*_aggroValue) };
 
-Debug_3("Airstrike will be carried out with aircraft type %1, bombType %2 and setup time %3", _planeType, _bombType, _delay);
+Debug_3("Airstrike will be carried out with aircraft type %1, bombType %2 and setup time %3",_planeType,_bombType,_delay);
 
 // ["_side", "_basetype", "_target", "_endtime", "_duration", "_power"]
 A3A_supportStrikes pushBack [_side, "AREA", _targPos, time + 1200, 1200, 200];

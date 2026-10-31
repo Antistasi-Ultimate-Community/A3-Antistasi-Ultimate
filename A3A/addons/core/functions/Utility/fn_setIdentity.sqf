@@ -23,7 +23,7 @@ private _firstName = _identity getOrDefault ["firstName", ""];
 private _lastName = _identity getOrDefault ["lastName", ""];
 
 if ((isNil "_firstName" || {_firstName isEqualTo ""}) || (isNil "_lastName" || {_lastName isEqualTo ""})) then {
-    private _nameConfig = configfile >> "CfgWorlds" >> "GenericNames" >> "GreekMen";
+    private _nameConfig = configFile >> "CfgWorlds" >> "GenericNames" >> "GreekMen";
     private _firstNames = configProperties [_nameConfig >> "FirstNames"] apply { getText(_x) };
     private _lastNames = configProperties [_nameConfig >> "LastNames"] apply { getText(_x) };
 
@@ -44,5 +44,5 @@ private _JIPID = "identity_" + netId _unit;
 
 // This won't be 100% reliable because it's only installed locally, but it'll avoid remoteExec spam on connection
 _unit addEventHandler ["Deleted", {
-    remoteExec ["", "identity_" + netId _unit];
+    remoteExec ["", "identity_" + netId (_this select 0)];
 }];

@@ -1,3 +1,5 @@
+#pragma hemtt ignore_variables ["_fnc_saveNames","_fnc_createLoadoutData","_fnc_copyLoadoutData","_fnc_generateAndSaveUnitsToTemplate","_fnc_saveToTemplate"]
+
 /////////////////////////////////
 //   Side Information - Occ   //
 ///////////////////////////////
@@ -316,12 +318,12 @@ _loadoutData set ["items_police_extras", _coreItems];
 _loadoutData set ["items_crew_extras", _coreItems];
 _loadoutData set ["items_unarmed_extras", _coreItems];
 
-if (isClass (configfile >> "CfgPatches" >> "CUP_Weapons_Stinger") || isClass (configFile >> "CfgFactionClasses" >> "rhs_faction_usarmy")) then {
-	if (isClass (configfile >> "CfgPatches" >> "CUP_Weapons_Stinger") && !isClass (configFile >> "CfgFactionClasses" >> "rhs_faction_usarmy")) then {
+if (isClass (configFile >> "CfgPatches" >> "CUP_Weapons_Stinger") || isClass (configFile >> "CfgFactionClasses" >> "rhs_faction_usarmy")) then {
+	if (isClass (configFile >> "CfgPatches" >> "CUP_Weapons_Stinger") && !isClass (configFile >> "CfgFactionClasses" >> "rhs_faction_usarmy")) then {
         _loadoutData set ["launchersAA", [ ["CUP_launch_FIM92Stinger", "", "", "", [], [], ""] ]];
     };
 
-    if (isClass (configFile >> "CfgFactionClasses" >> "rhs_faction_usarmy") && !isClass (configfile >> "CfgPatches" >> "CUP_Weapons_Stinger")) then {
+    if (isClass (configFile >> "CfgFactionClasses" >> "rhs_faction_usarmy") && !isClass (configFile >> "CfgPatches" >> "CUP_Weapons_Stinger")) then {
        _loadoutData set ["launchersAA", [ ["rhs_weap_fim92", "", "", "", ["rhs_fim92_mag"], [], ""] ]];
     };
 };

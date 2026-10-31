@@ -12,7 +12,7 @@ params ["_preference", "_side"];
 FIX_LINE_NUMBERS()
 private _faction = Faction(_side);
 
-Verbose_2("SelectVehicleType: Selecting vehicle now, preferred is %1, side is %2", _preference, _side);
+Verbose_2("SelectVehicleType: Selecting vehicle now, preferred is %1, side is %2",_preference,_side);
 
 if(_preference == "LAND_AIR") exitWith { selectRandom (_faction get "vehiclesAA") };
 if(_preference == "LAND_TANK") exitWith { selectRandom (_faction get "vehiclesTanks") };
@@ -58,12 +58,12 @@ if(_preference in ["AIR_GENERIC", "AIR_DEFAULT"]) then {
     _possibleVehicles append (_faction get "vehiclesPlanesGunship");
 };
 
-if(count _possibleVehicles == 0) exitWith
+if(_possibleVehicles isEqualTo []) exitWith
 {
     //Error_1("No result for %1, assuming bad parameter!", _preference);
     "Empty";
 };
 
-Verbose_1("SelectVehicleType: Preselection done, possible vehicles are %1", str _possibleVehicles);
+Verbose_1("SelectVehicleType: Preselection done, possible vehicles are %1",str _possibleVehicles);
 
 selectRandom _possibleVehicles;

@@ -27,7 +27,7 @@ if (player != theBoss) then
     _result pushBack (localize "STR_A3A_Base_canMoveHq_only_comm");
 };
 
-if ((count weaponCargo boxX >0) or (count magazineCargo boxX >0) or (count itemCargo boxX >0) or (count backpackCargo boxX >0)) then
+if ((weaponCargo boxX isNotEqualTo []) or (count magazineCargo boxX >0) or (itemCargo boxX isNotEqualTo []) or (backpackCargo boxX isNotEqualTo [])) then
 {
     if(count _result == 1) then
     {

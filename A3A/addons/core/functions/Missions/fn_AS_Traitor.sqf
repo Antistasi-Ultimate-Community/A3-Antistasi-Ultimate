@@ -88,18 +88,18 @@ private _posVeh = [];
 private _dirVeh = 0;
 private _roads = [];
 private _radius = 20;
-while {count _roads == 0} do {
+while {_roads isEqualTo []} do {
 	_roads = (getPos _houseX) nearRoads _radius;
 	_radius = _radius + 10;
 };
 
 private _road = _roads select 0;
 private _posroad = getPos _road;
-_roadcon = roadsConnectedto _road;
-if (count _roadCon == 0) then {
+_roadcon = roadsConnectedTo _road;
+if (_roadCon isEqualTo []) then {
     Error_1("Road has no connection :%1.",position _road);
 };
-if (count _roadCon > 0) then {
+if (_roadCon isNotEqualTo []) then {
 	private _posrel = getPos (_roadcon select 0);
 	_dirveh = [_posroad,_posrel] call BIS_fnc_DirTo;
 } else {
@@ -142,7 +142,7 @@ waitUntil {
 if ({_traitor knowsAbout _x > 1.4} count ([500,0,_traitor,teamPlayer] call A3A_fnc_distanceUnits) > 0) then {
 	{_x enableAI "MOVE"} forEach units _groupTraitor;
 	_traitor assignAsDriver _veh;
-	[_traitor] orderGetin true;
+	[_traitor] orderGetIn true;
 	_wp0 = _groupTraitor addWaypoint [_posVeh, 0];
 	_wp0 setWaypointType "GETIN";
 	_wp1 = _groupTraitor addWaypoint [_posBase,1];
@@ -171,7 +171,7 @@ if (!alive _traitor || {traitorIntel}) then {
 		_traitor setUnitPos "UP";
 		_traitor playMoveNow "AmovPercMstpSnonWnonDnon_AmovPercMstpSsurWnonDnon";
 
-		_wp1 = _groupTraitor addWaypoint [_posBase];
+		_wp1 = _groupTraitor addWaypoint [_posBase, 0];
 		_wp1 setWaypointType "MOVE";
 		_wp1 setWaypointBehaviour "CARELESS";
 		_wp1 setWaypointSpeed "FULL";

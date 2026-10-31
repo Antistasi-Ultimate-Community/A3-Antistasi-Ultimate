@@ -39,7 +39,7 @@ private _fnc_magClassToEntry = {
 // - Array of choices and weights (e.g. ["M16", 1, "AKM", 2])
 private _fnc_parseItemArray = {
     params [["_attachment", ""], ["_paramName", "unknown"]];
-    Debug_2("[DEBUG] Parsing: %1 | Value: %2", _paramName, _attachment);
+    Debug_2("[DEBUG] Parsing: %1 | Value: %2",_paramName,_attachment);
     private _choice = "";
     if ((typeName _attachment) == "ARRAY") then {
         if (count _attachment > 1) then {
@@ -90,7 +90,7 @@ private _fnc_parseWeaponFormat = {
 		};
 
 		// Array of classnames, or array of arrays of type [numberOfMags, magClass]
-		if (_info isEqualType [] && {count _info > 0}) then {
+		if (_info isEqualType [] && {_info isNotEqualTo []}) then {
 			private _className = if (_info select 0 isEqualType []) then {_info select 0 select 1} else {_info select 0};
 			private _magData = _className call _fnc_magClassToEntry;
 			continueWith [
@@ -345,7 +345,7 @@ private _fnc_addNVGs = {
 
 //Picks the first non-empty array.
 private _fnc_fallBack = {
-	private _firstValidIndex = _this findIf {!(_loadoutDataForTemplate getOrDefault [_x, []] isEqualTo [])};
+	private _firstValidIndex = _this findIf {_loadoutDataForTemplate getOrDefault [_x, []] isNotEqualTo []};
 	if (_firstValidIndex < 0) exitWith {_this select 0};
 	_this select _firstValidIndex
 };

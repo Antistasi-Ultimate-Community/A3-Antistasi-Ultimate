@@ -18,9 +18,9 @@ private _hideoutPosition = [
 private _radGrad = [_hideoutPosition, 0] call BIS_fnc_terrainGradAngle;
 private _outOfBounds = _hideoutPosition findIf { (_x < 0) || {_x > worldSize}} != -1;
 private _InvBases = (airportsX + milbases + outposts + seaports + factories + resourcesX) select {sidesX getVariable [_x, sideUnknown] == Invaders};
-private _isTooCloseToOutposts = _InvBases findIf { _hideoutPosition distance2d (getMarkerPos _x) < 500 || _hideoutPosition inArea _x } != -1;
-private _CloseToOutposts = _InvBases findIf { _hideoutPosition distance2d (getMarkerPos _x) < 1000 || _hideoutPosition inArea _x } != -1;
-private _transferConvoyPossibleSpawnMarkers = _InvBases select {_hideoutPosition distance2d (getMarkerPos _x) < 4000}; //
+private _isTooCloseToOutposts = _InvBases findIf { _hideoutPosition distance2D (getMarkerPos _x) < 500 || _hideoutPosition inArea _x } != -1;
+private _CloseToOutposts = _InvBases findIf { _hideoutPosition distance2D (getMarkerPos _x) < 1000 || _hideoutPosition inArea _x } != -1;
+private _transferConvoyPossibleSpawnMarkers = _InvBases select {_hideoutPosition distance2D (getMarkerPos _x) < 4000}; //
 if (_transferConvoyPossibleSpawnMarkers isEqualTo []) exitWith {
     [[_marker],"A3A_fnc_RIV_ATT_Hideout"] remoteExec ["A3A_fnc_scheduler",2];
 };
@@ -35,7 +35,7 @@ private _fnc_createLight = {
     [_light, [0.3, 0.1, 0.05]] remoteExecCall ["setLightColor", 0, _light];
     _light
 };
-Info_1("Prevent transfer task initialization started, marker: %1.", _marker);
+Info_1("Prevent transfer task initialization started, marker: %1.",_marker);
 
 private _vehicles = [];
 private _groups = [];
@@ -44,9 +44,9 @@ private _faction = Faction(_sideX);
 
 (90 call SCRT_fnc_misc_getTimeLimit) params ["_dateLimitNum", "_displayTime"];
 
-private _isDifficult = if (random 10 < tierWar) then {true} else {false};
+private _isDifficult = random 10 < tierWar;
 
-Info_1("Is difficult: %1.", str _isDifficult);
+Info_1("Is difficult: %1.",str _isDifficult);
 //mitigation of negative terrain gradient
 if(!(_radGrad > -0.25 && _radGrad < 0.25) || {isOnRoad _hideoutPosition || {surfaceIsWater _hideoutPosition || {_outOfBounds || {_isTooCloseToOutposts}}}}) then {
     private _radiusX = 100;
@@ -64,7 +64,7 @@ if(!(_radGrad > -0.25 && _radGrad < 0.25) || {isOnRoad _hideoutPosition || {surf
         ] call BIS_fnc_findSafePos;
         _radGrad = [_hideoutPosition, 0] call BIS_fnc_terrainGradAngle;
         _outOfBounds = _hideoutPosition findIf { (_x < 0) || {_x > worldSize}} != -1;
-        _isTooCloseToOutposts = _InvBases findIf { _hideoutPosition distance2d (getMarkerPos _x) < 300 || _hideoutPosition inArea _x } != -1;
+        _isTooCloseToOutposts = _InvBases findIf { _hideoutPosition distance2D (getMarkerPos _x) < 300 || _hideoutPosition inArea _x } != -1;
         if ((_radGrad > -0.25 && _radGrad < 0.25) && {!(isOnRoad _hideoutPosition) && {!(surfaceIsWater _hideoutPosition) && {!_outOfBounds && {!_isTooCloseToOutposts}}}}) exitWith {};
         _radiusX = _radiusX + 5;
     };
@@ -80,15 +80,15 @@ _route = _route apply { _x select 0 };			// reduce to position array
 if (_route isEqualTo []) then { _route = [_posOrigin, _posDest] };
 private _fnc_spawnConvoyVehicle = {
     params ["_vehType", "_markName"];//,""
-    ServerDebug_1("Spawning vehicle type %1", _vehType);
+    ServerDebug_1("Spawning vehicle type %1",_vehType);
     // Find location down route
-    _pathState = [_route, [20, 0] select (count _pathState == 0), _pathState] call A3A_fnc_findPosOnRoute;
+    _pathState = [_route, [20, 0] select (_pathState isEqualTo []), _pathState] call A3A_fnc_findPosOnRoute;
     while {true} do {
         // make sure there are no other vehicles within 10m
-        if (count (ASLtoAGL (_pathState#0) nearEntities 10) == 0) exitWith {};
+        if ((ASLToAGL (_pathState#0) nearEntities 10) isEqualTo []) exitWith {};
         _pathState = [_route, 10, _pathState] call A3A_fnc_findPosOnRoute;
     };
-    private _veh = createVehicle [_vehType, ASLtoAGL (_pathState#0) vectorAdd [0,0,0.5]];               // Give it a little air
+    private _veh = createVehicle [_vehType, ASLToAGL (_pathState#0) vectorAdd [0,0,0.5]];               // Give it a little air
     private _vecUp = (_pathState#1) vectorCrossProduct [0,0,1] vectorCrossProduct (_pathState#1);       // correct pitch angle
     _veh setVectorDirAndUp [_pathState#1, _vecUp];
     _veh allowDamage false;
@@ -215,7 +215,7 @@ if (_isDifficult) then {
     _vehicles append [_prizeVehicle];
 };
 
-Info_1("Loot container on %1 position.", str (position _lootContainer));
+Info_1("Loot container on %1 position.",str (position _lootContainer));
 {
     [_x,false] remoteExec ["setCaptive",0,_x];
 } forEach ((call SCRT_fnc_misc_getRebelPlayers) inAreaArray [_hideoutPosition, distanceSPWN1, distanceSPWN1]);

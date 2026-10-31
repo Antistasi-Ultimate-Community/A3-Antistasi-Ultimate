@@ -41,7 +41,7 @@ private _fileName = "fn_punishment_FF_checkNearHQ";
 
 if !(_weapon in ["Put","Throw"]) exitWith {false};
 private _distancePetros = _unit distance petros;
-if !(_distancePetros <= 75) exitWith {false};
+if (_distancePetros > 75) exitWith {false};
 if (HQAttackInProgress) exitWith {false}; // Don't punish during HQ attack
 
 deleteVehicle _projectile;

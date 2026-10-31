@@ -67,7 +67,7 @@ while {true} do
     _resRateDef = _resRateDef - _resRateAtk * _shift;
     _resRateAtk = _resRateAtk + _resRateAtk * _shift;
 
-    Debug_4("Adding %1 def resources to %2 and %3 atk resources to %4", _resRateDef, A3A_resourcesDefenceOcc, _resRateAtk, A3A_resourcesAttackOcc);
+    Debug_4("Adding %1 def resources to %2 and %3 atk resources to %4",_resRateDef,A3A_resourcesDefenceOcc,_resRateAtk,A3A_resourcesAttackOcc);
     A3A_resourcesDefenceOcc = (A3A_resourcesDefenceOcc + _resRateDef) min _maxDef;
     A3A_resourcesAttackOcc = A3A_resourcesAttackOcc + _resRateAtk;
 
@@ -95,7 +95,7 @@ while {true} do
         _resRateDef = _resRateDef - _resRateAtk * _shift;
         _resRateAtk = _resRateAtk + _resRateAtk * _shift;
 
-        Debug_4("Adding %1 def resources to %2 and %3 atk resources to %4", _resRateDef, A3A_resourcesDefenceInv, _resRateAtk, A3A_resourcesAttackInv);
+        Debug_4("Adding %1 def resources to %2 and %3 atk resources to %4",_resRateDef,A3A_resourcesDefenceInv,_resRateAtk,A3A_resourcesAttackInv);
         A3A_resourcesDefenceInv = (A3A_resourcesDefenceInv + _resRateDef) min _maxDef;
         A3A_resourcesAttackInv = A3A_resourcesAttackInv + _resRateAtk;
 

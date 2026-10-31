@@ -5,7 +5,7 @@ params [["_newBoss", objNull], ["_silent", false]];
 
 if (!isNull theBoss) then
 {
-    Debug_1("Removing %1 from Boss roles.", name theBoss);
+    Debug_1("Removing %1 from Boss roles.",name theBoss);
 
 	bossHCGroupsTransfer = hcAllGroups theBoss;
 	hcRemoveAllGroups theBoss;
@@ -54,7 +54,7 @@ else {
 	} forEach allGroups;
 };
 
-Debug_1("New boss %1 set.", name theBoss);
+Debug_1("New boss %1 set.",name theBoss);
 
 [_silent] spawn {
 	params ["_silent"];

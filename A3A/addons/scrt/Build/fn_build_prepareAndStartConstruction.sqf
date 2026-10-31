@@ -65,13 +65,13 @@ if (_playerIsEngineer) then {
 };
 
 //Check if an engineer can build.
-if (isNull construction_selectedEngineer && count _otherPlayerEngineers > 0) then {
+if (isNull construction_selectedEngineer && _otherPlayerEngineers isNotEqualTo []) then {
 	construction_selectedEngineer = _otherPlayerEngineers select 0;
 	_abortMessage = _abortMessage + localize "STR_A3A_reinf_build_engie_human_engie";
 };
 
 if (isNull construction_selectedEngineer) then {
-	if (count _aiEngineers > 0 && player != leader player) exitWith {
+	if (_aiEngineers isNotEqualTo [] && player != leader player) exitWith {
 		_abortMessage =	_abortMessage + localize "STR_A3A_reinf_build_only_sl";
 	};
 
@@ -121,7 +121,7 @@ switch(_constructionType) do {
         construction_buildTime = 25;
     };
     default { 
-        Error_1("Bad Construction Type - %1 ", _constructionType);
+        Error_1("Bad Construction Type - %1 ",_constructionType);
     };
 };
 

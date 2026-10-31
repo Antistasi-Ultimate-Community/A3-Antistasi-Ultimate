@@ -7,7 +7,7 @@ if (!isServer) exitWith { Error("Server-only function miscalled") };
 params ["_antenna"];
 
 if !(_antenna in antennasDead) exitWith { Error("Attempted to rebuild invalid radio tower") };
-Info_1("Repairing Antenna %1", str _antenna);
+Info_1("Repairing Antenna %1",str _antenna);
 
 antennasDead = antennasDead - [_antenna]; publicVariable "antennasDead";
 [_antenna] call A3A_fnc_repairRuinedBuilding;
@@ -16,15 +16,15 @@ antennas pushBack _antenna; publicVariable "antennas";
 {if ([antennas,_x] call BIS_fnc_nearestPosition == _antenna) then {[_x,true] spawn A3A_fnc_blackout}} forEach citiesX;
 
 private _mrkFinal = createMarker [format ["Ant%1", mapGridPosition _antenna], getPos _antenna];
-_mrkFinal setMarkerShape "ICON";
-_mrkFinal setMarkerType "A3AU_radiotower_mrk";
-_mrkFinal setMarkerColor "ColorWhite";
+_mrkFinal setMarkerShapeLocal "ICON";
+_mrkFinal setMarkerTypeLocal "A3AU_radiotower_mrk";
+_mrkFinal setMarkerColorLocal "ColorWhite";
 _mrkFinal setMarkerText (localize "STR_radiotower");
 mrkAntennas pushBack _mrkFinal;
 publicVariable "mrkAntennas";
 
 private _mrk = [mrkAntennas, _antenna] call BIS_fnc_nearestPosition;
-_mrk setMarkerType "A3AU_radiotower_mrk";
+_mrk setMarkerTypeLocal "A3AU_radiotower_mrk";
 _mrk setMarkerColor "ColorWhite";
 
 [_mrk] call A3A_fnc_mrkUpdate;

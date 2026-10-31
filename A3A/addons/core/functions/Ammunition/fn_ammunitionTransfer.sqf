@@ -24,13 +24,13 @@ _weaponsX = [];
 _weaponsItemsCargo = weaponsItemsCargo _originX;
 _backpcks = [];
 
-if (count backpackCargo _originX > 0) then {
+if (backpackCargo _originX isNotEqualTo []) then {
 	{
 		_backpcks pushBack (_x call A3A_fnc_basicBackpack);
 	} forEach backpackCargo _originX;
 };
 _containers = everyContainer _originX;
-if (count _containers > 0) then {
+if (_containers isNotEqualTo []) then {
 	for "_i" from 0 to (count _containers) - 1 do {
 		_subObject = magazineCargo ((_containers select _i) select 1);
 		if (!isNil "_subObject") then {_ammunition = _ammunition + _subObject} else {Error_1("Error from %1",magazineCargo (_containers select _i))};
@@ -41,7 +41,7 @@ if (count _containers > 0) then {
 };
 
 if (!isNil "_weaponsItemsCargo") then {
-	if (count _weaponsItemsCargo > 0) then {
+	if (_weaponsItemsCargo isNotEqualTo []) then {
 		{
 			_weaponsX pushBack ([(_x select 0)] call BIS_fnc_baseWeapon);
 			for "_i" from 1 to (count _x) - 1 do {
@@ -51,7 +51,7 @@ if (!isNil "_weaponsItemsCargo") then {
 				}
 				else {
 					if (_thingX isEqualType []) then {
-					if (count _thingX > 0) then {
+					if (_thingX isNotEqualTo []) then {
 						_ammunition pushBack (_thingX select 0);
 						};
 					};
@@ -77,7 +77,7 @@ _weaponsFinalCount = [];
 	};
 } forEach _weaponsX;
 
-if (count _weaponsFinal > 0) then {
+if (_weaponsFinal isNotEqualTo []) then {
 	for "_i" from 0 to (count _weaponsFinal) - 1 do {
 		_destinationX addWeaponCargoGlobal [_weaponsFinal select _i,_weaponsFinalCount select _i];
 	};
@@ -86,7 +86,7 @@ if (count _weaponsFinal > 0) then {
 _ammunitionFinal = [];
 _ammunitionFinalCount = [];
 if (isNil "_ammunition") then {
-	Error_4("Ammunition transmission error. I had this: %1 and these containers: %2, the originX was a %3 and the objectX is defined as: %4", magazineCargo _originX, everyContainer _originX,typeOf _originX,_originX);
+	Error_4("Ammunition transmission error. I had this: %1 and these containers: %2, the originX was a %3 and the objectX is defined as: %4",magazineCargo _originX,everyContainer _originX,typeOf _originX,_originX);
 } else {
 	{
 		_weaponX = _x;
@@ -98,7 +98,7 @@ if (isNil "_ammunition") then {
 };
 
 
-if (count _ammunitionFinal > 0) then {
+if (_ammunitionFinal isNotEqualTo []) then {
 	for "_i" from 0 to (count _ammunitionFinal) - 1 do {
 		_destinationX addMagazineCargoGlobal [_ammunitionFinal select _i,_ammunitionFinalCount select _i];
 	};
@@ -114,7 +114,7 @@ _itemsFinalCount = [];
 	};
 } forEach _items;
 
-if (count _itemsFinal > 0) then {
+if (_itemsFinal isNotEqualTo []) then {
 	for "_i" from 0 to (count _itemsFinal) - 1 do {
 		_destinationX addItemCargoGlobal [_itemsFinal select _i,_itemsFinalCount select _i];
 	};
@@ -130,7 +130,7 @@ _backpcksFinalCount = [];
 	};
 } forEach _backpcks;
 
-if (count _backpcksFinal > 0) then {
+if (_backpcksFinal isNotEqualTo []) then {
 	for "_i" from 0 to (count _backpcksFinal) - 1 do {
 		_destinationX addBackpackCargoGlobal [_backpcksFinal select _i,_backpcksFinalCount select _i];
 	};

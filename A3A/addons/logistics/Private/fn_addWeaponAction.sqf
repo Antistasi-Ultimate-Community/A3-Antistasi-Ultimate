@@ -24,14 +24,14 @@ if (isNull _cargo || isNull _vehicle) exitWith {
 };
 
 //action to get into static
-private _name = getText (configFile >> "CfgVehicles" >> typeOf _cargo >> "displayName");
+private _name = getText (configOf _cargo >> "displayName");
 private _text = format [(localize "STR_antistasi_actions_get_in_gunner"), _name];
 
 private _actionID = _vehicle addAction [
     _text,
     {
         params ["_vehicle", "_caller", "_id", "_static"];
-        if !(attachedTo _static isEqualTo _vehicle) exitWith {[_vehicle, _id] remoteExecCall ["removeAction", 0]};// incase of code break in unloading static
+        if (attachedTo _static isNotEqualTo _vehicle) exitWith {[_vehicle, _id] remoteExecCall ["removeAction", 0]};// incase of code break in unloading static
         if (!alive gunner _static) then {
             _caller moveInGunner _static;
         } else {[localize "STR_A3A_Logistics_header", localize "STR_A3A_Logistics_addWeaponAction_staticoccupied"] call A3A_fnc_customHint};

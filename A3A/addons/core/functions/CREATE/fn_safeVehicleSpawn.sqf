@@ -38,7 +38,7 @@ for "_i" from 1 to _attempts do {
 		_spawnPosition = _spawnPosition findEmptyPosition [0, (_radius / 2), _vehicleType];
 	};
 
-	if !(_spawnPosition isEqualTo []) then {
+	if (_spawnPosition isNotEqualTo []) then {
 		_willCollide = [_vehicle, _spawnPosition] call A3A_fnc_vehicleWillCollideAtPosition;
 		_finished = !_willCollide;
 	};

@@ -220,10 +220,10 @@ if (isNil "unlockedVehicleTypes") then {
 ["invaderRadioKeys", invaderRadioKeys] call A3A_fnc_setStatVariable;
 ["occupantsRadioKeys", occupantsRadioKeys] call A3A_fnc_setStatVariable;
 
-Info_1("Saving revealed zones: %1", _revealedZones);
-Info_1("Saving unlocked vehicle types: %1", unlockedVehicleTypes);
-Info_1("Saving invaders radio keys: %1", invaderRadioKeys);
-Info_1("Saving occupants radio keys: %1", occupantsRadioKeys);
+Info_1("Saving revealed zones: %1",_revealedZones);
+Info_1("Saving unlocked vehicle types: %1",unlockedVehicleTypes);
+Info_1("Saving invaders radio keys: %1",invaderRadioKeys);
+Info_1("Saving occupants radio keys: %1",occupantsRadioKeys);
 //Antistasi Ultimate variables ^
 
 private ["_hrBackground","_resourcesBackground","_veh","_typeVehX","_weaponsX","_ammunition","_items","_backpcks","_containers","_arrayEst","_posVeh","_dierVeh","_prestigeOPFOR","_prestigeBLUFOR","_city","_dataX","_markersX","_garrison","_arrayMrkMF","_positionOutpost","_typeMine","_posMine","_detected","_typesX","_exists","_friendX"];
@@ -241,7 +241,7 @@ _resourcesBackground = server getVariable "resourcesFIA";
                     private _assemblesTo = getText (configFile/"CfgVehicles"/_backpck/"assembleInfo"/"assembleTo");
                     if (_backpck isNotEqualTo "") then {_resourcesBackground = _resourcesBackground + ([_assemblesTo] call A3A_fnc_vehiclePrice)/2};
 				};
-				if (vehicle _friendX != _friendX) then {
+				if (!isNull objectParent _friendX) then {
 					_veh = vehicle _friendX;
 					_typeVehX = typeOf _veh;
 					if (not(_veh in staticsToSave)) then {
@@ -362,8 +362,8 @@ _prestigeBLUFOR = [];
 {
 	_city = _x;
 	_dataX = A3A_townData get _city;
-	_prestigeOPFOR = _prestigeOPFOR + [_dataX select 2];
-	_prestigeBLUFOR = _prestigeBLUFOR + [_dataX select 3];
+	_prestigeOPFOR pushBack (_dataX select 2);
+	_prestigeBLUFOR pushBack (_dataX select 3);
 } forEach citiesX;
 
 ["prestigeOPFOR", _prestigeOPFOR] call A3A_fnc_setStatVariable;
@@ -497,7 +497,7 @@ private _resDefInv = A3A_resourcesDefenceInv;
 {
 	private _veh = _x;
 	private _side = _veh getVariable ["ownerSide", teamPlayer];
-	private _vehCost = A3A_vehicleResourceCosts getOrDefault [typeof _veh, 0];
+	private _vehCost = A3A_vehicleResourceCosts getOrDefault [typeOf _veh, 0];
 	if (!alive _veh || (_side != Occupants && _side != Invaders) || _vehCost == 0) exitWith {};
 
 	private _vehDamage = damage _veh;
@@ -575,10 +575,10 @@ _fuelAmountleftArray = [];
 {
 	if (A3A_hasACE) then {
 		private _keyPairsFuel = [position _x, [_x] call ace_refuel_fnc_getFuel];
-		_fuelAmountleftArray pushback _keyPairsFuel;
+		_fuelAmountleftArray pushBack _keyPairsFuel;
 	} else {
 		private _keyPairsFuel = [position _x, getFuelCargo _x];
-		_fuelAmountleftArray pushback _keyPairsFuel;
+		_fuelAmountleftArray pushBack _keyPairsFuel;
 	};
 
 } forEach A3A_fuelStations;

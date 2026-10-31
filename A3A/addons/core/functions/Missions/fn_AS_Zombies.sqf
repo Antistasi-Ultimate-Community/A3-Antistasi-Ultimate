@@ -82,7 +82,7 @@ waitUntil {
 if (dateToNumber date > _dateLimitNum) then {
 	[_taskId, "AS", "FAILED", true] call A3A_fnc_taskSetState;
 
-    destroyedSites = destroyedSites + [_markerX];
+    destroyedSites pushBackUnique _markerX;
     publicVariable "destroyedSites";
 
     [_markerX] call A3A_fnc_destroyCity;

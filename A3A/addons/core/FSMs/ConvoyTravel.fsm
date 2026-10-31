@@ -59,7 +59,7 @@ class FSM
                          "(group driver _vehicle) setCombatMode ""BLUE"";" \n
                          "" \n
                          "private _cargoUnits = assignedCargo _vehicle;" \n
-                         "private _cargoGroup = if (count _cargoUnits > 0) then {group (_cargoUnits # 0)} else {grpNull};" \n
+                         "private _cargoGroup = if (_cargoUnits isNotEqualTo []) then {group (_cargoUnits # 0)} else {grpNull};" \n
                          "" \n
                          "private _destination = _route select (count _route - 1);" \n
                          "private _accuracy = 50;			// Slows down too much at 20" \n

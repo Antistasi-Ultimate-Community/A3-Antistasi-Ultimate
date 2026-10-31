@@ -1,3 +1,5 @@
+#ifndef A3A_SCRIPT_MACROS_HPP
+#define A3A_SCRIPT_MACROS_HPP
 #include "\x\cba\addons\main\script_macros_common.hpp"
 #include "script_macros_defines.hpp"
 #include "cba_events.hpp"
@@ -105,7 +107,9 @@ Author:
 #endif // QQUOTE
 
 // VARDEF used everywhere is CBA's RETDEF.
+#ifdef VARDEF
 #undef VARDEF
+#endif
 #define VARDEF(a,b) RETDEF(a,b)
 
 // More or less alias macros for PATHTOF, but used everywhere in Antistasi to
@@ -176,3 +180,4 @@ Author:
     UnseenKill/gor3Splatter
 ------------------------------------------- */
 #define MARKER_EXISTS(VAR1) (((VAR1) isEqualType "") && { (VAR1) in allMapMarkers })
+#endif

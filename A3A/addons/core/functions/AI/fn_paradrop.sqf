@@ -40,12 +40,12 @@ private _groupPilot = group driver _vehicle;
     _x disableAI "TARGET";
     _x disableAI "AUTOTARGET";
     _x setBehaviour "CARELESS";
-} foreach (units _groupPilot);
+} forEach (units _groupPilot);
 
 {
     _x setVariable ["jumpSave_Backpack", backpack _x];
     _x setVariable ["jumpSave_BackpackItems", backpackItems _x];
-    removebackpack _x;
+    removeBackpack _x;
 } forEach (units _groupJumper);
 
 private _targetPosition = if(_target isEqualType "") then {getMarkerPos _target} else {_target};
@@ -73,7 +73,7 @@ private _entryPos = _dropPos getPos [-100, _angle];
 private _exitPos = _dropPos getPos [300, _angle];
 { _x set [2, 500] } forEach [_entryPos, _exitPos, _originPosition];
 
-while {count waypoints _groupPilot > 0} do { deleteWaypoint [_groupPilot, 0] };
+while {waypoints _groupPilot isNotEqualTo []} do { deleteWaypoint [_groupPilot, 0] };
 
 private _wp = _groupPilot addWaypoint [_entryPos, 0];
 _wp setWaypointType "MOVE";
@@ -101,7 +101,7 @@ if !(alive _vehicle) exitWith {};
 
 if(currentWaypoint _groupPilot > 0) then
 {
-    ServerDebug_1("Drop pos %1 reached", _dropPos);
+    ServerDebug_1("Drop pos %1 reached",_dropPos);
     _vehicle setCollisionLight true;
 
     private _vehicleVelocity = velocity _vehicle;
@@ -112,7 +112,7 @@ if(currentWaypoint _groupPilot > 0) then
         //Move them into alternating left/right positions, so their parachutes are less likely to kill each other
         private _sideOffset = [1, -1] select (_forEachIndex % 2 == 0);
         private _pos = _vehicle modelToWorld [7 * _sideOffset, -20, -5];
-        _x setPosASL (AGLtoASL _pos);
+        _x setPosASL (AGLToASL _pos);
         _x setVelocity _troopVelocity;
 
         removeBackpack _x;
@@ -160,7 +160,7 @@ if(currentWaypoint _groupPilot > 0) then
     };
 };
 
-while {count waypoints _groupJumper > 0} do { deleteWaypoint [_groupJumper, 0] };
+while {waypoints _groupJumper isNotEqualTo []} do { deleteWaypoint [_groupJumper, 0] };
 
 _vehicle limitSpeed (2 * getNumber(configOf _vehicle >> "maxSpeed"));	// remove the limit
 

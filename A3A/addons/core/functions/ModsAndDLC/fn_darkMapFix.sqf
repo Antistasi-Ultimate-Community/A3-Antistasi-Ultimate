@@ -30,7 +30,7 @@ while {A3A_darkMapFixRunning} do {
         if (!isGameFocused) exitWith {};
         private _lightBrightness = getLighting select 1;
 
-        if (4 < _lightBrightness && _lightBrightness < 120) exitWith {
+        if (_lightBrightness > 4 && {_lightBrightness < 120}) exitWith {
             setApertureNew [4, 6, 9, 0.9];
         };
 

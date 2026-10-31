@@ -69,5 +69,5 @@ switch (lossCondition) do
         };
     };
 
-    default {Error_1("Loss condition was not recognized. Condition given: %1", lossCondition)};
+    default {Error_1("Loss condition was not recognized. Condition given: %1",lossCondition)};
 };

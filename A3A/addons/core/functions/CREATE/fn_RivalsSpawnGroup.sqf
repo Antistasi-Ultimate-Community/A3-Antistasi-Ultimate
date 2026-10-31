@@ -16,7 +16,7 @@ if (_countX < 4) then {
 };
 private _countRanks = (count _ranks - 1);
 
-Debug_2("Side: %1 spawning group composition: %2", _sideX, _typesX);
+Debug_2("Side: %1 spawning group composition: %2",_sideX,_typesX);
 
 for "_i" from 0 to (_countX - 1) do {
 	_unit = [_groupX, (_typesX select _i), _positionX, [], 0, "NONE"] call A3A_fnc_createUnit;

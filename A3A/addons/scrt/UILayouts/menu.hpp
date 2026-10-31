@@ -9,97 +9,97 @@ class garrisonRecruit: SimpleMenuBigger
 		class closeButton: ScrtRscCloseButton
 		{
 			idc = 103;
-			x = 0.674 * safezoneW + safezoneX;
-			y = 0.223941 * safezoneH + safezoneY;
-			w = 0.02 * safezoneW;
-			h = 0.02 * safezoneH;
+			x = QUOTE(0.674 * safezoneW + safezoneX);
+			y = QUOTE(0.223941 * safezoneH + safezoneY);
+			w = QUOTE(0.02 * safezoneW);
+			h = QUOTE(0.02 * safezoneH);
 			action = "closeDialog 0";
 		};
 
 		class title: SimpleTitle
 		{
 			idc = -1;
-			text = $STR_antistasi_dialogs_garrison_recruit_frame_text;
+			text = "$STR_antistasi_dialogs_garrison_recruit_frame_text";
 		};
 
 		class riflemanButton: SimpleButton
 		{
 			idc = 104;
-			text = $STR_antistasi_dialogs_garrison_spawn_rifleman_text;
-			x = 0.257187 * safezoneW + safezoneX;
-			y = 0.29 * safezoneH + safezoneY;
+			text = "$STR_antistasi_dialogs_garrison_spawn_rifleman_text";
+			x = QUOTE(0.257187 * safezoneW + safezoneX);
+			y = QUOTE(0.29 * safezoneH + safezoneY);
 			action = "[A3A_faction_reb get 'unitRifle'] spawn A3A_fnc_garrisonAdd";
 		};
 
 		class autoriflemanButton: SimpleButton
 		{
 			idc = 105;
-			text = $STR_antistasi_dialogs_garrison_spawn_autorifleman_text;
-			x = 0.257187 * safezoneW + safezoneX;
-			y = 0.388 * safezoneH + safezoneY;
+			text = "$STR_antistasi_dialogs_garrison_spawn_autorifleman_text";
+			x = QUOTE(0.257187 * safezoneW + safezoneX);
+			y = QUOTE(0.388 * safezoneH + safezoneY);
 			action = "[A3A_faction_reb get 'unitMG'] spawn A3A_fnc_garrisonAdd";
 		};
 
 		class medicButton: SimpleButton
 		{
 			idc = 126;
-			text = $STR_antistasi_dialogs_garrison_spawn_medic_text;
-			x = 0.257187 * safezoneW + safezoneX;
-			y = 0.486 * safezoneH + safezoneY;
+			text = "$STR_antistasi_dialogs_garrison_spawn_medic_text";
+			x = QUOTE(0.257187 * safezoneW + safezoneX);
+			y = QUOTE(0.486 * safezoneH + safezoneY);
 			action = "[A3A_faction_reb get 'unitMedic'] spawn A3A_fnc_garrisonAdd";
 		};
 
 		class squadleaderButton: SimpleButton
 		{
 			idc = 107;
-			text = $STR_antistasi_dialogs_garrison_spawn_squad_lead_text;
-			x = 0.257187 * safezoneW + safezoneX;
-			y = 0.584 * safezoneH + safezoneY;
+			text = "$STR_antistasi_dialogs_garrison_spawn_squad_lead_text";
+			x = QUOTE(0.257187 * safezoneW + safezoneX);
+			y = QUOTE(0.584 * safezoneH + safezoneY);
 			action = "[A3A_faction_reb get 'unitSL'] spawn A3A_fnc_garrisonAdd";
 		};
 
 		class aaButton: SimpleButton
 		{
 			idc = 112;
-			text = $STR_antistasi_dialogs_unit_recruit_aamissile_text;
-			x = 0.257187 * safezoneW + safezoneX;
-			y = 0.680 * safezoneH + safezoneY;
+			text = "$STR_antistasi_dialogs_unit_recruit_aamissile_text";
+			x = QUOTE(0.257187 * safezoneW + safezoneX);
+			y = QUOTE(0.680 * safezoneH + safezoneY);
 			action = "[A3A_faction_reb get 'unitAA'] spawn A3A_fnc_garrisonAdd";
 		};
 
 		class latButton: SimpleButton
 		{
 			idc = 108;
-			text = $STR_antistasi_dialogs_garrison_spawn_at_text;
-			x = 0.477 * safezoneW + safezoneX;
-			y = 0.29 * safezoneH + safezoneY;
+			text = "$STR_antistasi_dialogs_garrison_spawn_at_text";
+			x = QUOTE(0.477 * safezoneW + safezoneX);
+			y = QUOTE(0.29 * safezoneH + safezoneY);
 			action = "[A3A_faction_reb get 'unitLAT'] spawn A3A_fnc_garrisonAdd";
 		};
 
 		class grenadierButton: SimpleButton
 		{
 			idc = 109;
-			text = $STR_antistasi_dialogs_garrison_spawn_grenadier_text;
-			x = 0.477 * safezoneW + safezoneX;
-			y = 0.388 * safezoneH + safezoneY;
+			text = "$STR_antistasi_dialogs_garrison_spawn_grenadier_text";
+			x = QUOTE(0.477 * safezoneW + safezoneX);
+			y = QUOTE(0.388 * safezoneH + safezoneY);
 			action = "[A3A_faction_reb get 'unitGL'] spawn A3A_fnc_garrisonAdd";
 		};
 
 		class sniperButton: SimpleButton
 		{
 			idc = 110;
-			text = $STR_antistasi_dialogs_garrison_spawn_marksman_text;
-			x = 0.477 * safezoneW + safezoneX;
-			y = 0.486 * safezoneH + safezoneY;
+			text = "$STR_antistasi_dialogs_garrison_spawn_marksman_text";
+			x = QUOTE(0.477 * safezoneW + safezoneX);
+			y = QUOTE(0.486 * safezoneH + safezoneY);
 			action = "[A3A_faction_reb get 'unitSniper'] spawn A3A_fnc_garrisonAdd";
 		};
 		
 		class atButton: SimpleButton
 		{
 			idc = 111;
-			text = $STR_antistasi_dialogs_unit_recruit_atmissile_text;
-			x = 0.477 * safezoneW + safezoneX;
-			y = 0.584 * safezoneH + safezoneY;
+			text = "$STR_antistasi_dialogs_unit_recruit_atmissile_text";
+			x = QUOTE(0.477 * safezoneW + safezoneX);
+			y = QUOTE(0.584 * safezoneH + safezoneY);
 			action = "[A3A_faction_reb get 'unitAT'] spawn A3A_fnc_garrisonAdd";
 		};
 	};
@@ -114,106 +114,106 @@ class unitRecruit: SimpleMenuBigger
 		class closeButton: ScrtRscCloseButton
 		{
 			idc = -1;
-			x = 0.674 * safezoneW + safezoneX;
-			y = 0.223941 * safezoneH + safezoneY;
-			w = 0.02 * safezoneW;
-			h = 0.02 * safezoneH;
+			x = QUOTE(0.674 * safezoneW + safezoneX);
+			y = QUOTE(0.223941 * safezoneH + safezoneY);
+			w = QUOTE(0.02 * safezoneW);
+			h = QUOTE(0.02 * safezoneH);
 			action = "closeDialog 0";
 		};
 
 		class title: SimpleTitle
 		{
 			idc = -1;
-			text = $STR_antistasi_dialogs_unit_recruit_frame_text;
+			text = "$STR_antistasi_dialogs_unit_recruit_frame_text";
 		};
 
 		class riflemanButton: SimpleButton
 		{
 			idc = 104;
-			text = $STR_antistasi_dialogs_unit_recruit_rifleman_text;
-			x = 0.257187 * safezoneW + safezoneX;
-			y = 0.29 * safezoneH + safezoneY;
+			text = "$STR_antistasi_dialogs_unit_recruit_rifleman_text";
+			x = QUOTE(0.257187 * safezoneW + safezoneX);
+			y = QUOTE(0.29 * safezoneH + safezoneY);
 			action = "[A3A_faction_reb get 'unitRifle'] spawn A3A_fnc_reinfPlayer";
 		};
 
 		class autoriflemanButton: SimpleButton
 		{
 			idc = 105;
-			text = $STR_antistasi_dialogs_unit_recruit_mg_text;
-			x = 0.257187 * safezoneW + safezoneX;
-			y = 0.388 * safezoneH + safezoneY;
+			text = "$STR_antistasi_dialogs_unit_recruit_mg_text";
+			x = QUOTE(0.257187 * safezoneW + safezoneX);
+			y = QUOTE(0.388 * safezoneH + safezoneY);
 			action = "[A3A_faction_reb get 'unitMG'] spawn A3A_fnc_reinfPlayer";
 		};
 
 		class medicButton: SimpleButton
 		{
 			idc = 126;
-			text = $STR_antistasi_dialogs_unit_recruit_medic_text;
-			x = 0.257187 * safezoneW + safezoneX;
-			y = 0.486 * safezoneH + safezoneY;
+			text = "$STR_antistasi_dialogs_unit_recruit_medic_text";
+			x = QUOTE(0.257187 * safezoneW + safezoneX);
+			y = QUOTE(0.486 * safezoneH + safezoneY);
 			action = "[A3A_faction_reb get 'unitMedic'] spawn A3A_fnc_reinfPlayer";
 		};
 
 		class engineerButton: SimpleButton
 		{
 			idc = 107;
-			text = $STR_antistasi_dialogs_unit_recruit_engineer_text;
-			x = 0.257187 * safezoneW + safezoneX;
-			y = 0.584 * safezoneH + safezoneY;
+			text = "$STR_antistasi_dialogs_unit_recruit_engineer_text";
+			x = QUOTE(0.257187 * safezoneW + safezoneX);
+			y = QUOTE(0.584 * safezoneH + safezoneY);
 			action = "[A3A_faction_reb get 'unitEng'] spawn A3A_fnc_reinfPlayer";
 		};
 
 		class atButton: SimpleButton
 		{
 			idc = 112;
-			text = $STR_antistasi_dialogs_unit_recruit_atmissile_text;
-			x = 0.257187 * safezoneW + safezoneX;
-			y = 0.680 * safezoneH + safezoneY;
+			text = "$STR_antistasi_dialogs_unit_recruit_atmissile_text";
+			x = QUOTE(0.257187 * safezoneW + safezoneX);
+			y = QUOTE(0.680 * safezoneH + safezoneY);
 			action = "[A3A_faction_reb get 'unitAT'] spawn A3A_fnc_reinfPlayer";
 		};
 		
 		class explButton: SimpleButton
 		{
 			idc = 108;
-			text = $STR_antistasi_dialogs_unit_recruit_explosive_text;
-			x = 0.477 * safezoneW + safezoneX;
-			y = 0.29 * safezoneH + safezoneY;
+			text = "$STR_antistasi_dialogs_unit_recruit_explosive_text";
+			x = QUOTE(0.477 * safezoneW + safezoneX);
+			y = QUOTE(0.29 * safezoneH + safezoneY);
 			action = "[A3A_faction_reb get 'unitExp'] spawn A3A_fnc_reinfPlayer";
 		};
 
 		class grenadierButton: SimpleButton
 		{
 			idc = 109;
-			text = $STR_antistasi_dialogs_unit_recruit_grenadier_text;
-			x = 0.477 * safezoneW + safezoneX;
-			y = 0.388 * safezoneH + safezoneY;
+			text = "$STR_antistasi_dialogs_unit_recruit_grenadier_text";
+			x = QUOTE(0.477 * safezoneW + safezoneX);
+			y = QUOTE(0.388 * safezoneH + safezoneY);
 			action = "[A3A_faction_reb get 'unitGL'] spawn A3A_fnc_reinfPlayer";
 		};
 
 		class sniperButton: SimpleButton
 		{
 			idc = 110;
-			text = $STR_antistasi_dialogs_unit_recruit_marksman_text;
-			x = 0.477 * safezoneW + safezoneX;
-			y = 0.486 * safezoneH + safezoneY;
+			text = "$STR_antistasi_dialogs_unit_recruit_marksman_text";
+			x = QUOTE(0.477 * safezoneW + safezoneX);
+			y = QUOTE(0.486 * safezoneH + safezoneY);
 			action = "[A3A_faction_reb get 'unitSniper'] spawn A3A_fnc_reinfPlayer";
 		};
 
 		class latButton: SimpleButton
 		{
 			idc = 111;
-			text = $STR_antistasi_dialogs_unit_recruit_antitank_text;
-			x = 0.477 * safezoneW + safezoneX;
-			y = 0.584 * safezoneH + safezoneY;
+			text = "$STR_antistasi_dialogs_unit_recruit_antitank_text";
+			x = QUOTE(0.477 * safezoneW + safezoneX);
+			y = QUOTE(0.584 * safezoneH + safezoneY);
 			action = "[A3A_faction_reb get 'unitLAT'] spawn A3A_fnc_reinfPlayer";
 		};
 
 		class aaButton: SimpleButton
 		{
 			idc = 113;
-			text = $STR_antistasi_dialogs_unit_recruit_aamissile_text;
-			x = 0.477 * safezoneW + safezoneX;
-			y = 0.680 * safezoneH + safezoneY;
+			text = "$STR_antistasi_dialogs_unit_recruit_aamissile_text";
+			x = QUOTE(0.477 * safezoneW + safezoneX);
+			y = QUOTE(0.680 * safezoneH + safezoneY);
 			action = "[A3A_faction_reb get 'unitAA'] spawn A3A_fnc_reinfPlayer";
 		};
 	};
@@ -228,88 +228,88 @@ class missionMenu: SimpleMenuBig
 		class closeButton: ScrtRscCloseButton
 		{
 			idc = -1;
-			x = 0.674 * safezoneW + safezoneX;
-			y = 0.223941 * safezoneH + safezoneY;
-			w = 0.02 * safezoneW;
-			h = 0.02 * safezoneH;
+			x = QUOTE(0.674 * safezoneW + safezoneX);
+			y = QUOTE(0.223941 * safezoneH + safezoneY);
+			w = QUOTE(0.02 * safezoneW);
+			h = QUOTE(0.02 * safezoneH);
 			action = "closeDialog 0;";
 		};
 
 		class title: SimpleTitle
 		{
 			idc = -1;
-			text = $STR_antistasi_dialogs_available_missions_frame_text;
+			text = "$STR_antistasi_dialogs_available_missions_frame_text";
 		};
 
 		class asButton: SimpleButton
 		{
 			idc = -1;
-			text = $STR_antistasi_dialogs_assassination_text;
-			x = 0.257187 * safezoneW + safezoneX;
-			y = 0.29 * safezoneH + safezoneY;
+			text = "$STR_antistasi_dialogs_assassination_text";
+			x = QUOTE(0.257187 * safezoneW + safezoneX);
+			y = QUOTE(0.29 * safezoneH + safezoneY);
 			action = "closeDialog 0;if ((player call A3A_fnc_isMember) or (!(isPlayer theBoss))) then {[""AS"", clientOwner] remoteExec [""A3A_fnc_missionRequest"", 2]} else {[localize 'STR_mission_request_header', localize 'STR_generic_commander_only'] call SCRT_fnc_misc_deniedHint;};";
 		};
 
 		class convoyButton: SimpleButton
 		{
 			idc = -1;
-			text = $STR_antistasi_dialogs_convoy_text;
-			x = 0.477 * safezoneW + safezoneX;
-			y = 0.29 * safezoneH + safezoneY;
+			text = "$STR_antistasi_dialogs_convoy_text";
+			x = QUOTE(0.477 * safezoneW + safezoneX);
+			y = QUOTE(0.29 * safezoneH + safezoneY);
 			action = "closeDialog 0;if ((player call A3A_fnc_isMember) or (!(isPlayer theBoss))) then {[""CONVOY"", clientOwner] remoteExec [""A3A_fnc_missionRequest"", 2]} else {[localize 'STR_mission_request_header', localize 'STR_generic_commander_only'] call SCRT_fnc_misc_deniedHint;};";
 		};
 
 		class destroyButton: SimpleButton
 		{
 			idc = -1;
-			text = $STR_antistasi_dialogs_destroy_text;
-			x = 0.257187 * safezoneW + safezoneX;
-			y = 0.388 * safezoneH + safezoneY;
+			text = "$STR_antistasi_dialogs_destroy_text";
+			x = QUOTE(0.257187 * safezoneW + safezoneX);
+			y = QUOTE(0.388 * safezoneH + safezoneY);
 			action = "closeDialog 0;if ((player call A3A_fnc_isMember) or (!(isPlayer theBoss))) then {[""DES"", clientOwner] remoteExec [""A3A_fnc_missionRequest"", 2]} else {[localize 'STR_mission_request_header', localize 'STR_generic_commander_only'] call SCRT_fnc_misc_deniedHint;};";
 		};
 
 		class logButton: SimpleButton
 		{
 			idc = -1;
-			text = $STR_antistasi_dialogs_logistics_text;
-			x = 0.477 * safezoneW + safezoneX;
-			y = 0.388 * safezoneH + safezoneY;
+			text = "$STR_antistasi_dialogs_logistics_text";
+			x = QUOTE(0.477 * safezoneW + safezoneX);
+			y = QUOTE(0.388 * safezoneH + safezoneY);
 			action = "closeDialog 0;if ((player call A3A_fnc_isMember) or (!(isPlayer theBoss))) then {[""LOG"", clientOwner] remoteExec [""A3A_fnc_missionRequest"", 2]} else {[localize 'STR_mission_request_header', localize 'STR_generic_commander_only'] call A3A_fnc_customHint;};";
 		};
 
 		class resButton: SimpleButton
 		{
 			idc = -1;
-			text = $STR_antistasi_dialogs_rescue_text;
-			x = 0.257187 * safezoneW + safezoneX;
-			y = 0.486 * safezoneH + safezoneY;
+			text = "$STR_antistasi_dialogs_rescue_text";
+			x = QUOTE(0.257187 * safezoneW + safezoneX);
+			y = QUOTE(0.486 * safezoneH + safezoneY);
 			action = "closeDialog 0;if ((player call A3A_fnc_isMember) or (!(isPlayer theBoss))) then {[""RES"", clientOwner] remoteExec [""A3A_fnc_missionRequest"", 2]} else {[localize 'STR_mission_request_header', localize 'STR_generic_commander_only'] call A3A_fnc_customHint;};";
 		};
 
 		class conButton: SimpleButton
 		{
 			idc = -1;
-			text = $STR_antistasi_dialogs_conquest_text;
-			x = 0.477 * safezoneW + safezoneX;
-			y = 0.486 * safezoneH + safezoneY;
+			text = "$STR_antistasi_dialogs_conquest_text";
+			x = QUOTE(0.477 * safezoneW + safezoneX);
+			y = QUOTE(0.486 * safezoneH + safezoneY);
 			action = "closeDialog 0;if ((player call A3A_fnc_isMember) or (!(isPlayer theBoss))) then {[""CON"", clientOwner] remoteExec [""A3A_fnc_missionRequest"", 2]} else {[localize 'STR_mission_request_header', localize 'STR_generic_commander_only'] call A3A_fnc_customHint;};";
 		};
 
 		class suppButton: SimpleButton
 		{
 			idc = -1;
-			text = $STR_antistasi_dialogs_supply_text;
-			x = 0.257187 * safezoneW + safezoneX;
-			y = 0.584 * safezoneH + safezoneY;
+			text = "$STR_antistasi_dialogs_supply_text";
+			x = QUOTE(0.257187 * safezoneW + safezoneX);
+			y = QUOTE(0.584 * safezoneH + safezoneY);
 			action = "closeDialog 0;if ((player call A3A_fnc_isMember) or (!(isPlayer theBoss))) then {[""SUPP"", clientOwner] remoteExec [""A3A_fnc_missionRequest"", 2]} else {[localize 'STR_mission_request_header', localize 'STR_generic_commander_only'] call A3A_fnc_customHint;};";
 		};
 
 		class randomButton: SimpleButton
 		{
 			idc = -1;
-			text = $STR_antistasi_dialogs_random_text;
-			x = 0.477 * safezoneW + safezoneX;
-			y = 0.584 * safezoneH + safezoneY;
+			text = "$STR_antistasi_dialogs_random_text";
+			x = QUOTE(0.477 * safezoneW + safezoneX);
+			y = QUOTE(0.584 * safezoneH + safezoneY);
 			action = "closeDialog 0;if ((player call A3A_fnc_isMember) or (!(isPlayer theBoss))) then {[""RAN"", clientOwner] remoteExec [""A3A_fnc_missionRequest"", 2]} else {[localize 'STR_mission_request_header', localize 'STR_generic_commander_only'] call A3A_fnc_customHint;};";
 		};
 	};
@@ -324,76 +324,76 @@ class radioComm: SimpleMenuBigger
 		class closeButton: ScrtRscCloseButton
 		{
 			idc = -1;
-			x = 0.674 * safezoneW + safezoneX;
-			y = 0.223941 * safezoneH + safezoneY;
-			w = 0.02 * safezoneW;
-			h = 0.02 * safezoneH;
+			x = QUOTE(0.674 * safezoneW + safezoneX);
+			y = QUOTE(0.223941 * safezoneH + safezoneY);
+			w = QUOTE(0.02 * safezoneW);
+			h = QUOTE(0.02 * safezoneH);
 			action = "closeDialog 0";
 		};
 
 		class title: SimpleTitle
 		{
 			idc = -1;
-			text = $STR_antistasi_dialogs_battle_options_frame_text;
+			text = "$STR_antistasi_dialogs_battle_options_frame_text";
 		};
 
 		class l1Button: SimpleButton
 		{
 			idc = -1;
-			text = $STR_antistasi_journal_entry_header_Features_11;
-			x = 0.257187 * safezoneW + safezoneX;
-			y = 0.29 * safezoneH + safezoneY;
-			tooltip = $STR_antistasi_dialogs_fast_travel_tooltip;
+			text = "$STR_antistasi_journal_entry_header_Features_11";
+			x = QUOTE(0.257187 * safezoneW + safezoneX);
+			y = QUOTE(0.29 * safezoneH + safezoneY);
+			tooltip = "$STR_antistasi_dialogs_fast_travel_tooltip";
 			action = "closeDialog 0; [] spawn A3A_fnc_fastTravelRadio;";
 		};
 
 		class l2Button: SimpleButton
 		{
 			idc = 105;
-			text = $STR_antistasi_dialogs_undercover_title;
-			x = 0.257187 * safezoneW + safezoneX;
-			y = 0.388 * safezoneH + safezoneY;
-			tooltip = $STR_antistasi_dialogs_undercover_tooltip;
+			text = "$STR_antistasi_dialogs_undercover_title";
+			x = QUOTE(0.257187 * safezoneW + safezoneX);
+			y = QUOTE(0.388 * safezoneH + safezoneY);
+			tooltip = "$STR_antistasi_dialogs_undercover_tooltip";
 			action = "closeDialog 0; [] spawn A3A_fnc_goUndercover";
 		};
 
 		class l3Button: SimpleButton
 		{
 			idc = -1;
-			text = $STR_antistasi_dialogs_put_garage_title;
-			x = 0.257187 * safezoneW + safezoneX;
-			y = 0.486 * safezoneH + safezoneY;
-			tooltip = $STR_antistasi_dialogs_put_garage_tooltip;
+			text = "$STR_antistasi_dialogs_put_garage_title";
+			x = QUOTE(0.257187 * safezoneW + safezoneX);
+			y = QUOTE(0.486 * safezoneH + safezoneY);
+			tooltip = "$STR_antistasi_dialogs_put_garage_tooltip";
 			action = "closeDialog 0; _target = cursorObject; if (isNull _target) then { _target = cursorTarget; }; [_target, clientOwner, call HR_GRG_dLock, player] remoteExec ['HR_GRG_fnc_addVehicle', 2];";
 		};
 
 		class l4Button: SimpleButton
 		{
 			idc = -1;
-			text = $STR_antistasi_dialogs_ai_management_title;
-			x = 0.257187 * safezoneW + safezoneX;
-			y = 0.584 * safezoneH + safezoneY;
-			tooltip = $STR_antistasi_dialogs_ai_management_tooltip;
+			text = "$STR_antistasi_dialogs_ai_management_title";
+			x = QUOTE(0.257187 * safezoneW + safezoneX);
+			y = QUOTE(0.584 * safezoneH + safezoneY);
+			tooltip = "$STR_antistasi_dialogs_ai_management_tooltip";
 			action = "if (player == leader group player) then {closeDialog 0;createDialog ""aiManagement""} else {[localize 'STR_antistasi_dialogs_ai_management_title', localize 'STR_generic_group_leader_only'] call A3A_fnc_customHint;};";
 		};
 
 		class l5Button: SimpleButton
 		{
 			idc = -1;
-			text = $STR_antistasi_dialogs_flip_vehicle_title;
-			x = 0.257187 * safezoneW + safezoneX;
-			y = 0.682 * safezoneH + safezoneY;
-			tooltip = $STR_antistasi_dialogs_flip_vehicle_tooltip;
+			text = "$STR_antistasi_dialogs_flip_vehicle_title";
+			x = QUOTE(0.257187 * safezoneW + safezoneX);
+			y = QUOTE(0.682 * safezoneH + safezoneY);
+			tooltip = "$STR_antistasi_dialogs_flip_vehicle_tooltip";
 			action = "closeDialog 0; [] call SCRT_fnc_common_unflipVehicle";
 		};
 		
 		class r1Button: SimpleButton
 		{
 			idc = -1;
-			text = $STR_antistasi_dialogs_players_money_title;
-			x = 0.477 * safezoneW + safezoneX;
-			y = 0.29 * safezoneH + safezoneY;
-			tooltip = $STR_antistasi_dialogs_players_money_tooltip;
+			text = "$STR_antistasi_dialogs_players_money_title";
+			x = QUOTE(0.477 * safezoneW + safezoneX);
+			y = QUOTE(0.29 * safezoneH + safezoneY);
+			tooltip = "$STR_antistasi_dialogs_players_money_tooltip";
 			action = "closeDialog 0; createDialog 'playerMoney';";
 		};
 
@@ -410,30 +410,30 @@ class radioComm: SimpleMenuBigger
 		class r3Button: SimpleButton
 		{
 			idc = -1;
-			text = $STR_antistasi_dialogs_unlock_vehicle_title;
-			x = 0.477 * safezoneW + safezoneX;
-			y = 0.486 * safezoneH + safezoneY;
-			tooltip = $STR_antistasi_dialogs_unlock_vehicle_tooltip;
+			text = "$STR_antistasi_dialogs_unlock_vehicle_title";
+			x = QUOTE(0.477 * safezoneW + safezoneX);
+			y = QUOTE(0.486 * safezoneH + safezoneY);
+			tooltip = "$STR_antistasi_dialogs_unlock_vehicle_tooltip";
 			action = "closeDialog 0;[] call A3A_fnc_unlockVehicle";
 		};
 
 		class r4Button: SimpleButton
 		{
 			idc = -1;
-			text = $STR_antistasi_actions_commander_text;
-			x = 0.477 * safezoneW + safezoneX;
-			y = 0.584 * safezoneH + safezoneY;
-			tooltip = $STR_antistasi_dialogs_commander_tooltip;
+			text = "$STR_antistasi_actions_commander_text";
+			x = QUOTE(0.477 * safezoneW + safezoneX);
+			y = QUOTE(0.584 * safezoneH + safezoneY);
+			tooltip = "$STR_antistasi_dialogs_commander_tooltip";
 			action = "closeDialog 0; createDialog 'commanderComm';";
 		};
 
 		class r5Button: SimpleButton
 		{
 			idc = -1;
-			text = $STR_antistasi_dialogs_move_veh_title;
-			x = 0.477 * safezoneW + safezoneX	;
-			y = 0.682 * safezoneH + safezoneY;
-			tooltip = $STR_antistasi_dialogs_move_veh_tooltip;
+			text = "$STR_antistasi_dialogs_move_veh_title";
+			x = QUOTE(0.477 * safezoneW + safezoneX);
+			y = QUOTE(0.682 * safezoneH + safezoneY);
+			tooltip = "$STR_antistasi_dialogs_move_veh_tooltip";
 			action = "closeDialog 0; [cursorObject] spawn SCRT_fnc_common_moveStatic;";
 		};
 	};
@@ -448,15 +448,15 @@ class vehQuery: SimpleMenuSmall
 		class title: SimpleTitle
 		{
 			idc = -1;
-			text = $STR_antistasi_dialogs_add_vehicle_to_squad_frame_text;
+			text = "$STR_antistasi_dialogs_add_vehicle_to_squad_frame_text";
 		};
 
 		class yesButton: SimpleButton
 		{
 			idc = 104;
-			text = $STR_antistasi_dialogs_generic_button_yes_text;
-			x = 0.257187 * safezoneW + safezoneX;
-			y = 0.304 * safezoneH + safezoneY;
+			text = "$STR_antistasi_dialogs_generic_button_yes_text";
+			x = QUOTE(0.257187 * safezoneW + safezoneX);
+			y = QUOTE(0.304 * safezoneH + safezoneY);
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.376])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.125])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.043])",0.9};
 			action = "closeDialog 0; vehQuery = true;";
 		};
@@ -464,9 +464,9 @@ class vehQuery: SimpleMenuSmall
 		class noButton: SimpleButton
 		{
 			idc = 105;
-			text = $STR_antistasi_dialogs_generic_button_no_text;
-			x = 0.477 * safezoneW + safezoneX;
-			y = 0.304 * safezoneH + safezoneY;
+			text = "$STR_antistasi_dialogs_generic_button_no_text";
+			x = QUOTE(0.477 * safezoneW + safezoneX);
+			y = QUOTE(0.304 * safezoneH + safezoneY);
 			action = "closeDialog 0; vehQuery = nil;";
 		};
 	};
@@ -483,15 +483,15 @@ class constructionRemovalConfirmation: SimpleMenuSmall
 		class title: SimpleTitle
 		{
 			idc = 1244;
-			text = $STR_antistasi_dialogs_remove_construction_confirmation;
+			text = "$STR_antistasi_dialogs_remove_construction_confirmation";
 		};
 
 		class yesButton: SimpleButton
 		{
 			idc = 104;
-			text = $STR_antistasi_dialogs_generic_button_yes_text;
-			x = 0.257187 * safezoneW + safezoneX;
-			y = 0.304 * safezoneH + safezoneY;
+			text = "$STR_antistasi_dialogs_generic_button_yes_text";
+			x = QUOTE(0.257187 * safezoneW + safezoneX);
+			y = QUOTE(0.304 * safezoneH + safezoneY);
 			colorBackground[] = {"0.376","0.125","0.043",0.9};
 			action = "closeDialog 0; removeConstruction = true;";
 		};
@@ -499,9 +499,9 @@ class constructionRemovalConfirmation: SimpleMenuSmall
 		class noButton: SimpleButton
 		{
 			idc = 105;
-			text = $STR_antistasi_dialogs_generic_button_no_text;
-			x = 0.477 * safezoneW + safezoneX;
-			y = 0.304 * safezoneH + safezoneY;
+			text = "$STR_antistasi_dialogs_generic_button_no_text";
+			x = QUOTE(0.477 * safezoneW + safezoneX);
+			y = QUOTE(0.304 * safezoneH + safezoneY);
 			action = "closeDialog 0; removeConstruction = nil;";
 		};
 	};
@@ -516,76 +516,76 @@ class aiManagement: SimpleMenuBigger
 		class closeButton: ScrtRscCloseButton
 		{
 			idc = 103;
-			x = 0.674 * safezoneW + safezoneX;
-			y = 0.223941 * safezoneH + safezoneY;
-			w = 0.02 * safezoneW;
-			h = 0.02 * safezoneH;
+			x = QUOTE(0.674 * safezoneW + safezoneX);
+			y = QUOTE(0.223941 * safezoneH + safezoneY);
+			w = QUOTE(0.02 * safezoneW);
+			h = QUOTE(0.02 * safezoneH);
 			action = "closeDialog 0; createDialog 'radioComm';";
 		};
 
 		class title: SimpleTitle
 		{
 			idc = -1;
-			text = $STR_antistasi_dialogs_ai_management_frame_text;
+			text = "$STR_antistasi_dialogs_ai_management_frame_text";
 		};
 
 		class l1Button: SimpleButton
 		{
 			idc = -1;
-			text = $STR_antistasi_dialogs_ai_control_title;
-			x = 0.257187 * safezoneW + safezoneX;
-			y = 0.29 * safezoneH + safezoneY;
-			tooltip = $STR_antistasi_dialogs_ai_control_tooltip;
+			text = "$STR_antistasi_dialogs_ai_control_title";
+			x = QUOTE(0.257187 * safezoneW + safezoneX);
+			y = QUOTE(0.29 * safezoneH + safezoneY);
+			tooltip = "$STR_antistasi_dialogs_ai_control_tooltip";
 			action = "closeDialog 0; if ((count groupselectedUnits player > 0) and (count hcSelected player > 0)) exitWith {[localize 'STR_antistasi_dialogs_ai_control_title', localize 'STR_generic_ai_control_one_only'] call A3A_fnc_customHint;}; if (count groupselectedUnits player == 1) then {nul = [groupselectedUnits player] spawn A3A_fnc_controlunit}; if (count hcSelected player == 1) then {nul = [hcSelected player] spawn A3A_fnc_controlHCsquad;};";
 		};
 
 		class l2Button: SimpleButton
 		{
 			idc = -1;
-			text = $STR_antistasi_dialogs_high_command_transfer_title;
-			x = 0.257187 * safezoneW + safezoneX;
-			y = 0.388 * safezoneH + safezoneY;
-			tooltip = $STR_antistasi_dialogs_arty_high_command_transfer_tooltip;
+			text = "$STR_antistasi_dialogs_high_command_transfer_title";
+			x = QUOTE(0.257187 * safezoneW + safezoneX);
+			y = QUOTE(0.388 * safezoneH + safezoneY);
+			tooltip = "$STR_antistasi_dialogs_arty_high_command_transfer_tooltip";
 			action = "closeDialog 0;[] call SCRT_fnc_common_hcTransfer";
 		};
 
 		class l3Button: SimpleButton
 		{
 			idc = -1;
-			text = $STR_antistasi_dialogs_garrison_units_title;
-			x = 0.257187 * safezoneW + safezoneX;
-			y = 0.486 * safezoneH + safezoneY;
-			tooltip = $STR_antistasi_dialogs_garrison_units_tooltip;
+			text = "$STR_antistasi_dialogs_garrison_units_title";
+			x = QUOTE(0.257187 * safezoneW + safezoneX);
+			y = QUOTE(0.486 * safezoneH + safezoneY);
+			tooltip = "$STR_antistasi_dialogs_garrison_units_tooltip";
 			action = "closeDialog 0;if (count groupselectedUnits player > 0) then {nul = [groupselectedUnits player] spawn A3A_fnc_addToGarrison} else {if (count (hcSelected player) > 0) then {nul = [hcSelected player] spawn A3A_fnc_addToGarrison}}; if ((count groupselectedUnits player == 0) and (count hcSelected player == 0)) then {[localize 'STR_garrison_garrison_header', localize 'STR_generic_no_units_squads_selected'] call A3A_fnc_customHint;}";
 		};
 
 		class l4Button: SimpleButton
 		{
 			idc = -1;
-			text = $STR_antistasi_dialogs_dismiss_title;
-			x = 0.257187 * safezoneW + safezoneX;
-			y = 0.584 * safezoneH + safezoneY;
-			tooltip = $STR_antistasi_dialogs_dismiss_tooltip;
+			text = "$STR_antistasi_dialogs_dismiss_title";
+			x = QUOTE(0.257187 * safezoneW + safezoneX);
+			y = QUOTE(0.584 * safezoneH + safezoneY);
+			tooltip = "$STR_antistasi_dialogs_dismiss_tooltip";
 			action = "closeDialog 0;if (count groupselectedUnits player > 0) then {nul = [groupselectedUnits player] spawn A3A_fnc_dismissPlayerGroup} else {if (count (hcSelected player) > 0) then {nul = [hcSelected player] spawn A3A_fnc_dismissSquad}}; if ((count groupselectedUnits player == 0) and (count hcSelected player == 0)) then {[localize 'STR_generic_dismiss_squads', localize 'STR_generic_no_units_squads_selected'] call A3A_fnc_customHint;}";
 		};
 
 		class l5Button: SimpleButton
 		{
 			idc = -1;
-			text = $STR_antistasi_dialogs_arty_support_title;
-			x = 0.257187 * safezoneW + safezoneX;
-			y = 0.682 * safezoneH + safezoneY;
-			tooltip = $STR_antistasi_dialogs_arty_support_tooltip;
+			text = "$STR_antistasi_dialogs_arty_support_title";
+			x = QUOTE(0.257187 * safezoneW + safezoneX);
+			y = QUOTE(0.682 * safezoneH + safezoneY);
+			tooltip = "$STR_antistasi_dialogs_arty_support_tooltip";
 			action = "closeDialog 0; [] spawn A3A_fnc_artySupport;";
 		};
 		
 		class r1Button: SimpleButton
 		{
 			idc = -1;
-			text = $STR_antistasi_dialogs_auto_rearm_title;
-			x = 0.477 * safezoneW + safezoneX;
-			y = 0.29 * safezoneH + safezoneY;
-			tooltip = $STR_antistasi_dialogs_auto_rearm_tooltip;
+			text = "$STR_antistasi_dialogs_auto_rearm_title";
+			x = QUOTE(0.477 * safezoneW + safezoneX);
+			y = QUOTE(0.29 * safezoneH + safezoneY);
+			tooltip = "$STR_antistasi_dialogs_auto_rearm_tooltip";
 			action = "closeDialog 0; if (count groupselectedUnits player == 0) then {nul = (units group player) spawn A3A_fnc_rearmCall} else {nul = (groupselectedUnits player) spawn A3A_fnc_rearmCall};";
 		};
 
@@ -593,29 +593,29 @@ class aiManagement: SimpleMenuBigger
 		{
 			idc = -1;
 			text = "SITREP";
-			x = 0.477 * safezoneW + safezoneX;
-			y = 0.388 * safezoneH + safezoneY;
-			tooltip = $STR_antistasi_dialogs_sitrep_tooltip;
+			x = QUOTE(0.477 * safezoneW + safezoneX);
+			y = QUOTE(0.388 * safezoneH + safezoneY);
+			tooltip = "$STR_antistasi_dialogs_sitrep_tooltip";
 			action = "[""stats""] call A3A_fnc_vehStats;";
 		};
 
 		class r3Button: SimpleButton
 		{
 			idc = -1;
-			text = $STR_antistasi_dialogs_assign_vehicle_title;
-			x = 0.477 * safezoneW + safezoneX;
-			y = 0.486 * safezoneH + safezoneY;
-			tooltip = $STR_antistasi_dialogs_assign_vehicle_tooltip;
+			text = "$STR_antistasi_dialogs_assign_vehicle_title";
+			x = QUOTE(0.477 * safezoneW + safezoneX);
+			y = QUOTE(0.486 * safezoneH + safezoneY);
+			tooltip = "$STR_antistasi_dialogs_assign_vehicle_tooltip";
 			action = "closeDialog 0;[] call A3A_fnc_addSquadVeh;";
 		};
 
 		class r4Button: SimpleButton
 		{
 			idc = -1;
-			text = $STR_antistasi_dialogs_mount_veh_title;
-			x = 0.477 * safezoneW + safezoneX;
-			y = 0.584 * safezoneH + safezoneY;
-			tooltip = $STR_antistasi_dialogs_mount_veh_tooltip;
+			text = "$STR_antistasi_dialogs_mount_veh_title";
+			x = QUOTE(0.477 * safezoneW + safezoneX);
+			y = QUOTE(0.584 * safezoneH + safezoneY);
+			tooltip = "$STR_antistasi_dialogs_mount_veh_tooltip";
 			action = "[""mount""] call A3A_fnc_vehStats";
 		};
 	};
@@ -630,116 +630,116 @@ class commanderComm: SimpleMenuBigger
 		class closeButton: ScrtRscCloseButton
 		{
 			idc = -1;
-			x = 0.674 * safezoneW + safezoneX;
-			y = 0.223941 * safezoneH + safezoneY;
-			w = 0.02 * safezoneW;
-			h = 0.02 * safezoneH;
+			x = QUOTE(0.674 * safezoneW + safezoneX);
+			y = QUOTE(0.223941 * safezoneH + safezoneY);
+			w = QUOTE(0.02 * safezoneW);
+			h = QUOTE(0.02 * safezoneH);
 			action = "closeDialog 0; createDialog 'radioComm';";
 		};
 
 		class title: SimpleTitle
 		{
 			idc = -1;
-			text = $STR_antistasi_dialogs_commander_battle_options_frame_text;
+			text = "$STR_antistasi_dialogs_commander_battle_options_frame_text";
 		};
 
 		class l1Button: SimpleButton
 		{
 			idc = -1;
-			text = $STR_antistasi_dialogs_recruit_squad_title;
-			x = 0.257187 * safezoneW + safezoneX;
-			y = 0.29 * safezoneH + safezoneY;
-			tooltip = $STR_antistasi_dialogs_add_recruit_squad_tooltip;
+			text = "$STR_antistasi_dialogs_recruit_squad_title";
+			x = QUOTE(0.257187 * safezoneW + safezoneX);
+			y = QUOTE(0.29 * safezoneH + safezoneY);
+			tooltip = "$STR_antistasi_dialogs_add_recruit_squad_tooltip";
 			action = "if (player isEqualTo theBoss) then {closeDialog 0; [] spawn A3A_fnc_squadRecruit; } else {[localize 'STR_antistasi_dialogs_recruit_squad_title', localize 'STR_generic_commander_only'] call A3A_fnc_customHint;};";
 		};
 
 		class l2Button: SimpleButton
 		{
 			idc = -1;
-			text = $STR_antistasi_dialogs_rally_point_title;
-			x = 0.257187 * safezoneW + safezoneX;
-			y = 0.388 * safezoneH + safezoneY;
-			tooltip = $STR_antistasi_dialogs_add_rally_point_tooltip;
+			text = "$STR_antistasi_dialogs_rally_point_title";
+			x = QUOTE(0.257187 * safezoneW + safezoneX);
+			y = QUOTE(0.388 * safezoneH + safezoneY);
+			tooltip = "$STR_antistasi_dialogs_add_rally_point_tooltip";
 			action = "if (player isEqualTo theBoss) then {closeDialog 0; [] call SCRT_fnc_rally_toggleRallyPoint;} else {[localize 'STR_antistasi_dialogs_rally_point_title', localize 'STR_generic_commander_only'] call A3A_fnc_customHint;};";
 		};
 
 		class l3Button: SimpleButton
 		{
 			idc = -1;
-			text = $STR_antistasi_dialogs_share_faction_money_title;
-			x = 0.257187 * safezoneW + safezoneX;
-			y = 0.486 * safezoneH + safezoneY;
-			tooltip = $STR_antistasi_dialogs_share_faction_money_tooltip;
+			text = "$STR_antistasi_dialogs_share_faction_money_title";
+			x = QUOTE(0.257187 * safezoneW + safezoneX);
+			y = QUOTE(0.486 * safezoneH + safezoneY);
+			tooltip = "$STR_antistasi_dialogs_share_faction_money_tooltip";
 			action = "if (player isEqualTo theBoss) then {closeDialog 0; [] call SCRT_fnc_common_shareFactionMoneyWithMembers;} else {[localize 'STR_antistasi_dialogs_share_faction_money_title', localize 'STR_generic_commander_only'] call A3A_fnc_customHint;};";
 		}; //and theBoss call A3A_fnc_isMember?
 
 		class l4Button: SimpleButton
 		{
 			idc = -1;
-			text = $STR_antistasi_dialogs_resign_title;
-			x = 0.257187 * safezoneW + safezoneX;
-			y = 0.584 * safezoneH + safezoneY;
-			tooltip = $STR_antistasi_dialogs_resign_tooltip;
+			text = "$STR_antistasi_dialogs_resign_title";
+			x = QUOTE(0.257187 * safezoneW + safezoneX);
+			y = QUOTE(0.584 * safezoneH + safezoneY);
+			tooltip = "$STR_antistasi_dialogs_resign_tooltip";
 			action = "closeDialog 0; [player, cursorTarget] remoteExec ['A3A_fnc_theBossToggleEligibility', 2];";
 		};
 
 		class l5Button: SimpleButton
 		{
 			idc = -1;
-			text = $STR_antistasi_dialogs_arsenal_limits_title;
-			x = 0.257187 * safezoneW + safezoneX;
-			y = 0.682 * safezoneH + safezoneY;
-			tooltip = $STR_antistasi_dialogs_arsenal_limits_tooltip;
+			text = "$STR_antistasi_dialogs_arsenal_limits_title";
+			x = QUOTE(0.257187 * safezoneW + safezoneX);
+			y = QUOTE(0.682 * safezoneH + safezoneY);
+			tooltip = "$STR_antistasi_dialogs_arsenal_limits_tooltip";
 			action = "if (player == theBoss) then {closeDialog 0; createDialog ""A3A_ArsenalLimitsDialog""} else {[localize 'STR_antistasi_dialogs_sell_vehicle_title', localize 'STR_antistasi_dialogs_not_commander_generic'] call A3A_fnc_customHint}";
 		};
 
 		class r1Button: SimpleButton
 		{
 			idc = -1;
-			text = $STR_antistasi_dialogs_open_add_to_air_title;
-			x = 0.477 * safezoneW + safezoneX;
-			y = 0.29 * safezoneH + safezoneY;
-			tooltip = $STR_antistasi_dialogs_open_add_to_air_tooltip;
+			text = "$STR_antistasi_dialogs_open_add_to_air_title";
+			x = QUOTE(0.477 * safezoneW + safezoneX);
+			y = QUOTE(0.29 * safezoneH + safezoneY);
+			tooltip = "$STR_antistasi_dialogs_open_add_to_air_tooltip";
 			action = "if (player isEqualTo theBoss) then {closeDialog 0; [] call A3A_fnc_addBombRun;} else {[localize 'STR_antistasi_dialogs_open_add_to_air_title', localize 'STR_generic_commander_only'] call A3A_fnc_customHint;};";
 		};
 
 		class r2Button: SimpleButton
 		{
 			idc = -1;
-			text = $STR_antistasi_dialogs_open_clean_garbage_title;
-			x = 0.477 * safezoneW + safezoneX;
-			y = 0.388 * safezoneH + safezoneY;
-			tooltip = $STR_antistasi_dialogs_open_clean_garbage_tooltip;
+			text = "$STR_antistasi_dialogs_open_clean_garbage_title";
+			x = QUOTE(0.477 * safezoneW + safezoneX);
+			y = QUOTE(0.388 * safezoneH + safezoneY);
+			tooltip = "$STR_antistasi_dialogs_open_clean_garbage_tooltip";
 			action = "if (player isEqualTo theBoss) then {closedialog 0;[] remoteExecCall [""A3A_fnc_garbageCleaner"",2]} else {[localize 'STR_antistasi_journal_entry_header_Options_7', localize 'STR_generic_commander_only'] call A3A_fnc_customHint;};";
 		};
 
 		class r3Button: SimpleButton
 		{
 			idc = -1;
-			text = $STR_antistasi_dialogs_open_comm_menu_title;
-			x = 0.477 * safezoneW + safezoneX;
-			y = 0.486 * safezoneH + safezoneY;
-			tooltip = $STR_antistasi_dialogs_open_comm_menu_tooltip;
+			text = "$STR_antistasi_dialogs_open_comm_menu_title";
+			x = QUOTE(0.477 * safezoneW + safezoneX);
+			y = QUOTE(0.486 * safezoneH + safezoneY);
+			tooltip = "$STR_antistasi_dialogs_open_comm_menu_tooltip";
 			action = "closeDialog 0; closeDialog 0; [] call SCRT_fnc_ui_toggleCommanderMenu;";
 		};
 
 		class r4Button: SimpleButton
 		{
 			idc = -1;
-			text = $STR_antistasi_dialogs_sell_vehicle_title;
-			x = 0.477 * safezoneW + safezoneX;
-			y = 0.584 * safezoneH + safezoneY;
-			tooltip = $STR_antistasi_dialogs_sell_vehicle_tooltip;
+			text = "$STR_antistasi_dialogs_sell_vehicle_title";
+			x = QUOTE(0.477 * safezoneW + safezoneX);
+			y = QUOTE(0.584 * safezoneH + safezoneY);
+			tooltip = "$STR_antistasi_dialogs_sell_vehicle_tooltip";
 			action = "if (player isEqualTo theBoss) then {closeDialog 0; [player,cursorObject] remoteExecCall [""A3A_fnc_sellVehicle"",2]} else {[localize 'STR_antistasi_journal_entry_header_commander_11', localize 'STR_generic_commander_only'] call A3A_fnc_customHint;};";
 		};
 
 		class r5Button: SimpleButton
 		{
 			idc = -1;
-			text = $STR_antistasi_dialogs_moveout_crew_title;
-			x = 0.477 * safezoneW + safezoneX;
-			y = 0.682 * safezoneH + safezoneY;
-			tooltip = $STR_antistasi_dialogs_moveout_crew_tooltip;
+			text = "$STR_antistasi_dialogs_moveout_crew_title";
+			x = QUOTE(0.477 * safezoneW + safezoneX);
+			y = QUOTE(0.682 * safezoneH + safezoneY);
+			tooltip = "$STR_antistasi_dialogs_moveout_crew_tooltip";
 			action = "if (player isEqualTo theBoss) then {closeDialog 0; [player,cursorObject] remoteExecCall [""A3A_fnc_moveOutCrew"",2]} else {[localize 'STR_antistasi_journal_entry_header_commander_11', localize 'STR_generic_commander_only'] call A3A_fnc_customHint;};";
 		};
 	};
@@ -754,24 +754,24 @@ class constructionMenu: SimpleMenuSmall
 		class closeButton: ScrtRscCloseButton
 		{
 			idc = -1;
-			x = 0.674 * safezoneW + safezoneX;
-			y = 0.223941 * safezoneH + safezoneY;
-			w = 0.02 * safezoneW;
-			h = 0.02 * safezoneH;
+			x = QUOTE(0.674 * safezoneW + safezoneX);
+			y = QUOTE(0.223941 * safezoneH + safezoneY);
+			w = QUOTE(0.02 * safezoneW);
+			h = QUOTE(0.02 * safezoneH);
 			action = "closeDialog 0;";
 		};
 
 		class title: SimpleTitle
 		{
 			idc = -1;
-			text = $STR_antistasi_dialogs_construction_menu_frame_text;
+			text = "$STR_antistasi_dialogs_construction_menu_frame_text";
 		};
 
 		class buildTypeComboBox: SimpleComboBox
 		{
 			idc = 505;
-			x = 0.257187 * safezoneW + safezoneX;
-			y = 0.262 * safezoneH + safezoneY;
+			x = QUOTE(0.257187 * safezoneW + safezoneX);
+			y = QUOTE(0.262 * safezoneH + safezoneY);
 			w = "22 * pixelGridNoUIScale * pixelW";
 			h = "2 * pixelGridNoUIScale * pixelH";
 			onLBSelChanged = "[] call SCRT_fnc_ui_setBuildTypeCostText; [] call SCRT_fnc_ui_setAvailableBuildingTypes;";
@@ -780,8 +780,8 @@ class constructionMenu: SimpleMenuSmall
 		class buildingComboBox: SimpleComboBox
 		{
 			idc = 506;
-			x = 0.257187 * safezoneW + safezoneX;
-			y = 0.304 * safezoneH + safezoneY;
+			x = QUOTE(0.257187 * safezoneW + safezoneX);
+			y = QUOTE(0.304 * safezoneH + safezoneY);
 			w = "22 * pixelGridNoUIScale * pixelW";
 			h = "2 * pixelGridNoUIScale * pixelH";
 		};
@@ -790,10 +790,10 @@ class constructionMenu: SimpleMenuSmall
 		{
 			idc = 510;
 			text = "";
-			x = 0.257187 * safezoneW + safezoneX;
-			y = 0.388 * safezoneH + safezoneY;
-			w = 0.183333 * safezoneW;	
-			h = 0.0222222 * safezoneH;
+			x = QUOTE(0.257187 * safezoneW + safezoneX);
+			y = QUOTE(0.388 * safezoneH + safezoneY);
+			w = QUOTE(0.183333 * safezoneW);	
+			h = QUOTE(0.0222222 * safezoneH);
 		};
 
 		// class r1Button: SimpleButton
@@ -829,105 +829,105 @@ class squadRecruit: SimpleMenuBigger
 		class closeButton: ScrtRscCloseButton
 		{
 			idc = 103;
-			x = 0.674 * safezoneW + safezoneX;
-			y = 0.223941 * safezoneH + safezoneY;
-			w = 0.02 * safezoneW;
-			h = 0.02 * safezoneH;
+			x = QUOTE(0.674 * safezoneW + safezoneX);
+			y = QUOTE(0.223941 * safezoneH + safezoneY);
+			w = QUOTE(0.02 * safezoneW);
+			h = QUOTE(0.02 * safezoneH);
 			action = "closeDialog 0; createDialog 'radioComm';";
 		};
 
 		class title: SimpleTitle
 		{
 			idc = -1;
-			text = $STR_antistasi_dialogs_squad_recruitment_menu_frame_text;
+			text = "$STR_antistasi_dialogs_squad_recruitment_menu_frame_text";
 		};
 
 		class l1Button: SimpleButton
 		{
 			idc = 104;
-			text = $STR_antistasi_dialogs_infantry_squad_title;
-			x = 0.257187 * safezoneW + safezoneX;
-			y = 0.29 * safezoneH + safezoneY;
+			text = "$STR_antistasi_dialogs_infantry_squad_title";
+			x = QUOTE(0.257187 * safezoneW + safezoneX);
+			y = QUOTE(0.29 * safezoneH + safezoneY);
 			action = "closeDialog 0; [] spawn A3A_fnc_squadOptions;";
 		};
 
 		class l2Button: SimpleButton
 		{
 			idc = 106;
-			text = $STR_antistasi_dialogs_at_team_title;
-			x = 0.257187 * safezoneW + safezoneX;
-			y = 0.388 * safezoneH + safezoneY;
+			text = "$STR_antistasi_dialogs_at_team_title";
+			x = QUOTE(0.257187 * safezoneW + safezoneX);
+			y = QUOTE(0.388 * safezoneH + safezoneY);
 			action = "closeDialog 0;[A3A_faction_reb get 'groupAT'] spawn A3A_fnc_addFIAsquadHC";
 		};
 
 		class l3Button: SimpleButton
 		{
 			idc = 107;
-			text = $STR_antistasi_dialogs_sniper_team_title;
-			x = 0.257187 * safezoneW + safezoneX;
-			y = 0.486 * safezoneH + safezoneY;
+			text = "$STR_antistasi_dialogs_sniper_team_title";
+			x = QUOTE(0.257187 * safezoneW + safezoneX);
+			y = QUOTE(0.486 * safezoneH + safezoneY);
 			action = "closeDialog 0;[A3A_faction_reb get 'groupSniper'] spawn A3A_fnc_addFIAsquadHC";
 		};
 
 		class l4Button: SimpleButton
 		{
 			idc = 108;
-			text = $STR_antistasi_dialogs_mg_team_title;
-			x = 0.257187 * safezoneW + safezoneX;
-			y = 0.584 * safezoneH + safezoneY;
+			text = "$STR_antistasi_dialogs_mg_team_title";
+			x = QUOTE(0.257187 * safezoneW + safezoneX);
+			y = QUOTE(0.584 * safezoneH + safezoneY);
 			action = "closeDialog 0;[selectRandom (A3A_faction_reb get 'staticMGs')] spawn A3A_fnc_addFIAsquadHC";
 		};
 
 		class l5Button: SimpleButton
 		{
 			idc = 112;
-			text = $STR_antistasi_dialogs_veh_crew_title;
-			x = 0.257187 * safezoneW + safezoneX;
-			y = 0.682 * safezoneH + safezoneY;
+			text = "$STR_antistasi_dialogs_veh_crew_title";
+			x = QUOTE(0.257187 * safezoneW + safezoneX);
+			y = QUOTE(0.682 * safezoneH + safezoneY);
 			action = "closeDialog 0; [A3A_faction_reb get 'groupCrew'] spawn A3A_fnc_addFIAsquadHC";
 		};
 		
 		class r1Button: SimpleButton
 		{
 			idc = 105;
-			text = $STR_antistasi_dialogs_inf_team_title;
-			x = 0.477 * safezoneW + safezoneX;
-			y = 0.29 * safezoneH + safezoneY;
+			text = "$STR_antistasi_dialogs_inf_team_title";
+			x = QUOTE(0.477 * safezoneW + safezoneX);
+			y = QUOTE(0.29 * safezoneH + safezoneY);
 			action = "closeDialog 0;[A3A_faction_reb get 'groupMedium'] spawn A3A_fnc_addFIAsquadHC";
 		};
 
 		class r2Button: SimpleButton
 		{
 			idc = 109;
-			text = $STR_antistasi_dialogs_at_car_title;
-			x = 0.477 * safezoneW + safezoneX;
-			y = 0.388 * safezoneH + safezoneY;
+			text = "$STR_antistasi_dialogs_at_car_title";
+			x = QUOTE(0.477 * safezoneW + safezoneX);
+			y = QUOTE(0.388 * safezoneH + safezoneY);
 			action = "closeDialog 0;[selectRandom (A3A_faction_reb get 'vehiclesAT')] spawn A3A_fnc_addFIAsquadHC";
 		};
 
 		class r3Button: SimpleButton
 		{
 			idc = 110;
-			text = $STR_antistasi_dialogs_aa_car_title;
-			x = 0.477 * safezoneW + safezoneX;
-			y = 0.486 * safezoneH + safezoneY;
+			text = "$STR_antistasi_dialogs_aa_car_title";
+			x = QUOTE(0.477 * safezoneW + safezoneX);
+			y = QUOTE(0.486 * safezoneH + safezoneY);
 			action = "closeDialog 0;[selectRandom (A3A_faction_reb get 'staticAA')] spawn A3A_fnc_addFIAsquadHC";
 		};
 
 		class r4Button: SimpleButton
 		{
 			idc = 111;
-			text = $STR_antistasi_dialogs_mortar_team_title;
-			x = 0.477 * safezoneW + safezoneX;
-			y = 0.584 * safezoneH + safezoneY;
+			text = "$STR_antistasi_dialogs_mortar_team_title";
+			x = QUOTE(0.477 * safezoneW + safezoneX);
+			y = QUOTE(0.584 * safezoneH + safezoneY);
 			action = "closeDialog 0;[selectRandom (A3A_faction_reb get 'staticMortars')] spawn A3A_fnc_addFIAsquadHC";
 		};
 		class r5Button: SimpleButton
 		{
 			idc = 113;
-			text = $STR_antistasi_dialogs_mg_car_title;
-			x = 0.477 * safezoneW + safezoneX;
-			y = 0.682 * safezoneH + safezoneY;
+			text = "$STR_antistasi_dialogs_mg_car_title";
+			x = QUOTE(0.477 * safezoneW + safezoneX);
+			y = QUOTE(0.682 * safezoneH + safezoneY);
 			action = "closeDialog 0;[selectRandom (A3A_faction_reb get 'vehiclesLightArmed')] spawn A3A_fnc_addFIAsquadHC";
 		};
 	};
@@ -942,52 +942,52 @@ class squadOptions: SimpleMenuSmall
 		class closeButton: ScrtRscCloseButton
 		{
 			idc = -1;
-			x = 0.674 * safezoneW + safezoneX;
-			y = 0.223941 * safezoneH + safezoneY;
-			w = 0.02 * safezoneW;
-			h = 0.02 * safezoneH;
+			x = QUOTE(0.674 * safezoneW + safezoneX);
+			y = QUOTE(0.223941 * safezoneH + safezoneY);
+			w = QUOTE(0.02 * safezoneW);
+			h = QUOTE(0.02 * safezoneH);
 			action = "closeDialog 0; createDialog 'squadRecruit';";
 		};
 
 		class title: SimpleTitle
 		{
 			idc = -1;
-			text = $STR_antistasi_dialogs_squad_recruitment_menu_frame_text;
+			text = "$STR_antistasi_dialogs_squad_recruitment_menu_frame_text";
 		};
 
 		class l1Button: SimpleButton
 		{
 			idc = 104;
-			text = $STR_antistasi_dialogs_normal_squad_title;
-			x = 0.257187 * safezoneW + safezoneX;
-			y = 0.262 * safezoneH + safezoneY;
+			text = "$STR_antistasi_dialogs_normal_squad_title";
+			x = QUOTE(0.257187 * safezoneW + safezoneX);
+			y = QUOTE(0.262 * safezoneH + safezoneY);
 			action = "closeDialog 0; [A3A_faction_reb get 'groupSquad'] spawn A3A_fnc_addFIAsquadHC;";
 		};
 
 		class l2Button: SimpleButton
 		{
 			idc = 105;
-			text = $STR_antistasi_dialogs_engineer_squad_title;
-			x = 0.257187 * safezoneW + safezoneX;
-			y = 0.346 * safezoneH + safezoneY;
+			text = "$STR_antistasi_dialogs_engineer_squad_title";
+			x = QUOTE(0.257187 * safezoneW + safezoneX);
+			y = QUOTE(0.346 * safezoneH + safezoneY);
 			action = "closeDialog 0; [A3A_faction_reb get 'groupSquadEng'] spawn A3A_fnc_addFIAsquadHC;";
 		};
 		
 		class r1Button: SimpleButton
 		{
 			idc = 106;
-			text = $STR_antistasi_dialogs_mg_squad_title;
-			x = 0.477 * safezoneW + safezoneX;
-			y = 0.262 * safezoneH + safezoneY;
+			text = "$STR_antistasi_dialogs_mg_squad_title";
+			x = QUOTE(0.477 * safezoneW + safezoneX);
+			y = QUOTE(0.262 * safezoneH + safezoneY);
 			action = "closeDialog 0;[A3A_faction_reb get 'groupSquadSupp','MG'] spawn A3A_fnc_addFIAsquadHC";
 		};
 
 		class r2Button: SimpleButton
 		{
 			idc = 107;
-			text = $STR_antistasi_dialogs_mortar_squad_title;
-			x = 0.477 * safezoneW + safezoneX;
-			y = 0.346 * safezoneH + safezoneY;
+			text = "$STR_antistasi_dialogs_mortar_squad_title";
+			x = QUOTE(0.477 * safezoneW + safezoneX);
+			y = QUOTE(0.346 * safezoneH + safezoneY);
 			action = "closeDialog 0; [A3A_faction_reb get 'groupSquadSupp','Mortar'] spawn A3A_fnc_addFIAsquadHC;";
 		};
 	};
@@ -1002,48 +1002,48 @@ class playerMoney: SimpleMenuSmall
 		class closeButton: ScrtRscCloseButton
 		{
 			idc = -1;
-			x = 0.674 * safezoneW + safezoneX;
-			y = 0.223941 * safezoneH + safezoneY;
-			w = 0.02 * safezoneW;
-			h = 0.02 * safezoneH;
+			x = QUOTE(0.674 * safezoneW + safezoneX);
+			y = QUOTE(0.223941 * safezoneH + safezoneY);
+			w = QUOTE(0.02 * safezoneW);
+			h = QUOTE(0.02 * safezoneH);
 			action = "closeDialog 0; createDialog 'radioComm'";
 		};
 
 		class title: SimpleTitle
 		{
 			idc = -1;
-			text = $STR_antistasi_dialogs_squad_money_player_interaction_menu_frame_text;
+			text = "$STR_antistasi_dialogs_squad_money_player_interaction_menu_frame_text";
 		};
 
 		class l1Button: SimpleButton
 		{
 			idc = 104;
-			text = $STR_antistasi_dialogs_add_server_member_title;
-			x = 0.257187 * safezoneW + safezoneX;
-			y = 0.262 * safezoneH + safezoneY;
-			tooltip = $STR_antistasi_dialogs_add_server_member_tooltip;
+			text = "$STR_antistasi_dialogs_add_server_member_title";
+			x = QUOTE(0.257187 * safezoneW + safezoneX);
+			y = QUOTE(0.262 * safezoneH + safezoneY);
+			tooltip = "$STR_antistasi_dialogs_add_server_member_tooltip";
 			action = "closeDialog 0; ['add'] call A3A_fnc_memberAdd;";
 		};
 
 		class l2Button: SimpleButton
 		{
 			idc = 105;
-			text = $STR_antistasi_dialogs_remove_server_member_title;
-			x = 0.257187 * safezoneW + safezoneX;
-			y = 0.346 * safezoneH + safezoneY;
-			tooltip = $STR_antistasi_dialogs_remove_server_member_tooltip;
+			text = "$STR_antistasi_dialogs_remove_server_member_title";
+			x = QUOTE(0.257187 * safezoneW + safezoneX);
+			y = QUOTE(0.346 * safezoneH + safezoneY);
+			tooltip = "$STR_antistasi_dialogs_remove_server_member_tooltip";
 			action = "closeDialog 0; ['remove'] call A3A_fnc_memberAdd;";
 		};
 		
 		class r1Text : SimpleText
 		{
 			idc = 120001;
-			text = $STR_antistasi_dialogs_donate_player_title;
-			tooltip = $STR_antistasi_dialogs_donate_player_tooltip;
-			x = 0.477 * safezoneW + safezoneX;
-			y = 0.24 * safezoneH + safezoneY;
-			w = 0.2 * safezoneW;
-			h = 0.06 * safezoneH;
+			text = "$STR_antistasi_dialogs_donate_player_title";
+			tooltip = "$STR_antistasi_dialogs_donate_player_tooltip";
+			x = QUOTE(0.477 * safezoneW + safezoneX);
+			y = QUOTE(0.24 * safezoneH + safezoneY);
+			w = QUOTE(0.2 * safezoneW);
+			h = QUOTE(0.06 * safezoneH);
 			style = ST_CENTER;
 		};
 
@@ -1051,8 +1051,8 @@ class playerMoney: SimpleMenuSmall
 		{
 			idc = 308;
 			text = "25%";
-			x = 0.477 * safezoneW + safezoneX;
-			y = 0.282 * safezoneH + safezoneY;
+			x = QUOTE(0.477 * safezoneW + safezoneX);
+			y = QUOTE(0.282 * safezoneH + safezoneY);
 			action = "[player, cursorObject, true, 0.25] call A3A_fnc_donateMoneyPercentage;";
 		};
 
@@ -1060,8 +1060,8 @@ class playerMoney: SimpleMenuSmall
 		{
 			idc = 308;
 			text = "50%";
-			x = 0.527 * safezoneW + safezoneX;
-			y = 0.282 * safezoneH + safezoneY;
+			x = QUOTE(0.527 * safezoneW + safezoneX);
+			y = QUOTE(0.282 * safezoneH + safezoneY);
 			action = "[player, cursorObject, true, 0.5] call A3A_fnc_donateMoneyPercentage;";
 		};
 
@@ -1069,8 +1069,8 @@ class playerMoney: SimpleMenuSmall
 		{
 			idc = 308;
 			text = "75%";
-			x = 0.577 * safezoneW + safezoneX;
-			y = 0.282 * safezoneH + safezoneY;
+			x = QUOTE(0.577 * safezoneW + safezoneX);
+			y = QUOTE(0.282 * safezoneH + safezoneY);
 			action = "[player, cursorObject, true, 0.75] call A3A_fnc_donateMoneyPercentage;";
 		};
 
@@ -1078,20 +1078,20 @@ class playerMoney: SimpleMenuSmall
 		{
 			idc = 308;
 			text = "100%";
-			x = 0.627 * safezoneW + safezoneX;
-			y = 0.282 * safezoneH + safezoneY;
+			x = QUOTE(0.627 * safezoneW + safezoneX);
+			y = QUOTE(0.282 * safezoneH + safezoneY);
 			action = "[player, cursorObject, true, 1] call A3A_fnc_donateMoneyPercentage;";
 		};
 		
 		class r2Text : SimpleText
 		{
 			idc = 120001;
-			text = $STR_antistasi_dialogs_donate_faction_title;
-			tooltip = $STR_antistasi_dialogs_donate_faction_tooltip;
-			x = 0.477 * safezoneW + safezoneX;
-			y = 0.324 * safezoneH + safezoneY;
-			w = 0.2 * safezoneW;
-			h = 0.06 * safezoneH;
+			text = "$STR_antistasi_dialogs_donate_faction_title";
+			tooltip = "$STR_antistasi_dialogs_donate_faction_tooltip";
+			x = QUOTE(0.477 * safezoneW + safezoneX);
+			y = QUOTE(0.324 * safezoneH + safezoneY);
+			w = QUOTE(0.2 * safezoneW);
+			h = QUOTE(0.06 * safezoneH);
 			style = ST_CENTER;
 		};
 
@@ -1099,8 +1099,8 @@ class playerMoney: SimpleMenuSmall
 		{
 			idc = 308;
 			text = "25%";
-			x = 0.477 * safezoneW + safezoneX;
-			y = 0.366 * safezoneH + safezoneY;
+			x = QUOTE(0.477 * safezoneW + safezoneX);
+			y = QUOTE(0.366 * safezoneH + safezoneY);
 			action = "[player, ObjNull, false, 0.25] call A3A_fnc_donateMoneyPercentage;";
 		};
 
@@ -1108,8 +1108,8 @@ class playerMoney: SimpleMenuSmall
 		{
 			idc = 308;
 			text = "50%";
-			x = 0.527 * safezoneW + safezoneX;
-			y = 0.366 * safezoneH + safezoneY;
+			x = QUOTE(0.527 * safezoneW + safezoneX);
+			y = QUOTE(0.366 * safezoneH + safezoneY);
 			action = "[player, ObjNull, false, 0.5] call A3A_fnc_donateMoneyPercentage;";
 		};
 
@@ -1117,8 +1117,8 @@ class playerMoney: SimpleMenuSmall
 		{
 			idc = 308;
 			text = "75%";
-			x = 0.577 * safezoneW + safezoneX;
-			y = 0.366 * safezoneH + safezoneY;
+			x = QUOTE(0.577 * safezoneW + safezoneX);
+			y = QUOTE(0.366 * safezoneH + safezoneY);
 			action = "[player, ObjNull, false, 0.75] call A3A_fnc_donateMoneyPercentage;";
 		};
 
@@ -1126,8 +1126,8 @@ class playerMoney: SimpleMenuSmall
 		{
 			idc = 308;
 			text = "100%";
-			x = 0.627 * safezoneW + safezoneX;
-			y = 0.366 * safezoneH + safezoneY;
+			x = QUOTE(0.627 * safezoneW + safezoneX);
+			y = QUOTE(0.366 * safezoneH + safezoneY);
 			action = "[player, ObjNull, false, 1] call A3A_fnc_donateMoneyPercentage;";
 		};
 	};
@@ -1142,25 +1142,25 @@ class mortarType: SimpleMenuSmall
 		class closeButton: ScrtRscCloseButton
 		{
 			idc = -1;
-			x = 0.674 * safezoneW + safezoneX;
-			y = 0.223941 * safezoneH + safezoneY;
-			w = 0.02 * safezoneW;
-			h = 0.02 * safezoneH;
+			x = QUOTE(0.674 * safezoneW + safezoneX);
+			y = QUOTE(0.223941 * safezoneH + safezoneY);
+			w = QUOTE(0.02 * safezoneW);
+			h = QUOTE(0.02 * safezoneH);
 			action = "closeDialog 0; createDialog 'radioComm'";
 		};
 
 		class title: SimpleTitle
 		{
 			idc = -1;
-			text = $STR_antistasi_dialogs_barrage_strike;
+			text = "$STR_antistasi_dialogs_barrage_strike";
 		};
 
 		class l1Button: SimpleButton
 		{
 			idc = -1;
 			text = "HE";
-			x = 0.257187 * safezoneW + safezoneX;
-			y = 0.304 * safezoneH + safezoneY;
+			x = QUOTE(0.257187 * safezoneW + safezoneX);
+			y = QUOTE(0.304 * safezoneH + safezoneY);
 			action = "closeDialog 0; typeAmmunition = A3A_faction_reb get 'staticMortarMagHE';";
 		};
 		
@@ -1168,8 +1168,8 @@ class mortarType: SimpleMenuSmall
 		{
 			idc = -1;
 			text = "SMOKE";
-			x = 0.477 * safezoneW + safezoneX;
-			y = 0.304 * safezoneH + safezoneY;
+			x = QUOTE(0.477 * safezoneW + safezoneX);
+			y = QUOTE(0.304 * safezoneH + safezoneY);
 			action = "closeDialog 0; typeAmmunition = A3A_faction_reb get 'staticMortarMagSmoke';";
 		};
 	};
@@ -1184,15 +1184,15 @@ class roundsNumber: SimpleMenuBig
 		class title: SimpleTitle
 		{
 			idc = -1;
-			text = $STR_antistasi_dialogs_rounds_quantity_title;
+			text = "$STR_antistasi_dialogs_rounds_quantity_title";
 		};
 
 		class l1Button: SimpleButton
 		{
 			idc = 104;
 			text = "1";
-			x = 0.257187 * safezoneW + safezoneX;
-			y = 0.29 * safezoneH + safezoneY;
+			x = QUOTE(0.257187 * safezoneW + safezoneX);
+			y = QUOTE(0.29 * safezoneH + safezoneY);
 			action = "closeDialog 0;roundsX = 1;";
 		};
 
@@ -1200,8 +1200,8 @@ class roundsNumber: SimpleMenuBig
 		{
 			idc = 106;
 			text = "3";
-			x = 0.257187 * safezoneW + safezoneX;
-			y = 0.388 * safezoneH + safezoneY;
+			x = QUOTE(0.257187 * safezoneW + safezoneX);
+			y = QUOTE(0.388 * safezoneH + safezoneY);
 			action = "closeDialog 0;roundsX = 3;";
 		};
 
@@ -1209,8 +1209,8 @@ class roundsNumber: SimpleMenuBig
 		{
 			idc = 107;
 			text = "5";
-			x = 0.257187 * safezoneW + safezoneX;
-			y = 0.486 * safezoneH + safezoneY;
+			x = QUOTE(0.257187 * safezoneW + safezoneX);
+			y = QUOTE(0.486 * safezoneH + safezoneY);
 			action = "closeDialog 0;roundsX = 5;";
 		};
 
@@ -1218,8 +1218,8 @@ class roundsNumber: SimpleMenuBig
 		{
 			idc = 108;
 			text = "7";
-			x = 0.257187 * safezoneW + safezoneX;
-			y = 0.584 * safezoneH + safezoneY;
+			x = QUOTE(0.257187 * safezoneW + safezoneX);
+			y = QUOTE(0.584 * safezoneH + safezoneY);
 			action = "closeDialog 0;roundsX = 7;";
 		};
 		
@@ -1227,8 +1227,8 @@ class roundsNumber: SimpleMenuBig
 		{
 			idc = 105;
 			text = "2";
-			x = 0.477 * safezoneW + safezoneX;
-			y = 0.29 * safezoneH + safezoneY;
+			x = QUOTE(0.477 * safezoneW + safezoneX);
+			y = QUOTE(0.29 * safezoneH + safezoneY);
 			action = "closeDialog 0;roundsX = 2;";
 		};
 
@@ -1236,8 +1236,8 @@ class roundsNumber: SimpleMenuBig
 		{
 			idc = 109;
 			text = "4";
-			x = 0.477 * safezoneW + safezoneX;
-			y = 0.388 * safezoneH + safezoneY;
+			x = QUOTE(0.477 * safezoneW + safezoneX);
+			y = QUOTE(0.388 * safezoneH + safezoneY);
 			action = "closeDialog 0;roundsX = 4;";
 		};
 
@@ -1245,8 +1245,8 @@ class roundsNumber: SimpleMenuBig
 		{
 			idc = 110;
 			text = "6";
-			x = 0.477 * safezoneW + safezoneX;
-			y = 0.486 * safezoneH + safezoneY;
+			x = QUOTE(0.477 * safezoneW + safezoneX);
+			y = QUOTE(0.486 * safezoneH + safezoneY);
 			action = "closeDialog 0;roundsX = 6;";
 		};
 
@@ -1254,8 +1254,8 @@ class roundsNumber: SimpleMenuBig
 		{
 			idc = 111;
 			text = "8";
-			x = 0.477 * safezoneW + safezoneX;
-			y = 0.584 * safezoneH + safezoneY;
+			x = QUOTE(0.477 * safezoneW + safezoneX);
+			y = QUOTE(0.584 * safezoneH + safezoneY);
 			action = "closeDialog 0;roundsX = 8;";
 		};
 	};
@@ -1270,24 +1270,24 @@ class strikeType: SimpleMenuSmall
 		class title: SimpleTitle
 		{
 			idc = -1;
-			text = $STR_antistasi_dialogs_select_strike_type;
+			text = "$STR_antistasi_dialogs_select_strike_type";
 		};
 
 		class l1Button: SimpleButton
 		{
 			idc = -1;
-			text = $STR_antistasi_dialogs_single_point_strike;
-			x = 0.257187 * safezoneW + safezoneX;
-			y = 0.304 * safezoneH + safezoneY;
+			text = "$STR_antistasi_dialogs_single_point_strike";
+			x = QUOTE(0.257187 * safezoneW + safezoneX);
+			y = QUOTE(0.304 * safezoneH + safezoneY);
 			action = "closeDialog 0;typeArty = ""NORMAL"";";
 		};
 		
 		class r1Button: SimpleButton
 		{
 			idc = -1;
-			text = $STR_antistasi_dialogs_barrage_strike;
-			x = 0.477 * safezoneW + safezoneX;
-			y = 0.304 * safezoneH + safezoneY;
+			text = "$STR_antistasi_dialogs_barrage_strike";
+			x = QUOTE(0.477 * safezoneW + safezoneX);
+			y = QUOTE(0.304 * safezoneH + safezoneY);
 			action = "closeDialog 0; typeArty = ""BARRAGE"";";
 		};
 	};
@@ -1302,10 +1302,10 @@ class NATOPlayer: SimpleMenuSmall
 		class closeButton: ScrtRscCloseButton
 		{
 			idc = -1;
-			x = 0.674 * safezoneW + safezoneX;
-			y = 0.223941 * safezoneH + safezoneY;
-			w = 0.02 * safezoneW;
-			h = 0.02 * safezoneH;
+			x = QUOTE(0.674 * safezoneW + safezoneX);
+			y = QUOTE(0.223941 * safezoneH + safezoneY);
+			w = QUOTE(0.02 * safezoneW);
+			h = QUOTE(0.02 * safezoneH);
 			action = "closeDialog 0;";
 		};
 
@@ -1318,18 +1318,18 @@ class NATOPlayer: SimpleMenuSmall
 		class l1Button: SimpleButton
 		{
 			idc = -1;
-			text = $STR_antistasi_dialogs_quadbike;
-			x = 0.257187 * safezoneW + safezoneX;
-			y = 0.304 * safezoneH + safezoneY;
+			text = "$STR_antistasi_dialogs_quadbike";
+			x = QUOTE(0.257187 * safezoneW + safezoneX);
+			y = QUOTE(0.304 * safezoneH + safezoneY);
 			action = "closeDialog 0;[] call A3A_fnc_NATOQuadbike";
 		};
 		
 		class r1Button: SimpleButton
 		{
 			idc = -1;
-			text = $STR_antistasi_journal_entry_header_Features_11;
-			x = 0.477 * safezoneW + safezoneX;
-			y = 0.304 * safezoneH + safezoneY;
+			text = "$STR_antistasi_journal_entry_header_Features_11";
+			x = QUOTE(0.477 * safezoneW + safezoneX);
+			y = QUOTE(0.304 * safezoneH + safezoneY);
 			action = "closeDialog 0;[] spawn A3A_fnc_NATOFT";
 		};
 	};
@@ -1345,31 +1345,31 @@ class rebelLoadoutMenu: SimpleMenuMedium
 		class closeButton: ScrtRscCloseButton
 		{
 			idc = -1;
-			x = 0.567031 * safezoneW + safezoneX;
-			y = 0.225 * safezoneH + safezoneY;
-			w = 0.02 * safezoneW;
-			h = 0.02 * safezoneH;
+			x = QUOTE(0.567031 * safezoneW + safezoneX);
+			y = QUOTE(0.225 * safezoneH + safezoneY);
+			w = QUOTE(0.02 * safezoneW);
+			h = QUOTE(0.02 * safezoneH);
 			action = "closeDialog 0;";
 		};
 
 		class title: SimpleTitle
 		{
 			idc = -1;
-			x = 0.4175 * safezoneW + safezoneX;
-			y = 0.225 * safezoneH + safezoneY;
-			w = 0.165 * safezoneW;
-			h = 0.02 * safezoneH;
-			text = $STR_antistasi_dialogs_hq_button_rebel_loadouts_menu_title_text;
+			x = QUOTE(0.4175 * safezoneW + safezoneX);
+			y = QUOTE(0.225 * safezoneH + safezoneY);
+			w = QUOTE(0.165 * safezoneW);
+			h = QUOTE(0.02 * safezoneH);
+			text = "$STR_antistasi_dialogs_hq_button_rebel_loadouts_menu_title_text";
 		};
 
 		class l1Text: SimpleText
 		{
 			idc = 120001;
-			text = $STR_antistasi_dialogs_rifleman_title;
-			x = 0.422656 * safezoneW + safezoneX;
-			y = 0.258 * safezoneH + safezoneY;
-			w = 0.0773437 * safezoneW;	
-			h = 0.022 * safezoneH;
+			text = "$STR_antistasi_dialogs_rifleman_title";
+			x = QUOTE(0.422656 * safezoneW + safezoneX);
+			y = QUOTE(0.258 * safezoneH + safezoneY);
+			w = QUOTE(0.0773437 * safezoneW);	
+			h = QUOTE(0.022 * safezoneH);
 			loadoutMoniker = "unitRifle";
 			loadoutArsenalButtonIDC = 1200101;
 			loadoutResetButtonIDC = 1200201;
@@ -1378,11 +1378,11 @@ class rebelLoadoutMenu: SimpleMenuMedium
 		class l2Text: SimpleText
 		{
 			idc = 120002;
-			text = $STR_antistasi_dialogs_autorifleman_title;
-			x = 0.422656 * safezoneW + safezoneX;
-			y = 0.291 * safezoneH + safezoneY;
-			w = 0.0773437 * safezoneW;	
-			h = 0.022 * safezoneH;
+			text = "$STR_antistasi_dialogs_autorifleman_title";
+			x = QUOTE(0.422656 * safezoneW + safezoneX);
+			y = QUOTE(0.291 * safezoneH + safezoneY);
+			w = QUOTE(0.0773437 * safezoneW);	
+			h = QUOTE(0.022 * safezoneH);
 			loadoutMoniker = "unitMG";
 			loadoutArsenalButtonIDC = 1200102;
 			loadoutResetButtonIDC = 1200202;
@@ -1391,11 +1391,11 @@ class rebelLoadoutMenu: SimpleMenuMedium
 		class l3Text: SimpleText
 		{
 			idc = 120003;
-			text = $STR_antistasi_dialogs_medic_title;
-			x = 0.422656 * safezoneW + safezoneX;
-			y = 0.324 * safezoneH + safezoneY;
-			w = 0.0773437 * safezoneW;	
-			h = 0.022 * safezoneH;
+			text = "$STR_antistasi_dialogs_medic_title";
+			x = QUOTE(0.422656 * safezoneW + safezoneX);
+			y = QUOTE(0.324 * safezoneH + safezoneY);
+			w = QUOTE(0.0773437 * safezoneW);	
+			h = QUOTE(0.022 * safezoneH);
 			loadoutMoniker = "unitMedic";
 			loadoutArsenalButtonIDC = 1200103;
 			loadoutResetButtonIDC = 1200203;
@@ -1404,11 +1404,11 @@ class rebelLoadoutMenu: SimpleMenuMedium
 		class l4Text: SimpleText
 		{
 			idc = 120004;
-			text = $STR_antistasi_dialogs_engineer_title;
-			x = 0.422656 * safezoneW + safezoneX;
-			y = 0.357 * safezoneH + safezoneY;
-			w = 0.0773437 * safezoneW;	
-			h = 0.022 * safezoneH;
+			text = "$STR_antistasi_dialogs_engineer_title";
+			x = QUOTE(0.422656 * safezoneW + safezoneX);
+			y = QUOTE(0.357 * safezoneH + safezoneY);
+			w = QUOTE(0.0773437 * safezoneW);	
+			h = QUOTE(0.022 * safezoneH);
 			loadoutMoniker = "unitEng";
 			loadoutArsenalButtonIDC = 1200104;
 			loadoutResetButtonIDC = 1200204;
@@ -1417,11 +1417,11 @@ class rebelLoadoutMenu: SimpleMenuMedium
 		class l5Text: SimpleText
 		{
 			idc = 120005;
-			text = $STR_antistasi_dialogs_grenadier_title;
-			x = 0.422656 * safezoneW + safezoneX;
-			y = 0.39 * safezoneH + safezoneY;
-			w = 0.0773437 * safezoneW;	
-			h = 0.022 * safezoneH;
+			text = "$STR_antistasi_dialogs_grenadier_title";
+			x = QUOTE(0.422656 * safezoneW + safezoneX);
+			y = QUOTE(0.39 * safezoneH + safezoneY);
+			w = QUOTE(0.0773437 * safezoneW);	
+			h = QUOTE(0.022 * safezoneH);
 			loadoutMoniker = "unitGL";
 			loadoutArsenalButtonIDC = 1200105;
 			loadoutResetButtonIDC = 1200205;
@@ -1430,11 +1430,11 @@ class rebelLoadoutMenu: SimpleMenuMedium
 		class l6Text: SimpleText
 		{
 			idc = 120006;
-			text = $STR_antistasi_dialogs_marksman_title;
-			x = 0.422656 * safezoneW + safezoneX;
-			y = 0.423 * safezoneH + safezoneY;
-			w = 0.0773437 * safezoneW;	
-			h = 0.022 * safezoneH;
+			text = "$STR_antistasi_dialogs_marksman_title";
+			x = QUOTE(0.422656 * safezoneW + safezoneX);
+			y = QUOTE(0.423 * safezoneH + safezoneY);
+			w = QUOTE(0.0773437 * safezoneW);	
+			h = QUOTE(0.022 * safezoneH);
 			loadoutMoniker = "unitSniper";
 			loadoutArsenalButtonIDC = 1200106;
 			loadoutResetButtonIDC = 1200206;
@@ -1443,11 +1443,11 @@ class rebelLoadoutMenu: SimpleMenuMedium
 		class l7Text: SimpleText
 		{
 			idc = 120007;
-			text = $STR_antistasi_dialogs_lat_title;
-			x = 0.422656 * safezoneW + safezoneX;
-			y = 0.456 * safezoneH + safezoneY;
-			w = 0.0773437 * safezoneW;	
-			h = 0.022 * safezoneH;
+			text = "$STR_antistasi_dialogs_lat_title";
+			x = QUOTE(0.422656 * safezoneW + safezoneX);
+			y = QUOTE(0.456 * safezoneH + safezoneY);
+			w = QUOTE(0.0773437 * safezoneW);	
+			h = QUOTE(0.022 * safezoneH);
 			loadoutMoniker = "unitLAT";
 			loadoutArsenalButtonIDC = 1200107;
 			loadoutResetButtonIDC = 1200207;
@@ -1456,11 +1456,11 @@ class rebelLoadoutMenu: SimpleMenuMedium
 		class l8Text: SimpleText
 		{
 			idc = 120008;
-			text = $STR_antistasi_dialogs_crewman_title;
-			x = 0.422656 * safezoneW + safezoneX;
-			y = 0.489 * safezoneH + safezoneY;
-			w = 0.0773437 * safezoneW;	
-			h = 0.022 * safezoneH;
+			text = "$STR_antistasi_dialogs_crewman_title";
+			x = QUOTE(0.422656 * safezoneW + safezoneX);
+			y = QUOTE(0.489 * safezoneH + safezoneY);
+			w = QUOTE(0.0773437 * safezoneW);	
+			h = QUOTE(0.022 * safezoneH);
 			loadoutMoniker = "unitCrew";
 			loadoutArsenalButtonIDC = 1200108;
 			loadoutResetButtonIDC = 1200208;
@@ -1469,11 +1469,11 @@ class rebelLoadoutMenu: SimpleMenuMedium
 		class l9Text: SimpleText
 		{
 			idc = 120009;
-			text = $STR_antistasi_dialogs_squad_leader_title;
-			x = 0.422656 * safezoneW + safezoneX;
-			y = 0.522 * safezoneH + safezoneY;
-			w = 0.0773437 * safezoneW;	
-			h = 0.022 * safezoneH;
+			text = "$STR_antistasi_dialogs_squad_leader_title";
+			x = QUOTE(0.422656 * safezoneW + safezoneX);
+			y = QUOTE(0.522 * safezoneH + safezoneY);
+			w = QUOTE(0.0773437 * safezoneW);	
+			h = QUOTE(0.022 * safezoneH);
 			loadoutMoniker = "unitSL";
 			loadoutArsenalButtonIDC = 1200109;
 			loadoutResetButtonIDC = 1200209;
@@ -1482,11 +1482,11 @@ class rebelLoadoutMenu: SimpleMenuMedium
 		class l10Text: SimpleText
 		{
 			idc = 120010;
-			text = $STR_antistasi_dialogs_sapper_title;
-			x = 0.422656 * safezoneW + safezoneX;
-			y = 0.555 * safezoneH + safezoneY;
-			w = 0.0773437 * safezoneW;	
-			h = 0.022 * safezoneH;
+			text = "$STR_antistasi_dialogs_sapper_title";
+			x = QUOTE(0.422656 * safezoneW + safezoneX);
+			y = QUOTE(0.555 * safezoneH + safezoneY);
+			w = QUOTE(0.0773437 * safezoneW);	
+			h = QUOTE(0.022 * safezoneH);
 			loadoutMoniker = "unitExp";
 			loadoutArsenalButtonIDC = 1200110;
 			loadoutResetButtonIDC = 1200210;
@@ -1495,11 +1495,11 @@ class rebelLoadoutMenu: SimpleMenuMedium
 		class l11Text: SimpleText
 		{
 			idc = 120011;
-			text = $STR_antistasi_dialogs_at_title;
-			x = 0.422656 * safezoneW + safezoneX;
-			y = 0.588 * safezoneH + safezoneY;
-			w = 0.0773437 * safezoneW;	
-			h = 0.022 * safezoneH;
+			text = "$STR_antistasi_dialogs_at_title";
+			x = QUOTE(0.422656 * safezoneW + safezoneX);
+			y = QUOTE(0.588 * safezoneH + safezoneY);
+			w = QUOTE(0.0773437 * safezoneW);	
+			h = QUOTE(0.022 * safezoneH);
 			loadoutMoniker = "unitAT";
 			loadoutArsenalButtonIDC = 1200111;
 			loadoutResetButtonIDC = 1200211;
@@ -1508,11 +1508,11 @@ class rebelLoadoutMenu: SimpleMenuMedium
 		class l12Text: SimpleText
 		{
 			idc = 120012;
-			text = $STR_antistasi_dialogs_aa_title;
-			x = 0.422656 * safezoneW + safezoneX;
-			y = 0.621 * safezoneH + safezoneY;
-			w = 0.0773437 * safezoneW;	
-			h = 0.022 * safezoneH;
+			text = "$STR_antistasi_dialogs_aa_title";
+			x = QUOTE(0.422656 * safezoneW + safezoneX);
+			y = QUOTE(0.621 * safezoneH + safezoneY);
+			w = QUOTE(0.0773437 * safezoneW);	
+			h = QUOTE(0.022 * safezoneH);
 			loadoutMoniker = "unitAA";
 			loadoutArsenalButtonIDC = 1200112;
 			loadoutResetButtonIDC = 1200212;
@@ -1521,217 +1521,217 @@ class rebelLoadoutMenu: SimpleMenuMedium
 		class l1ArsenalButton: ArsenalButton
 		{
 			idc = 1200101;
-			x = 0.54125 * safezoneW + safezoneX;
-			y = 0.258 * safezoneH + safezoneY;
-			w = 0.0103125 * safezoneW;
-			h = 0.022 * safezoneH;
+			x = QUOTE(0.54125 * safezoneW + safezoneX);
+			y = QUOTE(0.258 * safezoneH + safezoneY);
+			w = QUOTE(0.0103125 * safezoneW);
+			h = QUOTE(0.022 * safezoneH);
 		};
 
 		class l1ResetButton: CopyPasteResetButton
 		{
 			idc = 1200201;
-			x = 0.561875 * safezoneW + safezoneX;
-			y = 0.258 * safezoneH + safezoneY;
-			w = 0.0103125 * safezoneW;
-			h = 0.022 * safezoneH;
+			x = QUOTE(0.561875 * safezoneW + safezoneX);
+			y = QUOTE(0.258 * safezoneH + safezoneY);
+			w = QUOTE(0.0103125 * safezoneW);
+			h = QUOTE(0.022 * safezoneH);
 		};
 
 		class l2ArsenalButton: ArsenalButton
 		{
 			idc = 1200102;
-			x = 0.54125 * safezoneW + safezoneX;
-			y = 0.291 * safezoneH + safezoneY;
-			w = 0.0103125 * safezoneW;
-			h = 0.022 * safezoneH;
+			x = QUOTE(0.54125 * safezoneW + safezoneX);
+			y = QUOTE(0.291 * safezoneH + safezoneY);
+			w = QUOTE(0.0103125 * safezoneW);
+			h = QUOTE(0.022 * safezoneH);
 		};
 
 		class l2ResetButton: CopyPasteResetButton
 		{
 			idc = 1200202;
-			x = 0.561875 * safezoneW + safezoneX;
-			y = 0.291 * safezoneH + safezoneY;
-			w = 0.0103125 * safezoneW;
-			h = 0.022 * safezoneH;
+			x = QUOTE(0.561875 * safezoneW + safezoneX);
+			y = QUOTE(0.291 * safezoneH + safezoneY);
+			w = QUOTE(0.0103125 * safezoneW);
+			h = QUOTE(0.022 * safezoneH);
 		};
 
 		class l3ArsenalButton: ArsenalButton
 		{
 			idc = 1200103;
-			x = 0.54125 * safezoneW + safezoneX;
-			y = 0.324 * safezoneH + safezoneY;
-			w = 0.0103125 * safezoneW;
-			h = 0.022 * safezoneH;
+			x = QUOTE(0.54125 * safezoneW + safezoneX);
+			y = QUOTE(0.324 * safezoneH + safezoneY);
+			w = QUOTE(0.0103125 * safezoneW);
+			h = QUOTE(0.022 * safezoneH);
 		};
 
 		class l3ResetButton: CopyPasteResetButton
 		{
 			idc = 1200203;
-			x = 0.561875 * safezoneW + safezoneX;
-			y = 0.324 * safezoneH + safezoneY;
-			w = 0.0103125 * safezoneW;
-			h = 0.022 * safezoneH;
+			x = QUOTE(0.561875 * safezoneW + safezoneX);
+			y = QUOTE(0.324 * safezoneH + safezoneY);
+			w = QUOTE(0.0103125 * safezoneW);
+			h = QUOTE(0.022 * safezoneH);
 		};
 
 		class l4ArsenalButton: ArsenalButton
 		{
 			idc = 1200104;
-			x = 0.54125 * safezoneW + safezoneX;
-			y = 0.357 * safezoneH + safezoneY;
-			w = 0.0103125 * safezoneW;
-			h = 0.022 * safezoneH;
+			x = QUOTE(0.54125 * safezoneW + safezoneX);
+			y = QUOTE(0.357 * safezoneH + safezoneY);
+			w = QUOTE(0.0103125 * safezoneW);
+			h = QUOTE(0.022 * safezoneH);
 		};
 
 		class l4ResetButton: CopyPasteResetButton
 		{
 			idc = 1200204;
-			x = 0.561875 * safezoneW + safezoneX;
-			y = 0.357 * safezoneH + safezoneY;
-			w = 0.0103125 * safezoneW;
-			h = 0.022 * safezoneH;
+			x = QUOTE(0.561875 * safezoneW + safezoneX);
+			y = QUOTE(0.357 * safezoneH + safezoneY);
+			w = QUOTE(0.0103125 * safezoneW);
+			h = QUOTE(0.022 * safezoneH);
 		};
 		
 		class l5ArsenalButton: ArsenalButton
 		{
 			idc = 1200105;
-			x = 0.54125 * safezoneW + safezoneX;
-			y = 0.39 * safezoneH + safezoneY;
-			w = 0.0103125 * safezoneW;
-			h = 0.022 * safezoneH;
+			x = QUOTE(0.54125 * safezoneW + safezoneX);
+			y = QUOTE(0.39 * safezoneH + safezoneY);
+			w = QUOTE(0.0103125 * safezoneW);
+			h = QUOTE(0.022 * safezoneH);
 		};
 
 		class l5ResetButton: CopyPasteResetButton
 		{
 			idc = 1200205;
-			x = 0.561875 * safezoneW + safezoneX;
-			y = 0.39 * safezoneH + safezoneY;
-			w = 0.0103125 * safezoneW;
-			h = 0.022 * safezoneH;
+			x = QUOTE(0.561875 * safezoneW + safezoneX);
+			y = QUOTE(0.39 * safezoneH + safezoneY);
+			w = QUOTE(0.0103125 * safezoneW);
+			h = QUOTE(0.022 * safezoneH);
 		};
 
 		class l6ArsenalButton: ArsenalButton
 		{
 			idc = 1200106;
-			x = 0.54125 * safezoneW + safezoneX;
-			y = 0.423 * safezoneH + safezoneY;
-			w = 0.0103125 * safezoneW;
-			h = 0.022 * safezoneH;
+			x = QUOTE(0.54125 * safezoneW + safezoneX);
+			y = QUOTE(0.423 * safezoneH + safezoneY);
+			w = QUOTE(0.0103125 * safezoneW);
+			h = QUOTE(0.022 * safezoneH);
 		};
 
 		class l6ResetButton: CopyPasteResetButton
 		{
 			idc = 1200206;
-			x = 0.561875 * safezoneW + safezoneX;
-			y = 0.423 * safezoneH + safezoneY;
-			w = 0.0103125 * safezoneW;
-			h = 0.022 * safezoneH;
+			x = QUOTE(0.561875 * safezoneW + safezoneX);
+			y = QUOTE(0.423 * safezoneH + safezoneY);
+			w = QUOTE(0.0103125 * safezoneW);
+			h = QUOTE(0.022 * safezoneH);
 		};
 
 		class l7ArsenalButton: ArsenalButton
 		{
 			idc = 1200107;
-			x = 0.54125 * safezoneW + safezoneX;
-			y = 0.456 * safezoneH + safezoneY;
-			w = 0.0103125 * safezoneW;
-			h = 0.022 * safezoneH;
+			x = QUOTE(0.54125 * safezoneW + safezoneX);
+			y = QUOTE(0.456 * safezoneH + safezoneY);
+			w = QUOTE(0.0103125 * safezoneW);
+			h = QUOTE(0.022 * safezoneH);
 		};
 
 		class l7ResetButton: CopyPasteResetButton
 		{
 			idc = 1200207;
-			x = 0.561875 * safezoneW + safezoneX;
-			y = 0.456 * safezoneH + safezoneY;
-			w = 0.0103125 * safezoneW;
-			h = 0.022 * safezoneH;
+			x = QUOTE(0.561875 * safezoneW + safezoneX);
+			y = QUOTE(0.456 * safezoneH + safezoneY);
+			w = QUOTE(0.0103125 * safezoneW);
+			h = QUOTE(0.022 * safezoneH);
 		};
 
 		class l8ArsenalButton: ArsenalButton
 		{
 			idc = 1200108;
-			x = 0.54125 * safezoneW + safezoneX;
-			y = 0.489 * safezoneH + safezoneY;
-			w = 0.0103125 * safezoneW;
-			h = 0.022 * safezoneH;
+			x = QUOTE(0.54125 * safezoneW + safezoneX);
+			y = QUOTE(0.489 * safezoneH + safezoneY);
+			w = QUOTE(0.0103125 * safezoneW);
+			h = QUOTE(0.022 * safezoneH);
 		};
 
 		class l8ResetButton: CopyPasteResetButton
 		{
 			idc = 1200208;
-			x = 0.561875 * safezoneW + safezoneX;
-			y = 0.489 * safezoneH + safezoneY;
-			w = 0.0103125 * safezoneW;
-			h = 0.022 * safezoneH;
+			x = QUOTE(0.561875 * safezoneW + safezoneX);
+			y = QUOTE(0.489 * safezoneH + safezoneY);
+			w = QUOTE(0.0103125 * safezoneW);
+			h = QUOTE(0.022 * safezoneH);
 		};
 
 		class l9ArsenalButton: ArsenalButton
 		{
 			idc = 1200109;
-			x = 0.54125 * safezoneW + safezoneX;
-			y = 0.522 * safezoneH + safezoneY;
-			w = 0.0103125 * safezoneW;
-			h = 0.022 * safezoneH;
+			x = QUOTE(0.54125 * safezoneW + safezoneX);
+			y = QUOTE(0.522 * safezoneH + safezoneY);
+			w = QUOTE(0.0103125 * safezoneW);
+			h = QUOTE(0.022 * safezoneH);
 		};
 
 		class l9ResetButton: CopyPasteResetButton
 		{
 			idc = 1200209;
-			x = 0.561875 * safezoneW + safezoneX;
-			y = 0.522 * safezoneH + safezoneY;
-			w = 0.0103125 * safezoneW;
-			h = 0.022 * safezoneH;
+			x = QUOTE(0.561875 * safezoneW + safezoneX);
+			y = QUOTE(0.522 * safezoneH + safezoneY);
+			w = QUOTE(0.0103125 * safezoneW);
+			h = QUOTE(0.022 * safezoneH);
 		};
 
 		class l10ArsenalButton: ArsenalButton
 		{
 			idc = 1200110;
-			x = 0.54125 * safezoneW + safezoneX;
-			y = 0.555 * safezoneH + safezoneY;
-			w = 0.0103125 * safezoneW;
-			h = 0.022 * safezoneH;
+			x = QUOTE(0.54125 * safezoneW + safezoneX);
+			y = QUOTE(0.555 * safezoneH + safezoneY);
+			w = QUOTE(0.0103125 * safezoneW);
+			h = QUOTE(0.022 * safezoneH);
 		};
 
 		class l10ResetButton: CopyPasteResetButton
 		{
 			idc = 1200210;
-			x = 0.561875 * safezoneW + safezoneX;
-			y = 0.555 * safezoneH + safezoneY;
-			w = 0.0103125 * safezoneW;
-			h = 0.022 * safezoneH;
+			x = QUOTE(0.561875 * safezoneW + safezoneX);
+			y = QUOTE(0.555 * safezoneH + safezoneY);
+			w = QUOTE(0.0103125 * safezoneW);
+			h = QUOTE(0.022 * safezoneH);
 		};
 
 		class l11ArsenalButton: ArsenalButton
 		{
 			idc = 1200111;
-			x = 0.54125 * safezoneW + safezoneX;
-			y = 0.588 * safezoneH + safezoneY;
-			w = 0.0103125 * safezoneW;
-			h = 0.022 * safezoneH;
+			x = QUOTE(0.54125 * safezoneW + safezoneX);
+			y = QUOTE(0.588 * safezoneH + safezoneY);
+			w = QUOTE(0.0103125 * safezoneW);
+			h = QUOTE(0.022 * safezoneH);
 		};
 
 		class l11ResetButton: CopyPasteResetButton
 		{
 			idc = 1200211;
-			x = 0.561875 * safezoneW + safezoneX;
-			y = 0.588 * safezoneH + safezoneY;
-			w = 0.0103125 * safezoneW;
-			h = 0.022 * safezoneH;
+			x = QUOTE(0.561875 * safezoneW + safezoneX);
+			y = QUOTE(0.588 * safezoneH + safezoneY);
+			w = QUOTE(0.0103125 * safezoneW);
+			h = QUOTE(0.022 * safezoneH);
 		};
 
 		class l12ArsenalButton: ArsenalButton
 		{
 			idc = 1200112;
-			x = 0.54125 * safezoneW + safezoneX;
-			y = 0.621 * safezoneH + safezoneY;
-			w = 0.0103125 * safezoneW;
-			h = 0.022 * safezoneH;
+			x = QUOTE(0.54125 * safezoneW + safezoneX);
+			y = QUOTE(0.621 * safezoneH + safezoneY);
+			w = QUOTE(0.0103125 * safezoneW);
+			h = QUOTE(0.022 * safezoneH);
 		};
 
 		class l12ResetButton: CopyPasteResetButton
 		{
 			idc = 1200212;
-			x = 0.561875 * safezoneW + safezoneX;
-			y = 0.621 * safezoneH + safezoneY;
-			w = 0.0103125 * safezoneW;
-			h = 0.022 * safezoneH;
+			x = QUOTE(0.561875 * safezoneW + safezoneX);
+			y = QUOTE(0.621 * safezoneH + safezoneY);
+			w = QUOTE(0.0103125 * safezoneW);
+			h = QUOTE(0.022 * safezoneH);
 		};
 	};
 };

@@ -14,7 +14,7 @@ switch (_convoyType) do
     //Patrol arrived, nothing found on the way, return to start point
     //Cause thats how patrols work
     sleep 15;
-    [_convoyID, _backRoute, _speed, _units, _sideConvoy, "return"] spawn A3A_fnc_createConvoy;
+    [_convoyID, _units, _startPos, _endPos, ["",""], _convoyType, _sideConvoy] spawn A3A_fnc_createConvoy;
   };
   case ("convoy"):
   {

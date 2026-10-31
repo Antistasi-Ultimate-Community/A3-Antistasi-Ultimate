@@ -93,7 +93,7 @@ private _categoriesToPublish = createHashMap;
 } forEach _allExceptNVs;
 
 call A3A_fnc_checkRadiosUnlocked;
-unlockedOptics = [unlockedOptics,[],{getNumber (configfile >> "CfgWeapons" >> _x >> "ItemInfo" >> "mass")},"DESCEND"] call BIS_fnc_sortBy;
+unlockedOptics = [unlockedOptics,[],{getNumber (configFile >> "CfgWeapons" >> _x >> "ItemInfo" >> "mass")},"DESCEND"] call BIS_fnc_sortBy;
 
 //NVG Unlocking is special
 //Unlock the non-thermal NVG with the highest count if the total is greater than minWeaps

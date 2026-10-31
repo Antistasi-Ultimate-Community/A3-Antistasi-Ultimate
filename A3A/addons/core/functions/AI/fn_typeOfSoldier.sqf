@@ -27,7 +27,7 @@ Example: unit call A3A_fnc_typeOfSoldier;
 
 #define MAGS(CFG_NAME) (configFile >> "CfgWeapons" >> CFG_NAME >> "magazines")
 #define MAG_AMMO(CFG_NAME) (configFile >> "CfgMagazines" >> CFG_NAME >> "ammo")
-#define AIRLOCK(CFG_NAME) (configfile >> "CfgAmmo" >> CFG_NAME >> "airLock")
+#define AIRLOCK(CFG_NAME) (configFile >> "CfgAmmo" >> CFG_NAME >> "airLock")
 #define ASSEMBLE_INFO(CFG_NAME) \
     (configFile >> "cfgVehicles" >> CFG_NAME >> "assembleInfo")
 #define ASSEMBLE_WEAPON(CFG_NAME) \

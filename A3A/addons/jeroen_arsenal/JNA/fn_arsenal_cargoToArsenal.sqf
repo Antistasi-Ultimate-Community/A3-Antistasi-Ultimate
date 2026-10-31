@@ -34,8 +34,8 @@ private _array = _object call jn_fnc_arsenal_cargoToArray;
 // Clear cargo
 clearMagazineCargoGlobal _object;
 clearItemCargoGlobal _object;
-clearweaponCargoGlobal _object;
-clearbackpackCargoGlobal _object;
+clearWeaponCargoGlobal _object;
+clearBackpackCargoGlobal _object;
 // Update datalist on server and client
 _array call jn_fnc_arsenal_addItem;
 

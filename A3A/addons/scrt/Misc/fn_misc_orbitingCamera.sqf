@@ -8,7 +8,7 @@ _coords set [2, _altitude];
 
 private _camera = "camera" camCreate _coords;
 _camera cameraEffect ["INTERNAL","BACK"];
-_camera camPrepareFOV 0.700;
+_camera camPrepareFov 0.700;
 _camera camPrepareTarget player;
 _camera camCommitPrepared 0;
 

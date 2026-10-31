@@ -51,7 +51,7 @@ private _bodyguardClass = selectRandom [
 private _traitor = [_groupTraitor, _faction get "unitCommander", _posTraitor, [], 0, "NONE"] call A3A_fnc_RivalsCreateUnit;
 _traitor allowDamage false;
 _traitor setPos _posTraitor;
-[_unit, createHashMapFromArray [["face", selectRandom (A3A_faction_reb get "faces")], ["speaker", selectRandom (A3A_faction_reb get "voices")]]] call A3A_fnc_setIdentity;
+[_traitor, createHashMapFromArray [["face", selectRandom (A3A_faction_reb get "faces")], ["speaker", selectRandom (A3A_faction_reb get "voices")]]] call A3A_fnc_setIdentity;
 
 [_traitor, 100, (random 3)] call SCRT_fnc_common_addRandomMoneyMagazine;
 _traitor setVariable ["hasLaptop", true, true];
@@ -122,7 +122,7 @@ if (dateToNumber date < _dateLimitNum && alive _traitor) then {
 			_unit setCaptive true;
 			[_unit,""] call A3A_fnc_NATOinit;
 		};
-		[_groupX, "Patrol_Area", 25, 50, 100, false, [], false] call A3A_fnc_patrolLoop;
+		[_patrolGroup, "Patrol_Area", 25, 50, 100, false, [], false] call A3A_fnc_patrolLoop;
 
 		_groups pushBack _patrolGroup;
 		_patrolGroups pushBack _patrolGroup;
@@ -184,7 +184,7 @@ waitUntil {
 
     sleep (random [120, 240, 360]);
 
-    private _chance = if (_isDifficult) then {20} else {10};
+    private _chance = [10, 20] select (_isDifficult);
     if ((random 100) > _chance) exitWith {}; 
 
     private _event = selectRandom [200, 300];

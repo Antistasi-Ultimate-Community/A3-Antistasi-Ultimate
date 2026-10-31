@@ -1,3 +1,4 @@
+#pragma hemtt ignore_variables ["_thisScript"]
 params ["_squadLeader", "_caller", "_searchAction"];
 
 /*  Searches a squadleader for small intel

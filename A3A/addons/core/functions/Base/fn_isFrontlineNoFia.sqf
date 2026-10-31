@@ -9,7 +9,7 @@ if (_sideX == Occupants) then {
 	_sideOpposite = Occupants;
 };
 private _mrkENY = (airportsX + milbases + outposts + seaports + factories + resourcesX) select {sidesX getVariable [_x,sideUnknown] == _sideOpposite}; /// != teamPlayer debetable
-if (count _mrkENY > 0) then {
+if (_mrkENY isNotEqualTo []) then {
 	private _positionX = getMarkerPos _markerX;
 	_isFrontier = _mrkENY findIf {_positionX distance (getMarkerPos _x) < distanceSPWN*2} != -1;
 };

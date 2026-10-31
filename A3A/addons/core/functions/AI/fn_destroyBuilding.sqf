@@ -32,7 +32,7 @@ if !([_engineerX] call A3A_fnc_canFight) exitWith {
 
 private _side = side _engineerX;
 _engineerX playActionNow "PutDown";
-private _mineX = "SatchelCharge_Remote_Ammo" createVehicle (getposATL _engineerX);
+private _mineX = "SatchelCharge_Remote_Ammo" createVehicle (getPosATL _engineerX);
 private _mag = (magazines _engineerX select {(_x call BIS_fnc_itemType) select 0 == "Mine"}) select 0;
 _engineerX removeMagazineGlobal _mag;
 if (_engineerX != leader _engineerX) then {_engineerX doMove (getPos (leader _engineerX))} else {_engineerX call A3A_fnc_recallGroup};

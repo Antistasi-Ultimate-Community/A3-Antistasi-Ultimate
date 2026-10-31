@@ -36,103 +36,103 @@ private _declareServerVariable = {
 Info("initialising general server variables");
 
 //time to delete dead bodies, vehicles etc..
-DECLARE_SERVER_VAR(cleantime, 3600);
+DECLARE_SERVER_VAR(cleantime,3600);
 //initial spawn distance. Less than 1Km makes parked vehicles spawn in your nose while you approach.
 //User-adjustable variables are now declared in initParams
 //DECLARE_SERVER_VAR(distanceSPWN, 1000);
-DECLARE_SERVER_VAR(distanceSPWN1, distanceSPWN*1.3);
-DECLARE_SERVER_VAR(distanceSPWN2, distanceSPWN*0.5);
+DECLARE_SERVER_VAR(distanceSPWN1,distanceSPWN*1.3);
+DECLARE_SERVER_VAR(distanceSPWN2,distanceSPWN*0.5);
 //The furthest distance the AI can attack from using helicopters or planes
-DECLARE_SERVER_VAR(distanceForAirAttack, 10000);
+DECLARE_SERVER_VAR(distanceForAirAttack,10000);
 //The furthest distance the AI can attack from using trucks and armour
-DECLARE_SERVER_VAR(distanceForLandAttack, 3000);
+DECLARE_SERVER_VAR(distanceForLandAttack,3000);
 
 // Used by headless clients for crate scaling
-DECLARE_SERVER_VAR(A3A_activePlayerCount, 1);
+DECLARE_SERVER_VAR(A3A_activePlayerCount,1);
 
 //Legacy tool for scaling AI difficulty. Should die.
-DECLARE_SERVER_VAR(difficultyCoef, 0);
+DECLARE_SERVER_VAR(difficultyCoef,0);
 
 //Mostly state variables, used by various parts of Antistasi.
-DECLARE_SERVER_VAR(HQAttackInProgress, false);
-DECLARE_SERVER_VAR(bigAttackInProgress, false);
+DECLARE_SERVER_VAR(HQAttackInProgress,false);
+DECLARE_SERVER_VAR(bigAttackInProgress,false);
 DECLARE_SERVER_VAR(AAFpatrols,0);
 
 //Should vegetation around HQ be cleared
-DECLARE_SERVER_VAR(chopForest, false);
+DECLARE_SERVER_VAR(chopForest,false);
 
-DECLARE_SERVER_VAR(skillFIA, 5);																		//Initial skill level for FIA soldiers
+DECLARE_SERVER_VAR(skillFIA,5);																		//Initial skill level for FIA soldiers
 //Initial Occupant Aggression
-DECLARE_SERVER_VAR(aggressionOccupants, 0);
-DECLARE_SERVER_VAR(aggressionStackOccupants, []);
-DECLARE_SERVER_VAR(aggressionLevelOccupants, 1);
+DECLARE_SERVER_VAR(aggressionOccupants,0);
+DECLARE_SERVER_VAR(aggressionStackOccupants,[]);
+DECLARE_SERVER_VAR(aggressionLevelOccupants,1);
 //Initial Invader Aggression
-DECLARE_SERVER_VAR(aggressionInvaders, 0);
-DECLARE_SERVER_VAR(aggressionStackInvaders, []);
-DECLARE_SERVER_VAR(aggressionLevelInvaders, 1);
+DECLARE_SERVER_VAR(aggressionInvaders,0);
+DECLARE_SERVER_VAR(aggressionStackInvaders,[]);
+DECLARE_SERVER_VAR(aggressionLevelInvaders,1);
 //Initial war tier.
-DECLARE_SERVER_VAR(tierWar, 1);
-DECLARE_SERVER_VAR(bombRuns, 0);
+DECLARE_SERVER_VAR(tierWar,1);
+DECLARE_SERVER_VAR(bombRuns,0);
 //Should various units, such as patrols and convoys, be revealed.
-DECLARE_SERVER_VAR(revealX, false);
-DECLARE_SERVER_VAR(A3A_activeTasks, []);
-DECLARE_SERVER_VAR(A3A_taskCount, 0);
+DECLARE_SERVER_VAR(revealX,false);
+DECLARE_SERVER_VAR(A3A_activeTasks,[]);
+DECLARE_SERVER_VAR(A3A_taskCount,0);
 //List of statics (MGs, AA, etc) that will be saved and loaded.
-DECLARE_SERVER_VAR(staticsToSave, []);
-DECLARE_SERVER_VAR(staticsToFlip, []);
+DECLARE_SERVER_VAR(staticsToSave,[]);
+DECLARE_SERVER_VAR(staticsToFlip,[]);
 //Whether the players have access to radios.
-DECLARE_SERVER_VAR(haveRadio, false);
+DECLARE_SERVER_VAR(haveRadio,false);
 //Initial HR
 server setVariable ["hr",initialHr,true];
 //Initial faction money pool
 server setVariable ["resourcesFIA",initialFactionMoney,true];
 // Time of last garbage clean. Note: serverTime may not reset to zero if server was not restarted. Therefore, it should capture the time at start of mission.
-DECLARE_SERVER_VAR(A3A_lastGarbageCleanTime, serverTime);
+DECLARE_SERVER_VAR(A3A_lastGarbageCleanTime,serverTime);
 // Hash map of custom non-member/AI item thresholds
-DECLARE_SERVER_VAR(A3A_arsenalLimits, createHashMap);
+DECLARE_SERVER_VAR(A3A_arsenalLimits,createHashMap);
 //Time of last garbage clean notification
-DECLARE_SERVER_VAR(A3A_lastGarbageCleanTimeNote, serverTime);
+DECLARE_SERVER_VAR(A3A_lastGarbageCleanTimeNote,serverTime);
 // Under-construction objects
-DECLARE_SERVER_VAR(A3A_unbuiltObjects, []);
+DECLARE_SERVER_VAR(A3A_unbuiltObjects,[]);
 
 //Antistasi Plus variables
 
 //Override uniforms on rebel loadouts
-DECLARE_SERVER_VAR(randomizeRebelLoadoutUniforms, true);
+DECLARE_SERVER_VAR(randomizeRebelLoadoutUniforms,true);
 //Stores  custom AI rebel loadouts.
-DECLARE_SERVER_VAR(rebelLoadouts, createHashMap);
+DECLARE_SERVER_VAR(rebelLoadouts,createHashMap);
 //Players who attend in parachute jumps
-DECLARE_SERVER_VAR(paradropAttendants, []);
+DECLARE_SERVER_VAR(paradropAttendants,[]);
 //Trader discount.
-DECLARE_SERVER_VAR(traderDiscount, 0);
+DECLARE_SERVER_VAR(traderDiscount,0);
 //Trader position.
-DECLARE_SERVER_VAR(traderPosition, []);
+DECLARE_SERVER_VAR(traderPosition,[]);
 //List of player-placed buildings that will be saved and loaded.
-DECLARE_SERVER_VAR(constructionsToSave, []);
+DECLARE_SERVER_VAR(constructionsToSave,[]);
 //Non-lethal support points similar to airstrikes
-DECLARE_SERVER_VAR(supportPoints, 0);
+DECLARE_SERVER_VAR(supportPoints,0);
 //Whether the players have trader quest.
-DECLARE_SERVER_VAR(isTraderQuestAssigned, false);
+DECLARE_SERVER_VAR(isTraderQuestAssigned,false);
 //Whether the players have access to trader.
-DECLARE_SERVER_VAR(isTraderQuestCompleted, false);
+DECLARE_SERVER_VAR(isTraderQuestCompleted,false);
 //Check if occupants and invaders are defeated
-DECLARE_SERVER_VAR(areOccupantsDefeated, false);
-DECLARE_SERVER_VAR(areInvadersDefeated, false);
+DECLARE_SERVER_VAR(areOccupantsDefeated,false);
+DECLARE_SERVER_VAR(areInvadersDefeated,false);
 //Whether the rebels know about rival rebel faction.
-DECLARE_SERVER_VAR(areRivalsDiscovered, false);
-DECLARE_SERVER_VAR(inactivityStackRivals, []);
-DECLARE_SERVER_VAR(inactivityLevelRivals, 5);
+DECLARE_SERVER_VAR(areRivalsDiscovered,false);
+DECLARE_SERVER_VAR(inactivityStackRivals,[]);
+DECLARE_SERVER_VAR(inactivityLevelRivals,5);
 //Override uniforms on rebel loadouts
-DECLARE_SERVER_VAR(rivalsLocationsMap, createHashMap);
-DECLARE_SERVER_VAR(rivalsExcludedLocations, createHashMap);
-DECLARE_SERVER_VAR(nextRivalsLocationReveal, 0);
+DECLARE_SERVER_VAR(rivalsLocationsMap,createHashMap);
+DECLARE_SERVER_VAR(rivalsExcludedLocations,createHashMap);
+DECLARE_SERVER_VAR(nextRivalsLocationReveal,0);
 //Check if occupants and invaders are defeated
-DECLARE_SERVER_VAR(areOccupantsDefeated, false);
-DECLARE_SERVER_VAR(areInvadersDefeated, false);
-DECLARE_SERVER_VAR(areRivalsDefeated, false);
-DECLARE_SERVER_VAR(isRivalsDiscoveryQuestAssigned, false);
+DECLARE_SERVER_VAR(areOccupantsDefeated,false);
+DECLARE_SERVER_VAR(areInvadersDefeated,false);
+DECLARE_SERVER_VAR(areRivalsDefeated,false);
+DECLARE_SERVER_VAR(isRivalsDiscoveryQuestAssigned,false);
 
-DECLARE_SERVER_VAR(townSkirmishes, []);
+DECLARE_SERVER_VAR(townSkirmishes,[]);
 
 ////////////////////////////////////
 //     SERVER ONLY VARIABLES     ///
@@ -197,14 +197,17 @@ membersX = [];					// These two published later by startGame
 theBoss = objNull;
 
 activityIsChanging = false;
-baseRivalsDecay = switch (rivalsDifficulty) do {
-    case (1): { 0.28 };
-	case (2): { 0.42 };
-    case (3): { 0.65 };
-    default {
-		Error_1("Can't set base rivals decay - something wrong with %1 difficulty value.", str rivalsDifficulty);
+if (isNil "rivalsDifficulty" || {!(rivalsDifficulty isEqualType 0)}) then {
+	Error_1("Can't set base rivals decay - something wrong with %1 difficulty value.",str rivalsDifficulty);
+	baseRivalsDecay = 0;
+} else {
+	baseRivalsDecay = switch (rivalsDifficulty) do {
+		case (1): { 0.28 };
+		case (2): { 0.42 };
+		case (3): { 0.65 };
 	};
 };
+
 publicVariable "A3A_buildingsToSave";
 publicVariable "baseRivalsDecay";
 
@@ -219,10 +222,10 @@ Info("Initialising item categories");
 private _unlockableCategories = allCategoriesExceptSpecial + ["AA", "AT", "GrenadeLaunchers", "ArmoredVests", "ArmoredHeadgear", "BackpacksCargo"];
 
 //Build list of 'allX' variables, such as 'allWeapons'
-DECLARE_SERVER_VAR(allEquipmentArrayNames, allCategories apply {"all" + _x});
+DECLARE_SERVER_VAR(allEquipmentArrayNames,allCategories apply {"all" + _x});
 
 //Build list of 'unlockedX' variables, such as 'allWeapons'
-DECLARE_SERVER_VAR(unlockedEquipmentArrayNames, _unlockableCategories apply {"unlocked" + _x});
+DECLARE_SERVER_VAR(unlockedEquipmentArrayNames,_unlockableCategories apply {"unlocked" + _x});
 
 //Various arrays used by the loot system. Could also be done using DECLARE_SERVER_VAR individually.
 private _otherEquipmentArrayNames = [
@@ -248,22 +251,22 @@ private _otherEquipmentArrayNames = [
 	"civilianBackpackDevice"
 ];
 
-DECLARE_SERVER_VAR(otherEquipmentArrayNames, _otherEquipmentArrayNames);
+DECLARE_SERVER_VAR(otherEquipmentArrayNames,_otherEquipmentArrayNames);
 
 //We're going to use this to sync the variables later.
 everyEquipmentRelatedArrayName = allEquipmentArrayNames + unlockedEquipmentArrayNames + otherEquipmentArrayNames;
 
 //Initialise them all as empty arrays.
 {
-	DECLARE_SERVER_VAR_FROM_VARIABLE(_x, []);
+	DECLARE_SERVER_VAR_FROM_VARIABLE(_x,[]);
 } forEach everyEquipmentRelatedArrayName;
 
 //Create a global namespace for custom unit types.
-DECLARE_SERVER_VAR(A3A_customUnitTypes, [true] call A3A_fnc_createNamespace);
+DECLARE_SERVER_VAR(A3A_customUnitTypes,[true] call A3A_fnc_createNamespace);
 
 //money magazines
 private _arrayMoney = ["Money_bunch","Money_roll","Money_stack","Money"];
-DECLARE_SERVER_VAR(arrayMoney, _arrayMoney);
+DECLARE_SERVER_VAR(arrayMoney,_arrayMoney);
 
 //SHOULD BE SYNCHRONIZED WITH arrayMoney VARIABLE
 private _arrayMoneyAmount = [
@@ -272,7 +275,7 @@ private _arrayMoneyAmount = [
 	HALs_money_oldManItemsPrice select 2,
 	HALs_money_oldManItemsPrice select 3
 ];
-DECLARE_SERVER_VAR(arrayMoneyAmount, _arrayMoneyAmount);
+DECLARE_SERVER_VAR(arrayMoneyAmount,_arrayMoneyAmount);
 
 ////////////////////////////////////
 //          MOD CONFIG           ///
@@ -306,11 +309,11 @@ Info("Setting up faction and DLC equipment flags");
 
 // Arma bug: Need to hardcode CDLC because arma3.cfg mod loading method doesn't register CDLC as "official"
 private _loadedDLC = getLoadedModsInfo select { (_x#2) and !(_x#1 in ["A3","curator","argo","tacops"]) };
-_loadedDLC append (getLoadedModsInfo select { tolower (_x#1) in ["ef", "gm", "rf", "spe", "vn", "ws", "csla"] });
-_loadedDLC = _loadedDLC apply { tolower (_x#1) };
+_loadedDLC append (getLoadedModsInfo select { toLower (_x#1) in ["ef", "gm", "rf", "spe", "vn", "ws", "csla"] });
+_loadedDLC = _loadedDLC apply { toLower (_x#1) };
 
 // Set enabled & disabled DLC/CDLC arrays for faction/equipment modification
-A3A_enabledDLC = (_saveData get "DLC") apply {tolower _x};                 // should be pre-checked against _loadedDLC
+A3A_enabledDLC = (_saveData get "DLC") apply {toLower _x};                 // should be pre-checked against _loadedDLC
 {
 	A3A_enabledDLC insert [0, getArray (configFile/"A3A"/"Templates"/_x/"forceDLC"), true];		// add unique elements only
 } forEach (_saveData get "factions");
@@ -318,9 +321,9 @@ A3A_disabledDLC = _loadedDLC - A3A_enabledDLC;
 A3A_disabledMods = A3A_disabledDLC;                 // Split to allow CUP civilians with GM
 
 // Everything that counts as vanilla: Official DLC plus various junk tags
-A3A_vanillaMods = (getLoadedModsInfo select {_x#2 and _x#3} apply {tolower (_x#1)}) + ["", "officialmod"];
+A3A_vanillaMods = (getLoadedModsInfo select {_x#2 and _x#3} apply {toLower (_x#1)}) + ["", "officialmod"];
 
-Debug_4("DLC loaded: %1 Enabled: %2 Disabled: %3 Vanilla: %4", _loadedDLC, A3A_enabledDLC, A3A_disabledDLC, A3A_vanillaMods);
+Debug_4("DLC loaded: %1 Enabled: %2 Disabled: %3 Vanilla: %4",_loadedDLC,A3A_enabledDLC,A3A_disabledDLC,A3A_vanillaMods);
 
 // Set faction equipment flags by lowest common denominator
 private _factions = _saveData get "factions";
@@ -328,7 +331,7 @@ private _occEquipFlags = getArray (configFile/"A3A"/"Templates"/(_factions#0)/"e
 private _invEquipFlags = getArray (configFile/"A3A"/"Templates"/(_factions#1)/"equipFlags");
 A3A_factionEquipFlags = _occEquipFlags arrayIntersect _invEquipFlags;
 
-Debug_1("Faction equip flags: %1", A3A_factionEquipFlags);
+Debug_1("Faction equip flags: %1",A3A_factionEquipFlags);
 
 if (gameMode isEqualTo 3) then {
 	areInvadersDefeated = true;
@@ -343,7 +346,7 @@ A3A_extraEquipMods = [];
     if (_modpath != "") then { A3A_extraEquipMods pushBackUnique _modpath };
 } forEach ["task_force_radio", "acre_main", "tfar_static_radios", "ace_main"];
 
-Debug_1("Extra equip mod paths: %1", A3A_extraEquipMods);
+Debug_1("Extra equip mod paths: %1",A3A_extraEquipMods);
 
 //////////////////////////////////////
 //         TEMPLATE LOADING        ///
@@ -354,7 +357,7 @@ Info("Reading templates");
 
     private _side = [west, east, resistance, civilian, opfor] # _forEachIndex;
 
-    Info_2("Loading template %1 for side %2", _x, _side);
+    Info_2("Loading template %1 for side %2",_x,_side);
 
 	private _cfg = configFile/"A3A"/"Templates"/_x;
 	private _basepath = getText (_cfg/"basepath") + "\";
@@ -374,7 +377,7 @@ Info("Reading templates");
 	private _cfg = configFile/"A3A"/"AddonVics"/_x;
 	private _basepath = getText (_cfg/"path") + "\";
 	{
-		Info_2("Loading addon file %1 for side %2", _x#1, _x#0);
+		Info_2("Loading addon file %1 for side %2",_x#1,_x#0);
 		[_x#0, _basepath + _x#1] call A3A_fnc_loadAddon;
 	} forEach getArray (_cfg/"files");
 
@@ -391,10 +394,10 @@ call A3A_fnc_compileMissionAssets;
 // Set template-dependent map stuff
 
 flagX setFlagTexture FactionGet(reb,"flagTexture");                 // HQ flag, should be local here
-"NATO_carrier" setMarkerText FactionGet(occ,"spawnMarkerName");
-"CSAT_carrier" setMarkerText FactionGet(inv,"spawnMarkerName");
-"NATO_carrier" setMarkertype FactionGet(occ,"flagMarkerType");
-"CSAT_carrier" setMarkertype FactionGet(inv,"flagMarkerType");
+"NATO_carrier" setMarkerTextLocal FactionGet(occ,"spawnMarkerName");
+"CSAT_carrier" setMarkerTextLocal FactionGet(inv,"spawnMarkerName");
+"NATO_carrier" setMarkerType FactionGet(occ,"flagMarkerType");
+"CSAT_carrier" setMarkerType FactionGet(inv,"flagMarkerType");
 
 ////////////////////////////////////
 //      CIVILIAN VEHICLES       ///
@@ -404,8 +407,8 @@ Info("Creating civilian vehicles lists");
 private _fnc_vehicleIsValid = {
 	params ["_type"];
 	private _cfg = configFile >> "CfgVehicles" >> _type;
-	if !(isClass _cfg) exitWith { Error_1("Vehicle class %1 not found", _type); false };
-	if (_cfg call A3A_fnc_getModOfConfigClass in A3A_disabledDLC) then {false} else {true};
+	if !(isClass _cfg) exitWith { Error_1("Vehicle class %1 not found",_type); false };
+	!(_cfg call A3A_fnc_getModOfConfigClass in A3A_disabledDLC);
 };
 
 private _fnc_filterAndWeightArray = {
@@ -449,8 +452,8 @@ _civVehicles append FactionGet(reb,"vehiclesCivCar");
 _civVehicles append FactionGet(reb,"vehiclesCivTruck");
 _civVehicles append FactionGet(reb,"vehiclesCivSupply");
 
-DECLARE_SERVER_VAR(arrayCivVeh, _civVehicles);
-DECLARE_SERVER_VAR(civVehiclesWeighted, _civVehiclesWeighted);
+DECLARE_SERVER_VAR(arrayCivVeh,_civVehicles);
+DECLARE_SERVER_VAR(civVehiclesWeighted,_civVehiclesWeighted);
 
 
 private _civBoats = [];
@@ -467,11 +470,11 @@ for "_i" from 0 to (count _civBoatData - 2) step 2 do {
 	};
 };
 
-DECLARE_SERVER_VAR(civBoats, _civBoats);
-DECLARE_SERVER_VAR(civBoatsWeighted, _civBoatsWeighted);
+DECLARE_SERVER_VAR(civBoats,_civBoats);
+DECLARE_SERVER_VAR(civBoatsWeighted,_civBoatsWeighted);
 
-private _undercoverVehicles = (arrayCivVeh - ["C_Quadbike_01_F"]) + FactionGet(reb,"vehiclesCivBoat") + FactionGet(reb,"vehiclesCivHeli") + FactionGet(reb, "vehiclesCivPlane");
-DECLARE_SERVER_VAR(undercoverVehicles, _undercoverVehicles);
+private _undercoverVehicles = (arrayCivVeh - ["C_Quadbike_01_F"]) + FactionGet(reb,"vehiclesCivBoat") + FactionGet(reb,"vehiclesCivHeli") + FactionGet(reb,"vehiclesCivPlane");
+DECLARE_SERVER_VAR(undercoverVehicles,_undercoverVehicles);
 
 //////////////////////////////////////
 //        ITEM INITIALISATION      ///
@@ -509,7 +512,7 @@ private _smokeMuzzleHM = createHashMap;
 	} forEach compatibleMagazines ["Throw", _muzzle];			// works around casing & missing elements
 } forEach ("true" configClasses (configFile / "CfgWeapons" / "Throw"));
 
-DECLARE_SERVER_VAR(A3A_smokeMuzzleHM, _smokeMuzzleHM);
+DECLARE_SERVER_VAR(A3A_smokeMuzzleHM,_smokeMuzzleHM);
 
 ////////////////////////////////////
 //   CLASSING TEMPLATE VEHICLES  ///
@@ -526,7 +529,7 @@ ONLY_DECLARE_SERVER_VAR(A3A_utilityItemHM);
 private _vehFastRope = (FactionGet(all,"vehiclesHelisTransport") + FactionGet(all,"vehiclesHelisLight") + FactionGet(all,"vehiclesHelisAttack") + FactionGet(all,"vehiclesHelisLightAttack"));
 
 //private _vehFastRope = ["O_Heli_Light_02_unarmed_F","B_Heli_Transport_01_camo_F","RHS_UH60M_d","UK3CB_BAF_Merlin_HC3_18_GPMG_DDPM_RM","UK3CB_BAF_Merlin_HC3_18_GPMG_Tropical_RM","RHS_Mi8mt_vdv","RHS_Mi8mt_vv","RHS_Mi8mt_Cargo_vv"];
-DECLARE_SERVER_VAR(vehFastRope, _vehFastRope);
+DECLARE_SERVER_VAR(vehFastRope,_vehFastRope);
 DECLARE_SERVER_VAR(A3A_vehClassToCrew,call A3A_fnc_initVehClassToCrew);
 
 DECLARE_SERVER_VAR(A3A_RivalsVehClassToCrew,call A3A_fnc_initRivalsVehClassToCrew);
@@ -534,37 +537,37 @@ DECLARE_SERVER_VAR(A3A_RivalsVehClassToCrew,call A3A_fnc_initRivalsVehClassToCre
 // Default vehicle resource costs
 private _vehicleResourceCosts = createHashMap;
 
-{ _vehicleResourceCosts set [_x, 20] } forEach FactionGet(all, "staticAA") + FactionGet(all, "staticAT") + FactionGet(all, "staticMortars");
-{ _vehicleResourceCosts set [_x, 20] } forEach FactionGet(all, "vehiclesLightUnarmed") + FactionGet(all, "vehiclesTrucks");
-{ _vehicleResourceCosts set [_x, 50] } forEach FactionGet(all, "vehiclesLightArmed");
-{ _vehicleResourceCosts set [_x, 70] } forEach FactionGet(all, "vehiclesLightAPCs");
-{ _vehicleResourceCosts set [_x, 100] } forEach FactionGet(all, "vehiclesAPCs");
-{ _vehicleResourceCosts set [_x, 150] } forEach FactionGet(all, "vehiclesAA") + FactionGet(all, "vehiclesArtillery") + FactionGet(all, "vehiclesIFVs");
-{ _vehicleResourceCosts set [_x, 170] } forEach FactionGet(all, "vehiclesLightTanks");
-{ _vehicleResourceCosts set [_x, 230] } forEach FactionGet(all, "vehiclesTanks");
+{ _vehicleResourceCosts set [_x, 20] } forEach FactionGet(all,"staticAA") + FactionGet(all,"staticAT") + FactionGet(all,"staticMortars");
+{ _vehicleResourceCosts set [_x, 20] } forEach FactionGet(all,"vehiclesLightUnarmed") + FactionGet(all,"vehiclesTrucks");
+{ _vehicleResourceCosts set [_x, 50] } forEach FactionGet(all,"vehiclesLightArmed");
+{ _vehicleResourceCosts set [_x, 70] } forEach FactionGet(all,"vehiclesLightAPCs");
+{ _vehicleResourceCosts set [_x, 100] } forEach FactionGet(all,"vehiclesAPCs");
+{ _vehicleResourceCosts set [_x, 150] } forEach FactionGet(all,"vehiclesAA") + FactionGet(all,"vehiclesArtillery") + FactionGet(all,"vehiclesIFVs");
+{ _vehicleResourceCosts set [_x, 170] } forEach FactionGet(all,"vehiclesLightTanks");
+{ _vehicleResourceCosts set [_x, 230] } forEach FactionGet(all,"vehiclesTanks");
 
-{ _vehicleResourceCosts set [_x, 70] } forEach FactionGet(all, "vehiclesHelisLight") + FactionGet(all, "vehiclesAirPatrol");
-{ _vehicleResourceCosts set [_x, 100] } forEach FactionGet(all, "vehiclesHelisTransport");
-{ _vehicleResourceCosts set [_x, 130] } forEach FactionGet(all, "vehiclesHelisLightAttack") + FactionGet(all, "vehiclesPlanesTransport");
-{ _vehicleResourceCosts set [_x, 150] } forEach FactionGet(all, "uavsAttack");
-{ _vehicleResourceCosts set [_x, 250] } forEach FactionGet(all, "vehiclesPlanesCAS") + FactionGet(all, "vehiclesPlanesAA");
-{ _vehicleResourceCosts set [_x, 250] } forEach FactionGet(all, "vehiclesHelisAttack");
-{ _vehicleResourceCosts set [_x, 250] } forEach FactionGet(all, "vehiclesPlanesLargeCAS") + FactionGet(all, "vehiclesPlanesLargeAA");
-{ _vehicleResourceCosts set [_x, 275] } forEach FactionGet(all, "vehiclesPlanesGunship");
-{ _vehicleResourceCosts set [_x, 300] } forEach FactionGet(all, "vehiclesDropPod");
+{ _vehicleResourceCosts set [_x, 70] } forEach FactionGet(all,"vehiclesHelisLight") + FactionGet(all,"vehiclesAirPatrol");
+{ _vehicleResourceCosts set [_x, 100] } forEach FactionGet(all,"vehiclesHelisTransport");
+{ _vehicleResourceCosts set [_x, 130] } forEach FactionGet(all,"vehiclesHelisLightAttack") + FactionGet(all,"vehiclesPlanesTransport");
+{ _vehicleResourceCosts set [_x, 150] } forEach FactionGet(all,"uavsAttack");
+{ _vehicleResourceCosts set [_x, 250] } forEach FactionGet(all,"vehiclesPlanesCAS") + FactionGet(all,"vehiclesPlanesAA");
+{ _vehicleResourceCosts set [_x, 250] } forEach FactionGet(all,"vehiclesHelisAttack");
+{ _vehicleResourceCosts set [_x, 250] } forEach FactionGet(all,"vehiclesPlanesLargeCAS") + FactionGet(all,"vehiclesPlanesLargeAA");
+{ _vehicleResourceCosts set [_x, 275] } forEach FactionGet(all,"vehiclesPlanesGunship");
+{ _vehicleResourceCosts set [_x, 300] } forEach FactionGet(all,"vehiclesDropPod");
 
 // Threat table
 private _groundVehicleThreat = createHashMap;
 
-{ _groundVehicleThreat set [_x, 40] } forEach FactionGet(all, "staticMGs");
-{ _groundVehicleThreat set [_x, 60] } forEach FactionGet(all, "vehiclesLightArmed");
-{ _groundVehicleThreat set [_x, 80] } forEach FactionGet(all, "staticAA") + FactionGet(all, "staticAT") + FactionGet(all, "staticMortars");
-{ _groundVehicleThreat set [_x, 80] } forEach FactionGet(Reb, "vehiclesAA") + FactionGet(Reb, "vehiclesAT");
-{ _groundVehicleThreat set [_x, 90] } forEach FactionGet(all, "vehiclesLightAPCs");
-{ _groundVehicleThreat set [_x, 120] } forEach FactionGet(all, "vehiclesAPCs");
-{ _groundVehicleThreat set [_x, 180] } forEach FactionGet(all, "vehiclesLightTanks");
-{ _groundVehicleThreat set [_x, 200] } forEach FactionGet(all, "vehiclesAA") + FactionGet(all, "vehiclesArtillery") + FactionGet(all, "vehiclesIFVs");
-{ _groundVehicleThreat set [_x, 300] } forEach FactionGet(all, "vehiclesTanks");
+{ _groundVehicleThreat set [_x, 40] } forEach FactionGet(all,"staticMGs");
+{ _groundVehicleThreat set [_x, 60] } forEach FactionGet(all,"vehiclesLightArmed");
+{ _groundVehicleThreat set [_x, 80] } forEach FactionGet(all,"staticAA") + FactionGet(all,"staticAT") + FactionGet(all,"staticMortars");
+{ _groundVehicleThreat set [_x, 80] } forEach FactionGet(Reb,"vehiclesAA") + FactionGet(Reb,"vehiclesAT");
+{ _groundVehicleThreat set [_x, 90] } forEach FactionGet(all,"vehiclesLightAPCs");
+{ _groundVehicleThreat set [_x, 120] } forEach FactionGet(all,"vehiclesAPCs");
+{ _groundVehicleThreat set [_x, 180] } forEach FactionGet(all,"vehiclesLightTanks");
+{ _groundVehicleThreat set [_x, 200] } forEach FactionGet(all,"vehiclesAA") + FactionGet(all,"vehiclesArtillery") + FactionGet(all,"vehiclesIFVs");
+{ _groundVehicleThreat set [_x, 300] } forEach FactionGet(all,"vehiclesTanks");
 
 
 // Rebel vehicle cost
@@ -579,24 +582,24 @@ _fnc_setPriceIfValid =
 	};
 };
 
-{ [_rebelVehicleCosts, _x, 100] call _fnc_setPriceIfValid } forEach FactionGet(reb, "vehiclesBasic");
-{ [_rebelVehicleCosts, _x, 200] call _fnc_setPriceIfValid } forEach FactionGet(reb, "vehiclesCivCar") + FactionGet(reb, "vehiclesCivBoat");
-{ [_rebelVehicleCosts, _x, 600] call _fnc_setPriceIfValid } forEach FactionGet(reb, "vehiclesCivTruck") + FactionGet(reb, "vehiclesMedical");
-{ [_rebelVehicleCosts, _x, 300] call _fnc_setPriceIfValid } forEach FactionGet(reb, "vehiclesTruck");
-{ [_rebelVehicleCosts, _x, 200] call _fnc_setPriceIfValid } forEach FactionGet(reb, "vehiclesLightUnarmed");
-{ [_rebelVehicleCosts, _x, 800] call _fnc_setPriceIfValid } forEach FactionGet(reb, "vehiclesLightArmed");
-{ [_rebelVehicleCosts, _x, 500] call _fnc_setPriceIfValid } forEach FactionGet(reb, "staticMGs") + FactionGet(reb, "vehiclesBoat");
-{ [_rebelVehicleCosts, _x, 1000] call _fnc_setPriceIfValid } forEach FactionGet(reb, "staticAT");
-{ [_rebelVehicleCosts, _x, 1200] call _fnc_setPriceIfValid } forEach FactionGet(reb, "staticAA");
-{ [_rebelVehicleCosts, _x, 2500] call _fnc_setPriceIfValid } forEach FactionGet(reb, "staticMortars");
-{ [_rebelVehicleCosts, _x, 1500] call _fnc_setPriceIfValid } forEach FactionGet(reb, "vehiclesAA");
-{ [_rebelVehicleCosts, _x, 1200] call _fnc_setPriceIfValid } forEach FactionGet(reb, "vehiclesAT");
-{ [_rebelVehicleCosts, _x, 5000] call _fnc_setPriceIfValid } forEach FactionGet(reb, "vehiclesCivHeli");
-{ [_rebelVehicleCosts, _x, 5000] call _fnc_setPriceIfValid } forEach FactionGet(reb, "vehiclesPlane") + FactionGet(reb, "vehiclesCivPlane");
+{ [_rebelVehicleCosts, _x, 100] call _fnc_setPriceIfValid } forEach FactionGet(reb,"vehiclesBasic");
+{ [_rebelVehicleCosts, _x, 200] call _fnc_setPriceIfValid } forEach FactionGet(reb,"vehiclesCivCar") + FactionGet(reb,"vehiclesCivBoat");
+{ [_rebelVehicleCosts, _x, 600] call _fnc_setPriceIfValid } forEach FactionGet(reb,"vehiclesCivTruck") + FactionGet(reb,"vehiclesMedical");
+{ [_rebelVehicleCosts, _x, 300] call _fnc_setPriceIfValid } forEach FactionGet(reb,"vehiclesTruck");
+{ [_rebelVehicleCosts, _x, 200] call _fnc_setPriceIfValid } forEach FactionGet(reb,"vehiclesLightUnarmed");
+{ [_rebelVehicleCosts, _x, 800] call _fnc_setPriceIfValid } forEach FactionGet(reb,"vehiclesLightArmed");
+{ [_rebelVehicleCosts, _x, 500] call _fnc_setPriceIfValid } forEach FactionGet(reb,"staticMGs") + FactionGet(reb,"vehiclesBoat");
+{ [_rebelVehicleCosts, _x, 1000] call _fnc_setPriceIfValid } forEach FactionGet(reb,"staticAT");
+{ [_rebelVehicleCosts, _x, 1200] call _fnc_setPriceIfValid } forEach FactionGet(reb,"staticAA");
+{ [_rebelVehicleCosts, _x, 2500] call _fnc_setPriceIfValid } forEach FactionGet(reb,"staticMortars");
+{ [_rebelVehicleCosts, _x, 1500] call _fnc_setPriceIfValid } forEach FactionGet(reb,"vehiclesAA");
+{ [_rebelVehicleCosts, _x, 1200] call _fnc_setPriceIfValid } forEach FactionGet(reb,"vehiclesAT");
+{ [_rebelVehicleCosts, _x, 5000] call _fnc_setPriceIfValid } forEach FactionGet(reb,"vehiclesCivHeli");
+{ [_rebelVehicleCosts, _x, 5000] call _fnc_setPriceIfValid } forEach FactionGet(reb,"vehiclesPlane") + FactionGet(reb,"vehiclesCivPlane");
 
 
 // Template overrides
-private _overrides = FactionGet(Reb, "attributesVehicles") + FactionGet(Occ, "attributesVehicles") + FactionGet(Inv, "attributesVehicles");
+private _overrides = FactionGet(Reb,"attributesVehicles") + FactionGet(Occ,"attributesVehicles") + FactionGet(Inv,"attributesVehicles");
 {
 	private _vehType = _x select 0;
 	if !(_vehType in ((keys _vehicleResourceCosts) + (keys _rebelVehicleCosts))) then { continue };
@@ -611,9 +614,9 @@ private _overrides = FactionGet(Reb, "attributesVehicles") + FactionGet(Occ, "at
 	} forEach _x;
 } forEach _overrides;
 
-DECLARE_SERVER_VAR(A3A_vehicleResourceCosts, _vehicleResourceCosts);
-DECLARE_SERVER_VAR(A3A_groundVehicleThreat, _groundVehicleThreat);
-DECLARE_SERVER_VAR(A3A_rebelVehicleCosts, _rebelVehicleCosts);
+DECLARE_SERVER_VAR(A3A_vehicleResourceCosts,_vehicleResourceCosts);
+DECLARE_SERVER_VAR(A3A_groundVehicleThreat,_groundVehicleThreat);
+DECLARE_SERVER_VAR(A3A_rebelVehicleCosts,_rebelVehicleCosts);
 
 ///////////////////////////
 //     MOD TEMPLATES    ///
@@ -672,10 +675,10 @@ otherStaticsTiers = [0.3, 1];
 //     REINFORCEMENTS    ///
 ////////////////////////////
 Info("Initialising Reinforcement Variables");
-DECLARE_SERVER_VAR(reinforceMarkerOccupants, []);
-DECLARE_SERVER_VAR(reinforceMarkerInvaders, []);
-DECLARE_SERVER_VAR(canReinforceOccupants, []);
-DECLARE_SERVER_VAR(canReinforceInvaders, []);
+DECLARE_SERVER_VAR(reinforceMarkerOccupants,[]);
+DECLARE_SERVER_VAR(reinforceMarkerInvaders,[]);
+DECLARE_SERVER_VAR(canReinforceOccupants,[]);
+DECLARE_SERVER_VAR(canReinforceInvaders,[]);
 
 /////////////////////////////////////////
 //     SYNCHRONISE SERVER VARIABLES   ///
@@ -683,7 +686,7 @@ DECLARE_SERVER_VAR(canReinforceInvaders, []);
 Info("Sending server variables");
 
 //Declare this last, so it syncs last.
-DECLARE_SERVER_VAR(initVarServerCompleted, true);
+DECLARE_SERVER_VAR(initVarServerCompleted,true);
 {
 	publicVariable _x;
 } forEach serverInitialisedVariables;

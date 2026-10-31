@@ -43,12 +43,12 @@ private _fnc_createMarker = {
     if (_drawAnomalies isEqualTo false) exitWith {};
     
     private _marker = createMarker [(_text + str _index), [0,0]];
-    _marker setMarkerType "mil_dot";
-    _marker setMarkerText _text;
+    _marker setMarkerTypeLocal "mil_dot";
+    _marker setMarkerTextLocal _text;
     _marker setMarkerPos (getPos _anomaly);
 };
 
-Debug_1("Creating anomaly field, anomaly amount: %1", _anomalyAmount);
+Debug_1("Creating anomaly field, anomaly amount: %1",_anomalyAmount);
 
 for "_i" from 1 to _anomalyAmount do {
     private _pos = call _fnc_grabPos;
@@ -88,6 +88,6 @@ for "_i" from 1 to _anomalyAmount do {
     };
 };
 
-Debug_1("Created anomaly field, anomaly amount final: %1", count _anomalies);
+Debug_1("Created anomaly field, anomaly amount final: %1",count _anomalies);
 
 _anomalies

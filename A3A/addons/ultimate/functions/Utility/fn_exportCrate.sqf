@@ -54,7 +54,7 @@ private _magsText = format [
 		];
 		_wepsText = _wepsText + _wepText;
 	};
-    private _mag = getArray (configfile >> "CfgWeapons" >> _x >> "magazines") select 0;
+    private _mag = getArray (configFile >> "CfgWeapons" >> _x >> "magazines") select 0;
     if (_mag in _magsText) then {} else {
         private _magText = format [
         "	

@@ -30,12 +30,12 @@ if (isMenuOpen) then {
 //start loading screen
 ["jn_fnc_arsenal", "Loading Nutz™ Arsenal"] call bis_fnc_startloadingscreen;
 [] spawn {
-uisleep 10;
-private _ids = missionnamespace getvariable ["BIS_fnc_startLoadingScreen_ids",[]];
+uiSleep 10;
+private _ids = missionNamespace getVariable ["BIS_fnc_startLoadingScreen_ids",[]];
   if("jn_fnc_arsenal" in _ids)then{
 	private _display =  uiNamespace getVariable ["arsenalDisplay","No display"];
 	titleText["ERROR DURING LOADING ARSENAL", "PLAIN"];
-	_display closedisplay 2;
+	_display closeDisplay 2;
 	["jn_fnc_arsenal"] call BIS_fnc_endLoadingScreen;
   };
 };
@@ -67,7 +67,7 @@ _attachmentsContainers = [[],[],[]];
 missionNamespace setVariable ["jna_containerCargo_init", _attachmentsContainers];
 
 //set type
-UINamespace setVariable ["jn_type","arsenal"];
+uiNamespace setVariable ["jn_type","arsenal"];
 
 //request server to open arsenal
 [clientOwner] remoteExecCall ["jn_fnc_arsenal_requestOpen",2];

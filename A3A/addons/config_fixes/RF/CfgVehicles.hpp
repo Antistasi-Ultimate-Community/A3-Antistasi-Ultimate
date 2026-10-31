@@ -158,7 +158,7 @@ class CfgVehicles
                         hardpoints[] = {"DAR","DAGR","B_SHIEKER","UNI_SCALPEL","20MM_TWIN_CANNON","B_ASRRAM_EJECTOR","WEAPON_PODS_RF","B_BOMB_PYLON"};
                         priority = 5;
                         turret[] = {0};
-                        UIposition[] = {"0.06 + 0.02",0.4};
+                        UIposition[] = {0.08,0.4}; // UIposition[] = {"0.06 + 0.02",0.4};
                     };
                     class PylonLeft2 
                     {
@@ -166,7 +166,7 @@ class CfgVehicles
                         hardpoints[] = {"DAR","DAGR","B_SHIEKER","UNI_SCALPEL","20MM_TWIN_CANNON","B_ASRRAM_EJECTOR","WEAPON_PODS_RF","B_BOMB_PYLON"};
                         priority = 4;
                         turret[] = {0};
-                        UIposition[] = {"0.08 + 0.02",0.35};
+                        UIposition[] = {0.1,0.35}; // UIposition[] = {"0.08 + 0.02",0.35};
                     };
                     class PylonRight1 
                     {
@@ -175,7 +175,7 @@ class CfgVehicles
                         priority = 5;
                         mirroredMissilePos = 1;
                         turret[] = {0};
-                        UIposition[] = {"0.59 + 0.04",0.4};
+                        UIposition[] = {0.63,0.4}; // UIposition[] = {"0.59 + 0.04",0.4};
                     };
                     class PylonRight2 
                     {
@@ -184,7 +184,7 @@ class CfgVehicles
                         priority = 4;
                         mirroredMissilePos = 2;
                         turret[] = {0};
-                        UIposition[] = {"0.57 + 0.04",0.35};
+                        UIposition[] = {0.61,0.35}; // UIposition[] = {"0.57 + 0.04",0.35};
                     };
 
                 };

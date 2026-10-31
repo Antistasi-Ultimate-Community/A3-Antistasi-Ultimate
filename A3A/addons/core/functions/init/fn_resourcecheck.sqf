@@ -118,7 +118,7 @@ while {true} do {
 		private _canFlipEnemy = (_canFlipBase && (_isNowEnemy && _citySide isEqualTo teamPlayer));
 		private _canStartSkirmish = (_popAboveMin && (random 100 <= townSkirmishChance) && !(_isSkirmish)); // !(bigAttackInProgress) - Will keep, interesting experiment for now
 
-		Debug_8("City: %1 | Side: %2 | Pop: %3 | Gov: %4 | Reb: %5 | CanFlip: %6 | CanFlipEnemy: %7 | CanStartSkirmish: %8", _city, _citySide, _numCiv, _popGov, _popReb, _canFlip, _canFlipEnemy, _canStartSkirmish);
+		Debug_8("City: %1 | Side: %2 | Pop: %3 | Gov: %4 | Reb: %5 | CanFlip: %6 | CanFlipEnemy: %7 | CanStartSkirmish: %8",_city,_citySide,_numCiv,_popGov,_popReb,_canFlip,_canFlipEnemy,_canStartSkirmish);
 
 		if (_canFlip) then {
 			if (_canStartSkirmish) then {
@@ -245,7 +245,7 @@ while {true} do {
 				};
 			};
 		} forEach antennasDead;
-		if (count _potentials > 0) then {
+		if (_potentials isNotEqualTo []) then {
 			_potential = selectRandom _potentials;
 			[[_potential select 0,_potential select 1],"A3A_fnc_REP_Antenna"] call A3A_fnc_scheduler;
 		};
@@ -269,7 +269,7 @@ while {true} do {
 	sleep 4;
 
 	if (areRivalsEnabled && tierWar > 3 && !areRivalsDiscovered && !isRivalsDiscoveryQuestAssigned) then {
-		Info_1("Rivals roll: %1", _rivalsTaskChance);
+		Info_1("Rivals roll: %1",_rivalsTaskChance);
 		if (random 100 < _rivalsTaskChance) then {
 			Info("Assigning Rivals Discovery Task...");
 			[] call SCRT_fnc_rivals_prepareQuest;
@@ -282,7 +282,7 @@ while {true} do {
 	};
 
 	if (tierWar > 2 && !isTraderQuestCompleted && !isTraderQuestAssigned) then {
-		Info_1("Arms Dealer roll: %1", _traderTaskChance);
+		Info_1("Arms Dealer roll: %1",_traderTaskChance);
 		if (random 100 < _traderTaskChance) then {
 			Info("Assigning Arms Dealer Task...");
 			[] remoteExec ["SCRT_fnc_trader_prepareTraderQuest", 2];

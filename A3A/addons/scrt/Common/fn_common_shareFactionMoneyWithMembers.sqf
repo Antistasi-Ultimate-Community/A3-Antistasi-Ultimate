@@ -27,7 +27,7 @@ private _playersCount = count _affectedPlayers;
 if(_playersCount > 0) then {
     private _sharePerPlayer = round(_resourcesFIA / _playersCount);
 
-    Info_2("Share per player: %1, quantity of players: %2", str _sharePerPlayer, str _playersCount);
+    Info_2("Share per player: %1, quantity of players: %2",str _sharePerPlayer,str _playersCount);
 
     { 
         [_sharePerPlayer] remoteExec ["A3A_fnc_resourcesPlayer", _x];

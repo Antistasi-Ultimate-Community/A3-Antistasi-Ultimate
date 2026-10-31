@@ -215,7 +215,7 @@ switch _typeX do
     case "captureRivals":
     {
         _flag addAction [format ["<img image='a3\ui_f\data\igui\cfg\holdactions\holdaction_secure_ca.paa' size='1.6' shadow=2 /> <t>%1</t>", localize "STR_imprison_action"], { _this spawn SCRT_fnc_rivals_imprison; },false,6,true,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull])",4];
-        _flag addAction [format ["<img image='a3\missions_f_oldman\data\img\holdactions\holdaction_talk_ca.paa' size='1.6' shadow=2 /> <t>%1</t>", localize "STR_interrogate_action"], A3A_fnc_interrogateRivals, nil, 0, false, true, "", "(isPlayer _this) and (_this == _this getVariable ['owner',objNull]) and (_target getVariable ['canBeInterrogated', false])",4];
+        _flag addAction [format ["<img image='a3\missions_f_oldman\data\img\holdactions\holdaction_talk_ca.paa' size='1.6' shadow=2 /> <t>%1</t>", localize "STR_interrogate_action"], A3A_fnc_interrogate, nil, 0, false, true, "", "(isPlayer _this) and (_this == _this getVariable ['owner',objNull]) and (_target getVariable ['canBeInterrogated', false])",4];
         _flag addAction [format ["<img image='a3\ui_f_oldman\data\igui\cfg\holdactions\map_ca.paa' size='1.6' shadow=2 /> <t>%1</t>", localize "STR_reveal_action"],SCRT_fnc_common_reveal,false,6,true,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull])",4];
     };
     case "seaport":
@@ -303,15 +303,15 @@ switch _typeX do
 
     #define VEHICLE_STATIC_COND(aiFlagVar1) \
         QUOTE((isPlayer _this) && {isNull objectParent _this} && {_this call A3A_fnc_isMember} && {[ARR_2(_target,aiFlagVar1)] call A3A_fnc_canAIMountVehicle})
+    #define MOVE_ASSET_COND \
+        QUOTE((isPlayer _this) && {isNull objectParent _this} && {_this call A3A_fnc_isMember} &&\
+        {_target getVariable[ARR_2(QQUOTE(ownerSide),teamPlayer)] == teamPlayer} && {locked _target < 2} && {isNull attachedTo _target} &&\
+        {crew _target isEqualTo []} && {!(call A3A_fnc_isCarrying)})
     case "static":
     {
         _flag addAction [localize "STR_antistasi_actions_move_static_allow_ai", A3A_fnc_unlockStatic, nil, 1, false, true, "", VEHICLE_STATIC_COND(true), 4];
         _flag addAction [localize "STR_antistasi_actions_move_static_prevent_ai", A3A_fnc_lockStatic, nil, 1, false, true, "", VEHICLE_STATIC_COND(false), 4];
-        _flag addAction [localize "STR_antistasi_actions_move_this_asset", A3A_fnc_carryItem, nil, 1.5, false, true, "", QUOTE(
-            (isPlayer _this) && {isNull objectParent _this} && {_this call A3A_fnc_isMember} &&
-            {_target getVariable[ARR_2(QQUOTE(ownerSide),teamPlayer)] == teamPlayer} && {locked _target < 2} && {isNull attachedTo _target} &&
-            {crew _target isEqualTo []} && {!(call A3A_fnc_isCarrying)}
-        ), 4];
+        _flag addAction [localize "STR_antistasi_actions_move_this_asset", A3A_fnc_carryItem, nil, 1.5, false, true, "", MOVE_ASSET_COND, 4];
     };
     case "vehiclestatic":
     {

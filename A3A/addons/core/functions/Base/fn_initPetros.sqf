@@ -23,20 +23,20 @@ petros addVest _vest;
 // Headgear
 removeHeadgear petros;
 private _headgear = A3A_faction_reb getOrDefault ["petrosHeadgear", ""];
-if !(_headgear isEqualTo "") then {
+if (_headgear isNotEqualTo "") then {
     petros addHeadgear _headgear;
 };
 
 // Goggles
 removeGoggles petros;
 private _goggles = A3A_faction_reb getOrDefault ["petrosGoggles", ""];
-if !(_goggles isEqualTo "") then {
+if (_goggles isNotEqualTo "") then {
     petros addGoggles _goggles;
 };
 
 // Uniform
 private _uniform = A3A_faction_reb getOrDefault ["petrosUniform", ""];
-if !(_uniform isEqualTo "") then {
+if (_uniform isNotEqualTo "") then {
     private _uniformItems = uniformItems petros;
     petros forceAddUniform _uniform;
 
@@ -123,7 +123,7 @@ petros addEventHandler
     }
 ];
 
-petros addMPEventHandler ["mpkilled",
+petros addMPEventHandler ["MPKilled",
 {
     removeAllActions petros;
     if (!isServer) exitWith {};

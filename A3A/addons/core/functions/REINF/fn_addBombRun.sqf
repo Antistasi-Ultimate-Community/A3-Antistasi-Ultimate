@@ -1,8 +1,8 @@
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
-#define OccAndInv(VEH) (FactionGet(occ, VEH) + FactionGet(inv, VEH))
+#define OccAndInv(VEH) (FactionGet(occ,VEH) + FactionGet(inv,VEH))
 
-_veh = cursortarget;
+_veh = cursorTarget;
 
 if (isNull _veh) exitWith {[localize "STR_A3A_reinf_airstrike_header", localize "STR_A3A_reinf_airstrike_not_looking_at_veh"] call SCRT_fnc_misc_deniedHint;};
 if (!alive _veh) exitWith {[localize "STR_A3A_reinf_airstrike_header", localize "STR_A3A_reinf_airstrike_destroyed"] call SCRT_fnc_misc_deniedHint;};
@@ -18,7 +18,7 @@ if (_near isEqualTo []) exitWith {
 	[localize "STR_A3A_reinf_airstrike_header", format [localize "STR_A3A_reinf_airstrike_hq_airp",FactionGet(reb,"name")]] call SCRT_fnc_misc_deniedHint;
 };
 
-private _rebAircraftTypes = FactionGet(reb,"vehiclesPlane") + FactionGet(reb,"vehiclesCivPlane") + FactionGet(reb, "vehiclesCivHeli");
+private _rebAircraftTypes = FactionGet(reb,"vehiclesPlane") + FactionGet(reb,"vehiclesCivPlane") + FactionGet(reb,"vehiclesCivHeli");
 if (typeOf _veh in _rebAircraftTypes) exitWith {
 	[localize "STR_A3A_reinf_airstrike_header", format [localize "STR_A3A_reinf_airstrike_reb_planes",FactionGet(reb,"name")]] call SCRT_fnc_misc_deniedHint;
 };
@@ -48,8 +48,8 @@ if (!(_veh isKindOf "Air")) exitWith {
 
 _typeX = typeOf _veh;
 
-if (isClass (configfile >> "CfgVehicles" >> _typeX >> "assembleInfo")) then {
-	if (count getArray (configfile >> "CfgVehicles" >> _typeX >> "assembleInfo" >> "dissasembleTo") > 0) then {
+if (isClass (configFile >> "CfgVehicles" >> _typeX >> "assembleInfo")) then {
+	if ((getArray (configFile >> "CfgVehicles" >> _typeX >> "assembleInfo" >> "dissasembleTo")) isNotEqualTo []) then {
 		_exit = true;
 	};
 };

@@ -9,15 +9,15 @@ _unit = leader _groupX;
 
 if !([_unit] call A3A_fnc_canFight) exitWith {[localize "STR_A3A_reinf_control_squad", localize "STR_A3A_reinf_control_no_dead"] call A3A_fnc_customHint;};
 
-while {(count (waypoints _groupX)) > 0} do
+while {(waypoints _groupX) isNotEqualTo []} do
  {
   deleteWaypoint ((waypoints _groupX) select 0);
  };
 
-_wp = _groupX addwaypoint [getpos _unit,0];
+_wp = _groupX addWaypoint [getPos _unit,0];
 
 {
-if (_x != vehicle _x) then
+if (!isNull objectParent _x) then
 	{
 	[_x] orderGetIn true;
 	};
@@ -32,7 +32,7 @@ _eh1 = player addEventHandler ["HandleDamage", {
 	_unit removeEventHandler ["HandleDamage",_thisEventHandler];
 	//removeAllActions _unit;
 	selectPlayer _unit;
-	(units group player) joinsilent group player;
+	(units group player) joinSilent group player;
 	group player selectLeader player;
 	[localize "STR_A3A_reinf_control_squad", localize "STR_A3A_reinf_control_return_damage_1"] call A3A_fnc_customHint;
 	nil;
@@ -42,7 +42,7 @@ _eh2 = _unit addEventHandler ["HandleDamage", {
 	_unit removeEventHandler ["HandleDamage",_thisEventHandler];
 	removeAllActions _unit;
 	selectPlayer (_unit getVariable "owner");
-	(units group player) joinsilent group player;
+	(units group player) joinSilent group player;
 	group player selectLeader player;
 	[localize "STR_A3A_reinf_control_squad", localize "STR_A3A_reinf_control_return_damage_2"] call A3A_fnc_customHint;
 	nil;
@@ -63,6 +63,6 @@ removeAllActions _unit;
 if (!isPlayer (_unit getVariable ["owner",_unit])) then {selectPlayer (_unit getVariable ["owner",_unit])};
 _unit removeEventHandler ["HandleDamage",_eh2];
 player removeEventHandler ["HandleDamage",_eh1];
-(units group theBoss) joinsilent group theBoss;
+(units group theBoss) joinSilent group theBoss;
 group theBoss selectLeader theBoss;
 [localize "STR_A3A_reinf_control_squad", ""] call A3A_fnc_customHint;

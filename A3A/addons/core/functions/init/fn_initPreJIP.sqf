@@ -26,7 +26,7 @@ Debug("fn_initPreJIP Started");
 private _fnc_warningMessage = {
     if (!hasInterface) exitWith {};
     params ["_title", "_message"];
-    waituntil {!isNull (findDisplay 46)};
+    waitUntil {!isNull (findDisplay 46)};
     9000 cutText [format ["<t size='5'>%1</t><br/><t size='2'>%2</t>", _title, _message], "BLACK", nil, nil, true];
     uiSleep 20;
     {_x cutFadeOut 20} forEach allActiveTitleEffects;

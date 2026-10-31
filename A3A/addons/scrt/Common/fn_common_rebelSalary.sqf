@@ -18,6 +18,7 @@ Example:
 */
 #include "..\defines.inc"
 FIX_LINE_NUMBERS()
+#pragma hemtt ignore_variables ["_thisScript"]
 
 params ["_resAdd"];
 

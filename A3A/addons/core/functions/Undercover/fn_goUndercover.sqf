@@ -64,7 +64,7 @@ player setCaptive true;
 if (player == leader group player) then
 {
     {
-        if ((!isplayer _x) && (local _x) && (_x getVariable["owner", _x] == player)) then
+        if ((!isPlayer _x) && (local _x) && (_x getVariable["owner", _x] == player)) then
         {
             [_x] spawn A3A_fnc_undercoverAI;
         };
@@ -135,7 +135,7 @@ while {_reason == ""} do
 
         if (_vehType isKindOf "Land") then
         {
-            if (!(isOnRoad position _veh) && {count (_veh nearRoads 50) == 0}) then
+            if (!(isOnRoad position _veh) && {(_veh nearRoads 50) isEqualTo []}) then
             {
                 if ({((side _x == Invaders) || (side _x == Occupants)) && ((_x knowsAbout player > 1.4) || (_x distance player < 350))} count allUnits > 0) then
                 {
@@ -157,7 +157,7 @@ while {_reason == ""} do
                 _reason = "BadMedic";
             };
         };
-        if ((primaryWeapon player != "") || (secondaryWeapon player != "") || (handgunWeapon player != "") || (vest player != "") || (getNumber(configfile >> "CfgWeapons" >> headgear player >> "ItemInfo" >> "HitpointsProtectionInfo" >> "Head" >> "armor") > 2) || (hmd player != "") || (!(uniform player in (A3A_faction_civ get "uniforms")))) exitWith
+        if ((primaryWeapon player != "") || (secondaryWeapon player != "") || (handgunWeapon player != "") || (vest player != "") || (getNumber(configFile >> "CfgWeapons" >> headgear player >> "ItemInfo" >> "HitpointsProtectionInfo" >> "Head" >> "armor") > 2) || (hmd player != "") || (!(uniform player in (A3A_faction_civ get "uniforms")))) exitWith
         {
             if ({((side _x == Invaders) or (side _x == Occupants)) and ((_x knowsAbout player > 1.4) or (_x distance player < 350))} count allUnits > 0) then
             {
@@ -242,7 +242,7 @@ switch (_reason) do
     case "Reported":
     {
         ["Undercover", localize "STR_A3A_fn_undercover_goUn_reported"] call A3A_fnc_customHint;
-        if (vehicle player != player) then
+        if (!isNull objectParent player) then
         {
             (objectParent player) setVariable ["A3A_reported", true, true];
         }
@@ -304,7 +304,7 @@ switch (_reason) do
         private _text = switch (_reason) do {
             case "Airport": {localize "STR_A3A_fn_undercover_goUn_trespass"};
             case "Outpost": {localize "STR_A3A_fn_undercover_goUn_detect_outp"};
-            case "Milbase": {localize"STR_A3A_fn_undercover_goUn_detect_milb"};
+            case "Milbase": {localize "STR_A3A_fn_undercover_goUn_detect_milb"};
             case "Seaport": {localize "STR_A3A_fn_undercover_goUn_detect_outp"};
             case "Roadblock": {localize "STR_A3A_fn_undercover_goUn_detect_roadb"};
         };
@@ -329,7 +329,7 @@ switch (_reason) do
     };
     default
     {
-        Error_1("Unknown reason given, was %1", _reason);
+        Error_1("Unknown reason given, was %1",_reason);
         ["Undercover", "STR_A3A_fn_undercover_goUn_Error"] call A3A_fnc_customHint;
     };
 };

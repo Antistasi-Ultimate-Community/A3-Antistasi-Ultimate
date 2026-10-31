@@ -20,7 +20,7 @@ _neededReinf = [_marker] call A3A_fnc_getRequested;
 
 if(_debug) then
 {
-    Debug_1("Calculating garrison strength now for %1!", _marker);
+    Debug_1("Calculating garrison strength now for %1!",_marker);
 };
 
 _garrisonCount = [_garrison, true] call A3A_fnc_countGarrison;
@@ -30,7 +30,7 @@ _preferredUnitsCount = _garrisonCount;
 
 if(_debug) then
 {
-    Debug_2("Found %1 units in total, %2 of them are alive", _allUnitsCount, _preferredUnitsCount);
+    Debug_2("Found %1 units in total, %2 of them are alive",_allUnitsCount,_preferredUnitsCount);
 };
 
 _ratio = 1;

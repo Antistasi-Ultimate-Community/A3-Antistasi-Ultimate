@@ -19,12 +19,12 @@ params ["_mrkDest", "_side", "_vehCount", "_reveal"];
 
 
 if ((_side == Occupants && areOccupantsDefeated) || {(_side == Invaders && areInvadersDefeated)}) exitWith {
-    ServerInfo_1("%1 faction was defeated earlier, aborting single attack.", str _side);
+    ServerInfo_1("%1 faction was defeated earlier, aborting single attack.",str _side);
 };
 
 private _targPos = markerPos _mrkDest;
 
-ServerInfo_1("Starting attack with parameters %1", _this);
+ServerInfo_1("Starting attack with parameters %1",_this);
 
 private _airbase = [_side, markerPos _mrkDest] call A3A_fnc_availableBasesAir;
 
@@ -42,16 +42,16 @@ while {true} do
 {
     private _markerSide = sidesX getVariable _mrkDest;
     if(_markerSide == _side) exitWith {
-        ServerInfo_1("Small attack to %1 captured the marker, starting despawn routines", _mrkDest);
+        ServerInfo_1("Small attack to %1 captured the marker, starting despawn routines",_mrkDest);
         _victory = true;
     };
 
     private _curSoldiers = { !fleeing _x and _x call A3A_fnc_canFight } count _soldiers;
     if (_curSoldiers < count _soldiers * 0.25) exitWith {
-        ServerInfo_1("Small attack to %1 has been defeated, starting despawn routines", _mrkDest);
+        ServerInfo_1("Small attack to %1 has been defeated, starting despawn routines",_mrkDest);
     };
     if(_endTime < time) exitWith {
-        ServerInfo_1("Small attack to %1 timed out, starting despawn routines", _mrkDest);
+        ServerInfo_1("Small attack to %1 timed out, starting despawn routines",_mrkDest);
     };
 
     // Attempt to flip marker

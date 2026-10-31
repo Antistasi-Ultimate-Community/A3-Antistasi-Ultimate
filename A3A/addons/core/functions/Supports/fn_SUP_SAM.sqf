@@ -32,7 +32,7 @@ private _weights = [];
 	
     if (_target isEqualType objNull and {!isNull _target}) then {
         private _targDir = _pos getDir _targPos;
-        private _intersectPoint = (ATLtoASL _pos) getPos [250, _targDir] vectorAdd [0,0,300];
+        private _intersectPoint = (ATLToASL _pos) getPos [250, _targDir] vectorAdd [0,0,300];
         if (terrainIntersectASL [_intersectPoint, getPosASL _target]) then {continue};
     };
 
@@ -41,7 +41,7 @@ private _weights = [];
 } forEach (airportsX + milbases);
 
 if (_airports isEqualTo []) exitWith {
-    Error_1("No suitable airport found for %1", _supportName); -1;
+    Error_1("No suitable airport found for %1",_supportName); -1;
 };
 
 private _airport = _airports selectRandomWeighted _weights;
@@ -54,7 +54,7 @@ _group deleteGroupWhenEmpty true;
 { [_x, nil, false, _resPool] call A3A_fnc_NATOinit } forEach units _group;
 
 
-private _aggro = if(_side == Occupants) then {aggressionOccupants} else {aggressionInvaders};
+private _aggro = [aggressionInvaders, aggressionOccupants] select (_side == Occupants);
 if (_delay < 0) then { _delay = (0.5 + random 1) * (100 - _aggro + 22*A3A_enemyResponseTime) };
 
 private _targArray = [];

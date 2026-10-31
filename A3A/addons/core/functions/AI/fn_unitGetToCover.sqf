@@ -1,7 +1,7 @@
 private _unit = _this select 0;
 
 if (isPlayer _unit) exitWith {};
-if (_unit != vehicle _unit) exitWith {};
+if (!isNull objectParent _unit) exitWith {};
 if (behaviour _unit isEqualTo "COMBAT" or {behaviour _unit isEqualTo "STEALTH"}) exitWith {};
 if !([_unit] call A3A_fnc_canFight) exitWith {};
 

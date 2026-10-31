@@ -93,7 +93,7 @@ private _effectLifetimes = [  // These are independent times from startTime
 _effectLifetimes sort true;
 
 private _fnc_cancelRequested = { false; };// Future provisioning for implementation of cancellationTokens.
-while {count _effectLifetimes > 0 && !([_cancellationTokenUUID] call _fnc_cancelRequested)} do {
+while {_effectLifetimes isNotEqualTo [] && !([_cancellationTokenUUID] call _fnc_cancelRequested)} do {
     uiSleep ((_startTime + _effectLifetimes#0#0 - serverTime) max 0.01);  // sleep until next one is due.
     deleteVehicle (_effectLifetimes#0#1);
     _effectLifetimes deleteAt 0;

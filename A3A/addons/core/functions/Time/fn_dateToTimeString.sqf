@@ -1,5 +1,5 @@
 params ["_date"];
 
 format ["%1:%2",
-	(if (_date select 3 < 10) then { "0" } else { "" }) + str (_date select 3),
-	(if (_date select 4 < 10) then { "0" } else { "" }) + str (_date select 4)];
+	(["", "0"] select (_date select 3 < 10)) + str (_date select 3),
+	(["", "0"] select (_date select 4 < 10)) + str (_date select 4)];

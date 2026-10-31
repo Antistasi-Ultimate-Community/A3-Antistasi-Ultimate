@@ -29,7 +29,7 @@ private _vehicle = [_markerOrigin, _vehicleType] call A3A_fnc_spawnVehicleAtMark
 if(isNull _vehicle) exitWith {objNull};
 
 // Fill cargo turrets with crew for attack helis
-private _isAttackHeli = _vehicleType in FactionGet(all, "vehiclesHelisAttack") + FactionGet(all, "vehiclesHelisLightAttack");
+private _isAttackHeli = _vehicleType in FactionGet(all,"vehiclesHelisAttack") + FactionGet(all,"vehiclesHelisLightAttack");
 private _crewGroup = [_side, _vehicle, nil, _isAttackHeli] call A3A_fnc_createVehicleCrew;
 {
     [_x, nil, nil, _resPool] call A3A_fnc_NATOinit
@@ -86,6 +86,6 @@ if (_expectedCargo >= 2) then
 };
 
 _landPosBlacklist = [_vehicle, _crewGroup, _cargoGroup, _posDestination, _markerOrigin, _landPosBlacklist, _isAirdrop, _resPool] call A3A_fnc_createVehicleQRFBehaviour;
-ServerDebug_5("Spawn Performed: Created vehicle %1 with %2 crew (%3) and %4 cargo (%5)", typeof _vehicle, count units _crewGroup, _crewGroup, count units _cargoGroup, _cargoGroup);
+ServerDebug_5("Spawn Performed: Created vehicle %1 with %2 crew (%3) and %4 cargo (%5)",typeOf _vehicle,count units _crewGroup,_crewGroup,count units _cargoGroup,_cargoGroup);
 
 [_vehicle, _crewGroup, _cargoGroup, _landPosBlacklist];

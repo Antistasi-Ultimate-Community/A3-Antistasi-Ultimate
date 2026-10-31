@@ -45,7 +45,7 @@ License: MIT License, Copyright (c) 2019 Barbolani & The Official Antistasi Comm
 FIX_LINE_NUMBERS()
 params [
     ["_headerText", "headermissingno", [""]],
-    ["_bodyText", "bodymissingno", ["",parseText""]],
+    ["_bodyText", "bodymissingno", ["",parseText ""]],
     ["_isSilent", false, [false]],
     ["_iconData", ["",1], [ [] ], 2]  // Will be used for GUI control version of customHints. Images can be baked into the message via XML or parseText so that the default header is not present. (See example `Pre-parse FooBar`)
 ];
@@ -54,8 +54,8 @@ private _filename = "fn_customHint.sqf";
 if (!hasInterface) exitWith {false;}; // Disabled for server & HC.
 if (isNil {A3A_customHint_InitComplete}) then { [] call A3A_fnc_customHintInit; };
 
-private _structuredText = parseText"";
-if (_bodyText isEqualType parseText"") then {
+private _structuredText = parseText "";
+if (_bodyText isEqualType parseText "") then {
     _structuredText = _bodyText;
 } else {
     _structuredText = parseText ([

@@ -31,9 +31,6 @@ while { (alive _unit) && (time < _bleedOutTime) && (_unit getVariable ["incapaci
 	private _helped = _unit getVariable ["helped",objNull];
 	if (isNull _helped and _nextRequest < time) then {
 		_helper = [_unit] call A3A_fnc_askHelp;
-		if (AIrevivesOutsideSquad isNotEqualTo -1 && {isNull _helper}) then {
-			_helper = [_unit] call A3A_fnc_askAnyoneHelp; //in case there is no helper found in _units group
-		};
 		_nextRequest = time + (2 + (_unit getVariable ["helpFailed", 0]))^2;
 	};
 	sleep 3;

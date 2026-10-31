@@ -7,10 +7,10 @@
 
 params ["_vehicle"];
 
-private _lootActionID = _vehicle getVariable ["lootActionID", Nil];
+private _lootActionID = _vehicle getVariable ["lootActionID", nil];
 
 //Check if action exists already
-if(!isnil "_lootActionID") then
+if(!isNil "_lootActionID") then
 {
 	_vehicle removeAction _lootActionID;
 };
@@ -20,8 +20,8 @@ _lootActionID = [_vehicle,
 	localize "STR_antistasi_actions_loot_around_text",
 	"\a3\missions_f_oldman\data\img\holdactions\holdaction_box_ca.paa",
 	"\a3\missions_f_oldman\data\img\holdactions\holdaction_box_ca.paa",
-	"vehicle player == player && _this distance _target < 5",
-	"vehicle player == player && _caller distance _target < 5",
+	"isNull objectParent player && _this distance _target < 5",
+	"isNull objectParent player && _caller distance _target < 5",
 	{},
 	{},
 	{

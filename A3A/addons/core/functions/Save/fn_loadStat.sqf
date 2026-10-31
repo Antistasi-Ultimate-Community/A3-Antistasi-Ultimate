@@ -52,9 +52,9 @@ if (_varName in specialVarLoads) then {
         case 'version': {
             _s = _varValue splitString ".";
             if (count _s < 2) exitWith {
-                Error_1("Bad version string: %1", _varValue);
+                Error_1("Bad version string: %1",_varValue);
             };
-            A3A_saveVersion = 10000*parsenumber(_s#0) + 100*parseNumber(_s#1);
+            A3A_saveVersion = 10000*parseNumber(_s#0) + 100*parseNumber(_s#1);
             if (count _s == 3) then {
                 A3A_saveVersion = A3A_saveVersion + parseNumber(_s#2);
             };
@@ -179,13 +179,13 @@ if (_varName in specialVarLoads) then {
 
                 private _building = nearestObjects [_x, ["House"], 1, true] select 0;
                 call {
-                    if (isNil "_building") exitWith { Error_1("No building found at %1", _x)};
+                    if (isNil "_building") exitWith { Error_1("No building found at %1",_x)};
                     if (_building in antennas) exitWith { Info("Antenna in destroyed building list, ignoring")};
                     if (_building in A3A_destroyedMilAdministrations) exitWith { Info("Military Administration in destroyed building list, ignoring") };
 
                     private _ruin = [_building] call BIS_fnc_createRuin;
                     if (isNull _ruin) exitWith {
-                        Error_1("Loading Destroyed Buildings: Unable to create ruin for %1", typeOf _building);
+                        Error_1("Loading Destroyed Buildings: Unable to create ruin for %1",typeOf _building);
                     };
 
                     destroyedBuildings pushBack _building;
@@ -222,7 +222,7 @@ if (_varName in specialVarLoads) then {
                 {
                     // skip garbage created by old bugs
                     if (isNil "_x") then { Debug("Garrison load | Removed nil entry"); continue };
-                    if !(_x isEqualType "") then { Debug_2("Garrison load | Removed bad entry: %1 | Type %2", _x, typeName _x); continue };
+                    if !(_x isEqualType "") then { Debug_2("Garrison load | Removed bad entry: %1 | Type %2",_x,typeName _x); continue };
                     if (_x isEqualTo "") then { Debug("Garrison load | Removed empty entry"); continue };
 
                     // fix for 2.4 -> 2.5 rebel garrison incompatibility
@@ -233,7 +233,7 @@ if (_varName in specialVarLoads) then {
                     private _loadoutName = toLower (_x select [13]);
                     _x = ( (_x select [0,13]) + (_loadoutNames getOrDefault [_loadoutName, ""]) );
                     if ( (_x select [0,13]) isEqualTo _x ) then {
-                        Debug_1("Garrison load | Replacing bad loadout name: %1", _x + _loadoutName);
+                        Debug_1("Garrison load | Replacing bad loadout name: %1",_x + _loadoutName);
                         _x = selectRandom _replacements;					// Fix for pre-2.4 garrisons
                     };
                     //loadout name valid, add to garrison
@@ -273,7 +273,7 @@ if (_varName in specialVarLoads) then {
                     //JIP on the _ruin, as repairRuinedBuilding will delete the ruin.
                     [_antenna, true] remoteExec ["hideObject", 0, _ruin];
                 } else {
-                    Error_1("Loading Antennas: Unable to create ruin for %1", typeOf _antenna);
+                    Error_1("Loading Antennas: Unable to create ruin for %1",typeOf _antenna);
                 };
 
                 _mrk setMarkerType "A3AU_radiotower_dead_mrk";
@@ -347,7 +347,7 @@ if (_varName in specialVarLoads) then {
             petros setPos _posHQ;
             "Synd_HQ" setMarkerPos _posHQ;
             if (chopForest) then {
-                { _x hideObjectGlobal true } foreach (nearestTerrainObjects [position petros,["tree","bush"],70]);
+                { _x hideObjectGlobal true } forEach (nearestTerrainObjects [position petros,["tree","bush"],70]);
             };
             if (count _varValue == 3) then {
                 [] spawn A3A_fnc_buildHQ;
@@ -421,7 +421,7 @@ if (_varName in specialVarLoads) then {
                     };
 
                     if isText(configOf _veh >> QGVAR(onBuildingLoaded)) then {
-                        Debug_3("calling %1 on %2 with params %3", QGVAR(onBuildingLoaded), typeOf _veh, [_veh]);
+                        Debug_3("calling %1 on %2 with params %3",QGVAR(onBuildingLoaded),typeOf _veh,[_veh]);
                         [_veh] call compile getText(configOf _veh >> QGVAR(onBuildingLoaded));
                     };
                 };
@@ -474,7 +474,7 @@ if (_varName in specialVarLoads) then {
             A3A_fuelAmountleftArray = _varValue;
             for "_i" from 0 to (count A3A_fuelAmountleftArray - 1) do {
                 private _nearFuelStations = nearestObjects [A3A_fuelAmountleftArray # _i # 0, A3A_fuelStationTypes, 1];
-                if (count _nearFuelStations == 0) then { continue };
+                if (_nearFuelStations isEqualTo []) then { continue };
                 private _fuelStation = _nearFuelStations#0;
                 if(A3A_hasACE) then {
                     [_fuelStation, A3A_fuelAmountleftArray # _i # 1] call ace_refuel_fnc_setFuel;
@@ -515,7 +515,7 @@ if (_varName in specialVarLoads) then {
 		};
 
         case 'traderPosition': {
-			if(count _varvalue > 0) then {
+			if(_varvalue isNotEqualTo []) then {
                 traderX = [_varvalue] call SCRT_fnc_trader_createTrader; 
 				publicVariable "traderX";
 				[traderX] call SCRT_fnc_trader_setStockType;
@@ -537,7 +537,7 @@ if (_varName in specialVarLoads) then {
         };
 
         case 'areOccupantsDefeated': {
-            Info_1("Occupants defeated: %1", str _varvalue);
+            Info_1("Occupants defeated: %1",str _varvalue);
             areOccupantsDefeated = _varvalue;
             publicVariable "areOccupantsDefeated";
             if (areOccupantsDefeated) then {
@@ -546,7 +546,7 @@ if (_varName in specialVarLoads) then {
         };
 
         case 'areInvadersDefeated': {
-            Info_1("Invaders defeated: %1", str _varvalue);
+            Info_1("Invaders defeated: %1",str _varvalue);
             areInvadersDefeated = _varvalue;
             publicVariable "areInvadersDefeated";
             if (areInvadersDefeated) then {
@@ -555,13 +555,13 @@ if (_varName in specialVarLoads) then {
         };
 
         case 'areRivalsDefeated': {
-            Info_1("Rivals defeated: %1", str _varvalue);
+            Info_1("Rivals defeated: %1",str _varvalue);
 			areRivalsDefeated = _varvalue;
 			publicVariable "areRivalsDefeated";
 		};
 
 		case 'areRivalsDiscovered': {
-            Info_1("Is Rivals Faction Active: %1", str _varvalue);
+            Info_1("Is Rivals Faction Active: %1",str _varvalue);
 			areRivalsDiscovered = _varvalue;  
 			publicVariable "areRivalsDiscovered";
 		};
@@ -596,12 +596,12 @@ if (_varName in specialVarLoads) then {
                     _mrk setMarkerColorLocal colorTeamPlayer;
                     _mrk setMarkerText "";
                     spawner setVariable [_mrk,2,true];
-                    if (count _garrison > 0) then {garrison setVariable [_mrk,_garrison,true]};
+                    if (_garrison isNotEqualTo []) then {garrison setVariable [_mrk,_garrison,true]};
                     sidesX setVariable [_mrk,teamPlayer,true];
                     watchpostsFIA pushBack _mrk;
                 } forEach _varvalue;
 
-                if !(watchpostsFIA isEqualTo []) then {[watchpostsFIA] remoteExec ["A3U_fnc_mrkUpdateBulk", 0, true]};
+                if (watchpostsFIA isNotEqualTo []) then {[watchpostsFIA] remoteExec ["A3U_fnc_mrkUpdateBulk", 0, true]};
 			};
 		};
 		case 'roadblocksFIA': {
@@ -615,12 +615,12 @@ if (_varName in specialVarLoads) then {
                     _mrk setMarkerColorLocal colorTeamPlayer;
                     _mrk setMarkerText "";
                     spawner setVariable [_mrk,2,true];
-                    if (count _garrison > 0) then {garrison setVariable [_mrk,_garrison,true]};
+                    if (_garrison isNotEqualTo []) then {garrison setVariable [_mrk,_garrison,true]};
                     sidesX setVariable [_mrk,teamPlayer,true];
                     roadblocksFIA pushBack _mrk;
                 } forEach _varvalue;
 
-                if !(roadblocksFIA isEqualTo []) then {[roadblocksFIA] remoteExec ["A3U_fnc_mrkUpdateBulk", 0, true]};
+                if (roadblocksFIA isNotEqualTo []) then {[roadblocksFIA] remoteExec ["A3U_fnc_mrkUpdateBulk", 0, true]};
 			};
 		};
 		case 'aapostsFIA': {
@@ -635,13 +635,13 @@ if (_varName in specialVarLoads) then {
                     _mrk setMarkerColorLocal colorTeamPlayer;
                     _mrk setMarkerText "";
                     spawner setVariable [_mrk,2,true];
-                    if (count _garrison > 0) then {garrison setVariable [_mrk,_garrison,true]};
-                    if (count _staticPositions > 0) then {staticPositions setVariable [_mrk,_staticPositions,true]};
+                    if (_garrison isNotEqualTo []) then {garrison setVariable [_mrk,_garrison,true]};
+                    if (_staticPositions isNotEqualTo []) then {staticPositions setVariable [_mrk,_staticPositions,true]};
                     sidesX setVariable [_mrk,teamPlayer,true];
                     aapostsFIA pushBack _mrk;
                 } forEach _varvalue;
 
-                if !(aapostsFIA isEqualTo []) then {[aapostsFIA] remoteExec ["A3U_fnc_mrkUpdateBulk", 0, true]};
+                if (aapostsFIA isNotEqualTo []) then {[aapostsFIA] remoteExec ["A3U_fnc_mrkUpdateBulk", 0, true]};
 			};	
 		};
 		case 'atpostsFIA': {
@@ -656,13 +656,13 @@ if (_varName in specialVarLoads) then {
                     _mrk setMarkerColorLocal colorTeamPlayer;
                     _mrk setMarkerText "";
                     spawner setVariable [_mrk,2,true];
-                    if (count _garrison > 0) then {garrison setVariable [_mrk,_garrison,true]};
-                    if (count _staticPositions > 0) then {staticPositions setVariable [_mrk,_staticPositions,true]};
+                    if (_garrison isNotEqualTo []) then {garrison setVariable [_mrk,_garrison,true]};
+                    if (_staticPositions isNotEqualTo []) then {staticPositions setVariable [_mrk,_staticPositions,true]};
                     sidesX setVariable [_mrk,teamPlayer,true];
                     atpostsFIA pushBack _mrk;
                 } forEach _varvalue;
 
-                if !(atpostsFIA isEqualTo []) then {[atpostsFIA] remoteExec ["A3U_fnc_mrkUpdateBulk", 0, true]};
+                if (atpostsFIA isNotEqualTo []) then {[atpostsFIA] remoteExec ["A3U_fnc_mrkUpdateBulk", 0, true]};
 			};		
 		};
 		case 'hmgpostsFIA': {
@@ -677,13 +677,13 @@ if (_varName in specialVarLoads) then {
                     _mrk setMarkerColorLocal colorTeamPlayer;
                     _mrk setMarkerText "";
                     spawner setVariable [_mrk,2,true];
-                    if (count _garrison > 0) then {garrison setVariable [_mrk,_garrison,true]};
-                    if (count _staticPositions > 0) then {staticPositions setVariable [_mrk,_staticPositions,true]};
+                    if (_garrison isNotEqualTo []) then {garrison setVariable [_mrk,_garrison,true]};
+                    if (_staticPositions isNotEqualTo []) then {staticPositions setVariable [_mrk,_staticPositions,true]};
                     sidesX setVariable [_mrk,teamPlayer,true];
                     hmgpostsFIA pushBack _mrk;
                 } forEach _varvalue;
 
-                if !(hmgpostsFIA isEqualTo []) then {[hmgpostsFIA] remoteExec ["A3U_fnc_mrkUpdateBulk", 0, true]};
+                if (hmgpostsFIA isNotEqualTo []) then {[hmgpostsFIA] remoteExec ["A3U_fnc_mrkUpdateBulk", 0, true]};
 			};
 		};
 
@@ -692,19 +692,14 @@ if (_varName in specialVarLoads) then {
 			publicVariable "rebelLoadouts";
 		};
 
-        case 'randomizeRebelLoadoutUniforms': {
-			randomizeRebelLoadoutUniforms = _varValue;
-			publicVariable "randomizeRebelLoadoutUniforms";
-		};
-
-		case 'rivalsLocationsMap': {
-            Info_1("Rivals Locations: %1", str _varValue);
+        case 'rivalsLocationsMap': {
+            Info_1("Rivals Locations: %1",str _varValue);
 			rivalsLocationsMap = _varValue;
 			publicVariable "rivalsLocationsMap";
 		};
 
 		case 'rivalsExcludedLocations': {
-            Info_1("Rivals Excluded Locations: %1", str _varValue);
+            Info_1("Rivals Excluded Locations: %1",str _varValue);
 			rivalsExcludedLocations = _varValue;
 			publicVariable "rivalsExcludedLocations";
 		};

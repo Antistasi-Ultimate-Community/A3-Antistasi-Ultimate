@@ -16,7 +16,7 @@ class CfgVehicles {
         scope = 1;
         scopeCurator = 1;
         editorSubcategory = "EdSubcat_Cars";
-		class EventHandlers {
+		class EventHandlers : EventHandlers {
             class ADDON {
                 PostInit = VEH_INIT_HANDLER;
             };
@@ -30,7 +30,7 @@ class CfgVehicles {
         scope = 1;
         scopeCurator = 1;
         editorSubcategory = "EdSubcat_APCs";
-		class EventHandlers {
+		class EventHandlers : EventHandlers {
             class ADDON {
                 PostInit = VEH_INIT_HANDLER;
             };
@@ -44,7 +44,7 @@ class CfgVehicles {
         scope = 1;
         scopeCurator = 1;
         editorSubcategory = "EdSubcat_Tanks";
-		class EventHandlers {
+		class EventHandlers : EventHandlers {
             class ADDON {
                 PostInit = VEH_INIT_HANDLER;
             };
@@ -58,7 +58,7 @@ class CfgVehicles {
         scope = 1;
         scopeCurator = 1;
 		editorSubcategory = "EdSubcat_Boats";
-		class EventHandlers {
+		class EventHandlers : EventHandlers {
             class ADDON {
                 PostInit = VEH_INIT_HANDLER;
             };
@@ -72,7 +72,7 @@ class CfgVehicles {
         scope = 1;
         scopeCurator = 1;
         editorSubcategory = "EdSubcat_Helicopters";
-        class EventHandlers {
+        class EventHandlers : EventHandlers {
             class ADDON {
                 PostInit = VEH_INIT_HANDLER;
             };
@@ -86,7 +86,7 @@ class CfgVehicles {
         scope = 1;
         scopeCurator = 1;
         editorSubcategory = "EdSubcat_Planes";
-        class EventHandlers {
+        class EventHandlers : EventHandlers {
             class ADDON {
                 PostInit = VEH_INIT_HANDLER;
             };
@@ -100,7 +100,7 @@ class CfgVehicles {
         scope = 1;
         scopeCurator = 1;
         editorSubcategory = "EdSubcat_Turrets";
-        class EventHandlers {
+        class EventHandlers : EventHandlers {
             class ADDON {
                 PostInit = VEH_INIT_HANDLER;
             };
@@ -113,7 +113,7 @@ class CfgVehicles {
         scope = 1;
         scopeCurator = 1;
         editorSubcategory = "EdSubcat_Turrets";
-        class EventHandlers {
+        class EventHandlers : EventHandlers {
             class ADDON {
                 PostInit = VEH_INIT_HANDLER;
             };
@@ -126,7 +126,7 @@ class CfgVehicles {
         scope = 1;
         scopeCurator = 1;
         editorSubcategory = "EdSubcat_Turrets";
-        class EventHandlers {
+        class EventHandlers : EventHandlers {
             class ADDON {
                 PostInit = VEH_INIT_HANDLER;
             };
@@ -140,7 +140,7 @@ class CfgVehicles {
         scope = 1;
         scopeCurator = 1;
         editorSubcategory = "EdSubcat_Turrets";
-        class EventHandlers {
+        class EventHandlers : EventHandlers {
             class ADDON {
                 PostInit = VEH_INIT_HANDLER;
             };

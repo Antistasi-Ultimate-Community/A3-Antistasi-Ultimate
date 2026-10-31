@@ -16,11 +16,11 @@ private _promoted = false;
 	private _promotionThreshold = _newRank call SCRT_fnc_common_getPromotionThreshold;
 
 	if (_promotionThreshold isEqualTo -1) exitWith {
-		Error_2("Negative promotion threshold for %1 player and invalid rank %2", (name _player), _newRank);
+		Error_2("Negative promotion threshold for %1 player and invalid rank %2",(name _player),_newRank);
 	};
 
 	if (_pointsX >= _promotionThreshold) then {
-		Info_3("Promoting %1 player (Current Rank: %2) to new %3.", (name _player), _rank, _newRank);
+		Info_3("Promoting %1 player (Current Rank: %2) to new %3.",(name _player),_rank,_newRank);
 		_promoted = true;
 		[_player,_newRank] remoteExec ["A3A_fnc_ranksMP"];
 		_player setVariable ["rankX",_newRank,true];

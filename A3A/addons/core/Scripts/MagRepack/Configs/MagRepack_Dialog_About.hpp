@@ -18,7 +18,7 @@ class MagRepack_Dialog_About
 		class A_MainTitle: outlw_MR_RscText
 		{
 			idc = 1000;
-			text = $STR_magRepack_about;
+			text = "$STR_magRepack_about";
 			x = 10 * GUI_GRID_W + GUI_GRID_X;
 			y = 9.375 * GUI_GRID_H + GUI_GRID_Y;
 			w = 20 * GUI_GRID_W;
@@ -28,14 +28,14 @@ class MagRepack_Dialog_About
 		class A_ButtonCancel: outlw_MR_RscButtonMenu
 		{
 			idc = 2400;
-			text = $STR_magRepack_mkay;
+			text = "$STR_magRepack_mkay";
 			action = "closeDialog 0";
 			x = 22.5 * GUI_GRID_W + GUI_GRID_X;
 			y = 14.625 * GUI_GRID_H + GUI_GRID_Y;
 			w = 7.5 * GUI_GRID_W;
 			h = 1 * GUI_GRID_H;
 			
-			default = false;
+			default = 0;
 			
 			class Attributes
 			{
@@ -64,7 +64,7 @@ class MagRepack_Dialog_About
 		class A_Author: outlw_MR_RscText
 		{
 			idc = 1002;
-			text = $STR_magRepack_author;
+			text = "$STR_magRepack_author";
 			x = 10.5 * GUI_GRID_W + GUI_GRID_X;
 			y = 10.75 * GUI_GRID_H + GUI_GRID_Y;
 			w = 19 * GUI_GRID_W;
@@ -75,7 +75,7 @@ class MagRepack_Dialog_About
 		class A_Version: outlw_MR_RscText
 		{
 			idc = 1001;
-			text = $STR_magRepack_version;
+			text = "$STR_magRepack_version";
 			x = 10.5 * GUI_GRID_W + GUI_GRID_X;
 			y = 11.55 * GUI_GRID_H + GUI_GRID_Y;
 			w = 19 * GUI_GRID_W;
@@ -86,7 +86,7 @@ class MagRepack_Dialog_About
 		class A_Date: outlw_MR_RscText
 		{
 			idc = 1003;
-			text = $STR_magRepack_updated;
+			text = "$STR_magRepack_updated";
 			x = 10.5 * GUI_GRID_W + GUI_GRID_X;
 			y = 12.35 * GUI_GRID_H + GUI_GRID_Y;
 			w = 19 * GUI_GRID_W;
@@ -116,7 +116,7 @@ class MagRepack_Dialog_About
 			
 			tooltip = "http://forums.bistudio.com/showthread.php?151402-Mag-Repack";
 			
-			default = true;
+			default = 1;
 			
 			class Attributes
 			{

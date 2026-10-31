@@ -23,7 +23,7 @@ private _timeLeft = 30;
 private _timerResetTimeOut = 0;
 while {alive player} do {
 	private _pos = getPos player select [0,2];
-	private _limit = if (vehicle player isKindOf "Plane") then {10000} else {0};
+	private _limit = [0, 10000] select (vehicle player isKindOf "Plane");
 
 	private _outOfBounds = _pos findIf { (_x < -_limit) || (_x > worldSize + _limit)} != -1;
 	private _atHQ = (player distance2D getMarkerPos respawnTeamPlayer) < 200;

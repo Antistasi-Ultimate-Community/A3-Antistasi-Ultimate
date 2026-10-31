@@ -30,7 +30,7 @@ private _vehType = selectRandom (_faction get "staticHowitzers");
 private _shellType = _faction get "howitzerMagazineHE";
 ([_vehType, _shellType] call A3A_fnc_getArtilleryRanges) params ["_minRange", "_maxRange"];
 
-Info_6("Howitzer support %1 against %2 will be carried out by a %3 with %4 mags, min range %5 max %6", _supportName, _targPos, _vehType, _shellType, _minRange, _maxRange);
+Info_6("Howitzer support %1 against %2 will be carried out by a %3 with %4 mags, min range %5 max %6",_supportName,_targPos,_vehType,_shellType,_minRange,_maxRange);
 
 //Search for a outpost, that isnt more than 3 kilometers away, which isnt spawned
 private _possibleBases = (airportsX + milbases) select
@@ -40,7 +40,7 @@ private _possibleBases = (airportsX + milbases) select
     {(markerPos _X distance2D _targPos > _minRange) &&
     {spawner getVariable _x == 2}}}
 };
-if(count _possibleBases == 0) exitWith { Debug("No bases found for howitzer support"); -1 };
+if(_possibleBases isEqualTo []) exitWith { Debug("No bases found for howitzer support"); -1 };
 private _base = selectRandom _possibleBases;
 
 // Spawn in howitzer
@@ -53,7 +53,7 @@ private _group = [_side, _vehicle] call A3A_fnc_createVehicleCrew;
 { [_x, nil, false, _resPool] call A3A_fnc_NATOinit } forEach units _group;
 _group deleteGroupWhenEmpty true;
 
-private _aggro = if(_side == Occupants) then {aggressionOccupants} else {aggressionInvaders};
+private _aggro = [aggressionInvaders, aggressionOccupants] select (_side == Occupants);
 if (_delay < 0) then { _delay = (0.5 + random 1) * (250 - 10*tierWar - 1*_aggro) };
 
 private _targArray = [];

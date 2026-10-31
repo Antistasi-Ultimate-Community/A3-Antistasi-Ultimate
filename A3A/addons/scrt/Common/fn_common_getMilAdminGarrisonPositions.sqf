@@ -37,7 +37,6 @@ switch(_buildingType) do {
 	case "Land_Barracks_01_dilapidated_F"; 
 	case "Land_Barracks_01_grey_F"; 
 	case "Land_Barracks_01_camo_F"; 
-	case "Land_i_Barracks_V2_F";
 	case "Land_u_Barracks_V2_F";
 	case "Land_vn_i_barracks_v1_f";
 	case "Land_vn_barracks_01_dilapidated_f";

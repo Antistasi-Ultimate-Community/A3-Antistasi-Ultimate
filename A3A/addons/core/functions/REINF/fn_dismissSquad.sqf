@@ -10,7 +10,7 @@ private _resourcesFIA = 0;
 private _leave = false;
 
 {
-	if ((groupID _x) in ["MineF", "Watch", "Post", "Road"]
+	if ((groupId _x) in ["MineF", "Watch", "Post", "Road"]
 		|| { isPlayer (leader _x)
 		|| { (units _x) findIf { _x == petros } != -1 }})
 	exitWith { _leave = true; };

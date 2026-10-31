@@ -30,13 +30,13 @@ private _typePrefix = switch (true) do {
     default { "" };
 };
 
-private _faceKey = _typePrefix + (if (_typePrefix == "") then { "faces" } else { "Faces" });
+private _faceKey = _typePrefix + (["Faces", "faces"] select (_typePrefix == ""));
 private _faces = _faction getOrDefault [_faceKey, _faction getOrDefault ["faces", []]];
 
 private _identity = createHashMap;
 _identity set ["face", selectRandom _faces];
 
-private _voiceKey = _typePrefix + (if (_typePrefix == "") then { "voices" } else { "Voices" });
+private _voiceKey = _typePrefix + (["Voices", "voices"] select (_typePrefix == ""));
 private _voices = _faction getOrDefault [_voiceKey, _faction getOrDefault ["voices", []]];
 _identity set ["speaker", selectRandom _voices];
 

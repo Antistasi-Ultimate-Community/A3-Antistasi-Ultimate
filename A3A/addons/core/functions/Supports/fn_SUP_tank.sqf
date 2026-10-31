@@ -41,7 +41,7 @@ if (_target isEqualType objNull and {!isNull _target}) then {
 };
 
 // name, side, suppType, center, radius, [target, targpos]
-private _suppData = [_supportName, _side, "TANK", _targPos, 1000, _targArray];
+private _suppData = [_suppName, _side, "TANK", _targPos, 1000, _targArray];
 A3A_activeSupports pushBack _suppData;
 [_suppData, _resPool, _base, _vehCount, _delay, _estResources] spawn A3A_fnc_SUP_tankRoutine;
 

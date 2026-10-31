@@ -124,7 +124,7 @@
         name = "FIA (AFR)";
         file = "AFR_Reb_FIA";
         flagTexture = "a3\data_f\flags\flag_fia_co.paa";
-        description = $STR_A3AP_setupFactionsTab_fia;
+        description = "$STR_A3AP_setupFactionsTab_fia";
         climate[] = {"arid", "temperate"};
     };
     class AFR_Reb_SDK : AFR_Base
@@ -133,7 +133,7 @@
         name = "Syndikat (AFR)";
         file = "AFR_Reb_SDK";
         flagTexture = "\A3\Data_F_Exp\Flags\flag_SYND_CO.paa";
-        description = $STR_A3AP_setupFactionsTab_sdk;
+        description = "$STR_A3AP_setupFactionsTab_sdk";
         climate[] = {"tropical"};
     };
     class AFR_Reb_LS : AFR_Base
@@ -142,7 +142,7 @@
         name = "Livonian Seperatists (AFR)";
         file = "AFR_Reb_LS";
         flagTexture = "\A3\Data_F\Flags\Flag_green_CO.paa";
-        description = $STR_A3AP_setupFactionsTab_ll;
+        description = "$STR_A3AP_setupFactionsTab_ll";
         climate[] = {"temperate", "arctic"};
     };
     class AFR_Reb_CTRG : AFR_Base

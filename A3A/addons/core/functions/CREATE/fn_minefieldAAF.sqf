@@ -50,11 +50,11 @@ while {_attempts < 37} do
     };
 
 if (_failure) exitWith {
-    Info_1("could not create a Minefield at %1", _base);
+    Info_1("could not create a Minefield at %1",_base);
     false;
 };
 
-Debug_1("Creating a Minefield at %1", _base);
+Debug_1("Creating a Minefield at %1",_base);
 
 private _mines = (_faction get "minefieldAT") + (_faction get "minefieldAPERS");
 

@@ -28,6 +28,7 @@ class CfgPatches
 	};
 };
 
+#pragma hemtt flag pe23_ignore_has_include
 #define A3U_DISABLE_MENU __has_include("\x\A3A\addons\menu\.disable") // Could make this 0/1 if needed internally
 
 #if A3U_DISABLE_MENU != 1

@@ -30,7 +30,7 @@ private _iterations = 0;
 if (!_ignoreRoads) then {
 	while {true} do {
 		_roads = _position nearRoads _radiusX;
-		if (count _roads > 0) exitWith {};
+		if (_roads isNotEqualTo []) exitWith {};
 		if (_iterations > 30) exitWith {};
 		_iterations = _iterations + 1;
 		_radiusX = _radiusX + 50;
@@ -53,8 +53,8 @@ if (_roads isEqualTo []) then {
 	] call BIS_fnc_findSafePos;
 } else {
 	private _road = selectRandom _roads;
-	private _roadCon = roadsConnectedto _road;
-	_dirVeh = if(count _roadcon > 0) then {[_road, _roadCon select 0] call BIS_fnc_DirTo} else {random 360};
+	private _roadCon = roadsConnectedTo _road;
+	_dirVeh = if(_roadcon isNotEqualTo []) then {[_road, _roadCon select 0] call BIS_fnc_DirTo} else {random 360};
 	_vehicleSpawnPosition = getPos _road;
 };
 

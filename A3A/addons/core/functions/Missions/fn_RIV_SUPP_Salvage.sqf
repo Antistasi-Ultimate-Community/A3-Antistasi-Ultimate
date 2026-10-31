@@ -5,7 +5,7 @@ params ["_markerX"];
 
 if (!isServer and hasInterface) exitWith{};
 
-Info_1("Salvage Ambushed Truck Init, marker: %1", _markerX);
+Info_1("Salvage Ambushed Truck Init, marker: %1",_markerX);
 
 private _vehicles = [];
 private _groups = [];
@@ -24,7 +24,7 @@ _limit params ["_dateLimitNum", "_displayTime"];
 
 private _spawnPosition = [_positionX, 600, 1500, 0, 0] call BIS_fnc_findSafePos;
 private _bases = citiesX + airportsX + milbases + outposts + seaports + factories + resourcesX + ["Synd_HQ"];
-private _isTooCloseToOutposts = _bases findIf { _spawnPosition distance2d (getMarkerPos _x) < 600 || {_spawnPosition inArea _x} } != -1;
+private _isTooCloseToOutposts = _bases findIf { _spawnPosition distance2D (getMarkerPos _x) < 600 || {_spawnPosition inArea _x} } != -1;
 private _nearRoads = _spawnPosition nearRoads 100;
 
 if (_isTooCloseToOutposts || _nearRoads isEqualTo []) then {
@@ -42,19 +42,19 @@ if (_isTooCloseToOutposts || _nearRoads isEqualTo []) then {
             [_spawnPosition, _spawnPosition] //default position
         ] call BIS_fnc_findSafePos;
 		_nearRoads = _spawnPosition nearRoads 100;
-        _isTooCloseToOutposts = _bases findIf { _spawnPosition distance2d (getMarkerPos _x) < 600 || {_spawnPosition inArea _x} } != -1;
+        _isTooCloseToOutposts = _bases findIf { _spawnPosition distance2D (getMarkerPos _x) < 600 || {_spawnPosition inArea _x} } != -1;
         if (_isTooCloseToOutposts && {_nearRoads isNotEqualTo []}) exitWith {};
         _radiusX = _radiusX + 1;
     };
 };
 
-Info_1("Initial position: %1", _spawnPosition);
+Info_1("Initial position: %1",_spawnPosition);
 
 
 private _routeNodes = ([_spawnPosition, _positionX] call A3A_fnc_findPath) apply {_x select 0};
 
 if (_routeNodes isEqualTo []) exitWith {
-	Error_1("Couldn't find path from starting position to %1, aborting and rerolling ordinary supplies mission.", _markerX);
+	Error_1("Couldn't find path from starting position to %1, aborting and rerolling ordinary supplies mission.",_markerX);
 	["SUPP"] remoteExec ["A3A_fnc_missionRequest", 2];
 };
 #if __A3_DEBUG__
@@ -75,13 +75,13 @@ private _radiusX = 5;
 
 while {true} do {
     _roads = _startNode nearRoads _radiusX;
-    if (count _roads > 0 && {_roads findIf {[position _x, _positionX] call A3A_fnc_arePositionsConnected} != -1}) exitWith {};
+    if (_roads isNotEqualTo [] && {_roads findIf {[position _x, _positionX] call A3A_fnc_arePositionsConnected} != -1}) exitWith {};
     _radiusX = _radiusX + 5;
 };
 
 private _startingRoad = _roads select 0;
 
-Info_1("Road position: %1", _startingRoad);
+Info_1("Road position: %1",_startingRoad);
 
 private _startingRoadPosition = getPos _startingRoad;
 
@@ -91,7 +91,7 @@ private _radiusX = 5;
 
 while {true} do {
     _roads = _midPoint nearRoads _radiusX;
-    if (count _roads > 0) exitWith {};
+    if (_roads isNotEqualTo []) exitWith {};
     _radiusX = _radiusX + 5;
 };
 
@@ -104,7 +104,7 @@ private _radiusX = 5;
 
 while {true} do {
     _roads = _midMidPoint nearRoads _radiusX;
-    if (count _roads > 0) exitWith {};
+    if (_roads isNotEqualTo []) exitWith {};
     _radiusX = _radiusX + 5;
 };
 private _midRoad = _roads select 0;
@@ -118,7 +118,7 @@ _crater setVectorUp surfaceNormal getPos _crater;
 _others pushBack _crater;
 
 
-Info_1("Crater pos: %1", _startingRoadPosition);
+Info_1("Crater pos: %1",_startingRoadPosition);
 
 Info("Spawning truck...");
 
@@ -144,7 +144,7 @@ _truck setHit ["wheel_1_1_steering", 0.5];
 _vehicles pushBack _truck;
 
 
-Info_2("Truck classname: %1, truck position: %2", _truckClass, getPos _truck);
+Info_2("Truck classname: %1, truck position: %2",_truckClass,getPos _truck);
 
 Info("Adding food sacks to cargo...");
 
@@ -157,7 +157,7 @@ if !(_return isEqualType 0) then {
 	_return set [4, true];
 	_return remoteExec ["A3A_Logistics_fnc_load", 2]; 
 } else {
-	Error_3("For some reason no autologistics load. Vehicle: %1, Cargo: %2, Return: %3", (typeOf _truck), (typeOf _foodSacks), (str _return));
+	Error_3("For some reason no autologistics load. Vehicle: %1, Cargo: %2, Return: %3",(typeOf _truck),(typeOf _foodSacks),(str _return));
 };
 
 
@@ -242,8 +242,8 @@ if (dateToNumber date < _dateLimitNum) then {
 	Info("Spawning barricade and static weapon...");
 
 	private _barricadePos = position _nextRoad;
-	private _roadcon = roadsConnectedto _nextRoad;
-	private _dirBarricade = if (count _roadcon > 0) then {[_nextRoad, _roadcon select 0] call BIS_fnc_dirTo} else {random 360};
+	private _roadcon = roadsConnectedTo _nextRoad;
+	private _dirBarricade = if (_roadcon isNotEqualTo []) then {[_nextRoad, _roadcon select 0] call BIS_fnc_dirTo} else {random 360};
 	private _barricadeTypes = [
 		"Land_Barricade_01_10m_F", 
 		"Land_Barricade_01_4m_F", 
@@ -271,7 +271,7 @@ if (dateToNumber date < _dateLimitNum) then {
 	_gunner moveInGunner _weapon;
 	_groups pushBack _groupGunner;
 
-	Info_2("Static weapon class: %1, postion: %2", _staticWeaponClass, _weaponPos);
+	Info_2("Static weapon class: %1, postion: %2",_staticWeaponClass,_weaponPos);
 
 	if (_isDifficult) then {
 		Info("Creating small minefield near ambush.");
@@ -357,7 +357,7 @@ sleep 30;
 {deleteVehicle _x} forEach _others;
 
 deleteVehicle _foodSacks;
-private _emptybox = "Land_Pallet_F" createVehicle (getpos _foodSacks);
+private _emptybox = "Land_Pallet_F" createVehicle (getPos _foodSacks);
 [_emptybox, true] remoteExec[QFUNCMAIN(despawnQueueEntity), 2];
 
 [_taskId, "SUPP", 900] spawn A3A_fnc_taskDelete;

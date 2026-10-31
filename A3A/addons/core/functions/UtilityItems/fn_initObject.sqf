@@ -20,16 +20,16 @@ Example:
 
 params [["_object", objNull, [objNull]]];
 
-_object setVehicleRadar ([0, 1] select (getNumber(configOf _object >> "radarType") in [2, 4]));
+_object setVehicleRadar (parseNumber (getNumber(configOf _object >> "radarType") in [2, 4]));
 _object setVehicleReceiveRemoteTargets true;
 _object setVehicleReportRemoteTargets true;
 //_object setVehicleReportOwnPosition true;
 
 if (isNull _object) exitWith { Error("Non-existent object passed") };
-if !(typeof _object in A3A_utilityItemHM) exitWith { Error_1("initObject used on object type %1", typeof _object) };
-if (!isNil {_object getVariable "A3A_canGarage"}) exitWith { Error_1("Object type %1 already initialized", typeof _object) };
+if !(typeOf _object in A3A_utilityItemHM) exitWith { Error_1("initObject used on object type %1",typeOf _object) };
+if (!isNil {_object getVariable "A3A_canGarage"}) exitWith { Error_1("Object type %1 already initialized",typeOf _object) };
 
-(A3A_utilityItemHM get typeof _object) params ["", "_price", "", "", "_flags"];
+(A3A_utilityItemHM get typeOf _object) params ["", "_price", "", "", "_flags"];
 
 // clear inventory. May or may not be done elsewhere
 if !("noclear" in _flags) then {

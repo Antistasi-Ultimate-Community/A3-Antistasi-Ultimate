@@ -22,7 +22,7 @@ if ((toLower worldName) in ["altis", "chernarus_summer"]) then {
 	"((getText (_x >> ""type"")) == ""Hill"") &&
 	!((getText (_x >> ""name"")) isEqualTo """") &&
 	!(configName _x isEqualTo ""Magos"")"
-	configClasses (configfile >> "CfgWorlds" >> worldName >> "Names") apply {
+	configClasses (configFile >> "CfgWorlds" >> worldName >> "Names") apply {
 
 		_name = configName _x;
 		_sizeX = getNumber (_x >> "radiusA");
@@ -30,7 +30,7 @@ if ((toLower worldName) in ["altis", "chernarus_summer"]) then {
 		_size = [_sizeX, _sizeY] select (_sizeX <= _sizeY);
 		_pos = getArray (_x >> "position");
 		_size = [_size, 50] select (_size < 10);
-		_mrk = createmarker [format ["%1", _name], _pos];
+		_mrk = createMarker [format ["%1", _name], _pos];
 		_mrk setMarkerSizeLocal [_size, _size];
 		_mrk setMarkerShapeLocal "ELLIPSE";
 		_mrk setMarkerBrushLocal "SOLID";
@@ -40,7 +40,7 @@ if ((toLower worldName) in ["altis", "chernarus_summer"]) then {
 	};
 };  //this only for Altis and Cherno
 if (debug) then {
-    Debug_1("Setting Spawn Points for %1.", worldname);
+    Debug_1("Setting Spawn Points for %1.",worldName);
 };
 //We're doing it this way, because Dedicated servers world name changes case, depending on how the file is named.
 //And weirdly, == is not case sensitive.
@@ -101,16 +101,16 @@ if ( _posBank isEqualTo []) then {banks = nearestObjects [[worldSize/2, worldSiz
 // This causes issues with persistent load and rebuild scripts, so we replace those with antennas that work properly.
 private _replaceBadAntenna = {
 	params ["_antenna"];
-	if ((typeof _antenna) in ["Land_Communication_F", "Land_Vysilac_FM", "Land_A_TVTower_Base"]) then {
+	if ((typeOf _antenna) in ["Land_Communication_F", "Land_Vysilac_FM", "Land_A_TVTower_Base"]) then {
 		hideObjectGlobal _antenna;
-		if (typeof _antenna == "Land_A_TVTower_Base") then {
+		if (typeOf _antenna == "Land_A_TVTower_Base") then {
 			// The TV tower is composed of 3 sections - need to hide them all
 			private _otherSections = nearestObjects [_antenna, ["Land_A_TVTower_Mid", "Land_A_TVTower_Top"], 200];
 			{ hideObjectGlobal _x; } forEach _otherSections;
 		};
 		private _antennaPos = getPos _antenna;
 		_antennaPos set [2, 0];
-		private _antennaClass = if (worldName isEqualTo "chernarus_summer") then { "Land_Telek1" } else { "Land_TTowerBig_2_F" };
+		private _antennaClass = ["Land_TTowerBig_2_F", "Land_Telek1"] select (worldName isEqualTo "chernarus_summer");
 		_antenna = createVehicle [_antennaClass, _antennaPos, [], 0, "NONE"];
 		_antenna setVectorUp [0, 0, 1];
         _antenna setDir (getDir _antenna);
@@ -131,7 +131,7 @@ if (!_hardCodedAntennas) then {
         _mrkFinal setMarkerTypeLocal "A3AU_radiotower_mrk";
         _mrkFinal setMarkerColorLocal "ColorWhite";
 		_mrkFinal setMarkerAlphaLocal 1;
-        _mrkFinal setMarkerText "";
+        _mrkFinal setMarkerTextLocal "";
 		_mrkFinal setMarkerShadow false;
         mrkAntennas pushBack _mrkFinal;
         _x addEventHandler [
@@ -164,15 +164,15 @@ if (debug) then {
     Debug("Radio Tower built.");
     Debug("Finding broken Radio Towers.");
 };
-if (count _posAntennas > 0) then {
+if (_posAntennas isNotEqualTo []) then {
 	for "_i" from 0 to (count _posAntennas - 1) do {
 		_antennaProv = nearestObjects [_posAntennas select _i, _antennaTypes, 35];
 
-		if (count _antennaProv > 0) then {
+		if (_antennaProv isNotEqualTo []) then {
 			_antenna = _antennaProv select 0;
 
 			if (_i in _blacklistIndex) then {
-				_antenna setdamage 1;
+				_antenna setDamage 1;
 			} else {
 				_antenna = ([_antenna] call _replaceBadAntenna);
 				antennas pushBack _antenna;
@@ -181,7 +181,7 @@ if (count _posAntennas > 0) then {
 				_mrkFinal setMarkerTypeLocal "A3AU_radiotower_mrk";
 				_mrkFinal setMarkerColorLocal "ColorWhite";
 				_mrkFinal setMarkerAlphaLocal 1;
-				_mrkFinal setMarkerText "";
+				_mrkFinal setMarkerTextLocal "";
 				_mrkFinal setMarkerShadow false;
 				mrkAntennas pushBack _mrkFinal;
 
@@ -215,13 +215,13 @@ if (count _posAntennas > 0) then {
 if (debug) then {
 	Error("Broken Radio Towers identified.");
 };
-if (count _posBank > 0) then {
+if (_posBank isNotEqualTo []) then {
 	for "_i" from 0 to (count _posBank - 1) do {
 		_bankProv = nearestObjects [_posBank select _i, _banktypes, 30];
 
-		if (count _bankProv > 0) then {
+		if (_bankProv isNotEqualTo []) then {
 			private _banco = _bankProv select 0;
-			banks = banks + [_banco];
+			banks pushBack _banco;
 		};
 	};
 };
@@ -233,8 +233,8 @@ blackListDest = (markersX - controlsX - ["Synd_HQ"] - citiesX) select {
 	private _nearRoads = (getMarkerPos _x) nearRoads (([_x] call A3A_fnc_sizeMarker) * 1.5);
 //	_nearRoads = _nearRoads inAreaArray _x;
 	private _badSurfaces = ["#GdtForest", "#GdtRock", "#GdtGrassTall"];
-	private _idx = _nearRoads findIf { !(surfaceType (position _x) in _badSurfaces) && { count roadsConnectedTo _x != 0 } };
-	if (_idx == -1) then {true} else {false};
+	private _idx = _nearRoads findIf { !(surfaceType (position _x) in _badSurfaces) && { roadsConnectedTo _x isNotEqualTo [] } };
+	_idx == -1;
 };
 
 
@@ -331,8 +331,8 @@ _milAdminPositions apply {
     }];
 };
 
-if !(_milAdminMarkersToUpdate isEqualTo []) then {[_milAdminMarkersToUpdate] call A3U_fnc_mrkUpdateBulk};
-if !(mrkAntennas isEqualTo []) then {[mrkAntennas] call A3U_fnc_mrkUpdateBulk};
+if (_milAdminMarkersToUpdate isNotEqualTo []) then {[_milAdminMarkersToUpdate] call A3U_fnc_mrkUpdateBulk};
+if (mrkAntennas isNotEqualTo []) then {[mrkAntennas] call A3U_fnc_mrkUpdateBulk};
 
 // markersX append milAdministrationsX;
 
@@ -363,11 +363,11 @@ publicVariable "seaSpawn";
 publicVariable "seaAttackSpawn";
 publicVariable "defaultControlIndex";
 publicVariable "detectionAreas";
-publicvariable "A3A_fuelStations";
-publicvariable "A3A_fuelStationTypes";
+publicVariable "A3A_fuelStations";
+publicVariable "A3A_fuelStationTypes";
 publicVariable "milAdministrationsX";
-publicvariable "A3A_milAdministrations";
-publicvariable "A3A_destroyedMilAdministrations";
+publicVariable "A3A_milAdministrations";
+publicVariable "A3A_destroyedMilAdministrations";
 publicVariable "fuelStationsX";
 
 initZonesDone = true;				// signal headless clients that they can start nav init

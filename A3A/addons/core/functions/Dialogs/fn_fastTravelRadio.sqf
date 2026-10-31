@@ -60,7 +60,7 @@ if (!isNil "A3A_FFPun_Jailed" && {(getPlayerUID player) in A3A_FFPun_Jailed}) ex
 private _units = units _groupX;
 
 if (_units findIf {
-	vehicle _x != _x and ((!isPlayer (driver vehicle _x) && isNull (driver vehicle _x)) or !canMove vehicle _x or vehicle _x isKindOf "Boat")
+	!isNull objectParent _x and ((!isPlayer (driver vehicle _x) && isNull (driver vehicle _x)) or !canMove vehicle _x or vehicle _x isKindOf "Boat")
 } != -1) exitWith {
 	[localize "STR_A3A_Dialogs_fast_travel_header", localize "STR_A3A_Dialogs_fast_travel_no_multiple"] call SCRT_fnc_misc_deniedHint;
 };
@@ -70,7 +70,7 @@ positionTel = [];
 if (_quickMarker == "") then {[localize "STR_A3A_Dialogs_fast_travel_header", localize "STR_A3A_Dialogs_fast_travel_click"] call A3A_fnc_customHint;};
 if (!visibleMap) then {openMap true};
 showCommandingMenu "";
-if !(_quickMarker == "") then {
+if (_quickMarker != "") then {
 	private _quickMarkerPosition = getMarkerPos _quickMarker;
 
 	_quickMarkerPosition set [0, (_quickMarkerPosition select 0) + 0.1];
@@ -81,13 +81,13 @@ if !(_quickMarker == "") then {
 	onMapSingleClick "positionTel = _pos; true";
 };
 
-waitUntil {sleep 1; (count positionTel > 0) or {not visiblemap}};
+waitUntil {sleep 1; (positionTel isNotEqualTo []) or {not visibleMap}};
 onMapSingleClick "";
 
 private _positionTel = positionTel;
 private _earlyEscape = false;
 
-if (count _positionTel > 0) then {
+if (_positionTel isNotEqualTo []) then {
 	private _base = [_markersX, _positionTel] call BIS_fnc_nearestPosition;
 	if (!isNil "rallyPointMarker" && {_base == rallyPointMarker}) then {
 		[] spawn SCRT_fnc_rally_travelToRallyPoint;
@@ -112,7 +112,7 @@ if (!_esHC && {fastTravelEnemyCheck && {_units findIf {[getPosATL _x] call A3A_f
 	[localize "STR_A3A_Dialogs_fast_travel_header", localize "STR_A3A_Dialogs_fast_travel_enemiesnear_group"] call SCRT_fnc_misc_deniedHint;
 };
 
-if (!_esHC && {vehicle player != player && {driver vehicle player != player}}) exitWith {
+if (!_esHC && {!isNull objectParent player && {driver objectParent player != player}}) exitWith {
 	[localize "STR_A3A_Dialogs_fast_travel_header", localize "STR_A3A_Dialogs_fast_travel_only_drivers"] call SCRT_fnc_misc_deniedHint;
 };
 
@@ -171,7 +171,7 @@ if (!_esHC) then {
 	disableUserInput true; 
 	cutText [format [localize "STR_hints_FT_timer", _distanceX],"BLACK",1]; 
 } else {
-	[localize "STR_A3A_Dialogs_fast_travel_header", format [localize "STR_A3A_Dialogs_fast_travel_moving_hc_group",groupID _groupX]] call A3A_fnc_customHint; 
+	[localize "STR_A3A_Dialogs_fast_travel_header", format [localize "STR_A3A_Dialogs_fast_travel_moving_hc_group",groupId _groupX]] call A3A_fnc_customHint; 
 	sleep _distanceX;
 };
 
@@ -186,12 +186,12 @@ if (!_esHC) then {
 private _exit = false;
 if (limitedFT == 1 or limitedFT == 2) then {
 	_vehicles = [];
-	{if (vehicle _x != _x) then {_vehicles pushBackUnique (vehicle _x)}} forEach units _groupX;
+	{if (!isNull objectParent _x) then {_vehicles pushBackUnique (vehicle _x)}} forEach units _groupX;
 	{if ((vehicle _x) in _vehicles) exitWith {_checkForPlayer = true}} forEach (call A3A_fnc_playableUnits);
 };
 
 if (_checkForPlayer and !_isValidTargetLocation) exitWith {
-	[localize "STR_A3A_Dialogs_fast_travel_header", format [localize "STR_A3A_Dialogs_fast_travel_cancel",groupID _groupX]] call A3A_fnc_customHint;
+	[localize "STR_A3A_Dialogs_fast_travel_header", format [localize "STR_A3A_Dialogs_fast_travel_cancel",groupId _groupX]] call A3A_fnc_customHint;
 };
 
 private _movedUnits = units _groupX;
@@ -202,12 +202,12 @@ private _ftUnits = [];
 		_unit allowDamage false;
 		_ftUnits pushBack _unit;
 		if !(isNull objectParent _unit) then {
-			if (driver vehicle _unit == _unit) then {
+			if (driver objectParent _unit == _unit) then {
 				_radiusX = 10;
 				private _roads = [];
 				while {true} do {
 					_roads = _positionX nearRoads _radiusX;
-					if (count _roads > 0) exitWith {};
+					if (_roads isNotEqualTo []) exitWith {};
 					_radiusX = _radiusX + 10;
 				};
 				_road = _roads select 0;
@@ -240,7 +240,7 @@ if (!_esHC) then {
 	cutText["","BLACK IN",0.1];
 	[localize "STR_A3A_Dialogs_fast_travel_header", localize "STR_hints_FT_dest"] call A3A_fnc_customHint;
 } else {
-	[localize "STR_A3A_Dialogs_fast_travel_header", format [localize "STR_A3A_Dialogs_fast_travel_arrived_hc",groupID _groupX]] call A3A_fnc_customHint;
+	[localize "STR_A3A_Dialogs_fast_travel_header", format [localize "STR_A3A_Dialogs_fast_travel_arrived_hc",groupId _groupX]] call A3A_fnc_customHint;
 };
 
 if (_forcedX) then {

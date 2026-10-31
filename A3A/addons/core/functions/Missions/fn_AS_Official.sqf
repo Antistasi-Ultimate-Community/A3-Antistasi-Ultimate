@@ -5,7 +5,7 @@ FIX_LINE_NUMBERS()
 //Mission: Assassinate an official
 if (!isServer and hasInterface) exitWith{};
 
-private _difficultX = if (random 10 < tierWar) then {true} else {false};
+private _difficultX = random 10 < tierWar;
 private _leave = false;
 private _contactX = objNull;
 private _groupContact = grpNull;

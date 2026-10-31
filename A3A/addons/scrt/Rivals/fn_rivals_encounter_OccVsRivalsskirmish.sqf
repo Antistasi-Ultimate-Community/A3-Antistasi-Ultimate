@@ -22,7 +22,7 @@ if (gameMode in [2, 3]) exitWith {
 };
 
 private _originPosition = position _player;
-Info_2("%1 will be used as center of the event at %2 position.", name _player, str _originPosition);
+Info_2("%1 will be used as center of the event at %2 position.",name _player,str _originPosition);
 
 private _potentialOutposts = (outposts + resourcesX + factories + citiesX) select { sidesX getVariable [_x, sideUnknown] == Occupants && {(getMarkerPos _x) distance2D _player < distanceSPWN*2.5}}; ///add a check for HQ
 if (_potentialOutposts isEqualTo []) exitWith {
@@ -38,7 +38,7 @@ private _faction = Faction(_side);
 private _faction2 = Faction(_side2);
 private _FrontlineOutpostPosition = getMarkerPos _FrontlineOutpost;
 
-Info_2("Frontline outpost %1 at %2 will be used as center of the event.", _FrontlineOutpost, str _FrontlineOutpostPosition);
+Info_2("Frontline outpost %1 at %2 will be used as center of the event.",_FrontlineOutpost,str _FrontlineOutpostPosition);
 
 private _specOpsArray = if (_difficult) then {selectRandom (_faction get "groupSpecOpsRandom")} else {selectRandom ([_faction, "groupsTierSquads"] call SCRT_fnc_unit_flattenTier)}; ///maybe move this into fuction and roll every time?
 private _specOpsArray2 = if (_difficult2) then {selectRandom (A3A_faction_riv get "groupsSquad")} else {selectRandom ((A3A_faction_riv get "groupsFireteam") + (A3A_faction_riv get "groupsSentry") + (A3A_faction_riv get "groupsAA") + (A3A_faction_riv get "groupsAT"))};
@@ -166,7 +166,7 @@ private _timeOut = time + 1800;
 waitUntil {time > _timeOut && (call SCRT_fnc_misc_getRebelPlayers) inAreaArray [_skirmishposition, distanceSPWN1, distanceSPWN1] isEqualTo []};
 ///If someone survived -> move to base from the check above?
 ///some sort of check needed to delete groups and vehicles smart way
-{[_x] spawn A3A_fnc_vehDespawner} forEach _vehicles;
+{[_x] spawn A3A_fnc_vehDespawner} forEach (_vehiclesArray + _vehiclesArray2);
 {[_x] spawn A3A_fnc_groupDespawner} forEach _InfGroups;
 {[_x] spawn A3A_fnc_groupDespawner} forEach _Rivalsgroups;
 

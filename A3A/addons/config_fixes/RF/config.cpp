@@ -7,7 +7,11 @@ class CfgPatches
     class PATCHNAME(RF) 
     {
         name = COMPONENT_NAME;
-        units[] = {};
+        units[] = {
+            "a3a_Heli_EC_02_RF",
+            "a3a_LDF_Heli_EC_02_RF",
+            "a3a_black_Heli_EC_02_RF",
+        };
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {"A3_Data_F_AoW_Loadorder","RF_Vehicles"};

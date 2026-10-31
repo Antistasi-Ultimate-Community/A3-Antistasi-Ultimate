@@ -21,7 +21,7 @@ License: MIT License
 */
 #include "..\..\script_component.hpp"
 params ["_config"];
-if (!isClass _config) exitWith { Error_1("Not a config: ", _config); [] };
+if (!isClass _config) exitWith { Error_1("Not a config: %1",_config); [] };
 
 //data store
 private _magazines = [];

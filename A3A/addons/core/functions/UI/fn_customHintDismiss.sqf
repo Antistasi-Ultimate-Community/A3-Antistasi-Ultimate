@@ -32,7 +32,7 @@ if (!hasInterface || !A3A_customHintEnable) exitWith {false;}; // Disabled for s
 if (_dismissAll) then {
     A3A_customHint_MSGs = [];
 } else {
-    if !(count A3A_customHint_MSGs isEqualTo 0) then {
+    if (count A3A_customHint_MSGs isNotEqualTo 0) then {
         private _lastMSGIndex = count A3A_customHint_MSGs - 1;
         A3A_customHint_MSGs deleteAt _lastMSGIndex;
     };

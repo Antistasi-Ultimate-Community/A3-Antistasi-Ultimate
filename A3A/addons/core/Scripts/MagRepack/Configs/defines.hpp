@@ -1,3 +1,5 @@
+#ifndef A3A_MAGREPACK_DEFINES_HPP
+#define A3A_MAGREPACK_DEFINES_HPP
 
 #define GUI_GRID_X	(0)
 #define GUI_GRID_Y	(0)
@@ -7,93 +9,235 @@
 #define GUI_GRID_HAbs	(1)
 
 // Control types
+#ifndef CT_STATIC
 #define CT_STATIC           0
+#endif
+#ifndef CT_BUTTON
 #define CT_BUTTON           1
+#endif
+#ifndef CT_EDIT
 #define CT_EDIT             2
+#endif
+#ifndef CT_SLIDER
 #define CT_SLIDER           3
+#endif
+#ifndef CT_COMBO
 #define CT_COMBO            4
+#endif
+#ifndef CT_LISTBOX
 #define CT_LISTBOX          5
+#endif
+#ifndef CT_TOOLBOX
 #define CT_TOOLBOX          6
+#endif
+#ifndef CT_CHECKBOXES
 #define CT_CHECKBOXES       7
+#endif
+#ifndef CT_PROGRESS
 #define CT_PROGRESS         8
+#endif
+#ifndef CT_HTML
 #define CT_HTML             9
+#endif
+#ifndef CT_STATIC_SKEW
 #define CT_STATIC_SKEW      10
+#endif
+#ifndef CT_ACTIVETEXT
 #define CT_ACTIVETEXT       11
+#endif
+#ifndef CT_TREE
 #define CT_TREE             12
+#endif
+#ifndef CT_STRUCTURED_TEXT
 #define CT_STRUCTURED_TEXT  13
+#endif
+#ifndef CT_CONTEXT_MENU
 #define CT_CONTEXT_MENU     14
+#endif
+#ifndef CT_CONTROLS_GROUP
 #define CT_CONTROLS_GROUP   15
+#endif
+#ifndef CT_SHORTCUTBUTTON
 #define CT_SHORTCUTBUTTON   16
+#endif
+#ifndef CT_XKEYDESC
 #define CT_XKEYDESC         40
+#endif
+#ifndef CT_XBUTTON
 #define CT_XBUTTON          41
+#endif
+#ifndef CT_XLISTBOX
 #define CT_XLISTBOX         42
+#endif
+#ifndef CT_XSLIDER
 #define CT_XSLIDER          43
+#endif
+#ifndef CT_XCOMBO
 #define CT_XCOMBO           44
+#endif
+#ifndef CT_ANIMATED_TEXTURE
 #define CT_ANIMATED_TEXTURE 45
+#endif
+#ifndef CT_OBJECT
 #define CT_OBJECT           80
+#endif
+#ifndef CT_OBJECT_ZOOM
 #define CT_OBJECT_ZOOM      81
+#endif
+#ifndef CT_OBJECT_CONTAINER
 #define CT_OBJECT_CONTAINER 82
+#endif
+#ifndef CT_OBJECT_CONT_ANIM
 #define CT_OBJECT_CONT_ANIM 83
+#endif
+#ifndef CT_LINEBREAK
 #define CT_LINEBREAK        98
+#endif
+#ifndef CT_USER
 #define CT_USER             99
+#endif
+#ifndef CT_MAP
 #define CT_MAP              100
+#endif
+#ifndef CT_MAP_MAIN
 #define CT_MAP_MAIN         101
+#endif
+#ifndef CT_LISTNBOX
 #define CT_LISTNBOX         102
+#endif
 
 // Static styles
+#ifndef ST_POS
 #define ST_POS            0x0F
+#endif
+#ifndef ST_HPOS
 #define ST_HPOS           0x03
+#endif
+#ifndef ST_VPOS
 #define ST_VPOS           0x0C
+#endif
+#ifndef ST_LEFT
 #define ST_LEFT           0x00
+#endif
+#ifndef ST_RIGHT
 #define ST_RIGHT          0x01
+#endif
+#ifndef ST_CENTER
 #define ST_CENTER         0x02
+#endif
+#ifndef ST_DOWN
 #define ST_DOWN           0x04
+#endif
+#ifndef ST_UP
 #define ST_UP             0x08
+#endif
+#ifndef ST_VCENTER
 #define ST_VCENTER        0x0C
+#endif
 
+#ifndef ST_TYPE
 #define ST_TYPE           0xF0
+#endif
+#ifndef ST_SINGLE
 #define ST_SINGLE         0x00
+#endif
+#ifndef ST_MULTI
 #define ST_MULTI          0x10
+#endif
+#ifndef ST_TITLE_BAR
 #define ST_TITLE_BAR      0x20
+#endif
+#ifndef ST_PICTURE
 #define ST_PICTURE        0x30
+#endif
+#ifndef ST_FRAME
 #define ST_FRAME          0x40
+#endif
+#ifndef ST_BACKGROUND
 #define ST_BACKGROUND     0x50
+#endif
+#ifndef ST_GROUP_BOX
 #define ST_GROUP_BOX      0x60
+#endif
+#ifndef ST_GROUP_BOX2
 #define ST_GROUP_BOX2     0x70
+#endif
+#ifndef ST_HUD_BACKGROUND
 #define ST_HUD_BACKGROUND 0x80
+#endif
+#ifndef ST_TILE_PICTURE
 #define ST_TILE_PICTURE   0x90
+#endif
+#ifndef ST_WITH_RECT
 #define ST_WITH_RECT      0xA0
+#endif
+#ifndef ST_LINE
 #define ST_LINE           0xB0
+#endif
 
+#ifndef ST_SHADOW
 #define ST_SHADOW         0x100
+#endif
+#ifndef ST_NO_RECT
 #define ST_NO_RECT        0x200
+#endif
+#ifndef ST_KEEP_ASPECT_RATIO
 #define ST_KEEP_ASPECT_RATIO  0x800
+#endif
 
+#ifndef ST_TITLE
 #define ST_TITLE          ST_TITLE_BAR + ST_CENTER
+#endif
 
 // Slider styles
+#ifndef SL_DIR
 #define SL_DIR            0x400
+#endif
+#ifndef SL_VERT
 #define SL_VERT           0
+#endif
+#ifndef SL_HORZ
 #define SL_HORZ           0x400
+#endif
 
+#ifndef SL_TEXTURES
 #define SL_TEXTURES       0x10
+#endif
 
 // progress bar 
+#ifndef ST_VERTICAL
 #define ST_VERTICAL       0x01
+#endif
+#ifndef ST_HORIZONTAL
 #define ST_HORIZONTAL     0
+#endif
 
 // Listbox styles
+#ifndef LB_TEXTURES
 #define LB_TEXTURES       0x10
+#endif
+#ifndef LB_MULTI
 #define LB_MULTI          0x20
+#endif
 
 // Tree styles
+#ifndef TR_SHOWROOT
 #define TR_SHOWROOT       1
+#endif
+#ifndef TR_AUTOCOLLAPSE
 #define TR_AUTOCOLLAPSE   2
+#endif
 
 // MessageBox styles
+#ifndef MB_BUTTON_OK
 #define MB_BUTTON_OK      1
+#endif
+#ifndef MB_BUTTON_CANCEL
 #define MB_BUTTON_CANCEL  2
+#endif
+#ifndef MB_BUTTON_USER
 #define MB_BUTTON_USER    4
+#endif
 
 class outlw_MR_RscText
 {
@@ -418,3 +562,4 @@ class outlw_MR_RscCombo
 
 
 
+#endif

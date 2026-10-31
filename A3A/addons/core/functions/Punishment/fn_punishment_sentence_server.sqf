@@ -53,7 +53,7 @@ private _detainee = _varspace getVariable ["player",objNull];
     while {(ceil serverTime) < _sentenceEndTime-1} do { // ceil and -1 if something doesn't sync up
         if (!isPlayer _detainee) exitWith {_disconnected=true};
         _admin = [] call A3A_fnc_getAdmin;  // Refreshes in case the admin logged in.
-        if !(_admin isEqualTo _lastAdmin) then {  // Admin Change
+        if (_admin isNotEqualTo _lastAdmin) then {  // Admin Change
             if (!isNull _lastAdmin) then {
                 [_name] remoteExecCall ["A3A_fnc_punishment_removeActionForgive",_lastAdmin,false];
             };
@@ -72,7 +72,7 @@ private _detainee = _varspace getVariable ["player",objNull];
     };
     if (_disconnected) then {
         _playerStats = format["Player: %1 [%2], _timeTotal: %3", _name, _UID, str _timeTotal];
-        Info_1("DISCONNECTED/DIED WHILE PUNISHED | %1", _playerStats);
+        Info_1("DISCONNECTED/DIED WHILE PUNISHED | %1",_playerStats);
         systemChat format[localize "STR_antistasi_schat_disconnect_ff", _name];
         [_UID,"remove"] call A3A_fnc_punishment_oceanGulag;
     } else {

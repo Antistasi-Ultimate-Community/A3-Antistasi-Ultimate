@@ -4,7 +4,7 @@ FIX_LINE_NUMBERS()
 //      Backpacks Sorting        ///
 ////////////////////////////////////
 {
-	private _itemFaction = getText (configfile >> "CfgVehicles" >> _x >> "faction");
+	private _itemFaction = getText (configFile >> "CfgVehicles" >> _x >> "faction");
 	switch (_itemFaction) do {
 		case "Default": {allBackpacksEmpty pushBack _x};
 		default {allBackpacksTool pushBack _x};
@@ -16,16 +16,16 @@ allBackpacksEmpty deleteAt (allBackpacksEmpty find "B_CombinationUnitRespirator_
 
 {
 	switch (true) do {
-		case ((getText (configfile >> "CfgVehicles" >> _x >> "assembleInfo" >> "assembleTo")) != ""): {
-			if !((getArray (configfile >> "CfgVehicles" >> _x >> "assembleInfo" >> "base")) isEqualTo []) then {
+		case ((getText (configFile >> "CfgVehicles" >> _x >> "assembleInfo" >> "assembleTo")) != ""): {
+			if ((getArray (configFile >> "CfgVehicles" >> _x >> "assembleInfo" >> "base")) isNotEqualTo []) then {
 				allBackpacksStatic pushBack _x;
 			}
 			else {
-				allBackpacksDevice pushback _x;
+				allBackpacksDevice pushBack _x;
 			};
 		};
-		case ((getText (configfile >> "CfgVehicles" >> _x >> "assembleInfo" >> "assembleTo")) == ""): {
-			if ((getText (configfile >> "CfgVehicles" >> _x >> "assembleInfo" >> "base")) == "") then {
+		case ((getText (configFile >> "CfgVehicles" >> _x >> "assembleInfo" >> "assembleTo")) == ""): {
+			if ((getText (configFile >> "CfgVehicles" >> _x >> "assembleInfo" >> "base")) == "") then {
 				allBackpacksStatic pushBack _x;
 			};
 		};
@@ -33,8 +33,8 @@ allBackpacksEmpty deleteAt (allBackpacksEmpty find "B_CombinationUnitRespirator_
 } forEach allBackpacksTool;
 
 {
-	private _faction = getText (configfile >> "CfgVehicles" >> _x >> "faction");
-	private _side = getNumber (configfile >> "CfgFactionClasses" >> _faction >> "side");
+	private _faction = getText (configFile >> "CfgVehicles" >> _x >> "faction");
+	private _side = getNumber (configFile >> "CfgFactionClasses" >> _faction >> "side");
 	switch (_side) do {
 		case 0: {invaderBackpackDevice pushBack _x};
 		case 1: {occupantBackpackDevice pushBack _x};
@@ -156,12 +156,12 @@ if (cosmeticsEnabled isEqualTo false) then {
 ////////////////
 //   Radios   //
 ////////////////
-If (A3A_hasTFAR || {A3A_hasTFARBeta}) then {
+if (A3A_hasTFAR || {A3A_hasTFARBeta}) then {
 	private _allRadioItems = allRadios;
 	private _encryptRebel = A3A_faction_reb getOrDefault ["attributeTFARCodes", ["tf_guer_radio_code", "tf_independent_radio_code"]];
     // tf_independent_radio_code may not exist. More investigation needed.
 	allRadios = _allRadioItems select { getText (configFile >> "CfgWeapons" >> _x >> "tf_encryptionCode") in _encryptRebel };
-	if (count allRadios == 0) then {
+	if (allRadios isEqualTo []) then {
 		Error("No TFAR radios with matching encryption codes found. Recommendation is to remove TFAR from the mod-set, and use the vanilla radio channel system.");
 	};
 

@@ -20,12 +20,12 @@ private _originPosition = position _player;
 private _frontLine = (outposts + milbases + airportsX + resourcesX + factories + citiesX) select {([_x] call A3A_fnc_isFrontlineNoFIA && {sidesX getVariable [_x,sideUnknown] != teamPlayer})};
 private _frontlineSitesNearPlayer = ((outposts + milbases + airportsX + resourcesX + factories + citiesX) select {(_x in _frontLine) && {((getMarkerPos _x) distance2D _player <= distanceSPWN*2.5) && {sidesX getVariable [_x,sideUnknown] != teamPlayer}}}) call BIS_fnc_arrayShuffle;
 
-if !(_frontlineSitesNearPlayer isEqualTo []) exitWith {
+if (_frontlineSitesNearPlayer isNotEqualTo []) exitWith {
     Error("Position is near frontline, need to select appropriate event.");
     [VEH_REPAIR] remoteExecCall ["SCRT_fnc_encounter_selectAndExecuteEvent", 2];
 };
 
-Info_2("%1 will be used as center of the event at %2 position.", name _player, str _originPosition);
+Info_2("%1 will be used as center of the event at %2 position.",name _player,str _originPosition);
 
 private _spawnPosition = [_originPosition, 900, distanceSPWN, 0, 0] call BIS_fnc_findSafePos;
 private _road = objNull;
@@ -33,12 +33,12 @@ private _radiusX = 5;
 
 while {true} do {
     _road = _spawnPosition nearRoads _radiusX;
-    if (count _road > 0 && {_road findIf {(position _x) distance2D _originPosition > 500} != -1}) exitWith {};
+    if (_road isNotEqualTo [] && {_road findIf {(position _x) distance2D _originPosition > 500} != -1}) exitWith {};
     _radiusX = _radiusX + 5;
 };
 
-private _roadcon = roadsConnectedto ((_road select {(position _x) distance2D _originPosition > 500}) select 0); // Guaranteed by road search condition
-private _dirveh = if (count _roadcon > 0) then {[_road select 0, _roadcon select 0] call BIS_fnc_dirTo} else {random 360};
+private _roadcon = roadsConnectedTo ((_road select {(position _x) distance2D _originPosition > 500}) select 0); // Guaranteed by road search condition
+private _dirveh = if (_roadcon isNotEqualTo []) then {[_road select 0, _roadcon select 0] call BIS_fnc_dirTo} else {random 360};
 private _roadPosition = getPos (_road select 0);
 
 private _marker = [(markersX select {sidesX getVariable [_x, sideUnknown] != teamPlayer}), _originPosition] call BIS_fnc_nearestPosition;
@@ -144,16 +144,16 @@ private _roadRepair = objNull;
 private _radiusX = 5;
 while {true} do {
     _roadRepair = _roadPosition nearRoads _radiusX;
-    if (count _roadRepair > 0 && {_roadRepair findIf {(position _x) distance2D _originPosition > 500 && (position _x) distance2D _roadPosition > 500} != -1}) exitWith {}; // Find position 500m from player and 300m from damaged vehicle
+    if (_roadRepair isNotEqualTo [] && {_roadRepair findIf {(position _x) distance2D _originPosition > 500 && (position _x) distance2D _roadPosition > 500} != -1}) exitWith {}; // Find position 500m from player and 300m from damaged vehicle
     _radiusX = _radiusX + 5;
 };
 
-private _roadconRepair = roadsConnectedto ((_roadRepair select {
+private _roadconRepair = roadsConnectedTo ((_roadRepair select {
     (position _x) distance2D _originPosition > 500 && 
     (position _x) distance2D _roadPosition > 500 &&
     (position _x) distance2D (getPos _crashedVehicle) > 100
 }) select 0); // Guaranteed by search condition
-private _dirvehRepair = if (count _roadconRepair > 0) then {[_roadRepair select 0, _roadconRepair select 0] call BIS_fnc_dirTo} else {random 360};
+private _dirvehRepair = if (_roadconRepair isNotEqualTo []) then {[_roadRepair select 0, _roadconRepair select 0] call BIS_fnc_dirTo} else {random 360};
 private _roadPositionRepair = getPos (_roadRepair select 0);
 
 private _repairVehicleData = [_roadPositionRepair, _dirvehRepair, _repairVehicleClass, _side] call A3A_fnc_spawnVehicle;

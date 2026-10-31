@@ -1,3 +1,5 @@
+#ifndef A3A_BUILDOBJECTSLIST_HPP
+#define A3A_BUILDOBJECTSLIST_HPP
 //Era Modifiers (Depends on map not modset)
 #define BUILDABLES_MODERN_GREEN \
     {"$STR_antistasi_dialogs_construction_menu_category_military", "\A3\EditorPreviews_F\Data\CfgVehicles\Land_Cargo_Tower_V1_F.jpg", { \
@@ -196,3 +198,4 @@
         {QEGVAR(ultimate,BaseVehicleSpawnHelperArrow), 275}, \
         {QEGVAR(ultimate,BaseAssemblyAreaSign), 275} \
     }}
+#endif

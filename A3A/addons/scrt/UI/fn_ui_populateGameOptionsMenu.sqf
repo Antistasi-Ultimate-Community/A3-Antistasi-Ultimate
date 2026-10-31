@@ -14,7 +14,7 @@ private _display = findDisplay 60000;
 
 ctrlSetFocus (_display displayCtrl 1151);
 
-(_display displayCtrl 1050) ctrlSetText (localize"STR_options_header");
+(_display displayCtrl 1050) ctrlSetText (localize "STR_options_header");
 
 {	
 	if (!(ctrlIDC _x in [1055, 1056, 1140, 1700, 1701, 1750, 1751, 1702, 1703, 1704, 1710, 1711, 1712])) then {

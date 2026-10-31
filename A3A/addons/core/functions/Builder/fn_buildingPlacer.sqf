@@ -38,7 +38,7 @@ params [
 ];
 
 // Already in the placer
-if(!isNil "A3A_building_EHDB") exitwith {};
+if(!isNil "A3A_building_EHDB") exitWith {};
 
 [_centerObject, _buildingRadius, _teamLeaderBox] call A3A_fnc_initPlacerDB;
 [_centerObject, _buildingRadius] spawn A3A_fnc_initBuilderCollisionHelper;
@@ -135,14 +135,14 @@ private _userActions = [
             private _position = getPosWorld _tempObject;
             private _dirAndUp = [vectorDir _tempObject, vectorUp _tempObject];
 
-            private _vehicle = typeof _tempObject createVehicleLocal [0,0,0];
+            private _vehicle = typeOf _tempObject createVehicleLocal [0,0,0];
             _vehicle enableSimulation false;
             _vehicle setPosWorld _position;
             _vehicle setVectorDirAndUp _dirAndUp;
             //playSound3D[getMissionPath "Sounds\hammer.ogg", player];
 
             (A3A_building_EHDB get BUILD_OBJECT_TEMP_OBJECT_ARRAY) pushBack _vehicle;
-            (A3A_building_EHDB get BUILD_OBJECTS_ARRAY) pushBack [typeof _vehicle, objNull, _position, _dirAndUp, _price];
+            (A3A_building_EHDB get BUILD_OBJECTS_ARRAY) pushBack [typeOf _vehicle, objNull, _position, _dirAndUp, _price];
 
             _tempObject hideObject true;		// prevent unintentional double-builds
         }
@@ -171,12 +171,12 @@ private _userActions = [
 
             // Place imitation of repaired building
             private _oldPos = getPosATL _building;
-            private _vehicle = typeof _building createVehicleLocal [0,0,0];
+            private _vehicle = typeOf _building createVehicleLocal [0,0,0];
             _vehicle enableSimulation false;
             _vehicle setDir getDir _building;
             _vehicle setPosATL [_oldPos#0, _oldPos#1, 0];
 
-            (A3A_building_EHDB get BUILD_OBJECTS_ARRAY) pushBack [typeof _vehicle, _building, nil, nil, _price];
+            (A3A_building_EHDB get BUILD_OBJECTS_ARRAY) pushBack [typeOf _vehicle, _building, nil, nil, _price];
             (A3A_building_EHDB get BUILD_OBJECT_TEMP_OBJECT_ARRAY) pushBack _vehicle;
         }
     ],
@@ -373,11 +373,11 @@ private _eventHanderEachFrame = addMissionEventHandler ["EachFrame", {
     private["_vehicleVectorUp"];
 
     //change in position
-    if (_object distance2d _vehiclePos > 0.1) then {
+    if (_object distance2D _vehiclePos > 0.1) then {
         _stateChange = true;
 
         // Set up context-sensitive hints (cancel, repair)
-        private _intersects = lineIntersectsObjs[getPosASL A3A_cam, AGLtoASL _vehiclePos, _object, A3A_cam];
+        private _intersects = lineIntersectsObjs[getPosASL A3A_cam, AGLToASL _vehiclePos, _object, A3A_cam];
         _intersects params[["_intersectObj", objNull, [objNull]]];
         A3A_building_EHDB set [CURSOR_OBJECT, _intersectObj];
         ["setContextKey", [""]] call A3A_fnc_setupPlacerHints;
@@ -399,7 +399,7 @@ private _eventHanderEachFrame = addMissionEventHandler ["EachFrame", {
 
         if (_intersectObj in (A3A_building_EHDB get BUILD_OBJECT_TEMP_OBJECT_ARRAY)) then {
             // show C key
-            ["setContextKey", ["cancel", getText (configof _intersectObj >> "displayName")]] call A3A_fnc_setupPlacerHints;
+            ["setContextKey", ["cancel", getText (configOf _intersectObj >> "displayName")]] call A3A_fnc_setupPlacerHints;
         };
     };
 
@@ -432,11 +432,11 @@ private _eventHanderEachFrame = addMissionEventHandler ["EachFrame", {
     };
 
     if (A3A_building_EHDB get SNAP_SURFACE_MODE) then {
-        private _posASL = AGLtoASL _vehiclePos;
+        private _posASL = AGLToASL _vehiclePos;
         private _intersects = lineIntersectsSurfaces [_posASL vectorAdd [0,0,100], _posASL vectorAdd [0,0,-100], _object, objNull, true, 1, "GEOM"];
 
-        if (count _intersects > 0) then {
-            _vehiclePos = ASLtoAGL (_intersects select 0 select 0);
+        if (_intersects isNotEqualTo []) then {
+            _vehiclePos = ASLToAGL (_intersects select 0 select 0);
             _vehicleVectorUp = _intersects select 0 select 1;
 
             [_vehiclePos, _vehicleVectorUp] call GVAR(fncObjectAlignHelpers);

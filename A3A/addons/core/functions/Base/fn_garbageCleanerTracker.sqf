@@ -29,7 +29,7 @@ while {true} do
         private _timeSinceLastGC = [[serverTime-A3A_lastGarbageCleanTime] call A3A_fnc_secondsToTimeSpan,0,0,false,2] call A3A_fnc_timeSpan_format;
         [localize "STR_A3A_GCTracker_tracker_title", format [localize "STR_A3A_GCTracker_tracker_notification", _timeSinceLastGC]] remoteExec ["A3A_fnc_customHint", 0];
         missionNamespace setVariable ["A3A_lastGarbageCleanTimeNote",serverTime,true];
-        Info_1("Garbage Cleaner Tracker has notified players of last gc time %1", _timeSinceLastGC);
+        Info_1("Garbage Cleaner Tracker has notified players of last gc time %1",_timeSinceLastGC);
     };
 
     // if the gc time goes above the threshold then it's time to gc.

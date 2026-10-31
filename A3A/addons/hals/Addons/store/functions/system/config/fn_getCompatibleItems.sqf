@@ -21,7 +21,7 @@ private _config = configFile >> "CfgWeapons" >> _classname;
 _attachments append getArray (_config >> "magazines");
 
 {
-	if !(_x isEqualTo "this") then {
+	if (_x isNotEqualTo "this") then {
 		_attachments append getArray (_config >> _x >> "magazines");
 	};
 } forEach getArray (_config >> "muzzles");

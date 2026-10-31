@@ -1,3 +1,5 @@
+#pragma hemtt ignore_variables ["_fnc_saveNames","_fnc_createLoadoutData","_fnc_copyLoadoutData","_fnc_generateAndSaveUnitsToTemplate","_fnc_saveToTemplate"]
+
 //these variables determine whether specified dlcs are loaded
 private _hasWs = "ws" in A3A_enabledDLC;
 private _hasMarksman = "mark" in A3A_enabledDLC;
@@ -35,8 +37,6 @@ private _hasContact = "enoch" in A3A_enabledDLC;
 ["vehiclesFuelTrucks", ["PUP_CAF_Truck_01_fuel_F"]] call _fnc_saveToTemplate;
 ["vehiclesMedical", ["PUP_CAF_Truck_01_medical_F"]] call _fnc_saveToTemplate;
 ["vehiclesAPCs", ["PUP_CAF_APC_Tracked_01_CRV_F"]] call _fnc_saveToTemplate;
-["vehiclesLightTanks", _vehiclesLightTanks] call _fnc_saveToTemplate; //This is just for my own enjoyment. I'm not exactly following the CAF equipment to a T.
-["vehiclesTanks", _vehiclesTanks] call _fnc_saveToTemplate; //This is just for my own enjoyment. I'm not exactly following the CAF equipment to a T.
 ["vehiclesAA", ["PUP_CAF_APC_Tracked_01_AA_F", "CUP_B_nM1097_AVENGER_USMC_WDL"]] call _fnc_saveToTemplate;
 ["vehiclesLightAPCs", ["PUP_CAF_APC_Wheeled_01_cannon_v2_F", "CUP_B_M1126_ICV_M2_Woodland", "CUP_B_M1126_ICV_MK19_Woodland", "CUP_B_M1130_CV_M2_Woodland"]] call _fnc_saveToTemplate;
 ["vehiclesIFVs", ["CUP_B_LAV25_green", "CUP_B_LAV25M240_green"]] call _fnc_saveToTemplate;
@@ -53,6 +53,9 @@ private _vehiclesTanks = ["PUP_CAF_MBT_03_cannon_F"];
 if (isClass (configFile >> "CfgPatches" >> "QAV_AbramsX")) then {
     _vehiclesTanks append ["qav_abramsx"];
 };
+
+["vehiclesLightTanks", _vehiclesLightTanks] call _fnc_saveToTemplate; //This is just for my own enjoyment. I'm not exactly following the CAF equipment to a T.
+["vehiclesTanks", _vehiclesTanks] call _fnc_saveToTemplate; //This is just for my own enjoyment. I'm not exactly following the CAF equipment to a T.
 
 ["vehiclesTransportBoats", ["B_Boat_Transport_01_F", "B_GEN_Boat_Transport_02_F"]] call _fnc_saveToTemplate; 	//this line determines transport boats -- Example: ["vehiclesTransportBoats", ["B_Boat_Transport_01_F"]] -- Array, can contain multiple assets
 ["vehiclesGunBoats", ["B_Boat_Armed_01_minigun_F", "CUP_B_RHIB_USMC", "CUP_B_RHIB2Turret_USMC"]] call _fnc_saveToTemplate; 			//this line determines gun boats -- Example: ["vehiclesGunBoats", ["B_Boat_Armed_01_minigun_F"]] -- Array, can contain multiple assets

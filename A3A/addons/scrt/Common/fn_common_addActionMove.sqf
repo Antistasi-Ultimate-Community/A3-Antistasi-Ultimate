@@ -5,10 +5,10 @@
 */
 params ["_vehicle"];
 
-private _actionId = _vehicle getVariable ["scrt_moveActionId", Nil];
+private _actionId = _vehicle getVariable ["scrt_moveActionId", nil];
 
 //Check if action exists already
-if(!isnil "_actionId") then {
+if(!isNil "_actionId") then {
 	_vehicle removeAction _actionId;
 };
 

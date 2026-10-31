@@ -10,7 +10,7 @@ Arguments:
 FIX_LINE_NUMBERS()
 
 params ["_plane", "_target", "_supportName"];
-Debug_1("%1 has started gun run", _supportName);
+Debug_1("%1 has started gun run",_supportName);
 _plane setVehicleRadar 1;
 //Creating the startpoint for the fire EH loop
 private _fnc_executeWeaponFire =
@@ -19,7 +19,7 @@ private _fnc_executeWeaponFire =
     _fireParams params ["_armed", "_mainGunShots", "_rocketShots", "_missileShots"];
     private _ammoHM = _plane getVariable "ammoCount";
 
-    Debug_1("Execute weapon fire called with fireParams %1", _fireParams);
+    Debug_1("Execute weapon fire called with fireParams %1",_fireParams);
 
     private _weapons = _plane getVariable ["missileLauncher", []];
     if (_missileShots > 0 && {_weapons isNotEqualTo []}) then
@@ -34,7 +34,7 @@ private _fnc_executeWeaponFire =
             };
             if (_currentHighest >= _missileShots) exitWith {};
         } forEach _weapons;
-        Debug_2("Selected missile %1, remaining shots %2", _selectedWeapon, _currentHighest);
+        Debug_2("Selected missile %1, remaining shots %2",_selectedWeapon,_currentHighest);
         if (_currentHighest <= 0) exitWith {};
 
         //Fire weapon if one is selected (guided weapons only gets fired when they have a lockon possibility on the target)
@@ -55,7 +55,7 @@ private _fnc_executeWeaponFire =
             };
             if (_currentHighest >= _rocketShots) exitWith {};
         } forEach _weapons;
-        Debug_2("Selected rocket %1, remaining shots %2", _selectedWeapon, _currentHighest);
+        Debug_2("Selected rocket %1, remaining shots %2",_selectedWeapon,_currentHighest);
         if (_currentHighest <= 0) exitWith {};
 
         private _weapCfg = configFile >> "cfgWeapons" >> _selectedWeapon;
@@ -66,7 +66,7 @@ private _fnc_executeWeaponFire =
         //Force weapon fire
         _plane setVariable ["rocketShots", _rocketShots min _currentHighest];
         _plane setVariable ["rocketReload", getNumber (_modeCfg >> "reloadTime")];
-        Debug_3("Firing %1 shots with mode %2 and reload %3", _plane getVariable "rocketShots", configName _modeCfg, _plane getVariable "rocketReload");
+        Debug_3("Firing %1 shots with mode %2 and reload %3",_plane getVariable "rocketShots",configName _modeCfg,_plane getVariable "rocketReload");
         (driver _plane) forceWeaponFire [_selectedWeapon, configName _modeCfg];
     };
 
@@ -82,7 +82,7 @@ private _fnc_executeWeaponFire =
         //Force weapon fire
         _plane setVariable ["mainGunShots", _mainGunShots];
         _plane setVariable ["mainGunReload", getNumber (_modeCfg >> "reloadTime")];
-        Debug_3("Firing %1 shots with mode %2 and reload %3", _plane getVariable "mainGunShots", configName _modeCfg, _plane getVariable "mainGunReload");
+        Debug_3("Firing %1 shots with mode %2 and reload %3",_plane getVariable "mainGunShots",configName _modeCfg,_plane getVariable "mainGunReload");
         (driver _plane) forceWeaponFire [_selectedWeapon, configName _modeCfg];
     };
 };
@@ -104,7 +104,7 @@ _plane setVariable ["currentTarget", _target];
 private _enterRunPos = getPosASL _plane;
 private _targetPos = eyePos _target;
 if(terrainIntersectASL [_enterRunPos, _targetPos]) exitWith {
-    Debug_1("%1 gun way is blocked, recalculating", _supportName);
+    Debug_1("%1 gun way is blocked, recalculating",_supportName);
 };
 private _exitRunPos = _targetPos vectorAdd [0,0,20];
 
@@ -123,11 +123,11 @@ private _transform = [
 
 // Set up intervals at which to fire
 private _fireIntervals = [];
-private _runDist = _plane distance2d _target;
+private _runDist = _plane distance2D _target;
 { if (_runDist > _x) then { _fireIntervals pushBack (1 - _x / _runDist) } } forEach [700, 1000, 1500];
 reverse _fireIntervals;
 while { count _fireParams > count _fireIntervals } do { _fireParams deleteAt 0 };
-Debug_2("Fire intervals for run dist %1: %2", _runDist, _fireIntervals);
+Debug_2("Fire intervals for run dist %1: %2",_runDist,_fireIntervals);
 
 
 addMissionEventHandler ["EachFrame",
@@ -135,8 +135,8 @@ addMissionEventHandler ["EachFrame",
     _thisArgs params ["_plane", "_target", "_startTime", "_timeForRun", "_transform", "_fireParams", "_fireFnc", "_fireIntervals"];
     _interval = (time - _startTime) / _timeForRun;
 
-    if (!alive _target or (_plane distance2d _target) < 300 or _interval > 0.95 or !canMove _plane or isNull driver _plane) exitWith {
-        Debug_1("EachFrame handler terminated with interval %1", _interval);
+    if (!alive _target or (_plane distance2D _target) < 300 or _interval > 0.95 or !canMove _plane or isNull driver _plane) exitWith {
+        Debug_1("EachFrame handler terminated with interval %1",_interval);
         _transform set [8, 1];      // signal completion to the waitUntil
         removeMissionEventHandler ["EachFrame", _thisEventHandler];
     };
@@ -154,7 +154,7 @@ addMissionEventHandler ["EachFrame",
 
 waitUntil { sleep 1; _transform#8 >= 1 };
 
-Debug_1("Gun run for %1 finished, returning control", _supportName);
+Debug_1("Gun run for %1 finished, returning control",_supportName);
 _plane setVehicleRadar 0;
 for '_i' from 1 to 3 do
     {

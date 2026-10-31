@@ -32,7 +32,7 @@ private _veh = objNull;
 
 //overriden static position and direction
 private _staticPositionInfo = staticPositions getVariable [_markerX, []];
-if (!(_staticPositionInfo isEqualTo [])) then {
+if (_staticPositionInfo isNotEqualTo []) then {
     private _staticPosition = _staticPositionInfo select 0;
     private _staticDirection = _staticPositionInfo select 1;
     _veh = createVehicle [_mgClass, _positionX, [], 0, "CAN_COLLIDE"];

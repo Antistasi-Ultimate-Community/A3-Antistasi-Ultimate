@@ -4,11 +4,13 @@ Maintainer: DoomMetal
 */
 
 #include "\x\A3A\addons\core\ui_define.hpp"
-#include "mainDialog.hpp"
-#include "hqDialog.hpp"
-#include "requestMissionDialog.hpp"
-#include "recruitDialog.hpp"
-#include "recruitSquadDialog.hpp"
+FORWARD(RscButton);
+FORWARD(RscCheckBox);
+FORWARD(RscControlsGroup);
+FORWARD(RscListBox);
+FORWARD(RscListNBox);
+FORWARD(RscText);
+#include "ids.inc"
 #include "buyVehicleDialog.hpp"
 #include "blackMarketDialog.hpp"
 #include "arsenalLimitsDialog.hpp"

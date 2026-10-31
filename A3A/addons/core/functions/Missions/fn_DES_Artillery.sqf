@@ -10,8 +10,8 @@ Info("Artillery mission init.");
 
 private _missionOriginPos = getMarkerPos _markerX;
 
-private _difficult = if (random 10 < tierWar) then {true} else {false};
-private _sideX = if (sidesX getVariable [_markerX, sideUnknown] == Occupants) then {Occupants} else {Invaders};
+private _difficult = random 10 < tierWar;
+private _sideX = [Invaders, Occupants] select (sidesX getVariable [_markerX, sideUnknown] == Occupants);
 private _faction = Faction(_sideX);
 
 private _limit = if (_difficult) then {
@@ -50,12 +50,7 @@ switch (true) do
 	{
 		private _potentialArtillery = (_howitzersPool + _mortarsPool);
 		_artilleryClass = selectRandom (_potentialArtillery select {_x isNotEqualTo []});
-		_artilleryShellClass = if (_artilleryClass in _howitzersPool) then 
-        {
-            _howitzerMagazine
-        } else {
-            _mortarMagazine
-        };
+		_artilleryShellClass = [_mortarMagazine, _howitzerMagazine] select (_artilleryClass in _howitzersPool);
 	};
 	default
 	{
@@ -75,10 +70,10 @@ _mgCrewClass = [_faction get "unitTierStaticCrew"] call SCRT_fnc_unit_getTiered;
 
 if (isNil "_artilleryClass" || {isNil "_artilleryShellClass" || {isNil "_mgClass" || {isNil "_mgCrewClass"}}}) exitWith {
 	["DES"] remoteExec ["A3A_fnc_missionRequest",2];
-    Error_4("Problems with faction template classes(%1, %2, %3, %4), rerequesting new destroy mission.", _artilleryClass, _artilleryShellClass, _mgClass, _mgCrewClass);
+    Error_4("Problems with faction template classes(%1, %2, %3, %4), rerequesting new destroy mission.",_artilleryClass,_artilleryShellClass,_mgClass,_mgCrewClass);
 };
 
-Info_5("Artillery: %1, Artillery Shell: %2, Static: %3, Squad: %4, MG Crew: %5", _artilleryClass, _artilleryShellClass, _mgClass, str _infantrySquadArray, _mgCrewClass);
+Info_5("Artillery: %1, Artillery Shell: %2, Static: %3, Squad: %4, MG Crew: %5",_artilleryClass,_artilleryShellClass,_mgClass,str _infantrySquadArray,_mgCrewClass);
 
 //////////////////////
 //Artillery and it's target
@@ -109,7 +104,7 @@ _potentialSites pushBack "Synd_HQ"; //sorry, Petros
 private _targetSite = selectRandom _potentialSites;
 private _targetPosition = getMarkerPos _targetSite;
 
-Info_1("Target Outpost: %1", _targetSite);
+Info_1("Target Outpost: %1",_targetSite);
 
 //finding suitable position for artillery
 private _artilleryPosition = [_missionOriginPos, 0, 800, 3, 0, 0.6] call BIS_fnc_findSafePos;
@@ -125,7 +120,7 @@ if(!(_targetPosition inRangeOfArtillery [[_artilleryVeh], _artilleryShellClass])
     };
 };
 
-Info_1("Artillery Position: %1", str _artilleryPosition);
+Info_1("Artillery Position: %1",str _artilleryPosition);
 
 //////////////////////
 //Task
@@ -152,7 +147,7 @@ private _taskId = "DES" + str A3A_taskCount;
 
 _artilleryVeh allowDamage true;
 
-waitUntil {sleep 1; dateToNumber date > _dateLimitNum or {!alive _artilleryVeh or {(spawner getVariable _markerX != 2 and !(sidesX getVariable [_markerX,sideUnknown] == teamPlayer))}}};
+waitUntil {sleep 1; dateToNumber date > _dateLimitNum or {!alive _artilleryVeh or {(spawner getVariable _markerX != 2 and (sidesX getVariable [_markerX,sideUnknown] != teamPlayer))}}};
 
 private _firedEh = nil;
 
@@ -210,7 +205,7 @@ if (alive _artilleryVeh) then {
     };
 };
 
-if ((spawner getVariable _markerX != 2) and {!(sidesX getVariable [_markerX,sideUnknown] == teamPlayer)}) then {
+if ((spawner getVariable _markerX != 2) and {(sidesX getVariable [_markerX,sideUnknown] != teamPlayer)}) then {
     //////////////
     //Infantry and MG
     /////////////

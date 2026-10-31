@@ -1,7 +1,7 @@
 private _outputData = [];
 
 "(getText (_x >> ""type"") in [""NameCityCapital"", ""NameCity"", ""NameVillage"", ""CityCenter""]) && !(getText (_x >> ""Name"") isEqualTo """")"
-configClasses (configfile >> "CfgWorlds" >> worldName >> "Names") apply
+configClasses (configFile >> "CfgWorlds" >> worldName >> "Names") apply
 {
    _nameX = configName _x;
    _sizeX = getNumber (_x >> "radiusA");
@@ -11,8 +11,8 @@ configClasses (configfile >> "CfgWorlds" >> worldName >> "Names") apply
    _size = [_size, 400] select (_size < 400);
    _type = getText (_x >> "type");
 
-   _numCiv = if (!isNull server) then {server getVariable _namex};
-   if (isNil "_numCiv" || {!(_numCiv isEqualType 0)}) then
+   _numCiv = if (!isNil "server") then {server getVariable [_namex,0]} else {0};
+   if (_numCiv isEqualTo 0 || {!(_numCiv isEqualType 0)}) then
    {
         _numCiv = (count (nearestObjects [_pos, ["house"], _size]));
    };

@@ -58,7 +58,7 @@ if (alive _veh && canMove _veh) then
 			_veh setVectorUp [0,0,1];
 			[_unit,"gunner_standup01"] remoteExec ["switchmove"];
 			_unit attachTo [_veh, [_xRef,_yRef,_d]];
-			while {((getposATL _unit select 2) > 1) and (alive _veh) and (alive _unit) and (speed _veh < 10) and (speed _veh > -10)} do {
+			while {((getPosATL _unit select 2) > 1) and (alive _veh) and (alive _unit) and (speed _veh < 10) and (speed _veh > -10)} do {
 				_unit attachTo [_veh, [2,1,_d]];
 				_d = _d - 0.35;
 				sleep 0.005;
@@ -71,7 +71,7 @@ if (alive _veh && canMove _veh) then
 	} forEach units _groupX;
 };
 
-waitUntil {sleep 1; (not alive _veh) or ((count assignedCargo _veh == 0) and (([_veh] call A3A_fnc_countAttachedObjects) == 0))};
+waitUntil {sleep 1; (not alive _veh) or ((assignedCargo _veh isEqualTo []) and (([_veh] call A3A_fnc_countAttachedObjects) == 0))};
 
 sleep 3;
 _veh flyInHeight _midHeight;

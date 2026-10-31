@@ -14,7 +14,7 @@ if !(side _playerX == teamPlayer || {side _playerX == civilian}) exitWith {
 if (!(isNull attachedTo _thingX)) exitWith {
 	[(localize "STR_antistasi_actions_move_assets_header_failure"), (localize "STR_antistasi_actions_move_assets_another_player_failure")] call SCRT_fnc_misc_deniedHint;
 };
-if (vehicle _playerX != _playerX) exitWith {
+if (!isNull objectParent _playerX) exitWith {
 	[(localize "STR_antistasi_actions_move_assets_header_failure"), (localize "STR_antistasi_actions_move_assets_vehicle_failure")] call SCRT_fnc_misc_deniedHint;
 };
 if (([_playerX] call A3A_fnc_countAttachedObjects) > 0) exitWith {
@@ -41,7 +41,7 @@ if((typeOf _thingX) in _carryableBoxes) exitWith {
 	[_thingX] call SCRT_fnc_common_moveObject;
 };
 
-if !((crew _thingX) isEqualTo []) exitWith {
+if ((crew _thingX) isNotEqualTo []) exitWith {
 	[(localize "STR_antistasi_actions_move_assets_header_failure"), (localize "STR_antistasi_actions_move_assets_vehicle_occupied_failure")] call SCRT_fnc_misc_deniedHint;
 };
 
@@ -95,7 +95,7 @@ private _actionX = _playerX addAction [(localize "STR_antistasi_actions_drop_her
 waitUntil {
 	sleep 1; 
 	(_playerX != attachedTo _thingX) 
-	or {(vehicle _playerX != _playerX) 
+	or {(!isNull objectParent _playerX) 
 	or {(!isPlayer _playerX) 
 	or {(isNull _playerX) 
 	or {!(alive _playerX)

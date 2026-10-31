@@ -1,3 +1,5 @@
+#pragma hemtt ignore_variables ["_fnc_saveToTemplate"]
+
 ["attributesVehicles", [
     // Transport helis
     ["OPTRE_UNSC_falcon", ["cost", 200]],

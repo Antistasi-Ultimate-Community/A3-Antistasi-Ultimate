@@ -104,7 +104,7 @@ private _idFormat = switch true do {
     };
 };
 private _special = if (_isInfantry) then {
-    if (_typeGroup isEqualType []) then { _withBackpck } else {"staticAutoT"};
+    ["staticAutoT", _withBackpck] select (_typeGroup isEqualType []);
 } else {
     if (_mounts isNotEqualTo []) exitWith {"BuildAA"};
     "VehicleSquad"

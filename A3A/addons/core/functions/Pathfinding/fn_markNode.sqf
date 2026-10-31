@@ -39,7 +39,7 @@ if(getMarkerColor (format ["Node%1", _index]) != "") then
 };
 
 private _nodeMarker = createMarker [format ["Node%1", _index], _pos];
-_nodeMarker setMarkerShape "ICON";
-_nodeMarker setMarkerType _type;
-_nodeMarker setMarkerColor _color;
+_nodeMarker setMarkerShapeLocal "ICON";
+_nodeMarker setMarkerTypeLocal _type;
+_nodeMarker setMarkerColorLocal _color;
 _nodeMarker setMarkerText _text;

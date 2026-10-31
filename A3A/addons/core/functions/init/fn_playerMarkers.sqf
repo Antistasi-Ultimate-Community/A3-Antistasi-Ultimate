@@ -28,7 +28,7 @@ while {true} do
                 _mrk setMarkerTextLocal format ["%1", _name];
             };
 
-            if (vehicle _realUnit == _realUnit) then
+            if (isNull objectParent _realUnit) then
             {
                 _mrk setMarkerAlphaLocal 1;
                 _mrk setMarkerPosLocal getPosATL _realUnit;
@@ -49,12 +49,12 @@ while {true} do
                 private _veh = vehicle _realUnit;
                 // This isn't perfect due to inability to check some units for remote controlling, but close enough
                 private _crew = crew _veh select { _realUnit == _x or ((theBoss == _x or isPlayer _x) and alive _x) };
-                if (count _crew == 0 or {_crew#0 != _realUnit}) exitWith { _mrk setMarkerAlphaLocal 0 };
+                if (_crew isEqualTo [] or {_crew#0 != _realUnit}) exitWith { _mrk setMarkerAlphaLocal 0 };
 
                 _mrk setMarkerAlphaLocal 1;
                 _mrk setMarkerPosLocal getPosATL _veh;
                 _mrk setMarkerDirLocal getDir _veh;
-                private _textX = format ["%1 (%2)", _name, getText (configFile >> "CfgVehicles" >> typeOf _veh >> "DisplayName")];
+                private _textX = format ["%1 (%2)", _name, getText (configOf _veh >> "DisplayName")];
                 if (count _crew > 1) then { _textX = format ["%1/%2", _textX, name (_crew#1)] };
                 if (count _crew > 2) then { _textX = format ["%1+%2", _textX, count _crew - 2] };
                 _mrk setMarkerTextLocal _textX;

@@ -1,3 +1,5 @@
+#pragma hemtt ignore_variables ["_fnc_saveToTemplate"]
+
 ["attributesVehicles", [
 	["LIB_Kfz1", ["rebCost", 50]],
 	["LIB_Willys_MB", ["rebCost", 100]],

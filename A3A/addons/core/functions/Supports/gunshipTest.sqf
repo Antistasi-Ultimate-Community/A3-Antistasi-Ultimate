@@ -1,3 +1,4 @@
+#pragma hemtt ignore_variables ["_ammoCount"]
 [] spawn
 {
 private _plane = plane;

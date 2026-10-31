@@ -11,7 +11,7 @@ if (_unit getVariable ["helping",false]) exitWith {if (_inPlayerGroup) then {_un
 
 private _rearming = _unit getVariable ["rearming",false];
 if (_rearming) exitWith {if (_inPlayerGroup) then {_unit groupChat localize "STR_chats_autoloot_rearm_in_progress"; _unit setVariable ["rearming",false]}};
-if (vehicle _unit != _unit) exitWith {};
+if (!isNull objectParent _unit) exitWith {};
 _unit setVariable ["rearming",true];
 
 private _unitType = _unit getVariable "unitType";
@@ -45,11 +45,11 @@ if (boxX in _nearbyContainers) then {_nearbyContainers = _nearbyContainers - [bo
 
 if ((!isNil "_customLoadout" && {_primaryWeapon != _loadoutPrimaryWeapon}) || {isNil "_customLoadout"}) then {
 	_needsRearm = true;
-	if (count _nearbyContainers > 0) then {
+	if (_nearbyContainers isNotEqualTo []) then {
 		{
 			_potentialContainer = _x;
 			if (_unit distance _potentialContainer < _maxDistance) then {
-				if ((count weaponCargo _potentialContainer > 0) && !(_potentialContainer getVariable ["busy",false])) then {
+				if ((weaponCargo _potentialContainer isNotEqualTo []) && !(_potentialContainer getVariable ["busy",false])) then {
 					_containerWeapons = weaponCargo _potentialContainer;
 					for "_i" from 0 to (count _containerWeapons - 1) do {
 						_potentialWeapon = _containerWeapons select _i;
@@ -94,7 +94,7 @@ _primaryMagazines = getArray (configFile / "CfgWeapons" / _primaryWeapon / "maga
 if ({_x in _primaryMagazines} count (magazines _unit) < _targetMagazines) then {
 	_needsRearm = true;
 	_foundItem = false;
-	if (count _nearbyContainers > 0) then {
+	if (_nearbyContainers isNotEqualTo []) then {
 		{
 			_potentialContainer = _x;
 			if (({_x in _primaryMagazines} count magazineCargo _potentialContainer) > 0) then {
@@ -138,11 +138,11 @@ if ((_foundItem) && (_unit getVariable "rearming")) then {
 
 _foundItem = false;
 if ((_secondaryWeapon == "") && (loadAbs _unit < 340)) then {
-	if (count _nearbyContainers > 0) then {
+	if (_nearbyContainers isNotEqualTo []) then {
 		{
 			_potentialContainer = _x;
 			if (_unit distance _potentialContainer < _maxDistance) then {
-				if ((count weaponCargo _potentialContainer > 0) && !(_potentialContainer getVariable ["busy",false])) then {
+				if ((weaponCargo _potentialContainer isNotEqualTo []) && !(_potentialContainer getVariable ["busy",false])) then {
 					_containerWeapons = weaponCargo _potentialContainer;
 					for "_i" from 0 to (count _containerWeapons - 1) do {
 						_potentialWeapon = _containerWeapons select _i;
@@ -184,7 +184,7 @@ if (_secondaryWeapon != "") then {
 	if ({_x in _primaryMagazines} count (magazines _unit) < 2) then {
 		_needsRearm = true;
 		_foundItem = false;
-		if (count _nearbyContainers > 0) then {
+		if (_nearbyContainers isNotEqualTo []) then {
 			{
 				_potentialContainer = _x;
 				if ({_x in _primaryMagazines} count magazineCargo _potentialContainer > 0) then {
@@ -213,8 +213,8 @@ if (_secondaryWeapon != "") then {
 		waitUntil {sleep 1; !([_unit] call A3A_fnc_canFight) || (isNull _selectedContainer) || (_unit distance _selectedContainer < 3) || (_timeOut < time) || (unitReady _unit)};
 		if ((unitReady _unit) && ([_unit] call A3A_fnc_canFight) && (_unit distance _selectedContainer > 3) && (_selectedContainer isKindOf "ReammoBox_F") && (!isNull _selectedContainer)) then {_unit setPos position _selectedContainer};
 		if (_unit distance _selectedContainer < 3) then {
-			if ((backpack _unit == "") && (backPack _selectedContainer != "")) then {
-				_unit addBackPackGlobal ((backpack _selectedContainer) call A3A_fnc_basicBackpack);
+			if ((backpack _unit == "") && (backpack _selectedContainer != "")) then {
+				_unit addBackpackGlobal ((backpack _selectedContainer) call A3A_fnc_basicBackpack);
 				_unit action ["rearm",_selectedContainer];
 				sleep 3;
 				{_unit addItemToBackpack _x} forEach (backpackItems _selectedContainer);
@@ -324,7 +324,7 @@ if (!(headgear _unit in allArmoredHeadgear)) then {
 };
 
 _foundItem = false;
-private _targetFAKs = if ([_unit] call A3A_fnc_isMedic) then {10} else {1};
+private _targetFAKs = [1, 10] select ([_unit] call A3A_fnc_isMedic);
 if ({_x == "FirstAidKit"} count (items _unit) < _targetFAKs) then {
 	_needsRearm = true;
 	_foundItem = false;
@@ -357,11 +357,11 @@ if ({_x == "FirstAidKit"} count (items _unit) < _targetFAKs) then {
 };
 
 _foundItem = false;
-_numberX = getNumber (configfile >> "CfgWeapons" >> vest cursortarget >> "ItemInfo" >> "HitpointsProtectionInfo" >> "Chest" >> "armor");
+_numberX = getNumber (configFile >> "CfgWeapons" >> vest cursorTarget >> "ItemInfo" >> "HitpointsProtectionInfo" >> "Chest" >> "armor");
 _deadBodies = allDead select {(_x distance _unit < _maxDistance) && (!(_x getVariable ["busy",false]))};
 {
 	_selectedBody = _x;
-	if ((getNumber (configfile >> "CfgWeapons" >> vest _selectedBody >> "ItemInfo" >> "HitpointsProtectionInfo" >> "Chest" >> "armor") > _numberX) && (_unit distance _selectedBody < _maxDistance)) then {
+	if ((getNumber (configFile >> "CfgWeapons" >> vest _selectedBody >> "ItemInfo" >> "HitpointsProtectionInfo" >> "Chest" >> "armor") > _numberX) && (_unit distance _selectedBody < _maxDistance)) then {
 		_selectedContainer = _selectedBody;
 		_foundItem = true;
 	};
@@ -379,7 +379,7 @@ if ((_foundItem) && (_unit getVariable "rearming")) then {
 		{_unit addItemToVest _x} forEach _itemsUnit;
 		_unit action ["rearm",_selectedContainer];
 		_bodyEquipment = nearestObjects [_selectedContainer, ["WeaponHolderSimulated", "GroundWeaponHolder", "WeaponHolder"], 5];
-		if (count _bodyEquipment > 0) then {
+		if (_bodyEquipment isNotEqualTo []) then {
 			_selectedEquipment = _bodyEquipment select 0;
 			{_selectedEquipment addItemCargoGlobal [_x,1]} forEach (vestItems _selectedContainer);
 		};
@@ -407,10 +407,10 @@ if (backpack _unit == "") then {
 		_timeOut = time + 60;
 		waitUntil {sleep 1; !([_unit] call A3A_fnc_canFight) || (isNull _selectedContainer) || (_unit distance _selectedContainer < 3) || (_timeOut < time) || (unitReady _unit)};
 		if (_unit distance _selectedContainer < 3) then {
-			_unit addBackPackGlobal ((backpack _selectedContainer) call A3A_fnc_basicBackpack);
+			_unit addBackpackGlobal ((backpack _selectedContainer) call A3A_fnc_basicBackpack);
 			_unit action ["rearm",_selectedContainer];
 			_bodyEquipment = nearestObjects [_selectedContainer, ["WeaponHolderSimulated", "GroundWeaponHolder", "WeaponHolder"], 5];
-			if (count _bodyEquipment > 0) then {
+			if (_bodyEquipment isNotEqualTo []) then {
 				_selectedEquipment = _bodyEquipment select 0;
 				{_selectedEquipment addItemCargoGlobal [_x,1]} forEach (backpackItems _selectedContainer);
 			};

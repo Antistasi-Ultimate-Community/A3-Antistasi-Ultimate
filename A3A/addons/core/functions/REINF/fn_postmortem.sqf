@@ -30,7 +30,7 @@ if !assert(params[
 if (isNull _victim) exitWith {};
 
 if (alive _victim) exitWith {
-    Error_2("post-mortem on alive unit %1 called (_this=%2)", _victim, _this);
+    Error_2("post-mortem on alive unit %1 called (_this=%2)",_victim,_this);
 };
 
 if (isNil { _victim getVariable QGVAR(postMortemEventSent) }) then {

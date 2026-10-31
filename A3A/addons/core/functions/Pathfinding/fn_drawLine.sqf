@@ -34,10 +34,10 @@ private _angle = _startPos getDir _endPos;
 private _mid = (_startPos vectorAdd _endPos) vectorMultiply 0.5;
 
 private _lineMarker = createMarker [format ["%1line%2", str _startPos, str _endPos], _mid];
-_lineMarker setMarkerShape "RECTANGLE";
-_lineMarker setMarkerBrush "SOLID";
-_lineMarker setMarkerColor _color;
-_lineMarker setMarkerDir _angle;
+_lineMarker setMarkerShapeLocal "RECTANGLE";
+_lineMarker setMarkerBrushLocal "SOLID";
+_lineMarker setMarkerColorLocal _color;
+_lineMarker setMarkerDirLocal _angle;
 _lineMarker setMarkerSize [3, _distance/2];
 
 if(_time >= 0) then

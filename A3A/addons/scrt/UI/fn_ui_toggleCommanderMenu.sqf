@@ -9,7 +9,7 @@ if (isMenuOpen) then {
         createDialog "commanderMenu";
         [] call SCRT_fnc_ui_populateCommanderMenu;
         isMenuOpen = true;
-        if (vehicle player isEqualTo player) then {
+        if (isNull objectParent player) then {
             [] spawn SCRT_fnc_misc_orbitingCamera;
         } else {
             [] spawn SCRT_fnc_misc_followCamera;
@@ -20,7 +20,7 @@ if (isMenuOpen) then {
         createDialog "rebelMenu";
         [] call SCRT_fnc_ui_populateRebelMenu;
         isMenuOpen = true;
-        if (vehicle player isEqualTo player) then {
+        if (isNull objectParent player) then {
             [] spawn SCRT_fnc_misc_orbitingCamera;
         } else {
             [] spawn SCRT_fnc_misc_followCamera;

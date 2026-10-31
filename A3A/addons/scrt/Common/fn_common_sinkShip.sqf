@@ -22,10 +22,7 @@ private ["_ship", "_sinktime", "_sinkside", "_smokeloc", "_smoke_e", "_smoke", "
 
 
 // Fetch and validate the parameters
-_ship     = [_this, 0, objNull]      call BIS_fnc_param;
-_sinkside = [_this, 1, "LEFT BACK"]  call BIS_fnc_param;
-_sinktime = [_this, 2, 120]          call BIS_fnc_param;
-_smoke    = [_this, 3, TRUE]         call BIS_fnc_param;
+params [["_ship", objNull], ["_sinkside", "LEFT BACK"], ["_sinktime", 120], ["_smoke", TRUE]];
 
 // Although it would be nice to implement damage to multiple locations, not today
 if ( _ship getVariable ["ShipIsSinking", FALSE] ) exitWith {};
@@ -51,7 +48,7 @@ _sinkside = toUpper (_sinkside);
 
 // If _sinkside is "RANDOM", choose a random side from the array
 if (_sinkside == "RANDOM") then {
-_sinkside = ["LEFT", "RIGHT", "LEFT FRONT", "RIGHT FRONT", "LEFT BACK", "RIGHT BACK"] call BIS_fnc_selectRandom;
+_sinkside = selectRandom ["LEFT", "RIGHT", "LEFT FRONT", "RIGHT FRONT", "LEFT BACK", "RIGHT BACK"];
 };
 
 // Declare the variables for setCenterOfMass

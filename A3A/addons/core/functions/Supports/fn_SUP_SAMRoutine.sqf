@@ -32,12 +32,12 @@ while {true} do
 {
     // check if launcher/crew are intact
     if !(canFire _launcher and gunner _launcher call A3A_fnc_canFight) exitWith {
-        Info_1("%1 has been destroyed or disabled, aborting routine", _supportName);
+        Info_1("%1 has been destroyed or disabled, aborting routine",_supportName);
     };
 
     // check if we're past the active time/missiles
     if (time > _timeout or _missiles <= 0) exitWith {
-        Info_1("%1 has timed out or run out of missiles, aborting", _supportName);
+        Info_1("%1 has timed out or run out of missiles, aborting",_supportName);
     };
 
     if (isNull _targetObj) then
@@ -48,10 +48,10 @@ while {true} do
         _targetObj = _suppTarget select 0;
         if !(alive _targetObj) exitWith {
             _suppTarget resize 0;
-            Debug_1("%1 skips target, as it is already dead", _supportName);
+            Debug_1("%1 skips target, as it is already dead",_supportName);
             continue;
         };
-        Debug_2("Next target for %2 is %1", _suppTarget, _supportName);
+        Debug_2("Next target for %2 is %1",_suppTarget,_supportName);
 
         [_reveal, getPosATL _targetObj, _side, "SAM", _targetObj, 60] spawn A3A_fnc_showInterceptedSupportCall;
         
@@ -61,7 +61,7 @@ while {true} do
 
     //Target no longer valid
     if (!canMove _targetObj or time > _targTimeout) then {
-        Debug_1("%1 target lost or destroyed, returning to idle", _supportName);
+        Debug_1("%1 target lost or destroyed, returning to idle",_supportName);
         _suppTarget resize 0;
         _targetObj = objNull;
         _launcher doWatch objNull;

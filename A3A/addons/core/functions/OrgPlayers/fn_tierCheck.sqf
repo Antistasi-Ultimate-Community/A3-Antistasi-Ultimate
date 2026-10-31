@@ -11,7 +11,7 @@ private _rebelPoints = 0;
 		if (_x in outposts or {_x in resourcesX or _x in factories}) exitWith {2};
 		if (_x in seaports) exitWith {4};
 		if (_x in milbases) exitWith {6};
-		if (_x in airportsX) then {8} else {0};
+		[0, 8] select (_x in airportsX);
 	};
 } forEach _rebelSites;
 

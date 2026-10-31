@@ -68,11 +68,11 @@ playSound3D [QPATHTOFOLDER(Sounds\Misc\Sonic.ogg), _object, false, getPosASL _ob
 
 player spawn {
 	for "_i" from 0 to 200 do {
-		_vx = vectorup _this select 0;
-		_vy = vectorup _this select 1;
-		_vz = vectorup _this select 2;
+		_vx = vectorUp _this select 0;
+		_vy = vectorUp _this select 1;
+		_vz = vectorUp _this select 2;
 		_coef = 0.01 - (0.0001 * _i);
-		_this setvectorup [
+		_this setVectorUp [
 		_vx+(-_coef+random (2*_coef)),
 		_vy+(-_coef+random (2*_coef)),
 		_vz+(-_coef+random (2*_coef))

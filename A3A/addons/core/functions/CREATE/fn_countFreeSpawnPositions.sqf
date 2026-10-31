@@ -11,6 +11,6 @@ Return Value:
 */
 
 params ["_marker", "_type"];
-private _varName = format ["%1_%2_used", _marker, tolower _type];
+private _varName = format ["%1_%2_used", _marker, toLower _type];
 private _used = spawner getVariable [_varName, []];
 { !_x } count _used;

@@ -1,3 +1,5 @@
+#pragma hemtt ignore_variables ["_fnc_saveToTemplate"]
+
 ["attributesVehicles", [
 
     // Weak AA vehicles. Leave threat because they're still dangerous in rebel hands

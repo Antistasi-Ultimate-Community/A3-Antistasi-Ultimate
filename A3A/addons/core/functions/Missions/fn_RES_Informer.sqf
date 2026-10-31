@@ -8,7 +8,7 @@ params ["_markerX"];
 
 Info("Rescue Rebel Informer task initialization started, marker: %1.");
 
-private _side = if (sidesX getVariable [_markerX, sideUnknown] == Occupants) then {Occupants} else {Invaders};
+private _side = [Invaders, Occupants] select (sidesX getVariable [_markerX, sideUnknown] == Occupants);
 private _faction = Faction(_side);
 private _difficulty = random 10 < tierWar;
 private _positionX = getMarkerPos _markerX;
@@ -27,7 +27,7 @@ _limit params ["_dateLimitNum", "_displayTime"];
 
 private _destinationName = [_markerX] call A3A_fnc_localizar;
 
-Info_2("Side: %1, difficulty: %2.", str _side, str _difficulty);
+Info_2("Side: %1, difficulty: %2.",str _side,str _difficulty);
 
 //////////////////////
 //City setMagazineTurretAmmo
@@ -65,19 +65,19 @@ while {true} do {
     _searchIterations = _searchIterations + 1;
 };
 
-Info_1("City size: %1.", str _size);
+Info_1("City size: %1.",str _size);
 
 //////////////////////
 //Informer position
 /////////////////////
-private _buildings = _positionX nearobjects ["house",_size];
+private _buildings = _positionX nearObjects ["house",_size];
 
 if (isNil "_buildings" || {count _buildings < 0}) exitWith {
     Error("Problems with city buildings, rerequesting new rescue mission.");
     ["RES"] remoteExec ["A3A_fnc_missionRequest",2];
 };
 
-private _capableBuildings = _buildings select {!(([_x] call BIS_fnc_buildingPositions) isEqualTo []) && {!(isObjectHidden _x)}};
+private _capableBuildings = _buildings select {([_x] call BIS_fnc_buildingPositions) isNotEqualTo [] && {!(isObjectHidden _x)}};
 
 if (isNil "_capableBuildings" || {count _capableBuildings < 0}) exitWith {
     Error("Problems with city buildings, rerequesting new rescue mission.");
@@ -181,7 +181,7 @@ private _roadblockCount = ceil (random [1,2,4]);
 private _previousRoadblockPositions = [];
 private _cardinalDirections = [0,90,180,270];
 
-Info_1("Roadblocks count: %1.", str _roadblockCount);
+Info_1("Roadblocks count: %1.",str _roadblockCount);
 
 private _earlyEscape = false;
 
@@ -198,7 +198,7 @@ for "_i" from 0 to _roadblockCount do {
 	while {_radiusX < 500} do {
 		_roads = _rawPosition nearRoads _radiusX;
 		_roads = _roads select { count (roadsConnectedTo _x) == 2 };
-		if (count _roads > 0) exitWith {};
+		if (_roads isNotEqualTo []) exitWith {};
 		_radiusX = _radiusX + 20;
 	};
 
@@ -206,12 +206,12 @@ for "_i" from 0 to _roadblockCount do {
         _radiusX = 0;
 		continue;
 	} else {
-        private _roadscon = roadsConnectedto (_roads select 0);
+        private _roadscon = roadsConnectedTo (_roads select 0);
 	    _dirveh = [_roads select 0, _roadscon select 0] call BIS_fnc_DirTo;
     };
 
     //no roads at all, aborting
-    if (_i == 0 && {(isNil "_roads" || count _roads < 1)}) exitWith {
+    if (_i == 0 && {(isNil "_roads" || _roads isEqualTo [])}) exitWith {
         _earlyEscape = true;
     };
 
@@ -269,7 +269,7 @@ deleteMarkerLocal _marker1;
 deleteMarkerLocal _marker2;
 
 if (_earlyEscape) exitWith {
-    Error( "Problems with road positions, rerequesting new rescue mission.");
+    Error("Problems with road positions, rerequesting new rescue mission.");
     ["RES"] remoteExec ["A3A_fnc_missionRequest",2];
 };
 
@@ -380,7 +380,7 @@ waitUntil {
     !alive _informer || {dateToNumber date > _dateLimitNum || {(_informer distance2D (getMarkerPos "Synd_HQ") < 25)}}
 };
 
-private _bonus = if (_difficulty) then {2} else {1};
+private _bonus = [1, 2] select (_difficulty);
 
 switch(true) do {
     case (dateToNumber date > _dateLimitNum): {

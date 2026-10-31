@@ -39,10 +39,13 @@ private _typeGroup = nil;
 private _groupX = nil;
 private _spawnPosition = nil;
 
+private _dogs = [];
+private _groups = [];
+private _soldiers = [];
 while {_countX < _patrolCount} do {
 	_typeGroup = selectRandom _arrayGroups;
 
-	_spawnPosition = [_markerPosition, 25, round (_size / 2), 2, 0, -1, 0] call A3A_fnc_getSafePos;
+	_spawnPosition = [_markerPosition, 25, round (((markerSize _marker) select 0) / 2), 2, 0, -1, 0] call A3A_fnc_getSafePos;
 	if (_spawnPosition isEqualTo [0,0]) exitWith {
 		ServerDebug("Unable to find spawn position for patrol unit.");
 	};
@@ -60,7 +63,9 @@ while {_countX < _patrolCount} do {
 		[_groupX, "Patrol_Area", 25, 150, 300, false, [], false] call A3A_fnc_patrolLoop;
 		_groups pushBack _groupX;
 		
-		{[_x,_markerX] call A3A_fnc_NATOinit; _soldiers pushBack _x} forEach units _groupX;
+		{[_x,_marker] call A3A_fnc_NATOinit; _soldiers pushBack _x} forEach units _groupX;
 	};
 	_countX = _countX +1;
 };
+
+[_dogs, _groups, _soldiers];

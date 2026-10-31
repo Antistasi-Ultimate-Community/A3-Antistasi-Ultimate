@@ -2,201 +2,131 @@
 <Project name="A3-Antistasi">
     <Package name="Arsenal">
         <Container name="Actions">
-            <Key ID="STR_JNC_ACT_SELECT">
-                <Original>Select</Original>
-                <Russian>Выбрать</Russian>
-                <German>Auswählen</German>
-                <Chinesesimp>选择</Chinesesimp>
-                <Korean>선택</Korean>
-                <French>Sélectionner</French>
-                <Turkish>Seç</Turkish>
-            </Key>
-            <Key ID="STR_JNC_ACT_CANCEL">
-                <Original>Cancel</Original>
-                <Russian>Отменить</Russian>
-                <German>Abbrechen</German>
-                <Chinesesimp>取消</Chinesesimp>
-                <Korean>취소</Korean>
-                <French>Annuler</French>
-                <Turkish>İptal</Turkish>
-            </Key>
-            <Key ID="STR_JNC_ACT_SELECT_HINT">
-                <Original>Select an object</Original>
-                <Russian>Выберите объект</Russian>
-                <German>Objekt auswählen</German>
-                <Chinesesimp>选择一个对象</Chinesesimp>
-                <Korean>개체를 선택합니다</Korean>
-                <French>Sélectionner un objet</French>
-                <Turkish>Bir nesne seç</Turkish>
-            </Key>
-            <Key ID="STR_JNC_ACT_SELECT_NO_OBJECT">
-                <Original>Not looking at anything</Original>
-                <Russian>Вы не смотрите на какой-либо объект</Russian>
-                <German>Nichts ausgewählt</German>
-                <Chinesesimp>你没有在看任何物体</Chinesesimp>
-                <Korean>아무것도 보고 있지 않습니다</Korean>
-                <French>Ne rien regarder</French>
-                <Turkish>Hiçbir şeye bakmıyorsun</Turkish>
-            </Key>
-            <Key ID="STR_JNA_SORT_COLOR">
-                <Original>Sort by row color</Original>
-                <German>Nach Zeilenfarbe sortieren</German>
-                <Russian>Сортировка по цвету строки</Russian>
-                <Chinesesimp>按行的颜色排序</Chinesesimp>
-                <Korean>색깔 별로 정렬</Korean>
-                <French>Tri par couleur de ligne</French>
-                <Turkish>Satır rengine göre sırala</Turkish>
-            </Key>
-            <Key ID="STR_JNA_SORT_MOD">
-                <Original>Sort by mod/dlc</Original>
-                <Russian>Сортировка по моду/дополнению</Russian>
-                <Chinesesimp>按模组/DLC排序</Chinesesimp>
-                <Korean>모드/DLC 별로 정렬</Korean>
-                <Turkish>MOD/DLC göre sırala</Turkish>
-            </Key>
-            <Key ID="STR_JNA_SORT_DEFAULT">
-                <Original>Default</Original>
-                <German>Standard</German>
-                <Russian>Сортировка по умолчанию</Russian>
-                <Chinesesimp>默认排序</Chinesesimp>
-                <Korean>기본</Korean>
-                <French>Standard</French>
-                <Turkish>Varsayılan</Turkish>
-            </Key>
-            <Key ID="STR_JNA_SORT_BY_AMOUNT">
-                <Original>Sort by amount</Original>
-                <German>Nach Menge sortieren</German>
-                <Russian>Сортировка по количеству</Russian>
-                <Chinesesimp>按数量排序</Chinesesimp>
-                <Korean>수량 별로 정렬</Korean>
-                <French>Trier par quantité</French>
-                <Turkish>Miktara göre sırala</Turkish>
-            </Key>
-            <Key ID="STR_JNA_ACT_OPEN">
-                <Original>Arsenal</Original>
-                <German>Arsenal</German>
-                <Chinesesimp>军火库</Chinesesimp>
-                <Russian>Арсенал</Russian>
-                <Korean>아스널</Korean>
-                <French>Arsenal</French>
-                <Turkish>Arsenal</Turkish>
-            </Key>
             <Key ID="STR_JNA_ACT_CONTAINER_OPEN">
                 <Original>Select vehicle to open arsenal for it</Original>
+                <French>Sélectionner un véhicule pour ouvrir l'arsenal qui lui est destiné</French>
                 <Russian>Выбрать технику и открыть арсенал для неё</Russian>
                 <German>Fahrzeug auswählen, um Arsenal dafür zu öffnen</German>
-                <Chinesesimp>选择一辆载具，在载具内打开军火库</Chinesesimp>
                 <Korean>아스널을 열 차량 선택</Korean>
-                <French>Sélectionner un véhicule pour ouvrir l'arsenal qui lui est destiné</French>
+                <Chinesesimp>选择一辆载具，在载具内打开军火库</Chinesesimp>
                 <Turkish>Araç için Arsenal'i aç</Turkish>
-            </Key>
-            <Key ID="STR_JNA_ACT_UNLOAD">
-                <Original>Unload from vehicle</Original>
-                <German>Fahrzeug entladen</German>
-                <Chinesesimp>从载具上卸载</Chinesesimp>
-                <Russian>Выгрузить из транспортного средства</Russian>
-                <Korean>차량에서 하역</Korean>
-                <French>Déchargement du véhicule</French>
-                <Turkish>Araçtan indir</Turkish>
             </Key>
             <Key ID="STR_JNA_ACT_CONTAINER_SELECTERROR1">
                 <Original>You're not looking at an object.</Original>
-                <German>Sie betrachten kein Objekt.</German>
-                <Chinesesimp>你没有在看物体。</Chinesesimp>
-                <Russian>Вы не смотрите на объект.</Russian>
-                <Korean>개체를 보고 있지 않습니다.</Korean>
                 <French>Vous ne regardez pas un objet.</French>
+                <Russian>Вы не смотрите на объект.</Russian>
+                <German>Sie betrachten kein Objekt.</German>
+                <Korean>개체를 보고 있지 않습니다.</Korean>
+                <Chinesesimp>你没有在看物体。</Chinesesimp>
                 <Turkish>Bir objeye bakmıyorsunuz</Turkish>
             </Key>
             <Key ID="STR_JNA_ACT_CONTAINER_SELECTERROR2">
                 <Original>Object is too far away.</Original>
-                <German>Objekt ist zu weit entfernt.</German>
-                <Chinesesimp>该对象太远</Chinesesimp>
-                <Russian>Объект находится слишком далеко.</Russian>
-                <Korean>개체가 너무 멉니다.</Korean>
                 <French>L'objet est trop éloigné.</French>
+                <Russian>Объект находится слишком далеко.</Russian>
+                <German>Objekt ist zu weit entfernt.</German>
+                <Korean>개체가 너무 멉니다.</Korean>
+                <Chinesesimp>该对象太远</Chinesesimp>
                 <Turkish>Obje çok uzakta</Turkish>
             </Key>
             <Key ID="STR_JNA_ACT_CONTAINER_SELECTERROR3">
                 <Original>Object does not have any inventory.</Original>
-                <German>Objekt hat kein Inventar.</German>
-                <Chinesesimp>该对象没有任何库存</Chinesesimp>
-                <Russian>У объекта нет какого-либо инвентаря.</Russian>
-                <Korean>개체에 소지품이 없습니다.</Korean>
                 <French>L'objet n'a pas d'inventaire.</French>
+                <Russian>У объекта нет какого-либо инвентаря.</Russian>
+                <German>Objekt hat kein Inventar.</German>
+                <Korean>개체에 소지품이 없습니다.</Korean>
+                <Chinesesimp>该对象没有任何库存</Chinesesimp>
                 <Turkish>Objenin herhangi bir envanteri yok</Turkish>
-            </Key>
-            <Key ID="STR_JNA_ACT_ONLY_MEMBERS">
-                <Original>We are low on this item, only members may use it.</Original>
-                <German>Dieser Artikel ist knapp, nur Mitglieder können ihn verwenden.</German>
-                <Chinesesimp>这样的有限物品只有服务器会员才能使用。</Chinesesimp>
-                <Russian>У нас мало этих предметов, только участники могут его использовать.</Russian>
-                <Korean>우린 이 아이템이 부족해서 멤버만 사용할 수 있습니다.</Korean>
-                <French>Cet article est en rupture de stock, seuls les membres peuvent l'utiliser.</French>
-                <Turkish>Bu eşyanın stokları azaldı, sadece üyeler kullanabilir</Turkish>
-            </Key>
-            <Key ID="STR_JNA_ACT_VEHICLE_INVENTORY">
-                <Original>Vehicle Inventory</Original>
-                <German>Fahrzeugbestand</German>
-                <Chinesesimp>载具库存</Chinesesimp>
-                <Russian>Инвентарь транспортного средства</Russian>
-                <Korean>차량 소지품</Korean>
-                <French>Inventaire du véhicule</French>
-                <Turkish>Araç Envanteri</Turkish>
-            </Key>
-            <Key ID="STR_JNA_ACT_DEF_GEAR_BUTTON">
-                <Original>Default gear</Original>
-                <Russian>СНАРЯЖ. ПО УМОЛЧАНИЮ</Russian>
-                <German>Standardausrüstung</German>
-                <Chinesesimp>默认装备</Chinesesimp>
-                <Korean>기본 장비</Korean>
-                <French>Équipement standard</French>
-                <Turkish>Varsayılan teçhizat</Turkish>
             </Key>
             <Key ID="STR_JNA_ACT_DEF_GEAR">
                 <Original>Add default items like radio and medical supplies</Original>
+                <French>Ajouter des éléments par défaut tels que des radios et des fournitures médicales</French>
                 <Russian>Добавить предметы по умолчанию, такие как рации и медпакеты</Russian>
                 <German>Fügen Sie Standardartikel wie Radio und medizinische Versorgung hinzu</German>
-                <Chinesesimp>添加默认装备，如无线电和医疗用品</Chinesesimp>
                 <Korean>무전기 및 의료품같은 기본 아이템 추가</Korean>
-                <French>Ajouter des éléments par défaut tels que des radios et des fournitures médicales</French>
+                <Chinesesimp>添加默认装备，如无线电和医疗用品</Chinesesimp>
                 <Turkish>Radyo ve tıbbi malzeme gibi varsayılan eşyaları ekle</Turkish>
             </Key>
-            <Key ID="STR_JNA_ACT_MOVE_FROM_CRATE_TO_ARSENAL_BUTTON">
-                <Original>To crate</Original>
-                <Russian>В ящик</Russian>
-                <German>Kiste</German>
-                <Chinesesimp>到箱子</Chinesesimp>
-                <Korean>상자로</Korean>
-                <French>A mettre en caisse</French>
-                <Turkish>Kasaya</Turkish>
+            <Key ID="STR_JNA_ACT_DEF_GEAR_BUTTON">
+                <Original>Default gear</Original>
+                <French>Équipement standard</French>
+                <Russian>СНАРЯЖ. ПО УМОЛЧАНИЮ</Russian>
+                <German>Standardausrüstung</German>
+                <Korean>기본 장비</Korean>
+                <Chinesesimp>默认装备</Chinesesimp>
+                <Turkish>Varsayılan teçhizat</Turkish>
             </Key>
             <Key ID="STR_JNA_ACT_MOVE_FROM_CRATE_TO_ARSENAL">
                 <Original>Move items from crate inventory to arsenal</Original>
+                <French>Déplacer des objets de l'inventaire de la caisse vers l'arsenal</French>
                 <Russian>Переместить предметы из инвентаря ящика в арсенал</Russian>
                 <German>Verschiebe Gegenstände aus dem Kisteninventar ins Arsenal</German>
-                <Chinesesimp>将箱子里物品转移到军火库库存</Chinesesimp>
                 <Korean>상자 소지품을 아스널로 아이템 옮기기</Korean>
-                <French>Déplacer des objets de l'inventaire de la caisse vers l'arsenal</French>
+                <Chinesesimp>将箱子里物品转移到军火库库存</Chinesesimp>
                 <Turkish>Eşyaları kasa envanterinden arsenal'e taşı</Turkish>
             </Key>
-            <Key ID="STR_JNA_ACT_MOVE_FROM_VEHICLE_TO_ARSENAL_BUTTON">
-                <Original>Unload Vehicle</Original>
-                <Russian>Разгрузить машину</Russian>
-                <German>Fahrzeug entladen</German>
-                <Chinesesimp>卸载载具</Chinesesimp>
-                <Korean>차량 하역</Korean>
-                <French>Décharger le véhicule</French>
-                <Turkish>Aracı Boşalt</Turkish>
+            <Key ID="STR_JNA_ACT_MOVE_FROM_CRATE_TO_ARSENAL_BUTTON">
+                <Original>To crate</Original>
+                <French>A mettre en caisse</French>
+                <Russian>В ящик</Russian>
+                <German>Kiste</German>
+                <Korean>상자로</Korean>
+                <Chinesesimp>到箱子</Chinesesimp>
+                <Turkish>Kasaya</Turkish>
             </Key>
             <Key ID="STR_JNA_ACT_MOVE_FROM_VEHICLE_TO_ARSENAL">
                 <Original>Move items from vehicle inventory to arsenal</Original>
+                <French>Déplacer des objets de l'inventaire des véhicules vers l'arsenal</French>
                 <Russian>Переместить предметы из инвентаря транспортного средства в арсенал</Russian>
                 <German>Verschieben Sie Gegenstände aus dem Fahrzeuginventar in das Arsenal</German>
-                <Chinesesimp>将载具库存内物品移动到军火库</Chinesesimp>
                 <Korean>차량 소지품을 아스널로 아이템 옮기기</Korean>
-                <French>Déplacer des objets de l'inventaire des véhicules vers l'arsenal</French>
+                <Chinesesimp>将载具库存内物品移动到军火库</Chinesesimp>
                 <Turkish>Eşyaları araç envanterinden arsenal'e taşı</Turkish>
+            </Key>
+            <Key ID="STR_JNA_ACT_MOVE_FROM_VEHICLE_TO_ARSENAL_BUTTON">
+                <Original>Unload Vehicle</Original>
+                <French>Décharger le véhicule</French>
+                <Russian>Разгрузить машину</Russian>
+                <German>Fahrzeug entladen</German>
+                <Korean>차량 하역</Korean>
+                <Chinesesimp>卸载载具</Chinesesimp>
+                <Turkish>Aracı Boşalt</Turkish>
+            </Key>
+            <Key ID="STR_JNA_ACT_ONLY_MEMBERS">
+                <Original>We are low on this item, only members may use it.</Original>
+                <French>Cet article est en rupture de stock, seuls les membres peuvent l'utiliser.</French>
+                <Russian>У нас мало этих предметов, только участники могут его использовать.</Russian>
+                <German>Dieser Artikel ist knapp, nur Mitglieder können ihn verwenden.</German>
+                <Korean>우린 이 아이템이 부족해서 멤버만 사용할 수 있습니다.</Korean>
+                <Chinesesimp>这样的有限物品只有服务器会员才能使用。</Chinesesimp>
+                <Turkish>Bu eşyanın stokları azaldı, sadece üyeler kullanabilir</Turkish>
+            </Key>
+            <Key ID="STR_JNA_ACT_OPEN">
+                <Original>Arsenal</Original>
+                <French>Arsenal</French>
+                <Russian>Арсенал</Russian>
+                <German>Arsenal</German>
+                <Korean>아스널</Korean>
+                <Chinesesimp>军火库</Chinesesimp>
+                <Turkish>Arsenal</Turkish>
+            </Key>
+            <Key ID="STR_JNA_ACT_UNLOAD">
+                <Original>Unload from vehicle</Original>
+                <French>Déchargement du véhicule</French>
+                <Russian>Выгрузить из транспортного средства</Russian>
+                <German>Fahrzeug entladen</German>
+                <Korean>차량에서 하역</Korean>
+                <Chinesesimp>从载具上卸载</Chinesesimp>
+                <Turkish>Araçtan indir</Turkish>
+            </Key>
+            <Key ID="STR_JNA_ACT_VEHICLE_INVENTORY">
+                <Original>Vehicle Inventory</Original>
+                <French>Inventaire du véhicule</French>
+                <Russian>Инвентарь транспортного средства</Russian>
+                <German>Fahrzeugbestand</German>
+                <Korean>차량 소지품</Korean>
+                <Chinesesimp>载具库存</Chinesesimp>
+                <Turkish>Araç Envanteri</Turkish>
             </Key>
             <Key ID="STR_JNA_OVERRIDE">
                 <Original>Double-click an item in the list to save it into your custom loadout. Double-click again to unsave.</Original>
@@ -205,6 +135,76 @@
             <Key ID="STR_JNA_OVERRIDE_CARGO">
                 <Original>Double-click an item in the list to save it into your custom loadout. Double-click again to unsave. Note that saving a cargo container (Uniform, Vest, or Backpack) also saves all of the contents of that container.</Original>
                 <Turkish>Bir eşyayı özel yüklemenize kaydetmek için üzerine çift tıklayın. Kaldırmak için tekrar çift tıklayın. Bir taşıma konteynerini (Üniforma, Yelek veya Sırt Çantası) kaydetmenin, o konteynerin tüm içeriğini de kaydedeceğini unutmayın.</Turkish>
+            </Key>
+            <Key ID="STR_JNA_SORT_BY_AMOUNT">
+                <Original>Sort by amount</Original>
+                <French>Trier par quantité</French>
+                <Russian>Сортировка по количеству</Russian>
+                <German>Nach Menge sortieren</German>
+                <Korean>수량 별로 정렬</Korean>
+                <Chinesesimp>按数量排序</Chinesesimp>
+                <Turkish>Miktara göre sırala</Turkish>
+            </Key>
+            <Key ID="STR_JNA_SORT_COLOR">
+                <Original>Sort by row color</Original>
+                <French>Tri par couleur de ligne</French>
+                <Russian>Сортировка по цвету строки</Russian>
+                <German>Nach Zeilenfarbe sortieren</German>
+                <Korean>색깔 별로 정렬</Korean>
+                <Chinesesimp>按行的颜色排序</Chinesesimp>
+                <Turkish>Satır rengine göre sırala</Turkish>
+            </Key>
+            <Key ID="STR_JNA_SORT_DEFAULT">
+                <Original>Default</Original>
+                <French>Standard</French>
+                <Russian>Сортировка по умолчанию</Russian>
+                <German>Standard</German>
+                <Korean>기본</Korean>
+                <Chinesesimp>默认排序</Chinesesimp>
+                <Turkish>Varsayılan</Turkish>
+            </Key>
+            <Key ID="STR_JNA_SORT_MOD">
+                <Original>Sort by mod/dlc</Original>
+                <Russian>Сортировка по моду/дополнению</Russian>
+                <Korean>모드/DLC 별로 정렬</Korean>
+                <Chinesesimp>按模组/DLC排序</Chinesesimp>
+                <Turkish>MOD/DLC göre sırala</Turkish>
+            </Key>
+            <Key ID="STR_JNC_ACT_CANCEL">
+                <Original>Cancel</Original>
+                <French>Annuler</French>
+                <Russian>Отменить</Russian>
+                <German>Abbrechen</German>
+                <Korean>취소</Korean>
+                <Chinesesimp>取消</Chinesesimp>
+                <Turkish>İptal</Turkish>
+            </Key>
+            <Key ID="STR_JNC_ACT_SELECT">
+                <Original>Select</Original>
+                <French>Sélectionner</French>
+                <Russian>Выбрать</Russian>
+                <German>Auswählen</German>
+                <Korean>선택</Korean>
+                <Chinesesimp>选择</Chinesesimp>
+                <Turkish>Seç</Turkish>
+            </Key>
+            <Key ID="STR_JNC_ACT_SELECT_HINT">
+                <Original>Select an object</Original>
+                <French>Sélectionner un objet</French>
+                <Russian>Выберите объект</Russian>
+                <German>Objekt auswählen</German>
+                <Korean>개체를 선택합니다</Korean>
+                <Chinesesimp>选择一个对象</Chinesesimp>
+                <Turkish>Bir nesne seç</Turkish>
+            </Key>
+            <Key ID="STR_JNC_ACT_SELECT_NO_OBJECT">
+                <Original>Not looking at anything</Original>
+                <French>Ne rien regarder</French>
+                <Russian>Вы не смотрите на какой-либо объект</Russian>
+                <German>Nichts ausgewählt</German>
+                <Korean>아무것도 보고 있지 않습니다</Korean>
+                <Chinesesimp>你没有在看任何物体</Chinesesimp>
+                <Turkish>Hiçbir şeye bakmıyorsun</Turkish>
             </Key>
         </Container>
     </Package>

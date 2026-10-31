@@ -18,10 +18,10 @@ if (!isServer) exitWith { Error("Server-only function miscalled") };
 
 params ["_count", "_side", "_type"];
 
-if (_side != Occupants && _side != Invaders) exitWith { Error_1("Called with invalid side: %1", _side) };
+if (_side != Occupants && _side != Invaders) exitWith { Error_1("Called with invalid side: %1",_side) };
 if (isNil "_count" or {!finite _count}) exitWith { Error("Called with invalid count") };
 
-Debug_3("Adding %1 resources of type %2 to side %3", _count, _type, _side);
+Debug_3("Adding %1 resources of type %2 to side %3",_count,_type,_side);
 
 if (_type isEqualTo "defence") exitWith {
     if (_side == Invaders) then {
@@ -42,4 +42,4 @@ if (_type isEqualTo "legacy") exitWith {
     [_count/2, _side, "attack"] call A3A_fnc_addEnemyResources;
 };
 
-Error_1("Called with unknown type: %1", _type);
+Error_1("Called with unknown type: %1",_type);

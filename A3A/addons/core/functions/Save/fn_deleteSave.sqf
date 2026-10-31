@@ -4,7 +4,7 @@ FIX_LINE_NUMBERS()
 
 params ["_serverID", "_campaignID", "_worldname", ["_gametype", "Greenfor"]];
 
-Info_1("Deleting saved game with parameters %1", _this);
+Info_1("Deleting saved game with parameters %1",_this);
 
 private _namespace = [profileNamespace, missionProfileNamespace] select (_serverID isEqualType false);
 
@@ -12,7 +12,6 @@ private _saveDataHM = _namespace getVariable format ["A3A_saveData_%1", _campaig
 if (!isNil "_saveDataHM") then {
 	// Simple single-hashmap delete for new saves
 	_namespace setVariable [format ["A3A_saveData_%1", _campaignID], nil];
-	[_namespace, _campaignID] call _removeFromSaveList;
 } else {
 	// Legacy saves with save variables stored directly in the namespace
 	private _postfix = if (_serverID isEqualTo false) then { 

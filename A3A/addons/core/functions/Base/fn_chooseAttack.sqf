@@ -13,7 +13,7 @@ FIX_LINE_NUMBERS()
 
 params ["_side"];
 
-Info_1("Starting attack choice script for side %1", _side);
+Info_1("Starting attack choice script for side %1",_side);
 
 
 // Make a weighted list of rebel attack targets
@@ -28,7 +28,7 @@ private _rebWeightMul = call {
     private _hqPos = markerPos "Synd_HQ";
     {
         _totalW = _totalW + _x; 
-        private _dist = markerPos (_targets#_forEachIndex#0) distance2d _hqPos;
+        private _dist = markerPos (_targets#_forEachIndex#0) distance2D _hqPos;
         private _weightMul = linearConversion [3000, 8000, _dist, A3A_attackHQProximityMul, 1, true];
         _distW = _distW + _x * _weightMul;
         _weights set [_forEachIndex, _x * _weightMul];
@@ -53,25 +53,25 @@ if (gameMode == 1) then
 };
 
 if (_targets isEqualTo []) exitWith {
-    Info_1("Aborting attack by %1 because no targets available", _side);
+    Info_1("Aborting attack by %1 because no targets available",_side);
     false;
 };
 
 if ((areInvadersDefeated && _side == Invaders) || {(areOccupantsDefeated && _side == Occupants)}) exitWith {
-    Info_1("Aborting attack by %1 because faction was defeated before.", _side);
+    Info_1("Aborting attack by %1 because faction was defeated before.",_side);
     false;
 };
 
 Debug("Final target choice list:");
 {
-    Debug_2("Target: weight %1, %2", (_weights#_forEachIndex) toFixed 3, _x);
+    Debug_2("Target: weight %1, %2",(_weights#_forEachIndex) toFixed 3,_x);
 } forEach _targets;
 
 // Cull anything worse than 10:1 value ratio, otherwise we'll launch some really stupid attacks occasionally
 private _arePunishmentsAllowed = ((enablePunishments isEqualTo 1) && (tierWar >= A3U_setting_tierWarPunishments));
 
 Info("Logging available targets: Original, Culled");
-InfoArray("Original Targets:", _targets);
+InfoArray("Original Targets:",_targets);
 
 private _minWeight = selectMax _weights / 10;
 private _culledTargets = [];
@@ -80,21 +80,21 @@ private _culledTargets = [];
     if (_weight > _minWeight) then { _culledTargets append [_x, _weight] };
 } forEach _targets;
 
-InfoArray("Culled Targets:", _culledTargets);
+InfoArray("Culled Targets:",_culledTargets);
 
 // Now we just pick a target
 private _target = selectRandomWeighted _culledTargets;
 _target params ["_targetMrk", "_originMrk", "_targetValue", "_localThreat", "_flyoverThreat", "_countLandAttackBases"];
-Debug_1("Selected attack is %1", _target);
+Debug_1("Selected attack is %1",_target);
 
 // Only need to check stuff that would actually break
 if (sidesX getVariable _targetMrk == _side) exitWith {
-    Info_1("Aborting attack because target (%1) already captured", _targetMrk);
+    Info_1("Aborting attack because target (%1) already captured",_targetMrk);
     false;
 };
 if (sidesX getVariable _originMrk != _side) exitWith {
     // do we check spawner status too?
-    Info_1("Aborting attack because origin (%1) changed sides", _originMrk);
+    Info_1("Aborting attack because origin (%1) changed sides",_originMrk);
     false;
 };
 
@@ -102,25 +102,25 @@ private _resourcesAttackSide = [A3A_resourcesAttackOcc, A3A_resourcesAttackInv] 
 private _resourcesDefenceSide = [A3A_resourcesDefenceOcc, A3A_resourcesDefenceInv] select (_side isEqualTo Invaders);
 
 if (_targetMrk in citiesX) exitWith {
-    Info_2("%1 was in citiesX. Side: %2.", _targetMrk, _side);
+    Info_2("%1 was in citiesX. Side: %2.",_targetMrk,_side);
     if (_side isEqualTo Invaders && {_arePunishmentsAllowed}) then {
         // Punishment, unsimulated
-        Info_2("Starting punishment mission from %1 to %2", _originMrk, _targetMrk);
+        Info_2("Starting punishment mission from %1 to %2",_originMrk,_targetMrk);
         [-400, _side, "attack"] call A3A_fnc_addEnemyResources;
         bigAttackInProgress = true; publicVariable "bigAttackInProgress";
         [_targetMrk, _originMrk] spawn A3A_fnc_invaderPunish;
     } else {
         // Supply convoy, unsimulated
-        Info_2("Sending supply convoy from %1 to %2", _originMrk, _targetMrk);
+        Info_2("Sending supply convoy from %1 to %2",_originMrk,_targetMrk);
         [-200, _side, "attack"] call A3A_fnc_addEnemyResources;
         [[_targetMrk, _originMrk, "Supplies", "attack"],"A3A_fnc_convoy"] call A3A_fnc_scheduler;
     };
-    Info_3("Resources for: %1. | Attack: %2 | Defence: %3 |", _side, _resourcesAttackSide, _resourcesDefenceSide);
+    Info_3("Resources for: %1. | Attack: %2 | Defence: %3 |",_side,_resourcesAttackSide,_resourcesDefenceSide);
     true;
 };
 
 if (_targetMrk == "Synd_HQ") exitWith {
-    Info_1("Starting HQ attack from %1", _originMrk);
+    Info_1("Starting HQ attack from %1",_originMrk);
     [-400, _side, "attack"] call A3A_fnc_addEnemyResources;
     bigAttackInProgress = true; publicVariable "bigAttackInProgress";
     HQAttackInProgress = true; publicVariable "HQAttackInProgress";
@@ -139,7 +139,7 @@ if((spawner getVariable _targetMrk) != 2 || (sidesX getVariable _targetMrk) == t
         _waves = 3;
     };
 
-    Info_3("Starting waved attack with %1 waves from %2 to %3", _waves, _originMrk, _targetMrk);
+    Info_3("Starting waved attack with %1 waves from %2 to %3",_waves,_originMrk,_targetMrk);
     [-400, _side, "attack"] call A3A_fnc_addEnemyResources;
     bigAttackInProgress = true; publicVariable "bigAttackInProgress";
     [_targetMrk, _originMrk, _waves] spawn A3A_fnc_wavedAttack;
@@ -161,11 +161,11 @@ else
 
     // Flip marker and add garrison once flipped
     [_side, _targetMrk] spawn A3A_fnc_markerChange;        // add simulation param here? or just rely on spawn status?
-    Info_4("Simulated capture of %1 by %2, atk resources %3, def resources %4", _targetMrk, _side, _atkResources, _defResources);
+    Info_4("Simulated capture of %1 by %2, atk resources %3, def resources %4",_targetMrk,_side,_atkResources,_defResources);
 
     sleep 10;
     if (sidesX getVariable _targetMrk != _side) exitWith {
-        Error_2("%1 still not switched to side %2 after 10 seconds", _targetMrk, _side);
+        Error_2("%1 still not switched to side %2 after 10 seconds",_targetMrk,_side);
         false;
     };
 

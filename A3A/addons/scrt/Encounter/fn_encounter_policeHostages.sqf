@@ -40,7 +40,7 @@ if (isNull _road) exitWith {
 
 // After finding the road _road
 private _roadcon = roadsConnectedTo _road;
-private _roadDir = if (count _roadcon > 0) then {
+private _roadDir = if (_roadcon isNotEqualTo []) then {
     [_road, _roadcon select 0] call BIS_fnc_dirTo
 } else {
     random 360
@@ -68,7 +68,7 @@ private _hostageCount = 2 + floor random 3;
 
 for "_i" from 0 to (_hostageCount - 1) do {
     private _pos = _hostageArea getPos [1.5 * _i, _hostageDir]; 
-    private _hostage = [_hostageGroup, FactionGet(civ, "unitMan"), _pos, [], 0, "NONE"] call A3A_fnc_createUnit;
+    private _hostage = [_hostageGroup, FactionGet(civ,"unitMan"), _pos, [], 0, "NONE"] call A3A_fnc_createUnit;
 	_hostage disableAI "PATH";
     _hostage setCaptive true;
     _hostage switchMove "AmovPercMstpSnonWnonDnon_AmovPercMstpSsurWnonDnon";
@@ -78,12 +78,12 @@ for "_i" from 0 to (_hostageCount - 1) do {
 // Police officer in front of the vehicle
 private _policeGroup = createGroup [Occupants, true];
 private _frontPos = _policeVehicle getPos [3.5, _vehicleDir]; // 3m in front of vehicle
-private _staticCop = [_policeGroup, FactionGet(occ, "unitPoliceGrunt"), _frontPos, [], 0, "NONE"] call A3A_fnc_createUnit;
+private _staticCop = [_policeGroup, FactionGet(occ,"unitPoliceGrunt"), _frontPos, [], 0, "NONE"] call A3A_fnc_createUnit;
 _staticCop setDir (_vehicleDir - 180);
 doStop _staticCop;
 
 // Patrolling police officer
-private _patrolCop = [_policeGroup, FactionGet(occ, "unitPoliceGrunt"), _policeVehicle getPos [-3, _vehicleDir - 90], [], 0, "NONE"] call A3A_fnc_createUnit;
+private _patrolCop = [_policeGroup, FactionGet(occ,"unitPoliceGrunt"), _policeVehicle getPos [-3, _vehicleDir - 90], [], 0, "NONE"] call A3A_fnc_createUnit;
 
 // For the patrolling police officer
 [_patrolCop, _hostageArea] spawn {

@@ -30,7 +30,7 @@ FIX_LINE_NUMBERS()
 
 params ["_mode", "_params"];
 
-Debug_1("setupFactionsTab called with mode %1", _mode);
+Debug_1("setupFactionsTab called with mode %1",_mode);
 
 private _display = findDisplay A3A_IDD_SETUPDIALOG;
 private _worldName = toLower worldName;
@@ -52,7 +52,7 @@ if (isNil {_display getVariable "validFactions"}) then
         {
             private _priority = getNumber (_x/"priority") + 0.01*_forEachIndex;
             private _maps = getArray (_x/"maps");
-            if (count _maps > 0) then { _priority = _priority + ([-2, 2] select (_worldName in _maps)) };
+            if (_maps isNotEqualTo []) then { _priority = _priority + ([-2, 2] select (_worldName in _maps)) };
             if !(_x call _fnc_factionLoaded) then { _priority = _priority - 100 };
             _factionSort pushBack [_priority, _x];
         } forEach _factions;
@@ -391,7 +391,7 @@ switch (_mode) do
         
         private _fnc_fillListBox = {
             params ["_listboxIDC", "_factions", "_selected"];
-            Debug_1("fillListBox called with %1 selected", _selected);
+            Debug_1("fillListBox called with %1 selected",_selected);
             private _listbox = _display displayCtrl _listboxIDC;
             if (_selected == "") then { _selected = _listBox lbData lbCurSel _listBox };		// remember previous faction selected
             _listBox lbSetCurSel -1;
@@ -435,13 +435,13 @@ switch (_mode) do
         // Add saved factions if valid
         // configNames of the occ/inv/reb/civ factions, written by setupLoadgameTab
         (_display getVariable "savedFactions") params ["_savedFactions", "_savedAddons", "_savedDLC"];
-        Debug_3("Saved factions: %1 Addons: %2 DLC: %3", _savedFactions, _savedAddons, _savedDLC);
+        Debug_3("Saved factions: %1 Addons: %2 DLC: %3",_savedFactions,_savedAddons,_savedDLC);
 
         private _failedFactions = [];
         {
             _sfact = A3A_SETUP_CONFIGFILE/"A3A"/"Templates"/_x;
-            if !(isClass _sfact) then { Info_1("Bad saved faction name %1", _x); _failedFactions pushBack _x };
-            if !(_sfact call _fnc_factionLoaded) then { Info_1("Saved faction %1 not loadable", _x); _failedFactions pushBack _x };
+            if !(isClass _sfact) then { Info_1("Bad saved faction name %1",_x); _failedFactions pushBack _x };
+            if !(_sfact call _fnc_factionLoaded) then { Info_1("Saved faction %1 not loadable",_x); _failedFactions pushBack _x };
             _factions#_forEachIndex pushBackUnique _sfact;				// does nothing if already in list
         } forEach _savedFactions;
 
@@ -498,7 +498,7 @@ switch (_mode) do
         // Add saved factions if valid
         // configNames of the occ/inv/reb/civ factions, written by setupLoadgameTab
         (_display getVariable "savedFactions") params ["_savedFactions", "_savedAddons", "_savedDLC"];
-        Debug_3("Saved factions: %1 Addons: %2 DLC: %3", _savedFactions, _savedAddons, _savedDLC);
+        Debug_3("Saved factions: %1 Addons: %2 DLC: %3",_savedFactions,_savedAddons,_savedDLC);
 
         // Should now set the addonvics & DLC tickboxes according to the save data
         private _addonCtrls = (_display displayCtrl A3A_IDC_SETUP_ADDONCONTENT_BOX) getVariable "checkCtrls";
@@ -508,20 +508,20 @@ switch (_mode) do
         {
             private _addon = _x;
             private _index = _addonCtrls findIf { _x getVariable "name" == _addon };
-            if (_index == -1) then { Error_1("Addon vics template %1 not found", _x); continue };
-            if !(ctrlEnabled (_addonCtrls#_index)) then { Error_1("Addon vics template %1 not loaded", _x); continue };
+            if (_index == -1) then { Error_1("Addon vics template %1 not found",_x); continue };
+            if !(ctrlEnabled (_addonCtrls#_index)) then { Error_1("Addon vics template %1 not loaded",_x); continue };
             (_addonCtrls#_index) cbSetChecked true;
         } forEach _savedAddons;
 
         {
             private _dlc = _x;
             private _index = _dlcCtrls findIf { _x getVariable "name" == _dlc };
-            if (_index == -1) then { Error_1("DLC %1 not loaded", _x); continue };
+            if (_index == -1) then { Error_1("DLC %1 not loaded",_x); continue };
             (_dlcCtrls#_index) cbSetChecked true;
         } forEach _savedDLC;
     };
 
     default {
-        Error_1("Called with unknown mode %1", _mode);
+        Error_1("Called with unknown mode %1",_mode);
     };
 };

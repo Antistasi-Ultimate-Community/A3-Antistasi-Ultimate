@@ -53,18 +53,18 @@ private _isTransport = _vehAttackCount < _vehCount;            // normal case, f
 private _landPosBlacklist = [];
 
 for "_i" from 1 to _vehCount do {
-    private _vehType = ObjNull;
+    private _vehType = objNull;
 
     // Attempt to grab veh types
     _vehType = selectRandomWeighted ([_supportPool, _transportPool] select _isTransport);
     if (isNil "_vehType") then {
-        Error_1("Failed to grab land vehicle, attempting to grab a transport vehicle.", _base);
+        Error("Failed to grab land vehicle, attempting to grab a transport vehicle.");
         _vehType = selectRandomWeighted _transportPool;
     };
 
     private _vehData = [_vehType, _troopType, _resPool, _landPosBlacklist, _side, _base, _targPos] call A3A_fnc_createAttackVehicle;
     if !(_vehData isEqualType []) exitWith {
-        Error_1("Failed to spawn land vehicle at marker %1", _base);
+        Error_1("Failed to spawn land vehicle at marker %1",_base);
     };          // couldn't create for some reason, assume we're out of spawn places?
 
     _vehicles pushBack (_vehData#0);

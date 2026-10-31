@@ -12,7 +12,7 @@ private _craterPositions = [];
 
 // Randomly select winning side
 private _winningSide = selectRandom [Occupants, Invaders];
-private _losingSide = if (_winningSide == Occupants) then {Invaders} else {Occupants};
+private _losingSide = [Occupants, Invaders] select (_winningSide == Occupants);
 private _winFaction = Faction(_winningSide);
 private _loseFaction = Faction(_losingSide);
 
@@ -25,7 +25,7 @@ if (isNil "_player") exitWith {
 };
 private _originPosition = position _player;
 
-Info_2("%1 will be used as center of the event at %2 position.", name _player, str _originPosition);
+Info_2("%1 will be used as center of the event at %2 position.",name _player,str _originPosition);
 
 private _frontLine = (outposts + milbases + airportsX + resourcesX + factories + citiesX) select { 
     [_x] call A3A_fnc_isFrontlineNoFIA && 
@@ -53,7 +53,7 @@ private _militaryPositions = (outposts + milbases + airportsX) apply {getMarkerP
 while {true} do {
     _road = _spawnPosition nearRoads _radiusX;
     
-    if (count _road > 0 && {_road findIf {
+    if (_road isNotEqualTo [] && {_road findIf {
         private _roadPos = position _x;
         (_roadPos distance2D _originPosition > 500) &&
         ({_roadPos distance2D _x < 700} count _cityPositions == 0) &&
@@ -71,9 +71,9 @@ if (count _road == 0) exitWith {
 };
 
 private _selectedRoad = _road select 0;
-private _roadcon = roadsConnectedto _selectedRoad;
+private _roadcon = roadsConnectedTo _selectedRoad;
 
-private _dirveh = if (count _roadcon > 0) then {
+private _dirveh = if (_roadcon isNotEqualTo []) then {
     [_selectedRoad, _roadcon select 0] call BIS_fnc_dirTo
 } else {
     random 360
@@ -167,7 +167,7 @@ private _fnc_findPos = {
         // Check collisions
         if (
             (_spawnedPositions findIf {_x distance2D _pos < 15} != -1) ||
-            (count (nearestObjects [_pos, ["All"], 7]) > 0)
+            ((nearestObjects [_pos, ["All"], 7]) isNotEqualTo [])
         ) then {_attempts = _attempts + 1; continue;};
 
         _spawnedPositions pushBack _pos;
@@ -311,7 +311,7 @@ private _fnc_createCrew = {
                     sleep random [5, 10, 20];
                     if (alive _unit && random 1 < 0.4) then {
                         private _tracks = A3A_Civilian_Amb_Tracks get "Fear";
-                        if (count _tracks > 0) then {
+                        if (_tracks isNotEqualTo []) then {
                             private _panicNoise = selectRandom _tracks;
                             [_unit, _panicNoise # 0] remoteExec ["say3D"];
                         };
@@ -412,7 +412,7 @@ private _spawnSurvivor = {
         [_unit] joinSilent _surenderGroup;
         
         private _tracks = A3A_Civilian_Amb_Tracks get "Fear";
-        if (count _tracks > 0) then {
+        if (_tracks isNotEqualTo []) then {
             private _panicNoise = selectRandom _tracks;
             [_unit, _panicNoise # 0] remoteExec ["say3D"];
         };
@@ -423,7 +423,7 @@ private _spawnSurvivor = {
                 sleep random [5, 10, 20];
                 if (alive _unit && random 1 < 0.4) then {
                     private _tracks = A3A_Civilian_Amb_Tracks get "Fear";
-                    if (count _tracks > 0) then {
+                    if (_tracks isNotEqualTo []) then {
                         private _panicNoise = selectRandom _tracks;
                         [_unit, _panicNoise # 0] remoteExec ["say3D"];
                     };
@@ -437,7 +437,7 @@ private _spawnSurvivor = {
             while {alive _unit} do {
                 private _movePos = _roadPos getPos [random 50, random 360];
                 _unit doMove _movePos;
-                sleep 120 + random 180;
+                sleep (120 + random 180);
             };
         };
     };

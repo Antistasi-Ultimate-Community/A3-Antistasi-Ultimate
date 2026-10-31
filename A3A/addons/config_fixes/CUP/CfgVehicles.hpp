@@ -100,7 +100,7 @@ class CfgVehicles
 	{
 		draconicTorqueXCoef = 2;
 	};
-	class CUP_L39_base : Plane_base_F
+	class CUP_L39_base : Plane_Base_F
 	{
 		draconicTorqueXCoef = 2;
 	};

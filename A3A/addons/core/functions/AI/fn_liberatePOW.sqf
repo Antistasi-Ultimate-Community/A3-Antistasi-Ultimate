@@ -16,7 +16,7 @@ _playerX playMove "";
 
 [_unit] join group _playerX;
 private _timeout = 10;
-waituntil {sleep 1; _timeout = _timeout-1; _timeout < 0 or (local _unit and group _unit == group _playerX)};
+waitUntil {sleep 1; _timeout = _timeout-1; _timeout < 0 or (local _unit and group _unit == group _playerX)};
 if (_timeout < 0) exitWith {};
 
 [_unit,"remove"] remoteExec ["A3A_fnc_flagaction",[teamPlayer,civilian],_unit];

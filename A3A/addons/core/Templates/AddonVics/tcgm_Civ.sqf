@@ -1,3 +1,5 @@
+#pragma hemtt ignore_variables ["_addon"]
+
 _addon set ["vehiclesCivCar", [
     "TCGM_Bike_oli",0.0     // Folding Bike (Olive)
     ,"TCGM_Bike_snd",0.0    // Folding Bike (Sand)

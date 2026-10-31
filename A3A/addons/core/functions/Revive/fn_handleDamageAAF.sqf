@@ -69,7 +69,7 @@ private _makeUnconscious =
 	_unit setVariable ["incapacitated",true,true];
 	_unit setVariable ["helpFailed", 0];
 	_unit setUnconscious true;
-	if (vehicle _unit != _unit) then
+	if (!isNull objectParent _unit) then
 	{
 		moveOut _unit;
 	};

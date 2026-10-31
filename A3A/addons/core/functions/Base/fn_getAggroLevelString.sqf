@@ -8,7 +8,7 @@ if(_level == 3) exitWith {localize "STR_info_bar_aggr_3"};
 if(_level == 4) exitWith {localize "STR_info_bar_aggr_4"};
 if(_level == 5) exitWith {localize "STR_info_bar_aggr_5"};
 
-Error_1("Bad level recieved, cannot generate string, was %1", _level);
+Error_1("Bad level recieved, cannot generate string, was %1",_level);
 
 
 "None"

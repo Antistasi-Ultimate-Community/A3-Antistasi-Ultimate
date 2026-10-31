@@ -1,3 +1,5 @@
+#pragma hemtt ignore_variables ["_fnc_saveNames","_fnc_createLoadoutData","_fnc_copyLoadoutData","_fnc_generateAndSaveUnitsToTemplate","_fnc_saveToTemplate"]/////////////////////////////////
+
 /////////////////////////////////
 //   Side Information - Reb   //
 ///////////////////////////////
@@ -7,7 +9,7 @@
 ["name", ""] call _fnc_saveToTemplate;
 
 ["flag", DEFAULT_FLAG] call _fnc_saveToTemplate; // Physical flag object classname. Rarely needs to change.
-["flagTexture", QPATHTOFOLDER(Templates\Templates\MOD\images\flag_FACTION_co.paa)] call _fnc_saveToTemplate; // Texture path applied to the physical flag. Can point to external files.
+//["flagTexture", QPATHTOFOLDER(Templates\Templates\MOD\images\flag_FACTION_co.paa)] call _fnc_saveToTemplate; // Texture path applied to the physical flag. Can point to external files.
 ["flagMarkerType", ""] call _fnc_saveToTemplate; // Marker from CfgMarkers.
 
 // ["petrosIdentity", createHashMapFromArray [

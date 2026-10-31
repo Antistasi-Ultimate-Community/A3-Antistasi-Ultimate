@@ -8,7 +8,7 @@ private _costs = server getVariable _typeX;
 private _defaultPrice = 1000;
 
 _costs = if (isNil "_costs") then {
-	Error_1("Invalid vehicle price :%1.", _typeX);
+	Error_1("Invalid vehicle price :%1.",_typeX);
 
 	0
 } else {
@@ -40,7 +40,7 @@ if (_costs isEqualTo 0 && {_costsBM isNotEqualTo 0}) then {
 };
 
 if (_costs <= 0) then { // if the cost is less than 0
-	Error_2("%1 was an invalid price. Defaulting to %2", _costs, _defaultPrice);
+	Error_2("%1 was an invalid price. Defaulting to %2",_costs,_defaultPrice);
 	_costs = _defaultPrice; // reset the cost to the default price
 };
 

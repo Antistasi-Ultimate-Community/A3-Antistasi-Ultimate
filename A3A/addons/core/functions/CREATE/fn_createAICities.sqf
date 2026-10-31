@@ -19,7 +19,7 @@ private _faction = Faction(_sideX);
 if ((markersX - controlsX - milAdministrationsX) findIf {(getMarkerPos _x inArea _markerX) and (sidesX getVariable [_x,sideUnknown] != _sideX)} != -1) exitWith {};
 _num = round (_num / 100);
 
-ServerInfo_1("Spawning City Patrol in %1", _markerX);
+ServerInfo_1("Spawning City Patrol in %1",_markerX);
 
 private _dataX = A3A_townData get _markerX;
 private _prestigeOPFOR = _dataX select 2;

@@ -18,7 +18,7 @@ if (isNil "_player") exitWith {
 
 private _originPosition = position _player;
 
-Info_2("%1 will be used as center of the event at %2 position.", name _player, str _originPosition);
+Info_2("%1 will be used as center of the event at %2 position.",name _player,str _originPosition);
 
 private _potentialOutposts = (outposts + milbases + airportsX + resourcesX + factories) select {
     sidesX getVariable [_x, sideUnknown] != teamPlayer && {(getMarkerPos _x) distance2D _player < distanceSPWN*5}
@@ -34,7 +34,7 @@ if ((_potentialOutposts isEqualTo []) && (_potentialControl isEqualTo [])) exitW
 
 private _outpost = locationNull;
 
-if ((random 100 <= 40) && !(_potentialControl isEqualTo [])) then {
+if ((random 100 <= 40) && _potentialControl isNotEqualTo []) then {
  	_outpost = selectRandom _potentialControl;
 } else {
 	_outpost = selectRandom _potentialOutposts;
@@ -73,7 +73,7 @@ private _heliVehicleData = [_actualspawnPosition, 90, _HeliClass, _side] call A3
 
 private _heliVehicle = _heliVehicleData select 0;
 private _lootCrateTest = [_ammoBoxType, _actualspawnPosition, 20, 5, true] call A3A_fnc_safeVehicleSpawn;
-if !(_heliVehicle canSlingLoad _lootCrateTest) exitwith {
+if !(_heliVehicle canSlingLoad _lootCrateTest) exitWith {
     Info("Your heli can't do shit, rerolling.");
     [VEH_SLINGLOADTRANSPORT] remoteExecCall ["SCRT_fnc_encounter_selectAndExecuteEvent", 2];
 };
@@ -94,7 +94,7 @@ if (_HeliClass == "O_Heli_Transport_04_F") then {
 		(_faction get "vehiclesMilitiaAPCs") + (_faction get "vehiclesAPCs") + (_faction get "vehiclesIFVs") + _csatPods);
 		_lootCrate = _lootcrateType createVehicle _actualspawnPosition;
 		deleteVehicle _lootCrate;
-		if (_heliVehicle canSlingLoad _lootCrate) exitwith {
+		if (_heliVehicle canSlingLoad _lootCrate) exitWith {
 			deleteVehicle _lootCrate;
 		};
 		deleteVehicle _lootCrate;
@@ -153,7 +153,7 @@ if (_HeliClass == "O_Heli_Transport_04_F") then {
 		(_faction get "vehiclesAA") + (_faction get "vehiclesLightTanks") + (_faction get "vehiclesMilitiaAPCs") + (_faction get "vehiclesAPCs") + (_faction get "vehiclesIFVs") + _regPods);
 		_lootCrate = _lootcrateType createVehicle _actualspawnPosition;
 		deleteVehicle _lootCrate;
-		if (_heliVehicle canSlingLoad _lootCrate) exitwith {
+		if (_heliVehicle canSlingLoad _lootCrate) exitWith {
 			deleteVehicle _lootCrate;
 		};
 		deleteVehicle _lootCrate;
@@ -191,7 +191,7 @@ if (_HeliClass == "O_Heli_Transport_04_F") then {
 sleep 1;
 private _heliVehicleData = [_actualspawnPosition, 90, _HeliClass, _side] call A3A_fnc_spawnVehicle;
 
-private _heliVehicle = _heliVehicleData select 0;
+_heliVehicleData params ["_heliVehicle", "_heliVehicleCrew", "_heliGroup"];
 _heliVehicle setSlingLoad _lootCrate;
 _lootCrate allowDamage false; ///not sure about this
 _heliVehicle setVelocity [20,0,0];
@@ -210,9 +210,7 @@ _heliVehicle flyInHeight _midHeight;
 _heliVehicle limitSpeed 150;
 [_heliVehicle, _side] call A3A_fnc_AIVEHinit;
 
-private _heliVehicleCrew = _heliVehicleData select 1;
 {[_x] call A3A_fnc_NATOinit} forEach _heliVehicleCrew;
-private _heliGroup = _heliVehicleData select 2;
 
 [_heliVehicle, localize "STR_marker_logistics_heli", false] spawn A3A_fnc_inmuneConvoy;	
 _groups pushBack _heliGroup;

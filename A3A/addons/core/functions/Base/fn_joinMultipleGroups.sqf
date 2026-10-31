@@ -12,7 +12,7 @@
 private _groups = param [0];
 private _groupName = param [1, groupId (_groups select 0)];
 
-if (_groups IsEqualTo []) exitWith {
+if (_groups isEqualTo []) exitWith {
 	grpNull;
 };
 

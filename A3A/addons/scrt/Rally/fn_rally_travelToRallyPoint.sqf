@@ -2,7 +2,7 @@ if (isNil "rallyProps" || {rallyProps isEqualTo []}) exitWith {
     [localize "STR_A3AP_rally_header", localize "STR_A3AP_rally_does_not_exists"] call SCRT_fnc_misc_deniedHint;
 };
 
-if (vehicle player != player) exitWith {
+if (!isNull objectParent player) exitWith {
     [localize "STR_A3AP_rally_header", localize "STR_A3AP_rally_occupied_veh"] call SCRT_fnc_misc_deniedHint;
 };
 
@@ -10,7 +10,7 @@ if (player getVariable ["incapacitated",false] || {!alive player}) exitWith {
     [localize "STR_A3AP_rally_header", localize "STR_A3AP_rally_unconscious"] call SCRT_fnc_misc_deniedHint;
 };
 
-if !((vehicle player getVariable "SA_Tow_Ropes") isEqualTo objNull) exitWith {
+if ((vehicle player getVariable "SA_Tow_Ropes") isNotEqualTo objNull) exitWith {
     [localize "STR_A3AP_rally_header", localize "STR_A3AP_rally_tow_rope"] call SCRT_fnc_misc_deniedHint;
 };
 

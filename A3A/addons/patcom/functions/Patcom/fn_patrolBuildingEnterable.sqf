@@ -23,10 +23,10 @@ FIX_LINE_NUMBERS()
 
 params ["_house"];
 
-private _enterable = !((_house buildingPos 0) isEqualTo [0,0,0]);
+private _enterable = ((_house buildingPos 0) isNotEqualTo [0,0,0]);
 
 // Check if the house is blacklisted
-if (_enterable && !((count PATCOM_Building_Blacklist) == 0)) then {
+if (_enterable && ((count PATCOM_Building_Blacklist) != 0)) then {
     if ((typeOf _house) in PATCOM_Building_Blacklist) then {
         _enterable = false;
     };

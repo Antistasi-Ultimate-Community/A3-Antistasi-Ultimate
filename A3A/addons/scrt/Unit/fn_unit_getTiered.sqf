@@ -64,6 +64,6 @@ private _categories = [
 
 private _tier = selectRandomWeighted _categories;
 
-Debug_2("Chosen %1 as tier category. tierWar is %2", _tier, tierWar);
+Debug_2("Chosen %1 as tier category. tierWar is %2",_tier,tierWar);
 
 _tier;

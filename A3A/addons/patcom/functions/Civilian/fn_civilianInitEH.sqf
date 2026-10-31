@@ -75,11 +75,11 @@ _unit addEventHandler ["Killed", {
         _nul = [-1,-1,getPosATL _victim] remoteExec ["A3A_fnc_citySupportChange",2];
     } else {
         if (isPlayer _killer) then {
-            if (_victim getVariable "unitType" == FactionGet(civ, "unitWorker")) then {_killer addRating 1000};
+            if (_victim getVariable "unitType" == FactionGet(civ,"unitWorker")) then {_killer addRating 1000};
             [-10,_killer] call A3A_fnc_addScorePlayer;
         };
         _multiplier = 1;
-        if ((_victim getVariable "unitType") == FactionGet(civ, "unitPress")) then {_multiplier = 3};
+        if ((_victim getVariable "unitType") == FactionGet(civ,"unitPress")) then {_multiplier = 3};
         switch (true) do {
             //Must be group, in case they're undercover.
             case (side group _killer == teamPlayer): {

@@ -20,7 +20,7 @@ if(!alive _vehicle) exitWith
 
 private _vehCrew = crew _vehicle;
 private _aliveCrew = _vehCrew select {alive _x};
-if(count _aliveCrew == 0) exitWith
+if(_aliveCrew isEqualTo []) exitWith
 {
     [localize "STR_A3A_Base_breachVeh_header", localize "STR_A3A_Base_breachVeh_no_crew"] call SCRT_fnc_misc_deniedHint;
     _vehicle lock false;
@@ -84,9 +84,10 @@ private _fn_selectExplosive =
 
 _index = -1;
 
-private _needed = FactionGet(reb, (if(_isTank) then {"breachingExplosivesTank"} else {"breachingExplosivesAPC"}));
+private _breachKey = ["breachingExplosivesAPC", "breachingExplosivesTank"] select _isTank;
+private _needed = FactionGet(reb,_breachKey);
 private _explo = [_needed, _magazineArray] call _fn_selectExplosive;
-if(!(_explo isEqualTo [])) then
+if(_explo isNotEqualTo []) then
 {
     _explosive = _explo select 0;
     _explosiveCount = _explo select 1;
@@ -126,7 +127,7 @@ _caller addEventHandler ["AnimDone",
 	if
   (
     (alive _vehicle) &&
-    {(_caller == vehicle _caller) &&
+    {(isNull objectParent _caller) &&
     {(_caller distance _vehicle < 8) &&
     {([_caller] call A3A_fnc_canFight) &&
     {(time <= (_caller getVariable ["timeToBreach",time])) &&
@@ -151,7 +152,7 @@ _caller removeAction _action;
 if
 (
   !alive _vehicle ||
-  {_caller != vehicle _caller || //TODO there was something about that on the optimisation page, look it up
+  {!isNull objectParent _caller ||
   {_caller distance _vehicle >= 8 ||
   {!([_caller] call A3A_fnc_canFight) ||
   {_caller getVariable ["cancelBreach",false]}}}}
@@ -175,7 +176,7 @@ for "_count" from 1 to _explosiveCount do
 [localize "STR_A3A_Base_breachVeh_header", localize "STR_A3A_Base_breachVeh_timer"] call A3A_fnc_customHint;
 sleep 10;
 
-private _hitPointsConfigPath = configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "HitPoints";
+private _hitPointsConfigPath = (configOf _vehicle) >> "HitPoints";
 
 private _hullHitPoint = getText (_hitPointsConfigPath >> "HitHull" >> "name");
 private _currentDamage = _vehicle getHit _hullHitPoint;

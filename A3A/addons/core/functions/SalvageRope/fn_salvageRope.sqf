@@ -4,7 +4,7 @@ private _filename = "fn_salvageRope.sqf";
 A3A_SR_canDeployWinch = { //can deploy winch if player is not in a vehicle, is within 10m, theres no rope deployed yet and the vehicle can load cargo
     private _vehicle = cursorTarget;
     if (_vehicle isKindOf "Ship") then {
-        vehicle player == player && player distance _vehicle < 10 && isNil {_vehicle getVariable "WinchRope"} && !([_vehicle, boxX] call A3A_Logistics_fnc_canLoad isEqualTo -7);
+        isNull objectParent player && player distance _vehicle < 10 && isNil {_vehicle getVariable "WinchRope"} && ([_vehicle, boxX] call A3A_Logistics_fnc_canLoad isNotEqualTo -7);
     } else {
         false;
     };
@@ -65,7 +65,7 @@ A3A_SR_canStow = { //can stow when the player is not in a vehicle, is within 10m
     private _helper = _vehicle getVariable ["WinchHelper", objNull];
     if (isNull _helper) exitWith {false};//this is the case when retrieving cargo
     private _attachedPlayer = attachedTo _helper;
-    vehicle player == player && player distance _vehicle < 10 && (!alive _attachedPlayer || player == _attachedPlayer); //only attached player unless dead
+    isNull objectParent player && player distance _vehicle < 10 && (!alive _attachedPlayer || player == _attachedPlayer); //only attached player unless dead
 };
 
 A3A_SR_stowRope = {
@@ -81,8 +81,8 @@ A3A_SR_LoadSalvage = {
     [(localize "STR_antistasi_schat_loading_cargo")] remoteExec ["systemChat"];
     _return = [_vehicle, _cargo] call A3A_Logistics_fnc_canLoad;
     if (_return isEqualType 0) exitWith {
-        private _cargoName = getText (configFile >> "CfgVehicles" >> typeOf _object >> "displayName");
-        private _vehicleName = getText (configFile >> "CfgVehicles" >> typeOf _vehicle >> "displayName");
+        private _cargoName = getText (configOf _object >> "displayName");
+        private _vehicleName = getText (configOf _vehicle >> "displayName");
         [localize "STR_A3A_Logistics_header", format [localize "STR_A3A_Logistics_tryLoad_not_enough_space", _vehicleName, _cargoName]] remoteExec ["A3A_fnc_customHint", remoteExecutedOwner];
     };
     _return spawn A3A_Logistics_fnc_load;
@@ -153,7 +153,7 @@ A3A_SR_addplayerWinchActions = {
 [] spawn {
     private _missionComplete = false;
     while {!_missionComplete} do {
-        if (!isNull player && isplayer player) then {
+        if (!isNull player && isPlayer player) then {
             if !(player getVariable ["SalvageRopeAction",false]) then {
                 [] call A3A_SR_addplayerWinchActions;
                 player setVariable ["SalvageRopeAction",true];

@@ -6,9 +6,9 @@ private _disabledPlayerDamage = false;
 player allowDamage false;
 format [localize "STR_hints_new_game_petros_dead_header",name petros] hintC format [localize "STR_hints_new_game_petros_dead_text",name petros];
 
-hintC_arr_EH = findDisplay 72 displayAddEventHandler ["unload",{
+hintC_arr_EH = findDisplay 72 displayAddEventHandler ["Unload",{
 	_nul = _this spawn {
-		_this select 0 displayRemoveEventHandler ["unload", hintC_arr_EH];
+		_this select 0 displayRemoveEventHandler ["Unload", hintC_arr_EH];
 		hintSilent "";
 	};
 }];
@@ -34,11 +34,11 @@ private _positionIsInvalid = true;
 while {_positionIsInvalid} do {
 	positionClickedDuringHQPlacement = [];
 	onMapSingleClick "positionClickedDuringHQPlacement = _pos;";
-	waitUntil {sleep 1; (count positionClickedDuringHQPlacement > 0) or (not visiblemap)};
+	waitUntil {sleep 1; (positionClickedDuringHQPlacement isNotEqualTo []) or (not visibleMap)};
 	onMapSingleClick "";
 
 	//If they quit the map, keep HQ where it is.
-	if (not visiblemap) exitWith {};
+	if (not visibleMap) exitWith {};
 
 	//Assume the position chosen is valid.
 	_positionIsInvalid = false;
@@ -74,7 +74,7 @@ player allowDamage true;
 {deleteMarkerLocal _x} forEach _mrkDangerZone;
 
 //If we're still in the map, we chose a place.
-if (visiblemap) then {
+if (visibleMap) then {
 	_controlsX = controlsX select {!(isOnRoad (getMarkerPos _x))};
 	{
 		if (getMarkerPos _x distance _positionClicked < distanceSPWN) then {
@@ -83,7 +83,7 @@ if (visiblemap) then {
 	} forEach _controlsX;
 	[_positionClicked] remoteExec ["A3A_fnc_createPetros", 2];
 	[_positionClicked, false] remoteExec ["A3A_fnc_relocateHQObjects", 2];
-	openmap [false,false];
+	openMap [false,false];
 
 	// Make sure petros is actually placed before we signal that we're done placing
 	sleep 5;

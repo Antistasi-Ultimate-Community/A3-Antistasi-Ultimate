@@ -55,7 +55,7 @@ _truckX setVariable ["destinationX",_nameDest,true];
 
 waitUntil {sleep 1; dateToNumber date > _dateLimitNum or {spawner getVariable _markerX != 2}};
 
-if ((spawner getVariable _markerX != 2) and {!(sidesX getVariable [_markerX,sideUnknown] == teamPlayer)}) then {
+if ((spawner getVariable _markerX != 2) and {(sidesX getVariable [_markerX,sideUnknown] != teamPlayer)}) then {
 	private _typeGroup = [
 	_faction get "groupPoliceTeam",
 		_faction get "groupPoliceSquad"
@@ -70,15 +70,15 @@ if ((spawner getVariable _markerX != 2) and {!(sidesX getVariable [_markerX,side
 
 waitUntil {sleep 1; (dateToNumber date > _dateLimitNum) or ((_truckX distance _positionX < 40) and (isNull attachedTo _truckX) and (isNull ropeAttachedTo _truckX)) or (isNull _truckX)};
 
-private _bonus = if (_difficultX) then {2} else {1};
+private _bonus = [1, 2] select (_difficultX);
 if ((dateToNumber date > _dateLimitNum) or {isNull _truckX}) then {
 	[_taskId, "SUPP", "FAILED"] call A3A_fnc_taskSetState;
 	[5*_bonus,-5*_bonus,_positionX] remoteExec ["A3A_fnc_citySupportChange",2];
 	[-10*_bonus,theBoss] call A3A_fnc_addScorePlayer;
 } else {
-	private _countX = if (_difficultX) then {90} else {180};
+	private _countX = [180, 90] select (_difficultX);
 
-	if (_difficultX && {spawner getVariable _markerX != 2 && {!(sidesX getVariable [_markerX,sideUnknown] == teamPlayer)}}) then {
+	if (_difficultX && {spawner getVariable _markerX != 2 && {(sidesX getVariable [_markerX,sideUnknown] != teamPlayer)}}) then {
 		Info("Rebels in area, spawning additional group.");
 
 		private _typeGroup = [
@@ -88,7 +88,7 @@ if ((dateToNumber date > _dateLimitNum) or {isNull _truckX}) then {
 
 		private _group2Position = [_positionX, 450, 700, 0, 0] call BIS_fnc_findSafePos;
 		private _groupX2 = [_group2Position, Occupants, _typeGroup] call A3A_fnc_spawnGroup;
-		{[_x] call A3A_fnc_NATOinit} forEach units _groupX;
+		{[_x] call A3A_fnc_NATOinit} forEach units _groupX2;
 		_groups pushBack _groupX2;
 
 		private _groupX2WP = _groupX2 addWaypoint [(position _truckX), 0];
@@ -106,7 +106,7 @@ if ((dateToNumber date > _dateLimitNum) or {isNull _truckX}) then {
 			if (side _x == Occupants and _x distance _positionX < distanceSPWN) then {
 				if (_x distance _positionX < 300) then {_x doMove _positionX} else {_x reveal [_friendX,4]};
 			};
-			if ((side _x == civilian) and (_x distance _positionX < 300) and (vehicle _x == _x)) then {_x doMove position _truckX};
+			if ((side _x == civilian) and (_x distance _positionX < 300) and (isNull objectParent _x)) then {_x doMove position _truckX};
 		} forEach allUnits;
 	} forEach ([300,0,_truckX,teamPlayer] call A3A_fnc_distanceUnits);
 
@@ -186,7 +186,7 @@ if ((dateToNumber date > _dateLimitNum) or {isNull _truckX}) then {
 missionNamespace setVariable ["A3A_supplyMissionActive", nil, true];
 
 deleteVehicle _truckX;
-private _emptybox = "Land_Pallet_F" createVehicle (getpos _truckX);
+private _emptybox = "Land_Pallet_F" createVehicle (getPos _truckX);
 [_emptybox, true] remoteExec[QFUNCMAIN(despawnQueueEntity), 2];
 
 [_taskId, "SUPP", 900] spawn A3A_fnc_taskDelete;

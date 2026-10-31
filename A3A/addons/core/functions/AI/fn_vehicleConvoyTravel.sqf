@@ -14,7 +14,7 @@ Parameters:
 */
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
-params ["_vehicle", "_route", "_convoy", "_maxSpeed", ["_critical", false], ["_isQRF", false], ["_followDistances", [15, 30]], ["_leadVehicle", ObjNull]];
+params ["_vehicle", "_route", "_convoy", "_maxSpeed", ["_critical", false], ["_isQRF", false], ["_followDistances", [15, 30]], ["_leadVehicle", objNull]];
 
 private _maxSpeedOriginal = _maxSpeed;
 
@@ -40,13 +40,13 @@ _driverGroup setBehaviour "CARELESS";
 _vehicle setEffectiveCommander (driver _vehicle);
 
 // Navigation setup
-private _destination = _route select (count _route - 1);
+private _destination = _route select -1;
 private _accuracy = 50;
 private _currentNode = 0;
 private _nextPos = _route select _currentNode;
 private _waypoint = _driverGroup addWaypoint [ATLToASL _nextPos, -1, 0];
 _driverGroup setCurrentWaypoint _waypoint;
-private _timeout = time + (_vehicle distance2d _nextPos);
+private _timeout = time + (_vehicle distance2D _nextPos);
 
 while {true} do
 {
@@ -54,7 +54,7 @@ while {true} do
     private _vehIndex = _convoy find _vehicle;
 
     // Exit conditions
-    if (!canMove _vehicle || !alive driver _vehicle || { lifestate driver _vehicle == "INCAPACITATED" }) exitWith {
+    if (!canMove _vehicle || !alive driver _vehicle || { lifeState driver _vehicle == "INCAPACITATED" }) exitWith {
         ServerInfo("Vehicle or driver died during travel, abandoning");
     };
     if (_vehIndex == -1) exitWith {};				// external abort
@@ -78,7 +78,7 @@ while {true} do
         _nextPos = _route select _currentNode;
         _waypoint setWaypointPosition [ATLToASL _nextPos, -1];
         _driverGroup setCurrentWaypoint _waypoint;
-        _timeout = time + (_vehicle distance2d _nextPos);
+        _timeout = time + (_vehicle distance2D _nextPos);
     };
     if (!_critical && time > _timeout) exitWith {
         ServerInfo("Vehicle stuck during travel, abandoning");
@@ -113,7 +113,7 @@ while {true} do
         // prevent some off-road passing
         if (_dist < (_convoyDistanceMin * 1.5)) then {
             private _followDir = (getPos _vehicle) vectorFromTo (getPos _followVeh);
-            private _targDir = (getpos _vehicle) vectorFromTo _nextPos;
+            private _targDir = (getPos _vehicle) vectorFromTo _nextPos;
             if (_followDir vectorDotProduct _targDir <= 0) then {_dist = 0};
         };
 
@@ -129,7 +129,7 @@ while {true} do
         };
 
         _vehicle limitSpeed _speed;
-        if (_dist < _convoyDistanceMax) then { _timeout = time + (_vehicle distance2d _nextPos) };
+        if (_dist < _convoyDistanceMax) then { _timeout = time + (_vehicle distance2D _nextPos) };
 
         //diag_log format ["Vehicle %1, follow %2, dist %3, speed %4", _vehicle, _followVeh, _dist, _speed];
     };

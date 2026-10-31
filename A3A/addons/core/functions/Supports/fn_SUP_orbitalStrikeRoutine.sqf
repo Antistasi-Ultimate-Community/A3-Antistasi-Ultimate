@@ -39,7 +39,7 @@ private _players = allPlayers select {(_x distance2D _impactPosition) < 3000};
 
 [_strikeObject] remoteExec ["A3A_fnc_SUP_orbitalStrikeBeamEffects", _players];
 
-private _beamLight = "#lightpoint" createVehicle (getpos _strikeObject);
+private _beamLight = "#lightpoint" createVehicle (getPos _strikeObject);
 _beamLight setLightBrightness 150;
 _beamLight setLightAmbient[0,0.5,0.8];
 _beamLight setLightColor[0,0.5,0.8];
@@ -51,10 +51,10 @@ _strikeObject enableSimulation false;
 [_strikeObject, _impactPosition] remoteExec ["A3A_fnc_SUP_orbitalStrikeImpactEffects", _players];
 
 //Impact effects
-private _nearObjects = (ASLtoAGL _impactPosition) nearObjects ["Static", 200];
-_nearObjects append ((ASLtoAGL _impactPosition) nearEntities [["Man", "AllVehicles"], 250]);
-_nearObjects append ( nearestTerrainObjects [ASLtoAGL _impactPosition, ["BUSH", "TREE", "WALL", "FENCE", "POWER LINES", "FUELSTATION"], 150, true]);
-Info_1("Found %1 objects to destroy", count _nearObjects);
+private _nearObjects = (ASLToAGL _impactPosition) nearObjects ["Static", 200];
+_nearObjects append ((ASLToAGL _impactPosition) nearEntities [["Man", "AllVehicles"], 250]);
+_nearObjects append ( nearestTerrainObjects [ASLToAGL _impactPosition, ["BUSH", "TREE", "WALL", "FENCE", "POWER LINES", "FUELSTATION"], 150, true]);
+Info_1("Found %1 objects to destroy",count _nearObjects);
 private _destroyCounter = 0;
 {
 
@@ -124,7 +124,7 @@ private _bulkMarkerUpdate = [];
 private _citiesInRange = (citiesX - destroyedSites) select {((getMarkerPos _x) distance2D _impactPosition) < 200};
 {
     ["TaskFailed", ["", format [localize "STR_notifiers_orbitalStrike_destruct", [_x] call A3A_fnc_localizar]]] remoteExec ["BIS_fnc_showNotification",teamPlayer];
-    destroyedSites = destroyedSites + [_x];
+    destroyedSites pushBackUnique _x;
 	publicVariable "destroyedSites";
     sidesX setVariable [_x, Invaders, true];
     garrison setVariable [_x, [], true];

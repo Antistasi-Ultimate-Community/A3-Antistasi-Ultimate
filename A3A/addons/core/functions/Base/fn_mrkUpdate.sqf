@@ -255,7 +255,7 @@ if ([_originalName] call A3U_fnc_isMarkerHidden || {_isSyndicateHeadquarters}) t
     _hoverMarkers pushBackUnique _dummyName;
     _hoverMarkers pushBackUnique _originalName;
     
-    _visibleMarkerName setMarkerAlphaLocal (if (_isMilAdmin) then {0.75} else {1});
+    _visibleMarkerName setMarkerAlphaLocal ([1, 0.75] select (_isMilAdmin));
 };
 
 private _specialDefinitions = [

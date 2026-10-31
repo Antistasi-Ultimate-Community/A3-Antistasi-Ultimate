@@ -7,27 +7,6 @@
     #define FORWARD(x) import x
 #endif // __A3ACORE_IS_3DEN__
 
-FORWARD(IGUIBack);
-FORWARD(RscActiveText);
-FORWARD(RscButton);
-FORWARD(RscButtonMenu);
-FORWARD(RscButtonMenuCancel);
-FORWARD(RscButtonMenuOK);
-FORWARD(RscCheckbox);
-FORWARD(RscCombo);
-FORWARD(RscControlsGroup);
-FORWARD(RscEdit);
-FORWARD(RscFrame);
-FORWARD(RscListbox);
-FORWARD(RscListNBox);
-FORWARD(RscPicture);
-FORWARD(RscPictureKeepAspect);
-FORWARD(RscShortcutButton);
-FORWARD(RscShortcutButtonMain);
-FORWARD(RscSlider);
-FORWARD(RscStructuredText);
-FORWARD(RscText);
-FORWARD(RscTextCheckBox);
 
 #define UI_FONT_DEFAULT font = "PuristaMedium"
 #include "ui_const.hpp"

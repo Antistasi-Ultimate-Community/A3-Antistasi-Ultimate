@@ -48,7 +48,7 @@ if(_moneyEarned > 0) then {
 
 
 private _todo = _weaponsX + _ammunition + _items + _backpcks;
-private _vehName = getText (configFile >> "CfgVehicles" >> (typeof _truckX) >> "displayName");
+private _vehName = getText (configOf _truckX >> "displayName");
 
 if (count _todo < 1) exitWith
 	{

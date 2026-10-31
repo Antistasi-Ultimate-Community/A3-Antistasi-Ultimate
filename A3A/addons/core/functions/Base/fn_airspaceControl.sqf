@@ -81,7 +81,7 @@ private _fn_sendSupport =
     params ["_vehicle", "_marker", "_threat"];
     private _markerSide = sidesX getVariable [_marker, sideUnknown];
 
-    ServerDebug_2("Vehicle %1 violated airspace of marker %2", typeof _vehicle, _marker);
+    ServerDebug_2("Vehicle %1 violated airspace of marker %2",typeOf _vehicle,_marker);
 
     // Add threat to vehicle on server side. Hopefully faster than the requestSupport call
     [_markerSide, false, _threat, _vehicle] remoteExecCall ["A3A_fnc_addRecentDamage", 2];
@@ -126,7 +126,7 @@ private _fn_getMarkersInRange =
 
 
 //While not in garage and alive and crewed we check what the aircraft is doing
-while {!(isNull _vehicle) && {alive _vehicle && {count (crew _vehicle) != 0}}} do
+while {!(isNull _vehicle) && {alive _vehicle && {(crew _vehicle) isNotEqualTo []}}} do
 {
     // If we already made a call, wait until the timeout
     if (time < _supportCallAt) then { continue };
@@ -218,12 +218,12 @@ while {!(isNull _vehicle) && {alive _vehicle && {count (crew _vehicle) != 0}}} d
         _inDetectionRangeMilbase = _milbasesInRange;
 
         switch (true) do {
-            case (count _newAirports > 0): {
+            case (_newAirports isNotEqualTo []): {
                 //Vehicle detected by another airport (or multiple, lucky in that case)
                 [_vehicle, _airportsInRange select 0, 30] call _fn_sendSupport;
                 continue;
             };
-            case (count _newMilbases > 0): {
+            case (_newMilbases isNotEqualTo []): {
                 //Vehicle detected by another milbase (or multiple, lucky in that case)
                 [_vehicle, _milbasesInRange select 0, 30] call _fn_sendSupport;
                 continue;
@@ -239,7 +239,7 @@ while {!(isNull _vehicle) && {alive _vehicle && {count (crew _vehicle) != 0}}} d
                     private _newOutposts = _outpostsInRange - _inDetectionRangeOutpost;
                     _inDetectionRangeOutpost = _outpostsInRange;
 
-                    if(count _newOutposts > 0) then
+                    if(_newOutposts isNotEqualTo []) then
                     {
                         //Vehicle detected by another outpost, call support if possible
                         [_vehicle, _outpostsInRange select 0, 10] call _fn_sendSupport;

@@ -49,7 +49,7 @@ _groupVeh = group driver _uav;
 		};
 #endif
 
-_wp = _groupVeh addWayPoint [_suppCenter, 0];
+_wp = _groupVeh addWaypoint [_suppCenter, 0];
 _wp setWaypointBehaviour "AWARE";
 /* _wp setWaypointType "SAD"; */
 _wp setWaypointType "LOITER";
@@ -65,10 +65,10 @@ private _enemySide = [Occupants, Invaders] select (_side == Invaders);
 
 while {time < _timeout && canMove _uav} do
 {
-    waitUntil { sleep 5; _uav distance2d _suppCenter < 1200 || !alive _uav};
+    waitUntil { sleep 5; _uav distance2D _suppCenter < 1200 || !alive _uav};
     // check if launcher/crew are intact
     if !(canFire _uav and gunner _uav call A3A_fnc_canFight || alive _uav) exitWith {
-        Info_1("%1 has been destroyed or disabled, aborting routine", _supportName);
+        Info_1("%1 has been destroyed or disabled, aborting routine",_supportName);
     };
 
     private _friends = units _side inAreaArray [_suppCenter, 1000, 1000];
@@ -91,7 +91,7 @@ while {time < _timeout && canMove _uav} do
 
     // check if we're past the active time/missiles
     if (time > _timeout) exitWith {
-        Info_1("%1 has timed out, aborting", _supportName);
+        Info_1("%1 has timed out, aborting",_supportName);
     };
 
     sleep 10;
@@ -105,13 +105,13 @@ _suppData set [4, 0];           // Set activesupport radius to zero, prevents ad
 //Have the plane fly back home
 if (canMove _uav) then
 {
-    while {count waypoints _groupVeh > 0} do { deleteWaypoint [_groupVeh, 0] };
+    while {waypoints _groupVeh isNotEqualTo []} do { deleteWaypoint [_groupVeh, 0] };
     private _wpBase = _groupVeh addWaypoint [markerPos _airport, 0];
     _wpBase setWaypointSpeed "NORMAL";
     _wpBase setWaypointBehaviour "CARELESS";
     _groupVeh setCurrentWaypoint _wpBase;
 
-    private _timeout = time + (_uav distance2d _spawnPos) / 20;
+    private _timeout = time + (_uav distance2D _spawnPos) / 20;
     waitUntil { sleep 2; (currentWaypoint _groupVeh != 0) or (time > _timeout) };
     if (time > _timeout) exitWith {};
     { deleteVehicle _x } forEach (units _groupVeh);

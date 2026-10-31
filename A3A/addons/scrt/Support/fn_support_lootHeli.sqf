@@ -42,10 +42,10 @@ clearMagazineCargoGlobal _lootCrate;
 _heli setSlingLoad _lootCrate;
 
 private _areaMarker = createMarkerLocal ["LootHeliAreaGlobalMarker", _positionDestination];
-_areaMarker setMarkerShape "ELLIPSE";
-_areaMarker setMarkerSize [250,250];
-_areaMarker setMarkerType "hd_warning";
-_areaMarker setMarkerColor "colorCivilian";
+_areaMarker setMarkerShapeLocal "ELLIPSE";
+_areaMarker setMarkerSizeLocal [250,250];
+_areaMarker setMarkerTypeLocal "hd_warning";
+_areaMarker setMarkerColorLocal "colorCivilian";
 _areaMarker setMarkerBrush "Grid";
 
 driver _heli sideChat (localize "STR_chats_loot_run");
@@ -64,7 +64,7 @@ waitUntil {_heli distance2D _positionDestination < 250 || {!alive _heli || !(can
 if (!alive _heli || !(canMove _heli) || {!([(driver _heli)] call A3A_fnc_canFight)}) exitWith {
     deleteMarker _areaMarker;
     deleteMarker "LootHeliAreaGlobalMarker";
-	Info_2("Helicopter is unable to loot area. Positions: %1, %2", str _positionOrigin, str _positionDestination);
+	Info_2("Helicopter is unable to loot area. Positions: %1, %2",str _positionOrigin,str _positionDestination);
 
 	if (isSupportMarkerPlacingLocked) then {
 		isSupportMarkerPlacingLocked = false;
@@ -83,7 +83,7 @@ waitUntil {time > _timeOut};
 if (!alive _heli || !(canMove _heli) || {!([(driver _heli)] call A3A_fnc_canFight)}) exitWith {
     deleteMarker _areaMarker;
     deleteMarker "LootHeliAreaGlobalMarker";
-	Info_2("Helicopter is unable to loot area. Positions: %1, %2", str _positionOrigin, str _positionDestination);
+	Info_2("Helicopter is unable to loot area. Positions: %1, %2",str _positionOrigin,str _positionDestination);
 
 	if (isSupportMarkerPlacingLocked) then {
 		isSupportMarkerPlacingLocked = false;

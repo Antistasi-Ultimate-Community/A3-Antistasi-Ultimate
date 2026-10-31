@@ -40,14 +40,14 @@ if(_canFloat && (_returnSurfaceASL select 2) < 0) then { \
 }; \
 
 #define SA_Find_Surface_ASL_Under_Model(_object,_modelOffset,_returnSurfaceASL,_canFloat) \
-SA_Find_Surface_ASL_Under_Position(_object, (_object modelToWorldVisual _modelOffset), _returnSurfaceASL,_canFloat);
+SA_Find_Surface_ASL_Under_Position(_object,(_object modelToWorldVisual _modelOffset),_returnSurfaceASL,_canFloat);
 
 #define SA_Find_Surface_AGL_Under_Model(_object,_modelOffset,_returnSurfaceAGL,_canFloat) \
 SA_Find_Surface_ASL_Under_Model(_object,_modelOffset,_returnSurfaceAGL,_canFloat); \
-_returnSurfaceAGL = ASLtoAGL _returnSurfaceAGL;
+_returnSurfaceAGL = ASLToAGL _returnSurfaceAGL;
 
 #define SA_Get_Cargo(_vehicle,_cargo) \
-if( count (ropeAttachedObjects _vehicle) == 0 ) then { \
+if((ropeAttachedObjects _vehicle) isEqualTo []) then { \
 	_cargo = objNull; \
 } else { \
 	_cargo = ((ropeAttachedObjects _vehicle) select 0) getVariable ["SA_Cargo",objNull]; \
@@ -67,7 +67,7 @@ SA_Simulate_Towing_Speed = {
 
 	private ["_runSimulation","_currentCargo","_maxVehicleSpeed","_maxTowedVehicles","_vehicleMass"];
 
-	_maxVehicleSpeed = getNumber (configFile >> "CfgVehicles" >> typeOf _vehicle >> "maxSpeed");
+	_maxVehicleSpeed = getNumber (configOf _vehicle >> "maxSpeed");
 	_vehicleMass = 1000 max (getMass _vehicle);
 	_maxTowedCargo = missionNamespace getVariable ["SA_MAX_TOWED_CARGO",2];
 	_runSimulation = true;
@@ -132,8 +132,8 @@ SA_Simulate_Towing = {
 	private ["_cargoCorner1AGL","_cargoCorner1ASL","_cargoCorner2AGL","_cargoCorner2ASL","_cargoCorner3AGL","_cargoCorner3ASL","_cargoCorner4AGL","_cargoCorner4ASL","_surfaceNormal1","_surfaceNormal2","_surfaceNormal"];
 	private ["_cargoCenterASL","_surfaceHeight","_surfaceHeight2","_maxSurfaceHeight"];
 
-	_maxVehicleSpeed = getNumber (configFile >> "CfgVehicles" >> typeOf _vehicle >> "maxSpeed");
-	_cargoCanFloat = if( getNumber (configFile >> "CfgVehicles" >> typeOf _cargo >> "canFloat") == 1 ) then { true } else { false };
+	_maxVehicleSpeed = getNumber (configOf _vehicle >> "maxSpeed");
+	_cargoCanFloat = getNumber (configOf _cargo >> "canFloat") == 1;
 
 	private ["_cargoCenterOfMassAGL","_cargoModelCenterGroundPosition"];
 	SA_Find_Surface_AGL_Under_Model(_cargo,getCenterOfMass _cargo,_cargoCenterOfMassAGL,_cargoCanFloat);
@@ -233,7 +233,7 @@ SA_Simulate_Towing = {
 			};
 
 			// Calculate adjusted surface height based on surface normal (prevents vehicle from clipping into ground)
-			_cargoCenterASL = AGLtoASL (_cargo modelToWorldVisual [0,0,0]);
+			_cargoCenterASL = AGLToASL (_cargo modelToWorldVisual [0,0,0]);
 			_cargoCenterASL set [2,0];
 			_surfaceHeight = ((_cargoCorner1ASL vectorAdd ( _cargoCenterASL vectorMultiply -1)) vectorDotProduct _surfaceNormal1) /  ([0,0,1] vectorDotProduct _surfaceNormal1);
 			_surfaceHeight2 = ((_cargoCorner1ASL vectorAdd ( _cargoCenterASL vectorMultiply -1)) vectorDotProduct _surfaceNormal2) /  ([0,0,1] vectorDotProduct _surfaceNormal2);
@@ -317,10 +317,10 @@ SA_Get_Corner_Points = {
 			sa_tow_debug_arrow_3 = "Sign_Arrow_F" createVehicleLocal [0,0,0];
 			sa_tow_debug_arrow_4 = "Sign_Arrow_F" createVehicleLocal [0,0,0];
 		};
-		sa_tow_debug_arrow_1 setPosASL  AGLtoASL (_vehicle modelToWorldVisual _rearCorner);
-		sa_tow_debug_arrow_2 setPosASL  AGLtoASL (_vehicle modelToWorldVisual _rearCorner2);
-		sa_tow_debug_arrow_3 setPosASL  AGLtoASL (_vehicle modelToWorldVisual _frontCorner);
-		sa_tow_debug_arrow_4 setPosASL  AGLtoASL (_vehicle modelToWorldVisual _frontCorner2);
+		sa_tow_debug_arrow_1 setPosASL  AGLToASL (_vehicle modelToWorldVisual _rearCorner);
+		sa_tow_debug_arrow_2 setPosASL  AGLToASL (_vehicle modelToWorldVisual _rearCorner2);
+		sa_tow_debug_arrow_3 setPosASL  AGLToASL (_vehicle modelToWorldVisual _frontCorner);
+		sa_tow_debug_arrow_4 setPosASL  AGLToASL (_vehicle modelToWorldVisual _frontCorner2);
 	};
 
 	[_rearCorner,_rearCorner2,_frontCorner,_frontCorner2];
@@ -364,8 +364,8 @@ SA_Attach_Tow_Ropes = {
 			
 			if (newCarTowing && 
 				{(_cargo call A3A_Logistics_fnc_getCargo) isEqualTo [] && 
-				{toLowerANSI getText(configFile >> "CfgVehicles" >> typeOf _cargo >> "simulation") isEqualTo "carx" && 
-				{toLowerANSI getText(configFile >> "CfgVehicles" >> typeOf _vehicle >> "simulation") in ["carx", "tankx"]}}}
+				{toLowerANSI getText(configOf _cargo >> "simulation") isEqualTo "carx" && 
+				{toLowerANSI getText(configOf _vehicle >> "simulation") in ["carx", "tankx"]}}}
 			) then {
 				_cargo setTowParent _vehicle;
 				private _driver = driver _cargo;
@@ -394,7 +394,7 @@ SA_Attach_Tow_Ropes = {
 			};
 
 			// capture empty vehicles when attached
-			if (count crew _cargo == 0) then {
+			if (crew _cargo isEqualTo []) then {
 				[_cargo, side group _player, true] remoteExec ["A3A_fnc_vehKilledOrCaptured", 2];
 			};
 		};
@@ -406,7 +406,7 @@ SA_Attach_Tow_Ropes = {
 SA_Take_Tow_Ropes = {
 	params ["_vehicle","_player"];
 	if(local _vehicle) then {
-		Debug_1("Take Tow Ropes Called %1", _this);
+		Debug_1("Take Tow Ropes Called %1",_this);
 		private ["_existingTowRopes","_hitchPoint","_rope"];
 		_existingTowRopes = _vehicle getVariable ["SA_Tow_Ropes",[]];
 		if(count _existingTowRopes == 0) then {
@@ -426,7 +426,7 @@ SA_Pickup_Tow_Ropes = {
 		{
 			private _attachedObj = _x;
 
-			if (newCarTowing && {toLowerANSI getText(configFile >> "CfgVehicles" >> typeOf _attachedObj >> "simulation") isEqualTo "carx"}) then {
+			if (newCarTowing && {toLowerANSI getText(configOf _attachedObj >> "simulation") isEqualTo "carx"}) then {
 				_attachedObj lockDriver false;
 				_attachedObj setTowParent objNull;
 				_attachedObj disableBrakes false;
@@ -523,7 +523,7 @@ SA_Attach_Tow_Ropes_Action_Check = {
 SA_Can_Attach_Tow_Ropes = {
 	params ["_vehicle","_cargo"];
 	if(!isNull _vehicle && !isNull _cargo) then {
-		[_vehicle,_cargo] call SA_Is_Supported_Cargo && vehicle player == player && player distance _cargo < 10 && _vehicle != _cargo;
+		[_vehicle,_cargo] call SA_Is_Supported_Cargo && isNull objectParent player && player distance _cargo < 10 && _vehicle != _cargo;
 	} else {
 		false;
 	};
@@ -560,7 +560,7 @@ SA_Can_Take_Tow_Ropes = {
 		private ["_existingVehicle","_existingTowRopes"];
 		_existingTowRopes = _vehicle getVariable ["SA_Tow_Ropes",[]];
 		_existingVehicle = player getVariable ["SA_Tow_Ropes_Vehicle", objNull];
-		vehicle player == player && player distance _vehicle < 10 && (count _existingTowRopes) == 0 && isNull _existingVehicle;
+		isNull objectParent player && player distance _vehicle < 10 && (count _existingTowRopes) == 0 && isNull _existingVehicle;
 	} else {
 		false;
 	};
@@ -596,7 +596,7 @@ SA_Can_Put_Away_Tow_Ropes = {
 	private ["_existingTowRopes"];
 	if([_vehicle] call SA_Is_Supported_Vehicle) then {
 		_existingTowRopes = _vehicle getVariable ["SA_Tow_Ropes",[]];
-		vehicle player == player && player distance _vehicle < 10 && (count _existingTowRopes) > 0;
+		isNull objectParent player && player distance _vehicle < 10 && (count _existingTowRopes) > 0;
 	} else {
 		false;
 	};
@@ -616,7 +616,7 @@ SA_Drop_Tow_Ropes_Action_Check = {
 };
 
 SA_Can_Drop_Tow_Ropes = {
-	!isNull (player getVariable ["SA_Tow_Ropes_Vehicle", objNull]) && vehicle player == player;
+	!isNull (player getVariable ["SA_Tow_Ropes_Vehicle", objNull]) && isNull objectParent player;
 };
 
 
@@ -648,7 +648,7 @@ SA_Pickup_Tow_Ropes_Action_Check = {
 };
 
 SA_Can_Pickup_Tow_Ropes = {
-	isNull (player getVariable ["SA_Tow_Ropes_Vehicle", objNull]) && count (missionNamespace getVariable ["SA_Nearby_Tow_Vehicles",[]]) > 0 && vehicle player == player && !(call A3A_fnc_isCarrying);
+	isNull (player getVariable ["SA_Tow_Ropes_Vehicle", objNull]) && count (missionNamespace getVariable ["SA_Nearby_Tow_Vehicles",[]]) > 0 && isNull objectParent player && !(call A3A_fnc_isCarrying);
 };
 
 SA_TOW_SUPPORTED_VEHICLES = [

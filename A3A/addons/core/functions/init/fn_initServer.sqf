@@ -8,7 +8,7 @@ A3A_logDebugConsole = "A3A_logDebugConsole" call BIS_fnc_getParamValue; publicVa
 
 Info("Server init started");
 A3A_serverVersion = QUOTE(VERSION); publicVariable "A3A_serverVersion";
-Info_1("Server version: %1", QUOTE(VERSION_FULL));
+Info_1("Server version: %1",QUOTE(VERSION_FULL));
 
 // ********************** Pre-setup init ****************************************************
 
@@ -25,7 +25,7 @@ GVAR(despawnQueue) = [];
     _x hideObjectGlobal true;
 } forEach [boxX, flagX, vehicleBox, mapX, petros];
 
-switch (toLower worldname) do {
+switch (toLower worldName) do {
 	case "cam_lao_nam": {};
 	case "vn_khe_sanh": {mapX setObjectTextureGlobal [0,"Pictures\Mission\whiteboard.paa"];};
 	default {mapX setObjectTextureGlobal [0,"Pictures\Mission\whiteboard.jpg"];};
@@ -104,7 +104,7 @@ switch (gameMode) do {
 };
 
 setTimeMultiplier settingsTimeMultiplier;
-Info_1("Time multiplier: %1", timeMultiplier);
+Info_1("Time multiplier: %1",timeMultiplier);
 
 // ****************** Load save data or create new *********************************
 
@@ -126,7 +126,7 @@ if (_startType != "new") then
         A3A_saveTarget = [_serverID, _newID, worldName, _campaignID];
     };
 
-    Info_1("Loading campaign with ID %1", _campaignID);
+    Info_1("Loading campaign with ID %1",_campaignID);
 
     // Do the actual game loading
     call A3A_fnc_loadServer;
@@ -153,7 +153,7 @@ else
             { (missionNamespace getVariable ("unlocked" + _x)) pushBack _class } forEach _categories;
             _categoriesToPublish insert [true, _categories, []];
         };
-    } foreach FactionGet(reb,"initialRebelEquipment");
+    } forEach FactionGet(reb,"initialRebelEquipment");
 
     if (pistolStart) then {
         private _magsToKeep = [];
@@ -163,7 +163,7 @@ else
         {
             private _weapon = _x#0;
             _magsToRemove append (compatibleMagazines _weapon);
-            FactionGet(reb, "initialRebelEquipment") deleteAt (FactionGet(reb, "initialRebelEquipment") findIf {_x isEqualTo _weapon || {_x isEqualType [] && {_x#0 isEqualTo _weapon}}});
+            FactionGet(reb,"initialRebelEquipment") deleteAt (FactionGet(reb,"initialRebelEquipment") findIf {_x isEqualTo _weapon || {_x isEqualType [] && {_x#0 isEqualTo _weapon}}});
         } forEach (jna_datalist#0 + jna_datalist#1); // primaries + secondaries (launchers)
         jna_datalist set [0, []];
         jna_datalist set [1, []];
@@ -173,7 +173,7 @@ else
             // sanity check to not remove magazine compatible with a removed primary if it's also compatible with a handgun in the arsenal
             if (_magazine in _magsToRemove && {!(_magazine in _magsToKeep)}) then {
                 [26, _magazine, -1] call jn_fnc_arsenal_removeItem;
-                FactionGet(reb, "initialRebelEquipment") deleteAt (FactionGet(reb, "initialRebelEquipment") findIf {_x isEqualTo _magazine || {_x isEqualType [] && {_x#0 isEqualTo _magazine}}});
+                FactionGet(reb,"initialRebelEquipment") deleteAt (FactionGet(reb,"initialRebelEquipment") findIf {_x isEqualTo _magazine || {_x isEqualType [] && {_x#0 isEqualTo _magazine}}});
             };
         } forEach (jna_datalist#26); // magazines
     };
@@ -203,7 +203,7 @@ if (_startType != "load") then {
 
     private _newID = [] call A3A_fnc_generateSaveID;
 
-    Info_1("Creating new campaign with ID %1", _newID);
+    Info_1("Creating new campaign with ID %1",_newID);
 
     A3A_saveTarget = [_serverID, _newID, worldName];
 };
@@ -294,13 +294,13 @@ addMissionEventHandler ["BuildingChanged", {
 
 addMissionEventHandler ["EntityKilled", {
     params ["_victim", "_killer", "_instigator"];
-    if (typeof _victim == "") exitWith {};
-    private _killerSide = side group (if (isNull _instigator) then {_killer} else {_instigator});
+    if (typeOf _victim == "") exitWith {};
+    private _killerSide = side group ([_instigator, _killer] select (isNull _instigator));
     if (isPlayer _killer) then {
         private _killerUID = getPlayerUID _killer;
-        Debug_3("%1 killed by %2. Killer UID: %3", typeof _victim, _killerSide, _killerUID);
+        Debug_3("%1 killed by %2. Killer UID: %3",typeOf _victim,_killerSide,_killerUID);
     } else {
-        Debug_2("%1 killed by %2", typeof _victim, _killerSide);
+        Debug_2("%1 killed by %2",typeOf _victim,_killerSide);
     };
 
     if !(isNil {_victim getVariable "ownerSide"}) then {
@@ -357,9 +357,9 @@ savingServer = false;           // enable saving
     while {true} do
     {
         //Sleep if no player is online
-        if (count (allPlayers - (entities "HeadlessClient_F")) == 0) then
+        if ((allPlayers - (entities "HeadlessClient_F")) isEqualTo []) then
         {
-            waitUntil {sleep 10; (count (allPlayers - (entities "HeadlessClient_F")) > 0)};
+            waitUntil {sleep 10; ((allPlayers - (entities "HeadlessClient_F")) isNotEqualTo [])};
         };
 
         [] call A3A_fnc_logPerformance;
@@ -367,8 +367,8 @@ savingServer = false;           // enable saving
     };
 };
 
-if ((isClass (configfile >> "CBA_Extended_EventHandlers")) && (
-    isClass (configfile >> "CfgPatches" >> "lambs_danger"))) then {
+if ((isClass (configFile >> "CBA_Extended_EventHandlers")) && (
+    isClass (configFile >> "CfgPatches" >> "lambs_danger"))) then {
     // disable lambs danger fsm entrypoint
     ["CAManBase", "InitPost", {
         params ["_unit"];

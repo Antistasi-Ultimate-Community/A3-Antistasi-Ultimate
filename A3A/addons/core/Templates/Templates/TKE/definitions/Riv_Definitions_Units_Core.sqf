@@ -1,3 +1,5 @@
+#pragma hemtt ignore_variables ["_fnc_setHelmet", "_fnc_setFacewear", "_fnc_setVest", "_fnc_setUniform", "_fnc_setPrimary", "_fnc_addMagazines", "_fnc_addAdditionalMuzzleMagazines", "_fnc_setHandgun", "_fnc_addItemSet", "_fnc_addItem", "_fnc_addMap", "_fnc_addWatch", "_fnc_addCompass", "_fnc_addRadio", "_fnc_addGPS", "_fnc_addBinoculars", "_fnc_addNVGs", "_fnc_setBackpack", "_fnc_setLauncher", "_fnc_fallback", "_loadoutData", "_crewLoadoutData", "_pilotLoadoutData", "_fnc_generateAndSaveUnitsToTemplate"]
+
 private _cellLeaderTemplate = {
 	if (random 100 > 60) then {
 		["helmets"] call _fnc_setHelmet;

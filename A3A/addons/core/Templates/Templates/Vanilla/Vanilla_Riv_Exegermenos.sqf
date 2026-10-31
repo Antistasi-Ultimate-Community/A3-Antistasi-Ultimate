@@ -1,3 +1,5 @@
+#pragma hemtt ignore_variables ["_fnc_saveNames","_fnc_createLoadoutData","_fnc_copyLoadoutData","_fnc_generateAndSaveUnitsToTemplate","_fnc_saveToTemplate"]
+
 private _hasWs = "ws" in A3A_enabledDLC;
 private _hasMarksman = "mark" in A3A_enabledDLC;
 private _hasLawsOfWar = "orange" in A3A_enabledDLC;
@@ -87,11 +89,11 @@ private _staticMortars = ["O_Mortar_01_F"];
 ["vehiclesRivalsUavs", _uav] call _fnc_saveToTemplate;			
 
 ["animations", [
-	#include "..\vehicleAnimations\vehicleAnimations_Vanilla.sqf"
+	#include "..\vehicleAnimations\vehicleAnimations_Vanilla.inc"
 ]] call _fnc_saveToTemplate;
 
 ["variants", [
-    #include "..\vehicleVariants\Vanilla_Rivals.sqf"
+    #include "..\vehicleVariants\Vanilla_Rivals.inc"
 ]] call _fnc_saveToTemplate;
 
 //////////////////////////

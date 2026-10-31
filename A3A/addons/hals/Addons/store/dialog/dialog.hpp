@@ -9,30 +9,30 @@ class RscDisplayStore {
 	
 	class controlsBackground { 
 		class TitleBackground: RscItemText {
-			moving = true;
-			x = DIALOG_X;
-			y = DIALOG_Y;
-			w = GRID_X(STORE_W);
-			h = GRID_Y(BAR_H);
+			moving = 1;
+			x = QUOTE(DIALOG_X);
+			y = QUOTE(DIALOG_Y);
+			w = QUOTE(GRID_X(STORE_W));
+			h = QUOTE(GRID_Y(BAR_H));
 			colorBackground[] = {0.1, 0.1, 0.1, 1};
 		};
 
 		class StoreBackground: RscItemText {
-			moving = true;
-			x = DIALOG_X;
-			y = DIALOG_Y + GRID_Y(BAR_H + SPACE_H2);
-			w = GRID_X(STORE_W);
-			h = GRID_Y(STORE_H - (BAR_H + SPACE_H2));
+			moving = 1;
+			x = QUOTE(DIALOG_X);
+			y = QUOTE(DIALOG_Y + GRID_Y(BAR_H + SPACE_H2));
+			w = QUOTE(GRID_X(STORE_W));
+			h = QUOTE(GRID_Y(STORE_H - (BAR_H + SPACE_H2)));
 			colorBackground[] = {0.05, 0.05, 0.05, 0.7};
 		};
 	};
 
 	class controls {
 		class CloseButton: RscItemButtonClose {
-			x = DIALOG_X + GRID_X(STORE_W - BAR_W);
-			y = DIALOG_Y;
-			w = GRID_X(BAR_W);
-			h = GRID_Y(BAR_H);
+			x = QUOTE(DIALOG_X + GRID_X(STORE_W - BAR_W));
+			y = QUOTE(DIALOG_Y);
+			w = QUOTE(GRID_X(BAR_W));
+			h = QUOTE(GRID_Y(BAR_H));
 	
 			action = "['onUnload'] call HALs_store_fnc_main;";
 			colorText[] = {1, 1, 1, 0.7};
@@ -42,10 +42,10 @@ class RscDisplayStore {
 		class TitleFunds: RscItemStructuredText {
 			idc = IDC_FUNDS;
 
-			x = DIALOG_X + GRID_X(STORE_W - BAR_W - BAR_W - FUNDS_W);
-			y = DIALOG_Y;
-			w = GRID_X(FUNDS_W);
-			h = GRID_Y(FUNDS_H);
+			x = QUOTE(DIALOG_X + GRID_X(STORE_W - BAR_W - BAR_W - FUNDS_W));
+			y = QUOTE(DIALOG_Y);
+			w = QUOTE(GRID_X(FUNDS_W));
+			h = QUOTE(GRID_Y(FUNDS_H));
 
 			colorText[] = {0.66666666666, 1, 0.66666666666, 1};
 			class Attributes {
@@ -53,21 +53,21 @@ class RscDisplayStore {
 				font = "PuristaMedium";
 				color = "#aaffaa";
 				valign = "bottom";
-				shadow='1';
+				shadow=1;
 			};
 		};
 
 		class TitleText: RscItemText {
 			idc = IDC_TITLE;
 					
-			x = DIALOG_X;
-			y = DIALOG_Y;
-			w = GRID_X(STORE_W);
-			h = GRID_Y(BAR_H);
+			x = QUOTE(DIALOG_X);
+			y = QUOTE(DIALOG_Y);
+			w = QUOTE(GRID_X(STORE_W));
+			h = QUOTE(GRID_Y(BAR_H));
 					
 			colorText[] = {0.95, 0.95, 0.95, 1};
 			colorShadow[] = {0, 0, 0, 0.5};
-			sizeEx = FONT(1);
+			sizeEx = QUOTE(FONT(1));
 			font = "RobotoCondensed";
 			style = 0;
 			shadow = 1;
@@ -75,10 +75,10 @@ class RscDisplayStore {
 
 		class HelpButton {
 			idc = -1;
-			x = DIALOG_X + GRID_X(STORE_W - BAR_W - BAR_W);
-			y = DIALOG_Y;
-			w = GRID_X(BAR_W);
-			h = GRID_Y(BAR_H);
+			x = QUOTE(DIALOG_X + GRID_X(STORE_W - BAR_W - BAR_W));
+			y = QUOTE(DIALOG_Y);
+			w = QUOTE(GRID_X(BAR_W));
+			h = QUOTE(GRID_Y(BAR_H));
 			
 			type = 11;
 			style = 48;
@@ -104,10 +104,10 @@ class RscDisplayStore {
 		
 		class ContainerGroup: RscItemCtrlGroupNoScrollbars {
 			idc = IDC_GROUP_TRADER;
-			x = TRADER_X;
-			y = DIALOG_Y + GRID_Y(BAR_H + SPACE_H2);
-			w = GRID_X(TRADER_W);
-			h = GRID_Y(TRADER_H);
+			x = QUOTE(TRADER_X);
+			y = QUOTE(DIALOG_Y + GRID_Y(BAR_H + SPACE_H2));
+			w = QUOTE(GRID_X(TRADER_W));
+			h = QUOTE(GRID_Y(TRADER_H));
 			
 			class controls {
 				#include "ui\container.hpp"
@@ -116,10 +116,10 @@ class RscDisplayStore {
 			
 		class HALs_store_dialog: RscItemCtrlGroupNoScrollbars {
 			idc = IDC_GROUP_ITEMS;
-			x = DIALOG_X;
-			y = DIALOG_Y + GRID_Y(BAR_H + SPACE_H + SPACE_H2);
-			w = GRID_X(BUFFER_W + LIST_W);
-			h = GRID_Y(STORE_H);
+			x = QUOTE(DIALOG_X);
+			y = QUOTE(DIALOG_Y + GRID_Y(BAR_H + SPACE_H + SPACE_H2));
+			w = QUOTE(GRID_X(BUFFER_W + LIST_W));
+			h = QUOTE(GRID_Y(STORE_H));
 
 			class controls {
 				#include "ui\items.hpp"
@@ -129,10 +129,10 @@ class RscDisplayStore {
 		class SelectedItemGroup: RscItemCtrlGroupNoScrollbars {
 			idc = IDC_GROUP_SELECTED;
 			
-			x = DIALOG_X + GRID_X(ITEM_X);
-			y = DIALOG_Y + GRID_Y(ITEM_Y);
-			w = GRID_X(ITEM_W);
-			h = GRID_Y(STORE_H);
+			x = QUOTE(DIALOG_X + GRID_X(ITEM_X));
+			y = QUOTE(DIALOG_Y + GRID_Y(ITEM_Y));
+			w = QUOTE(GRID_X(ITEM_W));
+			h = QUOTE(GRID_Y(STORE_H));
 
 			class controls {
 				#include "ui\itemStats.hpp"

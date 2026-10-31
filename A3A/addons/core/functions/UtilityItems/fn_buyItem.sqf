@@ -18,9 +18,9 @@ FIX_LINE_NUMBERS()
 
 params ["_unit", "_itemClass"];
 
-if (isNull _unit) exitwith { Error("Unit is null") };
-if (!isClass (configFile/"CfgVehicles"/_itemClass)) exitwith { Error_1("Class %1 does not exist", _itemClass) };
-if !(_itemClass in A3A_utilityItemsHM) exitWith { Error_1("Class %1 is not a buyable item", _itemClass) };
+if (isNull _unit) exitWith { Error("Unit is null") };
+if (!isClass (configFile/"CfgVehicles"/_itemClass)) exitWith { Error_1("Class %1 does not exist",_itemClass) };
+if !(_itemClass in A3A_utilityItemsHM) exitWith { Error_1("Class %1 is not a buyable item",_itemClass) };
 
 private _fnc_placed = {
     params ["_item", "_unit", "_price", "_flags"];
@@ -45,11 +45,11 @@ private _fnc_placed = {
 (A3A_utilityItemHM get _itemClass) params ["", "_price", "", "", "_flags"];
 
 private _lastItemPurchase = _unit getVariable ["A3A_spawnItem_cooldown", 0];
-if (_lastItemPurchase > time) exitwith {
+if (_lastItemPurchase > time) exitWith {
     [localize "STR_A3A_Utility_Items_Purchase_Title", format [localize "STR_A3A_Utility_Items_Last_Time_Purchase", ceil (_lastItemPurchase - time)]] call A3A_fnc_customHint;
 };
 
-if (("cmmdr" in _flags) && player isNotEqualTo theBoss) exitwith {
+if (("cmmdr" in _flags) && player isNotEqualTo theBoss) exitWith {
     [localize "STR_antistasi_dialogs_buy_item_custom_hint_header", localize "STR_antistasi_dialogs_buy_item_custom_hint_commander_only"] call A3A_fnc_customHint;
 };
 

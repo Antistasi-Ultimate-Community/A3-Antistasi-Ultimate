@@ -15,7 +15,7 @@
 FIX_LINE_NUMBERS()
 params ["_file", "_side"];
 
-Info_2("Compatibility loading template: '%1' as side %2", _file, _side);
+Info_2("Compatibility loading template: '%1' as side %2",_file,_side);
 
 private _factionDefaultFile = ["EnemyDefaults","EnemyDefaults","RebelDefaults","CivilianDefaults"] #([west, east, independent, civilian] find _side);
 _factionDefaultFile = QPATHTOFOLDER(Templates\Templates\FactionDefaults) + "\" + _factionDefaultFile + ".sqf";

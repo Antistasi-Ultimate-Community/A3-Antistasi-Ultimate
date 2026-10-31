@@ -10,73 +10,73 @@ class A3A_SetupDialog : A3A_TabbedDialog
         class TitlebarText : A3A_TitlebarText
         {
             idc = -1;
-            text = $STR_antistasi_dialogs_setup_titlebar;
-            x = DIALOG_X;
-            y = DIALOG_Y - 10 * GRID_H;
-            w = DIALOG_W * GRID_W;
-            h = 5 * GRID_H;
+            text = "$STR_antistasi_dialogs_setup_titlebar";
+            x = QUOTE(DIALOG_X);
+            y = QUOTE(DIALOG_Y - 10 * GRID_H);
+            w = QUOTE(DIALOG_W * GRID_W);
+            h = QUOTE(5 * GRID_H);
         };
 
         class TabButtons : A3A_ControlsGroupNoScrollbars
         {
             idc = A3A_IDC_SETUP_TABBUTTONS;
-            x = DIALOG_X;
-            y = DIALOG_Y - 5 * GRID_H;
-            w = DIALOG_W * GRID_W;
-            h = 5 * GRID_H;
+            x = QUOTE(DIALOG_X);
+            y = QUOTE(DIALOG_Y - 5 * GRID_H);
+            w = QUOTE(DIALOG_W * GRID_W);
+            h = QUOTE(5 * GRID_H);
 
             class Controls
             {
                 class LoadgameTabButton : A3A_Button
                 {
                     idc = A3A_IDC_SETUP_LOADGAMETABBUTTON;
-                    text = $STR_antistasi_dialogs_setup_loadgame_tab_button;
+                    text = "$STR_antistasi_dialogs_setup_loadgame_tab_button";
                     onButtonClick = "['switchTab', ['loadgame']] call A3A_fnc_setupDialog;";
                     x = 0;
                     y = 0;
-                    w = 30 * GRID_W;
-                    h = 5 * GRID_H;
+                    w = QUOTE(30 * GRID_W);
+                    h = QUOTE(5 * GRID_H);
                 };
 
                 class FactionTabButton : A3A_Button
                 {
                     idc = A3A_IDC_SETUP_FACTIONSTABBUTTON;
-                    text = $STR_antistasi_dialogs_setup_faction_tab_button;
+                    text = "$STR_antistasi_dialogs_setup_faction_tab_button";
                     onButtonClick = "['switchTab', ['factions']] call A3A_fnc_setupDialog;";
-                    x = 30 * GRID_W;
+                    x = QUOTE(30 * GRID_W);
                     y = 0;
-                    w = 30 * GRID_W;
-                    h = 5 * GRID_H;
+                    w = QUOTE(30 * GRID_W);
+                    h = QUOTE(5 * GRID_H);
                 };
 
                 class ParamsTabButton : A3A_Button
                 {
                     idc = A3A_IDC_SETUP_PARAMSTABBUTTON;
-                    text = $STR_antistasi_dialogs_setup_params_tab_button;
+                    text = "$STR_antistasi_dialogs_setup_params_tab_button";
                     onButtonClick = "['switchTab', ['params']] call A3A_fnc_setupDialog;";
-                    x = 60 * GRID_W;
+                    x = QUOTE(60 * GRID_W);
                     y = 0;
-                    w = 30 * GRID_W;
-                    h = 5 * GRID_H;
+                    w = QUOTE(30 * GRID_W);
+                    h = QUOTE(5 * GRID_H);
                 };
 
                 class StartGame: A3A_Button {
                     idc = A3A_IDC_SETUP_STARTBUTTON;
-                    text = $STR_antistasi_dialogs_setup_start_game;
+                    text = "$STR_antistasi_dialogs_setup_start_game";
                     onButtonClick = "['startGame'] call A3A_fnc_setupLoadgameTab";
-                    x = 90 * GRID_W;
-                    y = 0 * GRID_H;
-                    w = 32 * GRID_W;
-                    h = 5 * GRID_H;
+                    x = QUOTE(90 * GRID_W);
+                    y = QUOTE(0 * GRID_H);
+                    w = QUOTE(32 * GRID_W);
+                    h = QUOTE(5 * GRID_H);
                 };
 
                 class SaveInfoText : A3A_Text
                 {
                     idc = A3A_IDC_SETUP_SAVEINFOTEXT;
-                    x = 122 * GRID_W;
+                    x = QUOTE(122 * GRID_W);
                     y = 0;
-                    w = 38 * GRID_W;
-                    h = 5 * GRID_H;
+                    w = QUOTE(38 * GRID_W);
+                    h = QUOTE(5 * GRID_H);
                     colorBackground[] = A3A_COLOR_BUTTON_BACKGROUND;
                     style = ST_CENTER;
                     font = A3A_BUTTON_FONT;
@@ -93,121 +93,121 @@ class A3A_SetupDialog : A3A_TabbedDialog
         {
             idc = A3A_IDC_SETUP_LOADGAMETAB;
             onLoad = "['onLoad'] spawn A3A_fnc_setupLoadgameTab";
-            show = false;
+            show = 0;
 
             class Controls
             {
                 class SavedGamesLabel: A3A_SectionLabelRight {
                     idc = -1;
-                    text = $STR_antistasi_dialogs_setup_saved_games;
+                    text = "$STR_antistasi_dialogs_setup_saved_games";
                     font = A3A_BUTTON_FONT;
-                    x = 4 * GRID_W;
-                    y = 4 * GRID_H;
-                    w = 118 * GRID_W;
-                    h = 4 * GRID_H;
+                    x = QUOTE(4 * GRID_W);
+                    y = QUOTE(4 * GRID_H);
+                    w = QUOTE(118 * GRID_W);
+                    h = QUOTE(4 * GRID_H);
                 };
                 class SavedGamesBackground: A3A_Background {
                     idc = -1;
-                    x = 4 * GRID_W;
-                    y = 8 * GRID_H;
-                    w = 118 * GRID_W;
-                    h = 88 * GRID_H;
+                    x = QUOTE(4 * GRID_W);
+                    y = QUOTE(8 * GRID_H);
+                    w = QUOTE(118 * GRID_W);
+                    h = QUOTE(88 * GRID_H);
                 };
                 class SavedGamesHeader : A3A_ControlsGroupNoScrollbars
                 {
                     idc = A3A_IDC_SETUP_SAVESHEADER;
-                    x = 4 * GRID_W;
-                    y = 8 * GRID_H;
-                    w = 118 * GRID_W;
-                    h = 4 * GRID_H;
+                    x = QUOTE(4 * GRID_W);
+                    y = QUOTE(8 * GRID_H);
+                    w = QUOTE(118 * GRID_W);
+                    h = QUOTE(4 * GRID_H);
                 };
                 class SavedGamesTable : A3A_ControlsGroup       // hopefully has scrollbars
                 {
                     idc = A3A_IDC_SETUP_SAVESLISTBOX;
                     onMouseButtonUp = "['saveListClick', _this] call A3A_fnc_setupLoadgameTab";
                     onMouseButtonDblClick = "['saveListDoubleClick', _this] call A3A_fnc_setupLoadgameTab";
-                    x = 4 * GRID_W;
-                    y = 12 * GRID_H;
-                    w = 118 * GRID_W;
-                    h = 84 * GRID_H;
+                    x = QUOTE(4 * GRID_W);
+                    y = QUOTE(12 * GRID_H);
+                    w = QUOTE(118 * GRID_W);
+                    h = QUOTE(84 * GRID_H);
 
                     class Controls
                     {
                         class SavedGamesSelector: A3A_Background {
                             idc = A3A_IDC_SETUP_GAMESELECTBOX;
                             colorBackground[] = A3A_COLOR_TITLEBAR_BACKGROUND;
-                            x = 0 * GRID_W;
-                            y = 0 * GRID_H;
-                            w = 118 * GRID_W;
-                            h = 4 * GRID_H;
+                            x = QUOTE(0 * GRID_W);
+                            y = QUOTE(0 * GRID_H);
+                            w = QUOTE(118 * GRID_W);
+                            h = QUOTE(4 * GRID_H);
                         };
                     };
                 };
 
                 // Game edit options
                 class GameEditOptions : A3A_ControlsGroupNoScrollbars {
-                    x = 126 * GRID_W;
-                    y = 70 * GRID_H;
-                    w = 30 * GRID_W;
-                    h = 26 * GRID_H;
+                    x = QUOTE(126 * GRID_W);
+                    y = QUOTE(70 * GRID_H);
+                    w = QUOTE(30 * GRID_W);
+                    h = QUOTE(26 * GRID_H);
 
                     class controls {
                         class SaveNameLabel: A3A_Text {
                             idc = -1;
-                            text = $STR_antistasi_dialogs_setup_new_save_name;
+                            text = "$STR_antistasi_dialogs_setup_new_save_name";
                             style = ST_CENTER;
                             font = A3A_BUTTON_FONT;
                             colorBackground[] = {0,0,0,1};
-                            x = 0 * GRID_W;
-                            y = 0 * GRID_H;
-                            w = 30 * GRID_W;
-                            h = 4 * GRID_H;
+                            x = QUOTE(0 * GRID_W);
+                            y = QUOTE(0 * GRID_H);
+                            w = QUOTE(30 * GRID_W);
+                            h = QUOTE(4 * GRID_H);
                         };
                         class SaveNameEditBox: A3A_Edit {
                             idc = A3A_IDC_SETUP_NAMEEDITBOX;
-                            x = 0 * GRID_W;
-                            y = 4 * GRID_H;
-                            w = 30 * GRID_W;
-                            h = 4 * GRID_H;
+                            x = QUOTE(0 * GRID_W);
+                            y = QUOTE(4 * GRID_H);
+                            w = QUOTE(30 * GRID_W);
+                            h = QUOTE(4 * GRID_H);
                         };
                         class DeleteButton: A3A_Button {
                             idc = A3A_IDC_SETUP_DELETEBUTTON;
-                            text = $STR_antistasi_dialogs_setup_delete_game;
+                            text = "$STR_antistasi_dialogs_setup_delete_game";
                             onButtonClick = "['deleteGame'] call A3A_fnc_setupLoadgameTab";
-                            x = 0 * GRID_W;
-                            y = 10 * GRID_H;
-                            w = 30 * GRID_W;
-                            h = 4 * GRID_H;
+                            x = QUOTE(0 * GRID_W);
+                            y = QUOTE(10 * GRID_H);
+                            w = QUOTE(30 * GRID_W);
+                            h = QUOTE(4 * GRID_H);
                         };
                         class RenameButton: DeleteButton {
                             idc = A3A_IDC_SETUP_RENAMEBUTTON;
-                            text = $STR_antistasi_dialogs_setup_rename_game;
+                            text = "$STR_antistasi_dialogs_setup_rename_game";
                             onButtonClick = "['renameGame'] call A3A_fnc_setupLoadgameTab";
-                            y = 16 * GRID_H;
+                            y = QUOTE(16 * GRID_H);
                         };
                         class ImportExportButton: DeleteButton {
                             idc = A3A_IDC_SETUP_IMPORTEXPORTBUTTON;
-                            text = $STR_antistasi_dialogs_setup_import_export;
+                            text = "$STR_antistasi_dialogs_setup_import_export";
                             onButtonClick = "createDialog 'A3A_SetupImportExportDialog'";
-                            y = 22 * GRID_H;
+                            y = QUOTE(22 * GRID_H);
                         };
                     };
                 };
                 // Game load options
                 class GameOptionsGroup : A3A_ControlsGroupNoScrollbars {
-                    x = 126 * GRID_W;
-                    y = 4 * GRID_H;
-                    w = 30 * GRID_W;
-                    h = 45 * GRID_H;
+                    x = QUOTE(126 * GRID_W);
+                    y = QUOTE(4 * GRID_H);
+                    w = QUOTE(30 * GRID_W);
+                    h = QUOTE(45 * GRID_H);
 
                     class controls {
                         class GameOptions: A3A_Text {
                             idc = A3A_IDC_SETUP_LOADGAMEOPTIONS;
-                            text = $STR_antistasi_dialogs_setup_load_game_options;
+                            text = "$STR_antistasi_dialogs_setup_load_game_options";
                             x = 0;
                             y = 0;
-                            w = 30 * GRID_W;
-                            h = 4 * GRID_H;
+                            w = QUOTE(30 * GRID_W);
+                            h = QUOTE(4 * GRID_H);
                             colorBackground[] = A3A_COLOR_BUTTON_BACKGROUND;
                             style = ST_CENTER + ST_UPPERCASE;
                             font = A3A_BUTTON_FONT;
@@ -215,73 +215,73 @@ class A3A_SetupDialog : A3A_TabbedDialog
                         class GameOptionsBackground: A3A_Background {
                             idc = -1;
                             x = 0;
-                            y = 4 * GRID_H;
-                            w = 30 * GRID_W;
-                            h = 26 * GRID_H;
+                            y = QUOTE(4 * GRID_H);
+                            w = QUOTE(30 * GRID_W);
+                            h = QUOTE(26 * GRID_H);
                         };
-                        class NewGameCheck: A3A_Checkbox {
+                        class NewGameCheck: A3A_CheckBox {
                             idc = A3A_IDC_SETUP_NEWGAMECHECKBOX;
                             onCheckedChanged = "['newGameCheck'] call A3A_fnc_setupLoadgameTab";
                             x = 0;
-                            y = 6 * GRID_H;
-                            w = 4 * GRID_W;
-                            h = 4 * GRID_H;
+                            y = QUOTE(6 * GRID_H);
+                            w = QUOTE(4 * GRID_W);
+                            h = QUOTE(4 * GRID_H);
                         };
-                        class NewGameText: A3A_text {
+                        class NewGameText: A3A_Text {
                             idc = -1;
-                            text = $STR_antistasi_dialogs_setup_create_new_game;
-                            x = 4 * GRID_W;
-                            y = 6 * GRID_H;
-                            w = 26 * GRID_W;
-                            h = 4 * GRID_H;
+                            text = "$STR_antistasi_dialogs_setup_create_new_game";
+                            x = QUOTE(4 * GRID_W);
+                            y = QUOTE(6 * GRID_H);
+                            w = QUOTE(26 * GRID_W);
+                            h = QUOTE(4 * GRID_H);
                         };
                         class CopyGameCheck: NewGameCheck {
                             idc = A3A_IDC_SETUP_COPYGAMECHECKBOX;
                             onCheckedChanged = "['copyGameCheck'] call A3A_fnc_setupLoadgameTab";
-                            y = 12 * GRID_H;
+                            y = QUOTE(12 * GRID_H);
                         };
                         class CopyGameText: NewGameText {
                             idc = A3A_IDC_SETUP_COPYGAMETEXT;
-                            text = $STR_antistasi_dialogs_setup_copy_old_game;
-                            y = 12 * GRID_H;
+                            text = "$STR_antistasi_dialogs_setup_copy_old_game";
+                            y = QUOTE(12 * GRID_H);
                         };
                         class OldParamsCheck: NewGameCheck {
                             idc = A3A_IDC_SETUP_OLDPARAMSCHECKBOX;
                             onCheckedChanged = "['oldParamsCheck'] call A3A_fnc_setupLoadgameTab";
-                            y = 18 * GRID_H;
+                            y = QUOTE(18 * GRID_H);
                         };
                         class OldParamsText: NewGameText {
                             idc = A3A_IDC_SETUP_OLDPARAMSTEXT;
-                            text = $STR_antistasi_dialogs_setup_load_old_params;
-                            y = 18 * GRID_H;
+                            text = "$STR_antistasi_dialogs_setup_load_old_params";
+                            y = QUOTE(18 * GRID_H);
                         };
                         class NewNamespaceCheck: NewGameCheck {
                             idc = A3A_IDC_SETUP_NAMESPACECHECKBOX;
                             onCheckedChanged = "['newNamespaceCheck'] call A3A_fnc_setupLoadgameTab";
-                            y = 24 * GRID_H;
+                            y = QUOTE(24 * GRID_H);
                         };
                         class NewNamespaceText: NewGameText {
                             idc = A3A_IDC_SETUP_NAMESPACETEXT;
-                            text = $STR_antistasi_dialogs_setup_use_new_namespace;
-                            y = 24 * GRID_H;
+                            text = "$STR_antistasi_dialogs_setup_use_new_namespace";
+                            y = QUOTE(24 * GRID_H);
                         };
                         class SetHQPosButton: A3A_Button {
                             idc = A3A_IDC_SETUP_HQPOSBUTTON;
-                            text = $STR_antistasi_dialogs_setup_set_hq_position;
+                            text = "$STR_antistasi_dialogs_setup_set_hq_position";
                             onButtonClick = "['setHQPos'] call A3A_fnc_setupLoadgameTab";
                             x = 0;
-                            y = 40 * GRID_H;
-                            w = 30 * GRID_W;
-                            h = 5 * GRID_H;
+                            y = QUOTE(40 * GRID_H);
+                            w = QUOTE(30 * GRID_W);
+                            h = QUOTE(5 * GRID_H);
                         };
                         class EditZonesButton: A3A_Button {
                             idc = A3A_IDC_SETUP_EDITZONES_BUTTON;
-                            text = $STR_antistasi_dialogs_setup_edit_zones;
+                            text = "$STR_antistasi_dialogs_setup_edit_zones";
                             onButtonClick = "['editZones'] call A3A_fnc_setupLoadgameTab";
                             x = 0;
-                            y = 32 * GRID_H;
-                            w = 30 * GRID_W;
-                            h = 5 * GRID_H;
+                            y = QUOTE(32 * GRID_H);
+                            w = QUOTE(30 * GRID_W);
+                            h = QUOTE(5 * GRID_H);
                         };
                     };
                 };
@@ -292,135 +292,135 @@ class A3A_SetupDialog : A3A_TabbedDialog
         {
             idc = A3A_IDC_SETUP_FACTIONSTAB;
             //onLoad = "['onLoad'] spawn A3A_fnc_setupFactionsTab";
-            show = false;
+            show = 0;
 
             class Controls
             {
                 class RebelsLabel: A3A_SectionLabelRight {
                     idc = A3A_IDC_SETUP_REBELSLABEL;
-                    text = $STR_antistasi_dialogs_setup_rebels;
-                    x = 4 * GRID_W;
-                    y = 4 * GRID_H;
-                    w = 38 * GRID_W;
-                    h = 4 * GRID_H;
+                    text = "$STR_antistasi_dialogs_setup_rebels";
+                    x = QUOTE(4 * GRID_W);
+                    y = QUOTE(4 * GRID_H);
+                    w = QUOTE(38 * GRID_W);
+                    h = QUOTE(4 * GRID_H);
                 };
                 class RebelsListBox: A3A_Listbox_Small {
                     idc = A3A_IDC_SETUP_REBELSLISTBOX;
                     onLBSelChanged = "['factionSelected', _this] call A3A_fnc_setupFactionsTab";
-                    x = 4 * GRID_W;
-                    y = 8 * GRID_H;
-                    w = 38 * GRID_W;
-                    h = 40 * GRID_H;
+                    x = QUOTE(4 * GRID_W);
+                    y = QUOTE(8 * GRID_H);
+                    w = QUOTE(38 * GRID_W);
+                    h = QUOTE(40 * GRID_H);
                 };
 
                 class CiviliansLabel: RebelsLabel {
                     idc = A3A_IDC_SETUP_CIVILIANSLABEL;
-                    text = $STR_antistasi_dialogs_setup_civilians;
-                    y = 50 * GRID_H;
+                    text = "$STR_antistasi_dialogs_setup_civilians";
+                    y = QUOTE(50 * GRID_H);
                 };
                 class CiviliansListBox: RebelsListBox {
                     idc = A3A_IDC_SETUP_CIVILIANSLISTBOX;
-                    y = 54 * GRID_H;
-                    h = 42 * GRID_H;
+                    y = QUOTE(54 * GRID_H);
+                    h = QUOTE(42 * GRID_H);
                 };
 
                 class OccupantsLabel: RebelsLabel {
                     idc = A3A_IDC_SETUP_OCCUPANTSLABEL;
-                    text = $STR_antistasi_dialogs_setup_occupants;
-                    x = 44 * GRID_W;
+                    text = "$STR_antistasi_dialogs_setup_occupants";
+                    x = QUOTE(44 * GRID_W);
                 };
                 class OccupantsListBox: RebelsListBox {
                     idc = A3A_IDC_SETUP_OCCUPANTSLISTBOX;
-                    x = 44 * GRID_W;
-                    h = 88 * GRID_H;
+                    x = QUOTE(44 * GRID_W);
+                    h = QUOTE(88 * GRID_H);
                 };
 
                 class InvadersLabel: RebelsLabel {
                     idc = A3A_IDC_SETUP_INVADERSLABEL;
-                    text = $STR_antistasi_dialogs_setup_invaders;
-                    x = 84 * GRID_W;
+                    text = "$STR_antistasi_dialogs_setup_invaders";
+                    x = QUOTE(84 * GRID_W);
                 };
                 class InvadersListBox: RebelsListBox {
                     idc = A3A_IDC_SETUP_INVADERSLISTBOX;
-                    x = 84 * GRID_W;
+                    x = QUOTE(84 * GRID_W);
                 };
 
                 class RivalsLabel: RebelsLabel {
                     idc = A3A_IDC_SETUP_RIVALSLABEL;
-                    text = $STR_antistasi_dialogs_setup_rivals;
-                    x = 84 * GRID_W;
-                    y = 50 * GRID_H;
+                    text = "$STR_antistasi_dialogs_setup_rivals";
+                    x = QUOTE(84 * GRID_W);
+                    y = QUOTE(50 * GRID_H);
                 };
                 class RivalsListBox: RebelsListBox {
                     idc = A3A_IDC_SETUP_RIVALSLISTBOX;
-                    x = 84 * GRID_W;
-                    y = 54 * GRID_H;
-                    h = 42 * GRID_H;
+                    x = QUOTE(84 * GRID_W);
+                    y = QUOTE(54 * GRID_H);
+                    h = QUOTE(42 * GRID_H);
                 };
 
                 // Faction Availability Modifiers
                 class ModifiersGroup : A3A_ControlsGroupNoScrollbars {
                     idc = A3A_IDC_SETUP_OVERRIDES;
-                    x = 124 * GRID_W;
-                    y = 4 * GRID_H;
-                    w = 32 * GRID_W;
-                    h = 20 * GRID_H;
+                    x = QUOTE(124 * GRID_W);
+                    y = QUOTE(4 * GRID_H);
+                    w = QUOTE(32 * GRID_W);
+                    h = QUOTE(20 * GRID_H);
 
                     class controls {
                         class Label: A3A_SectionLabelRight {
                             idc = -1;
-                            text = $STR_antistasi_dialogs_setup_overrides;
+                            text = "$STR_antistasi_dialogs_setup_overrides";
                             x = 0;
                             y = 0;
-                            w = 32 * GRID_W;
-                            h = 4 * GRID_H;
+                            w = QUOTE(32 * GRID_W);
+                            h = QUOTE(4 * GRID_H);
                         };
                         class Background: A3A_Background {
                             idc = -1;
                             x = 0;
-                            y = 4 * GRID_H;
-                            w = 32 * GRID_W;
-                            h = 16 * GRID_H;
+                            y = QUOTE(4 * GRID_H);
+                            w = QUOTE(32 * GRID_W);
+                            h = QUOTE(16 * GRID_H);
                         };
-                        class SwitchEnemyCheck: A3A_Checkbox {
+                        class SwitchEnemyCheck: A3A_CheckBox {
                             idc = A3A_IDC_SETUP_SWITCHENEMYCHECK;
                             onCheckedChanged = "['fillFactions'] call A3A_fnc_setupFactionsTab";
                             x = 0;
-                            y = 4 * GRID_H;
-                            w = 4 * GRID_W;
-                            h = 4 * GRID_H;
+                            y = QUOTE(4 * GRID_H);
+                            w = QUOTE(4 * GRID_W);
+                            h = QUOTE(4 * GRID_H);
                         };
-                        class SwitchEnemyText: A3A_text {
+                        class SwitchEnemyText: A3A_Text {
                             idc = -1;
-                            text = $STR_antistasi_dialogs_setup_switch_enemy_sides;
-                            x = 4 * GRID_W;
-                            y = 4 * GRID_H;
-                            w = 28 * GRID_W;
-                            h = 4 * GRID_H;
+                            text = "$STR_antistasi_dialogs_setup_switch_enemy_sides";
+                            x = QUOTE(4 * GRID_W);
+                            y = QUOTE(4 * GRID_H);
+                            w = QUOTE(28 * GRID_W);
+                            h = QUOTE(4 * GRID_H);
                         };
                         class AnyEnemyCheck: SwitchEnemyCheck {
                             idc = A3A_IDC_SETUP_ANYENEMYCHECK;
-                            y = 8 * GRID_H;
+                            y = QUOTE(8 * GRID_H);
                         };
                         class AnyEnemyText: SwitchEnemyText {
-                            text = $STR_antistasi_dialogs_setup_override_side_limits;
-                            y = 8 * GRID_H;
+                            text = "$STR_antistasi_dialogs_setup_override_side_limits";
+                            y = QUOTE(8 * GRID_H);
                         };
                         class IgnoreCamoCheck: SwitchEnemyCheck {
                             idc = A3A_IDC_SETUP_IGNORECAMOCHECK;
-                            y = 12 * GRID_H;
+                            y = QUOTE(12 * GRID_H);
                         };
                         class IgnoreCamoText: SwitchEnemyText {
-                            text = $STR_antistasi_dialogs_setup_override_camo_limits;
-                            y = 12 * GRID_H;
+                            text = "$STR_antistasi_dialogs_setup_override_camo_limits";
+                            y = QUOTE(12 * GRID_H);
                         };
                         class ShowMissingCheck: SwitchEnemyCheck {
                             idc = A3A_IDC_SETUP_SHOWMISSINGCHECK;
-                            y = 16 * GRID_H;
+                            y = QUOTE(16 * GRID_H);
                         };
                         class ShowMissingText: SwitchEnemyText {
-                            text = $STR_antistasi_dialogs_setup_show_missing_mods;
-                            y = 16 * GRID_H;
+                            text = "$STR_antistasi_dialogs_setup_show_missing_mods";
+                            y = QUOTE(16 * GRID_H);
                         };
                     };
                 };                
@@ -428,24 +428,24 @@ class A3A_SetupDialog : A3A_TabbedDialog
                 // DLC Content
                 class DLCContentGroup : ModifiersGroup {
                     idc = A3A_IDC_SETUP_DLCCONTENT;
-                    y = 26 * GRID_H;
-                    h = 22 * GRID_H;
+                    y = QUOTE(26 * GRID_H);
+                    h = QUOTE(22 * GRID_H);
 
                     class controls : controls {
                         class Label: Label {
                             idc = A3A_IDC_SETUP_DLCCONTENT_LABEL;
-                            text = $STR_antistasi_dialogs_setup_dlc;
+                            text = "$STR_antistasi_dialogs_setup_dlc";
                         };
                         class Background: Background {
                             idc = A3A_IDC_SETUP_DLCCONTENT_BG;
-                            h = 18 * GRID_H;
+                            h = QUOTE(18 * GRID_H);
                         };
                         class Box: A3A_ControlsGroupNoHScrollbars {
                             idc = A3A_IDC_SETUP_DLCCONTENT_BOX;
                             x = 0;
-                            y = 4 * GRID_H;
-                            w = 32 * GRID_W;
-                            h = 18 * GRID_H;
+                            y = QUOTE(4 * GRID_H);
+                            w = QUOTE(32 * GRID_W);
+                            h = QUOTE(18 * GRID_H);
                         };
                     };
                 };
@@ -453,21 +453,21 @@ class A3A_SetupDialog : A3A_TabbedDialog
                 // Addon Content
                 class AddonContentGroup : DLCContentGroup {
                     idc = A3A_IDC_SETUP_ADDONCONTENT;
-                    y = 50 * GRID_H;
-                    h = 46 * GRID_H;
+                    y = QUOTE(50 * GRID_H);
+                    h = QUOTE(46 * GRID_H);
 
                     class controls : controls {
                         class Label: Label {
                             idc = A3A_IDC_SETUP_ADDONCONTENT_LABEL;
-                            text = $STR_antistasi_dialogs_setup_addonvics;
+                            text = "$STR_antistasi_dialogs_setup_addonvics";
                         };
                         class Background: Background {
                             idc = A3A_IDC_SETUP_ADDONCONTENT_BG;
-                            h = 42 * GRID_H;
+                            h = QUOTE(42 * GRID_H);
                         };
                         class Box: Box {
                             idc = A3A_IDC_SETUP_ADDONCONTENT_BOX;
-                            h = 42 * GRID_H;
+                            h = QUOTE(42 * GRID_H);
                         };
                     };
                 };
@@ -478,7 +478,7 @@ class A3A_SetupDialog : A3A_TabbedDialog
         {
             idc = A3A_IDC_SETUP_PARAMSTAB;
             onLoad = "['onLoad'] spawn A3A_fnc_setupParamsTab";
-            show = false;
+            show = 0;
 
             class Controls
             {
@@ -486,41 +486,41 @@ class A3A_SetupDialog : A3A_TabbedDialog
                     idc = A3A_IDC_SETUP_PARAMSTYPE;
                     colorBackground[] = {0,0,0,1};
                     onLBSelChanged = "['update', [_this select 1]] call A3A_fnc_setupParamsTab";
-                    x = 4 * GRID_W;
-                    y = 4 * GRID_H;
-                    w = 118 * GRID_W;
-                    h = 4 * GRID_H;
+                    x = QUOTE(4 * GRID_W);
+                    y = QUOTE(4 * GRID_H);
+                    w = QUOTE(118 * GRID_W);
+                    h = QUOTE(4 * GRID_H);
                 };
                 class ParamsBackground: A3A_Background {
                     idc = -1;
-                    x = 4 * GRID_W;
-                    y = 8 * GRID_H;
-                    w = 118 * GRID_W;
-                    h = 88 * GRID_H;
+                    x = QUOTE(4 * GRID_W);
+                    y = QUOTE(8 * GRID_H);
+                    w = QUOTE(118 * GRID_W);
+                    h = QUOTE(88 * GRID_H);
                 };
                 class ParamsTable: A3A_ControlsGroup {
                     idc = A3A_IDC_SETUP_PARAMSTABLE;
-                    x = 4 * GRID_W;
-                    y = 8 * GRID_H;
-                    w = 118 * GRID_W;
-                    h = 88 * GRID_H;
+                    x = QUOTE(4 * GRID_W);
+                    y = QUOTE(8 * GRID_H);
+                    w = QUOTE(118 * GRID_W);
+                    h = QUOTE(88 * GRID_H);
                 };
 
                 // Parameter search box
                 class ParamsSearchGroup: A3A_ControlsGroupNoScrollbars {
-                    x = 124 * GRID_W;
-                    y = 4 * GRID_H;
-                    w = 30 * GRID_W;
-                    h = 8 * GRID_H;
+                    x = QUOTE(124 * GRID_W);
+                    y = QUOTE(4 * GRID_H);
+                    w = QUOTE(30 * GRID_W);
+                    h = QUOTE(8 * GRID_H);
 
                     class controls {
                         class ParamsSearchLabel: A3A_SectionLabelRight {
                             idc = A3A_IDC_SETUP_PARAMSSEARCH_TEXT;
-                            text = $STR_antistasi_dialogs_setup_params_search;
+                            text = "$STR_antistasi_dialogs_setup_params_search";
                             x = 0;
                             y = 0;
-                            w = 30 * GRID_W;
-                            h = 4 * GRID_H;
+                            w = QUOTE(30 * GRID_W);
+                            h = QUOTE(4 * GRID_H);
                             colorBackground[] = A3A_COLOR_BUTTON_BACKGROUND;
                             style = ST_CENTER + ST_UPPERCASE;
                             font = A3A_BUTTON_FONT;
@@ -528,44 +528,44 @@ class A3A_SetupDialog : A3A_TabbedDialog
                         class ParamsSearchBackground: A3A_Background {
                             idc = -1;
                             x = 0;
-                            y = 4 * GRID_H;
-                            w = 30 * GRID_W;
-                            h = 4 * GRID_H;
+                            y = QUOTE(4 * GRID_H);
+                            w = QUOTE(30 * GRID_W);
+                            h = QUOTE(4 * GRID_H);
                             colorBackground[] = A3A_COLOR_BUTTON_BACKGROUND;
                         };
                         class ParamsSearchEditBox: A3A_Edit {
                             idc = A3A_IDC_SETUP_PARAMSSEARCH_EDITBOX;
                             x = 0;
-                            y = 4 * GRID_H;
-                            w = 26 * GRID_W;
-                            h = 4 * GRID_H;
+                            y = QUOTE(4 * GRID_H);
+                            w = QUOTE(26 * GRID_W);
+                            h = QUOTE(4 * GRID_H);
                         };
                         class ParamsSearchButton: A3A_ActivePicture {
                             idc = A3A_IDC_SETUP_PARAMSSEARCH_BUTTON;
                             text = "\A3\ui_f\data\GUI\RscCommon\RscButtonSearch\search_start_ca.paa";
                             onButtonClick = "['updateSearch'] call A3A_fnc_setupParamsTab";
-                            x = 26 * GRID_W;
-                            y = 4 * GRID_H;
-                            w = 4 * GRID_W;
-                            h = 4 * GRID_H;
+                            x = QUOTE(26 * GRID_W);
+                            y = QUOTE(4 * GRID_H);
+                            w = QUOTE(4 * GRID_W);
+                            h = QUOTE(4 * GRID_H);
                         };
                     };
-                }
+                };
                 // Parameter presets (pre-defined)
                 class ParamsPresetsGroup : A3A_ControlsGroupNoScrollbars {
-                    x = 124 * GRID_W;
-                    y = 14 * GRID_H;
-                    w = 30 * GRID_W;
-                    h = 20 * GRID_H;
+                    x = QUOTE(124 * GRID_W);
+                    y = QUOTE(14 * GRID_H);
+                    w = QUOTE(30 * GRID_W);
+                    h = QUOTE(20 * GRID_H);
 
                     class controls {
                         class ParamsPresets: A3A_Text {
                             idc = A3A_IDC_SETUP_PARAMSPRESETS_TEXT;
-                            text = $STR_antistasi_dialogs_setup_params_presets;
+                            text = "$STR_antistasi_dialogs_setup_params_presets";
                             x = 0;
                             y = 0;
-                            w = 30 * GRID_W;
-                            h = 4 * GRID_H;
+                            w = QUOTE(30 * GRID_W);
+                            h = QUOTE(4 * GRID_H);
                             colorBackground[] = A3A_COLOR_BUTTON_BACKGROUND;
                             style = ST_CENTER + ST_UPPERCASE;
                             font = A3A_BUTTON_FONT;
@@ -573,17 +573,17 @@ class A3A_SetupDialog : A3A_TabbedDialog
                         class ParamsPresetsBackground: A3A_Background {
                             idc = -1;
                             x = 0;
-                            y = 4 * GRID_H;
-                            w = 30 * GRID_W;
-                            h = 16 * GRID_H;
+                            y = QUOTE(4 * GRID_H);
+                            w = QUOTE(30 * GRID_W);
+                            h = QUOTE(16 * GRID_H);
                         };
                         class ParamsGroupSizeText : A3A_Text {
                             idc = -1;
-                            text = $STR_antistasi_dialogs_setup_params_preset_size;
+                            text = "$STR_antistasi_dialogs_setup_params_preset_size";
                             x = 0;
-                            y = 6 * GRID_H;
-                            w = 12 * GRID_W;
-                            h = 4 * GRID_H;
+                            y = QUOTE(6 * GRID_H);
+                            w = QUOTE(12 * GRID_W);
+                            h = QUOTE(4 * GRID_H);
                             colorBackground[] = A3A_COLOR_BUTTON_BACKGROUND;
                             font = A3A_BUTTON_FONT;
                         };
@@ -591,45 +591,45 @@ class A3A_SetupDialog : A3A_TabbedDialog
                             idc = A3A_IDC_SETUP_PARAMSPRESETS_SIZE;
                             colorBackground[] = {0,0,0,1};
                             onLBSelChanged = "['updatePresetSelections', [_this select 0, _this select 1]] call A3A_fnc_setupParamsTab";
-                            x = 12 * GRID_W;
-                            y = 6 * GRID_H;
-                            w = 18 * GRID_W;
-                            h = 4 * GRID_H;
+                            x = QUOTE(12 * GRID_W);
+                            y = QUOTE(6 * GRID_H);
+                            w = QUOTE(18 * GRID_W);
+                            h = QUOTE(4 * GRID_H);
                         };
                         class ParamsDifficultyText : ParamsGroupSizeText {
-                            text = $STR_antistasi_dialogs_setup_params_preset_diff;
-                            y = 10 * GRID_H;
+                            text = "$STR_antistasi_dialogs_setup_params_preset_diff";
+                            y = QUOTE(10 * GRID_H);
                         };
                         class ParamsDifficulty: ParamsGroupSize {
                             idc = A3A_IDC_SETUP_PARAMSPRESETS_DIFF;
-                            y = 10 * GRID_H;
+                            y = QUOTE(10 * GRID_H);
                         };
                         class ParamsCustomText : ParamsGroupSizeText {
-                            text = $STR_antistasi_dialogs_setup_params_preset_cstm;
-                            y = 14 * GRID_H;
+                            text = "$STR_antistasi_dialogs_setup_params_preset_cstm";
+                            y = QUOTE(14 * GRID_H);
                         };
                         class ParamsCustomPreset: ParamsGroupSize {
                             idc = A3A_IDC_SETUP_PARAMSPRESETS_CSTM;
-                            y = 14 * GRID_H;
+                            y = QUOTE(14 * GRID_H);
                         };
                     };
                 };
                 
                 // Parameter presets (save/rename/delete custom)
                 class ParamsPresetsCustomGroup : A3A_ControlsGroupNoScrollbars {
-                    x = 124 * GRID_W;
-                    y = 34 * GRID_H;
-                    w = 30 * GRID_W;
-                    h = 32 * GRID_H;
+                    x = QUOTE(124 * GRID_W);
+                    y = QUOTE(34 * GRID_H);
+                    w = QUOTE(30 * GRID_W);
+                    h = QUOTE(32 * GRID_H);
 
                     class controls {
                         class PresetNameLabel: A3A_SectionLabelRight {
                             idc = A3A_IDC_SETUP_PARAMSPRESETS_CSTM_NAME_TEXT;
-                            text = $STR_antistasi_dialogs_setup_params_presets_new_preset_name;
+                            text = "$STR_antistasi_dialogs_setup_params_presets_new_preset_name";
                             x = 0;
                             y = 0;
-                            w = 30 * GRID_W;
-                            h = 4 * GRID_H;
+                            w = QUOTE(30 * GRID_W);
+                            h = QUOTE(4 * GRID_H);
                             colorBackground[] = A3A_COLOR_BUTTON_BACKGROUND;
                             style = ST_CENTER + ST_UPPERCASE;
                             font = A3A_BUTTON_FONT;
@@ -637,36 +637,36 @@ class A3A_SetupDialog : A3A_TabbedDialog
                         class PresetNameEditBox: A3A_Edit {
                             idc = A3A_IDC_SETUP_PARAMSPRESETS_CSTM_NAME;
                             x = 0;
-                            y = 4 * GRID_H;
-                            w = 30 * GRID_W;
-                            h = 4 * GRID_H;
+                            y = QUOTE(4 * GRID_H);
+                            w = QUOTE(30 * GRID_W);
+                            h = QUOTE(4 * GRID_H);
                         };
                         class PresetSaveButton: A3A_Button {
                             idc = A3A_IDC_SETUP_PARAMSPRESETS_CSTM_SAVEBUTTON;
-                            text = $STR_antistasi_dialogs_setup_params_presets_save_preset;
+                            text = "$STR_antistasi_dialogs_setup_params_presets_save_preset";
                             onButtonClick = "['savePreset', []] call A3A_fnc_setupParamsTab";
                             x = 0;
-                            y = 10 * GRID_H;
-                            w = 30 * GRID_W;
-                            h = 4 * GRID_H;
+                            y = QUOTE(10 * GRID_H);
+                            w = QUOTE(30 * GRID_W);
+                            h = QUOTE(4 * GRID_H);
                         };
                         class PresetRenameButton: PresetSaveButton {
                             idc = A3A_IDC_SETUP_PARAMSPRESETS_CSTM_RENAMEBUTTON;
-                            text = $STR_antistasi_dialogs_setup_params_presets_rename_preset;
+                            text = "$STR_antistasi_dialogs_setup_params_presets_rename_preset";
                             onButtonClick = "['renamePreset', []] call A3A_fnc_setupParamsTab";
-                            y = 16 * GRID_H;
+                            y = QUOTE(16 * GRID_H);
                         };
                         class PresetDeleteButton: PresetSaveButton {
                             idc = A3A_IDC_SETUP_PARAMSPRESETS_CSTM_DELETEBUTTON;
-                            text = $STR_antistasi_dialogs_setup_params_presets_delete_preset;
+                            text = "$STR_antistasi_dialogs_setup_params_presets_delete_preset";
                             onButtonClick = "['deletePreset', []] call A3A_fnc_setupParamsTab";
-                            y = 22 * GRID_H;
+                            y = QUOTE(22 * GRID_H);
                         };
                         class PresetImportExportButton: PresetSaveButton {
                             idc = A3A_IDC_SETUP_PARAMSPRESETS_CSTM_IMPORTEXPORTBUTTON;
-                            text = $STR_antistasi_dialogs_setup_params_presets_import_export;
+                            text = "$STR_antistasi_dialogs_setup_params_presets_import_export";
                             onButtonClick = "createDialog 'A3A_SetupImportExportParamsDialog'";
-                            y = 28 * GRID_H;
+                            y = QUOTE(28 * GRID_H);
                         };
                     };
                 };
@@ -698,23 +698,23 @@ class A3A_SetupDialog_InGame : A3A_SetupDialog
                     idc = A3A_IDC_SETUP_SAVEINFOTEXT;
                     x = 0;
                     y = 0;
-                    w = 122 * GRID_W;
-                    h = 5 * GRID_H;
+                    w = QUOTE(122 * GRID_W);
+                    h = QUOTE(5 * GRID_H);
                     colorBackground[] = A3A_COLOR_BUTTON_BACKGROUND;
                     style = ST_CENTER;
                     font = A3A_BUTTON_FONT;
-                    text = $STR_antistasi_dialogs_setup_params_tab_button;
+                    text = "$STR_antistasi_dialogs_setup_params_tab_button";
                 };
 
                 class ParamsTabButton : A3A_Button
                 {
                     idc = A3A_IDC_SETUP_PARAMSTABBUTTON;
-                    text = $STR_antistasi_dialogs_hq_button_rebel_set_loadout_button;
+                    text = "$STR_antistasi_dialogs_hq_button_rebel_set_loadout_button";
                     onButtonClick = "['SaveParams'] spawn SCRT_fnc_ui_editParamsMenu;";
-                    x = 122 * GRID_W;
+                    x = QUOTE(122 * GRID_W);
                     y = 0;
-                    w = 38 * GRID_W;
-                    h = 5 * GRID_H;
+                    w = QUOTE(38 * GRID_W);
+                    h = QUOTE(5 * GRID_H);
                 };
             };
         };
@@ -738,10 +738,10 @@ class A3A_SetupHQPosDialog
         {
             idc = -1;
             onMouseButtonUp = "['mouseUp', _this] spawn A3A_fnc_setupHQPosDialog";
-            x = safeZoneX;
-            y = safeZoneY;
-            w = safeZoneW;
-            h = safeZoneH;
+            x = QUOTE(safeZoneX);
+            y = QUOTE(safeZoneY);
+            w = QUOTE(safeZoneW);
+            h = QUOTE(safeZoneH);
         };
     };
     class Controls
@@ -749,12 +749,12 @@ class A3A_SetupHQPosDialog
         class CloseButton : A3A_Button
         {
             idc = -1;
-            text = $STR_antistasi_dialogs_hqpos_close;
+            text = "$STR_antistasi_dialogs_hqpos_close";
             onButtonClick = "closeDialog 0";
-            x = safeZoneX;
-            y = safeZoneY;
-            w = 30 * GRID_W;
-            h = 6 * GRID_H;
+            x = QUOTE(safeZoneX);
+            y = QUOTE(safeZoneY);
+            w = QUOTE(30 * GRID_W);
+            h = QUOTE(6 * GRID_H);
         };
     };
 };
@@ -770,56 +770,60 @@ class A3A_SetupConfirmDialog
     onLoad = "['onLoad'] spawn A3A_fnc_setupConfirmDialog";
     //onUnload = "['onUnload'] call A3A_fnc_setupConfirmDialog";        // nothing to do on cancel?
 
-    #define DIALOG_X CENTER_X(80) // Global x pos of dialog
-    #define DIALOG_Y CENTER_Y(40) // Global y pos of dialog
+    #undef DIALOG_X
+    #undef DIALOG_Y
+    // Global x pos of dialog
+    #define DIALOG_X CENTER_X(80)
+    // Global y pos of dialog
+    #define DIALOG_Y CENTER_Y(40)
 
     class Controls
     {
         class Titlebar : A3A_TitlebarText
         {
             idc = -1;
-            text = $STR_antistasi_dialogs_setup_confirm_title;
+            text = "$STR_antistasi_dialogs_setup_confirm_title";
             colorBackground[] = A3A_COLOR_TITLEBAR_BACKGROUND;
-            x = DIALOG_X;
-            y = DIALOG_Y - 5 * GRID_H;
-            w = 80 * GRID_W;
-            h = 5 * GRID_H;
+            x = QUOTE(DIALOG_X);
+            y = QUOTE(DIALOG_Y - 5 * GRID_H);
+            w = QUOTE(80 * GRID_W);
+            h = QUOTE(5 * GRID_H);
         };
         class Background : A3A_Background
         {
             idc = -1;
-            x = DIALOG_X;
-            y = DIALOG_Y;
-            w = 80 * GRID_W;
-            h = 44 * GRID_H;
+            x = QUOTE(DIALOG_X);
+            y = QUOTE(DIALOG_Y);
+            w = QUOTE(80 * GRID_W);
+            h = QUOTE(44 * GRID_H);
         };
         class ConfirmText : A3A_TextMultiCenter
         {
             idc = A3A_IDC_SETUP_CONFIRMTEXT;
-            x = DIALOG_X + 4 * GRID_W;
-            y = DIALOG_Y + 4 * GRID_H;
-            w = 72 * GRID_W;
-            h = 24 * GRID_H;
+            x = QUOTE(DIALOG_X + 4 * GRID_W);
+            y = QUOTE(DIALOG_Y + 4 * GRID_H);
+            w = QUOTE(72 * GRID_W);
+            h = QUOTE(24 * GRID_H);
         };
         class CancelButton : A3A_Button
         {
             idc = A3A_IDC_SETUP_CONFIRMCANCEL;
-            text = $STR_antistasi_dialogs_setup_confirm_cancel;
+            text = "$STR_antistasi_dialogs_setup_confirm_cancel";
             onButtonClick = "closeDialog 0";
-            x = DIALOG_X + 4 * GRID_W;
-            y = DIALOG_Y + 28 * GRID_H;
-            w = 30 * GRID_W;
-            h = 5 * GRID_H;
+            x = QUOTE(DIALOG_X + 4 * GRID_W);
+            y = QUOTE(DIALOG_Y + 28 * GRID_H);
+            w = QUOTE(30 * GRID_W);
+            h = QUOTE(5 * GRID_H);
         };
         class YesButton : A3A_Button
         {
             idc = A3A_IDC_SETUP_CONFIRMYES;
-            text = $STR_antistasi_dialogs_setup_confirm_yes;
+            text = "$STR_antistasi_dialogs_setup_confirm_yes";
             onButtonClick = "['confirm'] call A3A_fnc_setupConfirmDialog";
-            x = DIALOG_X + 46 * GRID_W;
-            y = DIALOG_Y + 28 * GRID_H;
-            w = 30 * GRID_W;
-            h = 5 * GRID_H;
+            x = QUOTE(DIALOG_X + 46 * GRID_W);
+            y = QUOTE(DIALOG_Y + 28 * GRID_H);
+            w = QUOTE(30 * GRID_W);
+            h = QUOTE(5 * GRID_H);
         };
     };
 };
@@ -836,10 +840,10 @@ class A3A_SetupEditZonesDialog : A3A_SetupHQPosDialog
         {
             idc = -1;
             onMouseButtonUp = "['mouseUp', _this] spawn A3A_fnc_setupEditZonesDialog";
-            x = safeZoneX;
-            y = safeZoneY;
-            w = safeZoneW;
-            h = safeZoneH;
+            x = QUOTE(safeZoneX);
+            y = QUOTE(safeZoneY);
+            w = QUOTE(safeZoneW);
+            h = QUOTE(safeZoneH);
         };
     };
     class Controls : Controls
@@ -847,31 +851,31 @@ class A3A_SetupEditZonesDialog : A3A_SetupHQPosDialog
         class CloseButton : CloseButton
         {
             idc = -1;
-            text = $STR_antistasi_dialogs_hqpos_close;
+            text = "$STR_antistasi_dialogs_hqpos_close";
             onButtonClick = "closeDialog 0";
-            x = safeZoneX;
-            y = safeZoneY;
-            w = 30 * GRID_W;
-            h = 6 * GRID_H;
+            x = QUOTE(safeZoneX);
+            y = QUOTE(safeZoneY);
+            w = QUOTE(30 * GRID_W);
+            h = QUOTE(6 * GRID_H);
         };
 
         class MapZonesGroup : A3A_ControlsGroupNoScrollbars
         {
-            x = safeZoneX;
-            y = 8 * GRID_H;
-            w = 30 * GRID_W;
-            h = 40 * GRID_H;
+            x = QUOTE(safeZoneX);
+            y = QUOTE(8 * GRID_H);
+            w = QUOTE(30 * GRID_W);
+            h = QUOTE(40 * GRID_H);
 
             class Controls
             {
                 class MapZonesText : A3A_Text
                 {
                     idc = -1;
-                    text = $STR_antistasi_dialogs_setup_ez_map_zones;
+                    text = "$STR_antistasi_dialogs_setup_ez_map_zones";
                     x = 0;
                     y = 0;
-                    w = 30 * GRID_W;
-                    h = 5 * GRID_H;
+                    w = QUOTE(30 * GRID_W);
+                    h = QUOTE(5 * GRID_H);
                     colorBackground[] = A3A_COLOR_BUTTON_BACKGROUND;
                     style = ST_CENTER + ST_UPPERCASE;
                     font = A3A_BUTTON_FONT;
@@ -881,67 +885,67 @@ class A3A_SetupEditZonesDialog : A3A_SetupHQPosDialog
                     idc = -1;
                     x = 0;
                     y = 0;
-                    w = 30 * GRID_W;
-                    h = 40 * GRID_H;
+                    w = QUOTE(30 * GRID_W);
+                    h = QUOTE(40 * GRID_H);
                 };
-                class OutpostsCheck : A3A_Checkbox
+                class OutpostsCheck : A3A_CheckBox
                 {
                     idc = A3A_IDC_EDITZONES_OUTPOSTSCHECKBOX;
                     checked = 1;
                     onCheckedChanged = "['updateZoneVisibility'] call A3A_fnc_setupEditZonesDialog";
                     x = 0;
-                    y = 6 * GRID_H;
-                    w = 4 * GRID_W;
-                    h = 4 * GRID_H;
+                    y = QUOTE(6 * GRID_H);
+                    w = QUOTE(4 * GRID_W);
+                    h = QUOTE(4 * GRID_H);
                 };
                 class OutpostsText : A3A_Text
                 {
                     idc = -1;
-                    text = $STR_antistasi_dialogs_setup_ez_outposts;
-                    x = 4 * GRID_W;
-                    y = 6 * GRID_H;
-                    w = 26 * GRID_W;
-                    h = 4 * GRID_H;
+                    text = "$STR_antistasi_dialogs_setup_ez_outposts";
+                    x = QUOTE(4 * GRID_W);
+                    y = QUOTE(6 * GRID_H);
+                    w = QUOTE(26 * GRID_W);
+                    h = QUOTE(4 * GRID_H);
                 };
                 class MilbasesCheck : OutpostsCheck
                 {
                     idc = A3A_IDC_EDITZONES_MILBASESCHECKBOX;
-                    y = 12 * GRID_H;
+                    y = QUOTE(12 * GRID_H);
                 };
                 class MilbasesText : OutpostsText
                 {
-                    text = $STR_antistasi_dialogs_setup_ez_milbases;
-                    y = 12 * GRID_H;
+                    text = "$STR_antistasi_dialogs_setup_ez_milbases";
+                    y = QUOTE(12 * GRID_H);
                 };
                 class AirportsCheck : OutpostsCheck
                 {
                     idc = A3A_IDC_EDITZONES_AIRPORTSCHECKBOX;
-                    y = 18 * GRID_H;
+                    y = QUOTE(18 * GRID_H);
                 };
                 class AirportsText : OutpostsText
                 {
-                    text = $STR_antistasi_dialogs_setup_ez_airports;
-                    y = 18 * GRID_H;
+                    text = "$STR_antistasi_dialogs_setup_ez_airports";
+                    y = QUOTE(18 * GRID_H);
                 };
                 class ResourcesCheck : OutpostsCheck
                 {
                     idc = A3A_IDC_EDITZONES_RESOURCESCHECKBOX;
-                    y = 24 * GRID_H;
+                    y = QUOTE(24 * GRID_H);
                 };
                 class ResourcesText : OutpostsText
                 {
-                    text = $STR_antistasi_dialogs_setup_ez_resources;
-                    y = 24 * GRID_H;
+                    text = "$STR_antistasi_dialogs_setup_ez_resources";
+                    y = QUOTE(24 * GRID_H);
                 };
                 class FactoriesCheck : OutpostsCheck
                 {
                     idc = A3A_IDC_EDITZONES_FACTORIESCHECKBOX;
-                    y = 30 * GRID_H;
+                    y = QUOTE(30 * GRID_H);
                 };
                 class FactoriesText : OutpostsText
                 {
-                    text = $STR_antistasi_dialogs_setup_ez_factories;
-                    y = 30 * GRID_H;
+                    text = "$STR_antistasi_dialogs_setup_ez_factories";
+                    y = QUOTE(30 * GRID_H);
                 };
             };
         };

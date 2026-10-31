@@ -1,3 +1,4 @@
+#pragma hemtt ignore_variables ["_thisScript"]
 params ["_unit"]; 
 
 private _position = [(position _unit), 1, (random 360)] call SCRT_fnc_misc_extendPosition;

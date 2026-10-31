@@ -23,7 +23,7 @@ params ["_side", "_target", "_caller", "_precision", "_reveal"];        // might
 waitUntil { isNil "A3A_supportCallInProgress" };
 A3A_supportCallInProgress = true;
 
-Info_3("Requested support against %1 from %2 by side %3", _target, _caller, _side);
+Info_3("Requested support against %1 from %2 by side %3",_target,_caller,_side);
 
 // Cleanup old supports
 A3A_supportSpends = A3A_supportSpends select { _x#4 + 3600 > time };        // remove one hour after start time
@@ -32,7 +32,7 @@ A3A_activeSupports = A3A_activeSupports select { _x#4 > 0 };                // r
 
 // HQ knowledge update
 call {
-    private _hqDist = _target distance2d markerPos "Synd_HQ";
+    private _hqDist = _target distance2D markerPos "Synd_HQ";
     private _bunker = markerPos "Synd_HQ" nearObjects ["Land_Bunker_01_tall_F", 50] isNotEqualTo [];
     private _maxSpot = (500 + random 1000) * ([0.5, 1] select _bunker);
     _hqSpot = (1 + random 1) * linearConversion [0, _maxSpot, _hqDist, 1, 0, true]; 
@@ -56,12 +56,12 @@ if (_target isKindOf "Man" and !(isNull objectParent _target)) then { _target = 
 
 private _deprecisionRange = random (100 - (_precision/4) * 80);
 private _targPos = _target getPos [_deprecisionRange, random 360];
-Debug_2("Final target %1 at position %2", _target, _targPos);
+Debug_2("Final target %1 at position %2",_target,_targPos);
 
 
 // Determine maximum resource spend with this target & caller
 private _maxSpend = [_side, _target, _caller] call A3A_fnc_maxDefenceSpend;
-Debug_1("Resource max spend %1", _maxSpend);
+Debug_1("Resource max spend %1",_maxSpend);
 
 
 // Calculate support type weighting factors based on other recent strikes near target
@@ -81,13 +81,13 @@ private _classWeightsHM = call {
         if (_sside != _side or time >= _endtime) then { continue };
         switch (_btype) do {
             case "AREA": {
-                private _dist = _starg distance2d _targpos;
+                private _dist = _starg distance2D _targpos;
                 if (_dist > _pow) exitWith {};
                 private _reduce = (_pow/100) * (1 - _dist/_pow) * ((_endtime - time)/_dur);
                 _weightArea = _weightArea / (1 + _reduce);
             };
             case "TROOPS": {
-                private _dist = _starg distance2d _targpos;
+                private _dist = _starg distance2D _targpos;
                 if (_dist > 600) exitWith {};
                 private _reduce = (_pow/200) * (1 - _dist/600) * ((_endtime - time)/_dur);
                 _weightTroops = _weightTroops / (1 + _reduce);
@@ -99,7 +99,7 @@ private _classWeightsHM = call {
     } forEach A3A_supportStrikes;
     createHashMapFromArray [["AREA", _weightArea], ["TROOPS", _weightTroops], ["TARGET", _weightTarget]]
 };
-Debug_1("Base support type weights: %1", _classWeightsHM);
+Debug_1("Base support type weights: %1",_classWeightsHM);
 
 
 // Avoid making area attacks against friendlies, although "mistakes" can be made
@@ -114,7 +114,7 @@ private _nearHouses = call {
     nearestTerrainObjects [_targPos, ["HOUSE"], 100, false];
 };
 private _maxHouses = (1 + random 5) ^ 2;
-Debug_4("Total friendlies %1, max friendlies %2, total houses %3, max houses %4", count _nearFriendlies, _maxFriendlies, count _nearHouses, _maxHouses);
+Debug_4("Total friendlies %1, max friendlies %2, total houses %3, max houses %4",count _nearFriendlies,_maxFriendlies,count _nearHouses,_maxHouses);
 
 
 // Build hashmap of active supports with spare targets capable of hitting the area
@@ -122,11 +122,11 @@ private _actSuppHM = createHashMap;
 {
     _x params ["_suppName", "_suppSide", "_suppType", "_center", "_radius", "_suppTarg", ["_minRadius", 0]];
     if (_suppSide != _side or _suppType in _actSuppHM) then { continue };         // only use first one found
-    private _dist = _targpos distance2d _center;
+    private _dist = _targpos distance2D _center;
     if (_suppTarg isNotEqualTo [] or _dist > _radius or _dist < _minRadius) then { continue };
     _actSuppHM set [_suppType, _x];
 } forEach A3A_activeSupports;
-Debug_1("Relevant active supports found: %1", _actSuppHM);
+Debug_1("Relevant active supports found: %1",_actSuppHM);
 
 
 // Now determine the weight of each support type
@@ -159,7 +159,7 @@ private _availParams = [_target, _side, _maxSpend, keys _supportTypesHM];
     _weightedSupports append [_x, _finalWeight];
 
 } forEach _supportTypesHM;           // Hashmap of support type to [base class, weight, effradius]
-Debug_1("Weighted supports: %1", _weightedSupports);
+Debug_1("Weighted supports: %1",_weightedSupports);
 
 // drop the lock now, createSupport doesn't rely on data consistency
 A3A_supportCallInProgress = nil;

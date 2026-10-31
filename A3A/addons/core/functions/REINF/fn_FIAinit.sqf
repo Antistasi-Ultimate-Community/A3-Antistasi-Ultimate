@@ -12,12 +12,12 @@ private _skill = (0.1 + 0.1*A3A_rebelSkillMul + 0.015 * skillFIA);
 _unit setSkill _skill;
 
 if (_typeX isEqualTo FactionGet(reb,"unitSL")) then {
-	_unit setskill ["courage",_skill + 0.2];
-	_unit setskill ["commanding",_skill + 0.2];
+	_unit setSkill ["courage",_skill + 0.2];
+	_unit setSkill ["commanding",_skill + 0.2];
 };
 if (_typeX isEqualTo FactionGet(reb,"unitSniper")) then {
-	_unit setskill ["aimingAccuracy",_skill + 0.2];
-	_unit setskill ["aimingShake",_skill + 0.2];
+	_unit setSkill ["aimingAccuracy",_skill + 0.2];
+	_unit setSkill ["aimingShake",_skill + 0.2];
 };
 
 _unit setUnitTrait ["camouflageCoef",0.8];
@@ -35,7 +35,7 @@ if (!_preserveIdentity) then {
 // FIAinit is called for liberated refugees/hostages. Don't equip them.
 // 23/07/26: Don't equip occ official; they are town VIP and shouldn't have loadout hijacked
 if (!(_typeX isEqualTo FactionGet(reb,"unitUnarmed") || !(_equipRebel))) then {
-	[_unit, [0,1] select (leader _unit != player)] call A3A_fnc_equipRebel;
+	[_unit, parseNumber (leader _unit != player)] call A3A_fnc_equipRebel;
 };
 _unit selectWeapon (primaryWeapon _unit);
 
@@ -70,7 +70,7 @@ if (player == leader _unit) then {
 			_unit groupChat format [localize "STR_A3A_reinf_fiainit_radiocheckok",name _unit]
 		};
 		if (!_unitHasRadio && { unitReady _unit }) then {
-			if ((alive _unit) and (_unit distance (getMarkerPos respawnTeamPlayer) > 50) and (_unit distance leader group _unit > 500) and ((vehicle _unit == _unit) or ((typeOf (vehicle _unit)) in arrayCivVeh))) then {
+			if ((alive _unit) and (_unit distance (getMarkerPos respawnTeamPlayer) > 50) and (_unit distance leader group _unit > 500) and ((isNull objectParent _unit) or ((typeOf (vehicle _unit)) in arrayCivVeh))) then {
 				["", format [localize "STR_A3A_reinf_fiainit_lost_comms", name _unit]] call A3A_fnc_customHint;
 
 				_unit setVariable[QGVAR(groupId), groupId _unit];
@@ -81,13 +81,13 @@ if (player == leader _unit) then {
 				private _timeX = time + 900;
 				waitUntil {sleep 1;(!alive _unit) or (_unit distance player < 500) or (time > _timeX)};
 				if ((_unit distance player >= 500) and (alive _unit)) then {_unit setPos (getMarkerPos respawnTeamPlayer)};
-				[_unit] joinAs[group player, _unit getVariable QGVAR(groupId)];
+				_unit joinAs[group player, _unit getVariable QGVAR(groupId)];
 				_unit assignTeam(_unit getVariable QGVAR(assignedTeam));
 			};
 		};
 	};
 } else {
-	_unit addEventHandler ["killed", {
+	_unit addEventHandler ["Killed", {
 		params ["_victim", "_killer"];
 		call FUNCMAIN(postmortem);
 		if ((isPlayer _killer) and (side _killer == teamPlayer)) then {

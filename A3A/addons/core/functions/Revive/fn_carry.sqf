@@ -11,7 +11,7 @@ if !(_carry getVariable ["incapacitated",false]) exitWith {
 if !(isNull attachedTo _carry) exitWith {
 	[localize  "STR_A3A_revive_carry_header", format [localize "STR_A3A_revive_transported",name _carry]] call A3A_fnc_customHint;
 };
-if (call A3A_fnc_isCarrying) exitWith {[_titleStr, format [localize "STR_A3A_fn_revive_carry_already",name _carry]] call A3A_fnc_customHint;};
+if (call A3A_fnc_isCarrying) exitWith {[localize  "STR_A3A_revive_carry_header", format [localize "STR_A3A_fn_revive_carry_already",name _carry]] call A3A_fnc_customHint;};
 
 if (captive _carrier) then {
 	_carrier setCaptive false
@@ -33,7 +33,7 @@ waitUntil {sleep 0.5;
 	!(_carry getVariable ["incapacitated",false]) or
 	(_carrier getVariable ["A3A_cancelCarry", false]) or
 	(time > _timeOut) or
-	(vehicle _carrier != _carrier)
+	(!isNull objectParent _carrier)
 };
 
 [] call SCRT_fnc_misc_updateRichPresence;

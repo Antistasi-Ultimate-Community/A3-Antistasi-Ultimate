@@ -1,0 +1,33 @@
+name = "Antistasi Ultimate"
+author = "Antistasi Ultimate Dev Team"
+prefix = "a3a"
+mainprefix = "x"
+
+[files]
+include = [
+    "LICENSE",
+    "README.md",
+    "mod.cpp"
+]
+
+[lints.sqf]
+reasign_reserved_variable = "Warning" # All existing cleaned up, warn on new instance
+format_args = "Warning" # All existing cleaned up, warn on new instance
+invalid_comparisons = "Warning" # All existing cleaned up, warn on new instance
+banned_commands = "Warning" # Still fires on single instance of addPublicVariableEventHandler, yet to be refactored
+direct_private = false # Too much to clean up / refactor for no real gain
+
+[lints.sqf.var_all_caps]
+options.ignore = [
+    "PATCOM_*", "SA_TOW_*", "HR_GRG_*", "A3A_IDC_*", "A3A_IDD_*", "SPACER", "SDKSL", "SDKMG", "SDKGL"
+]
+
+[lints.stringtables]
+usage = false # Enabling causes HEMTT to crash; accept that we'll just have unused keys
+
+[preprocessor]
+runtime_macros = true
+
+[version]
+path = "addons/core/Includes/script_version.hpp"
+git_hash = 0

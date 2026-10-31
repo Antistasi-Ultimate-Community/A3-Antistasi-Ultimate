@@ -40,7 +40,7 @@ FIX_LINE_NUMBERS()
 
 private _fileName = "findPath";
 private _deltaTime = time;
-Debug_2("Starting pathfinding from %1 to %2", _startPos, _endPos);
+Debug_2("Starting pathfinding from %1 to %2",_startPos,_endPos);
 
 private _startNavIndex = [_startPos] call A3A_fnc_getNearestNavPoint;
 private _endNavIndex = [_endPos] call A3A_fnc_getNearestNavPoint;
@@ -67,7 +67,7 @@ pathfindingActive = true;
 private _startNav = navGrid select _startNavIndex;
 private _endNav = navGrid select _endNavIndex;
 
-Info_4("Start %1 at %2 End %3 at %4", _startNav, str _startPos, _endNav, str _endPos);
+Info_4("Start %1 at %2 End %3 at %4",_startNav,str _startPos,_endNav,str _endPos);
 
 private _touchedNodes = [];
 //Blocking avoid elements
@@ -88,7 +88,7 @@ _openList pushBack [_startNav, 0, [_startNav select 0, _endNav select 0] call A3
 missionNamespace setVariable [format ["PF_%1", str (_startNav select 0)], WORKSTATE_OPENED];
 _touchedNodes pushBack (str (_startNav select 0));
 
-while {(!(_lastNav isEqualType [])) && {count _openList > 0}} do
+while {(!(_lastNav isEqualType [])) && {_openList isNotEqualTo []}} do
 {
     //Select node with lowest score
     private _current = _openList deleteAt 0;
@@ -169,7 +169,7 @@ while {(!(_lastNav isEqualType [])) && {count _openList > 0}} do
                 }
                 else
                 {
-                    Error_1("BROKEN NODE %1", _conNode);
+                    Error_1("BROKEN NODE %1",_conNode);
                     //[_conIndex, "mil_dot", "ColorRed", "BROKEN"] call A3A_fnc_markNode;
                 };
             };
@@ -186,7 +186,7 @@ private _lastIndex = 0;
 if(_lastNav isEqualType []) then
 {
     //Way found, reverting way through path
-    Info_2("Max Distance %1, Distance %2", _maxDistance, _lastNav select 1);
+    Info_2("Max Distance %1, Distance %2",_maxDistance,_lastNav select 1);
     _wayPoints = [[_endPos, true], [_targetPos, true]];
     while {_lastNav isEqualType []} do
     {
@@ -205,12 +205,12 @@ if(_lastNav isEqualType []) then
     reverse _wayPoints;
 
     _deltaTime = time - _deltaTime;
-    Info_1("Successful finished pathfinding after %1 seconds", _deltaTime);
+    Info_1("Successful finished pathfinding after %1 seconds",_deltaTime);
 }
 else
 {
     _deltaTime = time - _deltaTime;
-    Error_1("Could not find a way, search took %1 seconds, max distance reached", _deltaTime);
+    Error_1("Could not find a way, search took %1 seconds, max distance reached",_deltaTime);
 };
 
 {

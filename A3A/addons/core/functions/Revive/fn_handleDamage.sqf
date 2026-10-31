@@ -67,7 +67,7 @@ private _makeUnconscious =
                 unassignVehicle _x;
             } forEach units player;
         };
-	if (vehicle _unit != _unit) then
+	if (!isNull objectParent _unit) then
 	{
 		moveOut _unit;
 	};

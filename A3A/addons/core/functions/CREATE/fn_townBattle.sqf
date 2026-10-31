@@ -31,7 +31,7 @@
 FIX_LINE_NUMBERS()
 
 private _fnc_endMission = {
-    params ["_taskId", "_mrkDest", "_closestAdminMarker", ["_vip", ObjNull]];
+    params ["_taskId", "_mrkDest", "_closestAdminMarker", ["_vip", objNull]];
 
     [_taskId, "townBattle", "FAILED"] call A3A_fnc_taskSetState;
 
@@ -47,7 +47,7 @@ private _fnc_endMission = {
 private _fnc_adjustNearCities = {
     params ["_position", "_maxSupport", "_maxDist"];
     {
-        private _dist = getMarkerPos _x distance2d _position;
+        private _dist = getMarkerPos _x distance2D _position;
         if (_dist > _maxDist) then { continue };
         private _suppChange = linearConversion [0, _maxDist, _dist, _maxSupport, 0, true];
         [0,_suppChange,_x,false] spawn A3A_fnc_citySupportChange;		// don't scale this by pop
@@ -107,7 +107,7 @@ private _civWeapons = unlockedRifles + unlockedSniperRifles + unlockedShotguns +
 // Spawn "vip" vehicle
 private _pos = [_posDest, 1, (_sizeSpawn / 2), 3, 0, 20, 0, [], [_posDest, _posDest]] call BIS_fnc_findSafePos;
 private _nearestRoad = getPosATL ([_pos, _sizeSpawn] call BIS_fnc_nearestRoad);
-if (_nearestRoad isEqualTo ObjNull) then {_nearestRoad = _pos};
+if (_nearestRoad isEqualTo objNull) then {_nearestRoad = _pos};
 
 private _vehicleClass = selectRandom ["vehiclesLightArmed", "vehiclesLightUnarmed", "vehiclesAT", "vehiclesCivCar", "vehiclesCivSupply"];
 private _vipVehicleClass = selectRandom (A3A_faction_reb getOrDefault [_vehicleClass, A3A_faction_reb get "vehiclesBasic"]);
@@ -118,7 +118,7 @@ private _vipVehicle = _vipVehicleData select 0;
 // Spawn "vip"
 private _unitTypeCiv = A3A_faction_civ getOrDefault ["unitVIP", ""];
 private _unitTypeOcc = _faction getOrDefault ["unitOfficial", ""];
-private _unitType = if (A3A_customUnitTypes getVariable [_unitTypeCiv, []] isNotEqualTo []) then {_unitTypeCiv} else {_unitTypeOcc};
+private _unitType = [_unitTypeOcc, _unitTypeCiv] select (A3A_customUnitTypes getVariable [_unitTypeCiv, []] isNotEqualTo []);
 private _identity = [A3A_faction_civ, _unitType] call A3A_fnc_createRandomIdentity;
 private _vip = [_groupVIP, _unitType, _nearestRoad, [], 0, "NONE", _identity] call A3A_fnc_createUnit;
 [_vip, createHashMapFromArray [["face", selectRandom (A3A_faction_civ get "faces")], ["speaker", "NoVoice"]]] call A3A_fnc_setIdentity;
@@ -214,7 +214,7 @@ if ((_vip distance2D _posDest > _sizeFail) || !([_vip] call A3A_fnc_canFight)) e
 
 [1, _side, "QRFLAND", getPosATL player, 300] call A3A_fnc_showInterceptedSetupCall;
 
-ServerInfo_3("Launching %1 Battle Against %2 from %3", _side, _mrkDest, _mrkOrigin);
+ServerInfo_3("Launching %1 Battle Against %2 from %3",_side,_mrkDest,_mrkOrigin);
 
 bigAttackInProgress = true; publicVariable "bigAttackInProgress";
 
@@ -259,7 +259,7 @@ waitUntil {
 
 private _canSucceed = (({_x call A3A_fnc_canFight} count _soldiers <= _soldiersWin) || time > _missionMinTime);
 if (_canSucceed) then {
-    Info_2("Rebels defeated a town attack against %1, %2", _side, _mrkDest);
+    Info_2("Rebels defeated a town attack against %1, %2",_side,_mrkDest);
     [_taskId, "townBattle", "SUCCEEDED"] call A3A_fnc_taskSetState;
     [_posDest, 10, 3000] call _fnc_adjustNearCities;
     [_mrkDest, true] call A3A_fnc_cityChangeSide;
@@ -280,7 +280,7 @@ if (_canSucceed) then {
     private _resourcesFIA = round (100 * _baseBattleReward);
     [_hrAdd,_resourcesFIA] remoteExec ["A3A_fnc_resourcesFIA",2];
 } else {
-    Info_2("Rebels lost a town attack against %1, %2", _side, _mrkDest);
+    Info_2("Rebels lost a town attack against %1, %2",_side,_mrkDest);
     [_taskId, "townBattle", "FAILED"] call A3A_fnc_taskSetState;
     [_posDest, -20, 3000] call _fnc_adjustNearCities;
     [0,-20,_mrkDest,false] spawn A3A_fnc_citySupportChange;

@@ -17,7 +17,7 @@ params [
 private _hintTitle = localize "STR_A3A_builder_title";
 
 // Already in the placer
-if(!isNil "A3A_building_EHDB") exitwith {};
+if(!isNil "A3A_building_EHDB") exitWith {};
 
 // Check enemy proximity
 if ([getPosATL _centerObject] call A3A_fnc_enemyNearCheck) exitWith {
@@ -51,7 +51,7 @@ isNil {
         [_hintTitle, "Server failed to respond to building placer request."] call A3A_fnc_customHint;
     };
     if (alive _owner and _owner != player) exitWith {
-        [_hintTitle, format ["Builder box is already being used by %1", name _curOwner]] call A3A_fnc_customHint;
+        [_hintTitle, format ["Builder box is already being used by %1", name _owner]] call A3A_fnc_customHint;
     };
 
     // Have box ownership so start the placer

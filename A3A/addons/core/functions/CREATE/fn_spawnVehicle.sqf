@@ -48,7 +48,7 @@ if (
     || {isNil "_azi"}
     || {isNil "_type"}
     || {isNil "_group"}
-) exitWith { Error_4("Invalid arguments passed | Pos: %1 | Azimut: %2 | Type: %3 | Group: %4", _pos, _azi, _type, _group) };
+) exitWith { Error_4("Invalid arguments passed | Pos: %1 | Azimut: %2 | Type: %3 | Group: %4",_pos,_azi,_type,_group) };
 
 private _side = if (_group isEqualType sideUnknown) then { _group } else { side _group };
 

@@ -1,7 +1,7 @@
 class commanderMenu 
 {
 	idd = 60000;
-	movingenable = false;
+	movingenable = 0;
 	onLoad = "['on'] call SCRT_fnc_ui_toggleMenuBlur";
 	onUnload = "isMenuOpen = false; closeDialog 0; ['off'] call SCRT_fnc_ui_toggleMenuBlur; [] spawn SCRT_fnc_ui_dispose;";
 	
@@ -10,7 +10,7 @@ class commanderMenu
 		class commanderMenuTitle: TextBase
 		{
 			idc = 1050;
-			text = $STR_commander_menu_header;
+			text = "$STR_commander_menu_header";
 			x = "safezoneX + (1 * pixelGridNoUIScale * pixelW)";
 			y = "safezoneY + (4 * pixelGridNoUIScale * pixelH)";	
 			w = "24 * pixelGridNoUIScale * pixelW";
@@ -65,7 +65,7 @@ class commanderMenu
 		class tabSelectorTitle: headerBase
 		{
 			idc = 1101;			
-			text = $STR_commander_menu_abilities_header_upper;					
+			text = "$STR_commander_menu_abilities_header_upper";					
 			x = "safezoneX + (0 * pixelGridNoUIScale * pixelW)";
 			y = "safezoneY + (8 * pixelGridNoUIScale * pixelH)";
 			w = "24 * pixelGridNoUIScale * pixelW";	
@@ -102,7 +102,7 @@ class commanderMenu
 		class SupportTab: ScrtRscControlsGroup 
 		{
 			idc = 1140;			
-			x = safezoneX;
+			x = QUOTE(safezoneX);
 			y = "safezoneY + (12 * pixelGridNoUIScale * pixelH)";
 			w = "26 * pixelGridNoUIScale * pixelW";			
 			h = "safezoneH - (12 * pixelGridNoUIScale * pixelH)";
@@ -112,7 +112,7 @@ class commanderMenu
 				class commanderDescriptionTitle: TextBase
 				{
 					idc = 1700;
-					text = $STR_commander_menu_abilities_header_upper;
+					text = "$STR_commander_menu_abilities_header_upper";
 					x = "1 * pixelGridNoUIScale * pixelW";
 					y = "0 * pixelGridNoUIScale * pixelH";	
 					w = "22 * pixelGridNoUIScale * pixelW";	
@@ -122,7 +122,7 @@ class commanderMenu
 				class commanderDescriptionText: TextBaseMT
 				{
 					idc = 1701;			
-					text = $STR_commander_menu_abilities_text;
+					text = "$STR_commander_menu_abilities_text";
 					x = "1 * pixelGridNoUIScale * pixelW";
 					y = "2 * pixelGridNoUIScale * pixelH";	
 					w = "22 * pixelGridNoUIScale * pixelW";	
@@ -143,7 +143,7 @@ class commanderMenu
 				class costsText: TextBase
 				{
 					idc = 1751;
-					text = $STR_commander_menu_abilities_costs;
+					text = "$STR_commander_menu_abilities_costs";
 					x = "1 * pixelGridNoUIScale * pixelW";
 					y = "12.5 * pixelGridNoUIScale * pixelH";	
 					w = "22 * pixelGridNoUIScale * pixelW";	
@@ -153,7 +153,7 @@ class commanderMenu
 				class supportPointsText: TextBase
 				{
 					idc = 1702;
-					text = $STR_commander_menu_abilities_costs;
+					text = "$STR_commander_menu_abilities_costs";
 					x = "1 * pixelGridNoUIScale * pixelW";
 					y = "safezoneH - (32 * pixelGridNoUIScale * pixelH)";	
 					w = "22 * pixelGridNoUIScale * pixelW";	
@@ -163,7 +163,7 @@ class commanderMenu
 				class airstrikePointsText: TextBase
 				{
 					idc = 1703;
-					text = $STR_commander_menu_abilities_available_airstrikes;
+					text = "$STR_commander_menu_abilities_available_airstrikes";
 					x = "1 * pixelGridNoUIScale * pixelW";
 					y = "safezoneH - (30 * pixelGridNoUIScale * pixelH)";	
 					w = "22 * pixelGridNoUIScale * pixelW";	
@@ -173,7 +173,7 @@ class commanderMenu
 				class capturedAirportsText: TextBase
 				{
 					idc = 1704;
-					text = $STR_commander_menu_abilities_captured_airports;
+					text = "$STR_commander_menu_abilities_captured_airports";
 					x = "1 * pixelGridNoUIScale * pixelW";
 					y = "safezoneH - (28 * pixelGridNoUIScale * pixelH)";	
 					w = "22 * pixelGridNoUIScale * pixelW";	
@@ -194,7 +194,7 @@ class commanderMenu
 						class resetSupportButton: ButtonBase
 						{			
 							idc = 1711;
-							text = $STR_commander_menu_abilities_reset_button;
+							text = "$STR_commander_menu_abilities_reset_button";
 							x = "0 * pixelGridNoUIScale * pixelW";
 							y = 0;
 							w = "9.75 * pixelGridNoUIScale * pixelW";	
@@ -206,7 +206,7 @@ class commanderMenu
 						class launchSupport: ButtonBase
 						{			
 							idc = 1712;
-							text = $STR_commander_menu_abilities_launch_button;
+							text = "$STR_commander_menu_abilities_launch_button";
 							x = "12.25 * pixelGridNoUIScale * pixelW";
 							y = 0;
 							w = "9.75 * pixelGridNoUIScale * pixelW";	
@@ -225,7 +225,7 @@ class commanderMenu
 		class GarrisonTab: ScrtRscControlsGroup 
 		{
 			idc = 2000;			
-			x = -0.4 * safezoneW + safezoneX;
+			x = QUOTE(-0.4 * safezoneW + safezoneX);
 			y = "safezoneY + (12 * pixelGridNoUIScale * pixelH)";
 			w = "26 * pixelGridNoUIScale * pixelW";			
 			h = "safezoneH - (12 * pixelGridNoUIScale * pixelH)";		
@@ -234,7 +234,7 @@ class commanderMenu
 				class garrisonDescriptionTitle: TextBase
 				{
 					idc = 2700;
-					text = $STR_notifiers_trader_establish_outpost_header;
+					text = "$STR_notifiers_trader_establish_outpost_header";
 					x = "1 * pixelGridNoUIScale * pixelW";
 					y = "0 * pixelGridNoUIScale * pixelH";	
 					w = "22 * pixelGridNoUIScale * pixelW";	
@@ -244,7 +244,7 @@ class commanderMenu
 				class garrisonDescriptionText: TextBaseMT
 				{
 					idc = 2701;			
-					text = $STR_commander_menu_establish_garrison_text;
+					text = "$STR_commander_menu_establish_garrison_text";
 					x = "1 * pixelGridNoUIScale * pixelW";
 					y = "2 * pixelGridNoUIScale * pixelH";	
 					w = "22 * pixelGridNoUIScale * pixelW";	
@@ -285,7 +285,7 @@ class commanderMenu
 						class cancelTaskButton: ButtonBase
 						{			
 							idc = 2790;
-							text = $STR_commander_menu_establish_garrison_Cancel;
+							text = "$STR_commander_menu_establish_garrison_Cancel";
 							x = 0;
 							y = 0;
 							w = "9.25 * pixelGridNoUIScale * pixelW";	
@@ -298,7 +298,7 @@ class commanderMenu
 						class establishButton: ButtonBase
 						{			
 							idc = 2753;
-							text = $STR_commander_menu_establish_garrison_establish;
+							text = "$STR_commander_menu_establish_garrison_establish";
 							x = "12.75 * pixelGridNoUIScale * pixelW";
 							y = 0;
 							w = "9.25 * pixelGridNoUIScale * pixelW";	
@@ -319,8 +319,8 @@ class commanderMenu
 				class disbandButton: ButtonBase
 				{			
 					idc = 2755;
-					text = $STR_antistasi_dialogs_build_disband_units_button_text;
-					tooltip = $STR_antistasi_dialogs_build_disband_units_button_tooltip;
+					text = "$STR_antistasi_dialogs_build_disband_units_button_text";
+					tooltip = "$STR_antistasi_dialogs_build_disband_units_button_tooltip";
 					x = "1 * pixelGridNoUIScale * pixelW";
 					y = "16.5 * pixelGridNoUIScale * pixelH";
 					w = "22 * pixelGridNoUIScale * pixelW";	
@@ -333,8 +333,8 @@ class commanderMenu
 				class recruitButton: ButtonBase
 				{			
 					idc = 2756;
-					text = $STR_antistasi_dialogs_build_recruit_units_button_text;
-					tooltip = $STR_antistasi_dialogs_build_recruit_units_button_tooltip;
+					text = "$STR_antistasi_dialogs_build_recruit_units_button_text";
+					tooltip = "$STR_antistasi_dialogs_build_recruit_units_button_tooltip";
 					x = "1 * pixelGridNoUIScale * pixelW";
 					y = "20 * pixelGridNoUIScale * pixelH";
 					w = "22 * pixelGridNoUIScale * pixelW";	
@@ -383,7 +383,7 @@ class commanderMenu
 						class minefieldButton: ButtonBase
 						{			
 							idc = 2760;
-							text = $STR_commander_menu_create_minefield;
+							text = "$STR_commander_menu_create_minefield";
 							x = "9.25 * pixelGridNoUIScale * pixelW";
 							y = 0;
 							w = "12.25 * pixelGridNoUIScale * pixelW";	
@@ -398,8 +398,8 @@ class commanderMenu
 				class clearMinefieldButton: ButtonBase
 				{			
 					idc = 2762;
-					text = $STR_antistasi_dialogs_minefield_button_remove_text;
-					tooltip = $STR_antistasi_dialogs_minefield_button_remove_tooltip;
+					text = "$STR_antistasi_dialogs_minefield_button_remove_text";
+					tooltip = "$STR_antistasi_dialogs_minefield_button_remove_tooltip";
 					x = "1 * pixelGridNoUIScale * pixelW";
 					y = "34 * pixelGridNoUIScale * pixelH";
 					w = "22 * pixelGridNoUIScale * pixelW";	
@@ -415,7 +415,7 @@ class commanderMenu
 		class HqTab: ScrtRscControlsGroup 
 		{
 			idc = 3000;			
-			x = -0.4 * safezoneW + safezoneX;
+			x = QUOTE(-0.4 * safezoneW + safezoneX);
 			y = "safezoneY + (12 * pixelGridNoUIScale * pixelH)";
 			w = "26 * pixelGridNoUIScale * pixelW";			
 			h = "safezoneH - (12 * pixelGridNoUIScale * pixelH)";
@@ -423,8 +423,8 @@ class commanderMenu
 				class grabButton: ButtonBase
 				{			
 					idc = 3100;
-					text = $STR_antistasi_dialogs_hq_button_withdraw_text;
-					tooltip = $STR_antistasi_dialogs_hq_button_withdraw_tooltip;
+					text = "$STR_antistasi_dialogs_hq_button_withdraw_text";
+					tooltip = "$STR_antistasi_dialogs_hq_button_withdraw_tooltip";
 					x = "1 * pixelGridNoUIScale * pixelW";
 					y = "0 * pixelGridNoUIScale * pixelH";
 					w = "22 * pixelGridNoUIScale * pixelW";	
@@ -437,8 +437,8 @@ class commanderMenu
 				class rebuildAssetsButton: ButtonBase
 				{			
 					idc = 3120;
-					text = $STR_antistasi_dialogs_hq_button_rebuild_assets_text;
-					tooltip = $STR_antistasi_dialogs_hq_button_rebuild_assets_tooltip;
+					text = "$STR_antistasi_dialogs_hq_button_rebuild_assets_text";
+					tooltip = "$STR_antistasi_dialogs_hq_button_rebuild_assets_tooltip";
 					x = "1 * pixelGridNoUIScale * pixelW";
 					y = "4 * pixelGridNoUIScale * pixelH";
 					w = "22 * pixelGridNoUIScale * pixelW";	
@@ -451,8 +451,8 @@ class commanderMenu
 				class respawnPetros: ButtonBase
 				{			
 					idc = 3121;
-					text = $STR_antistasi_dialogs_hq_button_respawn_petros_text;
-					tooltip = $STR_antistasi_dialogs_hq_button_respawn_petros_tooltip;
+					text = "$STR_antistasi_dialogs_hq_button_respawn_petros_text";
+					tooltip = "$STR_antistasi_dialogs_hq_button_respawn_petros_tooltip";
 					x = "1 * pixelGridNoUIScale * pixelW";
 					y = "8 * pixelGridNoUIScale * pixelH";
 					w = "22 * pixelGridNoUIScale * pixelW";	
@@ -471,7 +471,7 @@ class commanderMenu
 				class rebelSkillTitle: TextBase
 				{
 					idc = 3102;
-					text = $STR_commander_menu_skill_level_title;
+					text = "$STR_commander_menu_skill_level_title";
 					x = "1 * pixelGridNoUIScale * pixelW";
 					y = "12.5 * pixelGridNoUIScale * pixelH";	
 					w = "22.5 * pixelGridNoUIScale * pixelW";	
@@ -481,8 +481,8 @@ class commanderMenu
 				class trainRebelButton: ButtonBase
 				{			
 					idc = 3103;
-					text = $STR_antistasi_dialogs_hq_button_train_ai_text;
-					tooltip = $STR_antistasi_dialogs_hq_button_train_ai_tooltip;
+					text = "$STR_antistasi_dialogs_hq_button_train_ai_text";
+					tooltip = "$STR_antistasi_dialogs_hq_button_train_ai_tooltip";
 					x = "1 * pixelGridNoUIScale * pixelW";
 					y = "14 * pixelGridNoUIScale * pixelH";
 					w = "22 * pixelGridNoUIScale * pixelW";	
@@ -495,8 +495,8 @@ class commanderMenu
 				class rebelLoadoutButton: ButtonBase
 				{			
 					idc = 3104;
-					text = $STR_antistasi_dialogs_hq_button_rebel_loadouts_text;
-					tooltip = $STR_antistasi_dialogs_hq_button_rebel_loadouts_tooltip;
+					text = "$STR_antistasi_dialogs_hq_button_rebel_loadouts_text";
+					tooltip = "$STR_antistasi_dialogs_hq_button_rebel_loadouts_tooltip";
 					x = "1 * pixelGridNoUIScale * pixelW";
 					y = "18 * pixelGridNoUIScale * pixelH";
 					w = "22 * pixelGridNoUIScale * pixelW";	
@@ -548,7 +548,7 @@ class commanderMenu
 				class movePetrosButton: ButtonBase
 				{		
 					idc = 3107;
-					text = $STR_antistasi_dialogs_hq_button_move_headquarters_text;
+					text = "$STR_antistasi_dialogs_hq_button_move_headquarters_text";
 					x = "1 * pixelGridNoUIScale * pixelW";
 					y = "safezoneH - (26 * pixelGridNoUIScale * pixelH)";
 					w = "22 * pixelGridNoUIScale * pixelW";	
@@ -556,7 +556,7 @@ class commanderMenu
 					sizeEx = "((pixelH * (pixelGridNoUIScale) * 2) * 1.25) * 0.5";	
 					shadow = 2;			
 					colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.376])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.125])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.043])",1};
-					tooltip = $STR_antistasi_dialogs_hq_button_move_headquarters_tooltip;
+					tooltip = "$STR_antistasi_dialogs_hq_button_move_headquarters_tooltip";
 					action = "closeDialog 0; closeDialog 0; [] spawn A3A_fnc_moveHQ;";				
 				};
 			};
@@ -566,7 +566,7 @@ class commanderMenu
 		class RivalsTab: ScrtRscControlsGroup 
 		{
 			idc = 7000;			
-			x = -0.4 * safezoneW + safezoneX;
+			x = QUOTE(-0.4 * safezoneW + safezoneX);
 			y = "safezoneY + (12 * pixelGridNoUIScale * pixelH)";
 			w = "26 * pixelGridNoUIScale * pixelW";			
 			h = "safezoneH - (12 * pixelGridNoUIScale * pixelH)";
@@ -574,7 +574,7 @@ class commanderMenu
 				class hideoutsDescriptionTitle: TextBase
 				{
 					idc = 7700;
-					text = $STR_antistasi_rivals_network_header;
+					text = "$STR_antistasi_rivals_network_header";
 					x = "1 * pixelGridNoUIScale * pixelW";
 					y = "0 * pixelGridNoUIScale * pixelH";	
 					w = "22 * pixelGridNoUIScale * pixelW";	
@@ -584,7 +584,7 @@ class commanderMenu
 				class hideoutsDescriptionText: TextBaseMT
 				{
 					idc = 7701;			
-					text = $STR_antistasi_rivals_network_description;
+					text = "$STR_antistasi_rivals_network_description";
 					x = "1 * pixelGridNoUIScale * pixelW";
 					y = "2 * pixelGridNoUIScale * pixelH";	
 					w = "22 * pixelGridNoUIScale * pixelW";	
@@ -599,13 +599,13 @@ class commanderMenu
 					y = "13.5 * pixelGridNoUIScale * pixelH";					
 					w = "22 * pixelGridNoUIScale * pixelW";
 					h = "2 * pixelGridNoUIScale * pixelH";	
-					tooltip = $STR_antistasi_rivals_network_progress_bar_tooltip;
+					tooltip = "$STR_antistasi_rivals_network_progress_bar_tooltip";
 				};
 
 				class totalLocationsText: TextBase
 				{
 					idc = 7703;
-					text = $STR_antistasi_rivals_total_locations_label;
+					text = "$STR_antistasi_rivals_total_locations_label";
 					x = "1 * pixelGridNoUIScale * pixelW";
 					y = "safezoneH - (30 * pixelGridNoUIScale * pixelH)";	
 					w = "22 * pixelGridNoUIScale * pixelW";	
@@ -615,7 +615,7 @@ class commanderMenu
 				class knownLocationsText: TextBase
 				{
 					idc = 7704;
-					text = $STR_antistasi_rivals_attackable_locations_label;
+					text = "$STR_antistasi_rivals_attackable_locations_label";
 					x = "1 * pixelGridNoUIScale * pixelW";
 					y = "safezoneH - (28 * pixelGridNoUIScale * pixelH)";	
 					w = "22 * pixelGridNoUIScale * pixelW";	
@@ -625,8 +625,8 @@ class commanderMenu
 				class showLocationsButton: ButtonBase
 				{			
 					idc = 7762;
-					text = $STR_antistasi_rivals_show_activity_title;
-					tooltip = $STR_antistasi_rivals_show_activity_tooltip;
+					text = "$STR_antistasi_rivals_show_activity_title";
+					tooltip = "$STR_antistasi_rivals_show_activity_tooltip";
 					x = "1 * pixelGridNoUIScale * pixelW";
 					y = "34 * pixelGridNoUIScale * pixelH";
 					w = "22 * pixelGridNoUIScale * pixelW";	
@@ -643,7 +643,7 @@ class commanderMenu
 		class EnvironmentTab: ScrtRscControlsGroup 
 		{
 			idc = 4000;			
-			x = -0.4 * safezoneW + safezoneX;
+			x = QUOTE(-0.4 * safezoneW + safezoneX);
 			y = "safezoneY + (12 * pixelGridNoUIScale * pixelH)";
 			w = "26 * pixelGridNoUIScale * pixelW";			
 			h = "safezoneH - (12 * pixelGridNoUIScale * pixelH)";
@@ -653,7 +653,7 @@ class commanderMenu
 				class envDescriptionTitle: TextBase
 				{
 					idc = 4010;
-					text = $STR_commander_menu_environment_options_header;
+					text = "$STR_commander_menu_environment_options_header";
 					x = "1 * pixelGridNoUIScale * pixelW";
 					y = "0 * pixelGridNoUIScale * pixelH";	
 					w = "22 * pixelGridNoUIScale * pixelW";	
@@ -663,7 +663,7 @@ class commanderMenu
 				class envDescriptionText: TextBaseMT
 				{
 					idc = 4011;			
-					text = $STR_commander_menu_environment_options_text;
+					text = "$STR_commander_menu_environment_options_text";
 					x = "1 * pixelGridNoUIScale * pixelW";
 					y = "2 * pixelGridNoUIScale * pixelH";	
 					w = "22 * pixelGridNoUIScale * pixelW";	
@@ -680,7 +680,7 @@ class commanderMenu
 				class fogTitle: TextBase
 				{
 					idc = 4040;
-					text = $STR_commander_menu_fog_title_default;
+					text = "$STR_commander_menu_fog_title_default";
 					x = "1 * pixelGridNoUIScale * pixelW";
 					y = "6.5 * pixelGridNoUIScale * pixelH";	
 					w = "22 * pixelGridNoUIScale * pixelW";	
@@ -688,7 +688,7 @@ class commanderMenu
 					colorText[] = {0.75,0.75,0.75,1};
 					sizeEx = "((pixelH * (pixelGridNoUIScale) * 2) * 1.25) * 0.5";	
 					font = "PuristaMedium";
-					tooltip = $STR_commander_menu_fog_title_tooltip;
+					tooltip = "$STR_commander_menu_fog_title_tooltip";
 				};
 
 				class fogSlider: SliderBase
@@ -707,7 +707,7 @@ class commanderMenu
 				class setFogButton: ButtonBase
 				{			
 					idc = 4110;
-					text = $STR_commander_menu_fog_button;
+					text = "$STR_commander_menu_fog_button";
 					x = "18.5 * pixelGridNoUIScale * pixelW";
 					y = "9.5 * pixelGridNoUIScale * pixelH";	
 					w = "4.5 * pixelGridNoUIScale * pixelW"; 
@@ -726,7 +726,7 @@ class commanderMenu
 				class overcastTitle: TextBase
 				{
 					idc = 4060;
-					text = $STR_commander_menu_overcast_title_default;
+					text = "$STR_commander_menu_overcast_title_default";
 					x = "1 * pixelGridNoUIScale * pixelW";
 					y = "13 * pixelGridNoUIScale * pixelH";	
 					w = "22 * pixelGridNoUIScale * pixelW";	
@@ -734,7 +734,7 @@ class commanderMenu
 					colorText[] = {0.75,0.75,0.75,1};
 					sizeEx = "((pixelH * (pixelGridNoUIScale) * 2) * 1.25) * 0.5";	
 					font = "PuristaMedium";
-					tooltip = $STR_commander_menu_overcast_title_tooltip;
+					tooltip = "$STR_commander_menu_overcast_title_tooltip";
 				};
 
 				class overcastSlider: SliderBase
@@ -753,7 +753,7 @@ class commanderMenu
 				class setOvercastButton: ButtonBase
 				{			
 					idc = 4062;
-					text = $STR_commander_menu_overcast_button;
+					text = "$STR_commander_menu_overcast_button";
 					x = "18.5 * pixelGridNoUIScale * pixelW";
 					y = "16 * pixelGridNoUIScale * pixelH";	
 					w = "4.5 * pixelGridNoUIScale * pixelW"; 
@@ -799,7 +799,7 @@ class commanderMenu
 				class waitButton: ButtonBase
 				{			
 					idc = 4072;
-					text = $STR_commander_menu_wait_button;
+					text = "$STR_commander_menu_wait_button";
 					x = "18.5 * pixelGridNoUIScale * pixelW";
 					y = "22.5 * pixelGridNoUIScale * pixelH";	
 					w = "4.5 * pixelGridNoUIScale * pixelW"; 
@@ -818,8 +818,8 @@ class commanderMenu
 				class clearForestButton: ButtonBase
 				{			
 					idc = 4213;
-					text = $STR_commander_menu_clear_forest_button;
-					tooltip= $STR_commander_menu_clear_forest_tooltip;
+					text = "$STR_commander_menu_clear_forest_button";
+					tooltip= "$STR_commander_menu_clear_forest_tooltip";
 					x = "1 * pixelGridNoUIScale * pixelW";
 					y = "30 * pixelGridNoUIScale * pixelH";
 					w = "22 * pixelGridNoUIScale * pixelW";	
@@ -832,8 +832,8 @@ class commanderMenu
 				class clearGarbageButton: ButtonBase
 				{			
 					idc = 4214;
-					text = $STR_commander_menu_clear_garbage_button;
-					tooltip = $STR_commander_menu_clear_garbage_tooltip;
+					text = "$STR_commander_menu_clear_garbage_button";
+					tooltip = "$STR_commander_menu_clear_garbage_tooltip";
 					x = "1 * pixelGridNoUIScale * pixelW";
 					y = "33.5 * pixelGridNoUIScale * pixelH";
 					w = "22 * pixelGridNoUIScale * pixelW";	
@@ -849,7 +849,7 @@ class commanderMenu
 		class GameOptionsTab: ScrtRscControlsGroup 
 		{
 			idc = 5000;			
-			x = -0.4 * safezoneW + safezoneX;
+			x = QUOTE(-0.4 * safezoneW + safezoneX);
 			y = "safezoneY + (12 * pixelGridNoUIScale * pixelH)";
 			w = "26 * pixelGridNoUIScale * pixelW";			
 			h = "safezoneH - (12 * pixelGridNoUIScale * pixelH)";
@@ -859,7 +859,7 @@ class commanderMenu
 				class globalOptionsDescriptionTitle: TextBase
 				{
 					idc = 5010;
-					text = $STR_commander_menu_local_options_title;
+					text = "$STR_commander_menu_local_options_title";
 					x = "1 * pixelGridNoUIScale * pixelW";
 					y = "0 * pixelGridNoUIScale * pixelH";	
 					w = "22 * pixelGridNoUIScale * pixelW";	
@@ -869,7 +869,7 @@ class commanderMenu
 				class globalOptionsDescriptionText: TextBaseMT
 				{
 					idc = 5011;			
-					text = $STR_commander_menu_local_options_tooltip;
+					text = "$STR_commander_menu_local_options_tooltip";
 					x = "1 * pixelGridNoUIScale * pixelW";
 					y = "2 * pixelGridNoUIScale * pixelH";	
 					w = "22 * pixelGridNoUIScale * pixelW";	
@@ -897,7 +897,7 @@ class commanderMenu
 						class SwitchTitle: switchButtonTitle
 						{			
 							idc = 5102;	
-							text = $STR_commander_menu_music_switch;
+							text = "$STR_commander_menu_music_switch";
 						};
 						class SwitchText: switchButtonSelect
 						{			
@@ -907,7 +907,7 @@ class commanderMenu
 						class SwitchButton: switchButton {
 							idc = 5104;
 							action = "['MAIN', 5100, true, 'MUSIC'] call SCRT_fnc_ui_switchButton";
-							tooltip = $STR_commander_menu_music_switch_tooltip;
+							tooltip = "$STR_commander_menu_music_switch_tooltip";
 						};
 					};		
 				};
@@ -915,8 +915,8 @@ class commanderMenu
 				class musicTrackEditorButton: ButtonBase
 				{			
 					idc = 5310;
-					text = $STR_commander_menu_tracklist_editor_button;
-					tooltip = $STR_commander_menu_tracklist_editor_button_tooltip;
+					text = "$STR_commander_menu_tracklist_editor_button";
+					tooltip = "$STR_commander_menu_tracklist_editor_button_tooltip";
 					x = "1 * pixelGridNoUIScale * pixelW";
 					y = "8 * pixelGridNoUIScale * pixelH";
 					w = "22 * pixelGridNoUIScale * pixelW";	
@@ -940,17 +940,17 @@ class commanderMenu
 						class SwitchTitle: switchButtonTitle
 						{			
 							idc = 5402;	
-							text = $STR_commander_paradrop_switch;
+							text = "$STR_commander_paradrop_switch";
 						};
 						class SwitchText: switchButtonSelect
 						{			
 							idc = 5403;
 							text = "";
 						};
-						class SwitchButton: switchButton {
+						class SwitchButton: SwitchButton {
 							idc = 5404;
 							action = "['MAIN', 5400, true, 'PARADROP'] call SCRT_fnc_ui_switchButton";
-							tooltip = $STR_commander_menu_paradrop_tooltip;
+							tooltip = "$STR_commander_menu_paradrop_tooltip";
 						};
 					};
 				};	
@@ -958,8 +958,8 @@ class commanderMenu
 				class CheckVictoryButton: ButtonBase
 				{			
 					idc = 5310;
-					text = $STR_commander_menu_victory_check_button;
-					tooltip = $STR_commander_menu_victory_check_button_tooltip;
+					text = "$STR_commander_menu_victory_check_button";
+					tooltip = "$STR_commander_menu_victory_check_button_tooltip";
 					x = "1 * pixelGridNoUIScale * pixelW";
 					y = "15 * pixelGridNoUIScale * pixelH";
 					w = "22 * pixelGridNoUIScale * pixelW";	
@@ -986,8 +986,8 @@ class commanderMenu
 				class EditParamsButton: ButtonBase
 				{			
 					idc = 5200;
-					text = $STR_commander_menu_edit_params_button;
-					tooltip= $STR_commander_menu_edit_params_button_tooltip;
+					text = "$STR_commander_menu_edit_params_button";
+					tooltip= "$STR_commander_menu_edit_params_button_tooltip";
 					x = "1 * pixelGridNoUIScale * pixelW";
 					y = "30 * pixelGridNoUIScale * pixelH";
 					w = "22 * pixelGridNoUIScale * pixelW";	
@@ -1000,7 +1000,7 @@ class commanderMenu
 				class saveGameButton: ButtonBase
 				{		
 					idc = 5300;
-					text = $STR_commander_menu_persistent_save_button;
+					text = "$STR_commander_menu_persistent_save_button";
 					x = "1 * pixelGridNoUIScale * pixelW";
 					y = "safezoneH - (26 * pixelGridNoUIScale * pixelH)";
 					w = "22 * pixelGridNoUIScale * pixelW";	
@@ -1008,7 +1008,7 @@ class commanderMenu
 					sizeEx = "((pixelH * (pixelGridNoUIScale) * 2) * 1.25) * 0.5";	
 					shadow = 2;			
 					colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.376])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.125])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.043])",1};
-					tooltip = $STR_commander_menu_persistent_save_button_tooltip;
+					tooltip = "$STR_commander_menu_persistent_save_button_tooltip";
 					action = "closeDialog 0; closeDialog 0; [] spawn A3A_fnc_persistentSave;";				
 				};
 			};
@@ -1018,7 +1018,7 @@ class commanderMenu
 		class GameInfoTab: ScrtRscControlsGroup 
 		{
 			idc = 6000;			
-			x = -0.4 * safezoneW + safezoneX;
+			x = QUOTE(-0.4 * safezoneW + safezoneX);
 			y = "safezoneY + (12 * pixelGridNoUIScale * pixelH)";
 			w = "26 * pixelGridNoUIScale * pixelW";			
 			h = "safezoneH - (12 * pixelGridNoUIScale * pixelH)";
@@ -1028,7 +1028,7 @@ class commanderMenu
 				class gameInfoDescriptionTitle: TextBase
 				{
 					idc = 6010;
-					text = $STR_commander_menu_game_info_header;
+					text = "$STR_commander_menu_game_info_header";
 					x = "1 * pixelGridNoUIScale * pixelW";
 					y = "0 * pixelGridNoUIScale * pixelH";	
 					w = "22 * pixelGridNoUIScale * pixelW";	
@@ -1049,7 +1049,7 @@ class commanderMenu
 				class serverMembersDescriptionTitle: TextBase
 				{
 					idc = 6012;
-					text = $STR_commander_menu_server_members_header;
+					text = "$STR_commander_menu_server_members_header";
 					x = "1 * pixelGridNoUIScale * pixelW";
 					y = "10 * pixelGridNoUIScale * pixelH";	
 					w = "22 * pixelGridNoUIScale * pixelW";	
@@ -1070,7 +1070,7 @@ class commanderMenu
 				class rerollTraderButton: ButtonBase
 				{		
 					idc = 6014;
-					text = $STR_commander_menu_redo_arms_dealer_task;
+					text = "$STR_commander_menu_redo_arms_dealer_task";
 					x = "1 * pixelGridNoUIScale * pixelW";
 					y = "safezoneH - (26 * pixelGridNoUIScale * pixelH)";
 					w = "22 * pixelGridNoUIScale * pixelW";	
@@ -1079,7 +1079,7 @@ class commanderMenu
 					fade = 0;
 					shadow = 2;
 					colorBackground[] = {0.376, 0.125, 0.043, 1};
-					tooltip = $STR_commander_menu_redo_arms_dealer_task_tooltip;
+					tooltip = "$STR_commander_menu_redo_arms_dealer_task_tooltip";
 					action = "if (player isEqualTo theBoss) then {[] spawn SCRT_fnc_trader_rerollTrader;} else {closeDialog 0; closeDialog 0; [localize 'STR_generic_commander_reroll', localize 'STR_generic_commander_only'] call SCRT_fnc_misc_deniedHint;};";			
 				};
 			};

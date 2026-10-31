@@ -1,6 +1,6 @@
-params [["_building", ObjNull]];
+params [["_building", objNull]];
 
-if (_building isEqualTo ObjNull) exitWith {};
+if (_building isEqualTo objNull) exitWith {};
 
 private _effects = [];
 
@@ -17,7 +17,7 @@ private _bMaxHeightAsl = ATLToASL ([_bAtlPos select 0, _bAtlPos select 1, _maxHe
 
 private _realRoofHeightAsl = ((lineIntersectsSurfaces [_bMaxHeightAsl, _bMinHeightAsl]) select 0) select 0;
 if (!isNil "_realRoofHeightAsl") then {
-    private _effect = ObjNull;
+    private _effect = objNull;
     if (random 100 <= 50) then {
         if (random 100 >= 70) then {
             _effect = createVehicle ["test_EmptyObjectForSmoke", _buildingPos, [], 0, "CAN_COLLIDE"];

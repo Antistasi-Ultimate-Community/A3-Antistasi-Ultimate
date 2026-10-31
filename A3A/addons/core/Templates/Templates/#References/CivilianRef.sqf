@@ -1,3 +1,5 @@
+#pragma hemtt ignore_variables ["_pressVests","_pressHelmets","_workerHelmets","_fnc_saveNames","_fnc_createLoadoutData","_fnc_copyLoadoutData","_fnc_generateAndSaveUnitsToTemplate","_fnc_saveToTemplate","_hasApex","_hasLawsOfWar"]
+
 /* private _hasWs = "ws" in A3A_enabledDLC;
 private _hasMarksman = "mark" in A3A_enabledDLC;
 private _hasLawsOfWar = "orange" in A3A_enabledDLC;

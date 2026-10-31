@@ -28,7 +28,7 @@ private _r1info = getRoadInfo _road1;
 private _r2info = getRoadInfo _road2;
 
 // order road1 ends as [start, end] by proximity to road2
-private _r1ends = if (_r1info#6 distance2d _road2 < _r1info#7 distance2d _road2) then
+private _r1ends = if (_r1info#6 distance2D _road2 < _r1info#7 distance2D _road2) then
     { [_r1info#7, _r1info#6] } else { [_r1info#6, _r1info#7] };
 
 private _r1conn = count roadsConnectedTo [_road1, true];

@@ -7,7 +7,7 @@ _size = _this select 1;
 _buildings = nearestObjects [_positionX, A3A_milBuildingWhitelist, _size, true];
 _buildings = _buildings inAreaArray _markerX;
 
-if (count _buildings == 0) exitWith {[grpNull,[],[]]};
+if (_buildings isEqualTo []) exitWith {[grpNull,[],[]]};
 
 _sideX = _this select 2;
 private _faction = Faction(_sideX);

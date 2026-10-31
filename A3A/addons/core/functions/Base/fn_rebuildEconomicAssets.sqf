@@ -6,11 +6,11 @@ if (!isServer) exitWith { Error("Server-only function miscalled") };
 
 params ["_economicSite"];
 
-Debug_1("Entered A3A_fnc_rebuildEconomicAssets for %1", _economicSite);
+Debug_1("Entered A3A_fnc_rebuildEconomicAssets for %1",_economicSite);
 
 if !(_economicSite in destroyedSites) exitWith { Error("Attempted to rebuild invalid economic site") };
 
-Info_1("Rebuilding %1", _economicSite);
+Info_1("Rebuilding %1",_economicSite);
 
 // Remove from destroyed sites
 destroyedSites = destroyedSites - [_economicSite];
@@ -28,4 +28,4 @@ private _economicBuildings = nearestObjects [_economicSitePosition, _repairTypes
 private _nameX = [_economicSite] call A3A_fnc_localizar;
 ["TaskSucceeded", ["", format [localize "STR_notifiers_rebuild_assets_success", _nameX]]] remoteExec ["BIS_fnc_showNotification",[teamPlayer, civilian]];
 
-Info_1("%1 has been Rebuilt.", _economicSite);
+Info_1("%1 has been Rebuilt.",_economicSite);

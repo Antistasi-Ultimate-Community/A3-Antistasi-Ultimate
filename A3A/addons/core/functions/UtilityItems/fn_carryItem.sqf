@@ -53,11 +53,11 @@ _player setVariable ["A3A_actionIDdrop", _dropID];
     waitUntil {
         _player allowSprint false;
         !alive _item or !alive _player
-        or (lifestate _player isEqualTo "INCAPACITATED")            // drop when ACE-unconscious
+        or (lifeState _player isEqualTo "INCAPACITATED")            // drop when ACE-unconscious
         or !(_player getVariable ["A3A_carryingObject", false])
-//        or !(vehicle _player == _player)
-        or !(_player == attachedTo _item)
-        or (_isHQ and _player distance2d markerPos "Synd_HQ" > 50)
+//        or !(isNull objectParent _player)
+        or (_player != attachedTo _item)
+        or (_isHQ and _player distance2D markerPos "Synd_HQ" > 50)
     };
     if (_player getVariable ["A3A_carryingObject", false]) then { _player call A3A_fnc_dropItem };
     _player allowSprint true;
