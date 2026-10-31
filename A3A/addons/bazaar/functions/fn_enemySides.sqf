@@ -2,10 +2,7 @@
 // is running, otherwise whatever is hostile to the players' side.
 private _out = [];
 if (call ABZ_fnc_isAntistasi) exitWith {
-	{
-		if (!isNil _x) then { _out pushBack (missionNamespace getVariable _x) };
-	} forEach ["Occupants", "Invaders"];
-	_out
+    [Occupants, Invaders];
 };
 private _mine = if (hasInterface) then { playerSide } else { independent };
 {

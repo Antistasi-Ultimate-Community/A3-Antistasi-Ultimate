@@ -6,11 +6,11 @@ private _d = _c getVariable ["ABZ_crate", []];
 private _ri = _c getVariable ["ABZ_runInfo", []];
 if (_d isEqualTo [] && {_ri isEqualTo []}) exitWith {};
 
-private _header = "Sealed Bazaar crate";
+private _header = localize "STR_A3U_Bazaar_Crate_Sealed";
 private _body = "";
 if (_d isEqualTo []) then {
 	_ri params [["_who", ""], ["_dn", ""], ["_dt", ""]];
-	_header = "Smuggled crate";
+	_header = localize "STR_A3U_Bazaar_Crate_Smuggled";
 	_body = format [localize "STR_A3U_Bazaar_Crate_Contraband", _who, _dn, _dt];
 } else {
 	_d params ["_cls", "_n"];
