@@ -8,6 +8,7 @@
                 <German>Auswählen</German>
                 <Chinesesimp>选择</Chinesesimp>
                 <Korean>선택</Korean>
+                <Spanish>Seleccionar</Spanish>
                 <French>Sélectionner</French>
                 <Turkish>Seç</Turkish>
             </Key>
@@ -17,6 +18,7 @@
                 <German>Abbrechen</German>
                 <Chinesesimp>取消</Chinesesimp>
                 <Korean>취소</Korean>
+                <Spanish>Cancelar</Spanish>
                 <French>Annuler</French>
                 <Turkish>İptal</Turkish>
             </Key>
@@ -26,6 +28,7 @@
                 <German>Objekt auswählen</German>
                 <Chinesesimp>选择一个对象</Chinesesimp>
                 <Korean>개체를 선택합니다</Korean>
+                <Spanish>Selecciona un objeto</Spanish>
                 <French>Sélectionner un objet</French>
                 <Turkish>Bir nesne seç</Turkish>
             </Key>
@@ -35,6 +38,7 @@
                 <German>Nichts ausgewählt</German>
                 <Chinesesimp>你没有在看任何物体</Chinesesimp>
                 <Korean>아무것도 보고 있지 않습니다</Korean>
+                <Spanish>No estás mirando a nada</Spanish>
                 <French>Ne rien regarder</French>
                 <Turkish>Hiçbir şeye bakmıyorsun</Turkish>
             </Key>
@@ -44,6 +48,7 @@
                 <Russian>Сортировка по цвету строки</Russian>
                 <Chinesesimp>按行的颜色排序</Chinesesimp>
                 <Korean>색깔 별로 정렬</Korean>
+                <Spanish>Ordenar por color de fila</Spanish>
                 <French>Tri par couleur de ligne</French>
                 <Turkish>Satır rengine göre sırala</Turkish>
             </Key>
@@ -52,6 +57,7 @@
                 <Russian>Сортировка по моду/дополнению</Russian>
                 <Chinesesimp>按模组/DLC排序</Chinesesimp>
                 <Korean>모드/DLC 별로 정렬</Korean>
+                <Spanish>Ordenar por mod/DLC</Spanish>
                 <Turkish>MOD/DLC göre sırala</Turkish>
             </Key>
             <Key ID="STR_JNA_SORT_DEFAULT">
@@ -60,6 +66,7 @@
                 <Russian>Сортировка по умолчанию</Russian>
                 <Chinesesimp>默认排序</Chinesesimp>
                 <Korean>기본</Korean>
+                <Spanish>Por defecto</Spanish>
                 <French>Standard</French>
                 <Turkish>Varsayılan</Turkish>
             </Key>
@@ -69,6 +76,7 @@
                 <Russian>Сортировка по количеству</Russian>
                 <Chinesesimp>按数量排序</Chinesesimp>
                 <Korean>수량 별로 정렬</Korean>
+                <Spanish>Ordenar por cantidad</Spanish>
                 <French>Trier par quantité</French>
                 <Turkish>Miktara göre sırala</Turkish>
             </Key>
@@ -78,6 +86,7 @@
                 <Chinesesimp>军火库</Chinesesimp>
                 <Russian>Арсенал</Russian>
                 <Korean>아스널</Korean>
+                <Spanish>Arsenal</Spanish>
                 <French>Arsenal</French>
                 <Turkish>Arsenal</Turkish>
             </Key>
@@ -87,6 +96,7 @@
                 <German>Fahrzeug auswählen, um Arsenal dafür zu öffnen</German>
                 <Chinesesimp>选择一辆载具，在载具内打开军火库</Chinesesimp>
                 <Korean>아스널을 열 차량 선택</Korean>
+                <Spanish>Selecciona un vehículo para abrirle el arsenal</Spanish>
                 <French>Sélectionner un véhicule pour ouvrir l'arsenal qui lui est destiné</French>
                 <Turkish>Araç için Arsenal'i aç</Turkish>
             </Key>
@@ -96,6 +106,7 @@
                 <Chinesesimp>从载具上卸载</Chinesesimp>
                 <Russian>Выгрузить из транспортного средства</Russian>
                 <Korean>차량에서 하역</Korean>
+                <Spanish>Descargar del vehículo</Spanish>
                 <French>Déchargement du véhicule</French>
                 <Turkish>Araçtan indir</Turkish>
             </Key>
@@ -105,6 +116,7 @@
                 <Chinesesimp>你没有在看物体。</Chinesesimp>
                 <Russian>Вы не смотрите на объект.</Russian>
                 <Korean>개체를 보고 있지 않습니다.</Korean>
+                <Spanish>No estás mirando a ningún objeto.</Spanish>
                 <French>Vous ne regardez pas un objet.</French>
                 <Turkish>Bir objeye bakmıyorsunuz</Turkish>
             </Key>
@@ -114,6 +126,7 @@
                 <Chinesesimp>该对象太远</Chinesesimp>
                 <Russian>Объект находится слишком далеко.</Russian>
                 <Korean>개체가 너무 멉니다.</Korean>
+                <Spanish>El objeto está demasiado lejos.</Spanish>
                 <French>L'objet est trop éloigné.</French>
                 <Turkish>Obje çok uzakta</Turkish>
             </Key>
@@ -123,6 +136,7 @@
                 <Chinesesimp>该对象没有任何库存</Chinesesimp>
                 <Russian>У объекта нет какого-либо инвентаря.</Russian>
                 <Korean>개체에 소지품이 없습니다.</Korean>
+                <Spanish>El objeto no tiene inventario.</Spanish>
                 <French>L'objet n'a pas d'inventaire.</French>
                 <Turkish>Objenin herhangi bir envanteri yok</Turkish>
             </Key>
@@ -132,6 +146,7 @@
                 <Chinesesimp>这样的有限物品只有服务器会员才能使用。</Chinesesimp>
                 <Russian>У нас мало этих предметов, только участники могут его использовать.</Russian>
                 <Korean>우린 이 아이템이 부족해서 멤버만 사용할 수 있습니다.</Korean>
+                <Spanish>Nos queda poco de este objeto, solo los miembros pueden usarlo.</Spanish>
                 <French>Cet article est en rupture de stock, seuls les membres peuvent l'utiliser.</French>
                 <Turkish>Bu eşyanın stokları azaldı, sadece üyeler kullanabilir</Turkish>
             </Key>
@@ -141,6 +156,7 @@
                 <Chinesesimp>载具库存</Chinesesimp>
                 <Russian>Инвентарь транспортного средства</Russian>
                 <Korean>차량 소지품</Korean>
+                <Spanish>Inventario del vehículo</Spanish>
                 <French>Inventaire du véhicule</French>
                 <Turkish>Araç Envanteri</Turkish>
             </Key>
@@ -150,6 +166,7 @@
                 <German>Standardausrüstung</German>
                 <Chinesesimp>默认装备</Chinesesimp>
                 <Korean>기본 장비</Korean>
+                <Spanish>Equipo por defecto</Spanish>
                 <French>Équipement standard</French>
                 <Turkish>Varsayılan teçhizat</Turkish>
             </Key>
@@ -159,6 +176,7 @@
                 <German>Fügen Sie Standardartikel wie Radio und medizinische Versorgung hinzu</German>
                 <Chinesesimp>添加默认装备，如无线电和医疗用品</Chinesesimp>
                 <Korean>무전기 및 의료품같은 기본 아이템 추가</Korean>
+                <Spanish>Añade objetos por defecto como radio y material médico</Spanish>
                 <French>Ajouter des éléments par défaut tels que des radios et des fournitures médicales</French>
                 <Turkish>Radyo ve tıbbi malzeme gibi varsayılan eşyaları ekle</Turkish>
             </Key>
@@ -168,6 +186,7 @@
                 <German>Kiste</German>
                 <Chinesesimp>到箱子</Chinesesimp>
                 <Korean>상자로</Korean>
+                <Spanish>A la caja</Spanish>
                 <French>A mettre en caisse</French>
                 <Turkish>Kasaya</Turkish>
             </Key>
@@ -177,6 +196,7 @@
                 <German>Verschiebe Gegenstände aus dem Kisteninventar ins Arsenal</German>
                 <Chinesesimp>将箱子里物品转移到军火库库存</Chinesesimp>
                 <Korean>상자 소지품을 아스널로 아이템 옮기기</Korean>
+                <Spanish>Mueve objetos del inventario de la caja al arsenal</Spanish>
                 <French>Déplacer des objets de l'inventaire de la caisse vers l'arsenal</French>
                 <Turkish>Eşyaları kasa envanterinden arsenal'e taşı</Turkish>
             </Key>
@@ -186,6 +206,7 @@
                 <German>Fahrzeug entladen</German>
                 <Chinesesimp>卸载载具</Chinesesimp>
                 <Korean>차량 하역</Korean>
+                <Spanish>Descargar vehículo</Spanish>
                 <French>Décharger le véhicule</French>
                 <Turkish>Aracı Boşalt</Turkish>
             </Key>
@@ -195,15 +216,18 @@
                 <German>Verschieben Sie Gegenstände aus dem Fahrzeuginventar in das Arsenal</German>
                 <Chinesesimp>将载具库存内物品移动到军火库</Chinesesimp>
                 <Korean>차량 소지품을 아스널로 아이템 옮기기</Korean>
+                <Spanish>Mueve objetos del inventario del vehículo al arsenal</Spanish>
                 <French>Déplacer des objets de l'inventaire des véhicules vers l'arsenal</French>
                 <Turkish>Eşyaları araç envanterinden arsenal'e taşı</Turkish>
             </Key>
             <Key ID="STR_JNA_OVERRIDE">
                 <Original>Double-click an item in the list to save it into your custom loadout. Double-click again to unsave.</Original>
+                <Spanish>Haz doble clic en un objeto de la lista para guardarlo en tu equipamiento personalizado. Vuelve a hacer doble clic para quitarlo.</Spanish>
                 <Turkish>Bir eşyayı özel yüklemenize kaydetmek için listeden üzerine çift tıklayın. Kaldırmak için tekrar çift tıklayın.</Turkish>
             </Key>
             <Key ID="STR_JNA_OVERRIDE_CARGO">
                 <Original>Double-click an item in the list to save it into your custom loadout. Double-click again to unsave. Note that saving a cargo container (Uniform, Vest, or Backpack) also saves all of the contents of that container.</Original>
+                <Spanish>Haz doble clic en un objeto de la lista para guardarlo en tu equipamiento personalizado. Vuelve a hacer doble clic para quitarlo. Ten en cuenta que guardar un contenedor (uniforme, chaleco o mochila) guarda también todo su contenido.</Spanish>
                 <Turkish>Bir eşyayı özel yüklemenize kaydetmek için üzerine çift tıklayın. Kaldırmak için tekrar çift tıklayın. Bir taşıma konteynerini (Üniforma, Yelek veya Sırt Çantası) kaydetmenin, o konteynerin tüm içeriğini de kaydedeceğini unutmayın.</Turkish>
             </Key>
         </Container>
