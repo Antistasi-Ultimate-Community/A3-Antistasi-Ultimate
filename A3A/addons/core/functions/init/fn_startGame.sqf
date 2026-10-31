@@ -9,8 +9,9 @@ params ["_saveData"];
 Info_1("startGame called with data %1", _saveData);
 
 // savedata sanity checks could go here 
-
-
+if !(_saveData get "params" isEqualType createHashMap) then {
+    _saveData set["params", createHashMapFromArray(_saveData get "params")];
+};
 
 // Save to global to trigger init progression and for later save operations
 A3A_saveData = _saveData;

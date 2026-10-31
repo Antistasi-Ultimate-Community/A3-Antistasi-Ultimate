@@ -726,7 +726,12 @@ class Templates
     // ***************************** AFR *****************************
 
     #include "Templates\AFR\templates.hpp"
-	// ***************************** AFR *****************************
+
+    // ***************************** TKE *****************************
+
+    #include "Templates\TKE\templates.hpp"
+
+	  // ***************************** NFtSCW *****************************
 
     #include "Templates\NFtSCW\templates.hpp"
 };
