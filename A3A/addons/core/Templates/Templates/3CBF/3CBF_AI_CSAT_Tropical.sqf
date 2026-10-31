@@ -71,7 +71,7 @@ if (5 < (random 100)) then {
 
 ["vehiclesPolice", ["UK3CB_CSAT_G_O_Offroad_Unarmed", "UK3CB_CSAT_G_O_M1030"]] call _fnc_saveToTemplate;
 
-["staticMGs", ["UK3CB_CSAT_G_O_DSHKM", "UK3CB_CSAT_G_O_PKM_High", "UK3CB_CSAT_G_O_Searchlight"]] call _fnc_saveToTemplate;
+["staticMGs", ["UK3CB_CSAT_G_O_DSHKM", "UK3CB_CSAT_G_O_PKM_High"]] call _fnc_saveToTemplate;
 ["staticAT", ["UK3CB_CSAT_G_O_SPG9", "UK3CB_CSAT_G_O_Kornet"]] call _fnc_saveToTemplate;
 ["staticAA", ["UK3CB_CSAT_G_O_ZU23", "UK3CB_CSAT_G_O_Igla_AA_pod"]] call _fnc_saveToTemplate;
 ["staticMortars", ["rhs_2b14_82mm_msv"]] call _fnc_saveToTemplate;
