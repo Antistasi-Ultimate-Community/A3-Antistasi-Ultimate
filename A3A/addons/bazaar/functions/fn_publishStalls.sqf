@@ -5,6 +5,7 @@
 // Only sends when something changed.
 if (!isServer) exitWith {};
 private _st = (ABZ_vendors select { (_x select 9) == "ok" }) apply { [_x select 0, _x select 2, _x select 11] };
+if (ABZ_legacyVendorEntry isNotEqualTo [] && {alive ABZ_legacyVendor}) then { _st pushBack [ABZ_legacyVendorId, ABZ_legacyVendorEntry select 2, ABZ_legacyVendorEntry select 11] };
 if !(_st isEqualTo (missionNamespace getVariable ["ABZ_stalls", []])) then {
 	ABZ_stalls = _st;
 	publicVariable "ABZ_stalls";

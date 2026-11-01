@@ -61,6 +61,9 @@ class CfgFunctions
 			class vendorMarker {};
 			class vendorLoop {};
 			class vendorTick {};
+			// --- Legacy Trader / Arms Dealer ---
+			class legacyVendorRestock {};
+			class legacyVendorSetup {};
 
 			// --- trade (server) ---
 			class serverCanTrade {};

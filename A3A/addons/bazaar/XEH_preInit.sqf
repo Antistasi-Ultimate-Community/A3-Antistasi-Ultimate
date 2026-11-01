@@ -2,6 +2,12 @@
 // Runs on every machine before mission init.
 #include "dialogues\ids.inc"
 
+// vendor to deal in all configured items, but with limited stock
+// analog to old arms dealer / trader
+ABZ_legacyVendorId = 9999;
+ABZ_legacyVendorEntry = [];
+ABZ_legacyVendor = objNull;
+
 ABZ_vendors = [];		// server: vendor entries (plain arrays - see fn_vendorCreate for the layout)
 ABZ_vendorObjs = createHashMap;	// server: vendor id -> [unit, [props]]
 ABZ_crates = [];		// server: live sealed bulk crates in the world
@@ -249,6 +255,14 @@ private _abzReprice = {
 	["$STR_A3U_Bazaar_Settings_BulkSlots", "$STR_A3U_Bazaar_Settings_BulkSlots_Tooltip"],
 	"Antistasi Bazaar|Stock",
 	[0, 4, 2, 0],
+	1, {}
+] call CBA_fnc_addSetting;
+
+[
+	"ABZ_legacyVendorBulkSlots", "SLIDER",
+	["$STR_A3U_Bazaar_Settings_LegacyVendorBulkSlots", "$STR_A3U_Bazaar_Settings_LegacyVendorBulkSlots_Tooltip"],
+	"Antistasi Bazaar|Stock",
+	[0, 50, 12, 0],
 	1, {}
 ] call CBA_fnc_addSetting;
 
