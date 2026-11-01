@@ -38,7 +38,7 @@ private _fnc_category = {
 		case (_c isKindOf "Tank"): { "TANK" };
 		case (_c isKindOf "APC"): { "APC" };
 		case (_c isKindOf "Helicopter"): { "HELI" };
-		case (_c isKindOf "Plane"): { "PLANE" };
+		//case (_c isKindOf "Plane"): { "PLANE" }; // ! commented because it also catches fixed-wing UAVs
 		case (_c isKindOf "Ship"): { "BOAT" };
 		case (_c isKindOf "StaticMGWeapon"): { "STATICMG" };
 		case (_c isKindOf "StaticAAWeapon"): { "STATICAA" };
@@ -50,6 +50,7 @@ private _fnc_category = {
 				case "edsubcat_aas": { "AA" };
 				case "edsubcat_artillery": { "ARTILLERY" };
 				case "edsubcat_drones": { "UAV" };
+				case "edsubcat_planes": { "PLANE" };
 				default { "" };
 			};
 		};
