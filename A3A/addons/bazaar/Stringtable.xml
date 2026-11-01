@@ -65,6 +65,12 @@
             <Key ID="STR_A3U_Bazaar_Settings_StockSource_Everything">
                 <Original>Everything loaded</Original>
             </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_VehStockSource">
+                <Original>Vehicle stock source</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_VehStockSource_Tooltip">
+                <Original>'Factions in play' builds the catalog from the vehicles of every faction in the campaign (occupiers, invaders, rebels, rivals). 'Everything loaded' scans every mod on the server instead (falls back to this outside Antistasi).</Original>
+            </Key>
             <Key ID="STR_A3U_Bazaar_Settings_SlotCount">
                 <Original>Single-item slots per trader</Original>
             </Key>
