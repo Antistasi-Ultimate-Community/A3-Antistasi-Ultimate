@@ -77,6 +77,12 @@
             <Key ID="STR_A3U_Bazaar_Settings_BulkSlots_Tooltip">
                 <Original>How many sealed bulk crates a trader offers per restock. Bulk crates hold one unlock's worth of an item and must be hauled home.</Original>
             </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_LegacyVendorBulkSlots">
+                <Original>Bulk crate slots for the Arms Dealer</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_LegacyVendorBulkSlots_Tooltip">
+                <Original>How many sealed bulk crates the Arms Dealer offers per restock. Bulk crates hold one unlock's worth of an item and must be hauled home.</Original>
+            </Key>
             <Key ID="STR_A3U_Bazaar_Settings_BulkSize">
                 <Original>Bulk crate size</Original>
             </Key>

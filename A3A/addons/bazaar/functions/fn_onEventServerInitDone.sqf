@@ -149,6 +149,7 @@ private _fnc_load = {
 sleep 5;	// let Antistasi finish stamping its factions/arsenal
 call ABZ_fnc_buildPool;
 call ABZ_fnc_buildVehPool;
+call ABZ_fnc_legacyVendorRestock;	// initial stock fill for legacy vendor
 call ABZ_fnc_dealerReach;	// build the Arms Dealer lookup here, scheduled, not mid-restock
 call _fnc_load;
 call ABZ_fnc_publishStalls;

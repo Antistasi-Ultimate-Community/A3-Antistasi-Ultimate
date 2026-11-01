@@ -69,10 +69,13 @@ private _barrel = "MetalBarrel_burning_F" createVehicle _barrelPosition;
 private _smokeEffect = "#particlesource" createVehicle _barrelPosition;
 _smokeEffect setParticleClass "BigDestructionSmoke";
 
+/*
+// ! trader now uses bazaar methods
 //due to esotheric BS which fn_scheduler is i have no other choice than sending setTraderStock 
 //everywhere in hope that it will be delivered to heckin server (because clientId 2 does not work at all)
 [traderX] remoteExecCall ["SCRT_fnc_trader_setStockType", 0];
 [traderX] remoteExecCall ["SCRT_fnc_trader_addVehicleMarketAction", 0, true];
+*/
 
 _worldName = [] call SCRT_fnc_misc_getWorldName;
 
