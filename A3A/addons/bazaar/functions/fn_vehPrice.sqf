@@ -12,9 +12,7 @@ params [["_class", "", [""]], ["_cat", "", [""]]];
 private _base = 0;
 private _stock = missionNamespace getVariable ["A3U_blackMarketStock", nil];
 if (!isNil "_stock" && {_stock isEqualType createHashMap} && {!isNil "A3U_fnc_blackMarketVehiclePrice"}) then {
-	private _listed = false;
-	{ if (_y isEqualType createHashMap && {_class in _y}) exitWith { _listed = true } } forEach _stock;
-	if (_listed) then { _base = [_class] call A3U_fnc_blackMarketVehiclePrice };
+	_base = [_class] call A3U_fnc_blackMarketVehiclePrice;
 };
 if (!(_base isEqualType 0) || {_base <= 0}) then {
 	_base = 0;
@@ -33,6 +31,12 @@ if (_base <= 0) then {
 		case "HELI": { 20000 };
 		case "AA": { 40000 };
 		case "TANK": { 60000 };
+		case "PLANE": { 70000 };
+		case "STATICMG": { 3000 };
+		case "STATICAA";
+		case "STATICAT": { 5000 };
+		case "STATICMORTAR": { 8000 };
+		case "ARTILLERY": { 30000 };
 		default { 10000 };
 	};
 };

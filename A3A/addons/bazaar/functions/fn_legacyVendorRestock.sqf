@@ -83,16 +83,19 @@ for "_i" from 1 to round (missionNamespace getVariable ["ABZ_legacyVendorBulkSlo
 };
 
 // ---------------------------------------------------------------------------
-// Part 3: one of every military vehicle in the vehicle catalog
-// TODO: build a rarity <--> quantity map for vehicles, similar to equipment items
-// TODO: update fn_buildVehPool (with CBA setting) to include *all* vehicles (not just those from the factions in use), simliar to equipment items
+// Part 3: every military vehicle in the vehicle catalog, with a limited quantity by rarity
 //
-// ABZ_vehPool [class, category, source side variable] --> vehicle stock row [class, price, tier, 1, false, "vehicle", category, source side variable]
+// ABZ_vehPool [class, category, source side variable] --> vehicle stock row [class, price, tier, qtyLeft, false, "vehicle", category, source side variable]
 // ---------------------------------------------------------------------------
+
+// [min, max] quantity per rarity tier: vehicles are far scarcer than equipment, and war-tier scaling applies as it does for equipment
+private _vehQtyByTier = [[3, 6], [2, 4], [1, 2], [1, 1]];
 {
 	_x params ["_c", "_cat", "_sideVar"];
-	private _tierV = (ABZ_vehCats getOrDefault [_cat, ["", 1]]) select 1; // rarity from category (ABZ_vehCats: [name, tier, weight, heavy])
-	_stock pushBack [_c, [_c, _cat] call ABZ_fnc_vehPrice, _tierV, 1, false, "vehicle", _cat, _sideVar];
+	private _tierV = (ABZ_vehCats getOrDefault [_cat, ["", 1]]) select 1;
+	(_vehQtyByTier select _tierV) params ["_lo", "_hi"];
+	private _qty = 1 max round ((_lo + floor random (_hi - _lo + 1)) * _fQty);
+	_stock pushBack [_c, [_c, _cat] call ABZ_fnc_vehPrice, _tierV, _qty, false, "vehicle", _cat, _sideVar];
 } forEach ABZ_vehPool;
 
 // ---------------------------------------------------------------------------

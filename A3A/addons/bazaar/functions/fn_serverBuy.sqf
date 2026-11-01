@@ -76,7 +76,7 @@ if (_kind isEqualTo "vehicle") exitWith {
 
 	private _personal = (missionNamespace getVariable ["ABZ_funds", 0]) != 1 || {(call ABZ_fnc_getFactionMoney) < 0};
 	if !([_player, _price] call ABZ_fnc_serverCharge) exitWith {};
-	_slotArr set [3, 0];
+	_slotArr set [3, _left - 1];	// vehicles can be stocked in more than one (the legacy vendor's table)
 	[_player, _class, _sideVar, _spot, _personal] call ABZ_fnc_serverDeliverVeh;
 	ServerInfo_5("[ABZ] %1 bought vehicle %2 (%3) for $%4 from trader #%5",name _player,_class,_cat,_price,_id);
 	["ABZ_shopData", [_e, _player] call ABZ_fnc_shopPayload, _player] call CBA_fnc_targetEvent;
