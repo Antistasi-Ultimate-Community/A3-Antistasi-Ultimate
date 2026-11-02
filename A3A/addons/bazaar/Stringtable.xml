@@ -59,6 +59,9 @@
             <Key ID="STR_A3U_Bazaar_Settings_StockSource_Tooltip">
                 <Original>'Factions in play' builds the catalog from the gear of every faction in the campaign (occupiers, invaders, rebels, rivals) - so a Faction Forger faction, RHS, 3CB, whatever is fighting, is what the traders fence. 'Everything loaded' scans every mod on the server instead (falls back to this outside Antistasi).</Original>
             </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_StockSource_Blackmarket">
+                <Original>Old black market config files (same content as AU's trader in previous versions)</Original>
+            </Key>
             <Key ID="STR_A3U_Bazaar_Settings_StockSource_Factions">
                 <Original>Factions in play (Antistasi)</Original>
             </Key>

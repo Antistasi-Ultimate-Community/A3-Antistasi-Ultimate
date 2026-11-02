@@ -11,12 +11,16 @@ if !(call ABZ_fnc_isAntistasi) exitWith {
 	Error("[ABZ] Vehicle catalog: not an Antistasi mission - no military vehicles");
 };
 
-private _fromConfigs = (missionNamespace getVariable ["ABZ_vehStockSource", 0]) isEqualTo 1;
-(if (_fromConfigs) then { call ABZ_fnc_vehPoolFromConfigs } else { call ABZ_fnc_vehPoolFromFactions }) params ["_rows", "_skipped"];
+private _stockSource = missionNamespace getVariable ["ABZ_vehStockSource", 0]; 
+switch (_stockSource) do {
+	case 0: { call ABZ_fnc_vehPoolFromFactions };
+	case 1: { call ABZ_fnc_vehPoolFromBlackMarket };
+	case 2: { call ABZ_fnc_vehPoolFromConfigs };
+} params ["_rows", "_skipped"];
 ABZ_vehPool = _rows;
 
 private _counts = createHashMap;
 { _counts set [_x select 1, (_counts getOrDefault [_x select 1, 0]) + 1] } forEach ABZ_vehPool;
 
-private _source = ["factions", "configs"] select _fromConfigs;
+private _source = ["factions", "blackmarket", "configs"] select _stockSource;
 Debug_4("[ABZ] Vehicle catalog: %1 military vehicles from %2 %3 (%4 candidates skipped: UAV/artillery/supply/static/invalid)",count ABZ_vehPool,_source,toArray _counts,_skipped);

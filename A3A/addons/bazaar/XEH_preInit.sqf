@@ -253,7 +253,7 @@ private _abzReprice = {
 	"ABZ_vehStockSource", "LIST",
 	["$STR_A3U_Bazaar_Settings_VehStockSource", "$STR_A3U_Bazaar_Settings_VehStockSource_Tooltip"],
 	"Antistasi Bazaar|Stock",
-	[[0, 1], ["$STR_A3U_Bazaar_Settings_StockSource_Factions", "$STR_A3U_Bazaar_Settings_StockSource_Everything"], 0],
+	[[0, 1, 2], ["$STR_A3U_Bazaar_Settings_StockSource_Factions", "$STR_A3U_Bazaar_Settings_StockSource_Blackmarket", "$STR_A3U_Bazaar_Settings_StockSource_Everything"], 0],
 	1, {}
 ] call CBA_fnc_addSetting;
 
