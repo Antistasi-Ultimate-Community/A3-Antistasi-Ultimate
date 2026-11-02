@@ -226,17 +226,6 @@ if (!isTraderQuestCompleted) then {
 	ctrlShow [A3A_IDC_COMMANDER_MENU_GAME_INFO_REROLL_TRADER_BUTTON, false];
 };
 
-
-if (isServer || {(call BIS_fnc_admin) isEqualTo 2}) then {
-	ctrlShow [A3A_IDC_MENU_EDIT_PARAMS_BUTTON, true];
-	ctrlEnable [A3A_IDC_MENU_EDIT_PARAMS_BUTTON, true];
-	(_display displayCtrl A3A_IDC_MENU_EDIT_PARAMS_BUTTON) ctrlSetTooltip (localize "STR_commander_menu_edit_params_button_tooltip");
-} else {
-	ctrlShow [A3A_IDC_MENU_EDIT_PARAMS_BUTTON, true];
-	ctrlEnable [A3A_IDC_MENU_EDIT_PARAMS_BUTTON, false];
-	(_display displayCtrl A3A_IDC_MENU_EDIT_PARAMS_BUTTON) ctrlSetTooltip (localize "STR_generic_admin_only");
-};
-
 if (player distance2D (getMarkerPos "Synd_HQ") > 50) then {
     ctrlShow [A3A_IDC_MENU_SAVE_GAME_BUTTON, false];
 };
