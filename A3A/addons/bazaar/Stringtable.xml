@@ -150,7 +150,7 @@
                 <Original>Vehicle delivery</Original>
             </Key>
             <Key ID="STR_A3U_Bazaar_Settings_VehDelivery_Tooltip">
-                <Original>'Parked near the stall': the vehicle is waiting near the trader (boats at the nearest deep water) and you drive it home - it's military, so getting in breaks undercover. 'Into the HQ garage': it goes straight into Antistasi's garage (respects the garage cap; falls back to parking when there is no garage).</Original>
+                <Original>'Parked near the stall': the vehicle is waiting near the trader (boats at the nearest deep water) and you bring it home - it's military, so getting in breaks undercover. 'Into the HQ garage': it goes straight into Antistasi's garage (respects the garage cap; falls back to parking when there is no garage).</Original>
             </Key>
             <Key ID="STR_A3U_Bazaar_Settings_VehDelivery_Parked">
                 <Original>Parked near the stall - drive it home</Original>
@@ -1019,7 +1019,7 @@
                 <Original>Delivered into the HQ garage.</Original>
             </Key>
             <Key ID="STR_A3U_Bazaar_Shop_VehDeliveredLand">
-                <Original>Delivered near the stall - you drive it home. It's military: getting in breaks your cover.</Original>
+                <Original>Delivered near the stall - you bring it home. It's military: getting in breaks your cover.</Original>
             </Key>
             <Key ID="STR_A3U_Bazaar_Shop_VehDeliveredWater">
                 <Original>Delivered at the nearest deep water - you sail it home.</Original>
