@@ -35,6 +35,7 @@ class CfgFunctions
 			class isUnlocked {};
 			class rollStock {};
 			class buildVehPool {};
+			class vehPoolFromBlackMarket {};
 			class vehPoolFromFactions {};
 			class vehPoolFromConfigs {};
 			class vehValid {};
