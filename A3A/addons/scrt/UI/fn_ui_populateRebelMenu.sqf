@@ -60,7 +60,7 @@ private _gameInfoText = format [
 	([[serverTime-A3A_lastGarbageCleanTime] call A3A_fnc_secondsToTimeSpan,1,0,false,2,false,true] call A3A_fnc_timeSpan_format)
 ];
 
-((findDisplay 70000) displayCtrl 2011) ctrlSetText _gameInfoText;
+ctrlSetText [A3A_IDC_REBEL_MENU_GAME_INFO_DESCRIPTION_TEXT, _gameInfoText];
 
 if (player distance2D (getMarkerPos "Synd_HQ") > 50) then {
     ctrlShow [A3A_IDC_MENU_SAVE_GAME_BUTTON, false];
