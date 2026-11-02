@@ -38,9 +38,9 @@ private _fnc_load = {
     A3A_saveTarget params ["_serverID", "_campaignID", ""];
     private _namespace = [profileNamespace, missionProfileNamespace] select (_serverID isEqualTo false);
     private _campaignSaveData = _namespace getVariable [format ["A3A_saveData_%1", _campaignID], createHashMap];
-    private _saveDataPlugins = _campaignSaveData getOrDefault ["saveDataPlugins", createHashMap];
+    private _bazaarData = (_campaignSaveData getOrDefault ["saveDataPlugins", createHashMap]) getOrDefault ["A3A_bazaar", createHashMap];
 
-    private _v = _saveDataPlugins getOrDefault ["ABZ_vendors", []];
+    private _v = _bazaarData getOrDefault ["ABZ_vendors", []];
     private _n = 0;
     {
         if !(_x isEqualType [] && {count _x >= 12}) then { continue };
@@ -103,11 +103,11 @@ private _fnc_load = {
         } forEach ABZ_vendors;
     };
 
-    ABZ_nextId = _saveDataPlugins getOrDefault ["ABZ_nextId", 0];
+    ABZ_nextId = _bazaarData getOrDefault ["ABZ_nextId", 0];
     if !(ABZ_nextId isEqualType 0) then { ABZ_nextId = 0 };
     { if ((_x select 0) >= ABZ_nextId) then { ABZ_nextId = (_x select 0) + 1 } } forEach ABZ_vendors;
 
-    private _c = _saveDataPlugins getOrDefault ["ABZ_crates", []];
+    private _c = _bazaarData getOrDefault ["ABZ_crates", []];
     private _m = 0;
     {
         _x params [["_cls", "", [""]], ["_cnt", 0, [0]], ["_pos", [], [[]]]];
@@ -120,9 +120,9 @@ private _fnc_load = {
     } forEach _c;
 
     // smuggling runs (v1.1.0): only those whose destination trader came back
-    ABZ_nextRunId = _saveDataPlugins getOrDefault ["ABZ_nextRunId", 0];
+    ABZ_nextRunId = _bazaarData getOrDefault ["ABZ_nextRunId", 0];
     if !(ABZ_nextRunId isEqualType 0) then { ABZ_nextRunId = 0 };
-    private _rs = _saveDataPlugins getOrDefault ["ABZ_runs", []];
+    private _rs = _bazaarData getOrDefault ["ABZ_runs", []];
     if !(_rs isEqualType []) then { _rs = [] };
     {
         if !(_x isEqualType [] && {count _x >= 10}) then { continue };

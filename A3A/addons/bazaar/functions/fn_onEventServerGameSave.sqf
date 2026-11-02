@@ -36,6 +36,8 @@ if !(missionNamespace getVariable ["ABZ_loaded", false]) exitWith {};	// never o
 // matches the latest Antistasi save, and switching the setting back on can
 // never restore a crate that was unpacked while it was off.
 
+private _bazaarData = createHashMap;
+
 // timers are stored as "seconds left" - mission time restarts at 0 every boot
 private _v = [];
 {
@@ -44,7 +46,7 @@ private _v = [];
 	_e set [10, ((_e select 10) - time) max 0];
 	_v pushBack _e;
 } forEach ABZ_vendors;
-_saveData set ["ABZ_vendors", _v];
+_bazaarData set ["ABZ_vendors", _v];
 
 // crates: a crate riding in a vehicle is saved at the vehicle's spot
 private _c = [];
@@ -56,8 +58,8 @@ private _c = [];
 	private _pos = getPosATL ([_x, _carrier] select (!isNull _carrier));
 	_c pushBack [_d select 0, _d select 1, [_pos select 0, _pos select 1, 0]];
 } forEach ABZ_crates;
-_saveData set ["ABZ_crates", _c];
-_saveData set ["ABZ_nextId", ABZ_nextId];
+_bazaarData set ["ABZ_crates", _c];
+_bazaarData set ["ABZ_nextId", ABZ_nextId];
 
 // smuggling runs: deadline as seconds left, the crate by position (its
 // vehicle's when loaded) - restored on the ground there, like bulk crates
@@ -69,7 +71,8 @@ private _r = [];
 	private _pos = getPosATL ([_crate, _carrier] select (!isNull _carrier));
 	_r pushBack [_runId, _uid, _owner, _srcId, _destId, _pay, (_deadline - time) max 0, [_pos select 0, _pos select 1, 0], _srcTown, _srcName, _srcPos, _shot];
 } forEach ABZ_runs;
-_saveData set ["ABZ_runs", _r];
-_saveData set ["ABZ_nextRunId", ABZ_nextRunId];
+_bazaarData set ["ABZ_runs", _r];
+_bazaarData set ["ABZ_nextRunId", ABZ_nextRunId];
 
+_saveData set ["A3A_bazaar", _bazaarData];
 nil;
