@@ -23,8 +23,13 @@ private _saveList = [profileNamespace getVariable "antistasiUltimate2SavedGames"
 
     private _game = createHashMapFromArray [["serverID", _serverID], ["gameID", _cid], ["map", _map]];
     { _game set [_x, _x call A3A_fnc_returnSavedStat] } forEach _optionalVars;
-    _saveData pushBack _game;
 
+    // backwards compatibility for older "new" save formats
+    if (_game getOrDefault["params", createHashMap, true] isEqualType []) then {
+        _game set["params", createHashMapFromArray(_game get "params")];
+    };
+
+    _saveData pushBack _game;
 } forEach _saveList;
 
 private _oldCampaignID = profileNameSpace getVariable ["ss_CampaignID", ""];
@@ -44,8 +49,13 @@ private _saveList2 = [missionProfileNamespace getVariable "antistasiUltimate2Sav
 
     private _game = createHashMapFromArray [["serverID", false], ["gameID", _cid], ["map", _map]];
     { _game set [_x, _x call A3A_fnc_returnSavedStat] } forEach _optionalVars;
-    _saveData pushBack _game;
 
+    // backwards compatibility for older "new" save formats
+    if (_game getOrDefault["params", createHashMap, true] isEqualType []) then {
+        _game set["params", createHashMapFromArray(_game get "params")];
+    };
+
+    _saveData pushBack _game;
 } forEach _saveList2;
 
 reverse _saveData;          // return newest games at the top

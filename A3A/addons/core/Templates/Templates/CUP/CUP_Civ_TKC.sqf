@@ -5,19 +5,36 @@
 ["vehiclesCivCar", [
     "CUP_O_Hilux_unarmed_TK_CIV", 0.5
     , "CUP_C_LR_Transport_CTK", 0.5
+	, "CUP_C_Ikarus_TKC", 0.2
     , "CUP_C_Bus_City_TKCIV", 0.2
-    , "CUP_C_SUV_TK", 0.3
-    , "CUP_C_Datsun_4seat", 0.5
-    , "CUP_C_Golf4_black_Civ", 0.5
-    , "CUP_C_Golf4_random_Civ", 0.5
-    , "CUP_C_Octavia_CIV", 0.5
-    , "CUP_C_Pickup_unarmed_CIV", 0.5
-    ]] call _fnc_saveToTemplate;
+    , "CUP_C_SUV_TK", 0.1
+    , "CUP_C_Datsun", 0.5
+	, "CUP_C_Datsun_Covered", 0.2
+	, "CUP_C_Volha_CR_CIV", 0.5
+	, "CUP_C_Lada_CIV", 0.5
+    , "CUP_C_Golf4_CR_Civ", 0.2
+	, "CUP_C_Octavia_CIV", 0.2
+	, "CUP_C_Pickup_unarmed_CIV", 0.5
+	, "CUP_C_Skoda_CR_CIV", 0.5
+	, "CUP_C_S1203_CIV", 0.5
+	, "CUP_C_TT650_TK_CIV", 0.2
+	, "CUP_C_UAZ_Unarmed_TK_CIV", 0.2
+	, "CUP_C_UAZ_Open_TK_CIV", 0.2
+]] call _fnc_saveToTemplate;
+
+["vehiclesCivHeli", [
+    "CUP_C_Mi17_Civilian_RU", 0.5
+    , "CUP_C_Mi17_VIV_RU", 0.5
+]] call _fnc_saveToTemplate;
 
 ["vehiclesCivIndustrial", [
     "CUP_C_V3S_Open_TKC", 0.3
     , "CUP_C_V3S_Covered_TKC", 0.2
-    , "CUP_C_Ural_Civ_01", 0.2
+    , "CUP_C_Ural_Civ_03", 0.2
+	, "CUP_C_Ural_Open_Civ_03", 0.1
+	, "C_Truck_02_transport_F", 0.1
+	, "C_Truck_02_covered_F", 0.1
+	, "CUP_C_Tractor_Old_CIV", 0.1
 ]] call _fnc_saveToTemplate;
 
 ["vehiclesCivBoat", [
@@ -28,7 +45,6 @@
 
 ["vehiclesCivRepair", [
     "C_Truck_02_box_F", 0.1
-    , "C_Offroad_01_repair_F", 0.1
 ]] call _fnc_saveToTemplate;
 
 ["vehiclesCivMedical", [
@@ -37,7 +53,23 @@
 
 ["vehiclesCivFuel", [
     "C_Truck_02_fuel_F", 0.1
-    , "C_Van_01_fuel_F", 0.1
+]] call _fnc_saveToTemplate;
+
+["vehiclesCivPlanes", [
+	"CUP_C_AN2_AEROSCHROT_TK_CIV", 0.5
+    , "CUP_C_AN2_AIRTAK_TK_CIV", 0.5
+    , "CUP_C_DC3_CIV", 0.5
+	, "CUP_C_C47_CIV", 0.5
+]] call _fnc_saveToTemplate;
+
+["variants", [
+	["CUP_C_Volha_CR_CIV", ["TKCiv1", 1, "TKCiv2", 1, "TKLimo", 1]],
+	["CUP_C_Ural_Civ_03", ["CIV1", 1, "CIV2", 1, "CIV3", 1]],
+	["CUP_C_Ural_Open_Civ_03", ["CIV1", 1, "CIV2", 1, "CIV3", 1]],
+	["C_Truck_02_transport_F", ["Blue", 1, "Orange", 1]],
+	["C_Truck_02_covered_F", ["BlueBlue", 0.5, "BlueOlive", 1, "OrangeBlue", 0.5, "OrangeOlive", 1]],
+	["C_Truck_02_box_F", ["BlueGreen", 1, "BlueOrange", 0.5, "OrangeGreen", 1, "OrangeOrange", 0.5]],
+	["C_Truck_02_fuel_F", ["Blue", 1, "Orange", 1]]
 ]] call _fnc_saveToTemplate;
 
 /////////////////////
@@ -45,6 +77,7 @@
 /////////////////////
 
 ["faces", ["PersianHead_A3_01","PersianHead_A3_02","PersianHead_A3_03"]] call _fnc_saveToTemplate;
+["voices", ["CUP_D_Male01_TK","CUP_D_Male02_TK","CUP_D_Male03_TK","CUP_D_Male04_TK","CUP_D_Male05_TK"]] call _fnc_saveToTemplate;
 "TakistaniMen" call _fnc_saveNames;
 
 //////////////////////////
@@ -52,50 +85,41 @@
 //////////////////////////
 
 private _civUniforms = [
+    "CUP_O_TKI_Khet_Jeans_04",
+    "CUP_O_TKI_Khet_Jeans_02",
+    "CUP_O_TKI_Khet_Jeans_01",
+    "CUP_O_TKI_Khet_Jeans_03",
+    "CUP_O_TKI_Khet_Partug_04",
+    "CUP_O_TKI_Khet_Partug_02",
+    "CUP_O_TKI_Khet_Partug_01",
+    "CUP_O_TKI_Khet_Partug_07",
+    "CUP_O_TKI_Khet_Partug_08",
+    "CUP_O_TKI_Khet_Partug_05",
+    "CUP_O_TKI_Khet_Partug_06",
+    "CUP_O_TKI_Khet_Partug_03",
     "CUP_U_C_Citizen_02",
     "CUP_U_C_Citizen_01",
     "CUP_U_C_Citizen_04",
     "CUP_U_C_Citizen_03",
-    "CUP_U_C_Rocker_01",
-    "CUP_U_C_Rocker_02",
-    "CUP_U_C_Rocker_03",
-    "CUP_U_C_Rocker_04",
-    "CUP_U_C_AirMedic_yellow_01",
+	"CUP_U_C_Labcoat_02",
+	"CUP_U_C_Labcoat_03",
+	"CUP_U_C_Labcoat_01",
     "CUP_U_C_Tracksuit_02",
     "CUP_U_C_Tracksuit_01",
-    "U_C_Man_casual_1_F",
-    "U_C_Man_casual_2_F",
-    "U_C_Man_casual_3_F",
-    "U_C_Man_casual_4_F",
-    "U_C_Man_casual_5_F",
-    "U_C_Man_casual_6_F",
-    "U_C_ArtTShirt_01_v1_F",
-    "U_C_ArtTShirt_01_v2_F",
-    "U_C_ArtTShirt_01_v3_F",
-    "U_C_ArtTShirt_01_v4_F",
-    "U_C_ArtTShirt_01_v5_F",
-    "U_C_ArtTShirt_01_v6_F",
-    "U_NikosBody",
-    "U_NikosAgedBody",
-    "U_C_Journalist",
-    "U_C_Poloshirt_blue",
-    "U_C_Poloshirt_burgundy",
-    "U_C_Poloshirt_stripped",
-    "U_C_Poloshirt_tricolour",
-    "U_C_Poloshirt_salmon",
-    "U_C_Poloshirt_redwhite",
-    "U_OrestesBody",
-    "U_C_Poor_1",
-    "U_C_WorkerCoveralls",
-    "U_C_HunterBody_grn",
-    "U_C_Uniform_Farmer_01_F",
-    "U_I_L_Uniform_01_tshirt_skull_F",
-    "U_I_L_Uniform_01_tshirt_black_F",
-    "U_I_L_Uniform_01_tshirt_sport_F",
-    "U_C_Scientist",
-    "U_C_Uniform_Scientist_02_formal_F",
-    "U_C_Uniform_Scientist_02_F",
-    "U_C_Uniform_Scientist_01_F"
+	"CUP_U_C_Tracksuit_04",
+    "CUP_U_C_Tracksuit_03",
+	"CUP_U_C_Villager_01",
+	"CUP_U_C_Villager_04",
+	"CUP_U_C_Villager_02",
+	"CUP_U_C_Villager_03",
+	"CUP_U_C_Profiteer_02",
+	"CUP_U_C_Profiteer_03",
+	"CUP_U_C_Profiteer_01",
+	"CUP_U_C_Profiteer_04",
+	"CUP_U_C_racketeer_01",
+	"CUP_U_C_racketeer_04",
+	"CUP_U_C_racketeer_02",
+	"CUP_U_C_racketeer_03"
 ];
 
 private _civUniformsAI = [
@@ -115,7 +139,15 @@ private _civUniformsAI = [
 
 private _pressUniforms = ["U_C_Journalist", "U_Marshal"];            //Uniforms given to Press/Journalists
 
-private _workerUniforms = ["CUP_U_C_Worker_03", "CUP_U_C_Worker_04", "CUP_U_C_Worker_02", "CUP_U_C_Worker_01", "CUP_U_C_Mechanic_02", "CUP_U_C_Mechanic_03", "CUP_U_C_Mechanic_01"];           //Uniforms given to Workers at Factories/Resources
+private _workerUniforms = [
+	"CUP_U_C_Worker_03",
+	"CUP_U_C_Worker_04",
+	"CUP_U_C_Worker_02",
+	"CUP_U_C_Worker_01",
+	"CUP_U_C_Mechanic_02",
+	"CUP_U_C_Mechanic_03",
+	"CUP_U_C_Mechanic_01"
+];           //Uniforms given to Workers at Factories/Resources
 
 private _vipUniforms = [
     "CUP_U_C_Suit_01",
@@ -128,8 +160,28 @@ private _vipUniforms = [
 
 ["uniforms", _civUniforms + _civUniformsAI + _pressUniforms + _workerUniforms + _vipUniforms] call _fnc_saveToTemplate;          //Uniforms given to the Arsenal, Allowed for Undercover and given to Rebel Ai that go Undercover
 
-_civHats = ["CUP_H_TKI_SkullCap_01", "CUP_H_TKI_SkullCap_02", "CUP_H_TKI_SkullCap_03", "CUP_H_TKI_SkullCap_04","CUP_H_TKI_SkullCap_05", "CUP_H_TKI_SkullCap_06",
-"CUP_H_TKI_Lungee_Open_01", "CUP_H_TKI_Lungee_Open_02", "CUP_H_TKI_Lungee_Open_03", "CUP_H_TKI_Lungee_Open_04", "CUP_H_TKI_Lungee_Open_05", "CUP_H_TKI_Lungee_Open_06"];
+_civHats = [
+    "CUP_H_TKI_Lungee_Open_01",
+    "CUP_H_TKI_Lungee_Open_02",
+    "CUP_H_TKI_Lungee_Open_03",
+    "CUP_H_TKI_Lungee_Open_04",
+    "CUP_H_TKI_Lungee_Open_05",
+    "CUP_H_TKI_Lungee_Open_06",
+	"CUP_H_TKI_Pakol_1_01",
+	"CUP_H_TKI_Pakol_1_03",
+	"CUP_H_TKI_Pakol_1_04",
+	"CUP_H_TKI_Pakol_1_05",
+	"CUP_H_TKI_Pakol_1_06",
+	"CUP_H_TKI_Pakol_2_01",
+	"CUP_H_TKI_Pakol_2_02",
+	"CUP_H_TKI_Pakol_2_03",
+    "CUP_H_TKI_SkullCap_01",
+    "CUP_H_TKI_SkullCap_02",
+    "CUP_H_TKI_SkullCap_03",
+    "CUP_H_TKI_SkullCap_04",
+    "CUP_H_TKI_SkullCap_05",
+    "CUP_H_TKI_SkullCap_06"
+];
 
 ["headgear", _civHats] call _fnc_saveToTemplate;            //Headgear given to Normal Civs, Workers, Undercover Rebels.
 
@@ -139,22 +191,40 @@ private _loadoutData = call _fnc_createLoadoutData;
 _loadoutData set ["uniforms", _civUniformsAI];
 _loadoutData set ["pressUniforms", _pressUniforms];
 _loadoutData set ["workerUniforms", _workerUniforms];
+_loadoutData set ["vests", [
+	"CUP_V_OI_TKI_Jacket1_04", "CUP_V_OI_TKI_Jacket1_06", "CUP_V_OI_TKI_Jacket1_05",
+	"CUP_V_OI_TKI_Jacket5_04", "CUP_V_OI_TKI_Jacket5_05", "CUP_V_OI_TKI_Jacket5_06",
+	"CUP_V_OI_TKI_Jacket6_04", "CUP_V_OI_TKI_Jacket6_05", "CUP_V_OI_TKI_Jacket6_06"
+]];
 _loadoutData set ["pressVests", ["V_Press_F"]];
 _loadoutData set ["helmets", _civHats];
 _loadoutData set ["pressHelmets", ["H_Cap_press"]];
-_loadoutData set ["facewear", ["CUP_Beard_Black", "None", "CUP_Beard_Brown", "CUP_TK_NeckScarf"]];
+_loadoutData set ["facewear", [
+	"G_Aviator",
+	"CUP_Beard_Black",
+	"CUP_Beard_Brown",
+	"CUP_TK_NeckScarf",
+	"CUP_FR_NeckScarf",
+	"CUP_FR_NeckScarf2",
+	"CUP_FR_NeckScarf4",
+	"CUP_FR_NeckScarf5",
+	"CUP_G_TK_RoundGlasses",
+	"CUP_G_TK_RoundGlasses_blk",
+	"CUP_G_TK_RoundGlasses_gold"
+]];
 
 _loadoutData set ["maps", ["ItemMap"]];
 _loadoutData set ["watches", ["ItemWatch"]];
 _loadoutData set ["compasses", ["ItemCompass"]];
 _loadoutData set ["vipUniforms", _vipUniforms];
-_loadoutData set ["sidearms", ["CUP_hgun_SWM327MP", "CUP_hgun_CZ75", "CUP_hgun_M9","CUP_hgun_TT"]];
+_loadoutData set ["sidearms", ["CUP_hgun_Browning_HP", "CUP_hgun_CZ75", "CUP_hgun_Makarov", "CUP_hgun_TT"]];
 
 
 private _manTemplate = {
-    ["helmets"] call _fnc_setHelmet;
+	[selectRandomWeighted [[], 1, "helmets", 2]] call _fnc_setHelmet;
+	[selectRandomWeighted [[], 1, "vests", 2]] call _fnc_setVest;
     ["uniforms"] call _fnc_setUniform;
-    ["facewear"] call _fnc_setFacewear;
+	[selectRandomWeighted [[], 2, "facewear", 1]] call _fnc_setFacewear;
 
     ["items_medical_standard"] call _fnc_addItemSet;
 
@@ -163,9 +233,9 @@ private _manTemplate = {
     ["compasses"] call _fnc_addCompass;
 };
 private _workerTemplate = {
-    ["helmets"] call _fnc_setHelmet;
+	[selectRandomWeighted [[], 1, "helmets", 2]] call _fnc_setHelmet;
     ["workerUniforms"] call _fnc_setUniform;
-    ["facewear"] call _fnc_setFacewear;
+	[selectRandomWeighted [[], 2, "facewear", 1]] call _fnc_setFacewear;
 
     ["items_medical_standard"] call _fnc_addItemSet;
 
@@ -177,7 +247,7 @@ private _pressTemplate = {
     ["pressHelmets"] call _fnc_setHelmet;
     ["pressVests"] call _fnc_setVest;
     ["pressUniforms"] call _fnc_setUniform;
-    ["facewear"] call _fnc_setFacewear;
+	[selectRandomWeighted [[], 2, "facewear", 1]] call _fnc_setFacewear;
 
     ["items_medical_standard"] call _fnc_addItemSet;
 
@@ -187,6 +257,7 @@ private _pressTemplate = {
 };
 private _vipTemplate = {
     ["vipUniforms"] call _fnc_setUniform;
+	[selectRandomWeighted [[], 2, "facewear", 1]] call _fnc_setFacewear;
 
     ["items_medical_standard"] call _fnc_addItemSet;
 

@@ -17111,6 +17111,22 @@
                 <French>Vous n'avez pas assez d'argent pour cette fortification : %1%2 requis.</French>
                 <Turkish>Bu tahkimat için yeterli paranız yok: %1%2 gerekli.</Turkish>
             </Key>
+            <Key ID="STR_A3A_reinf_build_actionTitle">
+                <Original>Build</Original>
+                <Russian>Построить</Russian>
+                <Chinesesimp>建造</Chinesesimp>
+                <Korean>건설하기</Korean>
+                <French>Construire</French>
+                <Turkish>İnşa et</Turkish>
+            </Key>
+            <Key ID="STR_A3A_reinf_build_actionProgress">
+                <Original>Building...</Original>
+                <Russian>Идёт строительство...</Russian>
+                <Chinesesimp>正在建造...</Chinesesimp>
+                <Korean>건설 중...</Korean>
+                <French>Construction en cours...</French>
+                <Turkish>İnşa ediliyor...</Turkish>
+            </Key>
             <Key ID="STR_A3A_addFiaVeh_header">
                 <Original>Vehicle Shop</Original>
                 <Russian>Покупка техники</Russian>
