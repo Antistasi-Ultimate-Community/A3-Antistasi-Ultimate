@@ -43,22 +43,21 @@ switch (_mode) do
             _presetRenameBtn ctrlEnable _newTextValid;
         }];
 
-        // * Populate the Parameter Type Dropdown
-        private _basicParamsIndex =  _paramsType lbAdd (localize "STR_antistasi_dialogs_setup_params_basic_label");
-        private _balParamsIndex = _paramsType lbAdd (localize "STR_antistasi_dialogs_setup_params_bal_label");
-        private _eqpParamsIndex = _paramsType lbAdd (localize "STR_antistasi_dialogs_setup_params_eqp_label");
-        private _bldParamsIndex = _paramsType lbAdd (localize "STR_antistasi_dialogs_setup_params_bld_label");
-        private _devParamsIndex = _paramsType lbAdd (localize "STR_antistasi_dialogs_setup_params_dev_label");
-        private _extParamsIndex = _paramsType lbAdd (localize "STR_antistasi_dialogs_setup_params_ext_label");
+        // * Check if we have any extender or deprecated params
+        private _hasExtenderParams = ("getText(_x >> ""type"") isEqualTo ""Extender"" && {getArray(_x >> ""values"") isNotEqualTo []}" configClasses (configFile >> "A3A" >> "Params")) isNotEqualTo [];
+        private _hasDeprecatedParams = ("getText(_x >> ""type"") isEqualTo ""Deprecated"" && {getArray(_x >> ""values"") isNotEqualTo []}" configClasses (configFile >> "A3A" >> "Params")) isNotEqualTo [];
 
-        _paramsType lbSetValue [_basicParamsIndex, 0];
-        _paramsType lbSetValue [_balParamsIndex, 1];
-        _paramsType lbSetValue [_eqpParamsIndex, 2];
-        _paramsType lbSetValue [_bldParamsIndex, 3];
-        _paramsType lbSetValue [_devParamsIndex, 4];
-        _paramsType lbSetValue [_extParamsIndex, 5];
+        // * Populate the Parameter Type Dropdown
+        _paramsType lbAdd (localize "STR_antistasi_dialogs_setup_params_basic_label");
+        _paramsType lbAdd (localize "STR_antistasi_dialogs_setup_params_bal_label");
+        _paramsType lbAdd (localize "STR_antistasi_dialogs_setup_params_eqp_label");
+        _paramsType lbAdd (localize "STR_antistasi_dialogs_setup_params_bld_label");
+        _paramsType lbAdd (localize "STR_antistasi_dialogs_setup_params_dev_label");
+        if (_hasExtenderParams) then { _paramsType lbAdd (localize "STR_antistasi_dialogs_setup_params_ext_label") };
+        if (_hasDeprecatedParams) then { _paramsType lbAdd (localize "STR_antistasi_dialogs_setup_params_dep_label") };
         
-        _paramsType lbSetCurSel _basicParamsIndex;
+        // * default dropdown selection to basic parameters instead of nothing (-1)
+        _paramsType lbSetCurSel 0;
 
         // * Create ALL the param controls
         private _allCtrls = [];
@@ -172,7 +171,8 @@ switch (_mode) do
                 [2, ["BlackMarket", "Loot", "Unlocks", "Crates", "VehicleLoot", "MiscLoot"]],
                 [3, ["Builder"]],
                 [4, ["Experimental", "Development"]],
-                [5, ["Extender"]]
+                [5, ["Extender"]],
+                [6, ["Deprecated"]]
             ]) getOrDefault[_filter, []];
             ((_this select 1) getVariable "type") in _shownTypes
         }} else {{

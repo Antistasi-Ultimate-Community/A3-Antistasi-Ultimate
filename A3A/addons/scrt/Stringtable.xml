@@ -8335,6 +8335,22 @@
                 <Korean>확장 모듈 및 기본 시스템과의 상호작용에 대한 옵션입니다.</Korean>
                 <French>Options liées aux modules d'extension et à leur interaction avec les systèmes de base.</French>
             </Key>
+            <Key ID="STR_params_deprecated">
+                <Original>DEPRECATED OPTIONS</Original>
+                <Russian>УСТАРЕВШИЕ НАСТРОЙКИ</Russian>
+                <Chinesesimp>已弃用选项</Chinesesimp>
+                <Korean>사용되지 않는 옵션</Korean>
+                <French>OPTIONS DÉPRÉCIÉES</French>
+                <Turkish>KULLANIMDIŞI SEÇENEKLER</Turkish>
+            </Key>
+            <Key ID="STR_params_deprecated_desc">
+                <Original>Options that have been deprecated and will be removed in a future version of Antistasi Ultimate.</Original>
+                <Russian>Настройки, которые устарели и будут удалены в будущей версии Antistasi Ultimate.</Russian>
+                <Chinesesimp>已弃用的选项，将在未来版本的 Antistasi Ultimate 中移除。</Chinesesimp>
+                <Korean>사용되지 않는 옵션으로, 향후 Antistasi Ultimate 버전에서 제거될 예정입니다.</Korean>
+                <French>Options qui ont été dépréciées et seront supprimées dans une future version d'Antistasi Ultimate.</French>
+                <Turkish>Kullanımdan kaldırılmış ve gelecekteki bir Antistasi Ultimate sürümünde kaldırılacak seçenekler.</Turkish>
+            </Key>
             <Key ID="STR_params_experimental">
                 <Original>EXPERIMENTAL OPTIONS</Original>
                 <Russian>ЭКСПЕРИМЕНТАЛЬНЫЕ НАСТРОЙКИ</Russian>
