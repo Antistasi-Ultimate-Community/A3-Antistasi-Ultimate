@@ -721,6 +721,9 @@
             <Key ID="STR_A3U_Bazaar_Misc_YouHold">
                 <Original>%1 %2 (you hold %3)</Original>
             </Key>
+            <Key ID="STR_A3U_Bazaar_Misc_WarLevel">
+                <Original>war level %1 (you are at %2)</Original>
+            </Key>
             <Key ID="STR_A3U_Bazaar_Misc_Needs">
                 <Original>Needs </Original>
             </Key>
