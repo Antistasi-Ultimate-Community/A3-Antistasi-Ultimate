@@ -1,7 +1,6 @@
+#include "..\UILayouts\ids.inc"
 #include "..\script_component.hpp"
 FIX_LINE_NUMBERS()
-
-#define SUPPORT_TAB 1140
 
 disableSerialization;
 params ["_displayId","_direction"];
@@ -40,8 +39,7 @@ sleep 0.1;
 _leftPos = 0 * pixelGridNoUIScale * pixelW;
 {
     if (_forEachIndex == 0) then {
-        _thisCtrl = (_display displayCtrl 1101);
-        _thisCtrl ctrlSetText _x;
+        ctrlSetText [A3A_IDC_MENU_TAB_SELECTOR_TITLE, _x];
     } else {
         _thisCtrl = (_display displayCtrl _x);				
         _thisCtrl ctrlSetPosition [safezoneX, (ctrlPosition _thisCtrl) select 1, (ctrlPosition _thisCtrl) select 2, (ctrlPosition _thisCtrl) select 3];
@@ -51,10 +49,10 @@ _leftPos = 0 * pixelGridNoUIScale * pixelW;
 
 menuSliderCurrent = _menuSliderTarget;
 
-if(_displayId == 60000) then {
+if(_displayId == A3A_IDD_COMMANDER_MENU) then {
     private _tabId = _selectedMenu select 1;
     switch (_tabId) do {
-        case (SUPPORT_TAB): {
+        case (A3A_IDC_COMMANDER_MENU_SUPPORT_TAB): {
             ["ADD"] call SCRT_fnc_ui_manageSupportTabEventHandler;
         };
         default {
