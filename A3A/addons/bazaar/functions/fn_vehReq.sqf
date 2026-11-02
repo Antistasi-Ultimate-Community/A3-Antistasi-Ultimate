@@ -30,8 +30,15 @@ private _clauses = switch (_cat) do {
 	case "BOAT": { [[["seaports", 1]]] };
 	case "APC";
 	case "AA": { [[["seaports", 2], ["milbases", 1]], [["factories", 2]]] };
+	case "ARTILLERY": { [[["factories", 3]], [["resources", 3]]] };
 	case "HELI": { [[["airports", 1], ["milbases", 1]], [["factories", 2]]] };
+	case "PLANE": { [[["airports", 1]], [["factories", 3]]] };
+	case "UAV": { [[["airports", 1]], [["factories", 1]]] };
 	case "TANK": { [[["milbases", 1]], [["factories", 3]]] };
+	case "STATICAT";
+	case "STATICMG": { [[["factories", 1]]] };
+	case "STATICAA": { [[["factories", 1]]] }; // ! supposed to be 1 factory and WL 3; war-level checking not implemented yet
+	case "STATICMORTAR": { [[["factories", 2]]] }; // ! supposed to be 2 factories and WL 3; war-level checking not implemented yet
 	default { [] };
 };
 
