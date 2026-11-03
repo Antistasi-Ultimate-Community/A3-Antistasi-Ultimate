@@ -44,19 +44,23 @@ private _fnc_edgePosition = {
     [(_origin select 0) + (_dir select 0) * _tMin, (_origin select 1) + (_dir select 1) * _tMin, 0];
 };
 
-private _distOccToInv = _occupantsAvgPosition vectorDistance _invadersAvgPosition;
-private _dirOccFromInv = (_occupantsAvgPosition vectorDiff _invadersAvgPosition) vectorMultiply (1 / _distOccToInv);
-private _distOccToReb = _occupantsAvgPosition vectorDistance _rebelsAvgPosition;
-private _dirOccFromReb = (_occupantsAvgPosition vectorDiff _rebelsAvgPosition) vectorMultiply (1 / _distOccToReb);
-private _dirOccAvg = vectorNormalized (((_dirOccFromInv vectorMultiply _invadersCount) vectorAdd (_dirOccFromReb vectorMultiply _rebelsCount)) vectorMultiply (1 / (_invadersCount + _rebelsCount)));
-private _posOccCorridor = [_occupantsAvgPosition, _dirOccAvg] call _fnc_edgePosition;
-"NATO_carrier" setMarkerPos _posOccCorridor;
+if (!areOccupantsDefeated) then {
+    private _distOccToInv = _occupantsAvgPosition vectorDistance _invadersAvgPosition;
+    private _dirOccFromInv = (_occupantsAvgPosition vectorDiff _invadersAvgPosition) vectorMultiply (1 / _distOccToInv);
+    private _distOccToReb = _occupantsAvgPosition vectorDistance _rebelsAvgPosition;
+    private _dirOccFromReb = (_occupantsAvgPosition vectorDiff _rebelsAvgPosition) vectorMultiply (1 / _distOccToReb);
+    private _dirOccAvg = vectorNormalized (((_dirOccFromInv vectorMultiply _invadersCount) vectorAdd (_dirOccFromReb vectorMultiply _rebelsCount)) vectorMultiply (1 / (_invadersCount + _rebelsCount)));
+    private _posOccCorridor = [_occupantsAvgPosition, _dirOccAvg] call _fnc_edgePosition;
+    "NATO_carrier" setMarkerPos _posOccCorridor;
+};
 
-private _dirInvFromOcc = _dirOccFromInv vectorMultiply -1;
-private _distInvToReb = _invadersAvgPosition vectorDistance _rebelsAvgPosition;
-private _dirInvFromReb = (_invadersAvgPosition vectorDiff _rebelsAvgPosition) vectorMultiply (1 / _distInvToReb);
-private _dirInvAvg = vectorNormalized (((_dirInvFromOcc vectorMultiply _occupantsCount) vectorAdd (_dirInvFromReb vectorMultiply _rebelsCount)) vectorMultiply (1 / (_occupantsCount + _rebelsCount)));
-private _posInvCorridor = [_invadersAvgPosition, _dirInvAvg] call _fnc_edgePosition;
-"CSAT_carrier" setMarkerPos _posInvCorridor;
+if (gameMode isNotEqualTo 3 && {!areInvadersDefeated}) then {
+    private _dirInvFromOcc = _dirOccFromInv vectorMultiply -1;
+    private _distInvToReb = _invadersAvgPosition vectorDistance _rebelsAvgPosition;
+    private _dirInvFromReb = (_invadersAvgPosition vectorDiff _rebelsAvgPosition) vectorMultiply (1 / _distInvToReb);
+    private _dirInvAvg = vectorNormalized (((_dirInvFromOcc vectorMultiply _occupantsCount) vectorAdd (_dirInvFromReb vectorMultiply _rebelsCount)) vectorMultiply (1 / (_occupantsCount + _rebelsCount)));
+    private _posInvCorridor = [_invadersAvgPosition, _dirInvAvg] call _fnc_edgePosition;
+    "CSAT_carrier" setMarkerPos _posInvCorridor;
+};
 
 nil;
