@@ -22,7 +22,8 @@
         [] call A3A_fnc_getFactionsPositionCenter;
     
     Return:
-        [ _occupantsAvgPosition, _invadersAvgPosition, _rebelsAvgPosition ] <TYPE> Array
+        Array containing the count and average position of each faction's markers
+        [ _occupantsCount, _occupantsAvgPosition, _invadersCount, _invadersAvgPosition, _rebelsCount, _rebelsAvgPosition ] <TYPE> Array
 */
 
 private _occupantMarkers = [];
@@ -47,4 +48,4 @@ private _occupantsAvgPosition = [_occupantMarkers] call _fnc_getAvgPosition;
 private _invadersAvgPosition = [_invaderMarkers] call _fnc_getAvgPosition;
 private _rebelsAvgPosition = [_rebelMarkers] call _fnc_getAvgPosition;
 
-[_occupantsAvgPosition, _invadersAvgPosition, _rebelsAvgPosition];
+[count _occupantMarkers, _occupantsAvgPosition, count _invaderMarkers, _invadersAvgPosition, count _rebelMarkers, _rebelsAvgPosition];
