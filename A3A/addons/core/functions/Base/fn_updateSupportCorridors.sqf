@@ -24,29 +24,42 @@
         None
 */
 
-[] call A3A_fnc_getFactionsPositionCenter params ["_occupantsCount", "_occupantsAvgPosition", "_invadersCount", "_invadersAvgPosition", "_rebelsCount", "_rebelsAvgPosition"];
+[] call A3A_fnc_getFactionsPositionCenter params [
+    ["_occupantsCount", 0, [0]],
+    ["_occupantsAvgPosition", [], [[]], 3],
+    ["_invadersCount", 0, [0]],
+    ["_invadersAvgPosition", [], [[]], 3],
+    ["_rebelsCount", 0, [0]],
+    ["_rebelsAvgPosition", [], [[]], 3]
+];
 
-// Projects a ray from _origin along _dir and returns the point where it leaves the square map
-// Ngl, this function was vibed because math is hard
+// Returns the point at which the ray from _originPos along _dirVector intersects the edge of the map
+// used to place the support corridor markers at the edge of the map
+// TODO: look into whether it would make more sense to either:
+//   - do this but place the support corridor a fixed distance *past* the edge of the map to ensure players can't be there, OR
+//   - find the minimal distance from _originPos along _dirVector where we can expect players to *not* be present (e.g. when the new support corridor would be XX meters from any other marker?)
 private _fnc_edgePosition = {
-    params ["_origin", "_dir"];
-    private _buffer = 100;
+    params ["_originPos", "_dirVector"];
+    private _buffer = 100; // 100m buffer from edge of map
     private _bounds = [_buffer, worldSize - _buffer];
-    private _tMin = 1e10;
+    private _minDistToBoundary = 1e10;
     {
-        private _d = _dir select _x;
-        if (_d != 0) then {
-            private _o = _origin select _x;
-            private _t = ((_bounds select (_d > 0)) - _o) / _d;
-            _tMin = _tMin min _t;
+        // Get distance to boundary along each X,Y axis --> check which distance is shorter
+        // (the first edge that would be crossed when traveling along the direction vector)
+        private _dirVecAxis = _x;
+        if (_dirVecAxis isNotEqualTo 0) then {
+            private _originPosAxis = _originPos select _forEachIndex;
+            private _distToBoundary = ((_bounds select (_dirVecAxis > 0)) - _originPosAxis) / _dirVecAxis;
+            _minDistToBoundary = _minDistToBoundary min _distToBoundary;
         };
-    } forEach [0, 1];
-    [(_origin select 0) + (_dir select 0) * _tMin, (_origin select 1) + (_dir select 1) * _tMin, 0];
+    } forEach (_dirVector select [0,2]); // [X axis, Y axis, 0]
+    _originPos vectorAdd (_dirVector vectorMultiply [_minDistToBoundary, _minDistToBoundary, 0]);
 };
 
+private _distOccToInv = _occupantsAvgPosition vectorDistance _invadersAvgPosition;
+private _dirOccFromInv = (_occupantsAvgPosition vectorDiff _invadersAvgPosition) vectorMultiply (1 / _distOccToInv);
+
 if (!areOccupantsDefeated) then {
-    private _distOccToInv = _occupantsAvgPosition vectorDistance _invadersAvgPosition;
-    private _dirOccFromInv = (_occupantsAvgPosition vectorDiff _invadersAvgPosition) vectorMultiply (1 / _distOccToInv);
     private _distOccToReb = _occupantsAvgPosition vectorDistance _rebelsAvgPosition;
     private _dirOccFromReb = (_occupantsAvgPosition vectorDiff _rebelsAvgPosition) vectorMultiply (1 / _distOccToReb);
     private _dirOccAvg = vectorNormalized (((_dirOccFromInv vectorMultiply _invadersCount) vectorAdd (_dirOccFromReb vectorMultiply _rebelsCount)) vectorMultiply (1 / (_invadersCount + _rebelsCount)));
