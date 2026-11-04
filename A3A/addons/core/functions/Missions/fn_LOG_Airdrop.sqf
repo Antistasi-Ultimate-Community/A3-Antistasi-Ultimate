@@ -35,7 +35,7 @@ private _taskId = "LOG" + str A3A_taskCount;
     [teamPlayer,civilian],
     _taskId,
     [
-        format [localize "STR_A3A_Missions_DES_Airdrop_task_desc", _nameDest, _displayTime],
+        format [localize "STR_A3A_Missions_LOG_Airdrop_task_desc", _nameDest, _displayTime],
         localize "STR_A3A_Missions_LOG_Airdrop_task_header",
         _markerX
     ],
