@@ -108,9 +108,6 @@ if (isServer) then {
         "watchpostsFIA"
 	];
 
-	// Now that markers have been restored, update the support corridors for each faction
-	[] call A3A_fnc_updateSupportCorridors;
-
 	//===========================================================================
 
 	//RESTORE THE STATE OF THE 'UNLOCKED' VARIABLES USING JNA_DATALIST
