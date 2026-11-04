@@ -48,7 +48,7 @@
                 <Original>When ON, everyone gets a system chat line when a trader restocks, moves town, or is killed.</Original>
             </Key>
             <Key ID="STR_A3U_Bazaar_Settings_Persistence">
-                <Original>Persistent traders & crates</Original>
+                <Original>Persistent traders &amp; crates</Original>
             </Key>
             <Key ID="STR_A3U_Bazaar_Settings_Persistence_Tooltip">
                 <Original>Restore trader locations, their stock, timers and jobs, and any sealed crates still in the world, when the campaign is loaded (server/host profile, per campaign). On Antistasi the Bazaar is saved together with Antistasi's own save (autosave or manual save), so loading a save brings the Bazaar back exactly as it was then. Off = every load starts fresh traders (the state is still saved, so switching this back on restores your latest save).</Original>
