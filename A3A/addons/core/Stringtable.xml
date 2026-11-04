@@ -6964,20 +6964,6 @@
                 <Korean>암거래상 비활성화</Korean>
                 <Turkish>Silah Tüccarını Devre Dışı Bırak</Turkish>
             </Key>
-            <Key ID="STR_A3AU_disable_bazaar">
-                <Original>Disable Bazaar Traders</Original>
-                <Russian>Отключить базарных торговцев</Russian>
-                <Chinesesimp>取消集市商人</Chinesesimp>
-                <Korean>바자르 상인 비활성화</Korean>
-                <Turkish>Pazar Tüccarlarını Devre Dışı Bırak</Turkish>
-            </Key>
-            <Key ID="STR_A3AU_disable_bazaar_desc">
-                <Original>Disable Bazaar Traders in the game. This parameter does not depend on or affect the default Arms Dealer.</Original>
-                <Russian>Отключить базарных торговцев в игре. Этот параметр не зависит от стандартного торговца оружием и на него не влияет.</Russian>
-                <Chinesesimp>在游戏中禁用集市商人。</Chinesesimp>
-                <Korean>게임에서 바자르 상인 비활성화. 이 매개변수는 기본 무기 상인에 의존하지 않으며 영향을 주지 않습니다.</Korean>
-                <Turkish>Oyunda Pazar Tüccarlarını devre dışı bırak. Bu parametre varsayılan Silah Tüccarına bağlı değildir ve onu etkilemez.</Turkish>
-            </Key>
             <Key ID="STR_A3AU_stamina_enabled">
                 <Original>Enable Stamina (Vanilla)</Original>
                 <Russian>Включить выносливость (Vanilla)</Russian>
