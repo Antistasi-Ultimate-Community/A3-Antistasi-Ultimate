@@ -59,7 +59,7 @@ private _fnc_edgePosition = {
 private _distOccToInv = _occupantsAvgPosition vectorDistance _invadersAvgPosition;
 private _dirOccFromInv = (_occupantsAvgPosition vectorDiff _invadersAvgPosition) vectorMultiply (1 / _distOccToInv);
 
-if (!areOccupantsDefeated) then {
+if (!areOccupantsDefeated && {_occupantsCount > 0}) then {
     private _distOccToReb = _occupantsAvgPosition vectorDistance _rebelsAvgPosition;
     private _dirOccFromReb = (_occupantsAvgPosition vectorDiff _rebelsAvgPosition) vectorMultiply (1 / _distOccToReb);
     private _dirOccAvg = vectorNormalized (((_dirOccFromInv vectorMultiply _invadersCount) vectorAdd (_dirOccFromReb vectorMultiply _rebelsCount)) vectorMultiply (1 / (_invadersCount + _rebelsCount)));
@@ -67,7 +67,7 @@ if (!areOccupantsDefeated) then {
     "NATO_carrier" setMarkerPos _posOccCorridor;
 };
 
-if (gameMode isNotEqualTo 3 && {!areInvadersDefeated}) then {
+if (gameMode isNotEqualTo 3 && {!areInvadersDefeated && {_invadersCount > 0}}) then {
     private _dirInvFromOcc = _dirOccFromInv vectorMultiply -1;
     private _distInvToReb = _invadersAvgPosition vectorDistance _rebelsAvgPosition;
     private _dirInvFromReb = (_invadersAvgPosition vectorDiff _rebelsAvgPosition) vectorMultiply (1 / _distInvToReb);

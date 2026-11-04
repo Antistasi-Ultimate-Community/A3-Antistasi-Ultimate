@@ -44,8 +44,8 @@ private _fnc_getAvgPosition = {
     _avgPosition vectorMultiply (1 / (count _positionsArray));
 };
 
-private _occupantsAvgPosition = [_occupantMarkers] call _fnc_getAvgPosition;
-private _invadersAvgPosition = [_invaderMarkers] call _fnc_getAvgPosition;
+private _occupantsAvgPosition = if (!areOccupantsDefeated && {_occupantMarkers isNotEqualTo []}) then { [_occupantMarkers] call _fnc_getAvgPosition } else { [0,0,0] };
+private _invadersAvgPosition = if (!areInvadersDefeated && {_invaderMarkers isNotEqualTo []}) then { [_invaderMarkers] call _fnc_getAvgPosition } else { [0,0,0] };
 private _rebelsAvgPosition = [_rebelMarkers] call _fnc_getAvgPosition;
 
 [count _occupantMarkers, _occupantsAvgPosition, count _invaderMarkers, _invadersAvgPosition, count _rebelMarkers, _rebelsAvgPosition];
