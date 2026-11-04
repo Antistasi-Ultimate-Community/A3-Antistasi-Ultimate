@@ -290,6 +290,11 @@ class CfgFunctions
             class createVehicleQRFBehaviour {};
             class createZoneAmmoBox {};
             class createZoneFlag {};
+            class createZoneGarrison {};
+            class createZoneMortars {};
+            class createZoneSamSite {};
+            class createZoneVehicles {};
+            class createZoneVehiclesPool {};
             class crewTypeForVehicle {};
             class FIAinitBases {};
             class findSpawnPosition {};

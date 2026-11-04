@@ -49,12 +49,10 @@ while {_countX < _patrolCount} do {
 
 	_groupX = [_spawnPosition, _side, _typeGroup, false, true] call A3A_fnc_spawnGroup;
 	if !(isNull _groupX) then {
-		sleep 1;
 		if ((random 10 < 2.5) && {_typeGroup isNotEqualTo _sniperGroup}) then {
 			_dog = [_groupX, "Fin_random_F",_spawnPosition,[],0,"FORM"] call A3A_fnc_createUnit;
 			_dogs pushBack _dog;
 			[_dog] spawn A3A_fnc_guardDog;
-			sleep 1;
 		};
 
 		[_groupX, "Patrol_Area", 25, 150, 300, false, [], false] call A3A_fnc_patrolLoop;
