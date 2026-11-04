@@ -28,6 +28,7 @@
 
 #include "..\script_component.hpp"
 if (!isServer) exitWith {};
+if (EGVAR(ultimate,disableBazaar)) exitWith {};
 
 private _fnc_load = {
     // SERVER: restores traders and sealed crates from the profile save.
