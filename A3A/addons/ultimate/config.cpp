@@ -6,10 +6,10 @@ class CfgPatches
     {
         name = COMPONENT_NAME;
         magazines[] = {QGVAR(LockpickKit_MultiUse), QGVAR(LockpickKit_SingleUse)};
-        units[] = {};
+        units[] = {"A3AU_Stash"};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {"A3A_events"};
+        requiredAddons[] = {"A3A_events", "A3_Weapons_F", "A3_Structures_F"};
         author = AUTHOR;
         authors[] = { AUTHORS };
         authorUrl = "";
