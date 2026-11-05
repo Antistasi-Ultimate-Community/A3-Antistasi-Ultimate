@@ -4821,6 +4821,14 @@
                 <Portuguese>Bases Militares</Portuguese>
                 <Chinesesimp>军事基地</Chinesesimp>
             </Key>
+            <Key ID="STR_antistasi_dialogs_setup_ez_seaports">
+                <Original>Seaports</Original>
+                <Italian>Porti</Italian>
+                <Korean>항구</Korean>
+                <Russian>Морские порты</Russian>
+                <Portuguese>Portos</Portuguese>
+                <Chinesesimp>海港</Chinesesimp>
+            </Key>
             <Key ID="STR_antistasi_dialogs_setup_ez_map_zones">
                 <Original>Show / Hide Map Zones</Original>
                 <Italian>Mostra / Nascondi zone della mappa</Italian>
