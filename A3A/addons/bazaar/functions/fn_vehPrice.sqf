@@ -33,6 +33,12 @@ if (_base <= 0) then {
 		case "HELI": { 20000 };
 		case "AA": { 40000 };
 		case "TANK": { 60000 };
+		case "PLANE": { 70000 };
+		case "STATICMG": { 3000 };
+		case "STATICAA";
+		case "STATICAT": { 5000 };
+		case "STATICMORTAR": { 8000 };
+		case "ARTILLERY": { 30000 };
 		default { 10000 };
 	};
 };
