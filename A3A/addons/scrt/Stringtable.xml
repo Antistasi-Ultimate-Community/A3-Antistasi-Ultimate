@@ -11502,7 +11502,7 @@
                 <Turkish>%1, %2 genelinde gölge ağını kurmaya başladı.&lt;br/&gt; Yapıları merkeziyetçi değildir, hücreleri otonomdur, rütbelerinde firarilerden uluslararası suçlulara, paralı askerlerden paramiliterlere kadar çeşitli geçmişlere sahip uzmanlar bulunur. İyi eğitimlilerdir ve ayaklanmalarla nasıl savaşacaklarını bilirler; operasyonlarınızı kirli yöntemlerle, gizli operasyonlarla ve kaba kuvvetle aksatmaya çalışacaklar. Yakında sizi bulacaklar.&lt;br/&gt;&lt;br/&gt; Bu yeni tehdidi ortadan kaldırma konusundaki mevcut ilerlemenizi görmek için yeni komutan menüsü sekmesini veya yeni tripod harita eylemini kullanın.</Turkish>
             </Key>
             <Key ID="STR_antistasi_rivals_reveal_location_hideout_hint_text">
-                <Original>&lt;t size='0.6'&gt;Our efforts have paid off - we now know where another &lt;t size='0.6' color='#800000'&gt;%1&lt;/t&gt; hideout is located - it is in the %2. We can launch an attack on it at any moment.&lt;/t&gt;</Original>
+                <Original>&lt;t size='0.6'&gt;Our efforts have paid off - we now know where another &lt;t size='0.6' color='#800000'&gt;%1&lt;/t&gt; hideout is located - it is in %2. We can launch an attack on it at any moment.&lt;/t&gt;</Original>
                 <Russian>&lt;t size='0.6'&gt;Наши усилия дали результат - мы теперь знаем где находится ещё одно логово &lt;t size='0.6' color='#800000'&gt;%1&lt;/t&gt; - это в %2. Мы можем начать атаку на него в любой момент.&lt;/t&gt;</Russian>
                 <Chinesesimp>&lt;t size='0.6'&gt;我们的努力得到了回报 - 我们现在知道另一个 &lt;t size='0.6' color='#800000'&gt;%1&lt;/t&gt; 藏身处已找到 - 它在 %2 中。 我们随时可以对其发起攻击。&lt;/t&gt;</Chinesesimp>
                 <Korean>&lt;t size='0.6'&gt;우리들의 노력이 결실을 맺었으며, 이제 우리는 또 다른 &lt;t size='0.6' color='#800000'&gt;%1&lt;/t&gt;의 은신처가 어디에 있는지 알게 되었고, 현재 %2에 있습니다. 언제든지 공격할 수 있습니다.&lt;/t&gt;</Korean>
@@ -11510,7 +11510,7 @@
                 <Turkish>&lt;t size='0.6'&gt;Çabalarımız sonuç verdi - artık başka bir &lt;t size='0.6' color='#800000'&gt;%1&lt;/t&gt; sığınağının nerede olduğunu biliyoruz - %2 bölgesinde. Her an oraya bir saldırı başlatabiliriz.&lt;/t&gt;</Turkish>
             </Key>
             <Key ID="STR_antistasi_rivals_reveal_location_city_hint_text">
-                <Original>&lt;t size='0.6'&gt;Our efforts have paid off - we now know where another &lt;t size='0.6' color='#800000'&gt;%1&lt;/t&gt; cell is located - it is in the %2. We can launch an attack on it at any moment.&lt;/t&gt;</Original>
+                <Original>&lt;t size='0.6'&gt;Our efforts have paid off - we now know where another &lt;t size='0.6' color='#800000'&gt;%1&lt;/t&gt; cell is located - it is in %2. We can launch an attack on it at any moment.&lt;/t&gt;</Original>
                 <Russian>&lt;t size='0.6'&gt;Наши усилия дали результат - мы теперь знаем где находится ещё одна ячейка &lt;t size='0.6' color='#800000'&gt;%1&lt;/t&gt; - это в %2. Мы можем начать атаку на него в любой момент.&lt;/t&gt;</Russian>
                 <Chinesesimp>&lt;t size='0.6'&gt;我们的努力得到了回报 - 我们现在知道另一个 &lt;t size='0.6' color='#800000'&gt;%1&lt;/t&gt; 密室已找到 - 它在 %2 中。 我们随时可以对其发起攻击。&lt;/t&gt;</Chinesesimp>
                 <Korean>&lt;t size='0.6'&gt;우리들의 노력이 결실을 맺었으며, 이제 우리는 또 다른 &lt;t size='0.6' color='#800000'&gt;%1&lt;/t&gt;의 셀이 어디에 있는지 알게 되었고, 현재 %2에 있습니다. 언제든지 공격할 수 있습니다.&lt;/t&gt;</Korean>
@@ -12126,7 +12126,7 @@
                 <Turkish>%2 konvoyunun %1 şifre çözme anahtarını bulduk!&lt;br/&gt;%3 konvoyları haritada işaretlendi!</Turkish>
             </Key>
             <Key ID="STR_intel_convoy_route">
-                <Original>We found some information about a possible convoy route from the %1 to the %2. The route has been marked on map. We can prepare an ambush for it.</Original>
+                <Original>We found some information about a possible convoy route from %1 to %2. The route has been marked on map. We can prepare an ambush for it.</Original>
                 <Russian>У нас есть информация о возможном маршруте конвоя из %1 в %2. Мы можем подготовить засаду на него. Маршрут отмечен на карте.</Russian>
                 <Chinesesimp>我们找到了可能会有从 %1 到 %2 的护航车队路线图。 我们可以准备埋伏。 路线在地图上有标注。</Chinesesimp>
                 <Korean>%1에서 %2까지의 가능한 호송 경로에 대한 정보를 찾았습니다. 경로가 지도에 표시되었습니다. 그 곳에 매복을 준비할 수 있습니다.</Korean>
@@ -12621,7 +12621,7 @@
                 <Turkish>%1 Hücre Liderini Öldür</Turkish>
             </Key>
             <Key ID="STR_RIV_ATT_cell_text">
-                <Original>%1 cell in the %2 has been compromised, it's time to act - go there and kill the leader of this cell, this will stop %1 from conducting covert operations against us in this particular area. Our informer provides intel that they know we're coming. Do this before %3.</Original>
+                <Original>%1 cell in %2 has been compromised, it's time to act - go there and kill the leader of this cell, this will stop %1 from conducting covert operations against us in this particular area. Our informer provides intel that they know we're coming. Do this before %3.</Original>
                 <Russian>Ячейка %1 в %2 скомпрометирована, а это значит, что пришло время действовать - идите туда и уничтожьте лидера ячейки, это остудит их пыл, %1 перестанут проводить свои тайные операции против нас в этой зоне. Наш информатор предоставляет данные что они знают, что мы скоро придём. Сделайте это до %3.</Russian>
                 <Chinesesimp>%2中的%1小队已经暴露了，是时候行动了-去那里杀掉这个小队的头目，这将阻止%1在这个特定区域对我们进行秘密行动。我们的线人提供情报说他们知道我们要来。在%3之前执行此任务。</Chinesesimp>
                 <Korean>%2에서의 %1의 셀이 탄로났습니다. 이제 행동할 시간입니다. 가서 해당 지역의 셀 리더를 죽이면 %1이(가) 이 지역에서 우리를 상대로 비밀 작전을 수행하는 것을 막을 수 있습니다. 우리 정보원은 우리가 올 것을 알고 있다는 정보를 제공했습니다. %3 이전에 완료하십시오.</Korean>
@@ -12715,7 +12715,7 @@
                 <Turkish>Kaynak Edinimi</Turkish>
             </Key>
             <Key ID="STR_CON_Outpost_resources_desc">
-                <Original>The %1 would be a fine addition to our cause. Go there and capture it before %2.</Original>
+                <Original>%1 would be a fine addition to our cause. Go there and capture it before %2.</Original>
                 <Russian>%1 был бы прекрасным дополнением к нашему общему делу. Отправляйтесь туда и захватите его до %2.</Russian>
                 <Chinesesimp>%1 对我们的行动来说是一个很好的补充。 去那里，在 %2 之前占领它。</Chinesesimp>
                 <Korean>%1은(는) 우리의 대의에 훌륭한 지원이 될 것입니다. 해당 지역으로 가서 %2 이전까지 점령하십시오.</Korean>
@@ -12859,7 +12859,7 @@
                 <Turkish>%1 Subayını Öldür</Turkish>
             </Key>
             <Key ID="STR_A3A_Missions_AS_Official_task_desc">
-                <Original>A %1 officer is inspecting the %2. Go there and kill him before %3.</Original>
+                <Original>A %1 officer is inspecting %2. Go there and kill him before %3.</Original>
                 <Russian>Офицер %1 инспектирует %2. Отправляйтесь туда и убейте его до %3.</Russian>
                 <Chinesesimp>一名 %1 军官正在视察 %2。 去那里，在 %3 之前杀了他。</Chinesesimp>
                 <Korean>%1의 장교가 %2을(를) 시찰 중입니다. 해당 지역으로 가서 %3:%4 이전까지 그를 사살하십시오.</Korean>
@@ -12875,7 +12875,7 @@
                 <Turkish>%1 Subayına Pusu Kur</Turkish>
             </Key>
             <Key ID="STR_A3A_Missions_AS_Ambush_task_desc">
-                <Original>A high-ranking %5 officer will move from the %1 to the %2 at %3. Intercept his vehicle and eliminate him. We must do this before %4.</Original>
+                <Original>A high-ranking %5 officer will move from %1 to %2 at %3. Intercept his vehicle and eliminate him. We must do this before %4.</Original>
                 <Russian>Высокоранговый офицер %5 поедет из %1 в %2 (время: %3). Перехватите его транспортное средство и устраните его. Мы должны сделать это до %4.</Russian>
                 <Chinesesimp>高级 %5 官员将在 %3 从 %1 调到 %2。 拦截他的车辆并消灭他。 我们必须在 %4 之前完成。</Chinesesimp>
                 <Korean>%5 고위 장교는 %1에서 %3의 %2로 이동할 것입니다. 그의 차량을 막아서 그를 사살하십시오. %4 이전에 완료하십시오.</Korean>
@@ -12891,7 +12891,7 @@
                 <Turkish>Özel Kuvvetler Timini Etkisiz Hale Getir</Turkish>
             </Key>
             <Key ID="STR_A3A_Missions_AS_specOP_task_desc">
-                <Original>We have spotted a %1 SpecOps team patrolling around a %2. Eliminate them and we will have one less problem. Do this before %3. Be careful, they are very experienced and tough boys.</Original>
+                <Original>We have spotted a %1 SpecOps team patrolling around %2. Eliminate them and we will have one less problem. Do this before %3. Be careful, they are very experienced and tough boys.</Original>
                 <Russian>Мы обнаружили отряд специального назначения %1, патрулирующий окрестности %2. Устраните их и у нас будет на одну проблему меньше. Сделайте это до %3. Будьте осторожны - они довольно профессиональные и крепкие ребята.</Russian>
                 <Chinesesimp>我们发现了 %1 特遣队在 %2 周围巡逻。 消除它们，这样我们就会少一个问题。 在 %3 之前执行此任务。 小心，他们是训练有素装备精良的士兵。</Chinesesimp>
                 <Korean>%1의 특수부대 팀이 %2 주위를 순찰하는 걸 발견했습니다. 그들을 제거하면 우린 문제가 하나 줄어들 것입니다. %3 이전에 완료하십시오. 조심하십시오, 그들은 저렇게 보여도 만만한 녀석들이 아닙니다.</Korean>
@@ -12963,7 +12963,7 @@
                 <Turkish>Mühimmat Konvoyunun Önünü Kes</Turkish>
             </Key>
             <Key ID="STR_A3A_Missions_AS_Convoy_task_dest_ammo">
-                <Original>A convoy from the %1 is about to depart at %2. It will provide ammunition to the %3. Try to intercept it. Steal or destroy that truck before it reaches its destination.</Original>
+                <Original>A convoy from %1 is about to depart at %2. It will provide ammunition to the %3. Try to intercept it. Steal or destroy that truck before it reaches its destination.</Original>
                 <Russian>Конвой из %1 скоро начнёт движение в пункт назначения в %2. Он привезёт боеприпасы в %3. Попробуйте перехватить его. Украдите или уничтожьте грузовик с искомым содержимым до того, как он достигнет точки назначения.</Russian>
                 <Chinesesimp>来自 %1 的车队即将在 %2 出发。 它将为 %3 提供弹药。 尝试拦截它。 在卡车到达目的地之前偷走或摧毁它。</Chinesesimp>
                 <Korean>%1의 호송 차량이 %2에서 출발하려고 합니다. %3에 탄약을 제공할 것입니다. 그들을 방해하십시오. 목적지에 도착하기 전에 트럭을 훔치거나 파괴하십시오.</Korean>
@@ -12979,7 +12979,7 @@
                 <Turkish>Yakıt Konvoyunun Önünü Kes</Turkish>
             </Key>
             <Key ID="STR_A3A_Missions_AS_Convoy_task_dest_fuel">
-                <Original>A convoy from the %1 is about to depart at %2. It will provide fuel to the %3. Try to intercept it. Steal or destroy that truck before it reaches its destination.</Original>
+                <Original>A convoy from %1 is about to depart at %2. It will provide fuel to the %3. Try to intercept it. Steal or destroy that truck before it reaches its destination.</Original>
                 <Russian>Конвой из %1 скоро начнёт движение в пункт назначения в %2. Он привезёт топливо в %3. Попробуйте перехватить его. Украдите или уничтожьте грузовик с искомым содержимым до того, как он достигнет точки назначения.</Russian>
                 <Chinesesimp>来自 %1 的车队即将在 %2 出发。 它将为 %3 提供燃料。 尝试拦截它。 在卡车到达目的地之前偷走或摧毁它。</Chinesesimp>
                 <Korean>%1의 호송 차량이 %2에서 출발하려고 합니다. %3에 연료를 제공할 것입니다. 그들을 방해하십시오. 목적지에 도착하기 전에 트럭을 훔치거나 파괴하십시오.</Korean>
@@ -12995,7 +12995,7 @@
                 <Turkish>Zırhlı Konvoyun Önünü Kes</Turkish>
             </Key>
             <Key ID="STR_A3A_Missions_AS_Convoy_task_dest_armor">
-                <Original>A convoy from the %1 is about to depart at %2. It will reinforce the %3 with armored vehicles. Try to intercept it. Steal or destroy that armor before it reaches its destination.</Original>
+                <Original>A convoy from %1 is about to depart at %2. It will reinforce the %3 with armored vehicles. Try to intercept it. Steal or destroy that armor before it reaches its destination.</Original>
                 <Russian>Конвой из %1 скоро начнёт движение в пункт назначения в %2. Он усилит %3 тяжелой техникой. Попробуйте перехватить его. Украдите или уничтожьте бронетехнику до того, как она достигнет точки назначения.</Russian>
                 <Chinesesimp>来自 %1 的车队即将在 %2 出发。 它将用装甲车增援 %3。 尝试拦截它。 在卡车到达目的地之前偷走或摧毁它。</Chinesesimp>
                 <Korean>%1의 호송 차량이 %2에서 출발하려고 합니다. %3을 장갑 차량으로 증원할 것입니다. 그들을 방해하십시오. 목적지에 도착하기 전에 차량을 훔치거나 파괴하십시오.</Korean>
@@ -13011,7 +13011,7 @@
                 <Turkish>Mahkum Konvoyunun Önünü Kes</Turkish>
             </Key>
             <Key ID="STR_A3A_Missions_AS_Convoy_task_dest_prisoners">
-                <Original>A group of POWs is being transported from the %1 to the %3, the convoy will depart at %2. Try to intercept it. Kill or capture the truck driver to free the prisoners and bring them to HQ.</Original>
+                <Original>A group of POWs is being transported from %1 to %3, the convoy will depart at %2. Try to intercept it. Kill or capture the truck driver to free the prisoners and bring them to HQ.</Original>
                 <Russian>Группа из наших пленных скоро будет перевозиться из %1 в %3, конвой начнёт движение в %2. Попробуйте перехватить его. Заставьте водителя грузовика покинуть своё место и привезите наших пленников в штаб. Живыми.</Russian>
                 <Chinesesimp>一群战俘正从%1运送到%3，准备在%2出发。 尝试拦截它。 杀死或俘虏卡车司机，让他们加入你的行列，并将他们带到总部。 如果可能的话，活着。</Chinesesimp>
                 <Korean>%1에서 %3(으)로 포로들이 수송되고 있으며 %2에서 출발하려고 합니다. 그들을 방해하십시오. 트럭 운전사를 죽이거나 붙잡아 합류시켜서 본부로 데려오십시오. 가능하면 살아 있어야 합니다.</Korean>
@@ -13027,7 +13027,7 @@
                 <Turkish>Takviye Konvoyunun Önünü Kes</Turkish>
             </Key>
             <Key ID="STR_A3A_Missions_AS_Convoy_task_dest_reinf">
-                <Original>Reinforcements are being sent from the %1 to the %3 in a convoy, and it's about to depart at %2. Try to intercept and kill all the troops and destroy their transports.</Original>
+                <Original>Reinforcements are being sent from %1 to the %3 in a convoy, and it's about to depart at %2. Try to intercept and kill all the troops and destroy their transports.</Original>
                 <Russian>Подкрепление было отправлено из %1 в %3 с конвоем, он начнёт движение в %2. Попробуйте перехватить его и перебить всё подкрепление, а также не забыть о грузовике.</Russian>
                 <Chinesesimp>增援部队正以车队的形式从 %1 运送到 %3，并且即将在 %2 出发。 尽量拦截并杀死所有的部队和车辆目标。</Chinesesimp>
                 <Korean>증원군이 %1에서 %3(으)로 호송 중이며 %2에서 출발하려고 합니다. 모든 병력과 차량 목표물을 방해하여 죽이십시오.</Korean>
@@ -13051,7 +13051,7 @@
                 <Turkish>İkmal Konvoyunun Önünü Kes</Turkish>
             </Key>
             <Key ID="STR_A3A_Missions_AS_Convoy_task_dest_supplies">
-                <Original>A truck with medical supplies destined for %3 is about to depart at %2 from the %1. Steal that truck, bring it to %3, and let the people there know it is us who's responsible.</Original>
+                <Original>A truck with medical supplies destined for %3 is about to depart at %2 from %1. Steal that truck, bring it to %3, and let the people there know it is us who's responsible.</Original>
                 <Russian>Грузовик с медикаментами и медицинским оборудованием собирается поехать из %1 в %3, он начнёт движение в %2. Украдите этот грузовик, привезите его в %3 первыми и раздайте медикаменты нуждающимся в них людям, позволив узнать, кто (%4) на самом деле им помогает.</Russian>
                 <Chinesesimp>一辆装有药品和医疗设备的卡车即将从 %1 开到 %3，它将从 %2 开始。 偷走这辆卡车，先把它带到 %3，然后将医疗用品分发给有需要的人，让他们知道%4才是真正在帮助他们。</Chinesesimp>
                 <Korean>의료 보급품이 있는 트럭이 %3을(를) 목적지로 %1에서 %2(으)로 출발하려고 합니다. 트럭을 훔쳐서 %3으로 가져오고 해당 주민들에게 그 보급품을 주는 사람이 %4이라는 것을 알리십시오.</Korean>
@@ -13103,7 +13103,7 @@
                 <Turkish>Gıda Konvoyunun Önünü Kes</Turkish>
             </Key>
             <Key ID="STR_A3A_Missions_AS_Convoy_task_dest_food">
-                <Original>A truck with much needed food for the people is about to depart at %2 from the %1 (destination %3). Steal that truck, bring it to %3, and let the people there know it is us who's responsible.</Original>
+                <Original>A truck with much needed food for the people is about to depart at %2 from %1 (destination %3). Steal that truck, bring it to %3, and let the people there know it is us who's responsible.</Original>
                 <Russian>Грузовик с так необходимой людям едой скоро отъедет из %1 в %3, он начнёт движение в %2. Украдите этот грузовик, привезите его в %3 первыми и раздайте еду нуждающимся, позволив узнать, кто (%4) на самом деле им помогает.</Russian>
                 <Chinesesimp>一辆装有急需食物的卡车即将从 %1 开到 %3，它将从 %2 开始。 偷走这辆卡车，先把它带到 %3，然后将医疗用品分发给有需要的人，让他们知道%4才是真正在帮助他们。</Chinesesimp>
                 <Korean>식량이 매우 필요한 사람들을 위한 식량 트럭이 %3을(를) 목적지로 %1에서 %2(으)로 출발하려고 합니다. 트럭을 훔쳐서 %3으로 가져와서 해당 주민들에게 이 음식들을 주는 사람이 %4이라는 것을 알리십시오.</Korean>
@@ -13119,7 +13119,7 @@
                 <Turkish>Radyo Kulesini İmha Et veya Ele Geçir</Turkish>
             </Key>
             <Key ID="STR_A3A_Missions_DES_Antenna_task_desc">
-                <Original>We need to destroy or take the radio tower at the %1. This will interrupt the %3's communications and propaganda nework. Do it before %2.</Original>
+                <Original>We need to destroy or take the radio tower at %1. This will interrupt the %3's communications and propaganda nework. Do it before %2.</Original>
                 <Russian>Мы должны уничтожить или захватить радиовышку в %1. Это ослабит влияние пропаганды %3. Сделайте это до %2.</Russian>
                 <Chinesesimp>我们需要摧毁或占领 %1 的无线电塔。 这将削弱 %3 宣传网络。 在 %2 之前完成。</Chinesesimp>
                 <Korean>%1의 통신탑을 파괴하거나 점령해야 합니다 %3의 선전이 중단될 것입니다. %2 이전에 완료하십시오.</Korean>
@@ -13151,7 +13151,7 @@
                 <Turkish>Topçu Birliğini İmha Et</Turkish>
             </Key>
             <Key ID="STR_A3A_Missions_DES_Artillery_task_desc">
-                <Original>Artillery is firing at our positions from the %1. We must destroy it or kill its crew. Do this before %2, or they will destroy something important!</Original>
+                <Original>Artillery is firing at our positions from %1. We must destroy it or kill its crew. Do this before %2, or they will destroy something important!</Original>
                 <Russian>Артиллерия стреляет по нашим позициям с %1. Мы должнны уничтожить её или её экипаж. Сделайте это до %2, или враг уничтожит что-нибудь ценное.</Russian>
                 <Chinesesimp>火炮正在从 %1 向我们的阵地开火。 我们必须摧毁火炮或者操控火炮人员。 在 %2 之前执行此任务，否则敌人会破坏一些有价值的东西。</Chinesesimp>
                 <Korean>야포가 %1에서 우리 위치를 향해 발사하고 있습니다. 그것을 파괴하거나 해당 사수들을 죽여야 합니다. %2 이전에 완료하십시오. 그렇지 않으면 그들이 어떤 가치있는 것을 파괴할 것입니다.</Korean>
@@ -13167,7 +13167,7 @@
                 <Turkish>Zırhlı Aracı Çal veya İmha Et</Turkish>
             </Key>
             <Key ID="STR_A3A_Missions_DES_Vehicle_task_desc">
-                <Original>We know a %3 is stationed in the %1. This is a good opportunity to destroy or capture it before it causes us any damage. Do it before %2.</Original>
+                <Original>We know a %3 is stationed in %1. This is a good opportunity to destroy or capture it before it causes us any damage. Do it before %2.</Original>
                 <Russian>Мы знаем, что вражеская бронетехника (%3) развернута в  %1. У нас есть хороший шанс украсть её или уничтожить, пока она не нанесла нам ущерб. Сделайте это до %2.</Russian>
                 <Chinesesimp>我们知道敌方装甲部队 (%3) 驻扎在 %1。 在造成更多损害之前摧毁或偷走它，这是一个好机会。 在 %2 之前完成。</Chinesesimp>
                 <Korean>%1에 적의 장갑차량 (%3)이(가) 주둔하고 있습니다. 더 많은 피해를 주기 전에 파괴하거나 노획할 수 있는 좋은 기회입니다. %2 이전에 완료하십시오.</Korean>
@@ -13199,7 +13199,7 @@
                 <Turkish>Mühimmat Kamyonunu Çal veya İmha Et</Turkish>
             </Key>
             <Key ID="STR_A3A_Missions_LOG_Ammo_task_desc">
-                <Original>We've spotted an ammo truck in the %1. Go there and destroy or steal it. Do it before %2.</Original>
+                <Original>We've spotted an ammo truck in %1. Go there and destroy or steal it. Do it before %2.</Original>
                 <Russian>Мы заметили грузовик с боеприпасами в %1. Идите туда и либо угоните его в штаб, либо уничтожьте. Сделайте это до %2.</Russian>
                 <Chinesesimp>我们在 %1 发现了一辆弹药卡车。 去摧毁或偷走它。 在 %2 之前完成。</Chinesesimp>
                 <Korean>%1에서 탄약트럭이 포착되었습니다. 가서 파괴하거나 노획하십시오. %2 이전에 완료하십시오.</Korean>
@@ -13215,7 +13215,7 @@
                 <Turkish>Banka Soygunu</Turkish>
             </Key>
             <Key ID="STR_A3A_Missions_LOG_Bank_task_desc">
-                <Original>We know that %3 are guarding a large amount of money in the bank of %1. Take this truck and go there before %2, hold the truck close to tha bank's main entrance for 2 minutes and the money will be transferred to the truck. Bring it back to HQ and the money will be ours.</Original>
+                <Original>We know that %3 are guarding a large amount of money in the bank of %1. Take this truck and go there before %2, hold the truck close to the bank's main entrance for 2 minutes and the money will be transferred to the truck. Bring it back to HQ and the money will be ours.</Original>
                 <Russian>Мы заметили, что %3 охраняют большое количество денег в банке города %1. Возьмите специальный грузовик в штабе и подъедьте туда, подгоните грузовик к главному входу банка на 2 минуты, тем самым перегрузив деньги из банка в грузовик. Затем пригоните грузовик обратно и деньги у нас в кармане. Сделайте это до %2.</Russian>
                 <Chinesesimp>我们知道%3在%1的银行保管着一大笔钱。 开着这辆卡车在 %2 之前去那里，把卡车停在靠近银行正门的地方 2 分钟，钱就会转到卡车上。 带回总部，钱就是我们的了</Chinesesimp>
                 <Korean>우리는 %3이 %1의 은행에서 거금을 예치 중이란 것을 알아냈습니다. 이 트럭을 타고 %2 이전까지 가서 2분 동안 은행 정문 가까이에서 트럭을 정차시키고 있으면 돈이 트럭으로 옮겨질 것입니다. 본부로 가져오면 해당 자금은 우리 것이 될 것입니다.</Korean>
@@ -13247,7 +13247,7 @@
                 <Turkish>Batık Gemiden İkmal Malzemelerini Kurtar</Turkish>
             </Key>
             <Key ID="STR_A3A_Missions_LOG_Salvage_task_desc">
-                <Original>A supply shipment was sunk outside of the %1. Go there and recover the supplies before %2. You will need to get a hold of a boat with a winch and cargo capabilities to recover the shipment (rescue boat, motor boat or similar ones will fit), check beaches for civilian boats you can commandeer. You may find diving gear in any enemy seaport crate or in the arsenal if you have captured any seaport and delivered the crate from it before.</Original>
+                <Original>A supply shipment was sunk outside of %1. Go there and recover the supplies before %2. You will need to get a hold of a boat with a winch and cargo capabilities to recover the shipment (rescue boat, motor boat or similar ones will fit), check beaches for civilian boats you can commandeer. You may find diving gear in any enemy seaport crate or in the arsenal if you have captured any seaport and delivered the crate from it before.</Original>
                 <Russian>Грузовой корабль с поставкой припасов затонул недалеко от %1. Идите туда и вытащите груз до %2. Вам потребуется лодка с лебёдкой, чтобы достать поставку. Сгодится любая лодка c лебёдкой и возможностью принять груз (подойдут спасательные, скоростные лодки и похожие на них) - вы можете либо использовать наши лодки, либо воспользоваться пришвартованными гражданскими судами. Также вы можете найти дайверское снаряжение в ящике со снаряжением в любом вражеском морском порту или в арсенале, если вы захватывали и успешно довозили до штаба ящик из морского порта ранее.</Russian>
                 <Chinesesimp>一批补给品在 %1 外沉没。 去那里并在 %2 之前回收物资。 您将需要获得一艘带有绞车和运货能力的船来回收货物（救援船、摩托艇或类似的船只都适合），检查海滩上是否有您可以征用的民用船只。 如果您之前占领过任何海港并从那里运送过箱子，您可能会在任何敌方海港箱子或军火库中找到潜水装备。</Chinesesimp>
                 <Korean>%1 외곽에서 보급 선적물이 가라앉았습니다. 가서 %2 이전에 보급품을 되찾으십시오. 선적물을 회수하려면 윈치와 화물 기능이 있는 보트를 입수하고(구조 보트, 모터 보트 또는 유사한 보트가 적합합니다), 징발할 수 있는 민간 보트가 있는지 해변을 확인하십시오. 만약 당신이 이전에 어떤 항구를 점령하고 그 곳에서 상자를 배달했다면, 당신은 적의 상자나 무기고에서 다이빙 장비를 발견할 수 있습니다.</Korean>
@@ -13460,7 +13460,7 @@
                 <Turkish>Kule Onarımını Engelle</Turkish>
             </Key>
             <Key ID="STR_A3A_Missions_REP_Antenna_task_desc">
-                <Original>%1 is trying to rebuild the radio tower at the %2. If we want to maintain the enemy comms breakdown, the repair must be stopped. Destroy or steal the repair truck parked nearby or alternatively capture the zone. The work will be finished by %3.</Original>
+                <Original>%1 is trying to rebuild the radio tower at %2. If we want to maintain the enemy comms breakdown, the repair must be stopped. Destroy or steal the repair truck parked nearby or alternatively capture the zone. The work will be finished by %3.</Original>
                 <Russian>%1 пытаются отремонтировать радиовышку в %2. Если мы хотим продолжать нарушать радиосвязь и пропаганду противника в этом районе, мы должны помешать восстановительным работам. Уничтожьте ремонтную машину, которая наверняка будет где-то рядом с вышкой либо захватите локацию. Работы противника будут окончены до %3.</Russian>
                 <Chinesesimp>%1 正在尝试修复 %2 的无线电塔。 如果我们想继续干扰该地区的无线电通信和敌方宣传，我们就必须干预恢复工作。 摧毁在塔附近某处的维修车辆，或占领该位置。 敌人的工作将在 %3 之前完成。</Chinesesimp>
                 <Korean>%1이(가) %2에서 통신탑을 재건축하려 합니다. 우리가 적의 통신을 차단하려면 해당 작업을 중지시켜야 합니다. 근처에 주차된 수리 트럭을 파괴하거나 해당 구역을 점령하십시오. %3에 작업이 완료될 예정입니다.</Korean>
@@ -13476,7 +13476,7 @@
                 <Turkish>Savaş Esiri Kurtarma</Turkish>
             </Key>
             <Key ID="STR_A3A_Missions_RES_Prisoners_task_desc">
-                <Original>A group of POWs is awaiting execution at the %1. We must rescue them before %2. Bring them to HQ.</Original>
+                <Original>A group of POWs is awaiting execution at %1. We must rescue them before %2. Bring them to HQ.</Original>
                 <Russian>Группа наших пленников ожидает казни в %1. Мы должны спасти их до %2. Привезите их в штаб. </Russian>
                 <Chinesesimp>我们的一群战俘在 %1 等待处决。 我们必须在 %2 之前营救他们。 把他们带到总部。</Chinesesimp>
                 <Korean>%1에서 처형 대기 중인 포로가 있습니다. %2 이전까지 그들을 구출해야 합니다. 그들을 본부로 데려오십시오.</Korean>
@@ -13491,7 +13491,7 @@
                 <Turkish>Firarileri Kurtar</Turkish>
             </Key>
             <Key ID="STR_A3A_Missions_RES_Deserters_task_desc">
-                <Original>A group of enemy deserters is hiding at the %1, they are hunted by enemy group. We must rescue them before %2. Bring them to HQ.</Original>
+                <Original>A group of enemy deserters is hiding at %1, they are hunted by enemy group. We must rescue them before %2. Bring them to HQ.</Original>
                 <Russian>Группа вражеских дезертиров прячется в %1, их преследует вражеская группа. Мы должны спасти их до %2. Привезите их в штаб. </Russian>
                 <Chinesesimp>一群敌方逃兵躲藏在 %1，他们正在被敌方追捕。我们必须在 %2 之前救出他们。将他们带到总部。</Chinesesimp>
                 <Korean>탈주자 구조적의 탈영병 무리가 %1에 숨어 있고, 적 부대에게 쫓기고 있습니다. %2 이전에 구출해야 합니다. 본부로 데려오십시오.</Korean>
@@ -13506,7 +13506,7 @@
                 <Turkish>Mahkumları Kurtar</Turkish>
             </Key>
             <Key ID="STR_A3A_Missions_RIV_RES_Prisoners_task_desc">
-                <Original>%1 are about to execute our comrades at the %2. We must rescue them before %3. Bring them to HQ.</Original>
+                <Original>%1 are about to execute our comrades at %2. We must rescue them before %3. Bring them to HQ.</Original>
                 <Russian>%1 собираются казнить наших товарищей в %2. Мы должны спасти их до %3. Привезите их в штаб.</Russian>
                 <Chinesesimp>%1 即将处决我们在 %2 的同志。 我们必须在 %3 之前营救他们。 把他们带到总部。</Chinesesimp>
                 <Korean>%1이 %2에서 우리 동지들을 처형하려고 합니다. %3 이전까지 그들을 구출해야 합니다. 그들을 본부로 데려오십시오.</Korean>
@@ -13522,7 +13522,7 @@
                 <Turkish>%1 Destekçilerini Kurtar</Turkish>
             </Key>
             <Key ID="STR_A3A_Missions_RES_Refugees_task_desc_1">
-                <Original>A group of civilian %1 supportes have been arrested in %2 and they are about to be sent to prison. Go there, free them and bring them to HQ and they will join our cause. Do this before %3.</Original>
+                <Original>A group of civilian %1 supporters have been arrested in %2 and they are about to be sent to prison. Go there, free them and bring them to HQ and they will join our cause. Do this before %3.</Original>
                 <Russian>Группа гражданских сторонников %1 была арестована в %2 и их скоро отправят в тюрьму. Спасите их, привезите в штаб и они присоединятся к нам. Сделайте это до %3.</Russian>
                 <Chinesesimp>一群平民 %1 支持者在 %2 被捕，他们即将被送进监狱。 去那里，释放他们并将他们带到总部，他们将加入我们的事业。 在 %3 之前执行此任务。</Chinesesimp>
                 <Korean>%2에서 %1의 민간 지지자들이 체포되었고 곧 수용소로 보내질 예정입니다. 가서 그들을 풀어주고 본부로 데려오면 우리 편이 될 것입니다. %3 이전에 완료하십시오.</Korean>
