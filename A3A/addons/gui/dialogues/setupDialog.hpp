@@ -485,7 +485,7 @@ class A3A_SetupDialog : A3A_TabbedDialog
                 class ParamsTypesComboBox: A3A_ComboBox {
                     idc = A3A_IDC_SETUP_PARAMSTYPE;
                     colorBackground[] = {0,0,0,1};
-                    onLBSelChanged = "['update', [_this select 1]] call A3A_fnc_setupParamsTab";
+                    onLBSelChanged = "[""clearSearch""] call A3A_fnc_setupParamsTab";
                     x = 4 * GRID_W;
                     y = 4 * GRID_H;
                     w = 118 * GRID_W;
@@ -535,6 +535,7 @@ class A3A_SetupDialog : A3A_TabbedDialog
                         };
                         class ParamsSearchEditBox: A3A_Edit {
                             idc = A3A_IDC_SETUP_PARAMSSEARCH_EDITBOX;
+                            onEditChanged = "[""updateSearch""] call A3A_fnc_setupParamsTab";
                             x = 0;
                             y = 4 * GRID_H;
                             w = 26 * GRID_W;
@@ -543,7 +544,7 @@ class A3A_SetupDialog : A3A_TabbedDialog
                         class ParamsSearchButton: A3A_ActivePicture {
                             idc = A3A_IDC_SETUP_PARAMSSEARCH_BUTTON;
                             text = "\A3\ui_f\data\GUI\RscCommon\RscButtonSearch\search_start_ca.paa";
-                            onButtonClick = "['updateSearch'] call A3A_fnc_setupParamsTab";
+                            onButtonClick = "[""clearSearch""] call A3A_fnc_setupParamsTab";
                             x = 26 * GRID_W;
                             y = 4 * GRID_H;
                             w = 4 * GRID_W;

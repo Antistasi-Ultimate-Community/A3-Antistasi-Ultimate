@@ -988,6 +988,9 @@
                 <Korean>보트</Korean>
                 <Turkish>Tekneler</Turkish>
             </Key>
+            <Key ID="STR_antistasi_dialogs_vehicle_search_tooltip">
+                <Original>Search vehicles</Original>
+            </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_static">
                 <Original>Statics</Original>
                 <Russian>Стационарные орудия</Russian>
