@@ -526,23 +526,16 @@ switch (_mode) do
 
     case ("updateSearch"):
     {
-        private _searchEditBox = _display displayCtrl A3A_IDC_SETUP_PARAMSSEARCH_EDITBOX;
-        private _searchButton = _display displayCtrl A3A_IDC_SETUP_PARAMSSEARCH_BUTTON;
-        private _searchString = ctrlText _searchEditBox;
-        private _searchActive = _searchButton getVariable ["active", true];
+        private _searchString = trim ctrlText A3A_IDC_SETUP_PARAMSSEARCH_EDITBOX;
+        private _searchActive = _searchString isNotEqualTo "";
 
+        ctrlSetText [A3A_IDC_SETUP_PARAMSSEARCH_BUTTON, "\A3\ui_f\data\GUI\RscCommon\RscButtonSearch\" + (["search_start_ca.paa", "search_end_ca.paa"] select _searchActive)];
+        ["update", [[lbCurSel _paramsType, _searchString] select _searchActive]] call A3A_fnc_setupParamsTab;
+    };
 
-        if (_searchActive && {_searchString isNotEqualTo ""}) then {
-            _searchEditBox ctrlEnable false;
-            _searchButton setVariable ["active", false];
-            _searchButton ctrlSetText ("\A3\ui_f\data\GUI\RscCommon\RscButtonSearch\search_end_ca.paa");
-            ["update", [_searchString]] call A3A_fnc_setupParamsTab;
-        } else {
-            _searchEditBox ctrlSetText "";
-            _searchEditBox ctrlEnable true;
-            _searchButton setVariable ["active", true];
-            _searchButton ctrlSetText ("\A3\ui_f\data\GUI\RscCommon\RscButtonSearch\search_start_ca.paa");
-            ["update", [lbCurSel A3A_IDC_SETUP_PARAMSTYPE]] call A3A_fnc_setupParamsTab;
-        };
+    case ("clearSearch"):
+    {
+        ctrlSetText [A3A_IDC_SETUP_PARAMSSEARCH_EDITBOX, ""];
+        ["updateSearch"] call A3A_fnc_setupParamsTab;
     };
 };
