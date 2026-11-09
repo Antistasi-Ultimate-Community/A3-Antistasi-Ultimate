@@ -55,8 +55,8 @@ if (_statics isEqualTo []) exitWith {};
 
 // Find unlocked & unoccupied statics
 private _freeStatics = _statics select {
-    (isNull gunner _x) &&
-    { !(_x getVariable["lockedForAI", false]) }
+    (isNull gunner _x) && 
+    { [_x] call A3A_fnc_canAIMountVehicle };
 };
 if (_freeStatics isEqualTo []) exitWith {};
 

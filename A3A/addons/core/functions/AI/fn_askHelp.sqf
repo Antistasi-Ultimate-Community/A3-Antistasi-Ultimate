@@ -1,32 +1,43 @@
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
 
-params ["_target"];
+if !assert(params[
+    ["_target", nil, [objNull]]
+]) exitWith { objNull };
 
-private _helped = _unit getVariable ["helped", objNull];
+private _helped = _target getVariable ["helped", objNull];
 if !(isNull _helped) exitWith { _helped };
 
 // AIs don't ask for help if there's a downed player in the group
-if (!isPlayer _target and {units _target findIf { isPlayer _x and {_x getVariable ["incapacitated", false]} } != -1}) exitWith { objNull };
+if (!isPlayer _target && {units _target findIf { isPlayer _x && {_x getVariable ["incapacitated", false]} } != -1}) exitWith { objNull };
 
 // If the target is in a dangerous position and not a player, ignore them for the moment
 private _enemy = _target findNearestEnemy _target;
-if (!isPlayer _target and (_target distance _enemy < 100 or {[objNull, "VIEW"] checkVisibility [eyePos _enemy, eyePos _target] > 0})) exitWith { objNull };
+if (!isPlayer _target && (_target distance _enemy < 100 || {[objNull, "VIEW"] checkVisibility [eyePos _enemy, eyePos _target] > 0})) exitWith { objNull };
 
 private _firstAidKits = ["FirstAidKit","Medikit"] + (A3A_faction_reb get "firstAidKits") + (A3A_faction_reb get "mediKits");
-private _unitNeedsFAK = count (_firstAidKits arrayIntersect items _target) == 0;
+private _unitNeedsFAK = (_firstAidKits arrayIntersect items _target) isEqualTo [];
 
-private _units = units group _target;
+private _params = if (AIrevivesOutsideSquad < 0) then {
+    [units group _target, 100];
+} else {
+    [[getPos _target, side group _target, AIrevivesOutsideSquad] call A3A_fnc_getNearFriendly, AIrevivesOutsideSquad];
+};
+
+_params params["_units","_maxDistance"];
+
 private _medics = _units select { [_x] call A3A_fnc_isMedic };
 _units = _units - _medics;
 
 private _fnc_canHelp = {
     params ["_unit"];
-    if ((isPlayer _unit) or (vehicle _unit != _unit) or (_unit distance _target > 100)) exitWith { false };
+    if ((isPlayer _unit) || !(isNull objectParent _unit) || (_unit distance _target > _maxDistance)) exitWith { false };
+    // Leave players' AI units the fuck alone
+    if (units group _unit findIf { isPlayer _x } != -1) exitWith { false };
     if !([_unit] call A3A_fnc_canFight) exitWith { false };
     if (currentCommand _unit == "STOP") exitWith { false };
-    if ((_unit getVariable ["maneuvering", false]) or (_unit getVariable ["helping", false]) or (_unit getVariable ["rearming", false])) exitWith { false };
-    if (_unitNeedsFAK and {count (_firstAidKits arrayIntersect items _unit) == 0}) exitWith { false };
+    if ((_unit getVariable ["maneuvering", false]) || (_unit getVariable ["helping", false]) || (_unit getVariable ["rearming", false])) exitWith { false };
+    if (_unitNeedsFAK && {count (_firstAidKits arrayIntersect items _unit) == 0}) exitWith { false };
     true;
 };
 

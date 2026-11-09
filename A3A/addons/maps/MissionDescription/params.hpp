@@ -9,9 +9,9 @@ class Params
             $STR_antistasi_mission_info_journal_autoLoadLastGame_no_automatic_load,
             $STR_antistasi_mission_info_journal_autoLoadLastGame_1min,
             $STR_antistasi_mission_info_journal_autoLoadLastGame_2min,
-            STR_antistasi_mission_info_journal_autoLoadLastGame_3min,
-            STR_antistasi_mission_info_journal_autoLoadLastGame_5min,
-            STR_antistasi_mission_info_journal_autoLoadLastGame_10min
+            $STR_antistasi_mission_info_journal_autoLoadLastGame_3min,
+            $STR_antistasi_mission_info_journal_autoLoadLastGame_5min,
+            $STR_antistasi_mission_info_journal_autoLoadLastGame_10min
         };
         default = -1;
     };

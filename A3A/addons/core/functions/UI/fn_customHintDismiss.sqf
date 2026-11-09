@@ -37,6 +37,9 @@ if (_dismissAll) then {
         A3A_customHint_MSGs deleteAt _lastMSGIndex;
     };
 };
+
+hintSilent ""; //flush hints
+
 A3A_customHint_UpdateTime = serverTime;
 [] call A3A_fnc_customHintRender;  // Instant update will be preffered when user is dismissing notifications.
 true;

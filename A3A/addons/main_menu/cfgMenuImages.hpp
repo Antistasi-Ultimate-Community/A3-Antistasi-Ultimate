@@ -19,6 +19,16 @@
         path = QPATHTOFOLDER(data\backgrounds\images\merc_co.jpg);
         name = "Mercenary";
     };
+    class intro_tke_md
+    {
+        path = QPATHTOFOLDER(data\backgrounds\images\tke_md_co.jpg);
+        name = "TKE Mars Dominion";
+    };
+    class intro_tke_ucn
+    {
+        path = QPATHTOFOLDER(data\backgrounds\images\tke_ucn_co.jpg);
+        name = "TKE United Coalition";
+    };
     class intro_clearsky
     {
         path = QPATHTOFOLDER(data\backgrounds\images\clearsky_co.jpg);

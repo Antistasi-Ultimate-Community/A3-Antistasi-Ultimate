@@ -1,15 +1,15 @@
-params ["_marker"];
+#include "..\..\script_component.hpp"
+FIX_LINE_NUMBERS()
 
-private _result = 0;
-private _size = getMarkerSize _marker;
+if !assert(params[
+    ["_marker", nil, [""]]
+]) exitWith { 0 };
+if (!MARKER_EXISTS(_marker)) exitWith { 0 };
 
-switch (markerShape _marker) do {
-    case "ELLIPSE": {
-      _result = PI * (_size select 0) * (_size select 1);
-    };
-    case "ELLIPSE": {
-      _result = (_size select 0) * (_size select 1) * 4;
-    };
+markerSize _marker params["_w", "_h"];
+
+if ("ELLIPSE" isEqualTo markerShape _marker) exitWith {
+    pi * _w * _h;
 };
 
-_result;
+4 * _w * _h;

@@ -167,7 +167,9 @@ if (!_isGatherSuccessful) then {
     deleteVehicle _lootCrate;
 };
 
-if !(canMove _heli) then { sleep cleantime };
+if (A3A_GCThreshold isEqualTo -1) exitWith {};
+
+if !(canMove _heli) then { sleep A3A_GCThreshold };
 deleteVehicle _heli;
 {deleteVehicle _x} forEach _heliCrew;
 deleteGroup _groupHeli;

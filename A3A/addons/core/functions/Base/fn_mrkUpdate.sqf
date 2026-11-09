@@ -1,4 +1,5 @@
 #include "..\..\script_component.hpp"
+#include "\x\A3A\addons\gui\dialogues\ids.inc"
 /* ----------------------------------------------------------------------------
 Function: A3A_fnc_mrkUpdate
 
@@ -35,6 +36,8 @@ FIX_LINE_NUMBERS()
 params [["_markerName", "", [""]]];
 if (_markerName == "") exitWith {};
 
+private _editingZones = !isNull findDisplay A3A_IDD_EDITZONES_DIALOG;
+
 private _originalName = _markerName;
 private _dummyName = format ["Dum%1", _markerName];
 
@@ -53,7 +56,7 @@ private _specialMarkers = ["synd_hq", "tradermarker", "rallypointmarker"];
 
 if (!(_originalName in _managedMarkers) && {!(_markerNameLower in _specialMarkers)}) exitWith {};
 
-private _visibleMarkerName = if (markerShape _dummyName != "") then { _dummyName } else { _originalName };
+private _visibleMarkerName = [_originalName, _dummyName] select MARKER_EXISTS(_dummyName);
 private _markerPosition = getMarkerPos _visibleMarkerName;
 
 private _isSyndicateHeadquarters = (_markerNameLower == "synd_hq");
@@ -93,7 +96,7 @@ private _markerColor = "";
 
 if (_originalName in airportsX) then {
     _markerType = _markerFaction getOrDefault ["flagMarkerType", ""];
-    _markerColor = "Default";
+    _markerColor = ["Default", [colorInvaders, colorOccupants] select (sidesX getVariable [_originalName, Occupants] isEqualTo Occupants)] select (_editingZones);
 } else {
     if (_isDestroyed) then {
         _markerColor = "ColorBlack";
@@ -101,6 +104,7 @@ if (_originalName in airportsX) then {
         else { if (_originalName in citiesX) then { _markerType = "A3AU_city_mrk"; }; };
     } else {
         _markerColor = if (_markerSide == teamPlayer) then {colorTeamPlayer} else {[colorOccupants, colorInvaders] select (_markerSide == Invaders)};
+        if (_isTraderMarker) then {_markerColor = "ColorUNKNOWN"};
         
         call {
             if (_isMilAdmin) exitWith { _markerType = "A3AU_miladmin_mrk"; };
@@ -117,8 +121,8 @@ if (_originalName in airportsX) then {
     };
 };
 
-if (_markerType != "") then {_visibleMarkerName setMarkerTypeLocal _markerType;};
-if (_markerColor != "") then {_visibleMarkerName setMarkerColorLocal _markerColor;};
+if (_markerType != "") then {_visibleMarkerName setMarkerTypeLocal _markerType};
+if (_markerColor != "") then {_visibleMarkerName setMarkerColorLocal _markerColor};
 
 private _nearestCityName = "";
 if (_isMilAdmin || _originalName in mrkAntennas || _originalName in resourcesX || _originalName in factories) then {
@@ -153,34 +157,13 @@ if (_isMilAdmin || _originalName in mrkAntennas || _originalName in resourcesX |
     };
 };
 
-private _getLocName = {
-    params ["_array", "_locKey"];
-    private _idx = _array find _originalName;
-    if (_idx < 0) exitWith {""};
-    private _names = (localize _locKey) splitString "|";
-    if (_idx < count _names) then { _names select _idx } else { "" };
-};
-
 private _markerTitle = call {
     if (_isSyndicateHeadquarters) exitWith { format [localize "STR_A3U_HOVER_RESISTANCE_HQ", _factionName] };
     if (_isTraderMarker) exitWith { localize "STR_A3U_HOVER_BLACK_MARKET" };
     if (_originalName in citiesX) exitWith { markerText _originalName };
     
-    if (_isRallyPointMarker) exitWith { format [localize "STR_marker_RP", str RETDEF(rallyPointSpawnCount,0)] };
-    
-    if (_isMilAdmin) exitWith { format [localize "STR_milAdministration", _nearestCityName] };
-    if (_originalName in mrkAntennas) exitWith { format [localize "STR_radiotower", _nearestCityName] };
-    if (_originalName in resourcesX) exitWith { format [localize "STR_resources", _nearestCityName] };
-    if (_originalName in factories) exitWith { format [localize "STR_factory", _nearestCityName] };
-
-    if (_originalName in airportsX) exitWith { format [localize "STR_airbase", [airportsX, "STR_A3AU_airfieldNames"] call _getLocName] };
-    if (_originalName in outposts) exitWith { format [localize "STR_outpost", [outposts, "STR_A3AU_outpostNames"] call _getLocName] };
-    if (_originalName in milbases) exitWith { format [localize "STR_milbase", [milbases, "STR_A3AU_milbaseNames"] call _getLocName] };
-    
-    if (_originalName in seaports) exitWith {
-        private _portName = [seaports, "STR_A3AU_seaportNames"] call _getLocName;
-        format [localize (if (toLowerANSI worldName in ["enoch", "vn_khe_sanh", "esseker"]) then {"STR_port_river"} else {"STR_port_sea"}), _portName]
-    };
+    // FETCH LIVE SPAWN COUNT FROM NAMESPACE
+    if (_isRallyPointMarker) exitWith { format [localize "STR_marker_RP", str (rallyPointRoot getVariable ["remainingTravels", 0])] };
 
     if (_originalName in watchpostsFIA) exitWith { format [localize "STR_marker_watchpost", _factionName] };
     if (_originalName in roadblocksFIA) exitWith { format [localize "STR_marker_roadblock", _factionName] };
@@ -188,7 +171,8 @@ private _markerTitle = call {
     if (_originalName in atpostsFIA) exitWith { format [localize "STR_marker_at_empl", _factionName] };
     if (_originalName in hmgpostsFIA) exitWith { format [localize "STR_marker_hmg_empl", _factionName] };
 
-    ""
+    private _title = [_originalName, true] call A3A_fnc_getLocationName;
+    RETDEF(_title,"");
 };
 
 if (_isDestroyed) then { _markerTitle = format ["%1 %2", _markerTitle, localize "STR_destroyed"]; };
@@ -259,7 +243,7 @@ private _flagMarkerType = _markerFaction getOrDefault ["flagMarkerType", ""];
 private _hoverMetaMap = missionNamespace getVariable ["A3U_mrkHoverMetaMap", createHashMap];
 private _hoverMarkers = missionNamespace getVariable ["A3U_hoverMarkers", []];
 
-if ([_originalName] call A3U_fnc_isMarkerHidden) then {
+if ([_originalName] call A3U_fnc_isMarkerHidden || {_isSyndicateHeadquarters}) then {
     _hoverMetaMap deleteAt _dummyName;
     _hoverMetaMap deleteAt _originalName;
     _hoverMarkers = _hoverMarkers - [_dummyName, _originalName];
@@ -296,8 +280,10 @@ private _specialDefinitions = [
     };
     
     private _specFlag = if (_specFlagOverride != "") then {_specFlagOverride} else {_specFaction getOrDefault ["flagMarkerType", ""]};
+    
+    // FETCH LIVE SPAWN COUNT FROM NAMESPACE FOR SPECIAL DEFS
     private _specTitle = if (_specTitleLoc == "STR_marker_RP") then {
-        format [localize _specTitleLoc, if (isNil "rallyPointSpawnCount") then {"0"} else {str rallyPointSpawnCount}]
+        format [localize _specTitleLoc, str (rallyPointRoot getVariable ["remainingTravels", 0])]
     } else {
         format [localize _specTitleLoc, _specFaction getOrDefault ["name", ""]]
     };
@@ -316,7 +302,11 @@ private _isUISilentUpdate = missionNamespace getVariable ["A3U_suppressNetworkFo
 if (!_isUISilentUpdate) then {
     [_hoverMarkers] remoteExecCall ["A3U_fnc_handleMrkUpdate", 2]; 
 
-    if (A3AU_setting_alwaysShowMarkerName || {_originalName in (airportsX + milbases)}) then {
+    // Don't show marker name while in highly-cluttered edit zones dialog
+    if (_editingZones) exitWith { _visibleMarkerName setMarkerText "" };
+
+    // ENFORCE VISIBILITY RULE: HQ, Trader, and Rally Points always show text labels
+    if (RETDEF(A3AU_setting_alwaysShowMarkerName,false) || {_originalName in (airportsX + milbases)} || {_isSyndicateHeadquarters} || {_isTraderMarker} || {_isRallyPointMarker}) then {
         _visibleMarkerName setMarkerText _markerLabelOnly;
     } else {
         _visibleMarkerName setMarkerText "";

@@ -927,6 +927,11 @@ class ResetButton : ScrtRscSimpleMenuButton
 	tooltip = $STR_antistasi_dialogs_hq_button_rebel_reset_button_tooltip;
 };
 
+class CopyPasteResetButton : ResetButton
+{
+	tooltip = $STR_antistasi_dialogs_hq_button_rebel_copy_paste_reset_combo_button_tooltip;
+};
+
 class SimpleMenu
 {
 	movingenable=false;

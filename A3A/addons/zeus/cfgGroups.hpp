@@ -354,7 +354,9 @@ class CfgGroups {
 					class Unit1 : Unit1 {
 						vehicle = QGVAR(Occupants_Elite_Rifleman);
 					};
-					class Unit2 : Unit2 {};
+					class Unit2 : Unit2 {
+						vehicle = QGVAR(Occupants_Elite_Rifleman);
+					};
 					class Unit3 : Unit3 {
 						vehicle = QGVAR(Occupants_Elite_MachineGunner);
 					};
@@ -799,7 +801,9 @@ class CfgGroups {
 					class Unit1 : Unit1 {
 						vehicle = QGVAR(Invaders_Elite_Rifleman);
 					};
-					class Unit2 : Unit2 {};
+					class Unit2 : Unit2 {
+						vehicle = QGVAR(Invaders_Elite_Rifleman);
+					};
 					class Unit3 : Unit3 {
 						vehicle = QGVAR(Invaders_Elite_MachineGunner);
 					};

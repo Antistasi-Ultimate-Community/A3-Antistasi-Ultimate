@@ -172,7 +172,7 @@ if ((dateToNumber date > _dateLimitNum) or {isNull _truckX}) then {
 		} forEach (call SCRT_fnc_misc_getRebelPlayers);
 		[5*_bonus,theBoss] call A3A_fnc_addScorePlayer;
     	[100*_bonus,theBoss, true] call A3A_fnc_addMoneyPlayer;
-		[-15*_bonus,15*_bonus,_markerX] remoteExec ["A3A_fnc_citySupportChange",2];
+		[-5*_bonus,5*_bonus,_markerX] remoteExec ["A3A_fnc_citySupportChange",2];
 		Debug("aggroEvent | Rebels won a supply mission");
 		[Occupants, -10, 60] remoteExec ["A3A_fnc_addAggression",2];
 	} else {
@@ -183,10 +183,10 @@ if ((dateToNumber date > _dateLimitNum) or {isNull _truckX}) then {
 };
 
 // Release the lockout flag before deleting the vehicle
-missionNamespace setVariable ["A3A_supplyMissionActive", false, true];
+missionNamespace setVariable ["A3A_supplyMissionActive", nil, true];
 
 deleteVehicle _truckX;
 private _emptybox = "Land_Pallet_F" createVehicle (getpos _truckX);
-[_emptybox] spawn A3A_fnc_postmortem;
+[_emptybox, true] remoteExec[QFUNCMAIN(despawnQueueEntity), 2];
 
 [_taskId, "SUPP", 900] spawn A3A_fnc_taskDelete;

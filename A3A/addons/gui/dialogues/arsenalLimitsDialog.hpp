@@ -6,11 +6,6 @@
 
 #include "ids.inc"
 
-import RscText;
-import RscButton;
-import RscListNBox;
-import RscControlsGroup;
-
 class A3A_ArsenalLimitsDialog {
     idd = A3A_IDD_ARSENALLIMITSDIALOG;
     movingenable = false;

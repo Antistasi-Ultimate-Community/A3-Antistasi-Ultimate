@@ -118,11 +118,15 @@ while {true} do {
 		private _canFlipEnemy = (_canFlipBase && (_isNowEnemy && _citySide isEqualTo teamPlayer));
 		private _canStartSkirmish = (_popAboveMin && (random 100 <= townSkirmishChance) && !(_isSkirmish)); // !(bigAttackInProgress) - Will keep, interesting experiment for now
 
+		Debug_8("City: %1 | Side: %2 | Pop: %3 | Gov: %4 | Reb: %5 | CanFlip: %6 | CanFlipEnemy: %7 | CanStartSkirmish: %8", _city, _citySide, _numCiv, _popGov, _popReb, _canFlip, _canFlipEnemy, _canStartSkirmish);
+
 		if (_canFlip) then {
 			if (_canStartSkirmish) then {
+				if (areOccupantsDefeated) then {_citySide = Invaders}; // They won't capture it but they will attack it
 				private _possibleOrigins = outposts select {sidesX getVariable [_x, sideUnknown] == _citySide};
 				private _finalOrigin = selectRandom (_possibleOrigins select { (getMarkerPos _x) distance2D (getMarkerPos _city) < 3000 });
 				if (isNil "_finalOrigin") then { _finalOrigin = selectRandom _possibleOrigins };
+				if (isNil "_finalOrigin") exitWith { [_city, true] call A3A_fnc_cityChangeSide }; // Worst case scenario, no outposts available
 				[_citySide, _city, _finalOrigin] spawn A3A_fnc_townBattle;
 				uiSleep 1;
 			} else {
@@ -332,4 +336,6 @@ while {true} do {
 		
 		publicVariable "unlockedVehicleTypes";
 	};
+
+        [CBA_EVENT_SERVER_RESOURCE_CHECK_DONE, []] call FUNCMAIN(triggerLocalEvent);
 };

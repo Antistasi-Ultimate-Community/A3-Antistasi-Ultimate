@@ -11,7 +11,6 @@ class CfgFunctions
             class approachSpeedControl {};
             class artySupport {};
             class askHelp {};
-            class askAnyoneHelp {};
             class assaultBuilding {};
             class attackDrillAI {};
             class attackHeli {};
@@ -123,6 +122,7 @@ class CfgFunctions
             class blackout {};
             class buildHQ {};
             class calculateAggression {};
+            class canAIMountVehicle {};
             class canMoveHQ {};
             class chooseAttack {};
             class citiesToCivPatrol {};
@@ -132,6 +132,8 @@ class CfgFunctions
             class createBreachChargeText {};
             class createPetros {};
             class deleteControls {};
+            class despawnQueueEntity {};
+            class despawnQueueProcessor {};
             class destroyCity {};
             class distance {};
             class distanceUnits {};
@@ -145,7 +147,9 @@ class CfgFunctions
             class garbageCleanerTracker {};
             class garrisonInfo {};
             class getAggroLevelString {};
+            class getLocationName {};
             class getRecentDamage {};
+            class getSideRadioTowerInfluence {};
             class getVehiclesAirSupport {};
             class getVehiclesGroundSupport {};
             class getVehiclesGroundTransport {};
@@ -154,6 +158,8 @@ class CfgFunctions
             class initPetros {};
             class isFrontline {};
             class isFrontlineNoFIA {};
+            class isRiverportMap {};
+            class isSeaportMap {};
             class arePositionsConnected {};
             class joinMultipleGroups {};
             class localizar {};
@@ -172,7 +178,7 @@ class CfgFunctions
             class petrosDeathMonitor {};
             class placementSelection {};
             class playableUnits {};
-            class getSideRadioTowerInfluence {};
+            class preparePostMortem {};
             class rebuildAssets {};
             class rebuildEconomicAssets {};
             class rebuildRadioTower {};
@@ -285,7 +291,6 @@ class CfgFunctions
             class createZoneAmmoBox {};
             class createZoneFlag {};
             class crewTypeForVehicle {};
-            class cycleSpawn {};
             class FIAinitBases {};
             class findSpawnPosition {};
             class freeSpawnPositions {};
@@ -307,7 +312,6 @@ class CfgFunctions
             class spawnGroup {};
             class spawnVehicle {};
             class spawnVehicleAtMarker {};
-            class spawnVehiclePrecise {};
             class townBattle {};
             class RivalsCargoSeats {};
             class RivalsCreateUnit {};
@@ -396,7 +400,6 @@ class CfgFunctions
             class initServer {};
             class initCities {};
             class initClient {};
-            class setupMonitor {};
             class startGame {};
 
             //Other initialisation functions (generally called by the above)
@@ -409,6 +412,7 @@ class CfgFunctions
             class initACE {};
             class initACEUnconsciousHandler {};
             class initBases {};
+            class initExtenderDetection {};
             class initUtilityItems {};
             class initGarrisons {};
             class initPreJIP { preInit = 1; };
@@ -426,7 +430,9 @@ class CfgFunctions
             class playerMarkers {};
             class prepareMarkerArrays {};
             class resourcecheck {};
+            class setGameParameters {};
             class tags {};
+            class validateExtenderCompat {};
         };
 
         class Intel {
@@ -510,7 +516,6 @@ class CfgFunctions
             class makePlayerBossIfEligible {};
             class memberAdd {};
             class membersList {};
-            class music {};
             class promotePlayer {};
             class radioJam {};
             class ranksMP {};
@@ -628,12 +633,16 @@ class CfgFunctions
 
         class Save {
             file = QPATHTOFOLDER(functions\Save);
+            class addToStaticsToSave {};
+            class applyObjectSaveData {};
             class collectParamPresetData {};
             class collectSaveData {};
             class deleteSave {};
             class loadPlayer {};
             class loadServer {};
             class savePlayer {};
+            class generateSaveID {};
+            class getObjectSaveData {};
             class getStatVariable {};
             class loadStat {};
             class resetPlayer {};
@@ -825,6 +834,7 @@ class CfgFunctions
 
         class Utility {
             file = QPATHTOFOLDER(functions\Utility);
+            class arrayRange {};
             class attachLight {};
             class attachLightFromConfig {};
             class basicBackpack {};
@@ -837,19 +847,24 @@ class CfgFunctions
             class findAiSpawnPosition {};
             class findSpawnHelperPosition {};
             class getAdmin {};
+            class isDayTime {};
             class isEmplacementMarker {};
             class isEngineer {};
+            class isSiteDestroyed {};
             class isTeardownEnabled {};
             class isWithinMarkerArea {};
             class isWithinNearestFriendlyMarker {};
             class localLog {};
             class log {};
+            class makeObjectLocal {};
             class nearestFriendlyMarker {};
             class onClientInitDone {};
             class onServerInitDone {};
+            class randomRange {};
             class setIdentity {};
             class setIdentityLocal {};
             class setPos {};
+            class vehicleHasCargo {};
             class vehicleTextureSync {};
             class vehicleWillCollideAtPosition {};
             class getRoadDirection {};
@@ -858,10 +873,12 @@ class CfgFunctions
 
         class UtilityItems {
             file = QPATHTOFOLDER(functions\UtilityItems);
+            class applyObjectSaveData_BuildBox {};
             class attachedObjects {};
             class buyItem {};
             class carryItem {};
             class dropItem {};
+            class getObjectSaveData_BuildBox {};
             class initMovableObject {};
             class initObject {};
             class initObjectRemote {};

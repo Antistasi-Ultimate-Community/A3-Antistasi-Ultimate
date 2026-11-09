@@ -9,6 +9,9 @@ resourcesIsChanging = true;
 if (isNil "_resourcesFIA") then {Error("_resourceFIA is nil");};
 if ((isNil "_hr") or (isNil "_resourcesFIA")) exitWith {resourcesIsChanging = false};
 if ((floor _resourcesFIA == 0) and (floor _hr == 0)) exitWith {resourcesIsChanging = false};
+
+[CBA_EVENT_SERVER_RESOURCE_CHANGE, [_hr, _resourcesFIA]] call FUNCMAIN(triggerLocalEvent);
+
 private _hrT = server getVariable "hr";
 private _resourcesFIAT = server getVariable "resourcesFIA";
 private _hrLimit = nil;

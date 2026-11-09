@@ -76,7 +76,7 @@ private _civUniforms = [
 ];
 
 private _vipUniforms = [
-    "U_C_Uniform_Formal_01_blue_F"
+    "U_C_FormalSuit_01_blue_F"
 ];
 
 ["uniforms", _civUniforms + _vipUniforms] call _fnc_saveToTemplate;

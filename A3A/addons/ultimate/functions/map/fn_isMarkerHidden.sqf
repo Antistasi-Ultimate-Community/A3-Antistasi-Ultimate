@@ -1,3 +1,4 @@
+#include "\x\A3A\addons\gui\dialogues\ids.inc"
 /*
     Author:
         Silence
@@ -45,7 +46,7 @@ if (_marker in revealedZones) exitWith {false};
 if (_marker in markersImmune) exitWith {false};
 
 // Replaced flatten[] operation
-if (_marker in citiesX || {_marker in airportsX} || {_marker in milAdministrationsX}) exitWith {false};
+if (_marker in citiesX || {_marker in airportsX && {isNull findDisplay A3A_IDD_EDITZONES_DIALOG}} || {_marker in milAdministrationsX}) exitWith {false};
 
 if (!isNil "traderMarker" && {_marker == traderMarker}) exitWith {false};
 

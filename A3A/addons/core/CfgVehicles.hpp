@@ -1,3 +1,14 @@
+#define EMPTY_INVENTORY() \
+    class TransportMagazines {}; \
+    class TransportWeapons {}; \
+    class TransportItems {}; \
+    class TransportBackpacks {}
+#define SAVE_DATA_CALLBACKS(SUFFIX) \
+    GVAR(saveDataGetter) = QUOTE(call FUNCMAIN(DOUBLES(getObjectSaveData,SUFFIX))); \
+    GVAR(saveDataSetter) = QUOTE(call FUNCMAIN(DOUBLES(applyObjectSaveData,SUFFIX)))
+#define SAVE_DATA_CALLBACKS_BUILD_BOX() \
+    SAVE_DATA_CALLBACKS(BuildBox)
+
 class CfgVehicles
 {
     class Box_NATO_Uniforms_F;
@@ -172,10 +183,29 @@ class CfgVehicles
     class C_Man_1;
     class a3a_unit_civ : C_Man_1 {};
   
+    class Land_PlasticCase_01_small_black_F;
+    class Land_PlasticCase_01_medium_black_F;
+    class Land_PlasticCase_01_large_black_F;
     class NATO_Box_Base;
 
-	
-    class A3AU_Build_Box_base: NATO_Box_Base {
+    class A3AU_Build_Box_ExtraSmall : Land_PlasticCase_01_small_black_F {
+        scope = 1;
+        displayName = "Build Box (Extra Small)";
+
+        SAVE_DATA_CALLBACKS_BUILD_BOX();
+        EMPTY_INVENTORY();
+    };
+
+    class A3AU_Build_Box_Small : Land_PlasticCase_01_medium_black_F {
+        scope = 1;
+        displayName = "Build Box (Small)";
+
+        SAVE_DATA_CALLBACKS_BUILD_BOX();
+        EMPTY_INVENTORY();
+    };
+
+	class A3AU_Build_Box_Large_1: NATO_Box_Base {
+        mapSize = 2.3399999;
         author = AUTHOR;
         hiddenSelections[] = 
         {
@@ -187,10 +217,6 @@ class CfgVehicles
             QPATHTOFOLDER(Pictures\items\AmmoBox_signs_CA.paa),
             QPATHTOFOLDER(Pictures\items\AmmoBox_black_CO.paa)
         };
-	};
-
-	class A3AU_Build_Box_Large_1: A3AU_Build_Box_base {
-        mapSize = 2.3399999;
         class SimpleObject
         {
             eden = 1;
@@ -203,13 +229,20 @@ class CfgVehicles
         editorPreview = QPATHTOFOLDER(Pictures\items\A3AU_Build_Box_Large_1.jpg);
         _generalMacro = "Box_NATO_WpsLaunch_F";
         scope = 2;
-        displayName = "Build Box (Large)";
+        displayName = "Build Box (Medium)";
         model = "\A3\weapons_F\AmmoBoxes\WpnsBox_long_F";
         icon = "iconCrateLong";
-        class TransportMagazines{};
-        class TransportWeapons{};
-        class TransportItems{};
-        class TransportBackpacks{};
+
+        SAVE_DATA_CALLBACKS_BUILD_BOX();
+        EMPTY_INVENTORY();
+    };
+
+    class A3AU_Build_Box_Large_2: Land_PlasticCase_01_large_black_F {
+        scope = 1;
+        displayName = "Build Box (Large)";
+
+        SAVE_DATA_CALLBACKS_BUILD_BOX();
+        EMPTY_INVENTORY();
     };
 
     class Box_NATO_AmmoVeh_F;
@@ -223,10 +256,8 @@ class CfgVehicles
         ace_dragging_canDrag = 0;
         ace_dragging_canCarry = 0;
 
-        class TransportMagazines{};
-        class TransportWeapons{};
-        class TransportItems{};
-        class TransportBackpacks{};
+        SAVE_DATA_CALLBACKS_BUILD_BOX();
+        EMPTY_INVENTORY();
     };
 
     class GVAR(Box_BuildingPlacer_Additions_Base): Box_NATO_Uniforms_F {
@@ -236,10 +267,8 @@ class CfgVehicles
 
         GVAR(buildableObjects)[] = {};
 
-        class TransportMagazines{};
-        class TransportWeapons{};
-        class TransportItems{};
-        class TransportBackpacks{};
+        SAVE_DATA_CALLBACKS_BUILD_BOX();
+        EMPTY_INVENTORY();
     };
 
     class GVAR(Box_BuildingPlacer_Decorations): GVAR(Box_BuildingPlacer_Additions_Base) {

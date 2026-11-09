@@ -36,16 +36,16 @@ if (_typeX isEqualTo FactionGet(reb,"unitSniper")) then {
 [_unit, 2] call A3A_fnc_equipRebel;			// 2 = garrison unit
 _unit selectWeapon (primaryWeapon _unit);
 
-private _killedEhId = _unit addEventHandler ["killed", {
+_unit addEventHandler ["Killed", {
 	_victim = _this select 0;
 	_killer = _this select 1;
-	[_victim] remoteExec ["A3A_fnc_postmortem",2];
+	call FUNCMAIN(postmortem);
     [side _killer, -1, 30] remoteExec ["A3A_fnc_addAggression", 2];
 	if (side _killer == Occupants) then
 	{
 		[0,-0.25,getPos _victim] remoteExec ["A3A_fnc_citySupportChange",2];
 	};
-	_markerX = _victim getVariable "markerX";
+	private _markerX = _victim getVariable "markerX";
 	if (!isNil "_markerX") then {
 		if (sidesX getVariable [_markerX,sideUnknown] == teamPlayer) then {
 			[_victim getVariable "unitType",teamPlayer,_markerX,-1] remoteExec ["A3A_fnc_garrisonUpdate",2];

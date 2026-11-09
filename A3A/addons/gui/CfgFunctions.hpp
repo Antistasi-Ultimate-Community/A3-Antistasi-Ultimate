@@ -36,12 +36,17 @@ class CfgFunctions {
         };
         class SetupGUI {
             file = QPATHTOFOLDER(functions\SetupGUI);
+            class onExtendersWarningDialogLoad {};
+            class onExtendersWarningDialogUnload {};
+            class setupCheckExtenders {};
             class setupDialog {};
             class setupFactionsTab {};
             class setupLoadgameTab {};
             class setupParamsTab {};
             class setupConfirmDialog {};
+            class setupEditZonesDialog {};
             class setupHQPosDialog {};
+            class setupImportExportDialog {};
         };
     };
     class ADDON {

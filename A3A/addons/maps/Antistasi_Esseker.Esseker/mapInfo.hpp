@@ -30,6 +30,7 @@ class esseker {
 		{10065.3,9862.26,0},{7810.47,6892.65,0},{6271.49,7005.4,0},{8824.48,5785.3,0.0515652},{4656.4,8115.58,0.00173187},{4576.44,3671.31,0.237198},{2713.67,4540.18,-0.0525513}
 	};
 	climate = "temperate";
+	hasRiverPorts = 1;
 	buildObjects[] = {
 		BUILDABLES_HISTORIC,
 		BUILDABLES_UNIVERSAL,

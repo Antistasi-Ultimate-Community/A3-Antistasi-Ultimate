@@ -47,7 +47,7 @@ switch (gameMode) do {
 			case (!areInvadersDefeated && {areOccupantsDefeated}): {
 				_aggrString = format [localize "STR_info_bar_aggr", A3A_faction_inv get "name", [aggressionLevelInvaders] call A3A_fnc_getAggroLevelString];
 			};
-			case (areOccupantsDefeated && {areOccupantsDefeated}): {
+			case (areOccupantsDefeated && {areInvadersDefeated}): {
 				_aggrString = "";
 			};
 		};

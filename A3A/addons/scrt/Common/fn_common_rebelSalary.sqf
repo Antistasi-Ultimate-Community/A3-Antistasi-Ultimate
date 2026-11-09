@@ -49,7 +49,7 @@ _nul = [_totalSalary, _rebelsCount, _rebels] spawn {
 			name _x,
 			_incomePerPlayer, 
 			A3A_faction_civ get "currencySymbol",
-			call SCRT_fnc_misc_getWorldName
+			[] call SCRT_fnc_misc_getWorldName
 		];
 
 		sleep 10;

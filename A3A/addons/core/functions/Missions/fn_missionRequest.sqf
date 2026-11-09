@@ -255,7 +255,7 @@ case "LOG": {
 			private _site = selectRandom _possibleMarkers;
 
 			private _shipwreckPosition = [0,0,0];
-			if (!(toLowerAnsi worldName in ["enoch", "vn_khe_sanh", "esseker", "sefrouramal", "takistan"]) && {random 100 < 20}) then {
+			if (([] call A3A_fnc_isSeaportMap) && {random 100 < 20}) then {
 				_shipwreckPosition = [
 					(getMarkerPos _site),
 					0,

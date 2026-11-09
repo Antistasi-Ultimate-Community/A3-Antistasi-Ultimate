@@ -21,12 +21,25 @@ License: MIT License
 FIX_LINE_NUMBERS()
 if !(params [ ["_event", "", [""]] ]) exitWith { Error_1("Invalid params passed: %1", _this)};
 
-if (isNil QGVAR(EventRegistry)) exitWith { Warning_1("Attempt to remove listeners for event: %1 before event registry is initilized", _event) };
+private _cbaEvent = configFile >> "A3A" >> "Events" >> _event;
 
-if (
-    _event in GVAR(EventRegistry)
-) then {
-    GVAR(EventRegistry) set [_event, []];
-} else {
-        Warning_1("No listeners for event %1 exists", _event);
+if !assert(isClass _cbaEvent) exitWith {};
+if !assert(isText(_cbaEvent >> "CBA_Event")) exitWith {};
+
+_cbaEvent = getText(_cbaEvent >> "CBA_Event");
+
+Warning_1("backwards compatibility to remove all ""%1"" events invoked (will remove all ""%2"" events).",_event,_cbaEvent);
+Warning("please update your event system implementation. The old event system WILL be removed.");
+
+if (isNil QGVAR(cbaEventIdMapper)) exitWith {};
+
+GVAR(cbaEventIdMapper) apply {
+    private _id = _x;
+    _y params["_localEvent"];
+
+    if (_localEvent isEqualTo _cbaEvent) then {
+        [_event, _id] call FUNC(removeEventListener);
+    };
 };
+
+nil;
