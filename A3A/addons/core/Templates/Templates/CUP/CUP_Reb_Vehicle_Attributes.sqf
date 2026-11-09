@@ -1,9 +1,13 @@
 ["attributesVehicles", [
     // light armed stuff
     ["CUP_I_Datsun_PK", ["rebCost", 600]],
+	["CUP_I_Datsun_PK_TK", ["rebCost", 600]],
     ["Flex_CUP_LUF_Datsun_PK", ["rebCost", 600]],
 	
     // up-armored vehicles
+	["CUP_I_Hilux_armored_unarmed_NAPA", ["rebCost", 600]],
+	["CUP_I_Hilux_armored_unarmed_TK", ["rebCost", 600]],
+	["CUP_I_Hilux_armored_SPG9_NAPA", ["rebCost", 1800]],
     ["Flex_CUP_LUF_BTR40", ["rebCost", 1000]],
     ["Flex_CUP_LUF_BTR40_MG", ["rebCost", 1500]],
     ["Flex_CUP_LUF_Hilux_armored_unarmed", ["rebCost", 1000]],

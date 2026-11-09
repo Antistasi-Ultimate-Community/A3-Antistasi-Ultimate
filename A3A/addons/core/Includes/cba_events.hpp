@@ -91,6 +91,43 @@
 #define CBA_EVENT_CLIENT_HQ_PLACED QUOTE(TRIPLES(PREFIX_CONST,event,clientHqPlaced))
 
 /* -------------------------------------------
+    Event: CBA_EVENT_CLIENT_IMPORTEXPORT_DIALOG_LOADED
+        Triggered when import / export dialog is loaded, in case extenders want to ...extend... the functionality of the dialog.
+
+    Parameters:
+        None
+
+    Broadcast:
+        No
+
+    Sent by:
+        Client (setup player)
+    
+    Recipients:
+        Client (setup player)
+------------------------------------------- */
+#define CBA_EVENT_CLIENT_IMPORTEXPORT_DIALOG_LOADED QUOTE(TRIPLES(PREFIX_CONST,event,clientImportExportDialogLoaded))
+
+/* -------------------------------------------
+    Event: CBA_EVENT_CLIENT_IMPORTEXPORT_HASHMAPTOJSON
+        Triggered after save data is converted into a json-serializable format, but before it is actually serialized to JSON.
+        Extenders needing to modify their data stored in the A3A_saveData_<UUID> hashmap to a json-serializable format should do so here.
+
+    Parameters:
+        0: saveDataHM - the hashmap containing the save data <HASHMAP>
+
+    Broadcast:
+        No
+
+    Sent by:
+        Client (setup player)
+    
+    Recipients:
+        Client (setup player)
+------------------------------------------- */
+#define CBA_EVENT_CLIENT_IMPORTEXPORT_HASHMAPTOJSON QUOTE(TRIPLES(PREFIX_CONST,event,clientImportExportHashmapToJson))
+
+/* -------------------------------------------
     Event: CBA_EVENT_CLIENT_INIT_DONE
         Triggered after `A3A_fnc_clientInit` finished and client is fully set up.
 
@@ -107,6 +144,25 @@
         Client
 ------------------------------------------- */
 #define CBA_EVENT_CLIENT_INIT_DONE QUOTE(TRIPLES(PREFIX_CONST,event,clientInitDone))
+
+/* -------------------------------------------
+    Event: CBA_EVENT_CLIENT_IMPORTEXPORT_JSONTOHASHMAP
+        Triggered after JSON-serialized save data is converted back to a hashmap, but before the local hashmap is passed to any further logic.
+        Extenders needing to convert their json-compatible data back into its original Arma-native format (e.g. SIDE or OBJECT) should do so here.
+
+    Parameters:
+        0: saveDataHM - the hashmap containing the save data <HASHMAP>
+
+    Broadcast:
+        No
+
+    Sent by:
+        Client (setup player)
+    
+    Recipients:
+        Client (setup player)
+------------------------------------------- */
+#define CBA_EVENT_CLIENT_IMPORTEXPORT_JSONTOHASHMAP QUOTE(TRIPLES(PREFIX_CONST,event,clientImportExportJsonToHashmap))
 
 /* -------------------------------------------
     Event: CBA_EVENT_CLIENT_PLAYER_LOAD
@@ -183,6 +239,24 @@
 #define CBA_EVENT_CLIENT_PLAYER_SAVE QUOTE(TRIPLES(PREFIX_CONST,event,clientPlayerSave))
 
 /* -------------------------------------------
+    Event: CBA_EVENT_CLIENT_RESOURCE_CHANGE
+        Triggered when player resources (money) are changed.
+
+    Parameters:
+        0: money - the amount of money the player gained or lost <SCALAR>
+
+    Broadcast:
+        No
+
+    Sent by:
+        Client
+    
+    Recipients:
+        Client
+------------------------------------------- */
+#define CBA_EVENT_CLIENT_RESOURCE_CHANGE QUOTE(TRIPLES(PREFIX_CONST,event,clientResourceChange))
+
+/* -------------------------------------------
     Event: CBA_EVENT_CLIENT_TEARDOWN_MODE_CHANGED
         Triggered when the client changes teardown mode.
 
@@ -249,6 +323,24 @@
 ////////////////////////////////////////////////////////////////////////////////
 ///  SERVER CBA EVENTS /////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
+
+/* -------------------------------------------
+    Event: CBA_EVENT_SERVER_AGGROUPDATE_DONE
+        Triggered after completion of the server aggression update loop (every 1min after server startup).
+
+    Parameters:
+        None
+
+    Broadcast:
+        No
+
+    Sent by:
+        Server
+    
+    Recipients:
+        Server
+------------------------------------------- */
+#define CBA_EVENT_SERVER_AGGROUPDATE_DONE QUOTE(TRIPLES(PREFIX_CONST,event,serverAggroupdateDone))
 
 /* -------------------------------------------
     Event: CBA_EVENT_SERVER_CREATE_REBEL_CONTROL
@@ -356,6 +448,48 @@
         Server
 ------------------------------------------- */
 #define CBA_EVENT_SERVER_GAME_SAVE QUOTE(TRIPLES(PREFIX_CONST,event,serverGameSave))
+
+/* -------------------------------------------
+    Event: CBA_EVENT_SERVER_GAME_SAVED
+        Triggered when the game is saved on the server, after successfully saving to the appropriate namespace.
+
+    Parameters:
+        0: useMPNamespace - whether to use the missionProfileNamespace (as opposed to legacy profileNamespace) <BOOL>
+        1: serverID - the server ID <STRING> (profileNamespace save) or false <BOOL> (missionProfileNamespace save)
+        2: campaignID - the ID of the campaign that was active during the save <STRING> (UUID)
+        3: worldName - the name of the world where the save occurred <STRING>
+        
+    Optional:
+        4: oldCampaignID - the ID of the legacy campaign being migrated <STRING> (5-digit numeric ID)
+
+    Broadcast:
+        No
+
+    Sent by:
+        Server
+    
+    Recipients:
+        Server
+------------------------------------------- */
+#define CBA_EVENT_SERVER_GAME_SAVED QUOTE(TRIPLES(PREFIX_CONST,event,serverGameSaved))
+
+/* -------------------------------------------
+    Event: CBA_EVENT_SERVER_GARBAGECLEAN_DONE
+        Triggered after completion of the server garbage clean.
+
+    Parameters:
+        None
+
+    Broadcast:
+        No
+
+    Sent by:
+        Server
+    
+    Recipients:
+        Server
+------------------------------------------- */
+#define CBA_EVENT_SERVER_GARBAGECLEAN_DONE QUOTE(TRIPLES(PREFIX_CONST,event,serverGarbagecleanDone))
 
 /* -------------------------------------------
     Event: CBA_EVENT_SERVER_INIT_AI_UNIT
@@ -469,6 +603,44 @@
 #define CBA_EVENT_SERVER_INIT_DONE QUOTE(TRIPLES(PREFIX_CONST,event,serverInitDone))
 
 /* -------------------------------------------
+    Event: CBA_EVENT_SERVER_INIT_PETROS
+        Triggered when Petros is initialized on the server.
+
+    Parameters:
+        0: unit - Petros unit reference <OBJECT>
+
+    Broadcast:
+        No
+
+    Sent by:
+        Server
+    
+    Recipients:
+        Server
+------------------------------------------- */
+#define CBA_EVENT_SERVER_INIT_PETROS QUOTE(TRIPLES(PREFIX_CONST,event,serverInitPetros))
+
+/* -------------------------------------------
+    Event: CBA_EVENT_SERVER_INIT_REBEL_UNIT
+        Triggered when a Rebel unit is initialized on the server.
+
+    Parameters:
+        0: unit - the rebel unit object <OBJECT>
+        1: preserveIdentity - if the unit's identity (name/face/voice) should be left alone instead of re-generated <BOOL>
+        2: equipRebel - if the unit should be equipped with weapons and gear according to their unit type <BOOL>
+
+    Broadcast:
+        No
+
+    Sent by:
+        Server
+    
+    Recipients:
+        Server
+------------------------------------------- */
+#define CBA_EVENT_SERVER_INIT_REBEL_UNIT QUOTE(TRIPLES(PREFIX_CONST,event,serverInitRebelUnit))
+
+/* -------------------------------------------
     Event: CBA_EVENT_SERVER_MARKER_CHANGE
         Triggered when marker ownership changes on the server.
 
@@ -491,9 +663,6 @@
 ------------------------------------------- */
 #define CBA_EVENT_SERVER_MARKER_CHANGE QUOTE(TRIPLES(PREFIX_CONST,event,serverMarkerChange))
 
-// UNUSED
-#define CBA_EVENT_SERVER_GAME_SAVED QUOTE(TRIPLES(PREFIX_CONST,event,serverGameSaved))
-
 /* -------------------------------------------
     Event: CBA_EVENT_SERVER_PLAYER_SAVE
         Triggered when the server saves a player's data.
@@ -511,6 +680,43 @@
         Client
 ------------------------------------------- */
 #define CBA_EVENT_SERVER_PLAYER_SAVE QUOTE(TRIPLES(PREFIX_CONST,event,serverPlayerSave))
+
+/* -------------------------------------------
+    Event: CBA_EVENT_SERVER_RESOURCE_CHANGE
+        Triggered when faction resources (HR, money) are changed.
+
+    Parameters:
+        0: hr - the amount of HR changed <SCALAR>
+        1: money - the amount of money changed <SCALAR>
+
+    Broadcast:
+        No
+
+    Sent by:
+        Server
+    
+    Recipients:
+        Server
+------------------------------------------- */
+#define CBA_EVENT_SERVER_RESOURCE_CHANGE QUOTE(TRIPLES(PREFIX_CONST,event,serverResourceChange))
+
+/* -------------------------------------------
+    Event: CBA_EVENT_SERVER_RESOURCE_CHECK_DONE
+        Triggered after completion of the server resource check loop (every 10min after server startup).
+
+    Parameters:
+        None
+
+    Broadcast:
+        No
+
+    Sent by:
+        Server
+    
+    Recipients:
+        Server
+------------------------------------------- */
+#define CBA_EVENT_SERVER_RESOURCE_CHECK_DONE QUOTE(TRIPLES(PREFIX_CONST,event,serverResourceCheckDone))
 
 /* -------------------------------------------
     Event: CBA_EVENT_SERVER_SPAWN_LOCATION

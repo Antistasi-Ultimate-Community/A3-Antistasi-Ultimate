@@ -119,7 +119,6 @@ class CfgFunctions
             class lockpickCleanup {};
             class lockpickGetPlayerItem {};
             class lockpickOnFail {};
-            class lockpickOnProgress {};
             class lockpickOnStart {};
             class lockpickOnSuccess {};
             class lockpickZones {};

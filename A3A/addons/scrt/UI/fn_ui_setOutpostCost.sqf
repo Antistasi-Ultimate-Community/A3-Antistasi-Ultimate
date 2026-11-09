@@ -1,16 +1,17 @@
+#include "..\UILayouts\ids.inc"
 #include "..\script_component.hpp"
 FIX_LINE_NUMBERS()
 
 disableSerialization;
 
-private _display = findDisplay 60000;
+private _display = findDisplay A3A_IDD_COMMANDER_MENU;
 
 if (str (_display) == "no display") exitWith {};
 
-private _costTextBox = _display displayCtrl 2751;
-private _comboBox = _display displayCtrl 2750;
+private _costTextBox = _display displayCtrl A3A_IDC_COMMANDER_MENU_GARRISON_COST_TEXT;
+private _comboBox = _display displayCtrl A3A_IDC_COMMANDER_MENU_GARRISON_TYPE_COMBOBOX;
 private _index = lbCurSel _comboBox;
-private _outpostType =  lbData [2750, _index];
+private _outpostType =  lbData [A3A_IDC_COMMANDER_MENU_GARRISON_TYPE_COMBOBOX, _index];
 
 outpostType = _outpostType;
 private _costs = 50;

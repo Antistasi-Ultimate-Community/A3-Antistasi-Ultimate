@@ -432,6 +432,7 @@ class CfgFunctions
             class playerMarkers {};
             class prepareMarkerArrays {};
             class resourcecheck {};
+            class setGameParameters {};
             class tags {};
             class validateExtenderCompat {};
         };
@@ -641,6 +642,7 @@ class CfgFunctions
             class loadPlayer {};
             class loadServer {};
             class savePlayer {};
+            class generateSaveID {};
             class getObjectSaveData {};
             class getStatVariable {};
             class loadStat {};

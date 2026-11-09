@@ -5515,14 +5515,6 @@
                 <French>Vous ne pouvez pas ajouter de mortiers à un barrage routier, à un poste de guet, à une garnison AA, AT, mortier, HMG.</French>
                 <Turkish>Barikat, Gözlem Noktası, AA, AT, Havan veya HMG mevzi garnizonlarına havan ekleyemezsin.</Turkish>
             </Key>
-            <Key ID="STR_garrison_error_still_updating">
-                <Original>This garrison is still updating, please try again in a few seconds.</Original>
-                <Russian>Этот гарнизон всё ещё обновляется, повторите попытку через несколько секунд.</Russian>
-                <Chinesesimp>驻军还在刷新中，请过几秒再试。</Chinesesimp>
-                <Korean>이 주둔지는 아직 업데이트 중이니 잠시 후에 다시 시도하십시오.</Korean>
-                <French>Cette garnison est en cours de mise à jour, veuillez réessayer dans quelques secondes.</French>
-                <Turkish>Bu garnizon hâlâ güncelleniyor, lütfen birkaç saniye içinde tekrar dene.</Turkish>
-            </Key>
             <Key ID="STR_garrison_error_enemies_near">
                 <Original>You can't recruit units into garrison when enemies are near the zone.</Original>
                 <Russian>Вы не можете нанимать новых бойцов в гарнизон, когда враги находятся рядом с зоной.</Russian>
@@ -8342,6 +8334,22 @@
                 <Chinesesimp>与扩展模块及其与基础系统交互相关的选项。</Chinesesimp>
                 <Korean>확장 모듈 및 기본 시스템과의 상호작용에 대한 옵션입니다.</Korean>
                 <French>Options liées aux modules d'extension et à leur interaction avec les systèmes de base.</French>
+            </Key>
+            <Key ID="STR_params_deprecated">
+                <Original>DEPRECATED OPTIONS</Original>
+                <Russian>УСТАРЕВШИЕ НАСТРОЙКИ</Russian>
+                <Chinesesimp>已弃用选项</Chinesesimp>
+                <Korean>사용되지 않는 옵션</Korean>
+                <French>OPTIONS DÉPRÉCIÉES</French>
+                <Turkish>KULLANIMDIŞI SEÇENEKLER</Turkish>
+            </Key>
+            <Key ID="STR_params_deprecated_desc">
+                <Original>Options that have been deprecated and will be removed in a future version of Antistasi Ultimate.</Original>
+                <Russian>Настройки, которые устарели и будут удалены в будущей версии Antistasi Ultimate.</Russian>
+                <Chinesesimp>已弃用的选项，将在未来版本的 Antistasi Ultimate 中移除。</Chinesesimp>
+                <Korean>사용되지 않는 옵션으로, 향후 Antistasi Ultimate 버전에서 제거될 예정입니다.</Korean>
+                <French>Options qui ont été dépréciées et seront supprimées dans une future version d'Antistasi Ultimate.</French>
+                <Turkish>Kullanımdan kaldırılmış ve gelecekteki bir Antistasi Ultimate sürümünde kaldırılacak seçenekler.</Turkish>
             </Key>
             <Key ID="STR_params_experimental">
                 <Original>EXPERIMENTAL OPTIONS</Original>
@@ -17118,6 +17126,22 @@
                 <Korean>해당 요새를 건설할 자금이 부족합니다. %1%2가 필요합니다.</Korean>
                 <French>Vous n'avez pas assez d'argent pour cette fortification : %1%2 requis.</French>
                 <Turkish>Bu tahkimat için yeterli paranız yok: %1%2 gerekli.</Turkish>
+            </Key>
+            <Key ID="STR_A3A_reinf_build_actionTitle">
+                <Original>Build</Original>
+                <Russian>Построить</Russian>
+                <Chinesesimp>建造</Chinesesimp>
+                <Korean>건설하기</Korean>
+                <French>Construire</French>
+                <Turkish>İnşa et</Turkish>
+            </Key>
+            <Key ID="STR_A3A_reinf_build_actionProgress">
+                <Original>Building...</Original>
+                <Russian>Идёт строительство...</Russian>
+                <Chinesesimp>正在建造...</Chinesesimp>
+                <Korean>건설 중...</Korean>
+                <French>Construction en cours...</French>
+                <Turkish>İnşa ediliyor...</Turkish>
             </Key>
             <Key ID="STR_A3A_addFiaVeh_header">
                 <Original>Vehicle Shop</Original>
