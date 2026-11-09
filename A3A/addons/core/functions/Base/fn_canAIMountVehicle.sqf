@@ -54,7 +54,10 @@ if (isNil { _vehicle getVariable QGVAR(aiMountHasTurrets) }) then {
         _role in["gunner", "turret"];
     } isNotEqualTo -1;
 
-    _vehicle setVariable[QGVAR(aiMountHasTurrets), _hasTurrets];
+    // Check if the vehicle has a radar for AI to man
+    private _hasRadar = getNumber(configOf _vehicle >> "radarType") in [2, 4];
+
+    _vehicle setVariable[QGVAR(aiMountHasTurrets), _hasTurrets || _hasRadar];
 };
 
 _vehicle getVariable QGVAR(aiMountHasTurrets);
