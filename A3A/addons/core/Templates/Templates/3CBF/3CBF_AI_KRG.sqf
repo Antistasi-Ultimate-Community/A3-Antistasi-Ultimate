@@ -22,10 +22,10 @@
 ["vehiclesLightArmed", ["UK3CB_KRG_B_Pickup_M2", "UK3CB_KRG_B_Pickup_DSHKM", "UK3CB_KRG_B_M1025_TOW", "UK3CB_KRG_B_M1025_M2", "UK3CB_KRG_B_M939_ZU23", "UK3CB_KRG_B_MTVR_ZU23"]] call _fnc_saveToTemplate;
 ["vehiclesTrucks", ["UK3CB_KRG_B_M939_Closed", "UK3CB_KRG_B_M939_Guntruck", "UK3CB_KRG_B_M939_Open", "UK3CB_KRG_B_MTVR_Closed"]] call _fnc_saveToTemplate;
 ["vehiclesCargoTrucks", ["UK3CB_KRG_B_M939_Recovery", "UK3CB_KRG_B_MTVR_Recovery", "UK3CB_KRG_B_M270_Carrier"]] call _fnc_saveToTemplate;
-["vehiclesAmmoTrucks", ["UK3CB_KRG_B_M939_Reammo", "UK3CB_KRG_B_MTVR_Reammo"]] call _fnc_saveToTemplate;
+["vehiclesAmmoTrucks", ["UK3CB_KRG_B_M939_Reammo", "UK3CB_KRG_B_MTVR_Reammo", "UK3CB_KRG_B_BTR40_REAMMO"]] call _fnc_saveToTemplate;
 ["vehiclesRepairTrucks", ["UK3CB_KRG_B_M939_Repair", "UK3CB_KRG_B_MTVR_Repair"]] call _fnc_saveToTemplate;
-["vehiclesFuelTrucks", ["UK3CB_KRG_B_MTVR_Refuel", "UK3CB_KRG_B_M939_Refuel"]] call _fnc_saveToTemplate;
-["vehiclesMedical", ["UK3CB_KRG_B_M113tank_medical", "UK3CB_KRG_B_MTLB_AMB"]] call _fnc_saveToTemplate;
+["vehiclesFuelTrucks", ["UK3CB_KRG_B_MTVR_Refuel", "UK3CB_KRG_B_M939_Refuel", "UK3CB_KRG_B_BTR40_REFUEL"]] call _fnc_saveToTemplate;
+["vehiclesMedical", ["UK3CB_KRG_B_M113tank_medical", "UK3CB_KRG_B_MTLB_AMB", "UK3CB_KRG_B_BTR40_AMBULANCE"]] call _fnc_saveToTemplate;
 ["vehiclesLightAPCs", ["UK3CB_KRG_B_M113tank_M2_90", "UK3CB_KRG_B_M113tank_M2_90", "UK3CB_KRG_B_MTLB_KPVT", "UK3CB_KRG_B_MTLB_PKT", "UK3CB_KRG_B_BTR40_MG"]] call _fnc_saveToTemplate;
 ["vehiclesAirborne", ["UK3CB_MDF_B_Warrior", "UK3CB_MDF_B_Warrior_Cage", "UK3CB_MDF_B_Warrior_Cage_Camo", "UK3CB_MDF_B_Warrior_Camo"]] call _fnc_saveToTemplate;
 ["vehiclesAPCs", ["UK3CB_KRG_B_M2A2", "UK3CB_KRG_B_BTR60", "UK3CB_KRG_B_BTR60", "UK3CB_KRG_B_MTLB_ZU23", "UK3CB_KRG_B_MTLB_BMP", "UK3CB_KRG_B_MTLB_Cannon"]] call _fnc_saveToTemplate;
@@ -33,7 +33,7 @@
 
 ["vehiclesLightTanks",  ["UK3CB_KRG_B_M60A1", "UK3CB_KRG_B_M60A3"]] call _fnc_saveToTemplate;
 ["vehiclesTanks", ["UK3CB_KRG_B_FV4201", "UK3CB_KRG_B_M60A3", "UK3CB_KRG_B_M60A1"]] call _fnc_saveToTemplate;
-["vehiclesAA", ["UK3CB_KRG_B_M270_Avenger", "UK3CB_KRG_B_ZsuTank"]] call _fnc_saveToTemplate;
+["vehiclesAA", ["UK3CB_KRG_B_M270_Avenger", "UK3CB_KRG_B_ZsuTank", "UK3CB_KRG_B_BTR40_ZU23"]] call _fnc_saveToTemplate;
 
 ["vehiclesTransportBoats", ["UK3CB_MDF_B_RHIB"]] call _fnc_saveToTemplate;
 ["vehiclesGunBoats", ["UK3CB_MDF_B_RHIB_Gunboat"]] call _fnc_saveToTemplate;
@@ -62,10 +62,13 @@
 ["uavsPortable", ["B_UAV_01_F"]] call _fnc_saveToTemplate;
 
 //Config special vehicles - militia vehicles are mostly used in the early game, police cars are being used by troops around cities -- Example:
-["vehiclesMilitiaLightArmed", ["UK3CB_LNM_B_Hilux_M2", "UK3CB_LNM_B_LR_M2", "UK3CB_LNM_B_LR_SF_M2", "UK3CB_LNM_B_Offroad_M2", "UK3CB_LNM_B_Pickup_M2"]] call _fnc_saveToTemplate;
+["vehiclesMilitiaLightArmed", [
+    "UK3CB_LNM_B_LR_SF_WMIK_AGS30_PKM", "UK3CB_LNM_B_LR_SF_WMIK_DSHKM_PKM", "UK3CB_LNM_B_LR_SF_WMIK_M2_PKM", "UK3CB_LNM_B_LR_SF_WMIK_METIS_PKM", "UK3CB_LNM_B_LR_SF_WMIK_PKM_PKM",
+    "UK3CB_LNM_B_Hilux_M2", "UK3CB_LNM_B_Offroad_M2", "UK3CB_LNM_B_Pickup_M2"
+]] call _fnc_saveToTemplate;
 ["vehiclesMilitiaTrucks", ["UK3CB_LNM_B_Ural_Open", "UK3CB_LNM_B_Van_Transport", "UK3CB_LNM_B_Zil131_Open", "UK3CB_LNM_B_Zil131_Covered", "UK3CB_LNM_B_Ural"]] call _fnc_saveToTemplate;
-["vehiclesMilitiaCars", ["UK3CB_LNM_B_Pickup", "UK3CB_LNM_B_Offroad", "UK3CB_LNM_B_LR_Closed", "UK3CB_LNM_B_LR_Open", "UK3CB_LNM_B_Hilux_Open", "UK3CB_LNM_B_Hilux_Closed"]] call _fnc_saveToTemplate;
-["vehiclesMilitiaAPCs", ["UK3CB_KRG_B_BTR40_MG", "UK3CB_KRG_B_BTR60"]] call _fnc_saveToTemplate;
+["vehiclesMilitiaCars", ["UK3CB_LNM_B_Pickup", "UK3CB_LNM_B_Offroad", "UK3CB_LNM_B_LR_Closed", "UK3CB_LNM_B_LR_Open", "UK3CB_LNM_B_Hilux_Open", "UK3CB_LNM_B_Hilux_Closed", "UK3CB_KRG_B_BTR40"]] call _fnc_saveToTemplate;
+["vehiclesMilitiaAPCs", ["UK3CB_KRG_B_BTR40_MG", "UK3CB_KRG_B_BTR60", "UK3CB_KRG_B_BTR40_DSHKMS", "UK3CB_KRG_B_BTR40_GMG", "UK3CB_KRG_B_BTR40_METIS", "UK3CB_KRG_B_BTR40_PKM"]] call _fnc_saveToTemplate;
 
 ["vehiclesPolice", ["UK3CB_ADP_B_Hilux_Closed"]] call _fnc_saveToTemplate;
 

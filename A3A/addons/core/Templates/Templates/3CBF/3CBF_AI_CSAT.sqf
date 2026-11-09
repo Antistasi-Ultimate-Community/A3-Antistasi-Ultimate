@@ -22,18 +22,18 @@
 ["vehiclesLightArmed", ["UK3CB_CSAT_B_O_BTR40_MG", "UK3CB_CSAT_B_O_GAZ_Vodnik_PKT"]] call _fnc_saveToTemplate;
 ["vehiclesTrucks", ["UK3CB_CSAT_B_O_Ural"]] call _fnc_saveToTemplate;
 ["vehiclesCargoTrucks", ["UK3CB_CSAT_B_O_Ural_Open", "UK3CB_CSAT_B_O_Ural_Recovery"]] call _fnc_saveToTemplate;
-["vehiclesAmmoTrucks", ["UK3CB_CSAT_B_O_MAZ_543_Reammo", "UK3CB_CSAT_B_O_Ural_Ammo"]] call _fnc_saveToTemplate;
+["vehiclesAmmoTrucks", ["UK3CB_CSAT_B_O_MAZ_543_Reammo", "UK3CB_CSAT_B_O_Ural_Ammo", "UK3CB_CSAT_B_O_BTR40_REAMMO"]] call _fnc_saveToTemplate;
 ["vehiclesRepairTrucks", ["UK3CB_CSAT_B_O_MAZ_543_Repair", "UK3CB_CSAT_B_O_Ural_Repair"]] call _fnc_saveToTemplate;
-["vehiclesFuelTrucks", ["UK3CB_CSAT_B_O_MAZ_543_Refuel", "UK3CB_CSAT_B_O_Ural_Fuel"]] call _fnc_saveToTemplate;
-["vehiclesMedical", ["UK3CB_CSAT_B_O_GAZ_Vodnik_MedEvac"]] call _fnc_saveToTemplate;
-["vehiclesLightAPCs", ["UK3CB_CSAT_B_O_GAZ_Vodnik_PKT", "UK3CB_CSAT_B_O_BRDM2_HQ", "UK3CB_CSAT_B_O_GAZ_Vodnik_Cannon", "UK3CB_CSAT_B_O_GAZ_Vodnik_HMG", "UK3CB_CSAT_B_O_GAZ_Vodnik_KVPT", "UK3CB_CSAT_B_O_BTR40_MG"]] call _fnc_saveToTemplate;
+["vehiclesFuelTrucks", ["UK3CB_CSAT_B_O_MAZ_543_Refuel", "UK3CB_CSAT_B_O_Ural_Fuel", "UK3CB_CSAT_B_O_BTR40_REFUEL"]] call _fnc_saveToTemplate;
+["vehiclesMedical", ["UK3CB_CSAT_B_O_GAZ_Vodnik_MedEvac", "UK3CB_CSAT_B_O_BTR40_AMBULANCE"]] call _fnc_saveToTemplate;
+["vehiclesLightAPCs", ["UK3CB_CSAT_B_O_GAZ_Vodnik_PKT", "UK3CB_CSAT_B_O_BRDM2_HQ", "UK3CB_CSAT_B_O_GAZ_Vodnik_Cannon", "UK3CB_CSAT_B_O_GAZ_Vodnik_HMG", "UK3CB_CSAT_B_O_GAZ_Vodnik_KVPT", "UK3CB_CSAT_B_O_BTR40_MG", "UK3CB_CSAT_B_O_BTR90_HQ"]] call _fnc_saveToTemplate;
 ["vehiclesAirborne", ["UK3CB_CSAT_B_O_BRDM2_ATGM", "UK3CB_CSAT_B_O_BRDM2", "UK3CB_CSAT_B_O_BMP3", "UK3CB_CSAT_B_O_BMP3MERA", "UK3CB_CSAT_B_O_BRM1K", "UK3CB_CSAT_B_O_BMD2", "UK3CB_CSAT_B_O_BMD1K"]] call _fnc_saveToTemplate;
-["vehiclesAPCs", ["UK3CB_CSAT_B_O_BTR80a", "UK3CB_CSAT_B_O_BTR80"]] call _fnc_saveToTemplate;
+["vehiclesAPCs", ["UK3CB_CSAT_B_O_BTR80a", "UK3CB_CSAT_B_O_BTR80", "UK3CB_CSAT_B_O_BTR90"]] call _fnc_saveToTemplate;
 ["vehiclesIFVs", ["UK3CB_CSAT_B_O_BTR60", "UK3CB_CSAT_B_O_MTLB_PKT"]] call _fnc_saveToTemplate;
 
 ["vehiclesLightTanks",  ["UK3CB_CSAT_B_O_T55", "UK3CB_CSAT_B_O_T72A", "UK3CB_CSAT_B_O_T72B", "UK3CB_CSAT_B_O_T72BC"]] call _fnc_saveToTemplate;
 ["vehiclesTanks", ["UK3CB_CSAT_B_O_T80UK", "UK3CB_CSAT_B_O_T80U", "UK3CB_CSAT_B_O_T80BVK", "UK3CB_CSAT_B_O_T80BV"]] call _fnc_saveToTemplate;
-["vehiclesAA", ["UK3CB_CSAT_B_O_2S6M_Tunguska", "UK3CB_CSAT_B_O_ZsuTank"]] call _fnc_saveToTemplate;
+["vehiclesAA", ["UK3CB_CSAT_B_O_2S6M_Tunguska", "UK3CB_CSAT_B_O_ZsuTank", "UK3CB_CSAT_B_O_BTR40_ZU23"]] call _fnc_saveToTemplate;
 
 ["vehiclesTransportBoats", ["UK3CB_CSAT_B_O_Skiff"]] call _fnc_saveToTemplate;
 ["vehiclesGunBoats", ["UK3CB_CSAT_B_O_Armed_Boat_HMG_Minigun"]] call _fnc_saveToTemplate;
@@ -60,14 +60,14 @@ if (5 < (random 100)) then {
     ["UK3CB_CSAT_B_O_MAZ_543_SCUD", ["UK3CB_Factions_1Rnd_Scud"]]
 ]] call _fnc_saveToTemplate;
 
-["uavsAttack", ["UK3CB_CSAT_B_O_Ababil_CAS", "UK3CB_CSAT_B_O_Ababil_AT", "UK3CB_CSAT_B_O_Fenghuang"]] call _fnc_saveToTemplate;
-["uavsPortable", ["UK3CB_CSAT_B_O_Darter"]] call _fnc_saveToTemplate;
+["uavsAttack", ["UK3CB_CSAT_B_O_Ababil_CAS", "UK3CB_CSAT_B_O_Ababil_AT", "UK3CB_CSAT_B_O_Fenghuang", "UK3CB_CSAT_B_O_KA137_PKM"]] call _fnc_saveToTemplate;
+["uavsPortable", ["UK3CB_CSAT_B_O_Darter", "UK3CB_CSAT_B_O_KA137"]] call _fnc_saveToTemplate;
 
 //Config special vehicles - militia vehicles are mostly used in the early game, police cars are being used by troops around cities -- Example:
 ["vehiclesMilitiaLightArmed", ["UK3CB_CSAT_B_O_UAZ_MG", "UK3CB_CSAT_B_O_UAZ_SPG9"]] call _fnc_saveToTemplate;
 ["vehiclesMilitiaTrucks", ["UK3CB_CSAT_B_O_Ural_Open", "UK3CB_CSAT_B_O_Ural"]] call _fnc_saveToTemplate;
-["vehiclesMilitiaCars", ["UK3CB_CSAT_B_O_UAZ_Open", "UK3CB_CSAT_B_O_UAZ_Closed"]] call _fnc_saveToTemplate;
-["vehiclesMilitiaAPCs", ["UK3CB_CSAT_B_O_MTLB_PKT", "UK3CB_CSAT_B_O_BTR60", "UK3CB_CSAT_B_O_BTR40_MG"]] call _fnc_saveToTemplate;
+["vehiclesMilitiaCars", ["UK3CB_CSAT_B_O_UAZ_Open", "UK3CB_CSAT_B_O_UAZ_Closed", "UK3CB_CSAT_B_O_BTR40"]] call _fnc_saveToTemplate;
+["vehiclesMilitiaAPCs", ["UK3CB_CSAT_B_O_MTLB_PKT", "UK3CB_CSAT_B_O_BTR60", "UK3CB_CSAT_B_O_BTR40_MG", "UK3CB_CSAT_B_O_BTR40_DSHKMS", "UK3CB_CSAT_B_O_BTR40_GMG", "UK3CB_CSAT_B_O_BTR40_METIS", "UK3CB_CSAT_B_O_BTR40_PKM"]] call _fnc_saveToTemplate;
 
 ["vehiclesPolice", ["UK3CB_CSAT_B_O_Offroad_Unarmed", "UK3CB_CSAT_B_O_M1030"]] call _fnc_saveToTemplate;
 
