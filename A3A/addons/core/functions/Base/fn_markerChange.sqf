@@ -405,4 +405,7 @@ if (_winner == teamPlayer) then {
 	[_loser] call SCRT_fnc_common_defeatFactionIfPossible;
 };
 
+// Move Occupant / Invader support corridors based on the new marker ownership
+[] call A3A_fnc_updateSupportCorridors;
+
 Debug_1("Finished marker change at %1", _markerX);
