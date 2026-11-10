@@ -1,6 +1,7 @@
 #include "\x\cba\addons\main\script_macros_common.hpp"
 #include "script_macros_defines.hpp"
 #include "cba_events.hpp"
+#include "script_macros_i18n.hpp"
 
 // Define CfgPatches class name for, well, patches.
 #define PATCHNAME(x) TRIPLES(PREFIX,COMPONENT,x)
