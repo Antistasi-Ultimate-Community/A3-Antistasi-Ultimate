@@ -53,8 +53,6 @@
 >   - Available when in blackmarket trader vicinity via scroll-menu or ACE interaction.
 > - Persist ACE player properties (#982)
 >   - Introduces persistent players' ACE vitals, hunger, dehydration states into the save.
-> - Add mission parameter to toggle the squad bar (#1032)
->   - Adds a mission parameter, A3A_showGroupBar, that turns the vanilla Arma group info bar (the squad bar listing your AI subordinates) on or off for the whole campaign. It sits in the Balance -> Misc Balance section of the setup menu, next to playerIcons and playerMarkersEnabled, which are the existing HUD-visibility parameters.
 > - Add pre-game edit zones dialog (#1055)
 >   - Adds "Edit Zones" button to setup dialog when creating a new game. Dialog allows players to change which faction controls each zone at the start of the game. Click a zone to change its side.
 > - Import / Export GUI (#1061)
@@ -132,8 +130,6 @@
 >   - Adds new "Deprecated Parameters" category for params that will be removed in the future
 >   - Moves params from "Experimental Parameters" to more appropriate sections
 >   - "Deprecated Parameters" and "Extender Parameters" options in the parameter type dropdown will only be shown when they have parameters in them
-> - Move enemy faction support corridors based on faction marker ownership (#1085)
->   - Enemy faction support corridors will move throughout the campaign to remain opposed to each other and behind each faction's controlled territory, based on zones owned by each faction
 > - Move unconchance check into makeUnconscious func (#1088)
 >   - Changes when the rebel / enemy AI unconscious chance parameter is checked in the unit handleDamage event handlers, to ensure special checks (e.g. for civilian-caused damge, damage that would push uncon unit to death, etc) still evaluate regardless of uncon chance parameter setting(s) (thanks lt_lazlow)
 > - Re-allow AI to main unarmed vehicles *if* the vehicle has a radar (#1090)
