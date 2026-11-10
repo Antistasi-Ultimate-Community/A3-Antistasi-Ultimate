@@ -3,7 +3,7 @@
 The Mapmodes Framework gives Antistasi Ultimate a common way to register and switch between custom map modes. It adds a dropdown beside AU's Location Browser, where built-in features and extender addons can add their own mapmodes. Official modes appear first, with extender modes below a divider, and each player's choice is remembered locally. Creators register through a small client-side API and supply activation and cleanup callbacks. The framework handles registration, ordering, and selection; providers remain responsible for rendering, data processing, and interactions. This should be fairly straight-forward.
 
 **TO BE REMOVED | DEV TEST PROVIDER MAPMODE:** 
-Before main-mod integration, remove the `functions/placeholder_mapmode` folder, its preparation include, and the remaining marked hooks and stringtable key.
+The example in `functions/placeholder_mapmode` registers once through `A3A_fnc_mapmodesRegister`, alongside any other providers.
 
 ## Register Your Mode
 
@@ -17,7 +17,6 @@ Register once during client postInit, after your functions and any data they req
 
 ```sqf
 if (!hasInterface) exitWith {};
-
 [
     "MyAddon_overview",
     localize "STR_MyAddon_Overview",
@@ -36,7 +35,7 @@ The sixth argument is an optional icon texture path, displayed before the mode n
 
 `MyAddon_fnc_activateMapmode` and `MyAddon_fnc_deactivateMapmode` are **your functions**, not framework helpers. Activation enables your mode's rendering and interactions. Deactivation must remove its owned handlers and controls and stop its workers. The framework does not implement any rendering or data processing for you.
 
-Both callbacks receive no arguments and run locally, unscheduled. They must return promptly and cannot sleep. The framework never calls them per frame. Selecting a different mode calls the previous provider's disable function before the new provider's enable function. 
+Both callbacks receive no arguments and run locally, unscheduled. They must return promptly and cannot sleep. Selecting a different mode calls the previous provider's cleanup callback before the new provider's activation callback.
 
 The selected mode remains selected while the map is closed. Your provider must handle map openings and recreated displays itself. The framework does not pass a map control or re-run enable merely because the map was reopened. Providers own any ongoing data processing, interaction, or rendering costs.
 

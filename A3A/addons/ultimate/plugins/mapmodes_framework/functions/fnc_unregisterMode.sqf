@@ -27,8 +27,6 @@ FIX_LINE_NUMBERS()
 if (!hasInterface || {missionNamespace getVariable [QGVAR(transitioning), false]}) exitWith {false};
 if !(_this isEqualType [] && {count _this isEqualTo 1} && {!isNil {_this select 0}} && {(_this select 0) isEqualType ""}) exitWith {false};
 params ["_id"];
-// TO BE REMOVED | DEV TEST PROVIDER MAPMODE: manage the development provider internally.
-if (_id isEqualTo QGVAR(placeholder)) exitWith {false};
 private _registry = missionNamespace getVariable [QGVAR(registry), createHashMap];
 if !(_id in _registry) exitWith {false};
 private _removed = true;

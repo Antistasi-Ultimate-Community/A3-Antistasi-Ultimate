@@ -23,7 +23,6 @@ Author:
 ---------------------------------------------------------------------------- */
 
 #include "..\..\script_component.hpp"
-FIX_LINE_NUMBERS()
 
 if !(missionNamespace getVariable [QGVAR(placeholderEnabled), false]) exitWith {false};
 private _map = (findDisplay 12) displayCtrl 51;

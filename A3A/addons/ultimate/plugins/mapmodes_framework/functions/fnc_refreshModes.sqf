@@ -25,8 +25,6 @@ Author:
 FIX_LINE_NUMBERS()
 
 private _registry = missionNamespace getVariable [QGVAR(registry), createHashMap];
-// TO BE REMOVED | DEV TEST PROVIDER MAPMODE: keep the test provider only while empty.
-[_registry] call FUNC(updatePlaceholder);
 private _sorted = [];
 {
     _y params ["_label", "_activate", "_deactivate", "_order", "_official", ["_icon", ""]];

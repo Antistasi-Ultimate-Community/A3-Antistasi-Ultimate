@@ -37,8 +37,6 @@ params ["_id", "_label", "_activate", "_deactivate", ["_order", 100], ["_icon", 
 if !(_id isEqualType "" && {_label isEqualType ""} && {_id != ""} && {_label != ""}
     && {_activate isEqualType {}} && {_deactivate isEqualType {}} && {_order isEqualType 0} && {finite _order}
     && {_icon isEqualType ""}) exitWith {false};
-// TO BE REMOVED | DEV TEST PROVIDER MAPMODE: reserve the development provider ID.
-if (_id isEqualTo QGVAR(placeholder)) exitWith {false};
 private _official = getArray (configFile >> "A3U" >> "MapmodesFramework" >> "officialIds");
 if !(_id in _official || {(_id find "_") > 0}) exitWith {false};
 private _registry = missionNamespace getVariable [QGVAR(registry), createHashMap];
