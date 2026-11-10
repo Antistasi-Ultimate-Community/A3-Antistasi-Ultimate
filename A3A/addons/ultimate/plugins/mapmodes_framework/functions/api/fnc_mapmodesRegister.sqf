@@ -33,7 +33,6 @@ Author:
 ---------------------------------------------------------------------------- */
 
 #include "..\..\script_component.hpp"
-FIX_LINE_NUMBERS()
 private _result = false;
 isNil { _result = _this call FUNC(registerMode); };
 _result

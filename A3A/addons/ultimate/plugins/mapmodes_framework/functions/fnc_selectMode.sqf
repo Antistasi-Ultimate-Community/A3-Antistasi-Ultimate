@@ -26,7 +26,6 @@ Author:
 ---------------------------------------------------------------------------- */
 
 #include "..\script_component.hpp"
-FIX_LINE_NUMBERS()
 
 params ["_id", ["_explicit", true]];
 if (!hasInterface || {missionNamespace getVariable [QGVAR(transitioning), false]}) exitWith {false};

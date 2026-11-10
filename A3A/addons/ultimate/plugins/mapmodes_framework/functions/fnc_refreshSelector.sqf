@@ -25,7 +25,6 @@ Author:
 ---------------------------------------------------------------------------- */
 
 #include "..\script_component.hpp"
-FIX_LINE_NUMBERS()
 
 params [["_rebuild", true]];
 disableSerialization;

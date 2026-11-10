@@ -23,6 +23,5 @@ Author:
 ---------------------------------------------------------------------------- */
 
 #include "..\..\script_component.hpp"
-FIX_LINE_NUMBERS()
 if (!hasInterface || {!(_this isEqualTo [])}) exitWith {[]};
 (missionNamespace getVariable [QGVAR(modes), []]) apply {+_x}

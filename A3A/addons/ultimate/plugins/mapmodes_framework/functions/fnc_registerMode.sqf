@@ -29,7 +29,6 @@ Author:
 ---------------------------------------------------------------------------- */
 
 #include "..\script_component.hpp"
-FIX_LINE_NUMBERS()
 
 if (!hasInterface || {missionNamespace getVariable [QGVAR(transitioning), false]}) exitWith {false};
 if !(_this isEqualType [] && {count _this in [4, 5, 6]} && {_this findIf {isNil "_x"} < 0}) exitWith {false};

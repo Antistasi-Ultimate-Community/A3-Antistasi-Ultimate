@@ -22,7 +22,6 @@ Author:
 ---------------------------------------------------------------------------- */
 
 #include "..\script_component.hpp"
-FIX_LINE_NUMBERS()
 
 private _registry = missionNamespace getVariable [QGVAR(registry), createHashMap];
 private _sorted = [];

@@ -13,13 +13,22 @@ For an extender addon, declare the AU framework's config dependency. This might 
 requiredAddons[] = {"A3A_ultimate", "A3A_ultimate_mapmodes_framework"};
 ```
 
-Register once during client postInit, after your functions and any data they require are ready:
+Call your addon's registration function once during client postInit. Usually `_postInitClient.sqf` calls the registration function and the registration function itself calls the framework API. \
+This must run on each client, including join-in-progress clients, because registration is local and is not broadcast from the server.
+
+In your `_postInitClient.sqf`
 
 ```sqf
 if (!hasInterface) exitWith {};
+[] call MyAddon_fnc_registerMyMapmode;
+```
+
+In your registration function (for example, `functions/fnc_registerMyMapmode.sqf`):
+
+```sqf
 [
-    "MyAddon_overview",
-    localize "STR_MyAddon_Overview",
+    "MyAddon_mapmode",
+    localize "STR_MyAddon_Mapmode",
     { [] call MyAddon_fnc_activateMapmode; },
     { [] call MyAddon_fnc_deactivateMapmode; },
     100,
@@ -34,8 +43,6 @@ The numeric order is optional (default 100); lower values sort first within the 
 The sixth argument is an optional icon texture path, displayed before the mode name. Use an Arma texture or acustom asset. Omit it or use `""` for no icon. To specify an icon while keeping the default order, pass `100` as the fifth argument. Existing four- and five-argument registrations continue to work.
 
 `MyAddon_fnc_activateMapmode` and `MyAddon_fnc_deactivateMapmode` are **your functions**, not framework helpers. Activation enables your mode's rendering and interactions. Deactivation must remove its owned handlers and controls and stop its workers. The framework does not implement any rendering or data processing for you.
-
-Both callbacks receive no arguments and run locally, unscheduled. They must return promptly and cannot sleep. Selecting a different mode calls the previous provider's cleanup callback before the new provider's activation callback.
 
 The selected mode remains selected while the map is closed. Your provider must handle map openings and recreated displays itself. The framework does not pass a map control or re-run enable merely because the map was reopened. Providers own any ongoing data processing, interaction, or rendering costs.
 

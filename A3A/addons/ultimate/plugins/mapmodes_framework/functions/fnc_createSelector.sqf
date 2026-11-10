@@ -22,7 +22,6 @@ Author:
 ---------------------------------------------------------------------------- */
 
 #include "..\script_component.hpp"
-FIX_LINE_NUMBERS()
 
 if (!hasInterface || {missionNamespace getVariable [QGVAR(selectorWorker), false]}) exitWith {};
 missionNamespace setVariable [QGVAR(selectorWorker), true];
