@@ -86,7 +86,7 @@ if(_result) then
   markersX deleteAt (markersX find _roadblockMarker);
   publicVariable "markersX";
   sidesX setVariable [_roadblockMarker, nil, true];
-  [5, -5, (getMarkerPos _roadblockMarker)] remoteExec ["A3A_fnc_citySupportChange",2];
+  [0, -5, (getMarkerPos _roadblockMarker)] remoteExec ["A3A_fnc_citySupportChange",2];
   ["TaskFailed", ["", localize "STR_notifiers_roadblock_lost"]] remoteExec ["BIS_fnc_showNotification", 2];
 };
 

@@ -22,22 +22,31 @@ if (isNil "_cityData" || {!(_cityData isEqualType [])}) exitWith
 };
 _cityData params ["_numCiv", "_numVeh", "_supportGov", "_supportReb"];
 
-// Radio propaganda can't increase support above 30% or decrease below 50%
+// Radio propaganda can't increase support above 25% or decrease below 65%
 if (_isRadio) then {
-	if (_changeGov > 0) then { _changeGov = (30 - _supportGov) max 0 min _changeGov };
-	if (_changeGov < 0) then { _changeGov = (50 - _supportGov) min 0 max _changeGov };
+	if (_changeGov > 0) then { _changeGov = (25 - _supportGov) max 0 min _changeGov };
+	if (_changeGov < 0) then { _changeGov = (65 - _supportGov) min 0 max _changeGov };
 
-	if (_changeReb > 0) then { _changeReb = (30 - _supportReb) max 0 min _changeReb };
-	if (_changeReb < 0) then { _changeReb = (50 - _supportReb) min 0 max _changeReb };
-}
-else {
-	// Most non-radio changes are scaled inversely by city population, so less effect on large towns
-	if (_scaled) then {
-		private _popScale = 200 / (_numCiv max 50);
-		_changeGov = _changeGov * _popScale;
-		_changeReb = _changeReb * _popScale;
-	};
+	if (_changeReb > 0) then { _changeReb = (25 - _supportReb) max 0 min _changeReb };
+	if (_changeReb < 0) then { _changeReb = (65 - _supportReb) min 0 max _changeReb };
 };
+
+if (_scaled) then {
+	private _townThreshold = 50;
+	private _cityThreshold = 500;
+	private _maxGain = 1.5; // Perhaps we can manipulate these based on existing parameters
+	private _minGain = 0.5;
+
+	private _popScale = linearConversion [_townThreshold, _cityThreshold, _numCiv, _maxGain, _minGain, true];
+
+	_changeGov = _changeGov * _popScale;
+	_changeReb = _changeReb * _popScale;
+};
+
+if !(_isRadio) then {
+	if (_changeReb > 0 && {_changeGov == 0}) then { _changeGov = _changeGov - _changeReb; }; // e.g: reb gains 10; gov loses 10
+	if (_changeGov > 0 && {_changeReb == 0}) then { _changeReb = _changeReb - _changeGov; }; // e.g: gov gains 10; reb loses 10
+}; // This is a normalization mechanic of sorts; it will not replace how existing calls work (that don't use 0 in one arg)
 
 // Cap total to 100 and minimums to 0
 private _supportGov = 0 max (_supportGov + _changeGov);

@@ -72,7 +72,7 @@ _unit addEventHandler ["Killed", {
     };
 
     if (_victim == _killer) then {
-        _nul = [-1,-1,getPosATL _victim] remoteExec ["A3A_fnc_citySupportChange",2];
+        [-1,-1,getPosATL _victim] remoteExec ["A3A_fnc_citySupportChange",2];
     } else {
         if (isPlayer _killer) then {
             if (_victim getVariable "unitType" == FactionGet(civ, "unitWorker")) then {_killer addRating 1000};
@@ -92,7 +92,7 @@ _unit addEventHandler ["Killed", {
                 [0,1,getPosATL _victim] remoteExec ["A3A_fnc_citySupportChange",2];
             };
             case (side group _killer == Invaders): {
-                [-1,1,getPosATL _victim] remoteExec ["A3A_fnc_citySupportChange",2];
+                [0,1,getPosATL _victim] remoteExec ["A3A_fnc_citySupportChange",2];
             };
         };
     };
