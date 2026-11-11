@@ -44,8 +44,8 @@ if (_scaled) then {
 };
 
 if !(_isRadio) then {
-	if (_changeReb > 0 && {_changeGov == 0}) then { _changeGov = _changeGov - _changeReb; }; // e.g: reb gains 10; gov loses 10
-	if (_changeGov > 0 && {_changeReb == 0}) then { _changeReb = _changeReb - _changeGov; }; // e.g: gov gains 10; reb loses 10
+	if (_changeReb != 0 && {_changeGov == 0}) then { _changeGov = _changeGov - _changeReb; }; // e.g: reb gains 10; gov loses 10
+	if (_changeGov != 0 && {_changeReb == 0}) then { _changeReb = _changeReb - _changeGov; }; // e.g: gov gains 10; reb loses 10
 }; // This is a normalization mechanic of sorts; it will not replace how existing calls work (that don't use 0 in one arg)
 
 // Cap total to 100 and minimums to 0
