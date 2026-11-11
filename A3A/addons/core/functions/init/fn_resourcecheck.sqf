@@ -4,14 +4,15 @@ if (!isServer) exitWith {
     Error("Server-only function miscalled");
 };
 
+// I want to expose these here for both readability and to allow for ingame tweaking
+A3A_tick_time = 600; // 10 minutes
+A3A_tick_continue = true;
+
 // No point re-running this every tick
 private _blackMarketConditions = call A3A_fnc_resourceCheck_initBM;
-private _tickTime = 600; // 10 minutes
 
-continueResourceCheck = true;
-
-while {continueResourceCheck} do {
-	private _nextTick = time + _tickTime;
+while {A3A_tick_continue} do {
+	private _nextTick = time + A3A_tick_time;
 	waitUntil [{time >= _nextTick}, -1,30];
 	waitUntil [{A3A_activePlayerCount > 0}, -1, 30];
 
