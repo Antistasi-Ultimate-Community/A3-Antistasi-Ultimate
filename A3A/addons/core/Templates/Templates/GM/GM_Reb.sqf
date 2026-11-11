@@ -100,12 +100,12 @@ _rebUniforms = [
 
 private _dlcUniforms = [];
 
-if (allowDLCEnoch) then {_dlcUniforms append [
+if ("enoch" in A3A_enabledDLC) then {_dlcUniforms append [
     "U_I_L_Uniform_01_camo_F"
 ];
 };
 
-if (allowDLCExpansion) then {_dlcUniforms append [
+if ("expansion" in A3A_enabledDLC) then {_dlcUniforms append [
     "U_I_C_Soldier_Bandit_4_F",
     "U_I_C_Soldier_Bandit_1_F",
     "U_I_C_Soldier_Bandit_2_F",

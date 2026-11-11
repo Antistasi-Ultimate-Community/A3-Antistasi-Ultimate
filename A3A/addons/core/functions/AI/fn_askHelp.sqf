@@ -33,7 +33,7 @@ private _fnc_canHelp = {
     params ["_unit"];
     if ((isPlayer _unit) || !(isNull objectParent _unit) || (_unit distance _target > _maxDistance)) exitWith { false };
     // Leave players' AI units the fuck alone
-    if (units group _unit findIf { isPlayer _x } != -1) exitWith { false };
+    if (group _unit isNotEqualTo group _target && {units group _unit findIf { isPlayer _x } != -1}) exitWith { false };
     if !([_unit] call A3A_fnc_canFight) exitWith { false };
     if (currentCommand _unit == "STOP") exitWith { false };
     if ((_unit getVariable ["maneuvering", false]) || (_unit getVariable ["helping", false]) || (_unit getVariable ["rearming", false])) exitWith { false };

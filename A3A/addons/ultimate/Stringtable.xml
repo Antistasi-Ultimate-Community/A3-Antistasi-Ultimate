@@ -164,22 +164,38 @@
             <Turkish>Hızlı Ekipman Kuşan</Turkish>
         </Key>
     </Package>
-    <Package name="Assets">
-        <Key ID="STR_A3AU_Asset_LockpickKit_MultiUse">
-            <Original>Multi-use Lockpick Kit</Original>
-            <French>Kit de crochetage à usages multiples</French>
-            <Russian>Многоразовый набор отмычек</Russian>
-            <German>Mehrfacher Satz Dietriche</German>
-            <Korean>다회용 락픽 키트</Korean>
-            <Chinesesimp>多次使用撬锁工具包</Chinesesimp>
+    <Package name="Lockpick">
+        <Key ID="STR_A3AU_action_lockpick_title">
+            <Original>Pick Lock</Original>
+            <Russian>Вскрыть замок</Russian>
+            <German>Schloss knacken</German>
+            <Italian>Forzare la serratura</Italian>
+            <Spanish>Forzar la cerradura</Spanish>
+            <French>Crocheter la serrure</French>
+            <Korean>잠금장치 따기</Korean>
+            <Japanese>鍵をこじ開ける</Japanese>
+            <Chinesesimp>撬开车锁</Chinesesimp>
+            <Chinese>撬開車鎖</Chinese>
+            <Polish>Otwórz zamek wytrychem</Polish>
+            <Czech>Odemknout zámek paklíčem</Czech>
+            <Portuguese>Arrombar a fechadura</Portuguese>
+            <Turkish>Kilidi aç</Turkish>
         </Key>
-        <Key ID="STR_A3AU_Asset_LockpickKit_MultiUse_Desc">
-            <Original>This kit contains multiple lockpick tools to unlock vehicles if you're not an engineer.</Original>
-            <French>Ce kit contient plusieurs outils de crochetage pour déverrouiller les véhicules si vous n'êtes pas ingénieur.</French>
-            <Russian>Этот набор содержит несколько инструментов для вскрытия замков, чтобы открыть транспортные средства, если вы не инженер.</Russian>
-            <German>Dieser Satz enthält mehrere Dietriche, um Fahrzeuge zu entriegeln, wenn du kein Ingenieur bist.</German>
-            <Korean>이 키트에는 엔지니어가 아닌 경우 차량 잠금을 해제하는 데 사용할 수 있는 여러 개의 락픽 도구가 포함되어 있습니다.</Korean>
-            <Chinesesimp>此工具包包含多个撬锁工具，用于在您不是工程师的情况下解锁车辆。</Chinesesimp>
+        <Key ID="STR_A3AU_action_lockpick_start">
+            <Original>You have started lockpicking %1</Original>
+            <Russian>Вы начали взламывать %1</Russian>
+            <German>Du hast begonnen, %1 zu knacken</German>
+            <Italian>Hai iniziato a scassinare %1</Italian>
+            <Spanish>Has comenzado a forzar %1</Spanish>
+            <French>Vous avez commencé à crocheter %1</French>
+            <Korean>%1 잠금 해제를 시작했습니다</Korean>
+            <Japanese>%1 のピッキングを開始しました</Japanese>
+            <Chinesesimp>你开始撬锁 %1</Chinesesimp>
+            <Chinese>你開始撬鎖 %1</Chinese>
+            <Polish>Rozpocząłeś wytrychowanie %1</Polish>
+            <Czech>Začal jsi páčit %1</Czech>
+            <Portuguese>Você começou a arrombar %1</Portuguese>
+            <Turkish>%1 kilidini açmaya başladın</Turkish>
         </Key>
         <Key ID="STR_A3AU_Asset_LockpickKit_SingleUse">
             <Original>Single-use Lockpick Kit</Original>
@@ -265,20 +281,21 @@
             <Chinesesimp>撬锁已被中止。 &lt;br /&gt; 警报已触发。 &lt;br /&gt; 你不再是卧底。</Chinesesimp>
             <Turkish>Maymuncuk kullanma işlemi iptal edildi. &lt;br /&gt; Alarm çalmaya başladı. &lt;br /&gt; Artık gizli değilsin.</Turkish>
         </Key>
-        <Key ID="STR_A3AU_action_lockpick_has_toolkit">
-            <Original>%1 &lt;br /&gt;lockpick time has been decreased since you have a toolkit</Original>
-            <Czech>%1 &lt;br /&gt;čas odemykání byl zkrácen, protože máte sadu nástrojů</Czech>
-            <French>%1 &lt;br /&gt;le temps de crochetage a été réduit car vous avez une trousse à outils</French>
-            <Spanish>%1 &lt;br /&gt;el tiempo de ganzuado se ha reducido porque tienes un kit de herramientas</Spanish>
-            <Italian>%1 &lt;br /&gt;il tempo di scassinamento è stato ridotto poiché hai un kit di attrezzi</Italian>
-            <Polish>%1 &lt;br /&gt;czas otwierania zamka został skrócony, ponieważ masz zestaw narzędzi</Polish>
-            <Portuguese>%1 &lt;br /&gt;o tempo de arrombamento foi reduzido porque você tem um kit de ferramentas</Portuguese>
-            <Russian>%1 &lt;br /&gt;время взлома уменьшено, так как у вас есть набор инструментов</Russian>
-            <German>%1 &lt;br /&gt;die Schlossknackzeit wurde verkürzt, da du ein Werkzeugset hast</German>
-            <Korean>%1 &lt;br /&gt;공구 상자가 있기 때문에 자물쇠 따기 시간이 줄었습니다</Korean>
-            <Japanese>%1 &lt;br /&gt;工具キットを持っているため、ピッキング時間が短縮されました</Japanese>
-            <Chinese>%1 &lt;br /&gt;由於你有工具包，撬鎖時間已減少</Chinese>
-            <Turkish>%1 &lt;br /&gt;alet takımın olduğu için kilit açma süresi azaldı</Turkish>
+        <Key ID="STR_A3AU_action_lockpick_using_toolkit">
+            <Original>using %1</Original>
+            <Russian>используя %1</Russian>
+            <German>mit %1</German>
+            <Italian>usando %1</Italian>
+            <Spanish>usando %1</Spanish>
+            <French>avec %1</French>
+            <Korean>%1 사용</Korean>
+            <Japanese>%1を使用</Japanese>
+            <Chinesesimp>使用%1</Chinesesimp>
+            <Chinese>使用%1</Chinese>
+            <Polish>używając %1</Polish>
+            <Czech>pomocí %1</Czech>
+            <Portuguese>usando %1</Portuguese>
+            <Turkish>%1 kullanarak</Turkish>
         </Key>
         <Key ID="STR_A3AU_action_lockpick_not_engineer">
             <Original>You have to be an Engineer to start lockpicking</Original>

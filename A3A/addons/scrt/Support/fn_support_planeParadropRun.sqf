@@ -47,7 +47,9 @@ if (isSupportMarkerPlacingLocked) then {
     publicVariable "isSupportMarkerPlacingLocked";
 };
 
-if !(canMove paradropPlane) then { sleep cleantime };
+if (A3A_GCThreshold isEqualTo -1) exitWith {};
+
+if !(canMove paradropPlane) then { sleep A3A_GCThreshold };
 deleteVehicle paradropPlane;
 {deleteVehicle _x} forEach _planeCrew;
 deleteGroup _groupPlane;
