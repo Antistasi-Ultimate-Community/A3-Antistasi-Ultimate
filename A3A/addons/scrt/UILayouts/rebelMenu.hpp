@@ -232,7 +232,7 @@ class rebelMenu
 						};
 						class SwitchButton: SwitchButton {
 							idc = A3A_IDC_MENU_MUSIC_SWITCH_TOGGLE;
-							action = QUOTE([ARR_4('MAIN', A3A_IDC_MENU_MUSIC_SWITCH_BUTTON, true, 'MUSIC')] call SCRT_fnc_ui_switchButton);
+							action = QUOTE([ARR_4('MAIN',A3A_IDC_MENU_MUSIC_SWITCH_BUTTON,true,'MUSIC')] call SCRT_fnc_ui_switchButton);
 							tooltip = "$STR_commander_menu_music_switch_tooltip";
 						};
 					};		
@@ -275,7 +275,7 @@ class rebelMenu
 						};
 						class SwitchButton: SwitchButton {
 							idc = A3A_IDC_MENU_PARADROP_SWITCH_TOGGLE;
-							action = QUOTE([ARR_4('MAIN', A3A_IDC_MENU_PARADROP_SWITCH_BUTTON, true, 'PARADROP')] call SCRT_fnc_ui_switchButton);
+							action = QUOTE([ARR_4('MAIN',A3A_IDC_MENU_PARADROP_SWITCH_BUTTON,true,'PARADROP')] call SCRT_fnc_ui_switchButton);
 							tooltip = "$STR_commander_menu_paradrop_tooltip_noncomm";
 						};
 					};

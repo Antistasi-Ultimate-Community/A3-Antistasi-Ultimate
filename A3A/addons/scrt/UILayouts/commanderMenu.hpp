@@ -703,7 +703,7 @@ class commanderMenu
 					y = "10 * pixelGridNoUIScale * pixelH";	
 					w = "16 * pixelGridNoUIScale * pixelW";	
 					h = "1.5 * pixelGridNoUIScale * pixelH";					
-					onSliderPosChanged = QUOTE(_value = (_this select 1)/100; ((findDisplay A3A_IDD_COMMANDER_MENU) displayCtrl A3A_IDC_COMMANDER_MENU_ENVIRONMENT_FOG_TITLE) ctrlSetText format [ARR_2(localize 'STR_commander_menu_fog_title', _value)]; fogValue = [ARR_3(_value,0,0)];);
+					onSliderPosChanged = QUOTE(_value = (_this select 1)/100; ((findDisplay A3A_IDD_COMMANDER_MENU) displayCtrl A3A_IDC_COMMANDER_MENU_ENVIRONMENT_FOG_TITLE) ctrlSetText format [ARR_2(localize 'STR_commander_menu_fog_title',_value)]; fogValue = [ARR_3(_value,0,0)];);
 				};
 
 				class setFogButton: ButtonBase
@@ -749,7 +749,7 @@ class commanderMenu
 					y = "16.5 * pixelGridNoUIScale * pixelH";	
 					w = "16 * pixelGridNoUIScale * pixelW";	
 					h = "1.5 * pixelGridNoUIScale * pixelH";					
-					onSliderPosChanged = QUOTE(_value = (_this select 1)/100; ((findDisplay A3A_IDD_COMMANDER_MENU) displayCtrl A3A_IDC_COMMANDER_MENU_ENVIRONMENT_OVERCAST_TITLE) ctrlSetText format [ARR_2(localize 'STR_commander_menu_overcast_title', _value)]; overcastValue = _value;);
+					onSliderPosChanged = QUOTE(_value = (_this select 1)/100; ((findDisplay A3A_IDD_COMMANDER_MENU) displayCtrl A3A_IDC_COMMANDER_MENU_ENVIRONMENT_OVERCAST_TITLE) ctrlSetText format [ARR_2(localize 'STR_commander_menu_overcast_title',_value)]; overcastValue = _value;);
 				};
 
 				class setOvercastButton: ButtonBase
@@ -795,7 +795,7 @@ class commanderMenu
 					y = "23 * pixelGridNoUIScale * pixelH";	
 					w = "16 * pixelGridNoUIScale * pixelW";	
 					h = "1.5 * pixelGridNoUIScale * pixelH";					
-					onSliderPosChanged = QUOTE(_value = _this select 1; ((findDisplay A3A_IDD_COMMANDER_MENU) displayCtrl A3A_IDC_COMMANDER_MENU_ENVIRONMENT_WAIT_TITLE) ctrlSetText format [ARR_3(localize 'STR_commander_menu_wait_title', _value, localize 'STR_antistasi_timeSpan_hours')]; (_this select 0) setVariable [ARR_2('timeToSkip', _value)];);
+					onSliderPosChanged = QUOTE(_value = _this select 1; ((findDisplay A3A_IDD_COMMANDER_MENU) displayCtrl A3A_IDC_COMMANDER_MENU_ENVIRONMENT_WAIT_TITLE) ctrlSetText format [ARR_3(localize 'STR_commander_menu_wait_title',_value,localize 'STR_antistasi_timeSpan_hours')]; (_this select 0) setVariable [ARR_2('timeToSkip',_value)];);
 				};
 
 				class waitButton: ButtonBase
@@ -808,7 +808,7 @@ class commanderMenu
 					h = "1.5 * pixelGridNoUIScale * pixelH";
 					sizeEx = "((pixelH * (pixelGridNoUIScale) * 2) * 1.25) * 0.5";	
 					shadow = 2;	
-					action = QUOTE(((findDisplay A3A_IDD_COMMANDER_MENU) displayCtrl A3A_IDC_COMMANDER_MENU_ENVIRONMENT_WAIT_SLIDER) getVariable [ARR_2('timeToSkip', 6)] call A3A_fnc_skiptime;);
+					action = QUOTE(((findDisplay A3A_IDD_COMMANDER_MENU) displayCtrl A3A_IDC_COMMANDER_MENU_ENVIRONMENT_WAIT_SLIDER) getVariable [ARR_2('timeToSkip',6)] call A3A_fnc_skiptime;);
 				};
 
 				class spacer4: brSpacer 
@@ -908,7 +908,7 @@ class commanderMenu
 						};
 						class SwitchButton: switchButton {
 							idc = A3A_IDC_MENU_MUSIC_SWITCH_TOGGLE;
-							action = QUOTE([ARR_4('MAIN', A3A_IDC_MENU_MUSIC_SWITCH_BUTTON, true, 'MUSIC')] call SCRT_fnc_ui_switchButton);
+							action = QUOTE([ARR_4('MAIN',A3A_IDC_MENU_MUSIC_SWITCH_BUTTON,true,'MUSIC')] call SCRT_fnc_ui_switchButton);
 							tooltip = "$STR_commander_menu_music_switch_tooltip";
 						};
 					};		
@@ -951,7 +951,7 @@ class commanderMenu
 						};
 						class SwitchButton: SwitchButton {
 							idc = A3A_IDC_MENU_PARADROP_SWITCH_TOGGLE;
-							action = QUOTE([ARR_4('MAIN', A3A_IDC_MENU_PARADROP_SWITCH_BUTTON, true, 'PARADROP')] call SCRT_fnc_ui_switchButton);
+							action = QUOTE([ARR_4('MAIN',A3A_IDC_MENU_PARADROP_SWITCH_BUTTON,true,'PARADROP')] call SCRT_fnc_ui_switchButton);
 							tooltip = "$STR_commander_menu_paradrop_tooltip";
 						};
 					};
