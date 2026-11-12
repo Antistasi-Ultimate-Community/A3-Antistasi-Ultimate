@@ -4232,16 +4232,16 @@
                 <Turkish>Ön ayar verisi kutusundaki metni panoya kopyalar.</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_ie_export_button_disabled">
-                <Original>This button does not work when using a dedicated server due to Arma 3 security restrictions.<br/>Please copy the data manually.</Original>
-                <Czech>Toto tlačítko nefunguje při použití dedikovaného serveru kvůli bezpečnostním omezením Arma 3.<br/>Zkopírujte data ručně.</Czech>
-                <French>Ce bouton ne fonctionne pas sur un serveur dédié en raison des restrictions de sécurité d'Arma 3.<br/>Veuillez copier les données manuellement.</French>
-                <Italian>Questo pulsante non funziona con un server dedicato a causa delle restrizioni di sicurezza di Arma 3.<br/>Copia i dati manualmente.</Italian>
-                <Korean>Arma 3 보안 제한으로 인해 전용 서버에서는 이 버튼이 작동하지 않습니다.<br/>데이터를 수동으로 복사하세요.</Korean>
-                <Russian>Эта кнопка не работает на выделенном сервере из-за ограничений безопасности Arma 3.<br/>Скопируйте данные вручную.</Russian>
-                <Polish>Ten przycisk nie działa na serwerze dedykowanym z powodu ograniczeń bezpieczeństwa Arma 3.<br/>Skopiuj dane ręcznie.</Polish>
-                <Portuguese>Este botão não funciona num servidor dedicado devido às restrições de segurança do Arma 3.<br/>Copie os dados manualmente.</Portuguese>
-                <Chinesesimp>由于 Arma 3 的安全限制，使用专用服务器时此按钮无效。<br/>请手动复制数据。</Chinesesimp>
-                <Turkish>Arma 3 güvenlik kısıtlamaları nedeniyle bu düğme özel sunucuda çalışmaz.<br/>Lütfen veriyi elle kopyalayın.</Turkish>
+                <Original>This button does not work when using a dedicated server due to Arma 3 security restrictions.&lt;br/&gt;Please copy the data manually.</Original>
+                <Czech>Toto tlačítko nefunguje při použití dedikovaného serveru kvůli bezpečnostním omezením Arma 3.&lt;br/&gt;Zkopírujte data ručně.</Czech>
+                <French>Ce bouton ne fonctionne pas sur un serveur dédié en raison des restrictions de sécurité d'Arma 3.&lt;br/&gt;Veuillez copier les données manuellement.</French>
+                <Italian>Questo pulsante non funziona con un server dedicato a causa delle restrizioni di sicurezza di Arma 3.&lt;br/&gt;Copia i dati manualmente.</Italian>
+                <Korean>Arma 3 보안 제한으로 인해 전용 서버에서는 이 버튼이 작동하지 않습니다.&lt;br/&gt;데이터를 수동으로 복사하세요.</Korean>
+                <Russian>Эта кнопка не работает на выделенном сервере из-за ограничений безопасности Arma 3.&lt;br/&gt;Скопируйте данные вручную.</Russian>
+                <Polish>Ten przycisk nie działa na serwerze dedykowanym z powodu ograniczeń bezpieczeństwa Arma 3.&lt;br/&gt;Skopiuj dane ręcznie.</Polish>
+                <Portuguese>Este botão não funciona num servidor dedicado devido às restrições de segurança do Arma 3.&lt;br/&gt;Copie os dados manualmente.</Portuguese>
+                <Chinesesimp>由于 Arma 3 的安全限制，使用专用服务器时此按钮无效。&lt;br/&gt;请手动复制数据。</Chinesesimp>
+                <Turkish>Arma 3 güvenlik kısıtlamaları nedeniyle bu düğme özel sunucuda çalışmaz.&lt;br/&gt;Lütfen veriyi elle kopyalayın.</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_ie_savelist_text">
                 <Original>Save List</Original>
@@ -4256,16 +4256,16 @@
                 <Turkish>Kayıt Listesi</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_ie_savelist_tooltip">
-                <Original>Don't see your save in this list?<br/>Make sure it's been persistently saved on A3U version 12.2.0 or later first.</Original>
-                <Czech>Nevidíte svůj uložený soubor v tomto seznamu?<br/>Ujistěte se, že byl trvale uložen ve verzi A3U 12.2.0 nebo novější.</Czech>
-                <French>Vous ne voyez pas votre sauvegarde dans cette liste ?<br/>Assurez-vous qu'elle a été sauvegardée de manière persistante sur la version 12.2.0 ou ultérieure d'A3U.</French>
-                <Italian>Non vedi il tuo salvataggio in questo elenco?<br/>Assicurati che sia stato salvato in modo persistente sulla versione 12.2.0 o successiva di A3U.</Italian>
-                <Korean>이 목록에서 저장된 항목이 보이지 않나요?<br/>A3U 버전 12.2.0 이상에서 지속적으로 저장되었는지 확인하세요.</Korean>
-                <Russian>Не видите своё сохранение в этом списке?<br/>Убедитесь, что оно было сохранено в версии A3U 12.2.0 или новее.</Russian>
-                <Polish>Nie widzisz swojego zapisu na tej liście?<br/>Upewnij się, że został trwale zapisany w wersji A3U 12.2.0 lub nowszej.</Polish>
-                <Portuguese>Não vê o seu save nesta lista?<br/>Certifique-se de que foi salvo de forma persistente na versão 12.2.0 ou posterior do A3U.</Portuguese>
-                <Chinesesimp>在此列表中看不到您的存档？<br/>请确保它已在 A3U 12.2.0 或更高版本中持久保存。</Chinesesimp>
-                <Turkish>Bu listede kaydınızı görmüyor musunuz?<br/>Öncelikle A3U sürüm 12.2.0 veya daha yenisinde kalıcı olarak kaydedildiğinden emin olun.</Turkish>
+                <Original>Don't see your save in this list?&lt;br/&gt;Make sure it's been persistently saved on A3U version 12.2.0 or later first.</Original>
+                <Czech>Nevidíte svůj uložený soubor v tomto seznamu?&lt;br/&gt;Ujistěte se, že byl trvale uložen ve verzi A3U 12.2.0 nebo novější.</Czech>
+                <French>Vous ne voyez pas votre sauvegarde dans cette liste ?&lt;br/&gt;Assurez-vous qu'elle a été sauvegardée de manière persistante sur la version 12.2.0 ou ultérieure d'A3U.</French>
+                <Italian>Non vedi il tuo salvataggio in questo elenco?&lt;br/&gt;Assicurati che sia stato salvato in modo persistente sulla versione 12.2.0 o successiva di A3U.</Italian>
+                <Korean>이 목록에서 저장된 항목이 보이지 않나요?&lt;br/&gt;A3U 버전 12.2.0 이상에서 지속적으로 저장되었는지 확인하세요.</Korean>
+                <Russian>Не видите своё сохранение в этом списке?&lt;br/&gt;Убедитесь, что оно было сохранено в версии A3U 12.2.0 или новее.</Russian>
+                <Polish>Nie widzisz swojego zapisu na tej liście?&lt;br/&gt;Upewnij się, że został trwale zapisany w wersji A3U 12.2.0 lub nowszej.</Polish>
+                <Portuguese>Não vê o seu save nesta lista?&lt;br/&gt;Certifique-se de que foi salvo de forma persistente na versão 12.2.0 ou posterior do A3U.</Portuguese>
+                <Chinesesimp>在此列表中看不到您的存档？&lt;br/&gt;请确保它已在 A3U 12.2.0 或更高版本中持久保存。</Chinesesimp>
+                <Turkish>Bu listede kaydınızı görmüyor musunuz?&lt;br/&gt;Öncelikle A3U sürüm 12.2.0 veya daha yenisinde kalıcı olarak kaydedildiğinden emin olun.</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_ie_paramlist_text">
                 <Original>Parameter Preset List</Original>

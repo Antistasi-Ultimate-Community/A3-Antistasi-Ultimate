@@ -2022,7 +2022,7 @@
                 <Russian>Вы успешно нанесли поражение своим врагам!&lt;br/&gt;Их военные базы и аэропорты теперь под вашим контролем, ваши враги отступили от конфликта и закрыли свои коридоры поддержки. &lt;br/&gt;Иди отдохни, солдат, ты это заслужил!</Russian>
                 <Chinesesimp>您已成功击溃敌人！&lt;br/&gt;他们的军事基地和机场现已被您控制，您的敌人已退出冲突并关闭了支援走廊。士兵们，去休息吧，这是您应得的！</Chinesesimp>
                 <Korean>당신은 성공적으로 적을 재기불능으로 만들었습니다!&lt;br/&gt;그들의 군사 기지와 공항은 이제 당신의 통제 하에 있고 당신의 적들은 분쟁을 멈추었으며 지원 통로를 닫았습니다. 이제 가서 휴식을 취하세요, 군인 여러분. 당신들은 그럴 자격이 있습니다!</Korean>
-                <Turkish>Düşmanlarını başarıyla felç ettin!<br/>Askeri üsleri ve havaalanları artık kontrolün altında, düşmanların çatışmadan geri çekildi ve destek koridorlarını kapattı. Git biraz dinlen asker, bunu fazlasıyla hak ettin!</Turkish>
+                <Turkish>Düşmanlarını başarıyla felç ettin!&lt;br/&gt;Askeri üsleri ve havaalanları artık kontrolün altında, düşmanların çatışmadan geri çekildi ve destek koridorlarını kapattı. Git biraz dinlen asker, bunu fazlasıyla hak ettin!</Turkish>
             </Key>
             <Key ID="STR_end_mission_defeat_title">
                 <Original>The country is destroyed</Original>
@@ -18934,7 +18934,7 @@
                 <Chinesesimp>拆除模式现在已启用。</Chinesesimp>
                 <Korean>철거 모드가 이제 활성화되었습니다.</Korean>
                 <French>Le mode démolition est maintenant ACTIVÉ.</French>
-                <Turkish>Yıkım modu şimdi ETKİNLEŞTİRİLD
+                <Turkish>Yıkım modu şimdi ETKİNLEŞTİRİLDİ.</Turkish>
             </Key>
             <Key ID="STR_A3A_teardownModeDisabled_text">
                 <Original>Teardown mode is now DISABLED.</Original>
