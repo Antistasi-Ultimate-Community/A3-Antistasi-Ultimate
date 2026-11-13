@@ -51,6 +51,7 @@ private _vehicleCount = count keys _buyableVehiclesHM;
 private _topPadding = if (_vehicleCount < 7) then {5 * GRID_H} else {1 * GRID_H};
 
 private _added = 0;
+private _searchItems = [];
 private _bmData = _buyableVehiclesHM apply {
     private _className = _x;
     private _price = [_className] call A3U_fnc_blackMarketVehiclePrice;
@@ -283,8 +284,13 @@ _bmData apply {
     _itemControlsGroup ctrlSetFade 0;
     _itemControlsGroup ctrlCommit 0.1;
 
+    _searchItems pushBack [_itemControlsGroup, toLower format ["%1 %2", _displayName, _className]];
+
     _added = _added + 1;
 };
+
+_vehiclesControlsGroup setVariable ["A3U_BM_items", _searchItems];
+["search", [_group]] call A3A_fnc_blackMarketDialog;
 
 uiNamespace setVariable ["A3U_BM_vehicleMetadataCache", _vehicleMetadataCache];
 uiNamespace setVariable ["A3U_BM_dlcMetadataCache", _dlcMetadataCache];

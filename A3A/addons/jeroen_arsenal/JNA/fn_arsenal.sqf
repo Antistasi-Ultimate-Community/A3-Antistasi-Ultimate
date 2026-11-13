@@ -131,6 +131,13 @@ FIX_LINE_NUMBERS()
 #define INCOMPATIBLE_ITEM_COLOR [1,1,1,0.25]
 #define DEFAULT_COLOR [1,1,1,1]
 
+#define A3A_IDC_SEARCH_LEFT_EDIT 97001
+#define A3A_IDC_SEARCH_LEFT_BUTTON 97002
+#define A3A_IDC_SEARCH_RIGHT_EDIT 97003
+#define A3A_IDC_SEARCH_RIGHT_BUTTON 97004
+#define A3A_SEARCH_ICON_START "\A3\ui_f\data\GUI\RscCommon\RscButtonSearch\search_start_ca.paa"
+#define A3A_SEARCH_ICON_END "\A3\ui_f\data\GUI\RscCommon\RscButtonSearch\search_end_ca.paa"
+
 disableserialization;
 
 _arrayContains = {
@@ -148,17 +155,6 @@ private _minItemsMember = {
 		_min = _min * getNumber (configfile >> "CfgMagazines" >> _item >> "count");
 	};
 	_min;
-};
-
-private _arrayAdd = {
-	params ["_arr1", "_arr2"];
-
-	if (count _arr1 != count _arr2) exitWith { [] };
-	_newArr = [];
-	for "_i" from 0 to (count _arr1 -1) do {
-		_newArr set [_i, (_arr1 select _i) + (_arr2 select _i)];
-	};
-	_newArr;
 };
 
 // loop all magazines and find usable
@@ -309,6 +305,10 @@ switch _mode do {
 		// Add controls for active weapon magazine(s) button(s)
 		_display = _this select 0;
 
+		///////////////////////////////
+		//    Loaded Mag Controls    //
+		///////////////////////////////
+
 		// Base tabs
 		_ctrlItemOptic = _display displayCtrl (IDC_RSCDISPLAYARSENAL_TAB + IDC_RSCDISPLAYARSENAL_TAB_ITEMOPTIC);
 		_ctrlItemOpticPos = ctrlPosition _ctrlItemOptic;
@@ -316,7 +316,7 @@ switch _mode do {
 		_ctrlItemAccPos = ctrlPosition _ctrlItemAcc;
 		_ctrlItemMuzzle = _display displayCtrl (IDC_RSCDISPLAYARSENAL_TAB + IDC_RSCDISPLAYARSENAL_TAB_ITEMMUZZLE);
 		_ctrlItemBipod = _display displayCtrl (IDC_RSCDISPLAYARSENAL_TAB + IDC_RSCDISPLAYARSENAL_TAB_ITEMBIPOD);
-		_posDiff = ([_ctrlItemAccPos, _ctrlItemOpticPos apply {_x * -1}] call _arrayAdd) apply {_x * 2};
+		_posDiff = (_ctrlItemAccPos vectorAdd (_ctrlItemOpticPos vectorMultiply -1)) vectorMultiply 2;
 
 		// Custom tabs
 		_ctrlTabLoadedMag = _display ctrlCreate ["RscButtonArsenal", IDC_RSCDISPLAYARSENAL_TAB + IDC_RSCDISPLAYARSENAL_TAB_LOADEDMAG];
@@ -335,8 +335,7 @@ switch _mode do {
 
 		// Move base tabs below the new magazine tabs
 		{
-			_newPos = [ctrlPosition _x, _posDiff] call _arrayAdd;
-			_x ctrlSetPosition _newPos;
+			_x ctrlSetPosition ((ctrlPosition _x) vectorAdd _posDiff);
 		} forEach [_ctrlItemOptic, _ctrlItemAcc, _ctrlItemMuzzle, _ctrlItemBipod];
 
 		// Custom lists
@@ -362,6 +361,52 @@ switch _mode do {
 			_x ctrlSetFade 1;
 			_x ctrlCommit 0;
 		} forEach [_ctrlSortLoadedMag, _ctrlSortLoadedMag2];
+
+		///////////////////////////////
+		//    Search Bar Controls    //
+		///////////////////////////////
+
+		
+		// add search bars above left and right side item lists / sorts
+		// add event handlers for search text changed to actually do the searching
+		{
+			_x params ["_editIdc", "_buttonIdc", "_sortTabIdc"];
+			private _sortPos = ctrlPosition (_display displayCtrl (IDC_RSCDISPLAYARSENAL_SORT + _sortTabIdc));
+			_sortPos params ["_sortX", "_sortY", "_sortW", "_sortH"];
+
+			// move item lists and sort selections further down to make space for the search bars
+			{
+				private _ctrlSort = _display displayCtrl (IDC_RSCDISPLAYARSENAL_SORT + _x);
+				if (!isNull _ctrlSort) then { _ctrlSort ctrlSetPosition ((ctrlPosition _ctrlSort) vectorAdd [0, _sortH, 0, 0]) };
+				private _ctrlList = _display displayCtrl (IDC_RSCDISPLAYARSENAL_LIST + _x);
+				if (!isNull _ctrlList) then { _ctrlList ctrlSetPosition ((ctrlPosition _ctrlList) vectorAdd [0, _sortH, 0, -_sortH]) };
+			} forEach IDCS;
+
+			private _ctrlSearchEdit = _display ctrlCreate ["RscEdit", _editIdc];
+			_ctrlSearchEdit ctrlSetPosition [_sortX, _sortY, _sortW - _sortH, _sortH];
+			_ctrlSearchEdit ctrlSetBackgroundColor [0, 0, 0, 0.8];
+			_ctrlSearchEdit ctrlAddEventHandler ["EditChanged", {
+				["SearchApply", _this] call jn_fnc_arsenal;
+			}];
+
+			private _ctrlSearchButton = _display ctrlCreate ["RscButtonArsenal", _buttonIdc];
+			_ctrlSearchButton ctrlSetPosition [_sortX + _sortW - _sortH, _sortY, _sortH, _sortH];
+			_ctrlSearchButton ctrlSetText A3A_SEARCH_ICON_START;
+			_ctrlSearchButton ctrlAddEventHandler ["ButtonClick", {
+				params ["_control"];
+				["SearchReset", [_control]] call jn_fnc_arsenal;
+				["SearchApply", [(ctrlParent _control) displayCtrl (ctrlIDC _control - 1)]] call jn_fnc_arsenal;
+			}];
+
+			{
+				_x ctrlCommit 0;
+				_x ctrlShow false;
+				_x ctrlEnable false;
+			} forEach [_ctrlSearchEdit, _ctrlSearchButton];
+		} forEach [
+			[A3A_IDC_SEARCH_LEFT_EDIT, A3A_IDC_SEARCH_LEFT_BUTTON, IDC_RSCDISPLAYARSENAL_TAB_PRIMARYWEAPON],
+			[A3A_IDC_SEARCH_RIGHT_EDIT, A3A_IDC_SEARCH_RIGHT_BUTTON, IDC_RSCDISPLAYARSENAL_TAB_ITEMOPTIC]
+		];
 	};
 
 	///////////////////////////////////////////////////////////////////////////////////////////
@@ -711,6 +756,82 @@ switch _mode do {
 		};
   	};
 
+	case "SearchApply": {
+		params ["_ctrlSearchEdit", "_newText"];
+
+		private _display = ctrlParent _ctrlSearchEdit;
+		private _ctrlSearchButton = _display displayCtrl (ctrlIDC _ctrlSearchEdit + 1);
+		_ctrlSearchButton ctrlSetText ([A3A_SEARCH_ICON_START, A3A_SEARCH_ICON_END] select ((trim _newText) isNotEqualTo ""));
+
+		private _tabs = [[IDCS_LEFT], [IDCS_RIGHT]] select ((ctrlIDC _ctrlSearchEdit) isEqualTo A3A_IDC_SEARCH_RIGHT_EDIT);
+		private _index = _tabs findIf { ctrlEnabled (_display displayCtrl (IDC_RSCDISPLAYARSENAL_LIST + _x)) };
+		if (_index isEqualTo -1) exitWith {};
+		_index = _tabs select _index;
+
+		if ((ctrlIDC _ctrlSearchEdit) isEqualTo A3A_IDC_SEARCH_LEFT_EDIT) then {
+			["RebuildLeftList", [_display, _index]] call jn_fnc_arsenal;
+		} else {
+			["TabSelectRight", [_display, _index, false]] call jn_fnc_arsenal;
+
+			private _ctrlSort = _display displayCtrl (IDC_RSCDISPLAYARSENAL_SORT + _index);
+			["SortBy", [[_ctrlSort, lbCurSel _ctrlSort], _index]] call jn_fnc_arsenal;
+		};
+	};
+
+	case "SearchReset": {
+		params ["_ctrlSearchButton"];
+		
+		private _display = ctrlParent _ctrlSearchButton;
+		private _ctrlSearchEdit = _display displayCtrl (ctrlIDC _ctrlSearchButton - 1);
+
+		if (ctrlText _ctrlSearchEdit isNotEqualTo "") then { _ctrlSearchEdit ctrlSetText "" };
+		_ctrlSearchButton ctrlSetText A3A_SEARCH_ICON_START;
+
+		if ((ctrlIDC _ctrlSearchEdit) isEqualTo A3A_IDC_SEARCH_RIGHT_EDIT) exitWith {};
+		
+		{
+			if ((_display displayCtrl (IDC_RSCDISPLAYARSENAL_LIST + _x)) getVariable ["A3U_filtered", false]) then {
+				["RebuildLeftList", [_display, _x]] call jn_fnc_arsenal;
+			};
+		} forEach [IDCS_LEFT];
+	};
+
+	// Toggles visibility of the search controls based on active tab selection
+	case "SearchUpdateVisibility": {
+		params ["_display"];
+		{
+			_x params ["_tabs", "_ctrlSearchEditIDC", "_ctrlSearchButtonIDC"];
+			private _show = (_tabs findIf { ctrlEnabled (_display displayCtrl (IDC_RSCDISPLAYARSENAL_LIST + _x)) }) isNotEqualTo -1;
+			if (!_show) then { ["SearchReset", [_display displayCtrl _ctrlSearchButtonIDC]] call jn_fnc_arsenal };
+			{
+				private _ctrlSearch = _display displayCtrl _x;
+				_ctrlSearch ctrlShow _show;
+				_ctrlSearch ctrlEnable _show;
+			} forEach [_ctrlSearchEditIDC, _ctrlSearchButtonIDC];
+		} forEach [
+			[[IDCS_LEFT], A3A_IDC_SEARCH_LEFT_EDIT, A3A_IDC_SEARCH_LEFT_BUTTON],
+			[[IDCS_RIGHT], A3A_IDC_SEARCH_RIGHT_EDIT, A3A_IDC_SEARCH_RIGHT_BUTTON]
+		];
+	};
+
+	// Left-side lists are normally only built once, so need to rebuild them when filtering by search string
+	case "RebuildLeftList": {
+		params ["_display", "_index"];
+		private _ctrlList = _display displayCtrl (IDC_RSCDISPLAYARSENAL_LIST + _index);
+		private _ctrlSort = _display displayCtrl (IDC_RSCDISPLAYARSENAL_SORT + _index);
+
+		["CreateList", [_display, _index, jna_dataList select _index]] call jn_fnc_arsenal;
+		["UpdateListGui", [_display, _ctrlList, _index]] call jn_fnc_arsenal;
+		["UpdateItemAdd", [_index, ["ListCurSel", [_index]] call jn_fnc_arsenal, 0]] call jn_fnc_arsenal;
+		["SortBy", [[_ctrlSort, lbCurSel _ctrlSort], _index]] call jn_fnc_arsenal;
+
+		uiNamespace setVariable ["jna_userInput", false];
+		["ListSelectCurrent", [_display, _index]] call jn_fnc_arsenal;
+
+		private _searchString = toLower trim ctrlText (_display displayCtrl ([A3A_IDC_SEARCH_RIGHT_EDIT, A3A_IDC_SEARCH_LEFT_EDIT] select (_index in [IDCS_LEFT])));
+		_ctrlList setVariable ["A3U_filtered", _searchString isNotEqualTo ""];
+	};
+
 	///////////////////////////////////////////////////////////////////////////////////////////
 	case "ReplaceBaseItems":{
 
@@ -793,6 +914,7 @@ switch _mode do {
 		_index = _this select 1;
 		_ctrlList = _display displayctrl (IDC_RSCDISPLAYARSENAL_LIST + _index);
 		//create list
+		["SearchReset",[_display displayCtrl A3A_IDC_SEARCH_LEFT_BUTTON]] call jn_fnc_arsenal;
 		["UpdateListGui",[ _display,_ctrlList,_index]] call jn_fnc_arsenal;
 
 
@@ -944,15 +1066,21 @@ switch _mode do {
 			IDC_RSCDISPLAYARSENAL_FRAMERIGHT,
 			IDC_RSCDISPLAYARSENAL_BACKGROUNDRIGHT
 		];
+		["SearchUpdateVisibility", [_display]] call jn_fnc_arsenal;
 	};
 
 	///////////////////////////////////////////////////////////////////////////////////////////
 	case "TabSelectRight": {
 		private ["_ctrlList","_index","_cursel"];
-		_display = _this select 0;
-		_index = _this select 1;
+		params ["_display", "_index", ["_searchReset", true]];
 		_ctrlList = _display displayctrl (IDC_RSCDISPLAYARSENAL_LIST + _index);
 		_type = (ctrltype _ctrlList == 102);
+
+		// Don't clear the search string from the search bar unless we're switching right-side tabs
+		// since this case is also used to rebuild the list *during* searches
+		if (_searchReset) then {
+			["SearchReset",[_display displayCtrl A3A_IDC_SEARCH_RIGHT_BUTTON]] call jn_fnc_arsenal;
+		};
 
 		_inventory = switch _index do {
 			case IDC_RSCDISPLAYARSENAL_TAB_CARGOMAG: {
@@ -1112,7 +1240,7 @@ switch _mode do {
 					ctrlposition _ctrlTab select 3
 				];
 				_ctrlLineTabRight ctrlcommit 0;
-				ctrlsetfocus _ctrlList;
+				if (_searchReset) then { ctrlsetfocus _ctrlList };
 
 				_ctrlLoadCargo = _display displayctrl IDC_RSCDISPLAYARSENAL_LOADCARGO;
 				_ctrlListPos = ctrlposition _ctrlList;
@@ -1179,6 +1307,7 @@ switch _mode do {
 			_ctrlIconBackground = _display displayctrl (IDC_RSCDISPLAYARSENAL_ICONBACKGROUND + _idc);
 			_ctrlIconBackground ctrlshow _active;
 		} foreach [IDCS_RIGHT];
+		["SearchUpdateVisibility",[_display]] call jn_fnc_arsenal;
 	};
 
 	///////////////////////////////////////////////////////////////////////////////////////////
@@ -1357,7 +1486,7 @@ switch _mode do {
 		{
 			_item = _x select 0;
 			_amount = _x select 1;
-			["CreateItem",[_display,_ctrlList,_index,_item,_amount]] call jn_fnc_arsenal;
+			["CreateItem", [_display,_ctrlList,_index,_item,_amount,true]] call jn_fnc_arsenal;
 		} forEach _inventory;
 
 		//TODO better sorting of scopes gray items?
@@ -1527,11 +1656,9 @@ switch _mode do {
 
 	///////////////////////////////////////////////////////////////////////////////////////////
 	case "CreateItem":{
-		private _display = _this select 0;
-		private _ctrlList = _this select 1;
-		private _index = _this select 2;
-		private _item = _this select 3;			if(_item isEqualTo "")exitWith{};
-		private _amount = _this select 4;
+		params ["_display", "_ctrlList", "_index", "_item", "_amount", ["_rebuild", false]];
+
+		if (_item isEqualTo "") exitWith {};
 
 		private _xCfg = switch _index do {
 			case IDC_RSCDISPLAYARSENAL_TAB_BACKPACK:	{configfile >> "cfgvehicles" 	>> _item};
@@ -1546,6 +1673,17 @@ switch _mode do {
 			default										{configfile >> "cfgweapons" 	>> _item};
 		};
 		private _displayName = gettext (_xCfg >> "displayName");
+		
+		// Skip adding item if it's not in the search results
+		// (only filtered by search results when rebuilding the list)
+		private _searchString = toLower trim ctrlText (_display displayCtrl ([A3A_IDC_SEARCH_RIGHT_EDIT, A3A_IDC_SEARCH_LEFT_EDIT] select (_index in [IDCS_LEFT])));
+		if (
+			_rebuild && {
+			_searchString isNotEqualTo "" && {
+			((toLower _displayName) find _searchString) isEqualTo -1 && {
+			((toLower _item) find _searchString) isEqualTo -1
+		}}}) exitWith {};
+
 		private _dlcName = _xCfg call GETDLC;
 		private _data = str [_item,_amount,_displayName,_dlcName];
 		private _lbAdd = 0;
@@ -2894,6 +3032,9 @@ switch _mode do {
 		_return = false;
 		_ctrlTemplate = _display displayctrl IDC_RSCDISPLAYARSENAL_TEMPLATE_TEMPLATE;
 		_inTemplate = ctrlfade _ctrlTemplate == 0;
+
+		// Skip special keybinds if we're typing in the search bar
+		if (_key != DIK_ESCAPE && {ctrlIDC (focusedCtrl _display) in [A3A_IDC_SEARCH_LEFT_EDIT, A3A_IDC_SEARCH_RIGHT_EDIT]}) exitWith { false };
 
 		switch true do {
 			case (_key == DIK_ESCAPE): {

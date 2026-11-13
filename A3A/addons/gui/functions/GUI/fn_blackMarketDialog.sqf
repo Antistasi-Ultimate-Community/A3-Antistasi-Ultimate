@@ -93,6 +93,58 @@ switch (_mode) do
         _selectedTabCtrl ctrlShow true;
 
         _selectedTab call _fnc_buildTab;
+        ["search", [_selectedTab select 1]] call A3A_fnc_blackMarketDialog;
+    };
+
+    case ("search"):
+    {
+        _params params [["_groupIDC", -1, [0]]];
+
+        private _display = findDisplay A3A_IDD_BLACKMARKETVEHICLEDIALOG;
+        if (isNull _display) exitWith {};
+
+        // not switching tab, get group IDC
+        if (_groupIDC isEqualTo -1) then {
+            private _vehicleType = uiNamespace getVariable ["bm_vehicleTypeBox", controlNull];
+            private _categoryIndex = _vehicleType lbValue (lbCurSel _vehicleType);
+            if (_categoryIndex < 0 || {_categoryIndex >= count _allTabs}) exitWith {};
+            _groupIDC = (_allTabs select _categoryIndex) select 1;
+        };
+
+        // get search text and update search bar icon
+        private _searchString = toLower trim ctrlText A3A_IDC_BLACKMARKETSEARCH_EDITBOX;
+        private _searchActive = _searchString isNotEqualTo "";
+        ctrlSetText [A3A_IDC_BLACKMARKETSEARCH_BUTTON, "\A3\ui_f\data\GUI\RscCommon\RscButtonSearch\" + (["search_start_ca.paa", "search_end_ca.paa"] select (_searchActive))];
+
+        // get matching items
+        private _group = _display displayCtrl _groupIDC;
+        private _items = _group getVariable ["A3U_BM_items", []];
+        private _matches = if (_searchActive) then { _items select {((_x select 1) find _searchString) isNotEqualTo -1} } else { _items };
+
+        // hide non-matching items
+        { (_x select 0) ctrlShow false } forEach (_items - _matches);
+
+        // show matches and recalculate grid positions and padding for all items
+        private _topPadding = [1 * GRID_H, 5 * GRID_H] select (count _matches < 7);
+        {
+            private _itemCtrl = _x select 0;
+            _itemCtrl ctrlSetPosition [
+                7 * GRID_W + ((7 * GRID_W + 44 * GRID_W) * (_forEachIndex mod 3)),
+                (floor (_forEachIndex / 3)) * (38 * GRID_H) + _topPadding,
+                44 * GRID_W,
+                37 * GRID_H
+            ];
+            _itemCtrl ctrlShow true;
+            _itemCtrl ctrlCommit 0;
+        } forEach _matches;
+
+        _group ctrlSetScrollValues [0, -1];
+    };
+
+    case ("clearSearch"):
+    {
+        ctrlSetText [A3A_IDC_BLACKMARKETSEARCH_EDITBOX, ""];
+        ["search"] call A3A_fnc_blackMarketDialog;
     };
 
     case ("onLoad"):
