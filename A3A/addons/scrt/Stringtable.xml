@@ -6754,11 +6754,11 @@
                 <Turkish>Karaborsa Araç İndirimi</Turkish>
             </Key>
             <Key ID="STR_params_blackMarketDiscountVehicle_desc">
-                <Original>Sets the discount percentage applied to vehicles in the black market; higher values reduce purchase cost.</Original>
-                <Russian>Устанавливает процент скидки на технику на черном рынке; более высокие значения снижают стоимость покупки.</Russian>
-                <Chinesesimp>设置黑市车辆的折扣百分比；更高的值降低购买成本。</Chinesesimp>
-                <Korean>암시장에서 차량에 적용되는 할인 비율을 설정합니다. 값이 클수록 구매 비용이 줄어듭니다.</Korean>
-                <French>Définit le pourcentage de remise appliqué aux véhicules sur le marché noir ; des valeurs plus élevées réduisent le coût d'achat.</French>
+                <Original>Sets the discount percentage applied to vehicles in the black market; negative values reduce purchase cost, positive values increase purchase cost.</Original>
+                <Russian>Устанавливает процент скидки на технику на черном рынке; отрицательные значения снижают стоимость покупки, положительные увеличивают стоимость покупки.</Russian>
+                <Chinesesimp>设置黑市车辆的折扣百分比；负值降低购买成本，正值增加购买成本。</Chinesesimp>
+                <Korean>암시장에서 차량에 적용되는 할인 비율을 설정합니다. 값이 음수이면 구매 비용이 줄어들고, 양수이면 구매 비용이 증가합니다.</Korean>
+                <French>Définit le pourcentage de remise appliqué aux véhicules sur le marché noir ; des valeurs négatives réduisent le coût d'achat, des valeurs positives augmentent le coût d'achat.</French>
             </Key>
             <Key ID="STR_params_blackMarketDiscountWeapon">
                 <Original>Black Market Equipment Discount</Original>
@@ -6767,11 +6767,11 @@
                 <Turkish>Karaborsa Ekipman İndirimi</Turkish>
             </Key>
             <Key ID="STR_params_blackMarketDiscountWeapon_desc">
-                <Original>Sets the discount percentage applied to weapons/equipment in the black market.</Original>
-                <Russian>Устанавливает процент скидки на оружие и экипировку на черном рынке; более высокие значения снижают стоимость покупки.</Russian>
-                <Chinesesimp>设置黑市武器/装备的折扣百分比。</Chinesesimp>
-                <Korean>암시장에서 무기/장비에 적용되는 할인 비율을 설정합니다.</Korean>
-                <French>Définit le pourcentage de remise appliqué aux armes/équipements sur le marché noir.</French>
+                <Original>Sets the discount percentage applied to weapons/equipment in the black market; negative values reduce purchase cost, positive values increase purchase cost.</Original>
+                <Russian>Устанавливает процент скидки на оружие и экипировку на черном рынке; отрицательные значения снижают стоимость покупки, положительные увеличивают стоимость покупки.</Russian>
+                <Chinesesimp>设置黑市武器/装备的折扣百分比；负值降低购买成本，正值增加购买成本。</Chinesesimp>
+                <Korean>암시장에서 무기/장비에 적용되는 할인 비율을 설정합니다. 값이 음수이면 구매 비용이 줄어들고, 양수이면 구매 비용이 증가합니다.</Korean>
+                <French>Définit le pourcentage de remise appliqué aux armes/équipements sur le marché noir ; des valeurs négatives réduisent le coût d'achat, des valeurs positives augmentent le coût d'achat.</French>
             </Key>
             <Key ID="STR_params_enableSpectrumDevice">
                 <Original>Enable spectrum device hacking capability (Contact DLC)</Original>
