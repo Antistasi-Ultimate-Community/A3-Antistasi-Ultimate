@@ -116,7 +116,7 @@ if (_sell) exitWith {
 	if (_bbN > 0) then {
 		private _secs = 0;
 		{ if ((_x select 1) == _dealAs && {(_x select 0) == (_shop select 0)}) then { _secs = _secs max ((_x select 4) - time) } } forEach ABZ_myReceipts;
-		_note = format [localize "STR_A3U_Bazaar_Shop_BuyBack", _bbN, _bbPrice, ceil (_secs max 0)] + _note;
+		_note = format [localize "STR_A3U_Bazaar_Shop_BuyBackNote", _bbN, _bbPrice, ceil (_secs max 0)] + _note;
 		_p = _bbPrice;
 	};
 	[format [
