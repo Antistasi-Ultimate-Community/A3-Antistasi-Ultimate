@@ -24,6 +24,7 @@ options.ignore = [
 
 [lints.stringtables]
 usage = false # Enabling causes HEMTT to crash; accept that we'll just have unused keys
+no_newlines_in_tags = false # Many intentional whitespaced stringtable keys, no point in refactoring code around all of them
 
 [preprocessor]
 runtime_macros = true
