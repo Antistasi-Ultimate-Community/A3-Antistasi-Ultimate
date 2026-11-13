@@ -85,7 +85,7 @@ private _playersNear = (call SCRT_fnc_misc_getRebelPlayers) findIf {
 };
 
 if (_playersNear != -1) exitWith {
-    Info_1("Skipping town battle at %1 because a rebel player is within 500m.", _mrkDest);
+    Info_1("Skipping town battle at %1 because a rebel player is within 500m.",_mrkDest);
 };
 
 private _faction = Faction(_side);
