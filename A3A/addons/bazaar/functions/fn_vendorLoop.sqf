@@ -38,7 +38,7 @@ while { true } do {
 			};
 		};
 		if (count ABZ_vendors > _want) then {
-			private _e = ABZ_vendors select ((count ABZ_vendors) - 1);
+			private _e = ABZ_vendors select -1;
 			[_e select 0] call ABZ_fnc_vendorDespawn;
 			deleteMarker format ["ABZ_vendor_%1", _e select 0];
 			ABZ_vendors deleteAt ((count ABZ_vendors) - 1);
