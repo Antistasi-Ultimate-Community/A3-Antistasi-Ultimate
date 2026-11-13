@@ -115,7 +115,7 @@ private _fnc_load = {
         if (_cls == "" || {_cnt <= 0} || {count _pos < 2}) then { continue };
         // the mod that made it is gone, or it's something traders no longer deal
         // in (a loose disposable rocket, a preset pack) - same rule as the stock
-        if !(([_cls] call ABZ_fnc_sellClass) isEqualTo _cls) then { continue };
+        if (([_cls] call ABZ_fnc_sellClass) isNotEqualTo _cls) then { continue };
         [_pos, _cls, _cnt, objNull] call ABZ_fnc_serverDeliverCrate;
         _m = _m + 1;
     } forEach _c;

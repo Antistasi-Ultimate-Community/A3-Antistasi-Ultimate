@@ -20,7 +20,7 @@ _plankObject addAction [
         if !(isNull objectParent _caller) exitWith {};
         if !(_caller call A3A_fnc_isEngineer) exitWith {};
         if !([_caller] call A3A_fnc_canFight) exitWith {};
-        if !(_caller distance _target < 10) exitWith {};
+        if (_caller distance _target >= 10) exitWith {};
 
         [
             localize "STR_A3A_reinf_build_actionProgress",
