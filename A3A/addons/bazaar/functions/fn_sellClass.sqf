@@ -32,7 +32,7 @@ if (!isNil "_ll") then {
 	if (_ll isEqualType createHashMap) then {
 		_carry = _ll getOrDefault [_c, _ll getOrDefault [toLower _c, ""]];
 	} else {
-		if (_ll isEqualType locationNull || {_ll isEqualType objNull}) then { _carry = _ll getVariable [_c, ""] };
+		if (_ll isEqualTypeAny [locationNull, objNull]) then { _carry = _ll getVariable [_c, ""] };
 	};
 	if (_carry isEqualType "" && {_carry != ""} && {isClass (configFile >> "CfgWeapons" >> _carry)}) then { _c = _carry };
 };
