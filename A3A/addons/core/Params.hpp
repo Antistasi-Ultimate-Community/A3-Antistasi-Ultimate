@@ -2348,16 +2348,16 @@ class Params
     {
         title = $STR_params_blackMarketDiscountVehicle;
         tooltip = $STR_params_blackMarketDiscountVehicle_desc;
-        values[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%"};
+        values[] = {-10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+        texts[] = {"+100%", "+90%", "+80%", "+70%", "+60%", "+50%", "+40%", "+30%", "+20%", "+10%", $STR_antistasi_dialogs_generic_button_no_text, "-10%", "-20%", "-30%", "-40%", "-50%", "-60%", "-70%", "-80%", "-90%"};
         default = 0;
     };
     class A3U_blackMarketDiscountWeapon : BMParams
     {
         title = $STR_params_blackMarketDiscountWeapon;
         tooltip = $STR_params_blackMarketDiscountWeapon_desc;
-        values[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%"};
+        values[] = {-10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+        texts[] = {"+100%", "+90%", "+80%", "+70%", "+60%", "+50%", "+40%", "+30%", "+20%", "+10%", $STR_antistasi_dialogs_generic_button_no_text, "-10%", "-20%", "-30%", "-40%", "-50%", "-60%", "-70%", "-80%", "-90%"};
         default = 0;
     };
 
