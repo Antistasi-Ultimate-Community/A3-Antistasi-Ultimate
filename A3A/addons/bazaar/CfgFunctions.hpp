@@ -35,6 +35,10 @@ class CfgFunctions
 			class isUnlocked {};
 			class rollStock {};
 			class buildVehPool {};
+			class vehPoolFromBlackMarket {};
+			class vehPoolFromFactions {};
+			class vehPoolFromConfigs {};
+			class vehValid {};
 			class vehReq {};
 			class vehPrice {};
 			class vehResale {};
@@ -61,6 +65,9 @@ class CfgFunctions
 			class vendorMarker {};
 			class vendorLoop {};
 			class vendorTick {};
+			// --- Legacy Trader / Arms Dealer ---
+			class legacyVendorRestock {};
+			class legacyVendorSetup {};
 
 			// --- trade (server) ---
 			class serverCanTrade {};

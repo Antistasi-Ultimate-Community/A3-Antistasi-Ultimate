@@ -2,6 +2,12 @@
 // Runs on every machine before mission init.
 #include "dialogues\ids.inc"
 
+// vendor to deal in all configured items, but with limited stock
+// analog to old arms dealer / trader
+ABZ_legacyVendorId = 9999;
+ABZ_legacyVendorEntry = [];
+ABZ_legacyVendor = objNull;
+
 ABZ_vendors = [];		// server: vendor entries (plain arrays - see fn_vendorCreate for the layout)
 ABZ_vendorObjs = createHashMap;	// server: vendor id -> [unit, [props]]
 ABZ_crates = [];		// server: live sealed bulk crates in the world
@@ -61,7 +67,14 @@ ABZ_vehCats = createHashMapFromArray [
 	["APC", ["APC / IFV", 2, 15, true]],
 	["HELI", ["Helicopter", 2, 10, true]],
 	["AA", ["Anti-air vehicle", 3, 4, true]],
-	["TANK", ["Tank", 3, 6, true]]
+	["TANK", ["Tank", 3, 6, true]],
+	["PLANE", ["Plane", 3, 5, true]],
+	["UAV", ["Drone", 2, 8, false]],
+	["STATICMG", ["Static MG", 0, 10, false]],
+	["STATICAA", ["Static AA", 2, 5, true]],
+	["STATICAT", ["Static AT", 1, 5, true]],
+	["STATICMORTAR", ["Static Mortar", 1, 5, false]],
+	["ARTILLERY", ["Artillery", 3, 3, true]]
 ];
 
 // --- CBA event network layer ---
@@ -237,6 +250,14 @@ private _abzReprice = {
 ] call CBA_fnc_addSetting;
 
 [
+	"ABZ_vehStockSource", "LIST",
+	["$STR_A3U_Bazaar_Settings_VehStockSource", "$STR_A3U_Bazaar_Settings_VehStockSource_Tooltip"],
+	"Antistasi Bazaar|Stock",
+	[[0, 1, 2], ["$STR_A3U_Bazaar_Settings_StockSource_Factions", "$STR_A3U_Bazaar_Settings_StockSource_Blackmarket", "$STR_A3U_Bazaar_Settings_StockSource_Everything"], 0],
+	1, {}
+] call CBA_fnc_addSetting;
+
+[
 	"ABZ_slotCount", "SLIDER",
 	["$STR_A3U_Bazaar_Settings_SlotCount", "$STR_A3U_Bazaar_Settings_SlotCount_Tooltip"],
 	"Antistasi Bazaar|Stock",
@@ -249,6 +270,14 @@ private _abzReprice = {
 	["$STR_A3U_Bazaar_Settings_BulkSlots", "$STR_A3U_Bazaar_Settings_BulkSlots_Tooltip"],
 	"Antistasi Bazaar|Stock",
 	[0, 4, 2, 0],
+	1, {}
+] call CBA_fnc_addSetting;
+
+[
+	"ABZ_legacyVendorBulkSlots", "SLIDER",
+	["$STR_A3U_Bazaar_Settings_LegacyVendorBulkSlots", "$STR_A3U_Bazaar_Settings_LegacyVendorBulkSlots_Tooltip"],
+	"Antistasi Bazaar|Stock",
+	[0, 50, 12, 0],
 	1, {}
 ] call CBA_fnc_addSetting;
 
