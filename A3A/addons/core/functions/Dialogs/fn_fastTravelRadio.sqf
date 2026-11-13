@@ -198,40 +198,34 @@ private _movedUnits = units _groupX;
 private _ftUnits = [];
 {
 	private _unit = _x;
-	if (!isPlayer _unit or {_unit == player}) then {
-		_unit allowDamage false;
-		_ftUnits pushBack _unit;
-		if !(isNull objectParent _unit) then {
-			if (driver vehicle _unit == _unit) then {
-				_radiusX = 10;
-				private _roads = [];
-				while {true} do {
-					_roads = _positionX nearRoads _radiusX;
-					if (count _roads > 0) exitWith {};
-					_radiusX = _radiusX + 10;
-				};
-				_road = _roads select 0;
-				private _pos = position _road findEmptyPosition [(sizeOf typeOf vehicle _unit) / 2, 100, typeOf (vehicle _unit)];
-				if (_pos isEqualTo []) exitWith {
-					[localize "STR_A3A_Dialogs_fast_travel_header", localize "STR_A3A_Dialogs_fast_travel_no_empty_position"] call SCRT_fnc_misc_deniedHint
-				};
-				vehicle _unit setPos _pos;
+	if (isPlayer _unit && {_unit isNotEqualTo player}) then { continue };
+
+	_unit allowDamage false;
+	_ftUnits pushBack _unit;
+
+	private _vehicle = objectParent _unit;
+	if (!isNull _vehicle) then {
+		if (driver _vehicle isEqualTo _unit) then {
+			private _pos = ([_positionX, typeOf _vehicle, 100] call SCRT_fnc_common_findSafePositionForVehicle) select 0;
+			if (isNil "_pos" || {_pos isEqualTo []}) exitWith {
+				[localize "STR_A3A_Dialogs_fast_travel_header", localize "STR_A3A_Dialogs_fast_travel_no_empty_position"] call SCRT_fnc_misc_deniedHint
 			};
-			if ((vehicle _unit isKindOf "StaticWeapon") and (!isPlayer (leader _unit))) then {
-				private _pos = _positionX findEmptyPosition [10,100,typeOf (vehicle _unit)];
-				vehicle _unit setPosATL _pos;
-			};
+			_vehicle setPos _pos;
+		};
+		if ((_vehicle isKindOf "StaticWeapon") and (!isPlayer (leader _unit))) then {
+			private _pos = _positionX findEmptyPosition [10,100,typeOf _vehicle];
+			_vehicle setPosATL _pos;
+		};
+	} else {
+		if (!(_unit getVariable ["incapacitated",false])) then {
+			_positionX = _positionX findEmptyPosition [1,50,typeOf _unit];
+			_unit setPosATL _positionX;
+			if (isPlayer leader _unit) then {_unit setVariable ["rearming",false]};
+			_unit doWatch objNull;
+			_unit doFollow leader _unit;
 		} else {
-			if (!(_unit getVariable ["incapacitated",false])) then {
-				_positionX = _positionX findEmptyPosition [1,50,typeOf _unit];
-				_unit setPosATL _positionX;
-				if (isPlayer leader _unit) then {_unit setVariable ["rearming",false]};
-				_unit doWatch objNull;
-				_unit doFollow leader _unit;
-			} else {
-				_positionX = _positionX findEmptyPosition [1,50,typeOf _unit];
-				_unit setPosATL _positionX;
-			};
+			_positionX = _positionX findEmptyPosition [1,50,typeOf _unit];
+			_unit setPosATL _positionX;
 		};
 	};
 } forEach _movedUnits;

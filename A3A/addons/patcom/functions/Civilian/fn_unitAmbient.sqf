@@ -43,7 +43,7 @@ if (_unit isEqualTo ObjNull) exitWith {ObjNull};
 	while { (alive _unit) } do {
 		private _combo = selectRandom (_ambientSounds);
 
-        [_unit, _combo#0, _combo#1, _combo#2] call A3A_fnc_unitAmbientPlay;
+        if (isNull objectParent _unit) then { [_unit, _combo#0, _combo#1, _combo#2] call A3A_fnc_unitAmbientPlay };
  
 		sleep (random 1800);
 

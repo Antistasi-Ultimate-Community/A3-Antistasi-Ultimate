@@ -3,7 +3,7 @@ FIX_LINE_NUMBERS()
 #define SPACING     1
 
 params ["_marker", "_placementMarker"];
-
+scopeName "main";
 private ["_vehicleMarker", "_heliMarker", "_hangarMarker", "_mortarMarker", "_planeMarker", "_flagMarker", "_ammoMarker", "_markerPrefix", "_markerSplit", "_first", "_fullName"];
 
 _vehicleMarker = [];
@@ -206,6 +206,8 @@ _heliSpawns = [];
 
 _planeSpawns = [];
 {
+    private _hangar = _x;
+    { if ([_hangar, _x] call A3A_fnc_isWithinMarkerArea) then { breakTo "main" } } forEach _hangarMarker;
     _pos = getPos _x;
     _pos set [2, ((_pos select 2) + 0.1) max 0.1];
     _dir = direction _x;
