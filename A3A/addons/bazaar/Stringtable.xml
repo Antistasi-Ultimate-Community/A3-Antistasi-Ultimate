@@ -1007,7 +1007,7 @@
             <Key ID="STR_A3U_Bazaar_Shop_SellInfoFromBox">
                 <Original>Straight out of the %1 (%2m away). Weapons are stripped by the trader - fitted parts and loaded magazines go back in. Part-used magazines are paid by the round. Uniforms, vests and backpacks: take them out to sell them. What you sell goes on the table.</Original>
             </Key>
-            <Key ID="STR_A3U_Bazaar_Shop_BuyBack">
+            <Key ID="STR_A3U_Bazaar_Shop_BuyBackNote">
                 <Original>&lt;t color='#9fffe6'&gt;BUY-BACK: you bought %1 of these here moments ago - he takes them back at the full $%2 you paid (whole items / full magazines) for another %3s.&lt;/t&gt; Any more than that sell at the normal price.</Original>
             </Key>
             <Key ID="STR_A3U_Bazaar_Shop_TraderPays">
