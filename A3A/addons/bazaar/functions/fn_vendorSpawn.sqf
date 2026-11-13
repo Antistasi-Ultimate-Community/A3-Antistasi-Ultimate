@@ -40,7 +40,7 @@ _u addEventHandler ["Local", {
 		[_unit] call ABZ_fnc_vendorPrep;
 	} else {
 		if (isServer && {!isNull group _unit}) then {
-			Warning_2("[ABZ] Trader #%1 left the server (owner %2) - taking him back",_unit getVariable ["ABZ_vendorId", -1],owner _unit);
+			Warning_2("[ABZ] Trader #%1 left the server (owner %2) - taking him back",_unit getVariable [ARR_2("ABZ_vendorId",-1)],owner _unit);
 			(group _unit) setGroupOwner 2;
 		};
 	};
