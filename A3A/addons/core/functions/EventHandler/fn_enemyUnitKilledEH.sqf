@@ -64,8 +64,10 @@ if (side (group _killer) == teamPlayer) then
         Debug("aggroEvent | Rebels killed a surrendered unit");
 		if (_victimSide == Occupants) then
 		{
-			[0,-2,getPos _victim] remoteExec ["A3A_fnc_citySupportChange",2];
-		};
+			[0,-1,getPos _victim] remoteExec ["A3A_fnc_citySupportChange",2];
+		} else {
+            [0,-2,getPos _victim] remoteExec ["A3A_fnc_citySupportChange",2];
+        };
 
         if (!_isRival) then {
             [_victimSide, 20, 30] remoteExec ["A3A_fnc_addAggression", 2];
@@ -73,7 +75,7 @@ if (side (group _killer) == teamPlayer) then
 	}
 	else
 	{
-		[-1,1,getPos _victim] remoteExec ["A3A_fnc_citySupportChange",2];
+		// [0,0.25,getPos _victim, false] remoteExec ["A3A_fnc_citySupportChange",2];
         if (!_isRival) then {
             [_victimSide, 0.5, 45] remoteExec ["A3A_fnc_addAggression", 2];
         };
@@ -86,12 +88,12 @@ else
 {
 	if (_victimSide == Occupants) then
 	{
-		[-0.25,0,getPos _victim] remoteExec ["A3A_fnc_citySupportChange",2];
+		[-0.25,0,getPos _victim, false] remoteExec ["A3A_fnc_citySupportChange",2];
 	}
 	else
 	{
         if (!_isRival) then {
-            [0.25,0,getPos _victim] remoteExec ["A3A_fnc_citySupportChange",2];
+            [0.25,0,getPos _victim, false] remoteExec ["A3A_fnc_citySupportChange",2];
         } else {
             [random [3,4,5], 30] remoteExec ["SCRT_fnc_rivals_reduceActivity",2];
         };

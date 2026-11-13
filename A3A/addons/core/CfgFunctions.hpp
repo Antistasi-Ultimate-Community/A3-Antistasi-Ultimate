@@ -128,6 +128,7 @@ class CfgFunctions
             class citiesToCivPatrol {};
             class cityChangeSide {};
             class citySupportChange {};
+            class citySupportReset {};
             class commsMP {};
             class createBreachChargeText {};
             class createPetros {};
@@ -429,6 +430,13 @@ class CfgFunctions
             class modBlacklist {};
             class playerMarkers {};
             class prepareMarkerArrays {};
+            class resourceCheck_BM {};
+            class resourceCheck_cities {};
+            class resourceCheck_initBM {};
+            class resourceCheck_main {};
+            class resourceCheck_misc {};
+            class resourceCheck_missions {};
+            class resourceCheck_resources {};
             class resourcecheck {};
             class setGameParameters {};
             class tags {};

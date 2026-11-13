@@ -75,7 +75,7 @@ switch (true) do {
 		publicVariable "markersX";
 		spawner setVariable [_marker,2,true];
 		[_taskId, "outpostTask", "SUCCEEDED"] call A3A_fnc_taskSetState;
-		_nul = [-5,5,_position] remoteExec ["A3A_fnc_citySupportChange",2];
+		_nul = [0,5,_position] remoteExec ["A3A_fnc_citySupportChange",2];
 		_marker setMarkerType "A3AU_antitank_mrk";
 		_marker setMarkerColor colorTeamPlayer;
 		_marker setMarkerText "";

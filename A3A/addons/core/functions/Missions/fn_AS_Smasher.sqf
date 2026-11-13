@@ -142,7 +142,7 @@ if (dateToNumber date > _dateLimitNum) then {
 		} forEach (call SCRT_fnc_misc_getRebelPlayers);
 	} else {
 		[0, 1000] remoteExec ["A3A_fnc_resourcesFIA",2];
-		[0, 10, _positionX] remoteExec ["A3A_fnc_citySupportChange",2];
+		[0, 20, _positionX] remoteExec ["A3A_fnc_citySupportChange",2];
 
 		{ 
 			[40, _x] call A3A_fnc_addScorePlayer;

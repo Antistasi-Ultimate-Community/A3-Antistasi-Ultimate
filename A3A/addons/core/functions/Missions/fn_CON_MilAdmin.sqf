@@ -41,11 +41,11 @@ waitUntil {sleep 1; dateToNumber date > _dateLimitNum or {sidesX getVariable [_m
 if (dateToNumber date > _dateLimitNum) then {
 	[_taskId, "CON", "FAILED"] call A3A_fnc_taskSetState;
 	if (_difficultX) then {
-		[25,0,_milAdministrationPos] remoteExec ["A3A_fnc_citySupportChange",2];
+		[20,0,_milAdministrationPos] remoteExec ["A3A_fnc_citySupportChange",2];
 		[-1800, _markerSide] remoteExec ["A3A_fnc_timingCA",2];
 		[-20,theBoss] call A3A_fnc_addScorePlayer;
 	} else {
-		[5,0,_milAdministrationPos] remoteExec ["A3A_fnc_citySupportChange",2];
+		[10,0,_milAdministrationPos] remoteExec ["A3A_fnc_citySupportChange",2];
 		[-600, _markerSide] remoteExec ["A3A_fnc_timingCA",2];
 		[-10,theBoss] call A3A_fnc_addScorePlayer;
 	};
@@ -54,7 +54,7 @@ if (dateToNumber date > _dateLimitNum) then {
 	[_taskId, "CON", "SUCCEEDED"] call A3A_fnc_taskSetState;
 	if (_difficultX) then {
 		[0,800] remoteExec ["A3A_fnc_resourcesFIA",2];
-		[-25,0,_milAdministrationPos] remoteExec ["A3A_fnc_citySupportChange",2];
+		[0,20,_milAdministrationPos] remoteExec ["A3A_fnc_citySupportChange",2];
 		[1800, _markerSide] remoteExec ["A3A_fnc_timingCA",2];
 		{ 
 			[600, _x] call A3A_fnc_addMoneyPlayer;
@@ -64,7 +64,7 @@ if (dateToNumber date > _dateLimitNum) then {
         [200,theBoss, true] call A3A_fnc_addMoneyPlayer;
 	} else {
 		[0,600] remoteExec ["A3A_fnc_resourcesFIA",2];
-		[-20,0,_milAdministrationPos] remoteExec ["A3A_fnc_citySupportChange",2];
+		[0,10,_milAdministrationPos] remoteExec ["A3A_fnc_citySupportChange",2];
 		[1200, _markerSide] remoteExec ["A3A_fnc_timingCA",2];
 		{ 
 			[400, _x] call A3A_fnc_addMoneyPlayer;

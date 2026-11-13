@@ -86,7 +86,7 @@ if (dateToNumber date > _dateLimitNum || !alive _truckX) then {
     private _countX = 120 * _bonus;
     private _reveal = [_positionX, Occupants] call A3A_fnc_calculateSupportCallReveal;
     [Occupants, _truckX, _positionX, 4, _reveal] remoteExec ["A3A_fnc_requestSupport", 2];
-    [10 * _bonus, -20 * _bonus, _markerX] remoteExec ["A3A_fnc_citySupportChange", 2];
+    [10 * _bonus, 0, _markerX] remoteExec ["A3A_fnc_citySupportChange", 2];
     ["TaskFailed", ["", format [localize "STR_A3A_fn_mission_log_bank_alert", _nameDest]]] remoteExec ["BIS_fnc_showNotification", Occupants];
 
     // Removing disguise from players
