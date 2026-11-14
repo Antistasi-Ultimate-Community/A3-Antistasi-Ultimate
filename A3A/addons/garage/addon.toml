@@ -1,0 +1,7 @@
+# Disable rapify so HEMTT doesn't throw a fit over the garage UI's class property expressions
+#
+# HR Garage still produces about 300ea warnings and help messages, but these will be dealt with in due time
+#    (either via upstream change to garage source, or replacement of garage entirely)
+
+[rapify]
+enabled = false
