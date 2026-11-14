@@ -6,8 +6,8 @@ class Params
         class ParamClass : ParentClass // all fields are required unless specified otherwise
         {
             type = "TypeString"; // Used to group parameters in the GUI. Required for section titles, can be inherited for actual parameters.
-            title = $STR_params_name; // stringtable entry for the parameter or section name
-            tooltip = $STR_params_name_desc; // stringtable entry for the parameter tooltip (optional)
+            title = "$STR_params_name"; // stringtable entry for the parameter or section name
+            tooltip = "$STR_params_name_desc"; // stringtable entry for the parameter tooltip (optional)
             values[] = {0,1,2,3}; // integer values for the actual parameter value. If values is {0,1} they will be converted to boolean when loading the save.
             texts[] = {}; // string values for the parameter options, shown in the setup GUI dropdown
             default = 0; // default integer value for the parameter
@@ -15,7 +15,7 @@ class Params
             lockOnSave = 0; // Set to 1 if parameter should not be changeable after saving a game (optional, default 0)
             lockInGame = 0; // Set to 1 if parameter value should not be changeable while in-game (optional, default 0)
             lockCondition = "false;"; // SQF code run while setup GUI is open that returns true/false to determine if the parameter should be changeable (optional, default "false;" (meaning, not locked))
-            lockConditionTooltip = $STR_antistasi_dialogs_setup_param_locked_bycondition; // stringtable entry for the tooltip to show when the parameter is locked by the lockCondition (optional)
+            lockConditionTooltip = "$STR_antistasi_dialogs_setup_param_locked_bycondition"; // stringtable entry for the tooltip to show when the parameter is locked by the lockCondition (optional)
             class dependencies // this block is used to define which other parameters depend on this one, and what values they should take when this parameter is set to a certain value (optional)
             {
                 class AnotherParameterName // the name of the parameter this one affects (must match the class name in this file){
@@ -23,7 +23,7 @@ class Params
                     value = -1; // the value of this parameter that triggers the dependency (required if using this block)
                     dependentValue = 0; // the value to set the dependent parameter to when this parameter is set to 'value' (optional, default nil)
                     lockedByDependency = 1; // set to 1 if the dependent parameter should be locked when this dependency is active (optional, default 0)
-                    dependencyTooltip = $STR_antistasi_dialogs_setup_param_locked_bydependency; // stringtable entry for the tooltip to show when the dependent parameter is locked by this dependency (optional)
+                    dependencyTooltip = "$STR_antistasi_dialogs_setup_param_locked_bydependency"; // stringtable entry for the tooltip to show when the dependent parameter is locked by this dependency (optional)
                 };
             };
             class difficulty // this block is used to define different default values based on desired difficulty and amount of players (optional)
@@ -63,15 +63,15 @@ class Params
         };
         class Spacer102: SuperDuperCoolParams
         {
-            title = $STR_SuperDuperCool_params_name;
+            title = "$STR_SuperDuperCool_params_name";
             values[] = {};
             texts[] = {};
             default = 0;
         };
         class aReallyCoolParam: SuperDuperCoolParams
         {
-            title = $STR_SuperDuperCool_new_param;
-            tooltip = $STR_SuperDuperCool_new_param_desc;
+            title = "$STR_SuperDuperCool_new_param";
+            tooltip = "$STR_SuperDuperCool_new_param_desc";
             values[] = {0, 69, 420};
             texts[] = {"0","69","420"};
             default = 69;
@@ -135,18 +135,18 @@ class Params
     class ScenarioParams : BasicParams
     {
         type = "Scenario";
-        title = $STR_params_scenarioParams;
-        //tooltip = $STR_params_scenarioParams_desc;
+        title = "$STR_params_scenarioParams";
+        //tooltip = "$STR_params_scenarioParams_desc";
         values[] = {};
         texts[] = {};
         default = 0;
     };
     class gameMode: ScenarioParams
     {
-        title = $STR_params_game_mode_title;
-        tooltip = $STR_params_game_mode_desc;
+        title = "$STR_params_game_mode_title";
+        tooltip = "$STR_params_game_mode_desc";
         values[] = {1,2,3};
-        texts[] = {$STR_params_game_mode_1,$STR_params_game_mode_2,$STR_params_game_mode_3};
+        texts[] = {"$STR_params_game_mode_1","$STR_params_game_mode_2","$STR_params_game_mode_3"};
         default = 1;
         lockOnSave = 1;
         lockInGame = 1;
@@ -162,10 +162,10 @@ class Params
     };
     class areRivalsEnabled: ScenarioParams
     {
-        title = $STR_params_areRivalsEnabled;
-        tooltip = $STR_params_areRivalsEnabled_desc;
+        title = "$STR_params_areRivalsEnabled";
+        tooltip = "$STR_params_areRivalsEnabled_desc";
         values[] = {0,1};
-        texts[] = {$STR_params_areRivalsEnabled_0, $STR_antistasi_dialogs_generic_button_yes_text};
+        texts[] = {"$STR_params_areRivalsEnabled_0", "$STR_antistasi_dialogs_generic_button_yes_text"};
         class difficulty
         {
             class solo
@@ -191,10 +191,10 @@ class Params
     };
     class rivalsDifficulty: ScenarioParams
     {
-        title = $STR_params_server_riv_difficulty;
-        tooltip = $STR_params_server_riv_difficulty_desc;
+        title = "$STR_params_server_riv_difficulty";
+        tooltip = "$STR_params_server_riv_difficulty_desc";
         values[] = {1,2,3};
-        texts[] = {$STR_params_server_riv_difficulty_easy, $STR_params_server_riv_difficulty_medium, $STR_params_server_riv_difficulty_hard};
+        texts[] = {"$STR_params_server_riv_difficulty_easy", "$STR_params_server_riv_difficulty_medium", "$STR_params_server_riv_difficulty_hard"};
         class difficulty
         {
             class solo
@@ -211,10 +211,10 @@ class Params
     };
     class victoryCondition: ScenarioParams
     {
-        title = $STR_A3AU_victory_condition;
-        tooltip = $STR_A3AU_victory_condition_desc;
+        title = "$STR_A3AU_victory_condition";
+        tooltip = "$STR_A3AU_victory_condition_desc";
         values[] = {0,1,2,3,4};
-        texts[] = {$STR_A3AU_normal_victory,$STR_A3AU_total_victory,$STR_A3AU_economic_victory,$STR_A3AU_logistical_victory,$STR_A3AU_political_victory};
+        texts[] = {"$STR_A3AU_normal_victory","$STR_A3AU_total_victory","$STR_A3AU_economic_victory","$STR_A3AU_logistical_victory","$STR_A3AU_political_victory"};
         class difficulty
         {
             class solo
@@ -231,10 +231,10 @@ class Params
     };
     class lossCondition: ScenarioParams
     {
-        title = $STR_A3AU_loss_condition;
-        tooltip = $STR_A3AU_loss_condition_desc;
+        title = "$STR_A3AU_loss_condition";
+        tooltip = "$STR_A3AU_loss_condition_desc";
         values[] = {0,1,2,3};
-        texts[] = {$STR_A3AU_loss_condition_pop_death,$STR_A3AU_loss_condition_hr,$STR_A3AU_loss_condition_money,$STR_A3AU_loss_condition_all};
+        texts[] = {"$STR_A3AU_loss_condition_pop_death","$STR_A3AU_loss_condition_hr","$STR_A3AU_loss_condition_money","$STR_A3AU_loss_condition_all"};
         class difficulty
         {
             class solo
@@ -253,18 +253,18 @@ class Params
     class areRandomEventsEnabled: ScenarioParams
     {
         attr[] = {"server"};
-        title = $STR_params_randomEvents;
-        tooltip = $STR_params_randomEvents_desc;
+        title = "$STR_params_randomEvents";
+        tooltip = "$STR_params_randomEvents_desc";
         values[] = {0,1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        texts[] = {"$STR_antistasi_dialogs_generic_button_no_text", "$STR_antistasi_dialogs_generic_button_yes_text"};
         default = 1;
     };
     class createAmbientSounds: ScenarioParams
     {
-        title = $STR_A3AU_ambient_sounds;
-        tooltip = $STR_A3AU_ambient_sounds;
+        title = "$STR_A3AU_ambient_sounds";
+        tooltip = "$STR_A3AU_ambient_sounds";
         values[] = {0,1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
+        texts[] = {"$STR_antistasi_dialogs_generic_button_no_text","$STR_antistasi_dialogs_generic_button_yes_text"};
         default = 1;
     };
     class MemberParamsSpacer : BasicParams
@@ -274,8 +274,8 @@ class Params
     class MemberParams : BasicParams
     {
         type = "Member";
-        title = $STR_params_member;
-        //tooltip = $STR_params_member_desc;
+        title = "$STR_params_member";
+        //tooltip = "$STR_params_member_desc";
         values[] = {};
         texts[] = {};
         default = 0;
@@ -283,10 +283,10 @@ class Params
     };
     class membershipEnabled: MemberParams
     {
-        title = $STR_params_server_membership_title;
-        tooltip = $STR_params_server_membership_desc;
+        title = "$STR_params_server_membership_title";
+        tooltip = "$STR_params_server_membership_desc";
         values[] = {0,1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        texts[] = {"$STR_antistasi_dialogs_generic_button_no_text", "$STR_antistasi_dialogs_generic_button_yes_text"};
         class difficulty
         {
             class solo
@@ -308,18 +308,18 @@ class Params
     };
     class A3A_guestCommander: MemberParams
     {
-        title = $STR_params_guestCommander;
-        tooltip = $STR_params_guestCommander_desc;
+        title = "$STR_params_guestCommander";
+        tooltip = "$STR_params_guestCommander_desc";
         values[] = {0,1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        texts[] = {"$STR_antistasi_dialogs_generic_button_no_text", "$STR_antistasi_dialogs_generic_button_yes_text"};
         default = 1;
     };
     class tkPunish: MemberParams
     {
-        title = $STR_params_server_teamkill_title;
-        tooltip = $STR_params_server_teamkill_desc;
+        title = "$STR_params_server_teamkill_title";
+        tooltip = "$STR_params_server_teamkill_desc";
         values[] = {0,1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        texts[] = {"$STR_antistasi_dialogs_generic_button_no_text", "$STR_antistasi_dialogs_generic_button_yes_text"};
         class difficulty
         {
             class solo
@@ -341,36 +341,36 @@ class Params
     class ScriptParams : BasicParams
     {
         type = "Script";
-        title = $STR_params_scriptParams;
-        //tooltip = $STR_params_scriptParams_desc;
+        title = "$STR_params_scriptParams";
+        //tooltip = "$STR_params_scriptParams_desc";
         values[] = {};
         texts[] = {};
         default = 0;
     };
     class magRepack: ScriptParams
     {
-        title = $STR_params_magRepack;
-        tooltip = $STR_params_magRepack_desc;
+        title = "$STR_params_magRepack";
+        tooltip = "$STR_params_magRepack_desc";
         values[] = {0,1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
+        texts[] = {"$STR_antistasi_dialogs_generic_button_no_text","$STR_antistasi_dialogs_generic_button_yes_text"};
         default = 1;
         lockInGame = 1;
     };
     class RRTurretMagazines: ScriptParams
     {
-        title = $STR_params_ReloadRepackTurretMagazines;
-        tooltip = $STR_params_ReloadRepackTurretMagazines_desc;
+        title = "$STR_params_ReloadRepackTurretMagazines";
+        tooltip = "$STR_params_ReloadRepackTurretMagazines_desc";
         values[] = {0,1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
+        texts[] = {"$STR_antistasi_dialogs_generic_button_no_text","$STR_antistasi_dialogs_generic_button_yes_text"};
         default = 0;
         lockInGame = 1;
     };
     class newCarTowing: ScriptParams
     {
-        title = $STR_params_newCarTowing;
-        tooltip = $STR_params_newCarTowing_desc;
+        title = "$STR_params_newCarTowing";
+        tooltip = "$STR_params_newCarTowing_desc";
         values[] = {0,1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
+        texts[] = {"$STR_antistasi_dialogs_generic_button_no_text","$STR_antistasi_dialogs_generic_button_yes_text"};
         default = 1;
     };
     class TimerParamsSpacer : BasicParams
@@ -380,18 +380,18 @@ class Params
     class TimerParams : BasicParams
     {
         type = "Timer";
-        title = $STR_params_timerParams;
-        //tooltip = $STR_params_timerParams_desc;
+        title = "$STR_params_timerParams";
+        //tooltip = "$STR_params_timerParams_desc";
         values[] = {};
         texts[] = {};
         default = 0;
     };
     class autoSave: TimerParams
     {
-        title = $STR_params_autosave_title;
-        tooltip = $STR_params_autosave_desc;
+        title = "$STR_params_autosave_title";
+        tooltip = "$STR_params_autosave_desc";
         values[] = {0,1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
+        texts[] = {"$STR_antistasi_dialogs_generic_button_no_text","$STR_antistasi_dialogs_generic_button_yes_text"};
         default = 1;
         class dependencies
         {
@@ -404,18 +404,18 @@ class Params
     };
     class autoSaveInterval: TimerParams
     {
-        title = $STR_params_time_between_autosave_title;
-        tooltip = $STR_params_time_between_autosave_desc;
+        title = "$STR_params_time_between_autosave_title";
+        tooltip = "$STR_params_time_between_autosave_desc";
         values[] = {600,1200,1800,3600,5400};
         texts[] = {"10","20","30","60","90"};
         default = 3600;
     };
     class A3A_idleTimeout: TimerParams
     {
-        title = $STR_params_afk;
-        tooltip = $STR_params_afk_desc;
+        title = "$STR_params_afk";
+        tooltip = "$STR_params_afk_desc";
         values[] = {120,300,900,1800,-1};
-        texts[] = {"2","5","15","30", $STR_params_afk_disabled};
+        texts[] = {"2","5","15","30", "$STR_params_afk_disabled"};
         class difficulty
         {
             class solo
@@ -451,10 +451,10 @@ class Params
     };
     class A3A_isUAVAFK: TimerParams
     {
-        title = $STR_params_afk_uav;
-        tooltip = $STR_params_afk_uav_desc;
+        title = "$STR_params_afk_uav";
+        tooltip = "$STR_params_afk_uav_desc";
         values[] = {0,1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
+        texts[] = {"$STR_antistasi_dialogs_generic_button_no_text","$STR_antistasi_dialogs_generic_button_yes_text"};
         class difficulty
         {
             class solo
@@ -476,10 +476,10 @@ class Params
     };
     class A3A_isZeusAFK: TimerParams
     {
-        title = $STR_params_afk_zeus;
-        tooltip = $STR_params_afk_zeus_desc;
+        title = "$STR_params_afk_zeus";
+        tooltip = "$STR_params_afk_zeus_desc";
         values[] = {0,1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
+        texts[] = {"$STR_antistasi_dialogs_generic_button_no_text","$STR_antistasi_dialogs_generic_button_yes_text"};
         class difficulty
         {
             class solo
@@ -501,10 +501,10 @@ class Params
     };
     class A3A_GCThreshold: TimerParams
     {
-        title = $STR_params_gc_threshold;
-        tooltip = $STR_params_gc_threshold_desc;
+        title = "$STR_params_gc_threshold";
+        tooltip = "$STR_params_gc_threshold_desc";
         values[] = {3600, 7200, 10800, 14400, -1};
-        texts[] = {"1", "2", "3", "4", $STR_params_afk_disabled};
+        texts[] = {"1", "2", "3", "4", "$STR_params_afk_disabled"};
         class difficulty
         {
             class solo
@@ -536,10 +536,10 @@ class Params
     };
     class settingsTimeMultiplier: TimerParams
     {
-        title = $STR_params_timeMultiplier;
-        tooltip = $STR_params_timeMultiplier_desc;
+        title = "$STR_params_timeMultiplier";
+        tooltip = "$STR_params_timeMultiplier_desc";
         values[] = {1, 2, 3, 4, 6, 8, 12, 24};
-        texts[] = {$STR_params_timeMultiplier_0, $STR_params_timeMultiplier_1, $STR_params_timeMultiplier_2,$STR_params_timeMultiplier_3,$STR_params_timeMultiplier_4,$STR_params_timeMultiplier_5,$STR_params_timeMultiplier_6,$STR_params_timeMultiplier_7};
+        texts[] = {"$STR_params_timeMultiplier_0", "$STR_params_timeMultiplier_1", "$STR_params_timeMultiplier_2","$STR_params_timeMultiplier_3","$STR_params_timeMultiplier_4","$STR_params_timeMultiplier_5","$STR_params_timeMultiplier_6","$STR_params_timeMultiplier_7"};
         default = 1;
         lockInGame = 1;
     };
@@ -555,16 +555,16 @@ class Params
     class AIParams : AllParams
     {
         type = "AI";
-        title = $STR_params_ai;
-        //tooltip = $STR_params_ai_desc;
+        title = "$STR_params_ai";
+        //tooltip = "$STR_params_ai_desc";
         values[] = {};
         texts[] = {};
         default = 0;
     };
     class distanceSPWN: AIParams
     {
-        title = $STR_params_spawnDistance;
-        tooltip = $STR_params_spawnDistance_desc;
+        title = "$STR_params_spawnDistance";
+        tooltip = "$STR_params_spawnDistance_desc";
         values[] = {700,800,900,1000,1100,1200,1300,1400,1500};
         texts[] = {"700","800","900","1000","1100","1200", "1300" ,"1400", "1500"};
         class difficulty
@@ -588,8 +588,8 @@ class Params
     };
     class enemyNearDistance: AIParams
     {
-        title = $STR_params_enemyCheckDistance;
-        tooltip = $STR_params_enemyCheckDistance_desc;
+        title = "$STR_params_enemyCheckDistance";
+        tooltip = "$STR_params_enemyCheckDistance_desc";
         values[] = {100,200,300,400,500};
         texts[] = {"100","200","300","400","500"};
         class difficulty
@@ -608,8 +608,8 @@ class Params
     };
     class A3A_roadBlocksBaseChance: AIParams
     {
-        title = $STR_params_A3A_roadBlocksBaseChance;
-        tooltip = $STR_params_A3A_roadBlocksBaseChance_desc;
+        title = "$STR_params_A3A_roadBlocksBaseChance";
+        tooltip = "$STR_params_A3A_roadBlocksBaseChance_desc";
         values[] = {0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
         texts[] = {"0%", "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%"};
         class difficulty
@@ -628,8 +628,8 @@ class Params
     };
     class globalCivilianMax: AIParams
     {
-        title = $STR_params_global_civilian_max;
-        tooltip = $STR_params_global_civilian_max_desc;
+        title = "$STR_params_global_civilian_max";
+        tooltip = "$STR_params_global_civilian_max_desc";
         values[] = {0,2,5,10,15,20,25,30};
         texts[] = {"0","2","5","10","15","20","25","30"};
         default = 5;
@@ -647,26 +647,26 @@ class Params
     };
     class maxCiviliansPerTown: AIParams
     {
-        title = $STR_params_civ_per_town;
-        tooltip = $STR_params_civ_per_town_desc;
+        title = "$STR_params_civ_per_town";
+        tooltip = "$STR_params_civ_per_town_desc";
         values[] = {0,2,5,10,15};
         texts[] = {"0","2","5","10","15"};
         default = 2;
     };
     class civTraffic: AIParams
     {
-        title = $STR_params_civ_traffic;
-        tooltip = $STR_params_civ_traffic_desc;
+        title = "$STR_params_civ_traffic";
+        tooltip = "$STR_params_civ_traffic_desc";
         values[] = {0,1,2,4};
-        texts[] = {$STR_params_civ_traffic_none,$STR_params_civ_traffic_low,$STR_params_civ_traffic_medium,$STR_params_civ_traffic_high};
+        texts[] = {"$STR_params_civ_traffic_none","$STR_params_civ_traffic_low","$STR_params_civ_traffic_medium","$STR_params_civ_traffic_high"};
         default = 2;
     };
     class allowCivDialog: AIParams
     {
-        title = $STR_params_allowCivDialog;
-        tooltip = $STR_params_allowCivDialog_desc;
+        title = "$STR_params_allowCivDialog";
+        tooltip = "$STR_params_allowCivDialog_desc";
         values[] = {0,1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        texts[] = {"$STR_antistasi_dialogs_generic_button_no_text", "$STR_antistasi_dialogs_generic_button_yes_text"};
         class difficulty
         {
             class solo
@@ -683,10 +683,10 @@ class Params
     };
     class zombiesUncapped: AIParams
     {
-        title = $STR_A3AU_uncap_zombie_spawn;
-        tooltip = $STR_A3AU_uncap_zombie_spawn_desc;
+        title = "$STR_A3AU_uncap_zombie_spawn";
+        tooltip = "$STR_A3AU_uncap_zombie_spawn_desc";
         values[] = {0,1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
+        texts[] = {"$STR_antistasi_dialogs_generic_button_no_text","$STR_antistasi_dialogs_generic_button_yes_text"};
         class difficulty
         {
             class solo
@@ -708,18 +708,18 @@ class Params
     };
     class plusGarrison: AIParams
     {
-        title = $STR_A3AU_old_garrison_spawn;
-        tooltip = $STR_A3AU_old_garrison_spawn_desc;
+        title = "$STR_A3AU_old_garrison_spawn";
+        tooltip = "$STR_A3AU_old_garrison_spawn_desc";
         values[] = {0,1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
+        texts[] = {"$STR_antistasi_dialogs_generic_button_no_text","$STR_antistasi_dialogs_generic_button_yes_text"};
         default = 0;
     };
     class radiomanSupport: AIParams
     {
-        title = $STR_A3AU_radioman_support;
-        tooltip = $STR_A3AU_radioman_support_desc;
+        title = "$STR_A3AU_radioman_support";
+        tooltip = "$STR_A3AU_radioman_support_desc";
         values[] = {0,1};
-        texts[] = {$STR_A3AU_dialogs_radioman_support,$STR_A3AU_dialogs_squadleader_support};
+        texts[] = {"$STR_A3AU_dialogs_radioman_support","$STR_A3AU_dialogs_squadleader_support"};
         class difficulty
         {
             class solo
@@ -736,10 +736,10 @@ class Params
     };
     class playerRecruitAI: AIParams
     {
-        title = $STR_params_playerRecruitAI;
-        tooltip = $STR_params_playerRecruitAI_desc;
+        title = "$STR_params_playerRecruitAI";
+        tooltip = "$STR_params_playerRecruitAI_desc";
         values[] = {1,0};
-        texts[] = {$STR_params_afk_enabled, $STR_params_afk_disabled};
+        texts[] = {"$STR_params_afk_enabled", "$STR_params_afk_disabled"};
         class difficulty
         {
             class solo
@@ -765,10 +765,10 @@ class Params
     };
     class recruitToPlayerSquad: AIParams
     {
-        title = $STR_params_recruitToPlayerSquad;
-        tooltip = $STR_params_recruitToPlayerSquad_desc;
+        title = "$STR_params_recruitToPlayerSquad";
+        tooltip = "$STR_params_recruitToPlayerSquad_desc";
         values[] = {0,1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        texts[] = {"$STR_antistasi_dialogs_generic_button_no_text", "$STR_antistasi_dialogs_generic_button_yes_text"};
         class difficulty
         {
             class solo
@@ -785,18 +785,18 @@ class Params
     };
     class aiControlTime: AIParams
     {
-        title = $STR_params_aiControlTime;
-        tooltip = $STR_params_aiControlTime_desc;
+        title = "$STR_params_aiControlTime";
+        tooltip = "$STR_params_aiControlTime_desc";
         values[] = {30, 60, 90, 120};
         texts[] = {"30", "60", "90", "120"};
         default = 60;
     };
     class unconsciousPossessAi: AIParams
     {
-        title = $STR_params_unconsciousAiPossess;
-        tooltip = $STR_params_unconsciousAiPossess_desc;
+        title = "$STR_params_unconsciousAiPossess";
+        tooltip = "$STR_params_unconsciousAiPossess_desc";
         values[] = {0,1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        texts[] = {"$STR_antistasi_dialogs_generic_button_no_text", "$STR_antistasi_dialogs_generic_button_yes_text"};
         class difficulty
         {
             class solo
@@ -814,8 +814,8 @@ class Params
     };
     class loadoutsToGenerate: AIParams
     {
-        title = $STR_params_loadoutsToGenerate;
-        tooltip = $STR_params_loadoutsToGenerate_desc;
+        title = "$STR_params_loadoutsToGenerate";
+        tooltip = "$STR_params_loadoutsToGenerate_desc";
         values[] = {5, 10, 15, 20};
         texts[] = {"5", "10", "15", "20"};
         class difficulty
@@ -835,10 +835,10 @@ class Params
     };
     class AIrevivesOutsideSquad : AIParams
     {
-        title = $STR_params_AIrevivesOutsideSquad;
-        tooltip = $STR_params_AIrevivesOutsideSquad_desc;
+        title = "$STR_params_AIrevivesOutsideSquad";
+        tooltip = "$STR_params_AIrevivesOutsideSquad_desc";
         values[] = {25, 50, 75, 100, -1};
-        texts[] = {"25", "50", "75", "100", $STR_params_afk_disabled};
+        texts[] = {"25", "50", "75", "100", "$STR_params_afk_disabled"};
         default = -1;
     };
 
@@ -849,16 +849,16 @@ class Params
     class RebelBalanceParams : AIParams
     {
         type = "RebelBalance";
-        title = $STR_params_rebelBalanceParams;
-        //tooltip = $STR_params_rebelBalanceParams_desc;
+        title = "$STR_params_rebelBalanceParams";
+        //tooltip = "$STR_params_rebelBalanceParams_desc";
         values[] = {};
         texts[] = {};
         default = 0;
     };
     class initialPlayerMoney: RebelBalanceParams
     {
-        title = $STR_params_playerStartingMoney;
-        tooltip = $STR_params_playerStartingMoney_desc;
+        title = "$STR_params_playerStartingMoney";
+        tooltip = "$STR_params_playerStartingMoney_desc";
         values[] = {0, 100, 200, 500, 1000, 2500};
         texts[] = {"0", "100", "200", "500","1000","2500"};
         class difficulty
@@ -893,8 +893,8 @@ class Params
     };
     class initialFactionMoney: RebelBalanceParams
     {
-        title = $STR_params_rebelFactionStartingMoney;
-        tooltip = $STR_params_rebelFactionStartingMoney_desc;
+        title = "$STR_params_rebelFactionStartingMoney";
+        tooltip = "$STR_params_rebelFactionStartingMoney_desc";
         values[] = {0,1000,2500,5000,10000};
         texts[] = {"0","1000","2500","5000","10000"};
         class difficulty
@@ -924,8 +924,8 @@ class Params
     };
     class deathPenalty: RebelBalanceParams
     {
-        title = $STR_params_deathPenalty;
-        tooltip = $STR_params_deathPenalty_desc;
+        title = "$STR_params_deathPenalty";
+        tooltip = "$STR_params_deathPenalty_desc";
         values[] = {0, 15, 30, 50, 75, 100};
         texts[] = {"0%", "15%", "30%", "50%", "75%", "100%"};
         class difficulty
@@ -954,8 +954,8 @@ class Params
     };
     class initialHr: RebelBalanceParams
     {
-        title = $STR_params_initialHr;
-        tooltip = $STR_params_initialHr_desc;
+        title = "$STR_params_initialHr";
+        tooltip = "$STR_params_initialHr_desc";
         values[] = {0, 8, 16, 24, 32, 50};
         texts[] = {"0","8","16","24","32","50"};
         class difficulty
@@ -985,10 +985,10 @@ class Params
     };
     class limitHR: RebelBalanceParams
     {
-        title = $STR_params_enable_HR_cap;
-        tooltip = $STR_params_enable_HR_cap_desc;
+        title = "$STR_params_enable_HR_cap";
+        tooltip = "$STR_params_enable_HR_cap_desc";
         values[] = {0,25,50,75,100,200};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text,"x0.25","x0.5","x0.75","x1.0","x2.0"};
+        texts[] = {"$STR_antistasi_dialogs_generic_button_no_text","x0.25","x0.5","x0.75","x1.0","x2.0"};
         class difficulty
         {
             class solo
@@ -1010,8 +1010,8 @@ class Params
     };
     class overallHRGain: RebelBalanceParams
     {
-        title = $STR_params_overall_HR_gain;
-        tooltip = $STR_params_overall_HR_gain_desc;
+        title = "$STR_params_overall_HR_gain";
+        tooltip = "$STR_params_overall_HR_gain_desc";
         values[] = {1, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
         texts[] = {"1%", "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%"};
         class difficulty
@@ -1045,10 +1045,10 @@ class Params
     };
     class loseHROnDeath: RebelBalanceParams
     {
-        title = $STR_A3AU_hr_loss;
-        tooltip = $STR_A3AU_hr_loss_desc;
+        title = "$STR_A3AU_hr_loss";
+        tooltip = "$STR_A3AU_hr_loss_desc";
         values[] = {0,1,2};
-        texts[] = {$STR_A3AU_no_hr_loss,$STR_A3AU_yes_hr_loss,$STR_A3AU_yes_hr_loss_w_msg};
+        texts[] = {"$STR_A3AU_no_hr_loss","$STR_A3AU_yes_hr_loss","$STR_A3AU_yes_hr_loss_w_msg"};
         class difficulty
         {
             class solo
@@ -1065,8 +1065,8 @@ class Params
     };
     class maxSupportPoints: RebelBalanceParams
     {
-        title = $STR_params_maxSupportPoints;
-        tooltip = $STR_params_maxSupportPoints_desc;
+        title = "$STR_params_maxSupportPoints";
+        tooltip = "$STR_params_maxSupportPoints_desc";
         values[] = {1,2,3,4,5,6};
         texts[] = {"1","2","3","4","5","6"};
         class difficulty
@@ -1085,10 +1085,10 @@ class Params
     };
     class pistolStart : RebelBalanceParams
     {
-        title = $STR_params_pistolStart;
-        tooltip = $STR_params_pistolStart_desc;
+        title = "$STR_params_pistolStart";
+        tooltip = "$STR_params_pistolStart_desc";
         values[] = {0, 1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        texts[] = {"$STR_antistasi_dialogs_generic_button_no_text", "$STR_antistasi_dialogs_generic_button_yes_text"};
         class difficulty
         {
             class solo
@@ -1113,10 +1113,10 @@ class Params
     class startWithLongRangeRadio: RebelBalanceParams
     {
         attr[] = {"server"};
-        title = $STR_params_startWithLongRangeRadio;
-        tooltip = $STR_params_startWithLongRangeRadio_desc;
+        title = "$STR_params_startWithLongRangeRadio";
+        tooltip = "$STR_params_startWithLongRangeRadio_desc";
         values[] = {0,1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
+        texts[] = {"$STR_antistasi_dialogs_generic_button_no_text","$STR_antistasi_dialogs_generic_button_yes_text"};
         class difficulty
         {
             class solo
@@ -1139,28 +1139,28 @@ class Params
     class aceFood: RebelBalanceParams
     {
         attr[] = {"server"};
-        title = $STR_params_aceFood;
-        tooltip = $STR_params_aceFood_desc;
+        title = "$STR_params_aceFood";
+        tooltip = "$STR_params_aceFood_desc";
         values[] = {0,1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
+        texts[] = {"$STR_antistasi_dialogs_generic_button_no_text","$STR_antistasi_dialogs_generic_button_yes_text"};
         default = 0;
         lockCondition = "!A3A_hasACE;";
     };
     class enableSpectrumDevice: RebelBalanceParams
     {
-        title = $STR_params_enableSpectrumDevice;
-        tooltip = $STR_params_enableSpectrumDevice_desc;
+        title = "$STR_params_enableSpectrumDevice";
+        tooltip = "$STR_params_enableSpectrumDevice_desc";
         values[] = {0,1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        texts[] = {"$STR_antistasi_dialogs_generic_button_no_text", "$STR_antistasi_dialogs_generic_button_yes_text"};
         default = 0;
         //lockCondition = "!('enoch' in flatten (['getContent'] call A3A_fnc_setupFactionsTab));"; // TODO: this works, but checking the box in the content tab doesn't force a re-evaluation of the lock condition, so it's not much help.
     };
     class reviveKitsEnabled: RebelBalanceParams
     {
-        title = $STR_params_reviveKitsEnabled;
-        tooltip = $STR_params_reviveKitsEnabled_desc;
+        title = "$STR_params_reviveKitsEnabled";
+        tooltip = "$STR_params_reviveKitsEnabled_desc";
         values[] = {0,1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
+        texts[] = {"$STR_antistasi_dialogs_generic_button_no_text","$STR_antistasi_dialogs_generic_button_yes_text"};
         class difficulty
         {
             class solo
@@ -1182,8 +1182,8 @@ class Params
     };
     class A3A_reviveTime: RebelBalanceParams
     {
-        title = $STR_params_revive_time;
-        tooltip = $STR_params_revive_time_desc;
+        title = "$STR_params_revive_time";
+        tooltip = "$STR_params_revive_time_desc";
         values[] = {8,12,16,24,32};
         texts[] = {"8","12","16","24","32"};
         class difficulty
@@ -1202,10 +1202,10 @@ class Params
     };
     class A3A_selfReviveMethods: RebelBalanceParams
     {
-        title = $STR_A3A_Params_selfReviveMethods_title;
-        tooltip = $STR_A3A_Params_selfReviveMethods_desc;
+        title = "$STR_A3A_Params_selfReviveMethods_title";
+        tooltip = "$STR_A3A_Params_selfReviveMethods_desc";
         values[] = {0,1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_A3A_Params_selfReviveMethods_withstand};
+        texts[] = {"$STR_antistasi_dialogs_generic_button_no_text", "$STR_A3A_Params_selfReviveMethods_withstand"};
         class difficulty
         {
             class solo
@@ -1227,10 +1227,10 @@ class Params
     };
     class useDownedNotification: RebelBalanceParams
     {
-        title = $STR_A3AU_use_downed_notification;
-        tooltip = $STR_A3AU_use_downed_notification_desc;
+        title = "$STR_A3AU_use_downed_notification";
+        tooltip = "$STR_A3AU_use_downed_notification_desc";
         values[] = {0,1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
+        texts[] = {"$STR_antistasi_dialogs_generic_button_no_text","$STR_antistasi_dialogs_generic_button_yes_text"};
         class difficulty
         {
             class solo
@@ -1247,10 +1247,10 @@ class Params
     };
     class rallyPointSpawnCount: RebelBalanceParams
     {
-        title = $STR_params_rallyPointSpawnCount;
-        tooltip = $STR_params_rallyPointSpawnCount_desc;
+        title = "$STR_params_rallyPointSpawnCount";
+        tooltip = "$STR_params_rallyPointSpawnCount_desc";
         values[] = {3, 5, 10, 15, 20, 30, 0};
-        texts[] = {"3", "5", "10", "15", "20", "30", $STR_params_afk_disabled};
+        texts[] = {"3", "5", "10", "15", "20", "30", "$STR_params_afk_disabled"};
         class difficulty
         {
             class solo
@@ -1282,10 +1282,10 @@ class Params
     };
     class staminaEnabled: RebelBalanceParams
     {
-        title = $STR_A3AU_stamina_enabled;
-        tooltip = $STR_A3AU_stamina_enabled_desc;
+        title = "$STR_A3AU_stamina_enabled";
+        tooltip = "$STR_A3AU_stamina_enabled_desc";
         values[] = {0,1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
+        texts[] = {"$STR_antistasi_dialogs_generic_button_no_text","$STR_antistasi_dialogs_generic_button_yes_text"};
         class difficulty
         {
             class solo
@@ -1302,10 +1302,10 @@ class Params
     };
     class fatigueEnabled: RebelBalanceParams
     {
-        title = $STR_A3AU_fatigue_enabled;
-        tooltip = $STR_A3AU_fatigue_enabled_desc;
+        title = "$STR_A3AU_fatigue_enabled";
+        tooltip = "$STR_A3AU_fatigue_enabled_desc";
         values[] = {0,1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
+        texts[] = {"$STR_antistasi_dialogs_generic_button_no_text","$STR_antistasi_dialogs_generic_button_yes_text"};
         class difficulty
         {
             class solo
@@ -1322,8 +1322,8 @@ class Params
     };
     class swayEnabled: RebelBalanceParams
     {
-        title = $STR_A3AU_sway_enabled;
-        tooltip = $STR_A3AU_sway_enabled_desc;
+        title = "$STR_A3AU_sway_enabled";
+        tooltip = "$STR_A3AU_sway_enabled_desc";
         values[] = {0,25,50,75,100};
         texts[] = {"0%","25%","50%","75%","100%"};
         class difficulty
@@ -1342,10 +1342,10 @@ class Params
     };
     class A3A_removeRestore: RebelBalanceParams
     {
-        title = $STR_A3A_Params_removeRestore_title;
-        tooltip = $STR_A3A_Params_removeRestore_title;
+        title = "$STR_A3A_Params_removeRestore_title";
+        tooltip = "$STR_A3A_Params_removeRestore_title";
         values[] = {0,1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
+        texts[] = {"$STR_antistasi_dialogs_generic_button_no_text","$STR_antistasi_dialogs_generic_button_yes_text"};
         class difficulty
         {
             class solo
@@ -1367,10 +1367,10 @@ class Params
     };
     class limitedFT: RebelBalanceParams
     {
-        title = $STR_params_allowFT;
-        tooltip = $STR_params_allowFT_desc;
+        title = "$STR_params_allowFT";
+        tooltip = "$STR_params_allowFT_desc";
         values[] = {0,1,2,3};
-        texts[] = {$STR_params_allowFT_0, $STR_params_allowFT_1, $STR_params_allowFT_2, $STR_params_civ_traffic_none};
+        texts[] = {"$STR_params_allowFT_0", "$STR_params_allowFT_1", "$STR_params_allowFT_2", "$STR_params_civ_traffic_none"};
         class difficulty
         {
             class solo
@@ -1406,10 +1406,10 @@ class Params
     };
     class fastTravelEnemyCheck: RebelBalanceParams
     {
-        title = $STR_params_fastTravelEnemyCheck;
-        tooltip = $STR_params_fastTravelEnemyCheck_desc;
+        title = "$STR_params_fastTravelEnemyCheck";
+        tooltip = "$STR_params_fastTravelEnemyCheck_desc";
         values[] = {0,1};
-        texts[] = {$STR_params_fastTravelEnemyCheck_player, $STR_params_fastTravelEnemyCheck_team};
+        texts[] = {"$STR_params_fastTravelEnemyCheck_player", "$STR_params_fastTravelEnemyCheck_team"};
         class difficulty
         {
             class solo
@@ -1431,8 +1431,8 @@ class Params
     };
     class unflipPersonCount: RebelBalanceParams
     {
-        title = $STR_params_unflipPersonCount;
-        tooltip = $STR_params_unflipPersonCount_desc;
+        title = "$STR_params_unflipPersonCount";
+        tooltip = "$STR_params_unflipPersonCount_desc";
         values[] = {1, 2, 3, 4};
         texts[] = {"1","2","3","4"};
         class difficulty
@@ -1456,8 +1456,8 @@ class Params
     };
     class A3A_rebelGarrisonLimit: RebelBalanceParams
     {
-        title = $STR_params_rebelGarrisonLimit;
-        tooltip = $STR_params_rebelGarrisonLimit_desc;
+        title = "$STR_params_rebelGarrisonLimit";
+        tooltip = "$STR_params_rebelGarrisonLimit_desc";
         values[] = {-1, 16, 24, 32};
         texts[] = {"∞", "16", "24", "32"};
         class difficulty
@@ -1476,8 +1476,8 @@ class Params
     };
     class A3A_rebelGarrisonGroupSize: RebelBalanceParams
     {
-        title = $STR_params_rebelGarrisonGroupSize;
-        tooltip = $STR_params_rebelGarrisonGroupSize_desc;
+        title = "$STR_params_rebelGarrisonGroupSize";
+        tooltip = "$STR_params_rebelGarrisonGroupSize_desc";
         values[] = {2, 4, 6, 8, 10, 12, 14, 16};
         texts[] = {"2", "4", "6", "8", "10", "12", "14", "16"};
         default = 8;
@@ -1489,16 +1489,16 @@ class Params
     class AIBalanceParams : AIParams
     {
         type = "AIBalance";
-        title = $STR_params_aiBalanceParams;
-        //tooltip = $STR_params_aiBalanceParams_desc;
+        title = "$STR_params_aiBalanceParams";
+        //tooltip = "$STR_params_aiBalanceParams_desc";
         values[] = {};
         texts[] = {};
         default = 0;
     };
     class A3A_enemyBalanceMul: AIBalanceParams
     {
-        title = $STR_params_overall_enemy_res_balance;
-        tooltip = $STR_params_overall_enemy_res_balance_desc;
+        title = "$STR_params_overall_enemy_res_balance";
+        tooltip = "$STR_params_overall_enemy_res_balance_desc";
         values[] = {4,6,8,10,11,12,13,14,17,20,24,28};
         texts[] =  {"0.4x","0.6x","0.8x","1.0x","1.1x", "1.2x","1.3x", "1.4x","1.7x","2.0x","2.4x","2.8x"};
         class difficulty
@@ -1534,8 +1534,8 @@ class Params
     class A3A_enemyAttackMul: AIBalanceParams
     {
         attr[] = {"server"};
-        title = $STR_params_response_balance;
-        tooltip = $STR_params_response_balance_desc;
+        title = "$STR_params_response_balance";
+        tooltip = "$STR_params_response_balance_desc";
         values[] = {4,6,8,10,12,14,17,20,24,28};
         texts[] =  {"0.4x","0.6x","0.8x","1.0x","1.2x","1.4x","1.7x","2.0x","2.4x","2.8x"};
         class difficulty
@@ -1571,8 +1571,8 @@ class Params
     class A3A_invaderBalanceMul: AIBalanceParams
     {
         attr[] = {"server"};
-        title = $STR_params_resource_balance_inv;
-        tooltip = $STR_params_resource_balance_inv_desc;
+        title = "$STR_params_resource_balance_inv";
+        tooltip = "$STR_params_resource_balance_inv_desc";
         values[] = {10,11,12,13,14,15,16,17,18,19,20};
         texts[] =  {"1.0x","1.1x","1.2x","1.3x","1.4x","1.5x","1.6x","1.7x","1.8x","1.9x","2.0x"};
         class difficulty
@@ -1607,10 +1607,10 @@ class Params
     };
     class enablePunishments: AIBalanceParams
     {
-        title = $STR_params_enablePunishments;
-        tooltip = $STR_params_enablePunishments_desc;
+        title = "$STR_params_enablePunishments";
+        tooltip = "$STR_params_enablePunishments_desc";
         values[] = {1,0};
-        texts[] = {$STR_params_afk_enabled, $STR_params_afk_disabled};
+        texts[] = {"$STR_params_afk_enabled", "$STR_params_afk_disabled"};
         class difficulty
         {
             class solo
@@ -1632,8 +1632,8 @@ class Params
     };
     class townSkirmishChance: AIBalanceParams
     {
-        title = $STR_params_townSkirmishChance;
-        tooltip = $STR_params_townSkirmishChance_desc;
+        title = "$STR_params_townSkirmishChance";
+        tooltip = "$STR_params_townSkirmishChance_desc";
         values[] = {0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
         texts[] = {"0%", "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%"};
         class difficulty
@@ -1663,10 +1663,10 @@ class Params
     class A3A_enemyResponseTime: AIBalanceParams
     {
         attr[] = {"server"};
-        title = $STR_A3A_Params_enemyResponseTime_title;
-        tooltip = $STR_A3A_Params_enemyResponseTime_desc;
+        title = "$STR_A3A_Params_enemyResponseTime_title";
+        tooltip = "$STR_A3A_Params_enemyResponseTime_desc";
         values[] = {20,15,10,7,5};
-        texts[] =  {$STR_A3A_Params_generic_veryslow, $STR_A3A_Params_generic_slow, $STR_A3A_Params_generic_normal, $STR_A3A_Params_generic_fast, $STR_A3A_Params_generic_veryfast};
+        texts[] =  {"$STR_A3A_Params_generic_veryslow", "$STR_A3A_Params_generic_slow", "$STR_A3A_Params_generic_normal", "$STR_A3A_Params_generic_fast", "$STR_A3A_Params_generic_veryfast"};
         class difficulty
         {
             class solo
@@ -1694,10 +1694,10 @@ class Params
     class A3A_attackHQProximityMul: AIBalanceParams
     {
         attr[] = {"server"};
-        title = $STR_params_enemyPref;
-        tooltip = $STR_params_enemyPref_desc;
+        title = "$STR_params_enemyPref";
+        tooltip = "$STR_params_enemyPref_desc";
         values[] = {1,2,3,5,8};
-        texts[] =  {$STR_params_enemyPref_nc,"2x","3x","5x","8x"};
+        texts[] =  {"$STR_params_enemyPref_nc","2x","3x","5x","8x"};
         class difficulty
         {
             class solo
@@ -1714,10 +1714,10 @@ class Params
     };
     class A3A_enemySkillMul: AIBalanceParams
     {
-        title = $STR_params_A3A_enemySkillMul;
-        tooltip = $STR_params_A3A_enemySkillMul_desc;
+        title = "$STR_params_A3A_enemySkillMul";
+        tooltip = "$STR_params_A3A_enemySkillMul_desc";
         values[] = {0,1,2,3,4};
-        texts[] = {$STR_params_A3A_enemySkillMul_veasy,$STR_params_A3A_enemySkillMul_easy,$STR_params_A3A_enemySkillMul_medium,$STR_params_A3A_enemySkillMul_hard,$STR_params_A3A_enemySkillMul_vhard};
+        texts[] = {"$STR_params_A3A_enemySkillMul_veasy","$STR_params_A3A_enemySkillMul_easy","$STR_params_A3A_enemySkillMul_medium","$STR_params_A3A_enemySkillMul_hard","$STR_params_A3A_enemySkillMul_vhard"};
         class difficulty
         {
             class solo
@@ -1739,10 +1739,10 @@ class Params
     };
     class A3A_rebelSkillMul: AIBalanceParams
     {
-        title = $STR_params_A3A_rebelSkillMul;
-        tooltip = $STR_params_A3A_rebelSkillMul_desc;
+        title = "$STR_params_A3A_rebelSkillMul";
+        tooltip = "$STR_params_A3A_rebelSkillMul_desc";
         values[] = {0,1,2,3,4};
-        texts[] = {$STR_params_A3A_enemySkillMul_veasy,$STR_params_A3A_enemySkillMul_easy,$STR_params_A3A_enemySkillMul_medium,$STR_params_A3A_enemySkillMul_hard,$STR_params_A3A_enemySkillMul_vhard};
+        texts[] = {"$STR_params_A3A_enemySkillMul_veasy","$STR_params_A3A_enemySkillMul_easy","$STR_params_A3A_enemySkillMul_medium","$STR_params_A3A_enemySkillMul_hard","$STR_params_A3A_enemySkillMul_vhard"};
         class difficulty
         {
             class solo
@@ -1769,8 +1769,8 @@ class Params
     };
     class aiAccuracyCeiling: AIBalanceParams
     {
-        title = $STR_params_aiAccuracyCeiling;
-        tooltip = $STR_params_aiAccuracyCeiling_desc;
+        title = "$STR_params_aiAccuracyCeiling";
+        tooltip = "$STR_params_aiAccuracyCeiling_desc";
         values[] = {10, 20, 30, 40, 45, 50, 60, 70, 80, 90, 100};
         texts[] = {"0.1", "0.2", "0.3", "0.4", "0.45", "0.5", "0.6", "0.7", "0.8", "0.9", "1"};
         class difficulty
@@ -1789,8 +1789,8 @@ class Params
     };
     class unconChanceEny : AIBalanceParams
     {
-        title = $STR_params_unconChanceEny;
-        tooltip = $STR_params_unconChanceEny_desc;
+        title = "$STR_params_unconChanceEny";
+        tooltip = "$STR_params_unconChanceEny_desc";
         values[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
         texts[] = {"0%", "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%"};
         class difficulty
@@ -1822,19 +1822,19 @@ class Params
         };
         default = 10;
         lockCondition = "A3A_hasACEMedical;";
-        lockConditionTooltip = $STR_params_unconChance_lockCondition;
+        lockConditionTooltip = "$STR_params_unconChance_lockCondition";
     };
     class unconChanceReb : unconChanceEny
     {
-        title = $STR_params_unconChanceReb;
-        tooltip = $STR_params_unconChanceReb_desc;
+        title = "$STR_params_unconChanceReb";
+        tooltip = "$STR_params_unconChanceReb_desc";
     };
     class napalmEnabled: AIBalanceParams
     {
-        title = $STR_params_napalmEnabled;
-        tooltip = $STR_params_napalmEnabled_desc;
+        title = "$STR_params_napalmEnabled";
+        tooltip = "$STR_params_napalmEnabled_desc";
         values[] = {0,1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        texts[] = {"$STR_antistasi_dialogs_generic_button_no_text", "$STR_antistasi_dialogs_generic_button_yes_text"};
         class difficulty
         {
             class solo
@@ -1857,10 +1857,10 @@ class Params
     class allowUnfairSupports: AIBalanceParams
     {
         attr[] = {"server"};
-        title = $STR_params_allowUnfairSupports;
-        tooltip = $STR_params_allowUnfairSupports_desc;
+        title = "$STR_params_allowUnfairSupports";
+        tooltip = "$STR_params_allowUnfairSupports_desc";
         values[] = {0,1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        texts[] = {"$STR_antistasi_dialogs_generic_button_no_text", "$STR_antistasi_dialogs_generic_button_yes_text"};
         class difficulty
         {
             class solo
@@ -1883,19 +1883,19 @@ class Params
     class allowFuturisticSupports: AIBalanceParams
     {
         attr[] = {"server"};
-        title = $STR_params_allowFuturisticSupports;
-        tooltip = $STR_params_allowFuturisticSupports_desc;
+        title = "$STR_params_allowFuturisticSupports";
+        tooltip = "$STR_params_allowFuturisticSupports_desc";
         values[] = {0,1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        texts[] = {"$STR_antistasi_dialogs_generic_button_no_text", "$STR_antistasi_dialogs_generic_button_yes_text"};
         default = 0;
     };
     class allowFuturisticUnfairSupports: AIBalanceParams
     {
         attr[] = {"server"};
-        title = $STR_params_allowFuturisticUnfairSupports;
-        tooltip = $STR_params_allowFuturisticUnfairSupports_desc;
+        title = "$STR_params_allowFuturisticUnfairSupports";
+        tooltip = "$STR_params_allowFuturisticUnfairSupports_desc";
         values[] = {0,1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        texts[] = {"$STR_antistasi_dialogs_generic_button_no_text", "$STR_antistasi_dialogs_generic_button_yes_text"};
         class difficulty
         {
             class solo
@@ -1917,10 +1917,10 @@ class Params
     };
     class A3U_disablePATCOMMortars : AIBalanceParams
     {
-        title = $STR_params_disablePATCOMMortars;
-        tooltip = $STR_params_disablePATCOMMortars_desc;
+        title = "$STR_params_disablePATCOMMortars";
+        tooltip = "$STR_params_disablePATCOMMortars_desc";
         values[] = {0, 1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        texts[] = {"$STR_antistasi_dialogs_generic_button_no_text", "$STR_antistasi_dialogs_generic_button_yes_text"};
         class difficulty
         {
             class solo
@@ -1938,10 +1938,10 @@ class Params
     };
     class A3U_disableMortars : AIBalanceParams
     {
-        title = $STR_params_disableMortars;
-        tooltip = $STR_params_disableMortars_desc;
+        title = "$STR_params_disableMortars";
+        tooltip = "$STR_params_disableMortars_desc";
         values[] = {0, 1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        texts[] = {"$STR_antistasi_dialogs_generic_button_no_text", "$STR_antistasi_dialogs_generic_button_yes_text"};
         class difficulty
         {
             class solo
@@ -1959,8 +1959,8 @@ class Params
     };
     class A3A_UAVSpawnChance: AIBalanceParams
     {
-        title = $STR_params_UAVSpawnChance;
-        tooltip = $STR_params_UAVSpawnChance_desc;
+        title = "$STR_params_UAVSpawnChance";
+        tooltip = "$STR_params_UAVSpawnChance_desc";
         values[] = {0, 10, 20, 30, 50, 100, 200};
         texts[] = {"0", "10%", "20%", "30%", "50%", "100%", "200%"};
         class difficulty
@@ -1989,8 +1989,8 @@ class Params
     };
     class distanceMission: AIBalanceParams
     {
-        title = $STR_params_distanceMission;
-        tooltip = $STR_params_distanceMission_desc;
+        title = "$STR_params_distanceMission";
+        tooltip = "$STR_params_distanceMission_desc";
         values[] = {2000,3000,4000,6000,8000,10000,12000};
         texts[] = {"2000","3000","4000","6000","8000","10000","12000"};
         class difficulty
@@ -2024,10 +2024,10 @@ class Params
     };
     class A3U_enableVehiclesForAI : AIBalanceParams
     {
-        title = $STR_params_enableVehiclesForAI;
-        tooltip = $STR_params_enableVehiclesForAI_desc;
+        title = "$STR_params_enableVehiclesForAI";
+        tooltip = "$STR_params_enableVehiclesForAI_desc";
         values[] = {0, 1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        texts[] = {"$STR_antistasi_dialogs_generic_button_no_text", "$STR_antistasi_dialogs_generic_button_yes_text"};
         class difficulty
         {
             class solo
@@ -2050,18 +2050,18 @@ class Params
     class MiscBalanceParams : AIParams
     {
         type = "MiscBalance";
-        title = $STR_params_miscBalanceParams;
-        //tooltip = $STR_params_miscBalanceParams_desc;
+        title = "$STR_params_miscBalanceParams";
+        //tooltip = "$STR_params_miscBalanceParams_desc";
         values[] = {};
         texts[] = {};
         default = 0;
     };
     class playerMarkersEnabled: MiscBalanceParams
     {
-        title = $STR_params_server_friendlymarkers_title;
-        tooltip = $STR_params_server_friendlymarkers_desc;
+        title = "$STR_params_server_friendlymarkers_title";
+        tooltip = "$STR_params_server_friendlymarkers_desc";
         values[] = {0,1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
+        texts[] = {"$STR_antistasi_dialogs_generic_button_no_text","$STR_antistasi_dialogs_generic_button_yes_text"};
         class difficulty
         {
             class solo
@@ -2083,10 +2083,10 @@ class Params
     };
     class hideEnemyMarkers: MiscBalanceParams
     {
-        title = $STR_A3AU_hide_enemy_markers;
-        tooltip = $STR_A3AU_hide_enemy_markers_desc;
+        title = "$STR_A3AU_hide_enemy_markers";
+        tooltip = "$STR_A3AU_hide_enemy_markers_desc";
         values[] = {0,1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
+        texts[] = {"$STR_antistasi_dialogs_generic_button_no_text","$STR_antistasi_dialogs_generic_button_yes_text"};
         class difficulty
         {
             class solo
@@ -2109,8 +2109,8 @@ class Params
     };
     class hideEnemyMarkersReconPlaneDistance: MiscBalanceParams
     {
-        title = $STR_A3AU_hide_enemy_markers_recon_plane_distance;
-        tooltip = $STR_A3AU_hide_enemy_markers_recon_plane_distance_desc;
+        title = "$STR_A3AU_hide_enemy_markers_recon_plane_distance";
+        tooltip = "$STR_A3AU_hide_enemy_markers_recon_plane_distance_desc";
         values[] = {100, 300, 500, 1000, 1500, 2000};
         texts[] = {"100", "300", "500", "1000", "1500", "2000"};
         class difficulty
@@ -2139,10 +2139,10 @@ class Params
     };
     class playerIcons: MiscBalanceParams
     {
-        title = $STR_params_playerIcons;
-        tooltip = $STR_params_playerIcons_desc;
+        title = "$STR_params_playerIcons";
+        tooltip = "$STR_params_playerIcons_desc";
         values[] = {0,1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
+        texts[] = {"$STR_antistasi_dialogs_generic_button_no_text","$STR_antistasi_dialogs_generic_button_yes_text"};
         class difficulty
         {
             class solo
@@ -2164,18 +2164,18 @@ class Params
     };
     class loadoutArsenalDefaultOverride : MiscBalanceParams
     {
-        title = $STR_params_loadoutArsenalDefaultOverride;
-        tooltip = $STR_params_loadoutArsenalDefaultOverride_desc;
+        title = "$STR_params_loadoutArsenalDefaultOverride";
+        tooltip = "$STR_params_loadoutArsenalDefaultOverride_desc";
         values[] = {0, 1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        texts[] = {"$STR_antistasi_dialogs_generic_button_no_text", "$STR_antistasi_dialogs_generic_button_yes_text"};
         default = 1;
     };
     class limitWeaponsByUnitType : MiscBalanceParams
     {
-        title = $STR_params_limitWeaponsByUnitType;
-        tooltip = $STR_params_limitWeaponsByUnitType_desc;
+        title = "$STR_params_limitWeaponsByUnitType";
+        tooltip = "$STR_params_limitWeaponsByUnitType_desc";
         values[] = {0, 1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        texts[] = {"$STR_antistasi_dialogs_generic_button_no_text", "$STR_antistasi_dialogs_generic_button_yes_text"};
         class difficulty
         {
             class solo
@@ -2192,10 +2192,10 @@ class Params
     };
     class A3A_diameterExtendedCaptureArea: MiscBalanceParams
     {
-        title = $STR_A3A_Params_diameterExtendedCaptureArea_title;
-        tooltip = $STR_A3A_Params_diameterExtendedCaptureArea_tooltip;
+        title = "$STR_A3A_Params_diameterExtendedCaptureArea_title";
+        tooltip = "$STR_A3A_Params_diameterExtendedCaptureArea_tooltip";
         values[] = {0,150,250,300,350,400,450,500};
-        texts[] = {$STR_A3A_Params_diameterExtendedCaptureArea_traditional, "150m", "250m", "300m", "350m", "400m", "450m", "500m"};
+        texts[] = {"$STR_A3A_Params_diameterExtendedCaptureArea_traditional", "150m", "250m", "300m", "350m", "400m", "450m", "500m"};
         class difficulty
         {
             class solo
@@ -2212,10 +2212,10 @@ class Params
     };
     class EGVAR(ultimate,allowLockpickKits) : MiscBalanceParams
     {
-        title = $STR_params_ultimate_allowLockpickKits;
-        tooltip = $STR_params_ultimate_allowLockpickKits_Tooltip;
+        title = "$STR_params_ultimate_allowLockpickKits";
+        tooltip = "$STR_params_ultimate_allowLockpickKits_Tooltip";
         values[] = {0, 1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        texts[] = {"$STR_antistasi_dialogs_generic_button_no_text", "$STR_antistasi_dialogs_generic_button_yes_text"};
         class difficulty
         {
             class solo
@@ -2232,8 +2232,8 @@ class Params
     };
     class EGVAR(ultimate,lockpickKitBreakChance) : MiscBalanceParams
     {
-        title = $STR_params_ultimate_lockpickKitBreakChance;
-        tooltip = $STR_params_ultimate_lockpickKitBreakChance_Tooltip;
+        title = "$STR_params_ultimate_lockpickKitBreakChance";
+        tooltip = "$STR_params_ultimate_lockpickKitBreakChance_Tooltip";
         values[] = {0, 10, 20, 25, 30, 40, 50};
         texts[] = {"0%", "10%", "20%", "25%", "30%", "40%", "50%"};
         class difficulty
@@ -2277,18 +2277,18 @@ class Params
     class BMParams : AllParams
     {
         type = "BlackMarket";
-        title = $STR_params_blackmarket;
-        //tooltip = $STR_params_blackmarket_desc;
+        title = "$STR_params_blackmarket";
+        //tooltip = "$STR_params_blackmarket_desc";
         values[] = {};
         texts[] = {};
         default = 0;
     };
     class disableTrader: BMParams
     {
-        title = $STR_A3AU_disable_trader;
-        tooltip = $STR_A3AU_disable_trader;
+        title = "$STR_A3AU_disable_trader";
+        tooltip = "$STR_A3AU_disable_trader";
         values[] = {0,1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
+        texts[] = {"$STR_antistasi_dialogs_generic_button_no_text","$STR_antistasi_dialogs_generic_button_yes_text"};
         class difficulty
         {
             class solo
@@ -2317,19 +2317,19 @@ class Params
     };
     class vanillaArmsDealer: BMParams
     {
-        title = $STR_A3AU_vanilla_weapons_in_arms_dealer;
-        tooltip = $STR_A3AU_vanilla_weapons_in_arms_dealer_desc;
+        title = "$STR_A3AU_vanilla_weapons_in_arms_dealer";
+        tooltip = "$STR_A3AU_vanilla_weapons_in_arms_dealer_desc";
         values[] = {0,1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
+        texts[] = {"$STR_antistasi_dialogs_generic_button_no_text","$STR_antistasi_dialogs_generic_button_yes_text"};
         default = 0;
         lockInGame = 1;
     };
     class blackMarketIgnoreRequirements : BMParams
     {
-        title = $STR_params_blackMarketIgnoreRequirements;
-        tooltip = $STR_params_blackMarketIgnoreRequirements_desc;
+        title = "$STR_params_blackMarketIgnoreRequirements";
+        tooltip = "$STR_params_blackMarketIgnoreRequirements_desc";
         values[] = {0,1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
+        texts[] = {"$STR_antistasi_dialogs_generic_button_no_text","$STR_antistasi_dialogs_generic_button_yes_text"};
         class difficulty
         {
             class solo
@@ -2346,18 +2346,18 @@ class Params
     };
     class A3U_blackMarketDiscountVehicle : BMParams
     {
-        title = $STR_params_blackMarketDiscountVehicle;
-        tooltip = $STR_params_blackMarketDiscountVehicle_desc;
+        title = "$STR_params_blackMarketDiscountVehicle";
+        tooltip = "$STR_params_blackMarketDiscountVehicle_desc";
         values[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%"};
+        texts[] = {"$STR_antistasi_dialogs_generic_button_no_text", "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%"};
         default = 0;
     };
     class A3U_blackMarketDiscountWeapon : BMParams
     {
-        title = $STR_params_blackMarketDiscountWeapon;
-        tooltip = $STR_params_blackMarketDiscountWeapon_desc;
+        title = "$STR_params_blackMarketDiscountWeapon";
+        tooltip = "$STR_params_blackMarketDiscountWeapon_desc";
         values[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%"};
+        texts[] = {"$STR_antistasi_dialogs_generic_button_no_text", "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%"};
         default = 0;
     };
 
@@ -2368,12 +2368,12 @@ class Params
     class BuilderParams : AllParams
     {
         type = "Builder";
-        title = $STR_params_builder;
+        title = "$STR_params_builder";
     };
     class A3A_builderPermissions: BuilderParams
     {
-        title = $STR_params_builderPermissions;
-        tooltip = $STR_params_builderPermissions_desc;
+        title = "$STR_params_builderPermissions";
+        tooltip = "$STR_params_builderPermissions_desc";
         values[] = {1, 2, 3};
         texts[] = {"Team leaders", "Engineers", "Both"};
         class difficulty
@@ -2397,16 +2397,16 @@ class Params
     };
     class A3A_builderLimit: BuilderParams
     {
-        title = $STR_params_builderLimit;
-        tooltip = $STR_params_builderLimit_desc;
+        title = "$STR_params_builderLimit";
+        tooltip = "$STR_params_builderLimit_desc";
         values[] = {100, 200, 300, 400, 500, 600, 800, 900, 1000, -1};
         texts[] = {"100", "200", "300", "400", "500", "600", "800", "900", "1000", "Basically Infinite"};
         default = 300;
     };
     class A3A_builderBuildTime: BuilderParams
     {
-        title = $STR_params_builderBuildTime;
-        tooltip = $STR_params_builderBuildTime_desc;
+        title = "$STR_params_builderBuildTime";
+        tooltip = "$STR_params_builderBuildTime_desc";
         values[] = {0, 4, 5, 6, 7, 8, 9, 10};
         texts[] = {"DEBUG (Instant)", "0.4x", "0.5x", "0.6x", "0.7x", "0.8x", "0.9x", "1.0x"};
         class difficulty
@@ -2440,10 +2440,10 @@ class Params
     };
     class A3A_builderAllowRoads: BuilderParams
     {
-        title = $STR_params_builderAllowRoads;
-        tooltip = $STR_params_builderAllowRoads_desc;
+        title = "$STR_params_builderAllowRoads";
+        tooltip = "$STR_params_builderAllowRoads_desc";
         values[] = {0,1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        texts[] = {"$STR_antistasi_dialogs_generic_button_no_text", "$STR_antistasi_dialogs_generic_button_yes_text"};
         class difficulty
         {
             class solo
@@ -2460,10 +2460,10 @@ class Params
     };
     class A3U_HelipadTerrainSmoothing: BuilderParams
     {
-        title = $STR_params_helipadTerrainSmoothing;
-        tooltip = $STR_params_helipadTerrainSmoothing_desc;
+        title = "$STR_params_helipadTerrainSmoothing";
+        tooltip = "$STR_params_helipadTerrainSmoothing_desc";
         values[] = {0, 1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        texts[] = {"$STR_antistasi_dialogs_generic_button_no_text", "$STR_antistasi_dialogs_generic_button_yes_text"};
         class difficulty
         {
             class solo
@@ -2480,16 +2480,16 @@ class Params
     };
     class saveZeusBuildings: BuilderParams
     {
-        title = $STR_params_saveZeusBuildings;
-        tooltip = $STR_params_saveZeusBuildings_desc;
+        title = "$STR_params_saveZeusBuildings";
+        tooltip = "$STR_params_saveZeusBuildings_desc";
         values[] = {0,1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text, $STR_antistasi_dialogs_generic_button_yes_text};
+        texts[] = {"$STR_antistasi_dialogs_generic_button_no_text", "$STR_antistasi_dialogs_generic_button_yes_text"};
         default = 1;
     };
     class maxConstructions: BuilderParams
     {
-        title = $STR_params_maxConstructions;
-        tooltip = $STR_params_maxConstructions_desc;
+        title = "$STR_params_maxConstructions";
+        tooltip = "$STR_params_maxConstructions_desc";
         values[] = {0,50,100,250,300};
         texts[] = {"0","50","100","250","300"};
         default = 100;
@@ -2503,18 +2503,18 @@ class Params
     class UnlockParams : LootParams
     {
         type = "Unlocks";
-        title = $STR_params_unlockParams;
-        //tooltip = $STR_params_unlockParams_desc;
+        title = "$STR_params_unlockParams";
+        //tooltip = "$STR_params_unlockParams_desc";
         values[] = {};
         texts[] = {};
         default = 0;
     };
     class minWeaps: UnlockParams
     {
-        title = $STR_params_server_unlock_threshold;
-        tooltip = $STR_params_server_unlock_threshold_desc;
+        title = "$STR_params_server_unlock_threshold";
+        tooltip = "$STR_params_server_unlock_threshold_desc";
         values[] = {10,15,20,25,30,35,40,45,50,100,200,500,-1};
-        texts[] = {"10","15","20","25","30","35","40","45","50","100","200","500",$STR_params_server_unlock_no_unlocks};
+        texts[] = {"10","15","20","25","30","35","40","45","50","100","200","500","$STR_params_server_unlock_no_unlocks"};
         class difficulty
         {
             class solo
@@ -2545,7 +2545,7 @@ class Params
                 value = -1;
                 dependentValue = 0;
                 lockedByDependency = 1;
-                dependencyTooltip = $STR_antistasi_dialogs_setup_unlocks_disabled;
+                dependencyTooltip = "$STR_antistasi_dialogs_setup_unlocks_disabled";
             };
             class allowGuidedLaunchers : unlockedUnlimitedAmmo {};
             class allowUnlockedExplosives : unlockedUnlimitedAmmo {};
@@ -2554,10 +2554,10 @@ class Params
     };
     class A3A_guestItemLimit: UnlockParams
     {
-        title = $STR_params_A3A_guestItemLimit;
-        tooltip = $STR_params_A3A_guestItemLimit_desc;
+        title = "$STR_params_A3A_guestItemLimit";
+        tooltip = "$STR_params_A3A_guestItemLimit_desc";
         values[] = {0,10,15,25,40};
-        texts[] = {$STR_params_A3A_no_limit,"10","15","25","40"};
+        texts[] = {"$STR_params_A3A_no_limit","10","15","25","40"};
         class difficulty
         {
             class solo
@@ -2585,10 +2585,10 @@ class Params
     class unlockedUnlimitedAmmo: UnlockParams
     {
         attr[] = {"server"};
-        title = $STR_params_unlockedUnlimitedAmmo;
-        tooltip = $STR_params_unlockedUnlimitedAmmo_desc;
+        title = "$STR_params_unlockedUnlimitedAmmo";
+        tooltip = "$STR_params_unlockedUnlimitedAmmo_desc";
         values[] = {1,0};
-        texts[] = {$STR_antistasi_dialogs_generic_button_yes_text, $STR_antistasi_dialogs_generic_button_no_text};
+        texts[] = {"$STR_antistasi_dialogs_generic_button_yes_text", "$STR_antistasi_dialogs_generic_button_no_text"};
         class difficulty
         {
             class solo
@@ -2606,10 +2606,10 @@ class Params
     class allowGuidedLaunchers: UnlockParams
     {
         attr[] = {"server"};
-        title = $STR_params_allowGuidedLaunchers;
-        tooltip = $STR_params_allowGuidedLaunchers_desc;
+        title = "$STR_params_allowGuidedLaunchers";
+        tooltip = "$STR_params_allowGuidedLaunchers_desc";
         values[] = {1,0};
-        texts[] = {$STR_antistasi_dialogs_generic_button_yes_text, $STR_antistasi_dialogs_generic_button_no_text};
+        texts[] = {"$STR_antistasi_dialogs_generic_button_yes_text", "$STR_antistasi_dialogs_generic_button_no_text"};
         class difficulty
         {
             class solo
@@ -2627,10 +2627,10 @@ class Params
     class allowUnlockedExplosives: UnlockParams
     {
         attr[] = {"server"};
-        title = $STR_params_allowUnlockedExplosives;
-        tooltip = $STR_params_allowUnlockedExplosives_desc;
+        title = "$STR_params_allowUnlockedExplosives";
+        tooltip = "$STR_params_allowUnlockedExplosives_desc";
         values[] = {1,0};
-        texts[] = {$STR_antistasi_dialogs_generic_button_yes_text,$STR_antistasi_dialogs_generic_button_no_text};
+        texts[] = {"$STR_antistasi_dialogs_generic_button_yes_text","$STR_antistasi_dialogs_generic_button_no_text"};
         class difficulty
         {
             class solo
@@ -2648,10 +2648,10 @@ class Params
     class allowUnlockedTNVG: UnlockParams
     {
         attr[] = {"server"};
-        title = $STR_params_allowUnlockedTNVG;
-        tooltip = $STR_params_allowUnlockedTNVG_desc;
+        title = "$STR_params_allowUnlockedTNVG";
+        tooltip = "$STR_params_allowUnlockedTNVG_desc";
         values[] = {1,0};
-        texts[] = {$STR_antistasi_dialogs_generic_button_yes_text,$STR_antistasi_dialogs_generic_button_no_text};
+        texts[] = {"$STR_antistasi_dialogs_generic_button_yes_text","$STR_antistasi_dialogs_generic_button_no_text"};
         class difficulty
         {
             class solo
@@ -2668,10 +2668,10 @@ class Params
     };
     class cosmeticsEnabled: UnlockParams
     {
-        title = $STR_A3AU_cosmetics;
-        tooltip = $STR_A3AU_cosmetics_desc;
+        title = "$STR_A3AU_cosmetics";
+        tooltip = "$STR_A3AU_cosmetics_desc";
         values[] = {0,1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
+        texts[] = {"$STR_antistasi_dialogs_generic_button_no_text","$STR_antistasi_dialogs_generic_button_yes_text"};
         default = 1;
     };
     class CrateParamsSpacer : LootParams
@@ -2681,18 +2681,18 @@ class Params
     class CrateParams : LootParams
     {
         type = "Crates";
-        title = $STR_params_crateParams;
-        //tooltip = $STR_params_crateParams_desc;
+        title = "$STR_params_crateParams";
+        //tooltip = "$STR_params_crateParams_desc";
         values[] = {};
         texts[] = {};
         default = 0;
     };
     class lootCratesEnabled: CrateParams
     {
-        title = $STR_params_lootCrateHeli;
-        tooltip = $STR_params_lootCrateHeli_desc;
+        title = "$STR_params_lootCrateHeli";
+        tooltip = "$STR_params_lootCrateHeli_desc";
         values[] = {0,1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
+        texts[] = {"$STR_antistasi_dialogs_generic_button_no_text","$STR_antistasi_dialogs_generic_button_yes_text"};
         class difficulty
         {
             class solo
@@ -2719,8 +2719,8 @@ class Params
     };
     class lootCrateDistance: CrateParams
     {
-        title = $STR_params_lootCrateDistance;
-        tooltip = $STR_params_lootCrateDistance_desc;
+        title = "$STR_params_lootCrateDistance";
+        tooltip = "$STR_params_lootCrateDistance_desc";
         values[] = {10, 25, 50, 75, 100, 200, 300, 400};
         texts[] = {"10", "25", "50", "75", "100", "200", "300", "400"};
         class difficulty
@@ -2739,8 +2739,8 @@ class Params
     };
     class lootCratePrice: CrateParams
     {
-        title = $STR_params_lootCratePrice;
-        tooltip = $STR_params_lootCratePrice_desc;
+        title = "$STR_params_lootCratePrice";
+        tooltip = "$STR_params_lootCratePrice_desc";
         values[] = {100, 200, 300, 400, 500};
         texts[] = {"100", "200", "300", "400", "500"};
         class difficulty
@@ -2769,26 +2769,26 @@ class Params
     };
     class lootCrateUnlockedItems: CrateParams
     {
-        title = $STR_params_lootCrateUnlockedItems;
-        tooltip = $STR_params_lootCrateUnlockedItems_desc;
+        title = "$STR_params_lootCrateUnlockedItems";
+        tooltip = "$STR_params_lootCrateUnlockedItems_desc";
         values[] = {0,1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
+        texts[] = {"$STR_antistasi_dialogs_generic_button_no_text","$STR_antistasi_dialogs_generic_button_yes_text"};
         default = 0;
     };
     class crateWepTypeMax: CrateParams
     {
-        title = $STR_params_crateWepTypeMax;
-        tooltip = $STR_params_crateWepTypeMax_desc;
+        title = "$STR_params_crateWepTypeMax";
+        tooltip = "$STR_params_crateWepTypeMax_desc";
         values[] = {0,2,4,6,8,12,16};
         texts[] = {"1","3","5","7","9","13","17"};
         default = 8;
     };
     class crateWepNumMax: CrateParams
     {
-        title = $STR_params_crateWepNumMax;
-        tooltip = $STR_params_crateWepNumMax_desc;
+        title = "$STR_params_crateWepNumMax";
+        tooltip = "$STR_params_crateWepNumMax_desc";
         values[] = {0,1,3,5,8,10,15};
-        texts[] = {$STR_params_civ_traffic_none,"1","3","5","8","10","15"};
+        texts[] = {"$STR_params_civ_traffic_none","1","3","5","8","10","15"};
         class difficulty
         {
             class solo
@@ -2805,18 +2805,18 @@ class Params
     };
     class crateItemTypeMax: CrateParams
     {
-        title = $STR_params_crateItemTypeMax;
-        tooltip = $STR_params_crateItemTypeMax_desc;
+        title = "$STR_params_crateItemTypeMax";
+        tooltip = "$STR_params_crateItemTypeMax_desc";
         values[] = {0,2,4,9};
         texts[] = {"1","3","5","10"};
         default = 4;
     };
     class crateItemNumMax: CrateParams
     {
-        title = $STR_params_crateItemNumMax;
-        tooltip = $STR_params_crateItemNumMax_desc;
+        title = "$STR_params_crateItemNumMax";
+        tooltip = "$STR_params_crateItemNumMax_desc";
         values[] = {0,1,3,5,10,15};
-        texts[] = {$STR_params_civ_traffic_none,"1","3","5","10","15"};
+        texts[] = {"$STR_params_civ_traffic_none","1","3","5","10","15"};
         class difficulty
         {
             class solo
@@ -2833,18 +2833,18 @@ class Params
     };
     class crateAmmoTypeMax: CrateParams
     {
-        title = $STR_params_crateAmmoTypeMax;
-        tooltip = $STR_params_crateAmmoTypeMax_desc;
+        title = "$STR_params_crateAmmoTypeMax";
+        tooltip = "$STR_params_crateAmmoTypeMax_desc";
         values[] = {0,2,4,6,9,14,19};
         texts[] = {"1","3","5","7","10","15","20"};
         default = 6;
     };
     class crateAmmoNumMax: CrateParams
     {
-        title = $STR_params_crateAmmoNumMax;
-        tooltip = $STR_params_crateAmmoNumMax_desc;
+        title = "$STR_params_crateAmmoNumMax";
+        tooltip = "$STR_params_crateAmmoNumMax_desc";
         values[] = {0,1,3,5,10,15,20,25,30};
-        texts[] = {$STR_params_civ_traffic_none,"1","3","5","10","15","20","25","30"};
+        texts[] = {"$STR_params_civ_traffic_none","1","3","5","10","15","20","25","30"};
         class difficulty
         {
             class solo
@@ -2861,18 +2861,18 @@ class Params
     };
     class crateExplosiveTypeMax: CrateParams
     {
-        title = $STR_params_crateExplosiveTypeMax;
-        tooltip = $STR_params_crateExplosiveTypeMax_desc;
+        title = "$STR_params_crateExplosiveTypeMax";
+        tooltip = "$STR_params_crateExplosiveTypeMax_desc";
         values[] = {0,2,4,9};
         texts[] = {"1","3","5","10"};
         default = 4;
     };
     class crateExplosiveNumMax: CrateParams
     {
-        title = $STR_params_crateExplosiveNumMax;
-        tooltip = $STR_params_crateExplosiveNumMax_desc;
+        title = "$STR_params_crateExplosiveNumMax";
+        tooltip = "$STR_params_crateExplosiveNumMax_desc";
         values[] = {0,1,3,5,10,15};
-        texts[] = {$STR_params_civ_traffic_none,"1","3","5","10","15"};
+        texts[] = {"$STR_params_civ_traffic_none","1","3","5","10","15"};
         class difficulty
         {
             class solo
@@ -2889,18 +2889,18 @@ class Params
     };
     class crateAttachmentTypeMax: CrateParams
     {
-        title = $STR_params_crateAttachmentTypeMax;
-        tooltip = $STR_params_crateAttachmentTypeMax_desc;
+        title = "$STR_params_crateAttachmentTypeMax";
+        tooltip = "$STR_params_crateAttachmentTypeMax_desc";
         values[] = {0,2,4,6,9,14,19};
         texts[] = {"1","3","5","7","10","15","20"};
         default = 6;
     };
     class crateAttachmentNumMax: CrateParams
     {
-        title = $STR_params_crateAttachmentNumMax;
-        tooltip = $STR_params_crateAttachmentNumMax_desc;
+        title = "$STR_params_crateAttachmentNumMax";
+        tooltip = "$STR_params_crateAttachmentNumMax_desc";
         values[] = {0,1,3,5,10,15,20,25,30};
-        texts[] = {$STR_params_civ_traffic_none,"1","3","5","10","15","20","25","30"};
+        texts[] = {"$STR_params_civ_traffic_none","1","3","5","10","15","20","25","30"};
         class difficulty
         {
             class solo
@@ -2917,18 +2917,18 @@ class Params
     };
     class crateBackpackTypeMax: CrateParams
     {
-        title = $STR_params_crateBackpackTypeMax;
-        tooltip = $STR_params_crateBackpackTypeMax_desc;
+        title = "$STR_params_crateBackpackTypeMax";
+        tooltip = "$STR_params_crateBackpackTypeMax_desc";
         values[] = {0,2,4,9};
         texts[] = {"1","3","5","10"};
         default = 0;
     };
     class crateBackpackNumMax: CrateParams
     {
-        title = $STR_params_crateBackpackNumMax;
-        tooltip = $STR_params_crateBackpackNumMax_desc;
+        title = "$STR_params_crateBackpackNumMax";
+        tooltip = "$STR_params_crateBackpackNumMax_desc";
         values[] = {0,1,3,5,10,15};
-        texts[] = {$STR_params_civ_traffic_none,"1","3","5","10","15"};
+        texts[] = {"$STR_params_civ_traffic_none","1","3","5","10","15"};
         class difficulty
         {
             class solo
@@ -2945,18 +2945,18 @@ class Params
     };
     class crateVestTypeMax: CrateParams
     {
-        title = $STR_params_crateVestTypeMax;
-        tooltip = $STR_params_crateVestTypeMax_desc;
+        title = "$STR_params_crateVestTypeMax";
+        tooltip = "$STR_params_crateVestTypeMax_desc";
         values[] = {0,2,4,9};
         texts[] = {"1","3","5","10"};
         default = 0;
     };
     class crateVestNumMax: CrateParams
     {
-        title = $STR_params_crateVestNumMax;
-        tooltip = $STR_params_crateVestNumMax_desc;
+        title = "$STR_params_crateVestNumMax";
+        tooltip = "$STR_params_crateVestNumMax_desc";
         values[] = {0,1,3,5,10,15};
-        texts[] = {$STR_params_civ_traffic_none,"1","3","5","10","15"};
+        texts[] = {"$STR_params_civ_traffic_none","1","3","5","10","15"};
         class difficulty
         {
             class solo
@@ -2973,18 +2973,18 @@ class Params
     };
     class crateHelmetTypeMax: CrateParams
     {
-        title = $STR_params_crateHelmetTypeMax;
-        tooltip = $STR_params_crateHelmetTypeMax_desc;
+        title = "$STR_params_crateHelmetTypeMax";
+        tooltip = "$STR_params_crateHelmetTypeMax_desc";
         values[] = {0,2,4,9};
         texts[] = {"1","3","5","10"};
         default = 0;
     };
     class crateHelmetNumMax: CrateParams
     {
-        title = $STR_params_crateHelmetNumMax;
-        tooltip = $STR_params_crateHelmetNumMax_desc;
+        title = "$STR_params_crateHelmetNumMax";
+        tooltip = "$STR_params_crateHelmetNumMax_desc";
         values[] = {0,1,3,5,10,15};
-        texts[] = {$STR_params_civ_traffic_none,"1","3","5","10","15"};
+        texts[] = {"$STR_params_civ_traffic_none","1","3","5","10","15"};
         class difficulty
         {
             class solo
@@ -3001,18 +3001,18 @@ class Params
     };
     class crateDeviceTypeMax: CrateParams
     {
-        title = $STR_params_crateDeviceTypeMax;
-        tooltip = $STR_params_crateDeviceTypeMax_desc;
+        title = "$STR_params_crateDeviceTypeMax";
+        tooltip = "$STR_params_crateDeviceTypeMax_desc";
         values[] = {0,2,4,9};
         texts[] = {"1","3","5","10"};
         default = 2;
     };
     class crateDeviceNumMax: CrateParams
     {
-        title = $STR_params_crateDeviceNumMax;
-        tooltip = $STR_params_crateDeviceNumMax_desc;
+        title = "$STR_params_crateDeviceNumMax";
+        tooltip = "$STR_params_crateDeviceNumMax_desc";
         values[] = {0,1,3,5,10,15};
-        texts[] = {$STR_params_civ_traffic_none,"1","3","5","10","15"};
+        texts[] = {"$STR_params_civ_traffic_none","1","3","5","10","15"};
         class difficulty
         {
             class solo
@@ -3034,18 +3034,18 @@ class Params
     class VehicleLootParams : LootParams
     {
         type = "VehicleLoot";
-        title = $STR_params_vehicleLootParams;
-        //tooltip = $STR_params_vehicleLootParams_desc;
+        title = "$STR_params_vehicleLootParams";
+        //tooltip = "$STR_params_vehicleLootParams_desc";
         values[] = {};
         texts[] = {};
         default = 0;
     };
     class enableVehicleAutoLock: VehicleLootParams
     {
-        title = $STR_params_enableVehicleAutoLock;
-        tooltip = $STR_params_enableVehicleAutoLock_desc;
+        title = "$STR_params_enableVehicleAutoLock";
+        tooltip = "$STR_params_enableVehicleAutoLock_desc";
         values[] = {0,1};
-        texts[] = {$STR_params_afk_disabled, $STR_params_afk_enabled};
+        texts[] = {"$STR_params_afk_disabled", "$STR_params_afk_enabled"};
         class difficulty
         {
             class solo
@@ -3063,13 +3063,13 @@ class Params
     };
     class enableVehicleAutoLockCiv: enableVehicleAutoLock
     {
-        title = $STR_params_enableVehicleAutoLockCiv;
-        tooltip = $STR_params_enableVehicleAutoLockCiv_desc;
+        title = "$STR_params_enableVehicleAutoLockCiv";
+        tooltip = "$STR_params_enableVehicleAutoLockCiv_desc";
     };
     class vehicleLockpickTime: VehicleLootParams
     {
-        title = $STR_params_vehicleLockpickTime;
-        tooltip = $STR_params_vehicleLockpickTime_desc;
+        title = "$STR_params_vehicleLockpickTime";
+        tooltip = "$STR_params_vehicleLockpickTime_desc";
         values[] = {30,60,120};
         texts[] = {"30s", "60s", "120s"};
         class difficulty
@@ -3093,18 +3093,18 @@ class Params
     class MiscLootParams : LootParams
     {
         type = "MiscLoot";
-        title = $STR_params_miscLootParams;
-        //tooltip = $STR_params_miscLootParams_desc;
+        title = "$STR_params_miscLootParams";
+        //tooltip = "$STR_params_miscLootParams_desc";
         values[] = {};
         texts[] = {};
         default = 0;
     };
     class helmetLossChance: MiscLootParams
     {
-        title = $STR_params_helmetLossChance;
-        tooltip = $STR_params_helmetLossChance_desc;
+        title = "$STR_params_helmetLossChance";
+        tooltip = "$STR_params_helmetLossChance_desc";
         values[] = {0,33,66,100};
-        texts[] = {$STR_params_helmetLossChance_0,$STR_params_helmetLossChance_1,$STR_params_helmetLossChance_2,$STR_params_helmetLossChance_3};
+        texts[] = {"$STR_params_helmetLossChance_0","$STR_params_helmetLossChance_1","$STR_params_helmetLossChance_2","$STR_params_helmetLossChance_3"};
         class difficulty
         {
             class solo
@@ -3134,10 +3134,10 @@ class Params
     };
     class helmetLossSound: MiscLootParams
     {
-        title = $STR_params_helmetLossSound;
-        tooltip = $STR_params_helmetLossSound_desc;
+        title = "$STR_params_helmetLossSound";
+        tooltip = "$STR_params_helmetLossSound_desc";
         values[] = {0,1};
-        texts[] = {$STR_antistasi_dialogs_generic_button_no_text,$STR_antistasi_dialogs_generic_button_yes_text};
+        texts[] = {"$STR_antistasi_dialogs_generic_button_no_text","$STR_antistasi_dialogs_generic_button_yes_text"};
         default = 1;
     };
     class BMParamsSpacer2 : AllParams
@@ -3152,8 +3152,8 @@ class Params
     class ExtenderParams : AllParams
     {
         type = "Extender";
-        title = $STR_params_extender;
-        tooltip = $STR_params_extender_desc;
+        title = "$STR_params_extender";
+        tooltip = "$STR_params_extender_desc";
         values[] = {};
         texts[] = {};
         default = 0;
@@ -3166,8 +3166,8 @@ class Params
     class ExperimentalParams
     {
         type = "Experimental";
-        title = $STR_params_experimental;
-        tooltip = $STR_params_experimental_desc;
+        title = "$STR_params_experimental";
+        tooltip = "$STR_params_experimental_desc";
         values[] = {};
         texts[] = {};
         default = 0;
@@ -3181,26 +3181,26 @@ class Params
     class DevelopmentParams : AllParams
     {
         type = "Development";
-        title = $STR_params_development;
-        //tooltip = $STR_params_development_desc;
+        title = "$STR_params_development";
+        //tooltip = "$STR_params_development_desc";
         values[] = {};
         texts[] = {};
         default = 0;
     };
     class LogLevel: DevelopmentParams
     {
-        title = $STR_params_LogLevel;
-        tooltip = $STR_params_LogLevel_desc;
+        title = "$STR_params_LogLevel";
+        tooltip = "$STR_params_LogLevel_desc";
         values[] = {1,2,3,4};
         texts[] = {"Error", "Info", "Debug", "Verbose"};
         default = 2;
     };
     class A3A_logDebugConsole: DevelopmentParams
     {
-        title = $STR_params_A3A_logDebugConsole;
-        tooltip = $STR_params_A3A_logDebugConsole_desc;
+        title = "$STR_params_A3A_logDebugConsole";
+        tooltip = "$STR_params_A3A_logDebugConsole_desc";
         values[] = {-1,1,2};
-        texts[] = {$STR_params_A3A_logDebugConsole_none, $STR_params_A3A_logDebugConsole_allnondev, $STR_params_A3A_logDebugConsole_all};
+        texts[] = {"$STR_params_A3A_logDebugConsole_none", "$STR_params_A3A_logDebugConsole_allnondev", "$STR_params_A3A_logDebugConsole_all"};
         default = 1;
     };
 
@@ -3211,8 +3211,8 @@ class Params
     class DeprecatedParams : AllParams
     {
         type = "Deprecated";
-        title = $STR_params_deprecated;
-        tooltip = $STR_params_deprecated_desc;
+        title = "$STR_params_deprecated";
+        tooltip = "$STR_params_deprecated_desc";
         values[] = {};
         texts[] = {};
         default = 0;
@@ -3222,10 +3222,10 @@ class Params
     // * only included here to not break A3A_fnc_manageFlagAccess
     class A3A_flagGarageBlock
     {
-        title = $STR_A3A_Params_garageAccessTimer_title;
-        tooltip = $STR_A3A_Params_garageAccessTimer_desc;
+        title = "$STR_A3A_Params_garageAccessTimer_title";
+        tooltip = "$STR_A3A_Params_garageAccessTimer_desc";
         values[] = {0,3,5,10,20};
-        texts[] = {$STR_A3A_Params_generic_disabled, $STR_A3A_Params_generic_3min, $STR_A3A_Params_generic_5min, $STR_A3A_Params_generic_10min, $STR_A3A_Params_generic_20min};
+        texts[] = {"$STR_A3A_Params_generic_disabled", "$STR_A3A_Params_generic_3min", "$STR_A3A_Params_generic_5min", "$STR_A3A_Params_generic_10min", "$STR_A3A_Params_generic_20min"};
         default = 0;
     };
 };

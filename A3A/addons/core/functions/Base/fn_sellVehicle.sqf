@@ -34,7 +34,7 @@ params [
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
 
-#define OccAndInv(VAR) (FactionGet(occ, VAR) + FactionGet(inv, VAR))
+#define OccAndInv(VAR) (FactionGet(occ,VAR) + FactionGet(inv,VAR))
 
 /*
 Blacklisted Assets
@@ -86,7 +86,7 @@ private _costs = call {
     if (_veh isKindOf "StaticWeapon") exitWith {100};			// in case rebel static is same as enemy statics
     if (_typeX in (FactionGet(all,"vehiclesReb") + FactionGet(reb,"vehiclesCivCar") + FactionGet(reb,"vehiclesCivTruck"))) exitWith { ([_typeX] call A3A_fnc_vehiclePrice) / 2 };
 
-    private _rebAa = FactionGet(reb, "vehiclesAA");
+    private _rebAa = FactionGet(reb,"vehiclesAA");
     if (_rebAa isNotEqualTo [] && {_typeX isEqualTo _rebAa}) exitWith {([_typeX] call A3A_fnc_vehiclePrice) / 2};
 
     if (

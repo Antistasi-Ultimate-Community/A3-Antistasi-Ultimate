@@ -75,8 +75,8 @@ switch (true) do {
 		publicVariable "markersX";
 		spawner setVariable [_marker,2,true];
 		_nul = [-5,5,_position] remoteExec ["A3A_fnc_citySupportChange",2];
-		_marker setMarkerType "A3AU_hmg_mrk";
-		_marker setMarkerColor colorTeamPlayer;
+		_marker setMarkerTypeLocal "A3AU_hmg_mrk";
+		_marker setMarkerColorLocal colorTeamPlayer;
 		_marker setMarkerText "";
 		_garrison = A3A_faction_reb get "groupHmgEmpl";
 		garrison setVariable [_marker,_garrison,true];

@@ -14,7 +14,7 @@ params ["_strikeObject"];
 */
 playSound "StrikeThunder";
 
-private _mainBeamParticle = "#particlesource" createVehicleLocal (getpos _strikeObject);
+private _mainBeamParticle = "#particlesource" createVehicleLocal (getPos _strikeObject);
 _mainBeamParticle setParticleCircle [0, [0, 0, -3]];
 _mainBeamParticle setParticleRandom [0, [0.25, 0.25, 0], [0.175, 0.175, 0], 0, 0.25, [0, 0, 0, 0.1], 0, 0];
 _mainBeamParticle setParticleParams [["\A3\data_f\cl_exp", 1, 0, 1], "", "Billboard", 1, 8, [0, 0, 0], [0, 0, 0], 150, 1, 0, 0, [15,11,7,3], [[1, 1, 1, 1],[1, 1, 1, 1], [1, 1, 1, 1], [1, 1, 1, 1]], [0.08], 1, 0, "", "", _strikeObject];
@@ -26,7 +26,7 @@ _mainBeamParticle setDropInterval 0.002;
 	deleteVehicle (_this select 0);
 };
 
-private _beamLightningParticle = "#particlesource" createVehicleLocal (getpos _strikeObject);
+private _beamLightningParticle = "#particlesource" createVehicleLocal (getPos _strikeObject);
 _beamLightningParticle setParticleCircle [0, [0, 0, -3]];
 _beamLightningParticle setParticleRandom [0, [0.25, 0.25, 0], [0.175, 0.175, 0], 0, 0.25, [0, 0, 0, 0.1], 0, 0];
 _beamLightningParticle setParticleParams [["\A3\data_f\VolumeLight", 1, 0, 1], "", "SpaceObject", 1, 8, [0, 0, 0], [0, 0, 0], 150, 1, 0, 0, [6,4,2,1], [[1, 1, 1, 1],[1, 1, 1, 1], [1, 1, 1, 1], [1, 1, 1, 1]], [0.08], 1, 0, "", "", _strikeObject];

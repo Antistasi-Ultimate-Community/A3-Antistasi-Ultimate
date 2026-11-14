@@ -55,7 +55,7 @@ switch (_source) do {
 	case "punishment_warden": {
 		call _forgiveStats;
 		call _releaseFromSentence;
-        Info_1("RELEASE | %1", _playerStats);
+        Info_1("RELEASE | %1",_playerStats);
 		if (isPlayer _detainee) then {
 			[localize "STR_A3A_punishment_FF_header", localize "STR_A3A_punishment_enough"] remoteExecCall ["A3A_fnc_customHint", _detainee, false];
 		};
@@ -64,7 +64,7 @@ switch (_source) do {
 	case "punishment_warden_manual": {
 		call _forgiveStats;
 		call _releaseFromSentence;
-        Info_1("FORGIVE | %1", _playerStats);
+        Info_1("FORGIVE | %1",_playerStats);
 		if (isPlayer _detainee) then {
 			[localize "STR_A3A_punishment_FF_header", localize "STR_A3A_punishment_admin_forgive"] remoteExecCall ["A3A_fnc_customHint", _detainee, false];
 		};
@@ -75,7 +75,7 @@ switch (_source) do {
 		true;
 	};
 	default {
-        Error_1("INVALID PARAMS | _source=""%1""", _source);
+        Error_1("INVALID PARAMS | _source=""%1""",_source);
 		false;
 	};
 };

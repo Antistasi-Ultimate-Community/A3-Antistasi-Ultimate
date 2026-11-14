@@ -77,8 +77,8 @@ switch (true) do {
 		publicVariable "markersX";
 		spawner setVariable [_marker,2,true];
 		_nul = [-5,5,_position] remoteExec ["A3A_fnc_citySupportChange",2];
-		_marker setMarkerType "A3AU_watchpost_mrk";
-		_marker setMarkerColor colorTeamPlayer;
+		_marker setMarkerTypeLocal "A3AU_watchpost_mrk";
+		_marker setMarkerColorLocal colorTeamPlayer;
 		_marker setMarkerText "";
 		[_taskId, "outpostTask", "SUCCEEDED"] call A3A_fnc_taskSetState;
 		[CBA_EVENT_SERVER_CREATE_REBEL_CONTROL, [_marker, "watchpost"]] call FUNCMAIN(triggerLocalEvent);

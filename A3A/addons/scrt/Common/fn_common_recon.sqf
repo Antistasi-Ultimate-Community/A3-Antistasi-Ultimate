@@ -8,14 +8,14 @@ private _markers = [];
 
 private _revealText = nil;
 
-if (!isNil "_enemyUnits" && {count _enemyUnits > 0}) then {
+if (!isNil "_enemyUnits" && {_enemyUnits isNotEqualTo []}) then {
     {
         private _entityPosition = position _x;
         _entityPosition = [(_entityPosition select 0) + random 10, (_entityPosition select 1) + random 10, _entityPosition select 2];
         private _revealMarker = createMarker [format ["%1revealedEntity%2", random 10000, random 10000], _entityPosition];
-        _revealMarker setMarkerShape "ELLIPSE";
-        _revealMarker setMarkerAlpha 0.9;
-        _revealMarker setMarkerSize [10, 10];
+        _revealMarker setMarkerShapeLocal "ELLIPSE";
+        _revealMarker setMarkerAlphaLocal 0.9;
+        _revealMarker setMarkerSizeLocal [10, 10];
         _revealMarker setMarkerColor "ColorRed";
 
         _markers pushBack _revealMarker;

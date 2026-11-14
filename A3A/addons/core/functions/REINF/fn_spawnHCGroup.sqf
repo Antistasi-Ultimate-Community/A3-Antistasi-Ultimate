@@ -47,7 +47,7 @@ private _units = units _group;
 theBoss hcSetGroup [_group];
 
 petros directSay "SentGenReinforcementsArrived";
-[localize "STR_antistasi_dialogs_recruit_squad_title", format [localize "STR_antistasi_dialogs_recruit_squad_success", groupID _group]] call A3A_fnc_customHint;
+[localize "STR_antistasi_dialogs_recruit_squad_title", format [localize "STR_antistasi_dialogs_recruit_squad_success", groupId _group]] call A3A_fnc_customHint;
 
 private _countUnits = count _units -1;
 private _bypassAI = true;
@@ -68,7 +68,7 @@ private _initVeh = {
     _group addVehicle _vehicle;
     _vehicle setVariable ["owner",_group,true];
     driver _vehicle action ["engineOn", _vehicle];
-    { if (vehicle _x == _x) then { _x moveInAny _vehicle } } forEach units _group;
+    { if (isNull objectParent _x) then { _x moveInAny _vehicle } } forEach units _group;
 };
 
 // special handling

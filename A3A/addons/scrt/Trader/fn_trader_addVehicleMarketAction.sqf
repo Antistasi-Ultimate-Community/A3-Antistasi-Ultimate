@@ -8,6 +8,6 @@ _traderX addAction [
 	false,
 	true,
 	"",
-	"(isPlayer _this) and (vehicle _this == _this) and (_this == _this getVariable ['owner',objNull])",
+	"(isPlayer _this) and (isNull objectParent _this) and (_this == _this getVariable ['owner',objNull])",
 	3
 ];

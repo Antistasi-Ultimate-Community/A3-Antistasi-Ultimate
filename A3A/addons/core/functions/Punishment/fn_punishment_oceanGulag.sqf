@@ -42,7 +42,7 @@ private _detainee = _varspace getVariable ["player",objNull];
 private _playerPos = [0,0,0];
 
 if (!isPlayer _detainee) then { // Prevents punishing AI
-    Info_1("DETAINEE MIA | UID:%1 matches no in-game player. Cleaning up.", _UID);
+    Info_1("DETAINEE MIA | UID:%1 matches no in-game player. Cleaning up.",_UID);
 	_operation = "remove";
 } else {
 	_playerPos = getPosASL _detainee;
@@ -52,7 +52,7 @@ if (isNil "A3A_FFPun_Jailed") then {A3A_FFPun_Jailed = [];};
 switch (toLower _operation) do {
 	case ("add"): {
 		if (_playerPos inArea [ [50,50], 50, 50 ,0, true, -1]) exitWith {};
-		if !(A3A_FFPun_Jailed pushBackUnique _UID isEqualTo -1) then {
+		if (A3A_FFPun_Jailed pushBackUnique _UID isNotEqualTo -1) then {
 			publicVariable "A3A_FFPun_Jailed";  // This is only modified on the server within an UNSCHEDULED function, so there should not be a race condition.
 		};
 		if (_initialPosASL isEqualTo [0,0,0]) then {
@@ -100,7 +100,7 @@ switch (toLower _operation) do {
 		true;
 	};
 	default {
-        Error_1("INVALID PARAMS | _operation=""%1""", _operation);
+        Error_1("INVALID PARAMS | _operation=""%1""",_operation);
 		false;
 	};
 };

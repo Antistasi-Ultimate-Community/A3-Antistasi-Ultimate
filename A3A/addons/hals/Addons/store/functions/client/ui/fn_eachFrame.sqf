@@ -47,7 +47,7 @@ addMissionEventHandler ["EachFrame", {
 			HALs_store_updated = true;
 		};
 
-		if !(_containers isEqualTo _oldContainers) then {
+		if (_containers isNotEqualTo _oldContainers) then {
 			missionNamespace setVariable ["#HALs_store_containers", _containers];
 			HALs_store_updated = true;
 		};

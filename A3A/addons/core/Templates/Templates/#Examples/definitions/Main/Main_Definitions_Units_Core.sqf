@@ -1,3 +1,5 @@
+#pragma hemtt ignore_variables ["_squadLeaderTemplate","_riflemanTemplate","_radiomanTemplate","_medicTemplate","_engineerTemplate","_explosivesExpertTemplate","_grenadierTemplate","_latTemplate","_atTemplate","_aaTemplate","_machineGunnerTemplate","_marksmanTemplate","_sniperTemplate","_patrolSniperTemplate","_patrolSpotterTemplate", "_militaryLoadoutData", "_sfLoadoutData", "_militiaLoadoutData", "_eliteLoadoutData", "_fnc_generateAndSaveUnitsToTemplate"]
+
 //////////////////////////////
 //  Special Forces Units   //
 ////////////////////////////

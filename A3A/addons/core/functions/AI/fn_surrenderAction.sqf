@@ -28,7 +28,7 @@ _unit disableAI "TARGET";
 _unit disableAI "ANIM";
 _unit setSkill 0;
 unassignVehicle _unit;			// stop them getting back into vehicles
-[_unit] orderGetin false;
+[_unit] orderGetIn false;
 _unit setUnitPos "UP";
 _unit playMoveNow "AmovPercMstpSnonWnonDnon_AmovPercMstpSsurWnonDnon";		// hands up?
 _unit setVariable ["A3U_PoW_unitType", _unit getVariable "unitType", true]; // in case the original unitType is needed for something else in the future
@@ -69,7 +69,7 @@ if (_unit getVariable ["hasLaptop", false] && {!(_unit getVariable ["hasLaptopSp
 // move all unit's equipment except uniform into the surrender crate
 private _loadout = getUnitLoadout _unit;
 for "_i" from 0 to 2 do {
-	if !(_loadout select _i isEqualTo []) then {
+	if (_loadout select _i isNotEqualTo []) then {
 		_boxX addWeaponWithAttachmentsCargoGlobal [_loadout select _i, 1];
 	};
 };

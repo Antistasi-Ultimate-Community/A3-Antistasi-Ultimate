@@ -26,7 +26,7 @@ License: MIT License, Copyright (c) 2019 Barbolani & The Official Antistasi Comm
 params ["_name"];
 
 private _actionsSelf = actionIDs player;
-if ((!isNil "_actionsSelf") && {!(_actionsSelf isEqualTo [])}) then {  // All players will be scanned, in-case they were previously an admin.
+if ((!isNil "_actionsSelf") && {_actionsSelf isNotEqualTo []}) then {  // All players will be scanned, in-case they were previously an admin.
     private _actionName = ["[Forgive FF] ",_name,""] joinString """";
     {
         if (((player actionParams _x)#0) isEqualTo _actionName) exitWith {

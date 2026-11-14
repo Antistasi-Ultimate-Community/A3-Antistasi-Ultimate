@@ -47,7 +47,7 @@ if (_unlockVehicle) then {
 
         [_vehicle, false] remoteExecCall ["A3U_fnc_setLock", owner _vehicle];
     } catch {
-        Error_1("Vehicle won't be unlocked: %1", _exception);
+        Error_1("Vehicle won't be unlocked: %1",_exception);
         _removeOk = false;
     };
 };

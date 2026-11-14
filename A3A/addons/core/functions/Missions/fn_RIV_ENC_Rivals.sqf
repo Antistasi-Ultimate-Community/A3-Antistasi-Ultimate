@@ -44,8 +44,8 @@ while {true} do {
     _roadRadius = _roadRadius + 5;
 };
 
-private _roadcon = roadsConnectedto (selectRandom _road);
-private _dirveh = if(count _roadcon > 0) then {[_road select 0, _roadcon select 0] call BIS_fnc_dirTo} else {random 360};
+private _roadcon = roadsConnectedTo (selectRandom _road);
+private _dirveh = if(_roadcon isNotEqualTo []) then {[_road select 0, _roadcon select 0] call BIS_fnc_dirTo} else {random 360};
 private _roadPosition = getPos (_road select 0);
 
 private _crater = createVehicle ["Crater", _roadPosition, [], 0, "NONE"];
@@ -65,7 +65,7 @@ _vehicles append [_crater, _crashedVehicle];
 
 private _damagedBuildings = (nearestObjects [_roadPosition, ["house"], 350]) select {(count ([_x] call BIS_fnc_buildingPositions)) > 0};
 private _damagedBuilding = nil;
-if (count _damagedBuildings > 0) then {
+if (_damagedBuildings isNotEqualTo []) then {
 	_damagedBuilding = selectRandom _damagedBuildings;
 	_damagedBuilding setDamage ((random 0.5)+0.4);
 	private _damagedBuildingPos = position _damagedBuilding;
@@ -388,8 +388,8 @@ while {true} do {
     _roadRadius = _roadRadius + 5;
 };
 
-_roadcon = roadsConnectedto (selectRandom _road);
-_dirveh = if(count _roadcon > 0) then {[_road select 0, _roadcon select 0] call BIS_fnc_DirTo} else {random 360};
+_roadcon = roadsConnectedTo (selectRandom _road);
+_dirveh = if(_roadcon isNotEqualTo []) then {[_road select 0, _roadcon select 0] call BIS_fnc_DirTo} else {random 360};
 _roadPosition = getPos (_road select 0);
 
 private _rivalVehData = [_roadPosition, 0, selectRandom (A3A_faction_riv get "vehiclesRivalsLightArmed"), Rivals] call A3A_fnc_RivalsSpawnVehicle;
@@ -414,7 +414,7 @@ waitUntil  {
 	sleep 5;
 	_aliveCount = {alive _x} count ((units _group1) + (units _group2));
 	_isEveryoneDead = (call SCRT_fnc_misc_getRebelPlayers) findIf {alive _x && {_x distance2D _intelLeaderPosition < 1000}} == -1;
-	Info_2("%1 Group Alive: %2", A3A_faction_riv get "name", str _aliveCount);
+	Info_2("%1 Group Alive: %2",A3A_faction_riv get "name",str _aliveCount);
 	(dateToNumber date > _dateLimitNum) || {_aliveCount < 2 || {_isEveryoneDead}} 
 };
 

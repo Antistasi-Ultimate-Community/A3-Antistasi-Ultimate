@@ -29,6 +29,6 @@ _aiUnits joinSilent _transferGroup;
 
 theBoss hcSetGroup [_transferGroup];
 
-private _text = format [localize "STR_hints_hc_transfer_success", groupID _transferGroup];
+private _text = format [localize "STR_hints_hc_transfer_success", groupId _transferGroup];
 [petros, "hint", _text] remoteExec ["A3A_fnc_commsMP",theBoss];
 petros directSay "SentGenReinforcementsArrived";

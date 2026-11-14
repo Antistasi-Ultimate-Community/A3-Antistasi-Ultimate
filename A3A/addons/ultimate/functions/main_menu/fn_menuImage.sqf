@@ -30,7 +30,7 @@ if (_menuImage isEqualTo "Random") then {
 };
 
 _displayImage ctrlEnable false;
-_displayImage ctrlSetPosition [safeZoneX, safezoneY, safeZoneW, safeZoneH];
+_displayImage ctrlSetPosition [safeZoneX, safeZoneY, safeZoneW, safeZoneH];
 _displayImage ctrlSetText _menuImage;
 _displayImage ctrlCommit 0;
 

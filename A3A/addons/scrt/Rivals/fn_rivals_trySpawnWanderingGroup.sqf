@@ -36,7 +36,7 @@ if (!([] call SCRT_fnc_rivals_rollProbability)) exitWith {
 	Info("Low probability, exiting.");
 };
 
-Info_1("Creating rivals patrol on %1 marker...", _marker);
+Info_1("Creating rivals patrol on %1 marker...",_marker);
 
 sleep 15;
 
@@ -48,7 +48,7 @@ if (_rivalsTacUnit isEqualTo []) exitWith {
 	Error("Empty rivals group for some reason, aborting.");
 };
 
-Info_1("Rivals tactical unit: %1", str _rivalsTacUnit);
+Info_1("Rivals tactical unit: %1",str _rivalsTacUnit);
 
 private _spawnableGroup = _rivalsTacUnit select 0;
 private _spawnableVehicle = _rivalsTacUnit select 1;
@@ -74,7 +74,7 @@ if (_spawnableVehicle != "") then {
 
 	while {true} do {
 		_roads = _originPosition nearRoads _radiusX;
-		if (count _roads > 0 && {_roads findIf {!([position _x] call A3A_fnc_enemyNearCheck)} != -1}) exitWith {};
+		if (_roads isNotEqualTo [] && {_roads findIf {!([position _x] call A3A_fnc_enemyNearCheck)} != -1}) exitWith {};
 		if (_iterations > 30) exitWith {};
 		_iterations = _iterations + 1;
 		_radiusX = _radiusX + 50;
@@ -96,8 +96,8 @@ if (_spawnableVehicle != "") then {
         ] call BIS_fnc_findSafePos;
 	} else {
 		private _road = selectRandom _roads;
-		private _roadCon = roadsConnectedto _road;
-		_dirVeh = if(count _roadcon > 0) then {[_road, _roadCon select 0] call BIS_fnc_DirTo} else {random 360};
+		private _roadCon = roadsConnectedTo _road;
+		_dirVeh = if(_roadcon isNotEqualTo []) then {[_road, _roadCon select 0] call BIS_fnc_DirTo} else {random 360};
 		_vehicleSpawnPosition = getPos _road;
 	};
 

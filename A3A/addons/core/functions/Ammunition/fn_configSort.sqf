@@ -13,8 +13,8 @@ private _allWeaponConfigs = "
 
 private _fnc_baseWeapon = {
     //--- Get manual base weapon
-    private _base = gettext (_this >> "baseWeapon");
-    if (isclass (configfile >> "cfgweapons" >> _base)) exitwith {_base};
+    private _base = getText (_this >> "baseWeapon");
+    if (isClass (configFile >> "cfgweapons" >> _base)) exitWith {_base};
 
     //--- Get first parent without any attachments
     private _config = _this;

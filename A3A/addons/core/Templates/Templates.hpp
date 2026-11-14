@@ -26,7 +26,7 @@ class Templates
         maps[] = {"SefrouRamal", "takistan"};
         forceDLC[] = {"ws"};
         climate[] = {"arid"};
-        description = $STR_A3AP_setupFactionsTab_csatandsfia;
+        description = "$STR_A3AP_setupFactionsTab_csatandsfia";
     };
 
     class WS_NATOandUNA : WS_Base
@@ -38,7 +38,7 @@ class Templates
         maps[] = {"SefrouRamal", "takistan"};
         forceDLC[] = {"ws"};
         climate[] = {"arid"};
-        description = $STR_A3AP_setupFactionsTab_natoanduna;
+        description = "$STR_A3AP_setupFactionsTab_natoanduna";
     };
 
     class WS_Civ : WS_Base
@@ -58,7 +58,7 @@ class Templates
         file = "WS_Reb_Tura";
         maps[] = {"SefrouRamal", "takistan"};
         forceDLC[] = {"ws"};
-        description = $STR_A3AP_setupFactionsTab_ws_tura;
+        description = "$STR_A3AP_setupFactionsTab_ws_tura";
     };
 
     class WS_Exegermenos : WS_Base
@@ -67,7 +67,7 @@ class Templates
         flagTexture = "\A3\Data_F\Flags\Flag_red_CO.paa";
         name = "WS Exegerménos";
         file = "WS_Riv_Exegermenos";
-        description = $STR_A3AP_setupFactionsTab_exegermenos;
+        description = "$STR_A3AP_setupFactionsTab_exegermenos";
     };
 
     class WS_Riv_ION : WS_Base
@@ -77,7 +77,7 @@ class Templates
         name = "WS ION";
         file = "WS_Riv_ION";
         forceDLC[] = {"ws"};
-        description = $STR_A3AP_setupFactionsTab_ion;
+        description = "$STR_A3AP_setupFactionsTab_ion";
     };
 
     // ************************************** Vanilla *******************************************************
@@ -89,7 +89,7 @@ class Templates
         basepath = QPATHTOFOLDER(Templates\Templates\Vanilla); //the path to the template folder
         priority = 10;
         equipFlags[] = {"vanilla"};
-        description = $STR_A3AP_setupFactionsTab_vanilla_generic;
+        description = "$STR_A3AP_setupFactionsTab_vanilla_generic";
     };
 
     class Vanilla_CSAT_Arid : Vanilla_Base
@@ -99,7 +99,7 @@ class Templates
         name = "A3 CSAT Arid";
         file = "Vanilla_AI_CSAT_Arid";
         climate[] = {"arid", "arctic"};
-        description = $STR_A3AP_setupFactionsTab_csat;
+        description = "$STR_A3AP_setupFactionsTab_csat";
     };
 
     class Vanilla_CSATandAAF : Vanilla_CSAT_Arid
@@ -109,7 +109,7 @@ class Templates
         file = "Vanilla_AI_CSAT&AAF";
         priority = 5;
         climate[] = {"arid"};
-        description = $STR_A3AP_setupFactionsTab_csatandaaf;
+        description = "$STR_A3AP_setupFactionsTab_csatandaaf";
     };
 
     class Vanilla_CSAT_Temperate : Vanilla_CSAT_Arid
@@ -126,7 +126,7 @@ class Templates
         name = "A3 NATO Arid";
         file = "Vanilla_AI_NATO_Arid";
         climate[] = {"arid"};
-        description = $STR_A3AP_setupFactionsTab_nato;
+        description = "$STR_A3AP_setupFactionsTab_nato";
     };
 
     class Vanilla_NATO_Temperate : Vanilla_NATO_Arid
@@ -150,7 +150,7 @@ class Templates
         file = "Vanilla_AI_NATO&AAF";
         priority = 5;
         climate[] = {"arid"};
-        description = $STR_A3AP_setupFactionsTab_natoandaaf;
+        description = "$STR_A3AP_setupFactionsTab_natoandaaf";
     };
 
     class Vanilla_NATOandLDF_Arid : Vanilla_Base
@@ -162,7 +162,7 @@ class Templates
         priority = 5;
         climate[] = {"arid"};
         forceDLC[] = {"enoch"};
-        description = $STR_A3AP_setupFactionsTab_natoandldf;
+        description = "$STR_A3AP_setupFactionsTab_natoandldf";
     };
 
     class Vanilla_NATOandLDF_Temperate : Vanilla_Base
@@ -175,7 +175,7 @@ class Templates
         maps[] = {"enoch","vt7"};
         climate[] = {"temperate"};
         forceDLC[] = {"enoch"};
-        description = $STR_A3AP_setupFactionsTab_natoandldf;
+        description = "$STR_A3AP_setupFactionsTab_natoandldf";
     };
 
     class Vanilla_LDF : Vanilla_Base
@@ -187,7 +187,7 @@ class Templates
         maps[] = {"enoch","vt7"};
         climate[] = {"temperate"};
         forceDLC[] = {"enoch"};
-        description = $STR_A3AP_setupFactionsTab_ldf;
+        description = "$STR_A3AP_setupFactionsTab_ldf";
     };
 
     class Vanilla_AAF : Vanilla_Base
@@ -198,7 +198,7 @@ class Templates
         file = "Vanilla_AI_AAF";
         maps[] = {"altis", "malden"};
         climate[] = {"arid"};
-        description = $STR_A3AP_setupFactionsTab_aaf;
+        description = "$STR_A3AP_setupFactionsTab_aaf";
     };
 
     class Vanilla_FIA : Vanilla_Base
@@ -208,7 +208,7 @@ class Templates
         name = "A3 FIA";
         file = "Vanilla_Reb_FIA";
         climate[] = {"arid"};
-        description = $STR_A3AP_setupFactionsTab_fia;
+        description = "$STR_A3AP_setupFactionsTab_fia";
     };
 
     class Vanilla_SDK : Vanilla_Base
@@ -218,7 +218,7 @@ class Templates
         name = "A3 SDK";
         file = "Vanilla_Reb_SDK";
         climate[] = {"tropical"};
-        description = $STR_A3AP_setupFactionsTab_sdk;
+        description = "$STR_A3AP_setupFactionsTab_sdk";
     };
 
     class Vanilla_LL : Vanilla_Base
@@ -228,7 +228,7 @@ class Templates
         name = "A3 LL";
         file = "Vanilla_Reb_LL";
         climate[] = {"temperate", "arctic"};
-        description = $STR_A3AP_setupFactionsTab_ll;
+        description = "$STR_A3AP_setupFactionsTab_ll";
     };
 
     class Vanilla_Remnants : Vanilla_Base
@@ -238,7 +238,7 @@ class Templates
         name = "A3 AAF Remnants";
         file = "Vanilla_Riv_Remnants";
         climate[] = {"arid", "temperate", "arctic"}; ///arctic?
-        description = $STR_A3AP_setupFactionsTab_remnants;
+        description = "$STR_A3AP_setupFactionsTab_remnants";
     };
 
     class Vanilla_Exegermenos : Vanilla_Base
@@ -248,7 +248,7 @@ class Templates
         name = "A3 Exegerménos";
         file = "Vanilla_Riv_Exegermenos";
         climate[] = {"arid", "temperate", "arctic"};
-        description = $STR_A3AP_setupFactionsTab_exegermenos;
+        description = "$STR_A3AP_setupFactionsTab_exegermenos";
     };
 
     class Vanilla_LE : Vanilla_Base
@@ -258,7 +258,7 @@ class Templates
         name = "A3 L'Ensemble";
         file = "Vanilla_Riv_LE";
         climate[] = {"tropical"};
-        description = $STR_A3AP_setupFactionsTab_le;
+        description = "$STR_A3AP_setupFactionsTab_le";
     };
 
     class Vanilla_Civ : Vanilla_Base
@@ -267,7 +267,7 @@ class Templates
         flagTexture = "\A3\Data_F\Flags\Flag_Altis_CO.paa";
         name = "Vanilla";
         file = "Vanilla_Civ";
-        description = $STR_A3AP_setupFactionsTab_vanilla_civ;
+        description = "$STR_A3AP_setupFactionsTab_vanilla_civ";
     };
 
     // ************************************** Expeditionary Forces *******************************************************
@@ -290,7 +290,7 @@ class Templates
         file = "EF_AI_MJTF_Arid";
         shortName = "MJTF";    
         climate[] = {"arid", "arctic"};
-        description = $STR_A3AP_setupFactionsTab_nato;
+        description = "$STR_A3AP_setupFactionsTab_nato";
     };
 
     class EF_MJTF_Temperate : EF_MJTF_Arid
@@ -298,7 +298,7 @@ class Templates
         name = "EF MJTF Temperate";
         file = "EF_AI_MJTF_Temperate";  
         climate[] = {"temperate", "tropical"};
-        description = $STR_A3AP_setupFactionsTab_nato; 
+        description = "$STR_A3AP_setupFactionsTab_nato"; 
     };
 
 
@@ -320,7 +320,7 @@ class Templates
         logo = "rhsgref\addons\rhsgref_main\data\rhs_logo_ca.paa";
         name = "RHS NAPA";
         file = "RHS_Reb_NAPA";
-        description = $STR_A3AP_setupFactionsTab_napa_3cbf;
+        description = "$STR_A3AP_setupFactionsTab_napa_3cbf";
     };
 
     class RHS_CDF : RHS_Base
@@ -331,7 +331,7 @@ class Templates
         file = "RHS_AI_CDF";
         maps[] = {"cup_chernarus_A3", "brf_sumava"};
         climate[] = {"temperate", "arctic"};
-        description = $STR_A3AP_setupFactionsTab_cdf;
+        description = "$STR_A3AP_setupFactionsTab_cdf";
     };
 
     class RHS_AFRF : RHS_Base
@@ -341,7 +341,7 @@ class Templates
         logo = "rhsafrf\addons\rhs_main\data\rhs_logo_ca.paa";
         name = "RHS AFRF";
         file = "RHS_AI_AFRF";
-        description = $STR_A3AP_setupFactionsTab_aegis_afrf;
+        description = "$STR_A3AP_setupFactionsTab_aegis_afrf";
     };
     class RHS_VDV : RHS_AFRF
     {
@@ -355,7 +355,7 @@ class Templates
         flagTexture = "rhsusf\addons\rhsusf_main\data\flag_us_co.paa";
         name = "RHS US Army Arid";
         file = "RHS_AI_US_Army_Arid";
-        description = $STR_A3AP_setupFactionsTab_usaf;
+        description = "$STR_A3AP_setupFactionsTab_usaf";
         climate[] = {"arid"};
     };
     class RHS_US_Army_Temperate : RHS_US_Army_Arid
@@ -371,7 +371,7 @@ class Templates
         flagTexture = "rhsusf\addons\rhsusf_main\data\flag_us_co.paa";
         name = "RHS USMC Arid";
         file = "RHS_AI_USMC_Arid";
-        description = $STR_A3AP_setupFactionsTab_usmc;
+        description = "$STR_A3AP_setupFactionsTab_usmc";
         climate[] = {"arid"};
     };
     class RHS_USMC_Temperate : RHS_USMC_Arid
@@ -388,7 +388,7 @@ class Templates
         logo = "rhsgref\addons\rhsgref_main\data\rhs_logo_ca.paa";
         name = "RHS CHDKZ";
         file = "RHS_Riv_CHDKZ";
-        description = $STR_A3AP_setupFactionsTab_chdkz;
+        description = "$STR_A3AP_setupFactionsTab_chdkz";
     };
 
     class RHS_Civ : RHS_Base
@@ -446,7 +446,7 @@ class Templates
         flagTexture = "\vn\objects_f_vietnam\flags\vn_flag_01_usa_co.paa";
         name = "VN MACV";
         file = "VN_AI_MACV";
-        description = $STR_A3AP_setupFactionsTab_macv;
+        description = "$STR_A3AP_setupFactionsTab_macv";
     };
 
     class VN_ARVN : VN_Base
@@ -455,7 +455,7 @@ class Templates
         flagTexture = "\vn\objects_f_vietnam\flags\vn_flag_01_arvn_co.paa";
         name = "VN ARVN";
         file = "VN_AI_ARVN";
-        description = $STR_A3AP_setupFactionsTab_arvn;
+        description = "$STR_A3AP_setupFactionsTab_arvn";
     };
 
     class VN_PAVN : VN_Base
@@ -464,7 +464,7 @@ class Templates
         flagTexture = "vn\objects_f_vietnam\flags\vn_flag_01_pavn_co.paa";
         name = "VN PAVN";
         file = "VN_AI_PAVN";
-        description = $STR_A3AP_setupFactionsTab_pavn;
+        description = "$STR_A3AP_setupFactionsTab_pavn";
     };
 
     class VN_VM : VN_Base
@@ -474,7 +474,7 @@ class Templates
         flagTexture = "\A3\Data_F\Flags\flag_blue_co.paa";
         name = "VN VM";
         file = "VN_Reb_VM";
-        description = $STR_A3AP_setupFactionsTab_vm;
+        description = "$STR_A3AP_setupFactionsTab_vm";
     };
 
     class VN_VC : VN_Base
@@ -483,7 +483,7 @@ class Templates
         flagTexture = "\vn\objects_f_vietnam\flags\vn_flag_01_vc_co.paa";
         name = "VN VC";
         file = "VN_Reb_VC";
-        description = $STR_A3AP_setupFactionsTab_vc;
+        description = "$STR_A3AP_setupFactionsTab_vc";
     };
 
     class VN_Riv_PL : VN_Base
@@ -492,7 +492,7 @@ class Templates
         flagTexture = "\vn\objects_f_vietnam\flags\vn_flag_01_pl_co.paa";
         name = "VN PL";
         file = "VN_Riv_PL";
-        description = $STR_A3AP_setupFactionsTab_pl;
+        description = "$STR_A3AP_setupFactionsTab_pl";
     };
 
     class VN_Riv_HM : VN_Base
@@ -501,7 +501,7 @@ class Templates
         flagTexture = QPATHTOFOLDER(Templates\Templates\VN\flags\royal_lao_army.paa);
         name = "VN HM";
         file = "VN_Riv_HM";
-        description = $STR_A3AP_setupFactionsTab_hm;
+        description = "$STR_A3AP_setupFactionsTab_hm";
     };
 
     class VN_Civ : VN_Base
@@ -510,7 +510,7 @@ class Templates
         flagTexture = QPATHTOFOLDER(Templates\Templates\VN\flags\flag_vn_combined_co.paa);
         name = "Vietnam";
         file = "VN_Civ";
-        description = $STR_A3AP_setupFactionsTab_vietcivs;
+        description = "$STR_A3AP_setupFactionsTab_vietcivs";
     };
 
     //***************************** CSLA *****************************
@@ -555,7 +555,7 @@ class Templates
         name = "CSLA Separatists";
         file = "CSLA_Riv_Separatists";
         climate[] = {"arid", "temperate", "arctic"};
-        description = $STR_A3AP_setupFactionsTab_separatistsCSLA;
+        description = "$STR_A3AP_setupFactionsTab_separatistsCSLA";
     };
 
     class CSLA_CS : CSLA_Base

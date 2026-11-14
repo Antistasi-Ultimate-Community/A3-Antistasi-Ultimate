@@ -32,7 +32,7 @@ if (_civHeli isEqualTo []) exitWith {
 
 private _originPosition = position _player;
 
-Info_2("%1 will be used as center of the event at %2 position.", name _player, str _originPosition);
+Info_2("%1 will be used as center of the event at %2 position.",name _player,str _originPosition);
 
 private _finPosition = [_originPosition, 2500, (random 360)] call BIS_fnc_relPos;
 

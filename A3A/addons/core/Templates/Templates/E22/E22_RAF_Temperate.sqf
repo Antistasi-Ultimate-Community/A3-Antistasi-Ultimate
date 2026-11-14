@@ -1,3 +1,5 @@
+#pragma hemtt ignore_variables ["_fnc_saveNames","_fnc_createLoadoutData","_fnc_copyLoadoutData","_fnc_generateAndSaveUnitsToTemplate","_fnc_saveToTemplate"]
+
 private _hasWs = "ws" in A3A_enabledDLC;
 private _hasMarksman = "mark" in A3A_enabledDLC;
 private _hasLawsOfWar = "orange" in A3A_enabledDLC;
@@ -70,6 +72,8 @@ private _helisAttack = ["E22_B_RAF_Heli_Attack_02_dynamicLoadout_F"];
 
 private _airPatrol = ["E22_B_RAF_Heli_Light_02_dynamicLoadout_F", "E22_B_RAF_Heli_Attack_02_dynamicLoadout_F"];
 
+private _policeVehs = ["B_GEN_Offroad_01_gen_F"];
+
 if (_hasRF) then {
     _basic pushBack "B_Pickup_rf";
     _unarmedVehicles append ["B_Pickup_rf", "B_Pickup_Comms_rf"];
@@ -104,12 +108,6 @@ private _militiaLightArmed = ["E22_B_RAF_LSV_02_armed_F"];
 private _militiaTrucks = ["E22_B_RAF_Truck_03_transport_F"];
 private _militiaCars = ["E22_B_RAF_LSV_02_unarmed_F"];
 private _militiaAPCs = ["E22_B_RAF_MRAP_02_hmg_F"];
-
-private _policeVehs = ["B_GEN_Offroad_01_gen_F"];
-
-if (_hasRF) then {
-    _policeVehs = ["B_GEN_Pickup_covered_rf"];
-};
 
 if (_hasEF) then {
     _policeVehs append ["EF_B_Gyra_GEN", "EF_B_Gyra_HMG_GEN"];

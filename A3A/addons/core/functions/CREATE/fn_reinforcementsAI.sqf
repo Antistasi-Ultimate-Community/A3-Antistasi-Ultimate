@@ -12,7 +12,7 @@ private _allKillzones = [];
 if (isNil "killZoneRemove") then {killZoneRemove = 0};
 private _kzAggroMult = 0.2 + 0.4 * (aggressionOccupants + aggressionInvaders) / 100;
 killZoneRemove = killZoneRemove + _kzAggroMult * (0.5 + 0.1 * count _allKillzones);
-if (count _allKillzones == 0) then { killZoneRemove = 0 };
+if (_allKillzones isEqualTo []) then { killZoneRemove = 0 };
 
 while {killZoneRemove >= 1} do
 {
@@ -48,7 +48,7 @@ private _fnc_pickSquadType = {
 	private _lowAir = _faction getOrDefault ["attributeLowAir", false];
 	private _defRes = [A3A_resourcesDefenceOcc, A3A_resourcesDefenceInv] select (_side == Invaders);
 	private _totalReinf = 4 * round (0.1 * _defRes / 40);
-	Debug_3("%1 sending %2 total troops to reinforce due to %3 resources", _side, _totalReinf, _defRes);
+	Debug_3("%1 sending %2 total troops to reinforce due to %3 resources",_side,_totalReinf,_defRes);
 	if (_totalReinf == 0) then {continue};
 
 	private _sourceAirports = airportsX select {(sidesX getVariable [_x,sideUnknown] == _side) and (spawner getVariable _x == 2)};
@@ -97,7 +97,7 @@ private _fnc_pickSquadType = {
 			_source = selectRandom _sourceAirports;
 			private _killZones = killzones getVariable [_source, []];
 			_targIndex = _reinfTargets findIf {
-				(markerPos (_x#2) distance2d markerPos _source < distanceForAirAttack)
+				(markerPos (_x#2) distance2D markerPos _source < distanceForAirAttack)
 				and !((_x#2) in _killZones)
 			};
 			if (_targIndex == -1) then {
@@ -111,7 +111,7 @@ private _fnc_pickSquadType = {
 		private _numTroops = [4, 8] select (_numNeeded > 4 and _totalReinf >= 8 and random 1 > 0.3);
 		_totalReinf = _totalReinf - _numTroops;
 
-		Debug_3("Reinforcing garrison %1 from %2 with %3 troops", _target, _source, _numTroops);
+		Debug_3("Reinforcing garrison %1 from %2 with %3 troops",_target,_source,_numTroops);
 		if (_source == _target) then {
 			// Self-reinforce. Already know that we're not spawned, so this is fine
 			[[_numTroops, _faction] call _fnc_pickSquadType, _side, _target, 0] remoteExec ["A3A_fnc_garrisonUpdate",2];

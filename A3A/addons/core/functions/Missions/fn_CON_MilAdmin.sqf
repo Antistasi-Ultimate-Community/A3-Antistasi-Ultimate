@@ -6,7 +6,7 @@ params ["_marker"];
 //Mission: Capture military administration
 if (!isServer and hasInterface) exitWith{};
 
-private _difficultX = if (random 10 < tierWar) then {true} else {false};
+private _difficultX = random 10 < tierWar;
 private _milAdministrationPos = getMarkerPos _marker;
 
 private _limit = if (_difficultX) then {
@@ -29,7 +29,7 @@ private _taskId = "CON" + str A3A_taskCount;
 
 private _milAdministrationIndex = A3A_milAdministrations findIf { _milAdministrationPos distance2D _x < 30 };
 if (_milAdministrationIndex isEqualTo -1) exitWith {
-	Error_1("For some reason %1 mil administration has no corresponding building, aborting.", _marker);
+	Error_1("For some reason %1 mil administration has no corresponding building, aborting.",_marker);
 };
 
 private _milAdministration = A3A_milAdministrations select _milAdministrationIndex;

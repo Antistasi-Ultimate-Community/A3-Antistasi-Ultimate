@@ -143,7 +143,7 @@ else
         _targetMarker setMarkerShapeLocal "ELLIPSE";
         _targetMarker setMarkerBrushLocal "Grid";
         _targetMarker setMarkerSizeLocal [_markerType, _markerType];        // actually a radius
-        _targetMarker setMarkerColorLocal (if(_side == Occupants) then { colorOccupants } else { colorInvaders });
+        _targetMarker setMarkerColorLocal ([colorInvaders, colorOccupants] select (_side == Occupants));
         _targetMarker setMarkerAlpha 1;
 
         createMarkerLocal [_textMarker, _position];
@@ -180,7 +180,7 @@ else
 
 //Broadcast message to nearby players
 private _nearbyPlayers = allPlayers select {(_x distance2D _position) <= 2000};
-if(count _nearbyPlayers > 0) then
+if(_nearbyPlayers isNotEqualTo []) then
 {
     ["RadioIntercepted", [_text]] remoteExec ["BIS_fnc_showNotification",_nearbyPlayers];
 };

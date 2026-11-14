@@ -148,7 +148,7 @@ if (alive _veh && canMove _veh) then
             
             private _driver = driver _veh;
             
-            while {((getposATL _unit select 2) > 1) and (canMove _veh) and (abs speed _veh < 10)} do
+            while {((getPosATL _unit select 2) > 1) and (canMove _veh) and (abs speed _veh < 10)} do
             {
                 _unit attachTo [_veh, [2,1,_d]];
                 _d = _d - 0.35;
@@ -171,7 +171,7 @@ _driver action ["VTOLVectoringCancel", _veh];
 _driver enableAI "MOVE";
 _driver enableAI "PATH";
 
-waitUntil {sleep 1; (not alive _veh) or ((count assignedCargo _veh == 0) and (([_veh] call A3A_fnc_countAttachedObjects) == 0))};
+waitUntil {sleep 1; (not alive _veh) or ((assignedCargo _veh isEqualTo []) and (([_veh] call A3A_fnc_countAttachedObjects) == 0))};
 
 sleep 3;
 

@@ -51,7 +51,7 @@ private _categories = [
 private _fnc_addVehicleToStock = {
     params ["_cfgPath", "_vehicle"];
     
-    if !(isClass (configFile >> "CfgVehicles" >> _vehicle)) exitWith { Error_1("%1 does not exist in CfgVehicles. Skipped adding due to CTD issues if it is previewed.", _vehicle) };
+    if !(isClass (configFile >> "CfgVehicles" >> _vehicle)) exitWith { Error_1("%1 does not exist in CfgVehicles. Skipped adding due to CTD issues if it is previewed.",_vehicle) };
 
     private _vehCfg = _cfgPath >> _vehicle;
     private _price = getNumber (_vehCfg >> "price");
@@ -61,7 +61,7 @@ private _fnc_addVehicleToStock = {
         _blackMarketConds set [_type, compile getText (_vehCfg >> "condition")];
     };
     _bmStock set [_vehicle, _price];
-    Verbose_3("Adding %1 with price: %2, type: %3", _vehicle, _price, _type);
+    Verbose_3("Adding %1 with price: %2, type: %3",_vehicle,_price,_type);
     _blackMarketStock set [_type, _bmStock];
 };
 
@@ -103,7 +103,7 @@ private _hasCustomModVehicles = false;
     private _addons = getArray (_baseCfg >> _x >> "addons");
     if (_addons isEqualTo []) then { continue };
     if !([_addons] call A3U_fnc_hasAddon) then {
-        Verbose_1("Skipped %1 from adding to black market list. Addons requirements not met.", _x);
+        Verbose_1("Skipped %1 from adding to black market list. Addons requirements not met.",_x);
         continue;
     };
 
@@ -115,7 +115,7 @@ private _hasCustomModVehicles = false;
 
     {
         if (_x in _ignoreList) then {
-            Verbose_1("Skipped %1 because it belongs to a disabled DLC.", _x);
+            Verbose_1("Skipped %1 because it belongs to a disabled DLC.",_x);
             continue;
         };
         [_vehicleCfg, _x] call _fnc_addVehicleToStock;

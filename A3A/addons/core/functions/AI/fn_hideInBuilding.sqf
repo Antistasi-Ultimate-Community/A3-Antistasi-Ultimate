@@ -1,5 +1,5 @@
 private _unitsX = _this;
-private _buildings = (nearestTerrainObjects [(leader (_unitsX select 0)),["House"],100]) select {count (_x buildingPos -1) > 0};
+private _buildings = (nearestTerrainObjects [(leader (_unitsX select 0)),["House"],100]) select {(_x buildingPos -1) isNotEqualTo []};
 if (_buildings isEqualTo []) exitWith {};
 private _groupX = group (_unitsX select 0);
 private _buildingPos = [];

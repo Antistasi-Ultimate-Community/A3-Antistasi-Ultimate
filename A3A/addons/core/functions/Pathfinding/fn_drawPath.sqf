@@ -42,10 +42,10 @@ private _pathID = round (random 1000);
     };
 
     private _marker = createMarker [format ["%1Path%2", _pathID, _forEachIndex], _nodePos];
-    _marker setMarkerShape "ICON";
-    _marker setMarkerType "mil_dot";
-    _marker setMarkerColor _nodeColor;
-    _marker setMarkerAlpha 1;
+    _marker setMarkerShapeLocal "ICON";
+    _marker setMarkerTypeLocal "mil_dot";
+    _marker setMarkerColorLocal _nodeColor;
+    _marker setMarkerAlphaLocal 1;
     _marker setMarkerText (str _forEachIndex);
 
     if(_time >= 0) then

@@ -133,7 +133,7 @@ else
     };
 };
 
-if (count _result != 0 && !(_result select 0)) exitWith
+if (_result isNotEqualTo [] && !(_result select 0)) exitWith
 {
     _result;
 };

@@ -17,14 +17,7 @@ outlw_MR_modifierCheck =
 		}
 		else
 		{
-			if (outlw_MR_alt && {!_alt}) then
-			{
-				false;
-			}
-			else
-			{
-				true;
-			};
+			!(outlw_MR_alt && {!_alt});
 		};
 	};
 };
@@ -80,7 +73,7 @@ outlw_MR_getIDCs =
 		
 		if (call _filter) then
 		{
-			_returnList = _returnList + [getNumber(_config >> _ctrl >> "idc")];
+			_returnList pushBack getNumber(_config >> _ctrl >> "idc");
 		};
 		
 		if (isClass(_config >> _ctrl >> "Controls")) then

@@ -21,7 +21,7 @@ FIX_LINE_NUMBERS()
 
 params["_mode", "_params"];
 
-Debug_1("Setup dialog called with mode %1", _mode);
+Debug_1("Setup dialog called with mode %1",_mode);
 
 // Function to give a short time difference string from two serverTimeUTC inputs
 private _fnc_getTimeDiffString = {
@@ -38,7 +38,7 @@ private _fnc_getTimeDiffString = {
     };
 
     // now find first non-zero
-    private _nzi = _diffTime findif {_x!=0};
+    private _nzi = _diffTime findIf {_x!=0};
     if (_nzi == -1) exitWith { "0min" };									// zero time diff
     if (_diffTime#_nzi < 0) exitWith { "???" };							// negative time diff
     if (_nzi == 4) exitWith { format ["%1min", _diffTime#4] };		// just minutes
@@ -109,7 +109,7 @@ switch (_mode) do
     {
         _params params ["_selectedTab"];
 
-        Debug_1("SetupDialog switching tab to %1.", _selectedTab);
+        Debug_1("SetupDialog switching tab to %1.",_selectedTab);
 
         private _selectedTabIDC = switch (_selectedTab) do
         {
@@ -179,6 +179,6 @@ switch (_mode) do
 
     default {
     // Log error if attempting to call a mode that doesn't exist
-        Error_1("Mode %1 does not exist", _mode);
+        Error_1("Mode %1 does not exist",_mode);
     };
 };

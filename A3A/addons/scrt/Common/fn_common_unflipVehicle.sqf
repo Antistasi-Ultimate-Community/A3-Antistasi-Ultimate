@@ -1,3 +1,4 @@
+#pragma hemtt ignore_variables ["_thisScript"]
 private _vehicle = cursorTarget;
 
 if(isNil "_vehicle" || {isNull _vehicle}) exitWith {};
@@ -14,7 +15,7 @@ if !(alive _vehicle) exitWith {
 };
 
 private _crew = crew _vehicle;
-if !(_crew isEqualTo []) exitWith {
+if (_crew isNotEqualTo []) exitWith {
     [localize "STR_unflip_fail_header", localize "STR_unflip_fail_veh_occupied"] call SCRT_fnc_misc_deniedHint;
 };
 

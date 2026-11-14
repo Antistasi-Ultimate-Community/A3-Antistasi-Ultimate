@@ -67,7 +67,7 @@ if (side group _newUnit == teamPlayer) then
     	_newUnit addOwnedMine _x;
     } count (getAllOwnedMines (_oldUnit));
 	{
-		if (_x getVariable ["owner", ObjNull] == _oldUnit) then {
+		if (_x getVariable ["owner", objNull] == _oldUnit) then {
 			_x setVariable ["owner", _newUnit, true];
 		};
 	} forEach (units group _newUnit);
@@ -108,18 +108,18 @@ if (side group _newUnit == teamPlayer) then
 				if(((server getVariable ["hr",0]) <= 10) && (tierWar >= 2)) then
 				{
 					_warningText = "<t font ='PuristaBold' align = 'center' size='0.8' color='#bd0000'>" + localize "STR_A3AU_respawn_warning" +"</t>"+"<br />"+"<t font ='PuristaSemibold' align = 'center' size='0.55' color='#ebebeb'>" + format [localize "STR_A3AU_respawn_warning_info", (A3A_faction_reb get "name"), ((server getVariable ["hr",0])-1)]+"</t>"+"<br />"+"<t font ='PuristaSemibold' align = 'center' size='0.4' color='#ebebeb'>" + format [localize "STR_chats_player_kia", _deathPenaltyNum]+"</t>";
-					[_warningText,0,safezoneY+0.05] spawn BIS_fnc_dynamicText;
+					[_warningText,0,safeZoneY+0.05] spawn BIS_fnc_dynamicText;
 				};
 
 				if(((server getVariable ["hr",0]) > 10) && (tierWar >= 2)) then
 				{
 					_warningText = "<t font ='PuristaSemibold' align = 'center' size='0.5' color='#ebebeb'>" + format [localize "STR_chats_player_kia", _deathPenaltyNum]+"</t>";
-					[_warningText,0,safezoneY+0.05] remoteExec ["BIS_fnc_dynamicText"];
+					[_warningText,0,safeZoneY+0.05] remoteExec ["BIS_fnc_dynamicText"];
 				};
 			};
         };
 
-		default {Error_1("Lose HR on death num was not recognized. Condition given: %1", loseHROnDeath)};
+		default {Error_1("Lose HR on death num was not recognized. Condition given: %1",loseHROnDeath)};
     };
 
 	disableUserInput false;
@@ -132,7 +132,7 @@ if (side group _newUnit == teamPlayer) then
 	[(selectRandom unlockedmaps),"","",(selectRandom unlockedCompasses),(selectRandom unlockedwatches),""]];
 
 	if (!isPlayer (leader group _newUnit)) then {(group _newUnit) selectLeader _newUnit};
-	_newUnit addEventHandler ["FIRED", 
+	_newUnit addEventHandler ["Fired", 
 	{
 		_player = _this select 0;
 		if (captive _player) then {
@@ -152,7 +152,7 @@ if (side group _newUnit == teamPlayer) then
 					{
 						[_player,false] remoteExec ["setCaptive",0,_player];
 						_player setCaptive false;
-						if (vehicle _player != _player) then
+						if (!isNull objectParent _player) then
 						{
 							{if (isPlayer _x) then {[_x,false] remoteExec ["setCaptive",0,_x]; _x setCaptive false}} forEach ((assignedCargo (vehicle _player)) + (crew (vehicle _player)) - [_player]);
 						};

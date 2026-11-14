@@ -7,7 +7,7 @@ private _additionalGroups = [];
 
 
 private _faction = Faction(_side);
-private _aggression = if (_side == Occupants) then {aggressionOccupants} else {aggressionInvaders};
+private _aggression = [aggressionInvaders, aggressionOccupants] select (_side == Occupants);
 private _oversizeChance =  _aggression / 2;
 if (_oversizeChance > 15) then {
 	_oversizeChance = 15;
@@ -32,7 +32,7 @@ if ((random 100) < _oversizeChance) then {
         _additionalGroups pushBack (selectRandom _pool);
     };
 
-    Info_2("Oversized %1 garrison, number of additional squads: %2", str _marker, str _squadCount);
+    Info_2("Oversized %1 garrison, number of additional squads: %2",str _marker,str _squadCount);
 };
 
 _additionalGroups

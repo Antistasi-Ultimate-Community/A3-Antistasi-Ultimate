@@ -98,7 +98,7 @@ fnc_sortPlacementMarker =
 
     default
     {
-        Error_1("Could not resolve marker %1", _x);
+        Error_1("Could not resolve marker %1",_x);
     };
   };
 } forEach _allMarker;
@@ -113,7 +113,7 @@ fnc_sortPlacementMarker =
 {
     private _spawnStr = format ["%1_vehicle_used", _x];
     if (isNil { spawner getVariable _spawnStr }) then {
-        Debug_1("Generating additional spawn places for %1", _x);
+        Debug_1("Generating additional spawn places for %1",_x);
         [_x, []] call A3A_fnc_initSpawnPlaces;
     };
 } forEach (airportsX + resourcesX + factories + outposts + seaports + milbases);

@@ -59,9 +59,9 @@ private _roads = nearestTerrainObjects [getMarkerPos _markerX, ["MAIN ROAD", "RO
 // no bridges or junctions
 _roads = _roads select { !(getRoadInfo _x # 8) and (count roadsConnectedTo [_x, true] <= 2) and (count (_x nearRoads 10) < 2)};
 
-if (count _roads == 0) exitWith
+if (_roads isEqualTo []) exitWith
 {
-    Error_1("Roads not found for marker %1", _markerX);
+    Error_1("Roads not found for marker %1",_markerX);
 };
 _roads = _roads call BIS_fnc_arrayShuffle;
 
@@ -71,7 +71,7 @@ _numCiv = 15 * sqrt _numCiv * (1 - tierWar / 20);
 private _numParked = _numCiv * (1/60) * civTraffic;
 private _numTraffic = _numCiv * (1/300) * civTraffic;
 
-if ((daytime < 8) or (daytime > 21)) then {
+if ((dayTime < 8) or (dayTime > 21)) then {
     _numParked = _numParked * 1.5; 
     _numTraffic = _numTraffic / 4 ;
 };
@@ -84,11 +84,11 @@ while {(spawner getVariable _spawnKey != 2) and (_countParked < _numParked)} do 
     private _road = roadAt _p1;
     
     if (!isNull _road) then {
-        if ((count (nearestObjects [_p1, ["Car", "Truck"], 5]) == 0) and !([50,1,_road,teamPlayer] call A3A_fnc_distanceUnits)) then {
+        if (((nearestObjects [_p1, ["Car", "Truck"], 5]) isEqualTo []) and !([50,1,_road,teamPlayer] call A3A_fnc_distanceUnits)) then {
             _dirveh = 0;
             private _roadcon = roadsConnectedTo [_road, true];
 
-            if (count _roadcon != 0) then {
+            if (_roadcon isNotEqualTo []) then {
                 private _p2 = getPosATL (_roadcon # 0);
                 _dirveh = _p1 getDir _p2;
             };
@@ -120,7 +120,7 @@ while {(spawner getVariable _spawnKey != 2) and (_countParked < _numParked)} do 
 };
 
 private _mrkMar = seaSpawn select {getMarkerPos _x inArea _markerX};
-if (count _mrkMar > 0) then {
+if (_mrkMar isNotEqualTo []) then {
     for "_i" from 0 to (round (random 3)) do {
         if (spawner getVariable _spawnKey != 2) then {
             _typeVehX = selectRandomWeighted civBoatsWeighted;
@@ -130,7 +130,7 @@ if (count _mrkMar > 0) then {
             private _spawnPosition = [];
             _spawnPosition = [(getMarkerPos (_mrkMar select 0)), 5, 50, 5, 2, 0, 0] call A3A_fnc_getSafePos;
             if (_spawnPosition isEqualTo [0,0]) then {
-                Debug_1("%1 could not be spawned because no valid spawn position was found.", _typeVehX);
+                Debug_1("%1 could not be spawned because no valid spawn position was found.",_typeVehX);
                 continue;
             };
 
@@ -153,20 +153,20 @@ if ([_markerX,false] call A3A_fnc_fogCheck > 0.2) then {
     private _countTraffic = 0;
     private _patrolCities = [_markerX] call A3A_fnc_citiesToCivPatrol;
 
-    if (count _patrolCities > 0) then {
+    if (_patrolCities isNotEqualTo []) then {
         while {(spawner getVariable _spawnKey != 2) and (_countTraffic < _numTraffic)} do {
             private _p1 = selectRandom _roads;
             private _road = roadAt _p1;
             
             if (!isNull _road) then {
-                if (count (nearestObjects [_p1, ["Car", "Truck"], 5]) == 0) then {
+                if ((nearestObjects [_p1, ["Car", "Truck"], 5]) isEqualTo []) then {
 
                     // Create group and add them to patrol array for deletion later
                     private _groupP = createGroup civilian;
-                    _groupsPatrol = _groupsPatrol + [_groupP];
+                    _groupsPatrol pushBack _groupP;
 
                     // Get connected road and direction for use with facing the vehicle.
-                    private _roadcon = roadsConnectedto _road;
+                    private _roadcon = roadsConnectedTo _road;
                     private _p2 = getPosATL (_roadcon select 0);
 
                     // Face Vehicle to road direction.
@@ -185,10 +185,10 @@ if ([_markerX,false] call A3A_fnc_fogCheck > 0.2) then {
                     [_veh, true, true, true, true] call A3A_fnc_clearVehicleCargo;
 
                     // Add vehicle to currently spawned vehicles patrolling array. Used for deletion later.
-                    _vehPatrol = _vehPatrol + [_veh];
+                    _vehPatrol pushBack _veh;
 
                     // Creat AI Unit to add into Civilian Vehicle
-                    private _civ = [_groupP, FactionGet(civ, "unitMan"), (getPosATL _p1), [],0, "NONE"] call A3A_fnc_createUnit;
+                    private _civ = [_groupP, FactionGet(civ,"unitMan"), (getPosATL _p1), [],0, "NONE"] call A3A_fnc_createUnit;
 
                     // Add Event Handlers to Civilian inside vehicle
                     [_civ] spawn A3A_fnc_civilianInitEH;
@@ -237,7 +237,7 @@ waitUntil {sleep 1; (spawner getVariable _spawnKey == 2)};
 {
     // delete all parked vehicles that haven't been stolen
     if (_x getVariable "ownerSide" == civilian) then {
-        if (_x distance2d (_x getVariable "originalPos") < 100) then { deleteVehicle _x }
+        if (_x distance2D (_x getVariable "originalPos") < 100) then { deleteVehicle _x }
         else { [_x] spawn A3A_fnc_VEHdespawner };
     };
 } forEach _vehiclesX;

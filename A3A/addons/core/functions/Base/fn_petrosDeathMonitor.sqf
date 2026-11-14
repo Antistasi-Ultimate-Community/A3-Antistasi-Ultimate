@@ -24,7 +24,7 @@ while {!alive petros} do {
         if (_index == -1) exitWith { Error("Uh, boss has no owner?") };
         private _bossPlayer = allPlayers select _index;
 
-        Info_1("Selected player %1 to place petros", name _bossPlayer);
+        Info_1("Selected player %1 to place petros",name _bossPlayer);
 
         A3A_playerPlacingPetros = getPlayerID _bossPlayer;
         publicVariable "A3A_playerPlacingPetros";

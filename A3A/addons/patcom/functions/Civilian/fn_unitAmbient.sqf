@@ -15,9 +15,9 @@
         N/A
 */
 
-params [["_unit", ObjNull]];
+params [["_unit", objNull]];
 
-if (_unit isEqualTo ObjNull) exitWith {ObjNull};
+if (_unit isEqualTo objNull) exitWith {objNull};
 
 [_unit] spawn {
     params ["_unit"];

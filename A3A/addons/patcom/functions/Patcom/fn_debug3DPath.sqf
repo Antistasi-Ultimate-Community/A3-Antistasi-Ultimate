@@ -31,16 +31,16 @@ params ["_Unit","_Array"];
 private _ArrowA = _Unit getVariable ["ArrowA",[]];
 private _VisualA = _Unit getVariable ["VisualA",[]];
 
-if (count _ArrowA > 0) then {
+if (_ArrowA isNotEqualTo []) then {
     {
         _x call BIS_fnc_drawArrow;
-    } foreach _ArrowA;
+    } forEach _ArrowA;
 };
 
-if (count _VisualA > 0) then {
+if (_VisualA isNotEqualTo []) then {
     {
         removeMissionEventHandler ["Draw3D",_x];
-    } foreach _VisualA;
+    } forEach _VisualA;
 };
 
 _ArrowA = [];
@@ -71,36 +71,36 @@ _VisualA = [];
         ]];
     
         private _Arrow = [_StartingPoint, _NextPoint, [1,0,0,1], [1,1/5,5]] call BIS_fnc_drawArrow;
-        _ArrowA pushback _Arrow;
-        _VisualA pushback _ID;
-        _VisualA pushback _ID2;
+        _ArrowA pushBack _Arrow;
+        _VisualA pushBack _ID;
+        _VisualA pushBack _ID2;
     
     };
-} foreach _Array;
+} forEach _Array;
 
 _Unit setVariable ["ArrowA", _ArrowA];
 _Unit setVariable ["VisualA", _VisualA];
 
 
 if !(_Unit getVariable ["DEBUGSET", false]) then {
-    _Unit addEventHandler ["killed",
+    _Unit addEventHandler ["Killed",
         {
             params ["_unit", "_killer", "_instigator", "_useEffects"];	
 
             private _ArrowA = _Unit getVariable ["ArrowA",[]];
             private _VisualA = _Unit getVariable ["VisualA",[]];
             
-            if (count _ArrowA > 0) then
+            if (_ArrowA isNotEqualTo []) then
             {
                 {
                     _x call BIS_fnc_drawArrow;
-                } foreach _ArrowA;
+                } forEach _ArrowA;
             };
-            if (count _VisualA > 0) then
+            if (_VisualA isNotEqualTo []) then
             {
                 {
                     removeMissionEventHandler ["Draw3D",_x];
-                } foreach _VisualA;
+                } forEach _VisualA;
             };	
         }];
     _Unit addEventHandler ["Deleted",
@@ -110,17 +110,17 @@ if !(_Unit getVariable ["DEBUGSET", false]) then {
             private _ArrowA = _Unit getVariable ["ArrowA",[]];
             private _VisualA = _Unit getVariable ["VisualA",[]];
             
-            if (count _ArrowA > 0) then
+            if (_ArrowA isNotEqualTo []) then
             {
                 {
                     _x call BIS_fnc_drawArrow;
-                } foreach _ArrowA;
+                } forEach _ArrowA;
             };
-            if (count _VisualA > 0) then
+            if (_VisualA isNotEqualTo []) then
             {
                 {
                     removeMissionEventHandler ["Draw3D",_x];
-                } foreach _VisualA;
+                } forEach _VisualA;
             };	
         }];		
     _Unit setVariable ["DEBUGSET",true];

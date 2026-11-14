@@ -3,25 +3,25 @@ class handgunsJCA
 	displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_JCA_ARSENAL", localize "STR_A3AU_handguns"]);
 	picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\handgun_ca.paa";
 
-	ITEM(JCA_hgun_P226_black_F, 150, PISTOL_STOCK);
-	ITEM(JCA_hgun_P226_olive_F, 150, PISTOL_STOCK);
-	ITEM(JCA_hgun_P226_sand_F, 150, PISTOL_STOCK);
+	ITEM(JCA_hgun_P226_black_F, 150, PISTOL_STOCK)
+	ITEM(JCA_hgun_P226_olive_F, 150, PISTOL_STOCK)
+	ITEM(JCA_hgun_P226_sand_F, 150, PISTOL_STOCK)
 
-	ITEM(JCA_hgun_P320_black_F, 140, PISTOL_STOCK); //Slightly Lower Accuracy But Lighter
-	ITEM(JCA_hgun_P320_olive_F, 140, PISTOL_STOCK);
-	ITEM(JCA_hgun_P320_sand_F, 140, PISTOL_STOCK);
+	ITEM(JCA_hgun_P320_black_F, 140, PISTOL_STOCK) //Slightly Lower Accuracy But Lighter
+	ITEM(JCA_hgun_P320_olive_F, 140, PISTOL_STOCK)
+	ITEM(JCA_hgun_P320_sand_F, 140, PISTOL_STOCK)
 
-	ITEM(JCA_hgun_Mk23_black_F, 150, PISTOL_STOCK);
-	ITEM(JCA_hgun_Mk23_olive_F, 150, PISTOL_STOCK);
-	ITEM(JCA_hgun_Mk23_sand_F, 150, PISTOL_STOCK);
+	ITEM(JCA_hgun_Mk23_black_F, 150, PISTOL_STOCK)
+	ITEM(JCA_hgun_Mk23_olive_F, 150, PISTOL_STOCK)
+	ITEM(JCA_hgun_Mk23_sand_F, 150, PISTOL_STOCK)
 
-	ITEM(JCA_hgun_M9A1_black_F, 140, PISTOL_STOCK);
-	ITEM(JCA_hgun_M9A1_olive_F, 140, PISTOL_STOCK);
-	ITEM(JCA_hgun_M9A1_sand_F, 140, PISTOL_STOCK);
+	ITEM(JCA_hgun_M9A1_black_F, 140, PISTOL_STOCK)
+	ITEM(JCA_hgun_M9A1_olive_F, 140, PISTOL_STOCK)
+	ITEM(JCA_hgun_M9A1_sand_F, 140, PISTOL_STOCK)
 
-	ITEM(JCA_hgun_G17_black_F, 150, PISTOL_STOCK);
-	ITEM(JCA_hgun_G17_olive_F, 150, PISTOL_STOCK);
-	ITEM(JCA_hgun_G17_sand_F, 150, PISTOL_STOCK);
+	ITEM(JCA_hgun_G17_black_F, 150, PISTOL_STOCK)
+	ITEM(JCA_hgun_G17_olive_F, 150, PISTOL_STOCK)
+	ITEM(JCA_hgun_G17_sand_F, 150, PISTOL_STOCK)
 };
 
 class riflesJCA 
@@ -29,57 +29,57 @@ class riflesJCA
 	displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_JCA_ARSENAL", localize "STR_A3AU_rifles"]);
 	picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\primaryWeapon_ca.paa";
 
-	ITEM(JCA_arifle_M16A4_black_F, 1100, RIFLE_STOCK); //Has less accuracy than the M4A1.
-	ITEM(JCA_arifle_M16A4_olive_F, 1100, RIFLE_STOCK);
-	ITEM(JCA_arifle_M16A4_sand_F, 1100, RIFLE_STOCK);
+	ITEM(JCA_arifle_M16A4_black_F, 1100, RIFLE_STOCK) //Has less accuracy than the M4A1.
+	ITEM(JCA_arifle_M16A4_olive_F, 1100, RIFLE_STOCK)
+	ITEM(JCA_arifle_M16A4_sand_F, 1100, RIFLE_STOCK)
 
-	ITEM(JCA_arifle_M16A4_FG_black_F, 1100, RIFLE_STOCK);
-	ITEM(JCA_arifle_M16A4_FG_olive_F, 1100, RIFLE_STOCK);
-	ITEM(JCA_arifle_M16A4_FG_sand_F, 1100, RIFLE_STOCK);
+	ITEM(JCA_arifle_M16A4_FG_black_F, 1100, RIFLE_STOCK)
+	ITEM(JCA_arifle_M16A4_FG_olive_F, 1100, RIFLE_STOCK)
+	ITEM(JCA_arifle_M16A4_FG_sand_F, 1100, RIFLE_STOCK)
 
-	ITEM(JCA_arifle_M16A4_GL_black_F, 1750, RIFLE_STOCK); //Only reducing price on this by 50 since it's a GL.
-	ITEM(JCA_arifle_M16A4_GL_olive_F, 1750, RIFLE_STOCK);
-	ITEM(JCA_arifle_M16A4_GL_sand_F, 1750, RIFLE_STOCK);
+	ITEM(JCA_arifle_M16A4_GL_black_F, 1750, RIFLE_STOCK) //Only reducing price on this by 50 since it's a GL.
+	ITEM(JCA_arifle_M16A4_GL_olive_F, 1750, RIFLE_STOCK)
+	ITEM(JCA_arifle_M16A4_GL_sand_F, 1750, RIFLE_STOCK)
 
-	ITEM(JCA_arifle_M4A1_short_black_F, 1200, RIFLE_STOCK);
-	ITEM(JCA_arifle_M4A1_short_olive_F, 1200, RIFLE_STOCK);
-	ITEM(JCA_arifle_M4A1_short_sand_F, 1200, RIFLE_STOCK);
+	ITEM(JCA_arifle_M4A1_short_black_F, 1200, RIFLE_STOCK)
+	ITEM(JCA_arifle_M4A1_short_olive_F, 1200, RIFLE_STOCK)
+	ITEM(JCA_arifle_M4A1_short_sand_F, 1200, RIFLE_STOCK)
 	
-	ITEM(JCA_arifle_M4A1_black_F, 1400, RIFLE_STOCK);
-	ITEM(JCA_arifle_M4A1_olive_F, 1400, RIFLE_STOCK);
-	ITEM(JCA_arifle_M4A1_sand_F, 1400, RIFLE_STOCK);
+	ITEM(JCA_arifle_M4A1_black_F, 1400, RIFLE_STOCK)
+	ITEM(JCA_arifle_M4A1_olive_F, 1400, RIFLE_STOCK)
+	ITEM(JCA_arifle_M4A1_sand_F, 1400, RIFLE_STOCK)
 	
-	ITEM(JCA_arifle_M4A1_GL_black_F, 1800, RIFLE_STOCK);
-	ITEM(JCA_arifle_M4A1_GL_olive_F, 1800, RIFLE_STOCK);
-	ITEM(JCA_arifle_M4A1_GL_sand_F, 1800, RIFLE_STOCK);
+	ITEM(JCA_arifle_M4A1_GL_black_F, 1800, RIFLE_STOCK)
+	ITEM(JCA_arifle_M4A1_GL_olive_F, 1800, RIFLE_STOCK)
+	ITEM(JCA_arifle_M4A1_GL_sand_F, 1800, RIFLE_STOCK)
 
-	ITEM(JCA_arifle_M4A4_AFG_black_F, 1450, RIFLE_STOCK); //M4A4s are ever so slightly stronger than the M4A1
-	ITEM(JCA_arifle_M4A4_AFG_olive_F, 1450, RIFLE_STOCK);
-	ITEM(JCA_arifle_M4A4_AFG_sand_F, 1450, RIFLE_STOCK);
+	ITEM(JCA_arifle_M4A4_AFG_black_F, 1450, RIFLE_STOCK) //M4A4s are ever so slightly stronger than the M4A1
+	ITEM(JCA_arifle_M4A4_AFG_olive_F, 1450, RIFLE_STOCK)
+	ITEM(JCA_arifle_M4A4_AFG_sand_F, 1450, RIFLE_STOCK)
 
-	ITEM(JCA_arifle_M4A4_VFG_black_F, 1450, RIFLE_STOCK);
-	ITEM(JCA_arifle_M4A4_VFG_olive_F, 1450, RIFLE_STOCK);
-	ITEM(JCA_arifle_M4A4_VFG_sand_F, 1450, RIFLE_STOCK);
+	ITEM(JCA_arifle_M4A4_VFG_black_F, 1450, RIFLE_STOCK)
+	ITEM(JCA_arifle_M4A4_VFG_olive_F, 1450, RIFLE_STOCK)
+	ITEM(JCA_arifle_M4A4_VFG_sand_F, 1450, RIFLE_STOCK)
 
-	ITEM(JCA_arifle_M4A4_GL_black_F, 1850, RIFLE_STOCK);
-	ITEM(JCA_arifle_M4A4_GL_olive_F, 1850, RIFLE_STOCK);
-	ITEM(JCA_arifle_M4A4_GL_sand_F, 1850, RIFLE_STOCK);
+	ITEM(JCA_arifle_M4A4_GL_black_F, 1850, RIFLE_STOCK)
+	ITEM(JCA_arifle_M4A4_GL_olive_F, 1850, RIFLE_STOCK)
+	ITEM(JCA_arifle_M4A4_GL_sand_F, 1850, RIFLE_STOCK)
 	
-	ITEM(JCA_arifle_HK433_black_F, 1450, RIFLE_STOCK);
-	ITEM(JCA_arifle_HK433_olive_F, 1450, RIFLE_STOCK);
-	ITEM(JCA_arifle_HK433_sand_F, 1450, RIFLE_STOCK);
+	ITEM(JCA_arifle_HK433_black_F, 1450, RIFLE_STOCK)
+	ITEM(JCA_arifle_HK433_olive_F, 1450, RIFLE_STOCK)
+	ITEM(JCA_arifle_HK433_sand_F, 1450, RIFLE_STOCK)
 
-	ITEM(JCA_arifle_HK433_short_black_F, 1350, RIFLE_STOCK);
-	ITEM(JCA_arifle_HK433_short_olive_F, 1350, RIFLE_STOCK);
-	ITEM(JCA_arifle_HK433_short_sand_F, 1350, RIFLE_STOCK);
+	ITEM(JCA_arifle_HK433_short_black_F, 1350, RIFLE_STOCK)
+	ITEM(JCA_arifle_HK433_short_olive_F, 1350, RIFLE_STOCK)
+	ITEM(JCA_arifle_HK433_short_sand_F, 1350, RIFLE_STOCK)
 
-	ITEM(JCA_arifle_HK437_AFG_black_F, 1650, RIFLE_STOCK);
-	ITEM(JCA_arifle_HK437_AFG_olive_F, 1650, RIFLE_STOCK);
-	ITEM(JCA_arifle_HK437_AFG_sand_F, 1650, RIFLE_STOCK);
+	ITEM(JCA_arifle_HK437_AFG_black_F, 1650, RIFLE_STOCK)
+	ITEM(JCA_arifle_HK437_AFG_olive_F, 1650, RIFLE_STOCK)
+	ITEM(JCA_arifle_HK437_AFG_sand_F, 1650, RIFLE_STOCK)
 
-	ITEM(JCA_arifle_HK437_VFG_black_F, 1650, RIFLE_STOCK);
-	ITEM(JCA_arifle_HK437_VFG_olive_F, 1650, RIFLE_STOCK);
-	ITEM(JCA_arifle_HK437_VFG_sand_F, 1650, RIFLE_STOCK);
+	ITEM(JCA_arifle_HK437_VFG_black_F, 1650, RIFLE_STOCK)
+	ITEM(JCA_arifle_HK437_VFG_olive_F, 1650, RIFLE_STOCK)
+	ITEM(JCA_arifle_HK437_VFG_sand_F, 1650, RIFLE_STOCK)
 };
 
 class sniperRiflesJCA 
@@ -87,25 +87,25 @@ class sniperRiflesJCA
 	displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_JCA_ARSENAL", localize "STR_A3AU_sniperRifles"]);
 	picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\primaryWeapon_ca.paa";
 
-	ITEM(JCA_arifle_SR25_black_F, 1700, 25);
-	ITEM(JCA_arifle_SR25_olive_F, 1700, 25);
-	ITEM(JCA_arifle_SR25_sand_F, 1700, 25);
+	ITEM(JCA_arifle_SR25_black_F, 1700, 25)
+	ITEM(JCA_arifle_SR25_olive_F, 1700, 25)
+	ITEM(JCA_arifle_SR25_sand_F, 1700, 25)
 	
-	ITEM(JCA_arifle_SR10_AFG_black_F, 1750, 25); //Same thing as the M4A4s
-	ITEM(JCA_arifle_SR10_AFG_olive_F, 1750, 25);
-	ITEM(JCA_arifle_SR10_AFG_sand_F, 1750, 25);
+	ITEM(JCA_arifle_SR10_AFG_black_F, 1750, 25) //Same thing as the M4A4s
+	ITEM(JCA_arifle_SR10_AFG_olive_F, 1750, 25)
+	ITEM(JCA_arifle_SR10_AFG_sand_F, 1750, 25)
 	
-	ITEM(JCA_arifle_SR10_VFG_black_F, 1750, 25);
-	ITEM(JCA_arifle_SR10_VFG_olive_F, 1750, 25);
-	ITEM(JCA_arifle_SR10_VFG_sand_F, 1750, 25);
+	ITEM(JCA_arifle_SR10_VFG_black_F, 1750, 25)
+	ITEM(JCA_arifle_SR10_VFG_olive_F, 1750, 25)
+	ITEM(JCA_arifle_SR10_VFG_sand_F, 1750, 25)
 
-	ITEM(JCA_srifle_AWM_black_F, 1800, 15);
-	ITEM(JCA_srifle_AWM_olive_F, 1800, 15);
-	ITEM(JCA_srifle_AWM_sand_F, 1800, 15);
+	ITEM(JCA_srifle_AWM_black_F, 1800, 15)
+	ITEM(JCA_srifle_AWM_olive_F, 1800, 15)
+	ITEM(JCA_srifle_AWM_sand_F, 1800, 15)
 
-	ITEM(JCA_srifle_M107_black_F, 2350, 15);
-	ITEM(JCA_srifle_M107_olive_F, 2350, 15);
-	ITEM(JCA_srifle_M107_sand_F, 2350, 15);
+	ITEM(JCA_srifle_M107_black_F, 2350, 15)
+	ITEM(JCA_srifle_M107_olive_F, 2350, 15)
+	ITEM(JCA_srifle_M107_sand_F, 2350, 15)
 };
 
 class smgJCA 
@@ -113,29 +113,29 @@ class smgJCA
 	displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_JCA_ARSENAL", localize "STR_A3AU_smgs"]);
 	picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\primaryWeapon_ca.paa";
 
-	ITEM(JCA_smg_MP5_FL_black_F, 400, 30);
-	ITEM(JCA_smg_MP5_FL_olive_F, 400, 30);
-	ITEM(JCA_smg_MP5_FL_sand_F, 400, 30);
+	ITEM(JCA_smg_MP5_FL_black_F, 400, 30)
+	ITEM(JCA_smg_MP5_FL_olive_F, 400, 30)
+	ITEM(JCA_smg_MP5_FL_sand_F, 400, 30)
 
-	ITEM(JCA_smg_MP5_AFG_black_F, 400, 30);
-	ITEM(JCA_smg_MP5_AFG_olive_F, 400, 30);
-	ITEM(JCA_smg_MP5_AFG_sand_F, 400, 30);
+	ITEM(JCA_smg_MP5_AFG_black_F, 400, 30)
+	ITEM(JCA_smg_MP5_AFG_olive_F, 400, 30)
+	ITEM(JCA_smg_MP5_AFG_sand_F, 400, 30)
 
-	ITEM(JCA_smg_MP5_VFG_black_F, 400, 30);
-	ITEM(JCA_smg_MP5_VFG_olive_F, 400, 30);
-	ITEM(JCA_smg_MP5_VFG_sand_F, 400, 30);
+	ITEM(JCA_smg_MP5_VFG_black_F, 400, 30)
+	ITEM(JCA_smg_MP5_VFG_olive_F, 400, 30)
+	ITEM(JCA_smg_MP5_VFG_sand_F, 400, 30)
 
-	ITEM(JCA_smg_UMP_black_F, 500, 30);
-	ITEM(JCA_smg_UMP_olive_F, 500, 30);
-	ITEM(JCA_smg_UMP_sand_F, 500, 30);
+	ITEM(JCA_smg_UMP_black_F, 500, 30)
+	ITEM(JCA_smg_UMP_olive_F, 500, 30)
+	ITEM(JCA_smg_UMP_sand_F, 500, 30)
 
-	ITEM(JCA_smg_UMP_AFG_black_F, 500, 30);
-	ITEM(JCA_smg_UMP_AFG_olive_F, 500, 30);
-	ITEM(JCA_smg_UMP_AFG_sand_F, 500, 30);
+	ITEM(JCA_smg_UMP_AFG_black_F, 500, 30)
+	ITEM(JCA_smg_UMP_AFG_olive_F, 500, 30)
+	ITEM(JCA_smg_UMP_AFG_sand_F, 500, 30)
 
-	ITEM(JCA_smg_UMP_VFG_black_F, 500, 30);
-	ITEM(JCA_smg_UMP_VFG_olive_F, 500, 30);
-	ITEM(JCA_smg_UMP_VFG_sand_F, 500, 30);
+	ITEM(JCA_smg_UMP_VFG_black_F, 500, 30)
+	ITEM(JCA_smg_UMP_VFG_olive_F, 500, 30)
+	ITEM(JCA_smg_UMP_VFG_sand_F, 500, 30)
 };
 
 class launchersJCA 
@@ -143,17 +143,17 @@ class launchersJCA
 	displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_JCA_ARSENAL", localize "STR_A3AU_launchers"]);
 	picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\secondaryWeapon_ca.paa";
 
-	ITEM(JCA_launch_M72_black_F, 900, LAUNCHER_STOCK);
-	ITEM(JCA_launch_M72_olive_F, 900, LAUNCHER_STOCK);
-	ITEM(JCA_launch_M72_sand_F, 900, LAUNCHER_STOCK);
+	ITEM(JCA_launch_M72_black_F, 900, LAUNCHER_STOCK)
+	ITEM(JCA_launch_M72_olive_F, 900, LAUNCHER_STOCK)
+	ITEM(JCA_launch_M72_sand_F, 900, LAUNCHER_STOCK)
 
-	ITEM(JCA_launch_Mk153_black_F, 1300, LAUNCHER_STOCK);
-	ITEM(JCA_launch_Mk153_olive_F, 1300, LAUNCHER_STOCK);
-	ITEM(JCA_launch_Mk153_sand_F, 1300, LAUNCHER_STOCK);
+	ITEM(JCA_launch_Mk153_black_F, 1300, LAUNCHER_STOCK)
+	ITEM(JCA_launch_Mk153_olive_F, 1300, LAUNCHER_STOCK)
+	ITEM(JCA_launch_Mk153_sand_F, 1300, LAUNCHER_STOCK)
 
-	ITEM(JCA_launch_Mk153_PWS_black_F, 1400, LAUNCHER_STOCK);
-	ITEM(JCA_launch_Mk153_PWS_olive_F, 1400, LAUNCHER_STOCK);
-	ITEM(JCA_launch_Mk153_PWS_sand_F, 1400, LAUNCHER_STOCK);
+	ITEM(JCA_launch_Mk153_PWS_black_F, 1400, LAUNCHER_STOCK)
+	ITEM(JCA_launch_Mk153_PWS_olive_F, 1400, LAUNCHER_STOCK)
+	ITEM(JCA_launch_Mk153_PWS_sand_F, 1400, LAUNCHER_STOCK)
 };
 
 class underbarrelJCA
@@ -161,16 +161,16 @@ class underbarrelJCA
 	displayName = __EVAL(formatText ["%1 %2 %3 %4", localize "STR_A3AU_JCA_ARSENAL", localize "STR_A3AU_bipods", localize "STR_A3AU_and", localize "STR_A3AU_grips"]);
 	picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\itemBipod_ca.paa";
 
-	ITEM(JCA_bipod_04_black, 100, 50);
-	ITEM(JCA_bipod_04_olive, 100, 50);
-	ITEM(JCA_bipod_04_sand, 100, 50);
+	ITEM(JCA_bipod_04_black, 100, 50)
+	ITEM(JCA_bipod_04_olive, 100, 50)
+	ITEM(JCA_bipod_04_sand, 100, 50)
 
-	ITEM(JCA_bipod_AWM_01_black, 100, 50);
-	ITEM(JCA_bipod_AWM_02_black, 100, 50);
+	ITEM(JCA_bipod_AWM_01_black, 100, 50)
+	ITEM(JCA_bipod_AWM_02_black, 100, 50)
 
-	ITEM(JCA_bipod_M107_black, 100, 50);
-	ITEM(JCA_bipod_M107_olive, 100, 50);
-	ITEM(JCA_bipod_M107_sand, 100, 50);
+	ITEM(JCA_bipod_M107_black, 100, 50)
+	ITEM(JCA_bipod_M107_olive, 100, 50)
+	ITEM(JCA_bipod_M107_sand, 100, 50)
 };
 
 class pointersJCA 
@@ -178,31 +178,31 @@ class pointersJCA
 	displayName = __EVAL(formatText ["%1 %2 %3 %4", localize "STR_A3AU_JCA_ARSENAL", localize "STR_A3AU_pointers", localize "STR_A3AU_and", localize "STR_A3AU_flashlights"]);
 	picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\itemAcc_ca.paa";
 
-	ITEM(JCA_acc_flashlight_MP5_black, 50, PN_STOCK);
+	ITEM(JCA_acc_flashlight_MP5_black, 50, PN_STOCK)
 
-	ITEM(JCA_acc_DualMount_black_Pointer, 80, PN_STOCK);
-	ITEM(JCA_acc_DualMount_olive_Pointer, 80, PN_STOCK);
-	ITEM(JCA_acc_DualMount_sand_Pointer, 80, PN_STOCK);
+	ITEM(JCA_acc_DualMount_black_Pointer, 80, PN_STOCK)
+	ITEM(JCA_acc_DualMount_olive_Pointer, 80, PN_STOCK)
+	ITEM(JCA_acc_DualMount_sand_Pointer, 80, PN_STOCK)
 	
-	ITEM(JCA_acc_LaserModule_black_Pointer, 70, PN_STOCK);
-	ITEM(JCA_acc_LaserModule_olive_Pointer, 70, PN_STOCK);
-	ITEM(JCA_acc_LaserModule_sand_Pointer, 70, PN_STOCK);
+	ITEM(JCA_acc_LaserModule_black_Pointer, 70, PN_STOCK)
+	ITEM(JCA_acc_LaserModule_olive_Pointer, 70, PN_STOCK)
+	ITEM(JCA_acc_LaserModule_sand_Pointer, 70, PN_STOCK)
 
-	ITEM(JCA_acc_flashlight_tactical_black, 70, PN_STOCK);
-	ITEM(JCA_acc_flashlight_tactical_olive, 70, PN_STOCK);
-	ITEM(JCA_acc_flashlight_tactical_sand, 70, PN_STOCK);
+	ITEM(JCA_acc_flashlight_tactical_black, 70, PN_STOCK)
+	ITEM(JCA_acc_flashlight_tactical_olive, 70, PN_STOCK)
+	ITEM(JCA_acc_flashlight_tactical_sand, 70, PN_STOCK)
 
-	ITEM(JCA_acc_LightModule_Pistol_black, 50, PN_STOCK);
-	ITEM(JCA_acc_LightModule_Pistol_olive, 50, PN_STOCK);
-	ITEM(JCA_acc_LightModule_Pistol_sand, 50, PN_STOCK);
+	ITEM(JCA_acc_LightModule_Pistol_black, 50, PN_STOCK)
+	ITEM(JCA_acc_LightModule_Pistol_olive, 50, PN_STOCK)
+	ITEM(JCA_acc_LightModule_Pistol_sand, 50, PN_STOCK)
 
-	ITEM(JCA_acc_LightMount_Pistol_black, 50, PN_STOCK);
-	ITEM(JCA_acc_LightMount_Pistol_olive, 50, PN_STOCK);
-	ITEM(JCA_acc_LightMount_Pistol_sand, 50, PN_STOCK);
+	ITEM(JCA_acc_LightMount_Pistol_black, 50, PN_STOCK)
+	ITEM(JCA_acc_LightMount_Pistol_olive, 50, PN_STOCK)
+	ITEM(JCA_acc_LightMount_Pistol_sand, 50, PN_STOCK)
 
-	ITEM(JCA_acc_LaserModule_Mk23_black_Pointer, 50, PN_STOCK);
-	ITEM(JCA_acc_LaserModule_Mk23_olive_Pointer, 50, PN_STOCK);
-	ITEM(JCA_acc_LaserModule_Mk23_sand_Pointer, 50, PN_STOCK);
+	ITEM(JCA_acc_LaserModule_Mk23_black_Pointer, 50, PN_STOCK)
+	ITEM(JCA_acc_LaserModule_Mk23_olive_Pointer, 50, PN_STOCK)
+	ITEM(JCA_acc_LaserModule_Mk23_sand_Pointer, 50, PN_STOCK)
 };
 
 class muzzlesJCA 
@@ -210,49 +210,49 @@ class muzzlesJCA
 	displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_JCA_ARSENAL", localize "STR_A3AU_muzzles"]);
 	picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\itemMuzzle_ca.paa";
 
-	ITEM(JCA_muzzle_snds_MP5_black, 300, MZ_STOCK);
-	ITEM(JCA_muzzle_snds_MP5_olive, 300, MZ_STOCK);
-	ITEM(JCA_muzzle_snds_MP5_sand, 300, MZ_STOCK);
+	ITEM(JCA_muzzle_snds_MP5_black, 300, MZ_STOCK)
+	ITEM(JCA_muzzle_snds_MP5_olive, 300, MZ_STOCK)
+	ITEM(JCA_muzzle_snds_MP5_sand, 300, MZ_STOCK)
 
-	ITEM(JCA_muzzle_snds_45_tactical_black, 300, MZ_STOCK);
-	ITEM(JCA_muzzle_snds_45_tactical_olive, 300, MZ_STOCK);
-	ITEM(JCA_muzzle_snds_45_tactical_sand, 300, MZ_STOCK);
+	ITEM(JCA_muzzle_snds_45_tactical_black, 300, MZ_STOCK)
+	ITEM(JCA_muzzle_snds_45_tactical_olive, 300, MZ_STOCK)
+	ITEM(JCA_muzzle_snds_45_tactical_sand, 300, MZ_STOCK)
 
-	ITEM(JCA_muzzle_snds_556_advanced_black, 500, MZ_STOCK);
-	ITEM(JCA_muzzle_snds_556_advanced_olive, 500, MZ_STOCK);
-	ITEM(JCA_muzzle_snds_556_advanced_sand, 500, MZ_STOCK);
+	ITEM(JCA_muzzle_snds_556_advanced_black, 500, MZ_STOCK)
+	ITEM(JCA_muzzle_snds_556_advanced_olive, 500, MZ_STOCK)
+	ITEM(JCA_muzzle_snds_556_advanced_sand, 500, MZ_STOCK)
 
-	ITEM(JCA_muzzle_snds_556_Enhanced_black, 500, MZ_STOCK);
-	ITEM(JCA_muzzle_snds_556_Enhanced_olive, 500, MZ_STOCK);
-	ITEM(JCA_muzzle_snds_556_Enhanced_sand, 500, MZ_STOCK);
+	ITEM(JCA_muzzle_snds_556_Enhanced_black, 500, MZ_STOCK)
+	ITEM(JCA_muzzle_snds_556_Enhanced_olive, 500, MZ_STOCK)
+	ITEM(JCA_muzzle_snds_556_Enhanced_sand, 500, MZ_STOCK)
 
-	ITEM(JCA_muzzle_snds_M107_black, 1000, MZ_STOCK);
-	ITEM(JCA_muzzle_snds_M107_olive, 1000, MZ_STOCK);
-	ITEM(JCA_muzzle_snds_M107_sand, 1000, MZ_STOCK);
+	ITEM(JCA_muzzle_snds_M107_black, 1000, MZ_STOCK)
+	ITEM(JCA_muzzle_snds_M107_olive, 1000, MZ_STOCK)
+	ITEM(JCA_muzzle_snds_M107_sand, 1000, MZ_STOCK)
 
-	ITEM(JCA_muzzle_snds_300_Enhanced_black, 700, MZ_STOCK);
-	ITEM(JCA_muzzle_snds_300_Enhanced_olive, 700, MZ_STOCK);
-	ITEM(JCA_muzzle_snds_300_Enhanced_sand, 700, MZ_STOCK);
+	ITEM(JCA_muzzle_snds_300_Enhanced_black, 700, MZ_STOCK)
+	ITEM(JCA_muzzle_snds_300_Enhanced_olive, 700, MZ_STOCK)
+	ITEM(JCA_muzzle_snds_300_Enhanced_sand, 700, MZ_STOCK)
 
-	ITEM(JCA_muzzle_snds_AWM_black, 700, MZ_STOCK);
-	ITEM(JCA_muzzle_snds_AWM_olive, 700, MZ_STOCK);
-	ITEM(JCA_muzzle_snds_AWM_sand, 700, MZ_STOCK);
+	ITEM(JCA_muzzle_snds_AWM_black, 700, MZ_STOCK)
+	ITEM(JCA_muzzle_snds_AWM_olive, 700, MZ_STOCK)
+	ITEM(JCA_muzzle_snds_AWM_sand, 700, MZ_STOCK)
 
-	ITEM(JCA_muzzle_snds_SR25_black, 600, MZ_STOCK);
-	ITEM(JCA_muzzle_snds_SR25_olive, 600, MZ_STOCK);
-	ITEM(JCA_muzzle_snds_SR25_sand, 600, MZ_STOCK);
+	ITEM(JCA_muzzle_snds_SR25_black, 600, MZ_STOCK)
+	ITEM(JCA_muzzle_snds_SR25_olive, 600, MZ_STOCK)
+	ITEM(JCA_muzzle_snds_SR25_sand, 600, MZ_STOCK)
 
-	ITEM(JCA_muzzle_snds_762_tactical_black, 600, MZ_STOCK);
-	ITEM(JCA_muzzle_snds_762_tactical_olive, 600, MZ_STOCK);
-	ITEM(JCA_muzzle_snds_762_tactical_sand, 600, MZ_STOCK);
+	ITEM(JCA_muzzle_snds_762_tactical_black, 600, MZ_STOCK)
+	ITEM(JCA_muzzle_snds_762_tactical_olive, 600, MZ_STOCK)
+	ITEM(JCA_muzzle_snds_762_tactical_sand, 600, MZ_STOCK)
 
-	ITEM(JCA_muzzle_snds_9MM_enhanced_black, 250, MZ_STOCK);
-	ITEM(JCA_muzzle_snds_9MM_enhanced_olive, 250, MZ_STOCK);
-	ITEM(JCA_muzzle_snds_9MM_enhanced_sand, 250, MZ_STOCK);
+	ITEM(JCA_muzzle_snds_9MM_enhanced_black, 250, MZ_STOCK)
+	ITEM(JCA_muzzle_snds_9MM_enhanced_olive, 250, MZ_STOCK)
+	ITEM(JCA_muzzle_snds_9MM_enhanced_sand, 250, MZ_STOCK)
 
-	ITEM(JCA_muzzle_snds_9MM_tactical_black, 250, MZ_STOCK);
-	ITEM(JCA_muzzle_snds_9MM_tactical_olive, 250, MZ_STOCK);
-	ITEM(JCA_muzzle_snds_9MM_tactical_sand, 250, MZ_STOCK);
+	ITEM(JCA_muzzle_snds_9MM_tactical_black, 250, MZ_STOCK)
+	ITEM(JCA_muzzle_snds_9MM_tactical_olive, 250, MZ_STOCK)
+	ITEM(JCA_muzzle_snds_9MM_tactical_sand, 250, MZ_STOCK)
 };
 
 class opticsJCA 
@@ -665,9 +665,9 @@ class miscJCA
 	displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_JCA_ARSENAL", localize "STR_A3AU_misc"]);
 	picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\backpack_ca.paa";
 
-	ITEM(JCA_HandFlare_Green, 30, 50);
-	ITEM(JCA_SignalFlare_Green, 30, 50);
+	ITEM(JCA_HandFlare_Green, 30, 50)
+	ITEM(JCA_SignalFlare_Green, 30, 50)
 
-	ITEM(JCA_HandFlare_Red, 30, 50);
-	ITEM(JCA_SignalFlare_Red, 30, 50);
+	ITEM(JCA_HandFlare_Red, 30, 50)
+	ITEM(JCA_SignalFlare_Red, 30, 50)
 };

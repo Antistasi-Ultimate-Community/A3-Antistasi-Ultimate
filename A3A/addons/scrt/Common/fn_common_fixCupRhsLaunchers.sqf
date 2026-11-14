@@ -11,7 +11,7 @@ private _brokenLaunchers = (jna_dataList select IDC_RSCDISPLAYARSENAL_TAB_SECOND
     "_loaded" in _weaponClass || {"_used" in _weaponClass}
 };
 
-Debug_1("Broken launchers to remove: %1", str _brokenLaunchers);
+Debug_1("Broken launchers to remove: %1",str _brokenLaunchers);
 
 {
     private _item = _x select 0;

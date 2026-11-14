@@ -8,7 +8,9 @@ class CfgPatches
     class PATCHNAME(WS) 
     {
         name = COMPONENT_NAME;
-        units[] = {};
+        units[] = {
+            "a3a_ION_APC_Wheeled_01_cannon_lxWS",
+        };
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
         skipWhenMissingDependencies = 1;

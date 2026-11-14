@@ -43,11 +43,11 @@ class A3A_CtrlDefault
 
 class A3A_Text : A3A_CtrlDefault
 {
-    w = 20 * GRID_W;
-    h = 4 * GRID_H;
+    w = QUOTE(20 * GRID_W);
+    h = QUOTE(4 * GRID_H);
     text = "";
     font = "RobotoCondensed";
-    SizeEx = GUI_TEXT_SIZE_SMALL;
+    SizeEx = QUOTE(GUI_TEXT_SIZE_SMALL);
     shadow = 0;
     fixedWidth = 0;
     linespacing = 1;
@@ -65,7 +65,7 @@ class A3A_TextMulti: A3A_Text
 class A3A_StructuredText : A3A_Text
 {
     type = CT_STRUCTURED_TEXT;
-    size = GUI_TEXT_SIZE_MEDIUM;
+    size = QUOTE(GUI_TEXT_SIZE_MEDIUM);
 };
 
 class A3A_Edit : A3A_Text
@@ -82,7 +82,7 @@ class A3A_Edit : A3A_Text
 class A3A_TitlebarText : A3A_Text
 {
     font = A3A_TITLEBAR_FONT;
-    sizeEx = GUI_TEXT_SIZE_MEDIUM;
+    sizeEx = QUOTE(GUI_TEXT_SIZE_MEDIUM);
     colorText[] = A3A_COLOR_TITLEBAR_TEXT;
 };
 
@@ -95,7 +95,7 @@ class A3A_SectionLabelLeft : A3A_Text
 class A3A_SectionStructuredLabelLeft : A3A_StructuredText
 {
     style = ST_RIGHT;
-    size = GUI_TEXT_SIZE_SPECIAL;
+    size = QUOTE(GUI_TEXT_SIZE_SPECIAL);
     colorBackground[] = {0,0,0,1};
     class Attributes
 	{
@@ -106,7 +106,7 @@ class A3A_SectionStructuredLabelLeft : A3A_StructuredText
 class A3A_SectionStructuredLabelLeftHQstore : A3A_StructuredText
 {
     style = ST_RIGHT;
-    size = GUI_TEXT_SIZE_LARGE;
+    size = QUOTE(GUI_TEXT_SIZE_LARGE);
     colorBackground[] = {0,0,0,0};
     class Attributes
 	{
@@ -121,7 +121,7 @@ class A3A_SectionLabelRight : A3A_SectionLabelLeft
 
 class A3A_InfoTextLeft : A3A_Text
 {
-    sizeEx = GUI_TEXT_SIZE_SMALL;
+    sizeEx = QUOTE(GUI_TEXT_SIZE_SMALL);
     shadow = 2;
 };
 
@@ -141,7 +141,7 @@ class A3A_Listbox : A3A_Text
     type = CT_LISTBOX;
     style = LB_TEXTURES;
 
-    rowHeight = GUI_TEXT_SIZE_MEDIUM;
+    rowHeight = QUOTE(GUI_TEXT_SIZE_MEDIUM);
     itemSpacing = 0;
     maxHistoryDelay = 1;
     period = 1;
@@ -187,7 +187,7 @@ class A3A_Tree : A3A_Text
     type = CT_TREE;
     style = ST_LEFT;
 
-    rowHeight = GUI_TEXT_SIZE_MEDIUM;
+    rowHeight = QUOTE(GUI_TEXT_SIZE_MEDIUM);
     maxHistoryDelay = 1;
     expandOnDoubleclick = 1;
     multiselectEnabled = 0;
@@ -257,8 +257,8 @@ class A3A_ListNBox : A3A_Text
 class A3A_Picture : A3A_CtrlDefault
 {
     style = ST_PICTURE;
-    w = 16 * GRID_W;
-    h = 16 * GRID_H;
+    w = QUOTE(16 * GRID_W);
+    h = QUOTE(16 * GRID_H);
     text = "";
     font = "TahomaB";
     sizeEx = 0;
@@ -280,8 +280,8 @@ class A3A_Button : A3A_Text
     type = CT_BUTTON;
     style = ST_CENTER + ST_UPPERCASE;
 
-    w = 20 * GRID_W;
-    h = 6 * GRID_H;
+    w = QUOTE(20 * GRID_W);
+    h = QUOTE(6 * GRID_H);
 
     font = A3A_BUTTON_FONT;
     borderSize = 0;
@@ -347,18 +347,18 @@ class A3A_ShortcutButton : A3A_CtrlDefault
 {
     type = CT_SHORTCUTBUTTON;
     style = ST_CENTER + ST_UPPERCASE;
-    default = false;
-    w = GRID_W * 20;
-    h = GRID_H * 6;
+    default = 0;
+    w = QUOTE(GRID_W * 20);
+    h = QUOTE(GRID_H * 6);
 
     text = "";
     font = "PuristaLight";
-    size = GUI_TEXT_SIZE_MEDIUM;
-    sizeEx = GUI_TEXT_SIZE_MEDIUM;
+    size = QUOTE(GUI_TEXT_SIZE_MEDIUM);
+    sizeEx = QUOTE(GUI_TEXT_SIZE_MEDIUM);
 
     textSecondary = "";
     fontSecondary = "PuristaLight";
-    sizeExSecondary = GUI_TEXT_SIZE_MEDIUM;
+    sizeExSecondary = QUOTE(GUI_TEXT_SIZE_MEDIUM);
 
     url = "";
     // shortcuts[] = {'test'};
@@ -437,10 +437,10 @@ class A3A_ShortcutButton : A3A_CtrlDefault
 
     class TextPos // Defaults for GUI_TEXT_SIZE_MEDIUM, change if using other sizes
     {
-        left = 2 * GRID_W;
-        right = 2 * GRID_W;
-        top = 2 * GRID_H;
-        bottom = 2 * GRID_H;
+        left = QUOTE(2 * GRID_W);
+        right = QUOTE(2 * GRID_W);
+        top = QUOTE(2 * GRID_H);
+        bottom = QUOTE(2 * GRID_H);
     };
 
     class ShortcutPos // Used for positioning images on the button
@@ -469,16 +469,16 @@ class A3A_ShortcutButton : A3A_CtrlDefault
 
 class A3A_ShortcutButtonSmall : A3A_ShortcutButton
 {
-    size = GUI_TEXT_SIZE_SMALL;
-    sizeEx = GUI_TEXT_SIZE_SMALL;
-    sizeExSecondary = GUI_TEXT_SIZE_SMALL;
+    size = QUOTE(GUI_TEXT_SIZE_SMALL);
+    sizeEx = QUOTE(GUI_TEXT_SIZE_SMALL);
+    sizeExSecondary = QUOTE(GUI_TEXT_SIZE_SMALL);
 
     class TextPos
     {
-        left = 2 * GRID_W;
-        right = 2 * GRID_W;
-        top = 1 * GRID_H;
-        bottom = 1 * GRID_H;
+        left = QUOTE(2 * GRID_W);
+        right = QUOTE(2 * GRID_W);
+        top = QUOTE(1 * GRID_H);
+        bottom = QUOTE(1 * GRID_H);
     };
 };
 
@@ -487,7 +487,7 @@ class A3A_ActiveText : A3A_CtrlDefault
     type = CT_ACTIVETEXT;
     font = A3A_DEFAULT_FONT;
     text = "";
-    sizeEx = GUI_TEXT_SIZE_MEDIUM;
+    sizeEx = QUOTE(GUI_TEXT_SIZE_MEDIUM);
 
     // Colors
     color[] = A3A_COLOR_TEXT;
@@ -533,8 +533,8 @@ class A3A_CloseButton : A3A_ActivePicture
     text = A3A_Icon_Close;
     // Uses onMouseButtonClick to not be accidentally triggered by keyboard
     onMouseButtonClick = "closeDialog 2;";
-    w = 5 * GRID_W;
-    h = 5 * GRID_H;
+    w = QUOTE(5 * GRID_W);
+    h = QUOTE(5 * GRID_H);
 };
 
 class A3A_BackButton : A3A_CloseButton
@@ -700,13 +700,13 @@ class A3A_MapControl
     colorMainRoadsFill[] = {1,0.6,0.4,1};
     colorGrid[] = {0.1,0.1,0.1,0.6};
     colorGridMap[] = {0.1,0.1,0.1,0.6};
-    stickX[] = {0.2,["Gamma",1,1.5]};
-    stickY[] = {0.2,["Gamma",1,1.5]};
+    stickX[] = {0.2,{"Gamma",1,1.5}};
+    stickY[] = {0.2,{"Gamma",1,1.5}};
     moveOnEdges = 1;
     x = "SafeZoneXAbs";
-    y = SafeZoneY + 1.5 * GUI_GRID_H;
+    y = QUOTE(SafeZoneY + 1.5 * GUI_GRID_H);
     w = "SafeZoneWAbs";
-    h = SafeZoneH - 1.5 * GUI_GRID_H;
+    h = QUOTE(SafeZoneH - 1.5 * GUI_GRID_H);
     shadow = 0;
     ptsPerSquareSea = 5;
     ptsPerSquareTxt = 20;
@@ -728,15 +728,15 @@ class A3A_MapControl
     colorTrailsFill[] = {0.84,0.76,0.65,0.65};
     widthRailWay = 4;
     fontLabel = "RobotoCondensed";
-    sizeExLabel = GUI_TEXT_SIZE_SMALL;
+    sizeExLabel = QUOTE(GUI_TEXT_SIZE_SMALL);
     fontGrid = "TahomaB";
     sizeExGrid = 0.02;
     fontUnits = "TahomaB";
-    sizeExUnits = GUI_TEXT_SIZE_SMALL;
+    sizeExUnits = QUOTE(GUI_TEXT_SIZE_SMALL);
     fontNames = "RobotoCondensed";
-    sizeExNames = GUI_TEXT_SIZE_SMALL * 2;
+    sizeExNames = QUOTE(GUI_TEXT_SIZE_SMALL * 2);
     fontInfo = "RobotoCondensed";
-    sizeExInfo = GUI_TEXT_SIZE_SMALL;
+    sizeExInfo = QUOTE(GUI_TEXT_SIZE_SMALL);
     fontLevel = "TahomaB";
     sizeExLevel = 0.02;
     text = "#(argb,8,8,3)color(1,1,1,1)";
@@ -748,12 +748,12 @@ class A3A_MapControl
     {
         colorBackground[] = {1,1,1,0.5};
         color[] = {0,0,0,1};
-        x = SafeZoneX + GUI_GRID_W;
-        y = SafeZoneY + safezoneH - 4.5 * GUI_GRID_H;
-        w = 10 * GUI_GRID_W;
-        h = 3.5 * GUI_GRID_H;
+        x = QUOTE(SafeZoneX + GUI_GRID_W);
+        y = QUOTE(SafeZoneY + safezoneH - 4.5 * GUI_GRID_H);
+        w = QUOTE(10 * GUI_GRID_W);
+        h = QUOTE(3.5 * GUI_GRID_H);
         font = "RobotoCondensed";
-        sizeEx = GUI_TEXT_SIZE_SMALL;
+        sizeEx = QUOTE(GUI_TEXT_SIZE_SMALL);
     };
     class ActiveMarker
     {
@@ -812,7 +812,7 @@ class A3A_MapControl
         color[] = {0.45,0.64,0.33,0.4};
         icon = "\A3\ui_f\data\map\mapcontrol\bush_ca.paa";
         size = 12;
-        importance = "0.9 * 16 * 0.05";
+        importance = 0.72; // importance = "0.9 * 16 * 0.05";
         coefMin = 0.25;
         coefMax = 4;
     };
@@ -821,7 +821,7 @@ class A3A_MapControl
         color[] = {0.45,0.64,0.33,0.4};
         icon = "\A3\ui_f\data\map\mapcontrol\bush_ca.paa";
         size = 12;
-        importance = "0.6 * 12 * 0.05";
+        importance = 0.36; // importance = "0.6 * 12 * 0.05";
         coefMin = 0.25;
         coefMax = 4;
     };
@@ -829,8 +829,8 @@ class A3A_MapControl
     {
         color[] = {0.45,0.64,0.33,0.4};
         icon = "\A3\ui_f\data\map\mapcontrol\bush_ca.paa";
-        size = "14/2";
-        importance = "0.2 * 14 * 0.05 * 0.05";
+        size = 7; // size = "14/2";
+        importance = 0.007; // importance = "0.2 * 14 * 0.05 * 0.05";
         coefMin = 0.25;
         coefMax = 4;
     };
@@ -866,7 +866,7 @@ class A3A_MapControl
         color[] = {0.1,0.1,0.1,0.8};
         icon = "\A3\ui_f\data\map\mapcontrol\rock_ca.paa";
         size = 12;
-        importance = "0.5 * 12 * 0.05";
+        importance = 0.3; // importance = "0.5 * 12 * 0.05";
         coefMin = 0.25;
         coefMax = 4;
     };
@@ -875,7 +875,7 @@ class A3A_MapControl
         color[] = {0,0,0,1};
         icon = "\A3\ui_f\data\map\mapcontrol\bunker_ca.paa";
         size = 14;
-        importance = "1.5 * 14 * 0.05";
+        importance = 1.05; // importance = "1.5 * 14 * 0.05";
         coefMin = 0.25;
         coefMax = 4;
     };
@@ -884,7 +884,7 @@ class A3A_MapControl
         color[] = {0,0,0,1};
         icon = "\A3\ui_f\data\map\mapcontrol\bunker_ca.paa";
         size = 16;
-        importance = "2 * 16 * 0.05";
+        importance = 1.6; // importance = "2 * 16 * 0.05";
         coefMin = 0.25;
         coefMax = 4;
     };
@@ -893,7 +893,7 @@ class A3A_MapControl
         color[] = {0,0,0,1};
         icon = "\A3\ui_f\data\map\mapcontrol\fountain_ca.paa";
         size = 11;
-        importance = "1 * 12 * 0.05";
+        importance = 0.6; // importance = "1 * 12 * 0.05";
         coefMin = 0.25;
         coefMax = 4;
     };
@@ -902,7 +902,7 @@ class A3A_MapControl
         color[] = {0,0,0,1};
         icon = "\A3\ui_f\data\map\mapcontrol\viewtower_ca.paa";
         size = 16;
-        importance = "2.5 * 16 * 0.05";
+        importance = 2; // importance = "2.5 * 16 * 0.05";
         coefMin = 0.5;
         coefMax = 4;
     };
@@ -973,7 +973,7 @@ class A3A_MapControl
         color[] = {0,0,0,1};
         icon = "\A3\ui_f\data\map\mapcontrol\stack_ca.paa";
         size = 16;
-        importance = "2 * 16 * 0.05";
+        importance = 1.6; // importance = "2 * 16 * 0.05";
         coefMin = 0.4;
         coefMax = 2;
     };
@@ -982,7 +982,7 @@ class A3A_MapControl
         color[] = {0,0,0,1};
         icon = "\A3\ui_f\data\map\mapcontrol\ruin_ca.paa";
         size = 16;
-        importance = "1.2 * 16 * 0.05";
+        importance = 0.96; // importance = "1.2 * 16 * 0.05";
         coefMin = 1;
         coefMax = 4;
     };
@@ -991,7 +991,7 @@ class A3A_MapControl
         color[] = {0,0,0,1};
         icon = "\A3\ui_f\data\map\mapcontrol\tourism_ca.paa";
         size = 16;
-        importance = "1 * 16 * 0.05";
+        importance = 0.8; // importance = "1 * 16 * 0.05";
         coefMin = 0.7;
         coefMax = 4;
     };
@@ -1137,10 +1137,14 @@ class A3A_DefaultDialog
 {
     idd = -1;
 
-    #define DIALOG_W 160 // Width of dialog in pixelGrid units
-    #define DIALOG_H 100 // Height of dialog in pixelGrid units
-    #define DIALOG_X CENTER_X(DIALOG_W) // Global x pos of dialog
-    #define DIALOG_Y CENTER_Y(DIALOG_H) // Global y pos of dialog
+    // Width of dialog in pixelGrid units
+    #define DIALOG_W 160
+    // Height of dialog in pixelGrid units
+    #define DIALOG_H 100
+    // Global x pos of dialog
+    #define DIALOG_X CENTER_X(DIALOG_W)
+    // Global y pos of dialog
+    #define DIALOG_Y CENTER_Y(DIALOG_H)
 
     #define DIALOG_VEHSTORE_W 165 // Width of dialog in pixelGrid units
     #define DIALOG_VEHSTORE_H 110 // Height of dialog in pixelGrid units
@@ -1151,20 +1155,20 @@ class A3A_DefaultDialog
     {
         class TitleBarBackground : A3A_Background
         {
-            moving = true;
+            moving = 1;
             colorBackground[] = A3A_COLOR_TITLEBAR_BACKGROUND;
-            x = DIALOG_X;
-            y = DIALOG_Y - 5 * GRID_H;
-            w = DIALOG_W * GRID_W;
-            h = 5 * GRID_H;
+            x = QUOTE(DIALOG_X);
+            y = QUOTE(DIALOG_Y - 5 * GRID_H);
+            w = QUOTE(DIALOG_W * GRID_W);
+            h = QUOTE(5 * GRID_H);
         };
 
         class Background : A3A_Background
         {
-            x = DIALOG_X;
-            y = DIALOG_Y;
-            w = DIALOG_W * GRID_W;
-            h = DIALOG_H * GRID_H;
+            x = QUOTE(DIALOG_X);
+            y = QUOTE(DIALOG_Y);
+            w = QUOTE(DIALOG_W * GRID_W);
+            h = QUOTE(DIALOG_H * GRID_H);
         };
     };
 };
@@ -1175,29 +1179,29 @@ class A3A_TabbedDialog : A3A_DefaultDialog
     {
         class TitleBarBackground : A3A_Background
         {
-            moving = true;
+            moving = 1;
             colorBackground[] = A3A_COLOR_TITLEBAR_BACKGROUND;
-            x = DIALOG_X;
-            y = DIALOG_Y - 10 * GRID_H;
-            w = DIALOG_W * GRID_W;
-            h = 5 * GRID_H;
+            x = QUOTE(DIALOG_X);
+            y = QUOTE(DIALOG_Y - 10 * GRID_H);
+            w = QUOTE(DIALOG_W * GRID_W);
+            h = QUOTE(5 * GRID_H);
         };
 
         class TabsBackground : A3A_Background
         {
             colorBackground[] = A3A_COLOR_TABS_BACKGROUND;
-            x = DIALOG_X;
-            y = DIALOG_Y - 5 * GRID_H;
-            w = DIALOG_W * GRID_W;
-            h = 5 * GRID_H;
+            x = QUOTE(DIALOG_X);
+            y = QUOTE(DIALOG_Y - 5 * GRID_H);
+            w = QUOTE(DIALOG_W * GRID_W);
+            h = QUOTE(5 * GRID_H);
         };
 
         class Background : A3A_Background
         {
-            x = DIALOG_X;
-            y = DIALOG_Y;
-            w = DIALOG_W * GRID_W;
-            h = DIALOG_H * GRID_H;
+            x = QUOTE(DIALOG_X);
+            y = QUOTE(DIALOG_Y);
+            w = QUOTE(DIALOG_W * GRID_W);
+            h = QUOTE(DIALOG_H * GRID_H);
         };
     };
 };
@@ -1208,12 +1212,12 @@ class A3A_TabbedDialogBlackmarket : A3A_DefaultDialog
     {
         class TitleBarBackground : A3A_Background
         {
-            moving = true;
+            moving = 1;
             colorBackground[] = A3A_COLOR_TITLEBAR_BACKGROUND;
-            x = DIALOG_X;
-            y = DIALOG_Y - 10 * GRID_H;
-            w = DIALOG_W * GRID_W;
-            h = 5 * GRID_H;
+            x = QUOTE(DIALOG_X);
+            y = QUOTE(DIALOG_Y - 10 * GRID_H);
+            w = QUOTE(DIALOG_W * GRID_W);
+            h = QUOTE(5 * GRID_H);
         };
 
         // class TabsBackground : A3A_Background
@@ -1227,35 +1231,35 @@ class A3A_TabbedDialogBlackmarket : A3A_DefaultDialog
 
         class Background : A3A_Background
         {
-            x = DIALOG_X;
-            y = DIALOG_Y;
-            w = DIALOG_W * GRID_W;
-            h = DIALOG_H * GRID_H;
+            x = QUOTE(DIALOG_X);
+            y = QUOTE(DIALOG_Y);
+            w = QUOTE(DIALOG_W * GRID_W);
+            h = QUOTE(DIALOG_H * GRID_H);
         };
     };
 };
 
 class A3A_DefaultControlsGroup : A3A_ControlsGroupNoScrollbars
 {
-    x = DIALOG_X;
-    y = DIALOG_Y;
-    w = DIALOG_W * GRID_W;
-    h = DIALOG_H * GRID_H;
+    x = QUOTE(DIALOG_X);
+    y = QUOTE(DIALOG_Y);
+    w = QUOTE(DIALOG_W * GRID_W);
+    h = QUOTE(DIALOG_H * GRID_H);
 };
 
-class A3A_Text_Small : A3A_text
+class A3A_Text_Small : A3A_Text
 {
-    sizeEx = GUI_TEXT_SIZE_SMALL;
+    sizeEx = QUOTE(GUI_TEXT_SIZE_SMALL);
 };
 
 class A3A_Listbox_Small : A3A_Listbox
 {
-    rowHeight = GUI_TEXT_SIZE_SMALL;
-    sizeEx = GUI_TEXT_SIZE_SMALL;
+    rowHeight = QUOTE(GUI_TEXT_SIZE_SMALL);
+    sizeEx = QUOTE(GUI_TEXT_SIZE_SMALL);
     // lineSpacing = 0.01;
 };
 
-class A3A_ComboBox : A3A_ListBox
+class A3A_ComboBox : A3A_Listbox
 {
     type = CT_COMBO;
     class ComboScrollBar: ScrollBar {};
@@ -1271,18 +1275,18 @@ class A3A_ComboBox : A3A_ListBox
 
 class A3A_ComboBox_Small : A3A_ComboBox
 {
-    sizeEx = GUI_TEXT_SIZE_SMALL;
-    rowHeight = GUI_TEXT_SIZE_SMALL;
+    sizeEx = QUOTE(GUI_TEXT_SIZE_SMALL);
+    rowHeight = QUOTE(GUI_TEXT_SIZE_SMALL);
 };
 class A3A_ComboBox_Small_BM : A3A_ComboBox_Small
 {
     colorBackground[] = {0,0,0,1};
-    SizeEx = GUI_TEXT_SIZE_MEDIUM;
+    SizeEx = QUOTE(GUI_TEXT_SIZE_MEDIUM);
 };
 
 class A3U_RscContextButton : A3A_Button
 {
-    sizeEx = GUI_TEXT_SIZE_EXTRA_SMALL;
+    sizeEx = QUOTE(GUI_TEXT_SIZE_EXTRA_SMALL);
     colorText[] = {1,1,1,1};
     colorDisabled[] = {1,1,1,0.35};
 

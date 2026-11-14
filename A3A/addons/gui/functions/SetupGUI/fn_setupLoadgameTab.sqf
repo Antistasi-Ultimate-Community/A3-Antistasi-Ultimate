@@ -21,7 +21,7 @@ FIX_LINE_NUMBERS()
 
 params["_mode", "_params"];
 
-Debug_1("Loadgame dialog called with mode %1", _mode);
+Debug_1("Loadgame dialog called with mode %1",_mode);
 
 // Get display
 private _display = findDisplay A3A_IDD_SETUPDIALOG;
@@ -167,7 +167,7 @@ switch (_mode) do
         } else {
             A3A_setup_saveData select _rowIndex;
         };
-        if (!(worldName == _saveData get "map")) exitWith {};
+        if ((worldName != _saveData get "map")) exitWith {};
 
         ["startGame"] call A3A_fnc_setupLoadgameTab;
     };
@@ -175,7 +175,7 @@ switch (_mode) do
     case ("selectSave"):
     {
         _params params ["_rowIndex"];
-        Debug_1("SelectSave called with index %1", _rowIndex);
+        Debug_1("SelectSave called with index %1",_rowIndex);
 
         private _selectBar = _display displayCtrl A3A_IDC_SETUP_GAMESELECTBOX;
         _selectBar ctrlShow (_rowIndex != -1);
@@ -241,7 +241,7 @@ switch (_mode) do
         // Set data & function for confirmation, then open confirmation box
         _display setVariable ["confirmData", [_confirmText, A3A_fnc_setupLoadgameTab, "startGameConfirm"]];
         _display setVariable ["newSaveData", _saveData];
-        Debug_1("Prepared save data: %1", _saveData);
+        Debug_1("Prepared save data: %1",_saveData);
         createDialog "A3A_SetupConfirmDialog";
     };
 

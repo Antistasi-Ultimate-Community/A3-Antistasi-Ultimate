@@ -3,7 +3,7 @@ FIX_LINE_NUMBERS()
 _bad = false;
 
 if (missionNamespace getVariable ["MCC_isMode",false]) then {_bad = true};
-if (isClass (configfile >> "CfgVehicles" >> "ALiVE_require")) then {_bad = true};
+if (isClass (configFile >> "CfgVehicles" >> "ALiVE_require")) then {_bad = true};
 if ("asr_ai3_main" in activatedAddons) then {_bad = true};
 if (_bad) then
 {

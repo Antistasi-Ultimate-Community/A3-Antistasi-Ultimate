@@ -68,7 +68,7 @@ outlw_KB_keyDown =
 
 outlw_KB_enableApply =
 {
-	if !([outlw_MR_keyList, [outlw_KB_cShift, outlw_KB_cCtrl, outlw_KB_cAlt, outlw_KB_cKey]] call BIS_fnc_areEqual) then
+	if (outlw_MR_keyList isNotEqualTo [outlw_KB_cShift, outlw_KB_cCtrl, outlw_KB_cAlt, outlw_KB_cKey]) then
 	{
 		((uiNamespace getVariable "outlw_MR_Dialog_Keybindings") displayCtrl 2401) ctrlEnable true;
 	}

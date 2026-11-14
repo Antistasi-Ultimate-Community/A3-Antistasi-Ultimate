@@ -35,7 +35,7 @@ private _listCount = count _list;
 
 if(isNil "_entryValue" || {!(_entryValue isEqualType 0)}) exitWith
 {
-    Error_1("Bad input, was %1", _entry);
+    Error_1("Bad input, was %1",_entry);
     _list;
 };
 

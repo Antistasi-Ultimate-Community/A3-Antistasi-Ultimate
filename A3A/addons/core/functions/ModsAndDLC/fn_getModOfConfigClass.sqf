@@ -13,9 +13,9 @@ params ["_config"];
 private _return = "";
 
 private _addons = configSourceAddonList _config;
-if (count _addons > 0) then {
+if (_addons isNotEqualTo []) then {
 	private _mods = configSourceModList (configFile >> "CfgPatches" >> _addons select 0);
-	if (count _mods > 0) then {
+	if (_mods isNotEqualTo []) then {
 		_return = _mods select 0;
 	};
 };

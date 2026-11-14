@@ -26,4 +26,4 @@ private _emissionSpeedMax = missionNamespace getVariable ["A3U_setting_emissionS
 //["Emission Notification", "An emission storm has been detected.<br/><br/>Seek shelter immediately.<br/><br/>Vehicles protect you just as well as buildings.", true] remoteExec ["A3A_fnc_customHint", 0, false];
 // ^ We can't hook onto the emission function, so that won't work
 
-Info_4("Started Emissions with params: [%1, %2, %3, %4]", _emissionMin, _emissionMax, _emissionSpeedMin, _emissionSpeedMax);
+Info_4("Started Emissions with params: [%1, %2, %3, %4]",_emissionMin,_emissionMax,_emissionSpeedMin,_emissionSpeedMax);

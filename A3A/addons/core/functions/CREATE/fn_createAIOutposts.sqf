@@ -17,7 +17,7 @@ private _spawnsUsed = [];
 private _positionX = getMarkerPos (_markerX);
 private _pos = [];
 
-ServerInfo_1("Spawning Outpost %1", _markerX);
+ServerInfo_1("Spawning Outpost %1",_markerX);
 
 private _size = [_markerX] call A3A_fnc_sizeMarker;
 private _frontierX = [_markerX] call A3A_fnc_isFrontline;
@@ -31,7 +31,7 @@ private _antenna = objNull;
 
 if (_sideX == Occupants && {_markerX in outposts}) then {
 	private _buildings = nearestObjects [_positionX,["Land_TTowerBig_1_F","Land_TTowerBig_2_F","Land_Communication_F"], _size];
-	if (count _buildings > 0) then {
+	if (_buildings isNotEqualTo []) then {
 		_antenna = _buildings select 0;
 	};
 };
@@ -135,7 +135,7 @@ _roads = _positionX nearRoads _size;
 if (_markerX in seaports) then {
 	_typeVehX = selectRandom (_faction get "vehiclesGunBoats");
 	private _mrkMar = seaSpawn select {getMarkerPos _x inArea _markerX};
-	if(count _mrkMar > 0) then {
+	if(_mrkMar isNotEqualTo []) then {
 		private _pos = (getMarkerPos (_mrkMar select 0)) findEmptyPosition [0,20,_typeVehX];
 		private _vehicle=[_pos, 0,_typeVehX, _sideX] call A3A_fnc_spawnVehicle;
 		private _veh = _vehicle select 0;
@@ -149,10 +149,10 @@ if (_markerX in seaports) then {
 		_vehiclesX pushBack _veh;
 		sleep 1;
 	} else {
-		Error_1("Could not find seaSpawn marker on %1!", _markerX);
+		Error_1("Could not find seaSpawn marker on %1!",_markerX);
 	};
 } else {
-	if (_frontierX && {count _roads != 0}) then {
+	if (_frontierX && {_roads isNotEqualTo []}) then {
 		_dist = 0;
 		_road = objNull;
 		{
@@ -161,7 +161,7 @@ if (_markerX in seaports) then {
 				_dist = position _x distance _positionX;
 			};
 		} forEach _roads;
-		private _roadscon = roadsConnectedto _road;
+		private _roadscon = roadsConnectedTo _road;
 		private _roadcon = objNull;
 		//This is a extrem complex way, use vector and scalar product to determine which way they are pointing
 		{
@@ -356,7 +356,7 @@ for "_i" from 0 to (count _array - 1) do {
 	// Garrison the first group into buildings
 	if (_i == 0) then {
 		private _garrisonGroup = [_groupX, getMarkerPos _markerX, _size] call A3A_fnc_patrolGroupGarrison;
-		if (count _garrisonGroup > 0) then {
+		if (_garrisonGroup isNotEqualTo []) then {
 			_groups append _garrisonGroup;
 		};
 	} else {
@@ -382,7 +382,7 @@ deleteMarker _mrk;
 {
 	// delete all vehicles that haven't been stolen
 	if (_x getVariable ["ownerSide", _sideX] == _sideX) then {
-		if (_x distance2d (_x getVariable "originalPos") < 100) then { deleteVehicle _x }
+		if (_x distance2D (_x getVariable "originalPos") < 100) then { deleteVehicle _x }
 		else { if !(_x isKindOf "StaticWeapon") then { [_x] spawn A3A_fnc_VEHdespawner } };
 	};
 } forEach _vehiclesX;
@@ -392,7 +392,7 @@ _spawnsUsed call A3A_fnc_freeSpawnPositions;
 
 // If loot crate was stolen, set the cooldown
 if (!isNil "_ammoBox") then {
-	if ((alive _ammoBox) and (_ammoBox distance2d _positionX < 100)) exitWith { deleteVehicle _ammoBox };
+	if ((alive _ammoBox) and (_ammoBox distance2D _positionX < 100)) exitWith { deleteVehicle _ammoBox };
 	if (alive _ammoBox) then { [_ammoBox] spawn A3A_fnc_VEHdespawner };
 	private _lootCD = 120*16 / ([_markerX] call A3A_fnc_garrisonSize);
 	garrison setVariable [_markerX + "_lootCD", _lootCD, true];

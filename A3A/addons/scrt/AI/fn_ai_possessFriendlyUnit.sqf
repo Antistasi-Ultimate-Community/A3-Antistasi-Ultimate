@@ -50,7 +50,7 @@ private _playerEh = player addEventHandler ["HandleDamage", {
 	private _player = _this select 0;
 	_player removeEventHandler ["HandleDamage",_thisEventHandler];
 	selectPlayer _player;
-	(units group player) joinsilent group player;
+	(units group player) joinSilent group player;
 	group player selectLeader player;
 	_player setVariable ["controlReturned", true];
 
@@ -62,7 +62,7 @@ private _unitEh = _unit addEventHandler ["HandleDamage", {
 	private _unit = _this select 0;
 	_unit removeEventHandler ["HandleDamage",_thisEventHandler];
 	selectPlayer (_unit getVariable "A3A_player");
-	(units group player) joinsilent group player;
+	(units group player) joinSilent group player;
 	group player selectLeader player;
 	_unit setVariable ["controlReturned", true];
 
@@ -107,7 +107,7 @@ if (_healActionId != -1) then {
 };
 
 selectPlayer _originalBody;
-(units group player) joinsilent group player;
+(units group player) joinSilent group player;
 group player selectLeader player;
 player setVariable ["A3A_blockRevive", nil, true];
 player setVariable ["originalBody", nil];

@@ -74,7 +74,7 @@ private _fnc_generateAndSaveUnitsToTemplate = {
 
 private _fnc_saveNames = {
     params ["_names"];
-    private _nameConfig = configfile >> "CfgWorlds" >> "GenericNames" >> _names;
+    private _nameConfig = configFile >> "CfgWorlds" >> "GenericNames" >> _names;
     private _firstNames = configProperties [_nameConfig >> "FirstNames"] apply { getText(_x) };
     ["firstNames", _firstNames] call _fnc_saveToTemplate;
     private _lastNames = configProperties [_nameConfig >> "LastNames"] apply { getText(_x) };

@@ -46,7 +46,7 @@ params[
     ["_friendliesInArea", nil, [[]]]
 ];
 
-Debug_3("_inPos=%1; _diameterExtendedCaptureArea=%2; _npcCallback=%3", _inPos, _diameterExtendedCaptureArea, VARDEF(_npcCallback,"N/A"));
+Debug_3("_inPos=%1; _diameterExtendedCaptureArea=%2; _npcCallback=%3",_inPos,_diameterExtendedCaptureArea,VARDEF(_npcCallback,"N/A"));
 
 private _useExtendedCount = (_diameterExtendedCaptureArea > 0);
 private _positionAndRadius = if (_inPos isEqualType []) then {
@@ -114,10 +114,10 @@ private _npcUnits = _units select {
     // No air units, no dead or unconscious
     !(vehicle _x isKindOf "Air") && { _x call A3A_fnc_canFight }
 } select {
-    private _value = linearConversion[_radius / 2, _radius, _position distance2d _x, 1, 0, true];
+    private _value = linearConversion[_radius / 2, _radius, _position distance2D _x, 1, 0, true];
     _sidesCount set[side _x, (_sidesCount get side _x) + _value];
 
-    Verbose_4("unit=%1; side=%2; value=%3; sidesCount=%4", _x, side _x, _value, _sidesCount);
+    Verbose_4("unit=%1; side=%2; value=%3; sidesCount=%4",_x,side _x,_value,_sidesCount);
 
     side _x in [Occupants, Invaders];
 };
@@ -135,9 +135,9 @@ if !(isNil "_npcCallback") then {
 };
 
 // In case we picked up any game logic...
-_sidesCount deleteAT sideLogic;
+_sidesCount deleteAt sideLogic;
 
-#if __A3A_DEBUG__
+#ifdef __A3A_DEBUG__
 if !assert(count keys _sidesCount == 4) then {
     Error_3("ZoneCountUnits at %1 found %2 sides (%3), expected 4", _position, count _sidesCount, keys _sidesCount);
     _sidesCount = createHashMapFromArray[

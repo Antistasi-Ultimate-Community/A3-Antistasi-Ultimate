@@ -23,7 +23,7 @@ params ["_supportName", "_side", "_sleepTime", "_targetPos", "_airport", "_resPo
 sleep _sleepTime;
 
 private _isHelicopter = _planeType isKindOf "Helicopter";
-private _spawnPos = (getMarkerPos _airport) vectorAdd [0, 0, if (_isHelicopter) then {150} else {500}];
+private _spawnPos = (getMarkerPos _airport) vectorAdd [0, 0, [500, 150] select (_isHelicopter)];
 private _plane = createVehicle [_planeType, _spawnPos, [], 0, "FLY"];     // FLY forces 100m alt
 private _targDir = _spawnPos getDir _targetPos;
 _plane setDir _targDir;
@@ -52,13 +52,13 @@ _plane addEventHandler ["Killed", {
 
 
 //Determine speed and bomb count on aggression
-private _aggroValue = if(_side == Occupants) then {aggressionOccupants} else {aggressionInvaders};
+private _aggroValue = [aggressionInvaders, aggressionOccupants] select (_side == Occupants);
 private _bombCount = [2, 3, 4] select (round random [1, _aggroValue / 50, 0]);
 if (_bombType == "HE") then {_bombCount = _bombCount * 2};
 private _bombParams = [_plane, _bombType, _bombCount, 200];
 private _flightSpeed = ["LIMITED", "NORMAL", "FULL"] select (round random [1, _aggroValue / 50, 0]);
 if (_isHelicopter) then {_flightSpeed = "FULL"};
-Info_3("Airstrike %1 will be carried out with %2 bombs at %3 speed", _supportName, _bombCount, toLower _flightSpeed);
+Info_3("Airstrike %1 will be carried out with %2 bombs at %3 speed",_supportName,_bombCount,toLower _flightSpeed);
 
 _plane flyInHeight 150;
 private _minAltASL = (ATLToASL [_targetPos select 0, _targetPos select 1, 0])#2 +150;
@@ -79,7 +79,7 @@ _wp2 setWaypointBehaviour "CARELESS";
     params ["_pos", "_pilot", "_bombParams"];
     waitUntil {sleep 1; ((_pos distance2D _pilot) < 500) || {isNull (objectParent _pilot)}};
     if(isNull (objectParent _pilot)) exitWith {};
-    sleep (((_pos distance2d _pilot) - 250) / (speed vehicle _pilot / 3.6));
+    sleep (((_pos distance2D _pilot) - 250) / (speed vehicle _pilot / 3.6));
     if(isNull (objectParent _pilot)) exitWith {};
     _bombParams spawn A3A_fnc_airbomb;
 };
@@ -99,11 +99,11 @@ waitUntil { sleep 2; (currentWaypoint _group > 3) or (time > _timeOut) };
 //sleep ((time - _timeout) min (_targetPos distance _plane / (speed _plane / 3.6)))
 
 if (time >_timeOut) then {
-    Info_1("Plane for %1 did not return before timeout", _supportName);
+    Info_1("Plane for %1 did not return before timeout",_supportName);
     [_group] spawn A3A_fnc_groupDespawner;
     [_plane] spawn A3A_fnc_vehDespawner;
 } else {
-    Info_1("Cleaning up %1", _supportName);
+    Info_1("Cleaning up %1",_supportName);
     { deleteVehicle _x } forEach units _group;
     deleteVehicle _plane;
 };

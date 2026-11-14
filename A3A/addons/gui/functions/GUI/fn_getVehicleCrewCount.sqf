@@ -32,7 +32,7 @@ private _fnc_turrets =
 {
 	{
     _allTurrets = _allTurrets + 1;
-		if !(getNumber (_x >> "showAsCargo") > 0) then
+		if (getNumber (_x >> "showAsCargo") <= 0) then
 		{
 			if (getNumber (_x >> "isCopilot") > 0 ) then
 			{

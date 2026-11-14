@@ -65,7 +65,7 @@ private _nodes = [];
 private _nodesString = "    class Nodes" + endl + "    {" + endl + (_nodes joinString endl) + endl + "    };";
 
 private _return = format ["class %1 : TRIPLES(ADDON,Nodes,Base)%3{%3    %2%3};%3",
-    if (_defineWithModel) then { modelOfClass(typeOf _vehicle) } else { typeOf _vehicle },
+    if (_defineWithModel) then { MODEL_OF_OBJ(_vehicle) } else { typeOf _vehicle },
     _nodesString,
     endl
 ];

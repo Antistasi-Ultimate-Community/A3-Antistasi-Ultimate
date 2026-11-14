@@ -65,7 +65,7 @@ switch (_intelContent) do {
 	case (RIVALS_EXCLUDE): {
 		private _locations = (citiesX + (controlsX select {!(isOnRoad getMarkerPos _x)})) select {!(_x in rivalsLocationsMap) && {!(_x in rivalsExcludedLocations)}};
 
-		if (count _locations > 0) then {
+		if (_locations isNotEqualTo []) then {
 			private _location = selectRandom _locations;
 			[_location] remoteExecCall ["SCRT_fnc_rivals_excludeLocation", 2];
 			_text = format [(localize "STR_intel_select_rivals_exclusion"), _rivalsName, ([_location] call A3A_fnc_localizar)];

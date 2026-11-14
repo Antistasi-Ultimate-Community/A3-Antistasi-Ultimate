@@ -31,7 +31,7 @@ params[["_object", objNull, [objNull]]];
 #define EACHFRAME_EH 8
 #define HINT_DISPLAY 9
 
-if(!isNil "A3A_objectRotate_EHDB") exitwith {};
+if(!isNil "A3A_objectRotate_EHDB") exitWith {};
 
 A3A_objectRotate_EHDB = [false, false, time, getDir _object, _object, "", {
     findDisplay 46 displayRemoveEventHandler ["KeyDown", A3A_objectRotate_EHDB # KEYDOWN_EH ];

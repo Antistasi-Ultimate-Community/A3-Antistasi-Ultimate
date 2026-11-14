@@ -4,13 +4,13 @@ FIX_LINE_NUMBERS()
 
 if(count (_route select 1) != 3) exitWith
 {
-    Debug_1("Input was %1", str _this);
+    Debug_1("Input was %1",str _this);
     Debug("Path is broken, abort");
 };
 
 private ["_targetPos", "_dir", "_convoyMarker"];
 
-_targetPos = _route select (count _route - 1);
+_targetPos = _route select -1;
 
 _convoyMarker = format ["convoy%1", _convoyID];
 
@@ -24,7 +24,7 @@ if (!_isAir) then {
 		while {isNull _road && {_radius < 50}} do
 		{
 			_possibleRoads = _pos nearRoads _radius;
-			if(count _possibleRoads > 0) then { _road = _possibleRoads select 0 }
+			if(_possibleRoads isNotEqualTo []) then { _road = _possibleRoads select 0 }
 			else { _radius = _radius * 1.5 };
 		};
 		if(!(isNull _road)) then { _pos = (getPos _road) };
@@ -36,7 +36,7 @@ _pos = _pos vectorAdd [0,0,0.1];
 _dir = _pos getDir (_route select 0);
 if(isNil "_dir") exitWith
 {
-    Debug_2("Dir uncalced, Pos was %1, route was %2", _pos, (_route select 0));
+    Debug_2("Dir uncalced, Pos was %1, route was %2",_pos,(_route select 0));
     _dir = 0;
 };
 private _targetDir = _pos vectorFromTo _targetPos;
@@ -46,8 +46,8 @@ private _createdUnits = [];
 private _airVehicles = [];
 private _landVehicles = [];
 
-Info_1("Spawning in convoy %1", _convoyID);
-VerboseArray("Convoy Units", _units);
+Info_1("Spawning in convoy %1",_convoyID);
+VerboseArray("Convoy Units",_units);
 
 for "_i" from 0 to ((count _units) - 1) do
 {
@@ -80,7 +80,7 @@ for "_i" from 0 to ((count _units) - 1) do
 
 		// lastSpawn time check will try anyway if a vehicle gets stuck
 		private _lastSpawn = time;
-		waituntil {sleep 1; ((_vehicle distance2d _pos) > 15) or ((time - _lastSpawn) > 20)};
+		waitUntil {sleep 1; ((_vehicle distance2D _pos) > 15) or ((time - _lastSpawn) > 20)};
 	}
 	else {
         Debug("Convoy line has no vehicle, unhandled");
@@ -108,7 +108,7 @@ while {true} do
 			_createdUnits deleteAt _i;
 			_airVehicles deleteAt (_airVehicles find _veh);
 			_landVehicles deleteAt (_landVehicles find _veh);
-            Debug_2("Vehicle FSM result %1, rem units %2", _result, count _createdUnits);
+            Debug_2("Vehicle FSM result %1, rem units %2",_result,count _createdUnits);
 		}
 		else {
 			if ([distanceSPWN*1.2, 1, getPos _veh, teamPlayer] call A3A_fnc_distanceUnits) then { _despawn = false };
@@ -116,10 +116,10 @@ while {true} do
 	};
 
 	// no tracked vehicles remaining in convoy, terminate
-	if (count _createdUnits == 0) exitWith {
+	if (_createdUnits isEqualTo []) exitWith {
 		deleteMarker _convoyMarker;
 		server setVariable [format ["Con%1", _convoyID], nil, true];
-        Info_2("%1 Convoy [%2]: Terminated", _convoyType, _convoyID);
+        Info_2("%1 Convoy [%2]: Terminated",_convoyType,_convoyID);
 
 		if (_failure > 0) then {
 			// At least one vehicle failed, add base/target to killZones to avoid repetition
@@ -131,7 +131,7 @@ while {true} do
 
 	// Have at least one remaining vehicle if we got here
 	private _convoyPos = [0,0,0];
-	if (count _landVehicles != 0) then {
+	if (_landVehicles isNotEqualTo []) then {
 		_convoyPos = getPos (_landVehicles select 0);
 		{ _x setVariable["followpos", _convoyPos] } forEach _airVehicles;		// used by FSM to circle around
 		// can potentially set ground vehicle follow chain here too
@@ -145,6 +145,6 @@ while {true} do
 	// all convoy vehicles out of spawn distance, switch back to simulation
 	if (_despawn) exitWith {
 		deleteMarker _convoyMarker;			// because we're using createConvoy rather than convoyMovement to restart sim
-		[_convoyID, _createdUnits, _convoyPos, _targetPos, _markerArray, _convoyType, _convoySide] call A3A_fnc_despawnConvoy;
+		[_convoyID, _createdUnits, _convoyPos, _targetPos, _markers, _convoyType, _convoySide] call A3A_fnc_despawnConvoy;
 	};
 };

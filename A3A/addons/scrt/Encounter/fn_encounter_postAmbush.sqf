@@ -19,14 +19,14 @@ if (isNil "_player") exitWith {
 private _frontLine = (outposts + milbases + airportsX + resourcesX + factories + citiesX) select {([_x] call A3A_fnc_isFrontlineNoFIA && {sidesX getVariable [_x,sideUnknown] != teamPlayer})};
 private _frontlineSitesNearPlayer = ((outposts + milbases + airportsX + resourcesX + factories + citiesX) select {(_x in _frontLine) && {((getMarkerPos _x) distance2D _player <= distanceSPWN*2.5) && {sidesX getVariable [_x,sideUnknown] != teamPlayer}}}) call BIS_fnc_arrayShuffle;
 
-if !(_frontlineSitesNearPlayer isEqualTo []) exitWith {
+if (_frontlineSitesNearPlayer isNotEqualTo []) exitWith {
     Error("Position is near frontline, need to select appropriate event.");
     [VEH_POSTAMBUSH] remoteExecCall ["SCRT_fnc_encounter_selectAndExecuteEvent", 2];
 };
 
 private _originPosition = position _player;
 
-Info_2("%1 will be used as center of the event at %2 position.", name _player, str _originPosition);
+Info_2("%1 will be used as center of the event at %2 position.",name _player,str _originPosition);
 
 private _spawnPosition = [_originPosition, 900, distanceSPWN, 0, 0] call BIS_fnc_findSafePos;
 private _road = objNull;
@@ -34,12 +34,12 @@ private _radiusX = 5;
 
 while {true} do {
     _road = _spawnPosition nearRoads _radiusX;
-    if (count _road > 0 && {_road findIf {(position _x) distance2D _originPosition > 500} != -1}) exitWith {};
+    if (_road isNotEqualTo [] && {_road findIf {(position _x) distance2D _originPosition > 500} != -1}) exitWith {};
     _radiusX = _radiusX + 5;
 };
 
-private _roadcon = roadsConnectedto ((_road select {(position _x) distance2D _originPosition > 500}) select 0); //guaranteed due to top condition on road search
-private _dirveh = if (count _roadcon > 0) then {[_road select 0, _roadcon select 0] call BIS_fnc_dirTo} else {random 360};
+private _roadcon = roadsConnectedTo ((_road select {(position _x) distance2D _originPosition > 500}) select 0); //guaranteed due to top condition on road search
+private _dirveh = if (_roadcon isNotEqualTo []) then {[_road select 0, _roadcon select 0] call BIS_fnc_dirTo} else {random 360};
 private _roadPosition = getPos (_road select 0);
 
 private _crater = createVehicle ["CraterLong", _roadPosition, [], 0, "CAN_COLLIDE"];

@@ -17,7 +17,7 @@ private ["_losses", "_preferred", "_garrison", "_requested", "_marker", "_side",
 _preferred = garrison getVariable [format ["%1_preference", _type], objNull];
 while {!(_preferred isEqualType [])} do
 {
-    Debug_1("Preference %1_preference not set yet, waiting for 1 second", _type);
+    Debug_1("Preference %1_preference not set yet, waiting for 1 second",_type);
   sleep 1;
   _preferred = garrison getVariable [format ["%1_preference", _type], objNull];
 };
@@ -29,7 +29,7 @@ while {!(_preferred isEqualType [])} do
   _side = sidesX getVariable [_marker, sideUnknown];
   while {_side == sideUnknown} do
   {
-      Debug_1("Side unknown for %1, sleeping 1!", _marker);
+      Debug_1("Side unknown for %1, sleeping 1!",_marker);
     sleep 1;
     _side = sidesX getVariable [_marker, sideUnknown];
   };
@@ -58,7 +58,7 @@ while {!(_preferred isEqualType [])} do
 
   if(debug) then
   {
-      DebugArray("Garrison on "+_marker+" is now set", _garrison);
+      DebugArray("Garrison on "+_marker+" is now set",_garrison);
   };
 
   [_marker] call A3A_fnc_updateReinfState;

@@ -12,7 +12,7 @@ params ["_vehicle", "_preference", "_side"];
 *     _group : ARRAY of STRINGS : The selected group
 */
 private _faction = Faction(_side);
-#define OccAndInv(VAR) (FactionGet(occ, VAR) + FactionGet(inv, VAR))
+#define OccAndInv(VAR) (FactionGet(occ,VAR) + FactionGet(inv,VAR))
 
 //If preference is empty, return empty
 if(_preference == "Empty") exitWith {[]};
@@ -48,7 +48,7 @@ else
       _result = _preference;
       if(debug) then
       {
-          Debug_1("Vehicle %1 cannot transport four or more people, reconsider using another vehicle or make smaller groups possible!", _vehicle);
+          Debug_1("Vehicle %1 cannot transport four or more people, reconsider using another vehicle or make smaller groups possible!",_vehicle);
           Debug("Assuming preference as a solution, may be changed in the future!");
       };
     };

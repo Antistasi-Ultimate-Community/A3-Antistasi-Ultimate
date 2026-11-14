@@ -3,7 +3,7 @@ class handgunsKart
 			displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_Kart", localize "STR_A3AU_handguns"]);
 			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\handgun_ca.paa";
 
-			ITEM(hgun_Pistol_Signal_F, 450, PISTOL_STOCK);
+			ITEM(hgun_Pistol_Signal_F, 450, PISTOL_STOCK)
 		};
 
 class magazinesKart

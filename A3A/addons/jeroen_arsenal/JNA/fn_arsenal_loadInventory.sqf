@@ -64,7 +64,7 @@ _isItemBino = {
 
 //name that needed to be loaded
 _saveName = _this;
-_saveData = profileNamespace getvariable ["bis_fnc_saveInventory_data",[]];
+_saveData = profileNamespace getVariable ["bis_fnc_saveInventory_data",[]];
 _inventory = [];
 {
 	if(_x isEqualType "STRING" && {_x == _saveName})exitWith{
@@ -89,7 +89,7 @@ _inventory = [];
 		//no need to remove because uniform, vest and backpack get replaced.
 		[_arrayPlaced,_index,_item,_amount]call _addToArray;
 	};
-}foreach magazinesAmmoFull player;
+}forEach magazinesAmmoFull player;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// assinged items
 _assignedItems_old = assignedItems player + [headgear player] + [goggles player];
@@ -139,11 +139,11 @@ _backpack_old = backpack player;
 } forEach [uniformContainer player, vestContainer player, backpackContainer player];
 
 //remove containers
-removeuniform player;
+removeUniform player;
 [_arrayPlaced,IDC_RSCDISPLAYARSENAL_TAB_UNIFORM,_uniform_old,1]call _addToArray;
-removevest player;
+removeVest player;
 [_arrayPlaced,IDC_RSCDISPLAYARSENAL_TAB_VEST,_vest_old,1]call _addToArray;
-removebackpack player;
+removeBackpack player;
 [_arrayPlaced,IDC_RSCDISPLAYARSENAL_TAB_BACKPACK,_backpack_old,1]call _addToArray;
 
 
@@ -164,7 +164,7 @@ _itemCounts =+ _availableItems;
 		_amount = (_x select 1);
 		if (_amount != -1 && !_isMember) then {
 			_itemMin = A3A_arsenalLimits getOrDefault [_item, _arrayMin];
-			if (_isMagArray) then { _itemMin = _itemMin * getNumber (configfile >> "CfgMagazines" >> _item >> "count") };
+			if (_isMagArray) then { _itemMin = _itemMin * getNumber (configFile >> "CfgMagazines" >> _item >> "count") };
 			_subArray set [_foreachindex, [_item, (_amount - _itemMin) max 0]];
 		};
 	} forEach _subArray;
@@ -183,26 +183,26 @@ _assignedItems = ((_inventory select 9) + [_inventory select 3] + [_inventory se
 	} else {
 
 		//TFAR fix
-		private _radioName = getText(configfile >> "CfgWeapons" >> _item >> "tf_parent");
-		if!(_radioName isEqualTo "")then{
+		private _radioName = getText(configFile >> "CfgWeapons" >> _item >> "tf_parent");
+		if(_radioName isNotEqualTo "")then{
 			_item =_radioName;
 		};
 
 		//ACRE fix
-		private _radioName = getText(configfile >> "CfgVehicles" >> _item >> "acre_baseClass");
-		if!(_radioName isEqualTo "")then{
+		private _radioName = getText(configFile >> "CfgVehicles" >> _item >> "acre_baseClass");
+		if(_radioName isNotEqualTo "")then{
 			_item =_radioName;
 		};
 		
         //Weapon Stack fix
-        private _weaponname = getText(configfile >> "CfgWeapons" >> _item >> "baseWeapon");
-        if!(_weaponname isEqualTo "")then{
+        private _weaponname = getText(configFile >> "CfgWeapons" >> _item >> "baseWeapon");
+        if(_weaponname isNotEqualTo "")then{
             _item = _weaponname
         };
 
         //RHS Sight Stack fix
-        private _sightname = getText(configfile >> "CfgWeapons" >> _item >> "rhs_optic_base");
-        if!(_sightname isEqualTo "")then{
+        private _sightname = getText(configFile >> "CfgWeapons" >> _item >> "rhs_optic_base");
+        if(_sightname isNotEqualTo "")then{
             _item = _sightname
         };
 
@@ -233,19 +233,19 @@ _assignedItems = ((_inventory select 9) + [_inventory select 3] + [_inventory se
 } forEach _assignedItems - [""];
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// weapons and attachments
-removebackpack player;
+removeBackpack player;
 player addBackpack "B_Carryall_oli"; //add ammo to gun, can only be done by first adding a mag.
 _weapons = [_inventory select 6,_inventory select 7,_inventory select 8];
 {
 	private ["_item"];
 	_item = _x select 0;
 
-	if!(_item isEqualTo "")then{
+	if(_item isNotEqualTo "")then{
 		private ["_itemAttachmets","_itemMag","_amount","_amountMag","_index","_indexMag"];
 		_itemAttachmets = _x select 1;
 		_itemMag = _x select 2;
 		_amount = 1;
-		_amountMag = getNumber (configfile >> "CfgMagazines" >> _itemMag >> "count");
+		_amountMag = getNumber (configFile >> "CfgMagazines" >> _itemMag >> "count");
 		_index = _foreachindex;
 		_indexMag = IDC_RSCDISPLAYARSENAL_TAB_CARGOMAGALL;
 
@@ -287,7 +287,7 @@ _weapons = [_inventory select 6,_inventory select 7,_inventory select 8];
 		//add attachments
 		{
 			_itemAcc = _x;
-			if!(_itemAcc isEqualTo "")then{
+			if(_itemAcc isNotEqualTo "")then{
 				_amountAcc = 1;
 
 				_indexAcc = _itemAcc call jn_fnc_arsenal_itemType;
@@ -314,10 +314,10 @@ _weapons = [_inventory select 6,_inventory select 7,_inventory select 8];
 					};
 				};
 			};
-		}foreach _itemAttachmets;
+		}forEach _itemAttachmets;
 	};
 } forEach _weapons;
-removebackpack player;
+removeBackpack player;
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  vest, uniform and backpack
 _uniform = _inventory select 0 select 0;
@@ -338,7 +338,7 @@ private _addContainerFuncs = [
 														 ];
 {
 	_item = _x;
-	if!(_item isEqualTo "")then{
+	if(_item isNotEqualTo "")then{
 		_amount = 1;
 		_index = [
 			IDC_RSCDISPLAYARSENAL_TAB_UNIFORM,
@@ -359,7 +359,7 @@ private _addContainerFuncs = [
 				[_availableItems,_index,_item,_amount] call _removeFromArray;
 			} else {
 				_oldItem = [_uniform_old,_vest_old,_backpack_old] select _foreachindex;
-				if !(_oldItem isEqualTo "") then {
+				if (_oldItem isNotEqualTo "") then {
 					[_oldItem] call _addContainerFunc;
 					_arrayReplaced = [_arrayReplaced,[_item,_oldItem]] call jn_fnc_arsenal_addToArray;
 					[_arrayTaken,_index,_oldItem,1] call _addToArray;
@@ -396,7 +396,7 @@ _addItemToContainer = {
 		} else {
 			_amountAvailable = [_availableItems select _index, _item] call jn_fnc_arsenal_itemCount;
 			if (_index == IDC_RSCDISPLAYARSENAL_TAB_CARGOMAGALL) then {
-				_amount = getNumber (configfile >> "CfgMagazines" >> _item >> "count");
+				_amount = getNumber (configFile >> "CfgMagazines" >> _item >> "count");
 				call {
 					if ([_itemCounts select _index, _item] call jn_fnc_arsenal_itemCount == -1) exitWith {
 						_container addMagazineAmmoCargo  [_item,1, _amount];
@@ -443,11 +443,11 @@ _addItemToContainer = {
 private _lookupConfigName = {
 	private _class = param [0];
 	private _configs = "configName _x == _class" configClasses (configFile >> "CfgWeapons");
-	if (count _configs > 0) exitWith {
+	if (_configs isNotEqualTo []) exitWith {
 		[_configs select 0] call BIS_fnc_displayName;
 	};
 	private _configs = "configName _x == _class" configClasses (configFile >> "CfgMagazines");
-	if (count _configs > 0) exitWith {
+	if (_configs isNotEqualTo []) exitWith {
 		[_configs select 0] call BIS_fnc_displayName;
 	};
 	_class;
@@ -470,7 +470,7 @@ _reportReplaced = "";
 	_reportReplaced = _reportReplaced + _nameOld + " has been kept, because there is no " + _nameNew + "\n";
 } forEach _arrayReplaced;
 
-if!(_reportReplaced isEqualTo "")then{
+if(_reportReplaced isNotEqualTo "")then{
 	_reportTotal = ("These items were not in the Arsenal, so the originals have been kept:\n" + _reportReplaced+"\n");
 };
 
@@ -481,11 +481,11 @@ _reportMissing = "";
 	_reportMissing = _reportMissing + _name + " (" + (str _amount) + "x)\n";
 }forEach _arrayMissing;
 
-if!(_reportMissing isEqualTo "")then{
+if(_reportMissing isNotEqualTo "")then{
 	_reportTotal = (_reportTotal+"These items were not in the Arsenal:\n" + _reportMissing+"\n");
 };
 
-if!(_reportTotal isEqualTo "")then{
+if(_reportTotal isNotEqualTo "")then{
 	titleText[_reportTotal, "PLAIN"];
 };
 

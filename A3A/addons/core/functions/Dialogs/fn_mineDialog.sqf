@@ -27,11 +27,7 @@ if (_typeX == "delete") exitWith {
 	[[],"A3A_fnc_mineSweep"] remoteExec ["A3A_fnc_scheduler",2];
 };
 
-private _quantityMax = if (_typeX == "ATMine") then {
-	20;
-} else {
-	40;
-};
+private _quantityMax = [40, 20] select (_typeX == "ATMine");
 
 if (_quantity > _quantityMax) then {
 	_quantity = _quantityMax;

@@ -10,7 +10,7 @@ private _optionalVars = ["name", "version", "saveTime", "ended", "params", "fact
 private _fnc_gameMissing = { isNil {"membersX" call A3A_fnc_returnSavedStat} };
 private _saveData = [];
 private _campaignIDs = [];
-private _serverID = profileNameSpace getVariable ["ss_ServerID",""];
+private _serverID = profileNamespace getVariable ["ss_ServerID",""];
 
 // Old Plus saves
 private _saveList = [profileNamespace getVariable "antistasiUltimate2SavedGames"] param [0, [], [[]]];
@@ -32,7 +32,7 @@ private _saveList = [profileNamespace getVariable "antistasiUltimate2SavedGames"
     _saveData pushBack _game;
 } forEach _saveList;
 
-private _oldCampaignID = profileNameSpace getVariable ["ss_CampaignID", ""];
+private _oldCampaignID = profileNamespace getVariable ["ss_CampaignID", ""];
 if !(_oldCampaignID in _campaignIDs) then {
     A3A_saveTarget = [_serverID, _oldCampaignID, worldName];                          // Pre 2.3 saves
     if (call _fnc_gameMissing) then { A3A_saveTarget set [1, ""] };                   // Original saves (no campaign ID)

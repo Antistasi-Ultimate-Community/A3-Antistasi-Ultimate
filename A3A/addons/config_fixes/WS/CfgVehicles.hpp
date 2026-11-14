@@ -2,8 +2,6 @@
 
 class CfgVehicles
 {
-    class B_G_Offroad_01_AT_F;
-    class B_G_Offroad_01_armed_F;
     class B_Tura_Offroad_armor_AT_lxWS;
     class B_Tura_Offroad_armor_armed_lxWS;
     class B_Tura_Offroad_armor_lxWS;
@@ -179,7 +177,7 @@ class CfgVehicles
                         hardpoints[] = {"DAR","DAGR","B_SHIEKER","UNI_SCALPEL","20MM_TWIN_CANNON","B_ASRRAM_EJECTOR","WEAPON_PODS_RF","B_BOMB_PYLON"};
                         priority = 5;
                         turret[] = {0};
-                        UIposition[] = {"0.06 + 0.02",0.4};
+                        UIposition[] = {0.08,0.4}; // UIposition[] = {"0.06 + 0.02",0.4};
                     };
                     class PylonRight1 
 					{
@@ -188,7 +186,7 @@ class CfgVehicles
                         priority = 5;
                         mirroredMissilePos = 1;
                         turret[] = {0};
-                        UIposition[] = {"0.59 + 0.04",0.4};
+                        UIposition[] = {0.63,0.4}; // UIposition[] = {"0.59 + 0.04",0.4};
                     };
                 };
             };

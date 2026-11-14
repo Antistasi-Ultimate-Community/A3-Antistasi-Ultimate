@@ -1,7 +1,8 @@
+#pragma hemtt ignore_variables ["_thisScript"]
 params ["_cured", "_medic"];
 
 private _player = isPlayer _medic;
-private _inPlayerGroup = if !(_player) then {if ({isPlayer _x} count (units group _medic) > 0) then {true} else {false}} else {false};
+private _inPlayerGroup = if !(_player) then {{isPlayer _x} count (units group _medic) > 0} else {false};
 private _isMedic = [_medic] call A3A_fnc_isMedic;
 
 if (captive _medic) then { _medic setCaptive false };         // medic is will be local
@@ -31,11 +32,11 @@ if !(_cured getVariable ["incapacitated",false]) exitWith
 
 private _medkits = ["Medikit"] + (A3A_faction_reb get "mediKits");    // Medikit is kept in case a unit still got hold of it.
 private _firstAidKits = ["FirstAidKit"] + (A3A_faction_reb get "firstAidKits");    // FirstAidKit is kept in case a unit still got hold of it.
-private _hasMedkit = (count (_medkits arrayIntersect (items _medic + items _cured)) > 0);
-private _medicFAKs = if (!_hasMedkit) then { _firstAidKits arrayIntersect items _medic };
-private _curedFAKs = if (!_hasMedkit) then { _firstAidKits arrayIntersect items _cured };
+private _hasMedkit = (_medkits arrayIntersect (items _medic + items _cured)) isNotEqualTo [];
+private _medicFAKs = if (!_hasMedkit) then { _firstAidKits arrayIntersect items _medic } else { [] };
+private _curedFAKs = if (!_hasMedkit) then { _firstAidKits arrayIntersect items _cured } else { [] };
 
-if (!_hasMedkit && {count _medicFAKs == 0 && count _curedFAKs == 0}) exitWith
+if (!_hasMedkit && {_medicFAKs isEqualTo [] && {_curedFAKs isEqualTo []}}) exitWith
 {
     if (_player) then {[localize "STR_antistasi_revive_header", format [localize "STR_chats_action_revive_no_fak_you",name _cured]] call A3A_fnc_customHint;};
     if (_inPlayerGroup) then {_medic groupChat localize "STR_chats_action_revive_no_fak_me"};
@@ -158,7 +159,7 @@ if (!([_medic] call A3A_fnc_canFight)) exitWith
 // Successful revive
 if (_isMedic) then {_cured setDamage 0} else {_cured setDamage 0.25};
 if (!_hasMedkit) then {
-    if (count _medicFAKs == 0) then { _cured removeItem selectRandom _curedFAKs }
+    if (_medicFAKs isEqualTo []) then { _cured removeItem selectRandom _curedFAKs }
     else { _medic removeItem selectRandom _medicFAKs };
 };
 private _sideX = side (group _cured);

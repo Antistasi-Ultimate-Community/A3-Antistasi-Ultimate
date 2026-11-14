@@ -49,7 +49,7 @@ private _baseInputClassesMap = createHashMap;
 	};
 
 	private _originItemFireModes = getArray (configFile >> "CfgWeapons" >> _item >> "modes");
-	private _originItemMuzzles = count (getArray (configfile >> "CfgWeapons" >> _item >> "muzzles"));
+	private _originItemMuzzles = count (getArray (configFile >> "CfgWeapons" >> _item >> "muzzles"));
 	private _originItemOpticSystem = getText(configFile >> "CfgWeapons" >> _item >> "LinkedItems" >> "LinkedItemsOptic" >> "slot");
 	private _originMagazines = getArray (configFile >> "CfgWeapons" >> _item >> "magazineWell");
 	_originMagazines sort true;
@@ -58,14 +58,14 @@ private _baseInputClassesMap = createHashMap;
 	_similarClassnames = _similarClassnames select {
 		private _weapon = _x;
 		private _weaponFireModes = getArray (configFile >> "CfgWeapons" >> _weapon >> "modes"); //separating weapons with different firing modes
-		private _weaponMuzzles = count (getArray (configfile >> "CfgWeapons" >> _weapon >> "muzzles")); //distincting weapons with underbarrels
+		private _weaponMuzzles = count (getArray (configFile >> "CfgWeapons" >> _weapon >> "muzzles")); //distincting weapons with underbarrels
 		private _weaponSystem = getText(configFile >> "CfgWeapons" >> _weapon >> "LinkedItems" >> "LinkedItemsOptic" >> "slot"); //separating weapons with different mount systems
 		private _weaponMagazines = getArray (configFile >> "CfgWeapons" >> _weapon >> "magazineWell");
 		_weaponMagazines sort true;
 		_originItemFireModes isEqualTo _weaponFireModes && _weaponMuzzles == _originItemMuzzles && _originItemOpticSystem == _weaponSystem && _originMagazines isEqualTo _weaponMagazines
 	};
 
-	Debug_3("Weapon: %1, Base Config: %2, Final similar weapons: %3", str _item, _cfgName, str _similarClassnames);
+	Debug_3("Weapon: %1, Base Config: %2, Final similar weapons: %3",str _item,_cfgName,str _similarClassnames);
 
 	_possibleClassesMap set [_cfgName, _similarClassnames];
 

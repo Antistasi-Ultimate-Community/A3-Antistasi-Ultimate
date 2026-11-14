@@ -9,7 +9,7 @@ if (_markerX in _zonesFrontline && !(_markerX in controlsX)) exitWith {
 	[[_markerX],"A3A_fnc_CON_Outpost_Compet"] remoteExec ["A3A_fnc_scheduler",2];
 };
 
-private _difficultX = if (random 10 < tierWar) then {true} else {false};
+private _difficultX = random 10 < tierWar;
 private _positionX = getMarkerPos _markerX;
 
 private _limit = if (_difficultX) then {

@@ -350,15 +350,15 @@ _g=[] spawn {
 		sa_spike_signals_buffer=[];
 #endif
 		
-		if!(_sa_objects_frequency_ons isEqualTo sa_objects_frequency) then{
+		if(_sa_objects_frequency_ons isNotEqualTo sa_objects_frequency) then{
 			publicVariable "sa_objects_frequency";
 			_sa_objects_frequency_ons=sa_objects_frequency;
 		};
-		if!(_sa_uav_terminals_frequenc_ons isEqualTo sa_uav_terminals_frequency) then{
+		if(_sa_uav_terminals_frequenc_ons isNotEqualTo sa_uav_terminals_frequency) then{
 			publicVariable "sa_uav_terminals_frequency";
 			_sa_uav_terminals_frequenc_ons=sa_uav_terminals_frequency;
 		};
-		if!(_sa_spike_signals_frequency_ons isEqualTo sa_spike_signals_frequency) then{
+		if(_sa_spike_signals_frequency_ons isNotEqualTo sa_spike_signals_frequency) then{
 			publicVariable "sa_spike_signals_frequency";
 			_sa_spike_signals_frequency_ons=sa_spike_signals_frequency;
 		};

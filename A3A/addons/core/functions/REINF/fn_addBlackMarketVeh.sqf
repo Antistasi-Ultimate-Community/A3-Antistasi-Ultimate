@@ -28,7 +28,7 @@ if (_resourcesFIA < _cost) exitWith {
 	[localize "STR_A3A_addFiaVeh_header", format [localize "STR_A3AP_error_veh_not_enough_money_generic", _cost, A3A_faction_civ get "currencySymbol"]] call A3A_fnc_customHint;
 };
 
-if (player distance2d traderX > 50) exitWith {
+if (player distance2D traderX > 50) exitWith {
 	[localize "STR_A3A_addFiaVeh_header", localize "STR_veh_callback_arms_dealer_close"] call A3A_fnc_customHint;
 };
 
@@ -58,7 +58,7 @@ private _fnc_buyVehicle = {
 	};
 };
 private _fnc_check = {
-	[(player distance2d traderX > 50), localize "STR_veh_callback_arms_dealer_close"];
+	[(player distance2D traderX > 50), localize "STR_veh_callback_arms_dealer_close"];
 };
 
 if (_addToGarage) then {

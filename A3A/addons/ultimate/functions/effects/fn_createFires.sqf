@@ -1,6 +1,6 @@
 params [["_position", [0,0,0]], ["_amount", 6], ["_type", "SmallDestructionFire"]];
 
-private _radius = if (_type isEqualTo "SmallDestructionFire") then {5} else {50};
+private _radius = [50, 5] select (_type isEqualTo "SmallDestructionFire");
 private _effects = [];
 
 for "_i" from 0 to (random [(_amount-1),_amount,(_amount+1)]) do {

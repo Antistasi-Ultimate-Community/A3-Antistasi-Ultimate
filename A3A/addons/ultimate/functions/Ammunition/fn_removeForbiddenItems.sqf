@@ -28,7 +28,7 @@ private _start = diag_tickTime;
 	{ 
 		private _index = _array find _x; 
 		if (_index isNotEqualTo -1 && {getNumber (configFile >> "A3U" >> "forbiddenItems" >> _x >> "appearInCrates") isEqualTo 0}) then {
-            Verbose_2("Removed %1 from %2", _x, _array);
+            Verbose_2("Removed %1 from %2",_x,_array);
 			_array deleteAt (_index);
 		};
 	} forEach A3U_forbiddenItems;

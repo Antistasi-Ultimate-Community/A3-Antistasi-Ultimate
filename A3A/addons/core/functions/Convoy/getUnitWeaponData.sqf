@@ -14,7 +14,7 @@ _getAnyMagazines =
   _mags = [];
   {
     _mags = _mags + getArray ((if (_x == "this") then { _weapon } else { _weapon >> _x }) >> "magazines");
-  } foreach getArray (_weapon >> "muzzles");
+  } forEach getArray (_weapon >> "muzzles");
   _mags
 };
 
@@ -30,8 +30,8 @@ _findRecurse =
     {
       _currentPath = _path + [_i];
       {
-        _result set [count _result, [_x, _x call _getAnyMagazines, _currentPath, str _class]];
-      } foreach getArray (_class >> "weapons");
+        _result pushBack [_x, _x call _getAnyMagazines, _currentPath, str _class];
+      } forEach getArray (_class >> "weapons");
       _class = _class >> "turrets";
       if (isClass _class) then
       {

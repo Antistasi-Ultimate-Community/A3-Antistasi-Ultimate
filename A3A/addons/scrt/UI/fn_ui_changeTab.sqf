@@ -29,7 +29,7 @@ switch (_direction) do {
 {
     if (_forEachIndex != 0) then {
         _thisCtrl = (_display displayCtrl _x);				
-        _thisCtrl ctrlSetPosition [-0.4 * safezoneW + safezoneX, (ctrlPosition _thisCtrl) select 1, (ctrlPosition _thisCtrl) select 2, (ctrlPosition _thisCtrl) select 3];
+        _thisCtrl ctrlSetPosition [-0.4 * safeZoneW + safeZoneX, (ctrlPosition _thisCtrl) select 1, (ctrlPosition _thisCtrl) select 2, (ctrlPosition _thisCtrl) select 3];
         _thisCtrl ctrlCommit 0.1;
     };
 } forEach _currentMenu;
@@ -42,7 +42,7 @@ _leftPos = 0 * pixelGridNoUIScale * pixelW;
         ctrlSetText [A3A_IDC_MENU_TAB_SELECTOR_TITLE, _x];
     } else {
         _thisCtrl = (_display displayCtrl _x);				
-        _thisCtrl ctrlSetPosition [safezoneX, (ctrlPosition _thisCtrl) select 1, (ctrlPosition _thisCtrl) select 2, (ctrlPosition _thisCtrl) select 3];
+        _thisCtrl ctrlSetPosition [safeZoneX, (ctrlPosition _thisCtrl) select 1, (ctrlPosition _thisCtrl) select 2, (ctrlPosition _thisCtrl) select 3];
         _thisCtrl ctrlCommit 0.2;
     };
 } forEach _selectedMenu;	

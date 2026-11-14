@@ -1,4 +1,4 @@
-if (count hcSelected player == 0) exitWith {
+if (hcSelected player isEqualTo []) exitWith {
 	[localize "STR_A3A_reinf_vehStat_header", localize "STR_A3A_reinf_vehStat_one_group"] call A3A_fnc_customHint;};
 
 private ["_groupX","_veh","_textX","_unitsX"];
@@ -18,17 +18,17 @@ if (_this select 0 == "mount") exitWith {
 			if (count allTurrets [_veh, false] > 0) then {_transporte = false};
 			if (_transporte) then {
 				if (leader _groupX in _veh) then {
-						_textX = format [localize "STR_A3A_reinf_vehStat_dismounting_1",groupID _groupX,_textX];
+						_textX = format [localize "STR_A3A_reinf_vehStat_dismounting_1",groupId _groupX,_textX];
 						{[_x] orderGetIn false; [_x] allowGetIn false} forEach units _groupX;
 				        _groupX setVariable ["A3A_forceDismount", true];
 				} else {
-						_textX = format [localize "STR_A3A_reinf_vehStat_boarding_1",groupID _groupX,_textX];
+						_textX = format [localize "STR_A3A_reinf_vehStat_boarding_1",groupId _groupX,_textX];
 						{[_x] orderGetIn true; [_x] allowGetIn true} forEach units _groupX;
 					    _groupX setVariable ["A3A_forceDismount", nil];
 					};
 			} else {
 				if (leader _groupX in _veh) then {
-					_textX = format [localize "STR_A3A_reinf_vehStat_dismounting_1",groupID _groupX,_textX];
+					_textX = format [localize "STR_A3A_reinf_vehStat_dismounting_1",groupId _groupX,_textX];
 					_groupX setVariable ["A3A_forceDismount", true];
 					if (canMove _veh) then {
 						{[_x] orderGetIn false; [_x] allowGetIn false} forEach assignedCargo _veh;
@@ -37,7 +37,7 @@ if (_this select 0 == "mount") exitWith {
 						{[_x] orderGetIn false; [_x] allowGetIn false} forEach units _groupX;
 					}
 				} else {
-					_textX = format [localize "STR_A3A_reinf_vehStat_boarding_1",groupID _groupX,_textX];
+					_textX = format [localize "STR_A3A_reinf_vehStat_boarding_1",groupId _groupX,_textX];
 					{[_x] orderGetIn true; [_x] allowGetIn true} forEach units _groupX;
 				_groupX setVariable ["A3A_forceDismount", nil];
 				};
@@ -48,9 +48,9 @@ if (_this select 0 == "mount") exitWith {
 };
 _textX = "";
 _groupX = (hcSelected player select 0);
-player sideChat format [localize "STR_A3A_reinf_vehStat_sitrep",groupID _groupX];
+player sideChat format [localize "STR_A3A_reinf_vehStat_sitrep",groupId _groupX];
 _unitsX = units _groupX;
-_textX = format [localize "STR_A3A_reinf_vehStat_sitrep_status",groupID _groupX,{alive _x} count _unitsX,{[_x] call A3A_fnc_canFight} count _unitsX,_groupX getVariable ["taskX","Patrol"],behaviour (leader _groupX)];
+_textX = format [localize "STR_A3A_reinf_vehStat_sitrep_status",groupId _groupX,{alive _x} count _unitsX,{[_x] call A3A_fnc_canFight} count _unitsX,_groupX getVariable ["taskX","Patrol"],behaviour (leader _groupX)];
 if ({[_x] call A3A_fnc_isMedic} count _unitsX > 0) then {_textX = format [localize "STR_A3A_reinf_vehStat_opmedic",_textX]} else {_textX = format [localize "STR_A3A_reinf_vehStat_no_opmedic",_textX]};
 if ({_x call A3A_fnc_typeOfSoldier == "ATMan"} count _unitsX > 0) then {_textX = format [localize "STR_A3A_reinf_vehStat_aa",_textX]};
 if ({_x call A3A_fnc_typeOfSoldier == "AAMan"} count _unitsX > 0) then {_textX = format [localize "STR_A3A_reinf_vehStat_at",_textX]};
@@ -74,12 +74,12 @@ if (!isNil "_owner") then {if (_owner == _groupX) exitWith {_veh = _x}};
 if (isNull _veh) then
 	{
 	{
-	if ((vehicle _x != _x) and (_x == driver _x) and !(vehicle _x isKindOf "StaticWeapon")) exitWith {_veh = vehicle _x};
+	if ((!isNull objectParent _x) and (_x == driver _x) and !(vehicle _x isKindOf "StaticWeapon")) exitWith {_veh = vehicle _x};
 	} forEach _unitsX;
 	};
 if !(isNull _veh) then
 	{
-	_textX = format [localize "STR_A3A_reinf_vehStat_current_veh",_textX,getText (configFile >> "CfgVehicles" >> (typeOf _veh) >> "displayName")];
+	_textX = format [localize "STR_A3A_reinf_vehStat_current_veh",_textX,getText ((configOf _veh) >> "displayName")];
 	if (!alive _veh) then
 		{
 		_textX = format [localize "STR_A3A_reinf_vehStat_current_veh_disabled",_textX];

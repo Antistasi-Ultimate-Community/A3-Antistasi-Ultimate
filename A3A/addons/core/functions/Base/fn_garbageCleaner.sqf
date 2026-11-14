@@ -46,7 +46,7 @@ sleep 0.5;
 { deleteVehicle _x } forEach (allMissionObjects "BloodSplatter_01_Medium_New_F");
 { deleteVehicle _x } forEach (allMissionObjects "BloodPool_01_Medium_New_F");
 
-private _lootCrateType = FactionGet(reb, "lootCrate");
+private _lootCrateType = FactionGet(reb,"lootCrate");
 // Cleanup rebel vehicles
 {
 	// Locked check is a hack for roadblock vehicles

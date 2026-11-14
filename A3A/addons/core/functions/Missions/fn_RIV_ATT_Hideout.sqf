@@ -1,21 +1,22 @@
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
+#pragma hemtt ignore_variables ["_thisScript"]
 
 params ["_marker"];
 
 //Mission: Seize Hideout Cache
 if (!isServer and hasInterface) exitWith {};
 
-Info_1("Seize Hideout task initialization started, marker: %1.", _marker);
+Info_1("Seize Hideout task initialization started, marker: %1.",_marker);
 
 private _vehicles = [];
 private _groups = [];
 
 (90 call SCRT_fnc_misc_getTimeLimit) params ["_dateLimitNum", "_displayTime"];
 
-private _isDifficult = if (random 10 < tierWar) then {true} else {false};
+private _isDifficult = random 10 < tierWar;
 
-Info_1("Is difficult: %1.", str _isDifficult);
+Info_1("Is difficult: %1.",str _isDifficult);
 
 private _positionX = getMarkerPos _marker;
 
@@ -36,7 +37,7 @@ private _radGrad = [_hideoutPosition, 0] call BIS_fnc_terrainGradAngle;
 private _outOfBounds = _hideoutPosition findIf { (_x < 0) || {_x > worldSize}} != -1;
 
 private _enemyBases = (airportsX + milbases + outposts + seaports + factories + resourcesX) select {sidesX getVariable [_x, sideUnknown] != teamPlayer};
-private _isTooCloseToOutposts = _enemyBases findIf { _hideoutPosition distance2d (getMarkerPos _x) < 500 || _hideoutPosition inArea _x } != -1;
+private _isTooCloseToOutposts = _enemyBases findIf { _hideoutPosition distance2D (getMarkerPos _x) < 500 || _hideoutPosition inArea _x } != -1;
 
 //mitigation of negative terrain gradient
 if(!(_radGrad > -0.25 && _radGrad < 0.25) || {isOnRoad _hideoutPosition || {surfaceIsWater _hideoutPosition || {_outOfBounds || {_isTooCloseToOutposts}}}}) then {
@@ -55,7 +56,7 @@ if(!(_radGrad > -0.25 && _radGrad < 0.25) || {isOnRoad _hideoutPosition || {surf
         ] call BIS_fnc_findSafePos;
         _radGrad = [_hideoutPosition, 0] call BIS_fnc_terrainGradAngle;
         _outOfBounds = _hideoutPosition findIf { (_x < 0) || {_x > worldSize}} != -1;
-        _isTooCloseToOutposts = _enemyBases findIf { _hideoutPosition distance2d (getMarkerPos _x) < 300 || _hideoutPosition inArea _x } != -1;
+        _isTooCloseToOutposts = _enemyBases findIf { _hideoutPosition distance2D (getMarkerPos _x) < 300 || _hideoutPosition inArea _x } != -1;
         if ((_radGrad > -0.25 && _radGrad < 0.25) && {!(isOnRoad _hideoutPosition) && {!(surfaceIsWater _hideoutPosition) && {!_outOfBounds && {!_isTooCloseToOutposts}}}}) exitWith {};
         _radiusX = _radiusX + 5;
     };
@@ -199,7 +200,7 @@ if (dateToNumber date < _dateLimitNum) then {
         _vehicles append [_prizeVehicle];
     };
 
-    Info_1("Loot container on %1 position.", str (position _lootContainer));
+    Info_1("Loot container on %1 position.",str (position _lootContainer));
 
     {
         [_x,false] remoteExec ["setCaptive",0,_x];
@@ -287,7 +288,7 @@ if (dateToNumber date < _dateLimitNum) then {
 
         sleep (random [120, 240, 360]);
 
-        private _chance = if (_isDifficult) then {30} else {15};
+        private _chance = [15, 30] select (_isDifficult);
         if ((random 100) > _chance && {!isNil "_lootContainer" && {alive _lootContainer && {!(_lootContainer inArea [getMarkerPos respawnTeamPlayer, 50, 50, 0, false])}}}) then {
             private _event = selectRandom [200, 300];
 

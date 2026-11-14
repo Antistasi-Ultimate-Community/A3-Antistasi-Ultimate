@@ -1,7 +1,7 @@
 params ["_unit", "_helped", "_enemy"];
 
 if !(_unit call A3A_fnc_canFight) exitWith {false};
-if (vehicle _unit != _unit) exitWith {false};
+if (!isNull objectParent _unit) exitWith {false};
 
 if (time < _unit getVariable ["smokeUsed",time - 1]) exitWith {false};
 _unit setVariable ["smokeUsed",time + 60];

@@ -38,7 +38,7 @@ _classname = toLower _classname;
 
 if (_itemCategory isEqualTo "Magazine") then {
 	{
-		if !(_x isEqualTo "") then {
+		if (_x isNotEqualTo "") then {
 			switch (_forEachIndex) do {
 				case 0: {
 					if ((primaryWeaponMagazine _unit) isEqualTo []) then {
@@ -99,7 +99,7 @@ if (_itemCategory isEqualTo "Magazine") then {
 		};
 		if (_itemType in ["AccessorySights", "AccessoryPointer", "AccessoryMuzzle", "AccessoryBipod"]) exitWith {
 			{
-				if !(_x isEqualTo "") then {
+				if (_x isNotEqualTo "") then {
 					_compatibleWeaponItems = (_x call HALs_store_fnc_getCompatibleItems) apply {toLower _x};
 					if (_classname in _compatibleWeaponItems) exitWith {
 						switch (_forEachIndex) do {

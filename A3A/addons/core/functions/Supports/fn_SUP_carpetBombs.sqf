@@ -21,7 +21,7 @@ FIX_LINE_NUMBERS()
 
 params ["_supportName", "_side", "_resPool", "_maxSpend", "_target", "_targPos", "_reveal", "_delay"];
 
-private _aggroValue = if(_side == Occupants) then {aggressionOccupants} else {aggressionInvaders};
+private _aggroValue = [aggressionInvaders, aggressionOccupants] select (_side == Occupants);
 if (_delay < 0) then { _delay = (0.5 + random 1) * (350 - 15*tierWar - 1*_aggroValue) };
 
 // ["_side", "_basetype", "_target", "_endtime", "_duration", "_power"]

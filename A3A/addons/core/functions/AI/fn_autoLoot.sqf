@@ -14,7 +14,7 @@ _weaponX = "";
 _weaponsX = [];
 _bigTimeOut = time + 120;
 _objectsX = nearestObjects [_unit, ["WeaponHolderSimulated", "GroundWeaponHolder", "WeaponHolder"], 50];
-if (count _objectsX == 0) exitWith {_unit groupChat localize "STR_chats_autoloot_no_bodies"};
+if (_objectsX isEqualTo []) exitWith {_unit groupChat localize "STR_chats_autoloot_no_bodies"};
 
 _target = objNull;
 _distanceX = 51;
@@ -22,7 +22,7 @@ _distanceX = 51;
 _objectX = _x;
 if (_unit distance _objectX < _distanceX) then
 	{
-	if ((count weaponCargo _objectX > 0) and !(_objectX getVariable ["busy",false])) then
+	if ((weaponCargo _objectX isNotEqualTo []) and !(_objectX getVariable ["busy",false])) then
 		{
 		_weaponsX = weaponCargo _objectX;
 		for "_i" from 0 to (count _weaponsX - 1) do
@@ -55,7 +55,7 @@ removeAllItemsWithMagazines _unit;
 removeHeadgear _unit;
 
 _unit action ["GetOut",_truckX];
-[_unit] orderGetin false;
+[_unit] orderGetIn false;
 
 _continuar = true;
 
@@ -98,7 +98,7 @@ while {_continuar and ([_unit] call A3A_fnc_canFight) and (_unit getVariable "re
 			if (_unit distance _target < 3) then
 				{
 				{if (!(_x in unlockedMagazines) and !(_x in unlockedItems)) then {_unit addItemToUniform _x}} forEach (uniformItems _target);
-				if (backPack _target != "") then
+				if (backpack _target != "") then
 					{
 					_unit addBackpack ((backpack _target) call A3A_fnc_basicBackpack);
 					{if (!(_x in unlockedMagazines) and !(_x in unlockedItems)) then {_unit addItemToBackpack _x}} forEach backpackItems _target;
@@ -110,7 +110,7 @@ while {_continuar and ([_unit] call A3A_fnc_canFight) and (_unit getVariable "re
 				removeVest _target;
 				if (((headgear _target) in allArmoredHeadgear) and !((headgear _target) in unlockedItems)) then
 					{
-					_unit addHeadgear (headGear _target);
+					_unit addHeadgear (headgear _target);
 					removeHeadgear _target;
 					};
 				{if !(_x in unlockedItems) then {_unit linkItem _x}} forEach assignedItems _target;
@@ -135,7 +135,7 @@ while {_continuar and ([_unit] call A3A_fnc_canFight) and (_unit getVariable "re
 			_unit action ["DropWeapon",_truckX,secondaryWeapon _unit];
 			sleep 3;
 			};
-		{_truckX addItemCargoGlobal [_x,1]} forEach ((assignedItems _unit) + (vestItems _unit) + (backPackItems _unit) + [headgear _unit,backpack _unit,vest _unit]);
+		{_truckX addItemCargoGlobal [_x,1]} forEach ((assignedItems _unit) + (vestItems _unit) + (backpackItems _unit) + [headgear _unit,backpack _unit,vest _unit]);
 		removeBackpackGlobal _unit;
 		removeVest _unit;
 		{_unit unlinkItem _x} forEach assignedItems _unit;
@@ -149,7 +149,7 @@ while {_continuar and ([_unit] call A3A_fnc_canFight) and (_unit getVariable "re
 	_objectX = _x;
 	if (_unit distance _objectX < _distanceX) then
 		{
-		if ((count weaponCargo _objectX > 0) and !(_objectX getVariable ["busy",false])) then
+		if ((weaponCargo _objectX isNotEqualTo []) and !(_objectX getVariable ["busy",false])) then
 			{
 			_weaponsX = weaponCargo _objectX;
 			for "_i" from 0 to (count _weaponsX - 1) do

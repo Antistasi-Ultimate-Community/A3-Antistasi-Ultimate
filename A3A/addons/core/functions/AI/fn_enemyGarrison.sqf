@@ -11,6 +11,7 @@ Parameters:
 
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
+#pragma hemtt ignore_variables ["_thisScript"]
 
 params ["_group", "_marker"];
 
@@ -22,8 +23,8 @@ if (sidesX getVariable _marker != side _group) exitWith {
     Error("Target marker changed side, switching to RTB");
     [_group] spawn A3A_fnc_enemyReturnToBase;
 };
-if (leader _group distance2d markerPos _marker > 500) then {
-    ServerInfo_1("Warning: Garrisoning group %1m from marker", leader _group distance2d markerPos _marker);
+if (leader _group distance2D markerPos _marker > 500) then {
+    ServerInfo_1("Warning: Garrisoning group %1m from marker",leader _group distance2D markerPos _marker);
 };
 
 // Remove from other AI script
@@ -34,7 +35,7 @@ if (!isNil "_AIScriptHandle") then { terminate _AIScriptHandle; _group setVariab
 private _despawnerHandle = _group getVariable "A3A_despawnerHandle";
 if (!isNil "_despawnerHandle") then { terminate _despawnerHandle; _group setVariable ["A3A_despawnerHandle", nil]; };
 
-ServerDebug_2("Adding group %1 to garrison at %2", _group, _marker);
+ServerDebug_2("Adding group %1 to garrison at %2",_group,_marker);
 
 // Add units to the garrison list
 private _unitTypes = units _group apply { _x getVariable "unitType" };

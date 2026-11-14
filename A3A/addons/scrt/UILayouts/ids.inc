@@ -1,3 +1,5 @@
+#ifndef A3A_SCRT_IDS_INC
+#define A3A_SCRT_IDS_INC
 /*
     Contains IDDs and IDCs for the SCRT menus.
     -1 is intentionally kept as a literal for controls that don't need an IDC.
@@ -257,3 +259,4 @@
 #define A3A_IDC_REBEL_LOADOUT_MENU_L11_RESET_BUTTON 1200211
 #define A3A_IDC_REBEL_LOADOUT_MENU_L12_ARSENAL_BUTTON 1200112
 #define A3A_IDC_REBEL_LOADOUT_MENU_L12_RESET_BUTTON 1200212
+#endif

@@ -77,7 +77,7 @@ private _uavQuantity = switch (inactivityLevelRivals) do {
 	};
 };
 
-Info_1("UAV quantity: %1", str _uavQuantity);
+Info_1("UAV quantity: %1",str _uavQuantity);
 
 for "_i" from 0 to _uavQuantity - 1 do {
 	private _finPosition = [_originPosition, 2500, (random 360)] call BIS_fnc_relPos;
@@ -201,17 +201,17 @@ for "_i" from 0 to _uavQuantity - 1 do {
 					} else {
 						if ("BombDemine_01_F" in (weapons _uav)) then{
 							[_uav, "BombDemine_01_F"] call BIS_fnc_fire;
-							Info_1("Grenade Ammo Class: %1", "BombDemine_01_F");
+							Info_1("Grenade Ammo Class: %1","BombDemine_01_F");
 							_uav removeEventHandler ['Hit', (_uav getVariable ['ehId', 0])];
 						} else {
 							if ("Bomb_40mm_HE_lxWS" in (weapons _uav)) then {
 								[_uav, "Bomb_40mm_HE_lxWS"] call BIS_fnc_fire;
-								Info_1("Grenade Ammo Class: %1", "Bomb_40mm_HE_lxWS");
+								Info_1("Grenade Ammo Class: %1","Bomb_40mm_HE_lxWS");
 								_uav removeEventHandler ['Hit', (_uav getVariable ['ehId', 0])];
 							} else {
 								private _uavPos = position _uav; 
 								private _grenadeAmmoClass = selectRandom (A3A_faction_riv get "handGrenadeAmmo");
-								Info_1("Grenade Ammo Class: %1", _grenadeAmmoClass);
+								Info_1("Grenade Ammo Class: %1",_grenadeAmmoClass);
 								private _grenade = _grenadeAmmoClass createVehicle [_uavPos select 0, _uavPos select 1, (_uavPos select 2) - 4]; 
 								[_uav, _grenade] remoteExecCall ['disableCollisionWith', 0, _grenade]; 
 								_uav removeEventHandler ['Hit', (_uav getVariable ['ehId', 0])];

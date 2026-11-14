@@ -21,7 +21,7 @@
 
 params [  
     ["_markers", []],
-    ["_unit", ObjNull],
+    ["_unit", objNull],
     ["_createList", true]
 ];
 

@@ -23,7 +23,7 @@ Maintainer: DoomMetal
 ////////////////////
 #define REFLECT(Text) Text
 #define SHARP REFLECT(#)
-#define QUOTE(Text) #Text
+#include "\x\A3A\addons\gui\script_component.hpp"
 
 #include "\x\A3A\addons\core\ui_const.hpp"
 
@@ -46,10 +46,14 @@ Maintainer: DoomMetal
 
 // Text sizes
 #define GUI_TEXT_SIZE_EXTRA_SMALL (GRID_H * 2.5)
-#define GUI_TEXT_SIZE_SMALL (GRID_H * 3.2) // Fits inside 3*GRID_H
-#define GUI_TEXT_SIZE_SPECIAL (GRID_H * 3.5) // Fits inside alright)
-#define GUI_TEXT_SIZE_MEDIUM (GRID_H * 4.2)  // Fits inside 4*GRID_H
-#define GUI_TEXT_SIZE_LARGE (GRID_H * 5) // Fits inside 6*GRID_H
+// Fits inside 3*GRID_H
+#define GUI_TEXT_SIZE_SMALL (GRID_H * 3.2)
+// Fits inside alright)
+#define GUI_TEXT_SIZE_SPECIAL (GRID_H * 3.5)
+// Fits inside 4*GRID_H
+#define GUI_TEXT_SIZE_MEDIUM (GRID_H * 4.2)
+// Fits inside 6*GRID_H
+#define GUI_TEXT_SIZE_LARGE (GRID_H * 5)
 
 
 ////////////

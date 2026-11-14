@@ -2,7 +2,7 @@
 FIX_LINE_NUMBERS()
 params ["_units", "_roadblockMarker"];
 
-_nightTimeBonus = if (daytime < 6 || {daytime > 22}) then {0.25} else {0};
+_nightTimeBonus = [0, 0.25] select (dayTime < 6 || {dayTime > 22});
 
 _defenderBonus = 1 + _nightTimeBonus + (random 0.5);
 _attackerBonus = 1;
@@ -32,7 +32,7 @@ _attackerCount = 0;
     case (_vehicle isKindOf "Helicopter"):
     {
       //Transport helicopter without a gun dont count
-      if(count (getArray (configFile >> "CfgVehicles" >> _vehicle >> "weapons")) > 0) then
+      if((getArray (configFile >> "CfgVehicles" >> _vehicle >> "weapons")) isNotEqualTo []) then
       {
         _attackerCount = _attackerCount + 7;
       };
@@ -46,7 +46,7 @@ _result = false;
 if(_attackerCount == 0) then
 {
   //Attacker lost
-  Debug_1("Attacker lost against roadblock %1", _roadblockMarker);
+  Debug_1("Attacker lost against roadblock %1",_roadblockMarker);
   _result = false;
 }
 else
@@ -54,14 +54,14 @@ else
   _ratio = _roadblockCount/_attackerCount;
   if(_roadblockCount == 0 || {_ratio < 0.9}) then
   {
-      Debug_2("Defender at %1 lost against attacker with ratio %2", _roadblockMarker, _ratio);
+      Debug_2("Defender at %1 lost against attacker with ratio %2",_roadblockMarker,_ratio);
     _result = true;
   }
   else
   {
     if(_ratio > 1.1) then
     {
-        Debug_1("Attacker lost against roadblock %1", _roadblockMarker);
+        Debug_1("Attacker lost against roadblock %1",_roadblockMarker);
       _result = false;
     }
     else
@@ -69,11 +69,11 @@ else
       _result = [true, false] selectRandomWeighted [0.5, 0.5];
       if(_result) then
       {
-          Debug_2("Defender at %1 lost against attacker with ratio %2", _roadblockMarker, _ratio);
+          Debug_2("Defender at %1 lost against attacker with ratio %2",_roadblockMarker,_ratio);
       }
       else
       {
-          Debug_1("Attacker lost against roadblock %1", _roadblockMarker);
+          Debug_1("Attacker lost against roadblock %1",_roadblockMarker);
       };
     };
   };

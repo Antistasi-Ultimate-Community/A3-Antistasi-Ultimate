@@ -1,7 +1,7 @@
 params ["_markerX"];
 //Mission: Conquer the outpost, before other faction will do it.
 if (!isServer and hasInterface) exitWith{};
-private _difficultX = if (random 10 < tierWar) then {true} else {false};
+private _difficultX = random 10 < tierWar;
 private _positionX = getMarkerPos _markerX;
 private _limit = if (_difficultX) then {
 	45 call SCRT_fnc_misc_getTimeLimit
@@ -43,11 +43,7 @@ private _delay = 30 + (round random 20);
 private _targPos = markerPos _markerX;
 private _airbase = [_oppositeside, markerPos _markerX] call A3A_fnc_availableBasesAir;
 
-private _vehCount = if (_difficultX) then {
-	4;
-} else {
-	2;
-};
+private _vehCount = [2, 4] select (_difficultX);
 if (_markerX in (airportsX + milbases)) then {
 	_vehCount = 6;
 };

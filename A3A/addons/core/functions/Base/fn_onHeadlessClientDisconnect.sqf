@@ -5,7 +5,7 @@ private _owner = param [4];
 
 if (_owner in hcArray) then
 {
-	Info_2("Headless client ID %1 disconnected from HC array %2", _owner, hcArray);
+	Info_2("Headless client ID %1 disconnected from HC array %2",_owner,hcArray);
 	if ({owner _x == _owner} count allUnits > 0) then
 	{
 		A3A_HCErrorHandle = [] spawn {

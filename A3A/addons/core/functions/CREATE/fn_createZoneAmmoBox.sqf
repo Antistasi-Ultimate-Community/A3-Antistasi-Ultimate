@@ -33,12 +33,12 @@ if (!isServer and hasInterface) exitWith{};
 
 params ["_markerX"];
 
-if (isNil "_markerX" || {!(_markerX isEqualType "")}) exitWith { Error_1("Invalid marker: %1 for ammo box creation.", _markerX) };
+if (isNil "_markerX" || {!(_markerX isEqualType "")}) exitWith { Error_1("Invalid marker: %1 for ammo box creation.",_markerX) };
 
 private _sideX = sidesX getVariable [_markerX,sideUnknown];
-if (_sideX isEqualTo sideUnknown) exitWith { Error_2("Invalid side: %1 for marker %2 ammo box creation.", _sideX, _markerX) };
+if (_sideX isEqualTo sideUnknown) exitWith { Error_2("Invalid side: %1 for marker %2 ammo box creation.",_sideX,_markerX) };
 
-if (garrison getVariable [_markerX + "_lootCD", 0] isNotEqualTo 0) exitWith { Info_1("Skipping ammo box spawn at marker %1 as it is on cooldown.", _markerX) };
+if (garrison getVariable [_markerX + "_lootCD", 0] isNotEqualTo 0) exitWith { Info_1("Skipping ammo box spawn at marker %1 as it is on cooldown.",_markerX) };
 
 private _positionX = getMarkerPos (_markerX);
 private _faction = Faction(_sideX);
@@ -51,7 +51,7 @@ if (_spawnParameter isEqualType []) then {
 	_ammoBoxX setDir (_spawnParameter select 1); // this probably doesn't matter, but eh why not?
 	_return = [_ammoBoxX, _spawnParameter select 2];
 } else {
-	Debug_1("Could not find ammo box placement marker for marker %1; falling back to marker center.", _markerX);
+	Debug_1("Could not find ammo box placement marker for marker %1; falling back to marker center.",_markerX);
 	_ammoBoxX = [_typeVehX, _positionX, 15, 5, true] call A3A_fnc_safeVehicleSpawn;
 	_return = [_ammoBoxX, nil];
 };

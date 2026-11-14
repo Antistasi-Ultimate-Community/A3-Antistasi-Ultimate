@@ -1,3 +1,5 @@
+#pragma hemtt ignore_variables ["_fnc_saveToTemplate"]
+
 ["attributesVehicles", [
 	["NORTH_FIN_45PSTK37", ["rebCost", 3000]],
 	["NORTH_FIN_Lahti_L39AA", ["rebCost", 1500]],

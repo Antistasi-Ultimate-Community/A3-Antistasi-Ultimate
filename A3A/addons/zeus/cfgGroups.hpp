@@ -1,12 +1,12 @@
 class CfgGroups {
 	class INDEP {
 		class GVAR(Rebels) {
-			name = $STR_A3U_Zeus_Faction_Rebels;
+			name = "$STR_A3U_Zeus_Faction_Rebels";
 			class Infantry {
-				name = $STR_A3U_Zeus_GroupType_Infantry;
+				name = "$STR_A3U_Zeus_GroupType_Infantry";
 				
 				class GVAR(Rebels_Infantry_Squad) {
-					name = $STR_A3U_Zeus_GroupType_Infantry_Squad;
+					name = "$STR_A3U_Zeus_GroupType_Infantry_Squad";
 					faction = QGVAR(Rebels);
 					side = 2;
 					class Unit0 {
@@ -47,7 +47,7 @@ class CfgGroups {
 					};
 				};
 				class GVAR(Rebels_Infantry_Team) {
-					name = $STR_A3U_Zeus_GroupType_Infantry_Team;
+					name = "$STR_A3U_Zeus_GroupType_Infantry_Team";
 					faction = QGVAR(Rebels);
 					side = 2;
 					class Unit0 {
@@ -73,7 +73,7 @@ class CfgGroups {
 					};
 				};
 				class GVAR(Rebels_Infantry_MachineGun_Team) {
-					name = $STR_A3U_Zeus_GroupType_Infantry_MGTeam;
+					name = "$STR_A3U_Zeus_GroupType_Infantry_MGTeam";
 					faction = QGVAR(Rebels);
 					side = 2;
 					class Unit0 {
@@ -94,7 +94,7 @@ class CfgGroups {
 					};
 				};
 				class GVAR(Rebels_Infantry_AT_Team) : GVAR(Rebels_Infantry_MachineGun_Team) {
-					name = $STR_A3U_Zeus_GroupType_Infantry_ATTeam;
+					name = "$STR_A3U_Zeus_GroupType_Infantry_ATTeam";
 					class Unit0 : Unit0 {};
 					class Unit1 : Unit1 {
 						vehicle = QGVAR(Rebels_AT);
@@ -102,7 +102,7 @@ class CfgGroups {
 					class Unit2 : Unit2 {};
 				};
 				class GVAR(Rebels_Infantry_AA_Team) : GVAR(Rebels_Infantry_MachineGun_Team) {
-					name = $STR_A3U_Zeus_GroupType_Infantry_AATeam;
+					name = "$STR_A3U_Zeus_GroupType_Infantry_AATeam";
 					class Unit0 : Unit0 {};
 					class Unit1 : Unit1 {
 						vehicle = QGVAR(Rebels_AA);
@@ -110,7 +110,7 @@ class CfgGroups {
 					class Unit2 : Unit2 {};
 				};
 				class GVAR(Rebels_Infantry_Sniper_Team) {
-					name = $STR_A3U_Zeus_GroupType_Infantry_SniperTeam;
+					name = "$STR_A3U_Zeus_GroupType_Infantry_SniperTeam";
 					faction = QGVAR(Rebels);
 					side = 2;
 					class Unit0 {
@@ -130,12 +130,12 @@ class CfgGroups {
 	};
 	class WEST {
 		class GVAR(Occupants) {
-			name = $STR_A3U_Zeus_Faction_Occupants;
+			name = "$STR_A3U_Zeus_Faction_Occupants";
 			class Infantry_Militia {
-				name = $STR_A3U_Zeus_GroupType_Infantry_Militia;
+				name = "$STR_A3U_Zeus_GroupType_Infantry_Militia";
 				
 				class GVAR(Occupants_Militia_Infantry_Squad) {
-					name = $STR_A3U_Zeus_GroupType_Infantry_Squad;
+					name = "$STR_A3U_Zeus_GroupType_Infantry_Squad";
 					faction = QGVAR(Occupants);
 					side = 1;
 					class Unit0 {
@@ -176,7 +176,7 @@ class CfgGroups {
 					};
 				};
 				class GVAR(Occupants_Militia_Infantry_Team) {
-					name = $STR_A3U_Zeus_GroupType_Infantry_Team;
+					name = "$STR_A3U_Zeus_GroupType_Infantry_Team";
 					faction = QGVAR(Occupants);
 					side = 1;
 					class Unit0 {
@@ -202,7 +202,7 @@ class CfgGroups {
 					};
 				};
 				class GVAR(Occupants_Militia_Infantry_MachineGun_Team) {
-					name = $STR_A3U_Zeus_GroupType_Infantry_MGTeam;
+					name = "$STR_A3U_Zeus_GroupType_Infantry_MGTeam";
 					faction = QGVAR(Occupants);
 					side = 1;
 					class Unit0 {
@@ -223,7 +223,7 @@ class CfgGroups {
 					};
 				};
 				class GVAR(Occupants_Militia_Infantry_AT_Team) : GVAR(Occupants_Militia_Infantry_MachineGun_Team) {
-					name = $STR_A3U_Zeus_GroupType_Infantry_ATTeam;
+					name = "$STR_A3U_Zeus_GroupType_Infantry_ATTeam";
 					class Unit0 : Unit0 {};
 					class Unit1 : Unit1 {
 						vehicle = QGVAR(Occupants_Vehicle_StaticAT);
@@ -231,7 +231,7 @@ class CfgGroups {
 					class Unit2 : Unit2 {};
 				};
 				class GVAR(Occupants_Militia_Infantry_AA_Team) : GVAR(Occupants_Militia_Infantry_MachineGun_Team) {
-					name = $STR_A3U_Zeus_GroupType_Infantry_AATeam;
+					name = "$STR_A3U_Zeus_GroupType_Infantry_AATeam";
 					class Unit0 : Unit0 {};
 					class Unit1 : Unit1 {
 						vehicle = QGVAR(Occupants_Vehicle_StaticAA);
@@ -239,7 +239,7 @@ class CfgGroups {
 					class Unit2 : Unit2 {};
 				};
 				class GVAR(Occupants_Militia_Infantry_Sniper_Team) {
-					name = $STR_A3U_Zeus_GroupType_Infantry_SniperTeam;
+					name = "$STR_A3U_Zeus_GroupType_Infantry_SniperTeam";
 					faction = QGVAR(Occupants);
 					side = 1;
 					class Unit0 {
@@ -256,7 +256,7 @@ class CfgGroups {
 				};
 			};
 			class Infantry_Military : Infantry_Militia {
-				name = $STR_A3U_Zeus_GroupType_Infantry_Military;
+				name = "$STR_A3U_Zeus_GroupType_Infantry_Military";
 
 				class GVAR(Occupants_Military_Infantry_Squad) : GVAR(Occupants_Militia_Infantry_Squad) {
 					class Unit0 : Unit0 {
@@ -302,7 +302,7 @@ class CfgGroups {
 					};
 				};
 				class GVAR(Occupants_Military_Infantry_MachineGun_Team) : GVAR(Occupants_Militia_Infantry_MachineGun_Team) {
-					name = $STR_A3U_Zeus_GroupType_Infantry_MGTeam;
+					name = "$STR_A3U_Zeus_GroupType_Infantry_MGTeam";
 					class Unit0 : Unit0 {
 						vehicle = QGVAR(Occupants_Military_Rifleman);
 					};
@@ -345,7 +345,7 @@ class CfgGroups {
 				};
 			};
 			class Infantry_Elite : Infantry_Militia {
-				name = $STR_A3U_Zeus_GroupType_Infantry_Elite;
+				name = "$STR_A3U_Zeus_GroupType_Infantry_Elite";
 
 				class GVAR(Occupants_Elite_Infantry_Squad) : GVAR(Occupants_Militia_Infantry_Squad) {
 					class Unit0 : Unit0 {
@@ -391,7 +391,7 @@ class CfgGroups {
 					};
 				};
 				class GVAR(Occupants_Elite_Infantry_MachineGun_Team) : GVAR(Occupants_Militia_Infantry_MachineGun_Team) {
-					name = $STR_A3U_Zeus_GroupType_Infantry_MGTeam;
+					name = "$STR_A3U_Zeus_GroupType_Infantry_MGTeam";
 					class Unit0 : Unit0 {
 						vehicle = QGVAR(Occupants_Elite_Rifleman);
 					};
@@ -434,7 +434,7 @@ class CfgGroups {
 				};
 			};
 			class Infantry_SpecialForces : Infantry_Militia {
-				name = $STR_A3U_Zeus_GroupType_Infantry_SpecialForces;
+				name = "$STR_A3U_Zeus_GroupType_Infantry_SpecialForces";
 
 				class GVAR(Occupants_SpecialForces_Infantry_Squad) : GVAR(Occupants_Militia_Infantry_Squad) {
 					class Unit0 : Unit0 {
@@ -480,7 +480,7 @@ class CfgGroups {
 					};
 				};
 				class GVAR(Occupants_SpecialForces_Infantry_MachineGun_Team) : GVAR(Occupants_Militia_Infantry_MachineGun_Team) {
-					name = $STR_A3U_Zeus_GroupType_Infantry_MGTeam;
+					name = "$STR_A3U_Zeus_GroupType_Infantry_MGTeam";
 					class Unit0 : Unit0 {
 						vehicle = QGVAR(Occupants_SpecialForces_Rifleman);
 					};
@@ -523,7 +523,7 @@ class CfgGroups {
 				};
 			};
 			class Infantry_Police : Infantry_Militia {
-				name = $STR_A3U_Zeus_GroupType_Infantry_Police;
+				name = "$STR_A3U_Zeus_GroupType_Infantry_Police";
 
 				class GVAR(Occupants_Police_Infantry_Squad) : GVAR(Occupants_Militia_Infantry_Squad) {
 					class Unit0 : Unit0 {
@@ -577,12 +577,12 @@ class CfgGroups {
 	};
 	class EAST {
 		class GVAR(Invaders) {
-			name = $STR_A3U_Zeus_Faction_Invaders;
+			name = "$STR_A3U_Zeus_Faction_Invaders";
 			class Infantry_Militia {
-				name = $STR_A3U_Zeus_GroupType_Infantry_Militia;
+				name = "$STR_A3U_Zeus_GroupType_Infantry_Militia";
 				
 				class GVAR(Invaders_Militia_Infantry_Squad) {
-					name = $STR_A3U_Zeus_GroupType_Infantry_Squad;
+					name = "$STR_A3U_Zeus_GroupType_Infantry_Squad";
 					faction = QGVAR(Invaders);
 					side = 0;
 					class Unit0 {
@@ -623,7 +623,7 @@ class CfgGroups {
 					};
 				};
 				class GVAR(Invaders_Militia_Infantry_Team) {
-					name = $STR_A3U_Zeus_GroupType_Infantry_Team;
+					name = "$STR_A3U_Zeus_GroupType_Infantry_Team";
 					faction = QGVAR(Invaders);
 					side = 0;
 					class Unit0 {
@@ -649,7 +649,7 @@ class CfgGroups {
 					};
 				};
 				class GVAR(Invaders_Militia_Infantry_MachineGun_Team) {
-					name = $STR_A3U_Zeus_GroupType_Infantry_MGTeam;
+					name = "$STR_A3U_Zeus_GroupType_Infantry_MGTeam";
 					faction = QGVAR(Invaders);
 					side = 0;
 					class Unit0 {
@@ -670,7 +670,7 @@ class CfgGroups {
 					};
 				};
 				class GVAR(Invaders_Militia_Infantry_AT_Team) : GVAR(Invaders_Militia_Infantry_MachineGun_Team) {
-					name = $STR_A3U_Zeus_GroupType_Infantry_ATTeam;
+					name = "$STR_A3U_Zeus_GroupType_Infantry_ATTeam";
 					class Unit0 : Unit0 {};
 					class Unit1 : Unit1 {
 						vehicle = QGVAR(Invaders_Vehicle_StaticAT);
@@ -678,7 +678,7 @@ class CfgGroups {
 					class Unit2 : Unit2 {};
 				};
 				class GVAR(Invaders_Militia_Infantry_AA_Team) : GVAR(Invaders_Militia_Infantry_MachineGun_Team) {
-					name = $STR_A3U_Zeus_GroupType_Infantry_AATeam;
+					name = "$STR_A3U_Zeus_GroupType_Infantry_AATeam";
 					class Unit0 : Unit0 {};
 					class Unit1 : Unit1 {
 						vehicle = QGVAR(Invaders_Vehicle_StaticAA);
@@ -686,7 +686,7 @@ class CfgGroups {
 					class Unit2 : Unit2 {};
 				};
 				class GVAR(Invaders_Militia_Infantry_Sniper_Team) {
-					name = $STR_A3U_Zeus_GroupType_Infantry_SniperTeam;
+					name = "$STR_A3U_Zeus_GroupType_Infantry_SniperTeam";
 					faction = QGVAR(Invaders);
 					side = 0;
 					class Unit0 {
@@ -703,7 +703,7 @@ class CfgGroups {
 				};
 			};
 			class Infantry_Military : Infantry_Militia {
-				name = $STR_A3U_Zeus_GroupType_Infantry_Military;
+				name = "$STR_A3U_Zeus_GroupType_Infantry_Military";
 
 				class GVAR(Invaders_Military_Infantry_Squad) : GVAR(Invaders_Militia_Infantry_Squad) {
 					class Unit0 : Unit0 {
@@ -749,7 +749,7 @@ class CfgGroups {
 					};
 				};
 				class GVAR(Invaders_Military_Infantry_MachineGun_Team) : GVAR(Invaders_Militia_Infantry_MachineGun_Team) {
-					name = $STR_A3U_Zeus_GroupType_Infantry_MGTeam;
+					name = "$STR_A3U_Zeus_GroupType_Infantry_MGTeam";
 					class Unit0 : Unit0 {
 						vehicle = QGVAR(Invaders_Military_Rifleman);
 					};
@@ -792,7 +792,7 @@ class CfgGroups {
 				};
 			};
 			class Infantry_Elite : Infantry_Militia {
-				name = $STR_A3U_Zeus_GroupType_Infantry_Elite;
+				name = "$STR_A3U_Zeus_GroupType_Infantry_Elite";
 
 				class GVAR(Invaders_Elite_Infantry_Squad) : GVAR(Invaders_Militia_Infantry_Squad) {
 					class Unit0 : Unit0 {
@@ -838,7 +838,7 @@ class CfgGroups {
 					};
 				};
 				class GVAR(Invaders_Elite_Infantry_MachineGun_Team) : GVAR(Invaders_Militia_Infantry_MachineGun_Team) {
-					name = $STR_A3U_Zeus_GroupType_Infantry_MGTeam;
+					name = "$STR_A3U_Zeus_GroupType_Infantry_MGTeam";
 					class Unit0 : Unit0 {
 						vehicle = QGVAR(Invaders_Elite_Rifleman);
 					};
@@ -881,7 +881,7 @@ class CfgGroups {
 				};
 			};
 			class Infantry_SpecialForces : Infantry_Militia {
-				name = $STR_A3U_Zeus_GroupType_Infantry_SpecialForces;
+				name = "$STR_A3U_Zeus_GroupType_Infantry_SpecialForces";
 
 				class GVAR(Invaders_SpecialForces_Infantry_Squad) : GVAR(Invaders_Militia_Infantry_Squad) {
 					class Unit0 : Unit0 {
@@ -927,7 +927,7 @@ class CfgGroups {
 					};
 				};
 				class GVAR(Invaders_SpecialForces_Infantry_MachineGun_Team) : GVAR(Invaders_Militia_Infantry_MachineGun_Team) {
-					name = $STR_A3U_Zeus_GroupType_Infantry_MGTeam;
+					name = "$STR_A3U_Zeus_GroupType_Infantry_MGTeam";
 					class Unit0 : Unit0 {
 						vehicle = QGVAR(Invaders_SpecialForces_Rifleman);
 					};
@@ -970,7 +970,7 @@ class CfgGroups {
 				};
 			};
 			class Infantry_Police : Infantry_Militia {
-				name = $STR_A3U_Zeus_GroupType_Infantry_Police;
+				name = "$STR_A3U_Zeus_GroupType_Infantry_Police";
 
 				class GVAR(Invaders_Police_Infantry_Squad) : GVAR(Invaders_Militia_Infantry_Squad) {
 					class Unit0 : Unit0 {

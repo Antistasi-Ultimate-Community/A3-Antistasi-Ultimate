@@ -39,7 +39,7 @@ for "_i" from 0 to (count _houses) - 1 do {
 	if (count _posHouse > 1) then {_potentials pushBack _houseX};
 };
 
-if (count _potentials > 0) then {
+if (_potentials isNotEqualTo []) then {
 	_houseX = selectRandom _potentials;
 	_posHouse = [_houseX] call BIS_fnc_buildingPositions;
 	_countX = (count _posHouse) - 1;
@@ -149,7 +149,7 @@ if (dateToNumber date > _dateLimitNum) then {
 
 waitUntil {sleep 1; {alive _x} count _POWs == 0 or {{(alive _x) and (_x distance getMarkerPos respawnTeamPlayer < 50)} count _POWs > 0}};
 
-private _bonus = if (_difficultX) then {2} else {1};
+private _bonus = [1, 2] select (_difficultX);
 
 if ({alive _x} count _POWs == 0) then {
 	[_taskId, "RES", "FAILED"] call A3A_fnc_taskSetState;
@@ -176,7 +176,7 @@ if ({alive _x} count _POWs == 0) then {
 	[_bonusAmount,theBoss] call A3A_fnc_addScorePlayer;
     [(_bonusAmount*10),theBoss, true] call A3A_fnc_addMoneyPlayer;
 
-	{[_x] join _grpPOW; [_x] orderGetin false} forEach _POWs;
+	{[_x] join _grpPOW; [_x] orderGetIn false} forEach _POWs;
 
 	[15*_bonus, (100/baseRivalsDecay)] remoteExec ["SCRT_fnc_rivals_reduceActivity",2];
 	[5*_bonus] remoteExecCall ["SCRT_fnc_rivals_addProgressToRivalsLocationReveal", 2];

@@ -142,7 +142,7 @@ _freeStatics apply {
         };
     } forEach _positions;
 
-    _vehicle setVehicleRadar ([0, 1] select (getNumber(configOf _vehicle >> "radarType") in [2, 4]));
+    _vehicle setVehicleRadar (parseNumber (getNumber(configOf _vehicle >> "radarType") in [2, 4]));
 };
 
 // 5. Fix lost assignments

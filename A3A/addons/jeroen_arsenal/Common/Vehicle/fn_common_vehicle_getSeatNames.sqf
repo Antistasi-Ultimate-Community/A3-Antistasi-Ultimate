@@ -17,7 +17,7 @@
 */
 
 params["_vehicle"];
-private _turretsArrayName = [typeof _vehicle, true] call BIS_fnc_allTurrets;
+private _turretsArrayName = [typeOf _vehicle, true] call BIS_fnc_allTurrets;
 private _turretCfgs = ([_vehicle] call BIS_fnc_getTurrets);
 if(count _turretsArrayName != count _turretCfgs)then{	_turretsArrayName = [[-1]] + _turretsArrayName;};
 private _turrets = [];

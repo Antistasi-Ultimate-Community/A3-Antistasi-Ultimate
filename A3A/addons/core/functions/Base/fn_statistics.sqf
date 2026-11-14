@@ -6,9 +6,9 @@ if (!hasInterface) exitWith {};
 #endif
 disableSerialization;
 
-if (isNull (uiNameSpace getVariable "H8erHUD")) exitWith {};
+if (isNull (uiNamespace getVariable "H8erHUD")) exitWith {};
 
-private _display = uiNameSpace getVariable "H8erHUD";
+private _display = uiNamespace getVariable "H8erHUD";
 if (isNil "_display") exitWith {};
 
 private _textX = nil;

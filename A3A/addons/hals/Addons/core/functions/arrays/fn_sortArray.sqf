@@ -21,7 +21,7 @@ params [
 ];
 
 
-if !(_code isEqualTo {}) exitWith {
+if (_code isNotEqualTo {}) exitWith {
 	private _arr = _arr apply {
 		[call _code, _x]
 	};

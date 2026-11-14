@@ -27,7 +27,7 @@ FIX_LINE_NUMBERS()
 
 params ["_mode", "_params"];
 
-Debug_1("HQ pos dialog called with mode %1", _mode);
+Debug_1("HQ pos dialog called with mode %1",_mode);
 
 private _display = findDisplay A3A_IDD_SETUPHQPOSDIALOG;
 private _parent = displayParent _display;
@@ -67,7 +67,7 @@ switch (_mode) do
         private _titleStr = localize "STR_antistasi_dialogs_hqpos_feedback_title";
 
         private _nearMarker = [_display getVariable "dangerZones", _posClicked] call BIS_fnc_nearestPosition;
-        if (markerPos _nearMarker distance2d _posClicked < 500) exitWith {
+        if (markerPos _nearMarker distance2D _posClicked < 500) exitWith {
             [_titleStr, localize "STR_antistasi_dialogs_hqpos_feedback_nearenemy"] call A3A_fnc_customHint;
         };
 

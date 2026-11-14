@@ -88,6 +88,7 @@ if (_podseats >= _groupcount) then {
 };
 sleep 2;
 private _SafeMovePos = [];
+private _podX = objNull;
 if (_podseats < _groupcount) then {
 	if (_podseats == 1) then {
 		{

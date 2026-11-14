@@ -1,3 +1,5 @@
+#pragma hemtt ignore_variables ["_fnc_saveToTemplate"]
+
 ["attributesVehicles", [
 
     // In AA arrays but really light-armed

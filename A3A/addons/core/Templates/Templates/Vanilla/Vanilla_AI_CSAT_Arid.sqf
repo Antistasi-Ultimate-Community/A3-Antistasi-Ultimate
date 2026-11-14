@@ -1,3 +1,5 @@
+#pragma hemtt ignore_variables ["_fnc_saveNames","_fnc_createLoadoutData","_fnc_copyLoadoutData","_fnc_generateAndSaveUnitsToTemplate","_fnc_saveToTemplate"]
+
 private _hasWs = "ws" in A3A_enabledDLC;
 private _hasMarksman = "mark" in A3A_enabledDLC;
 private _hasTanks = "tank" in A3A_enabledDLC;
@@ -103,7 +105,6 @@ if (_hasTanks) then {
 };
 
 if (_hasRF) then {
-    _basic pushBack "B_Pickup_rf";
     _unarmedVehicles append ["B_Pickup_rf", "B_Pickup_Comms_rf"];
     _armedVehicles append ["B_Pickup_mmg_rf"];
     _policeVehs append ["B_GEN_Pickup_covered_rf"];
@@ -157,15 +158,19 @@ if (_hasWS) then {
 #include "Vanilla_Vehicle_Attributes.sqf"
 
 ["animations", [
-    #include "..\vehicleAnimations\vehicleAnimations_Vanilla.sqf",
-    #include "..\vehicleAnimations\vehicleAnimations_WS.sqf",
-    #include "..\vehicleAnimations\vehicleAnimations_RF.sqf",
-    #include "..\vehicleAnimations\vehicleAnimations_EF.sqf"
+    #include "..\vehicleAnimations\vehicleAnimations_Vanilla.inc"
+    ,
+    #include "..\vehicleAnimations\vehicleAnimations_WS.inc"
+    ,
+    #include "..\vehicleAnimations\vehicleAnimations_RF.inc"
+    ,
+    #include "..\vehicleAnimations\vehicleAnimations_EF.inc"
 ]] call _fnc_saveToTemplate;
 
 ["variants", [
-    #include "..\vehicleVariants\Vanilla_CSAT_Arid\Vanilla_CSAT_Arid.sqf",
-    #include "..\vehicleVariants\Vanilla_CSAT_Arid\WS_CSAT_Arid.sqf"
+    #include "..\vehicleVariants\Vanilla_CSAT_Arid\Vanilla_CSAT_Arid.inc"
+    ,
+    #include "..\vehicleVariants\Vanilla_CSAT_Arid\WS_CSAT_Arid.inc"
 ]] call _fnc_saveToTemplate;
 
 /////////////////////

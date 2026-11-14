@@ -28,6 +28,6 @@ switch (_x) do
 	};
 } forEach _magazines;
 
-if (count _muzzles > 0) then {_muzzle = selectRandom _muzzles};
+if (_muzzles isNotEqualTo []) then {_muzzle = selectRandom _muzzles};
 
 _muzzle

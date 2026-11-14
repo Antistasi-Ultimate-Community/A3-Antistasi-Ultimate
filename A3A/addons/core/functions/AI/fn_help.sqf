@@ -17,7 +17,7 @@ _medicX setVariable ["helping",true];
 _medicX setVariable ["maneuvering",true];
 
 private _cured = false;
-private _isPlayerGroup = if ({isPlayer _x} count units _unit > 0) then {true} else {false};
+private _isPlayerGroup = {isPlayer _x} count units _unit > 0;
 
 private _fnc_canHelp = {
     params ["_medic", "_target"];
@@ -69,7 +69,7 @@ if (_medicX != _unit) then
         ["Medical", format ["%1 is on the way to help you.", name _medicX]] call A3A_fnc_customHint;
     };
 
-    Debug_2("Medic %1 helping %2", _medicX, _unit);
+    Debug_2("Medic %1 helping %2",_medicX,_unit);
 
     // Smoke target vs nearest enemy
     private _enemy = _medicX findNearestEnemy _unit;
@@ -91,7 +91,7 @@ if (_medicX != _unit) then
         } forEach _nearFriends;
     };
 
-    Debug_1("Medic %1 moving to target", _medicX);
+    Debug_1("Medic %1 moving to target",_medicX);
 
     // Attempt to move to target
     _medicX stop false;
@@ -103,7 +103,7 @@ if (_medicX != _unit) then
     // Couldn't get close enough or abandoned for some reason
     if (!([_medicX, _unit] call _fnc_canHelp) or (_unit distance _medicX > 3)) exitWith {
         private _canHelp = [_medicX, _unit] call _fnc_canHelp;
-        Debug_4("Medic %1 abandoned at distance %2, ready %3, canHelp %4", _medicX, _unit distance _medicX, unitReady _medicX, _canHelp);
+        Debug_4("Medic %1 abandoned at distance %2, ready %3, canHelp %4",_medicX,_unit distance _medicX,unitReady _medicX,_canHelp);
 
         if (_unit getVariable ["incapacitated", false]) then {
             private _failCount = _unit getVariable ["helpFailed", 0];
@@ -117,12 +117,12 @@ if (_medicX != _unit) then
         // Drag if there's better cover nearby
         _coverX = [_unit,_enemy] call A3A_fnc_coverage;
         if (count _coverX == 3) then {
-            Debug_1("Medic %1 dragging target", _medicX);
+            Debug_1("Medic %1 dragging target",_medicX);
             [_medicX, _unit, _coverX] call A3A_fnc_AIdrag;
         };
     };
 
-    Debug_1("Medic %1 healing target", _medicX);
+    Debug_1("Medic %1 healing target",_medicX);
 
     if ([_medicX, _unit] call _fnc_canHelp) then {
         _cured = [_medicX, _unit] call _fnc_doHeal;

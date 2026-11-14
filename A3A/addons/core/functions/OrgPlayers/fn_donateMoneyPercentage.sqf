@@ -19,13 +19,13 @@
 */
 
 params [
-  ["_unit", ObjNull],
-  ["_target", ObjNull],
+  ["_unit", objNull],
+  ["_target", objNull],
   ["_donateToPlayer", false],
   ["_moneyPercent", 0]
 ];
 
-if (_unit isEqualTo ObjNull) exitWith {false};
+if (_unit isEqualTo objNull) exitWith {false};
 
 private _resourcesPlayer = 0;
 private _pointsXJC = 0;
@@ -39,7 +39,7 @@ if (_resourcesPlayer <= 0) exitWith {
     [localize "STR_A3A_OrgPlayers_donateMoney_header", format [localize "STR_A3A_OrgPlayers_donateMoney_less250", A3A_faction_civ get "currencySymbol"]] call SCRT_fnc_misc_deniedHint;
 };
 
-if (_target isEqualTo ObjNull && {_donateToPlayer isEqualTo false}) exitWith {
+if (_target isEqualTo objNull && {_donateToPlayer isEqualTo false}) exitWith {
     [0, _amount] remoteExec ["A3A_fnc_resourcesFIA",2];
 
     _pointsXJC = round (_resourcesPlayer / 250);
@@ -51,7 +51,7 @@ if (_target isEqualTo ObjNull && {_donateToPlayer isEqualTo false}) exitWith {
     [localize "STR_A3A_OrgPlayers_donateMoney_header", format [localize "STR_A3A_OrgPlayers_donateMoney_success", _amount, A3A_faction_civ get "currencySymbol"]] call A3A_fnc_customHint;
 };
 
-if ((!isPlayer _target || _target isEqualTo ObjNull) && {_donateToPlayer}) exitWith {
+if ((!isPlayer _target || _target isEqualTo objNull) && {_donateToPlayer}) exitWith {
     [localize "STR_A3A_OrgPlayers_donateMoney_header",localize "STR_A3A_OrgPlayers_donateMoney_no_player"] call SCRT_fnc_misc_deniedHint;
 };
 

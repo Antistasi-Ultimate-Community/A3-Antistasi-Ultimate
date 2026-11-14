@@ -20,7 +20,7 @@
 private _vehicle = _this;
 private _cargo = _vehicle getVariable ["Cargo", []];
 
-if !(_cargo isEqualTo []) then {
+if (_cargo isNotEqualTo []) then {
 	_cargo = (flatten _cargo) select {_x isEqualType _vehicle};	
 };
 

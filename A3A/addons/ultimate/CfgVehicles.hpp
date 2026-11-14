@@ -13,32 +13,32 @@ class A3U_StaticHolderBase: HouseBase
 
 class A3U_StaticHolderSmall: A3U_StaticHolderBase
 {
-    model = QPATHTOFOLDER(data\staticHolders\static_small);
+    model = QPATHTOFOLDER(data\staticHolders\static_small.p3d);
     displayName = "Static Holder (Small)";
     scope = 2;
 };
 
 class A3U_StaticHolderMediumAT: A3U_StaticHolderSmall
 {
-    model = QPATHTOFOLDER(data\staticHolders\static_medium);
+    model = QPATHTOFOLDER(data\staticHolders\static_medium.p3d);
     displayName = "Static Holder (Medium, AT)";
 };
 
 class A3U_StaticHolderMediumAA: A3U_StaticHolderSmall
 {
-    model = QPATHTOFOLDER(data\staticHolders\static_medium);
+    model = QPATHTOFOLDER(data\staticHolders\static_medium.p3d);
     displayName = "Static Holder (Medium, AA)";
 };
 
 class A3U_StaticHolderLargeAT: A3U_StaticHolderMediumAT
 {
-    model = QPATHTOFOLDER(data\staticHolders\static_large);
+    model = QPATHTOFOLDER(data\staticHolders\static_large.p3d);
     displayName = "Static Holder (Large, AT)";
 };
 
 class A3U_StaticHolderLargeAA: A3U_StaticHolderMediumAA
 {
-    model = QPATHTOFOLDER(data\staticHolders\static_large);
+    model = QPATHTOFOLDER(data\staticHolders\static_large.p3d);
     displayName = "Static Holder (Large, AA)";
 };
 
@@ -75,7 +75,7 @@ class A3AU_RebHelipad_CircleNC_F: A3AU_RebHelipad_base_F
 
 class A3AU_RebHelipad_Circle_F: A3AU_RebHelipad_CircleNC_F
 {
-    displayName = $STR_A3_CFGVEHICLES_LAND_HELIPADCIRCLE_F0;
+    displayName = "$STR_A3_CFGVEHICLES_LAND_HELIPADCIRCLE_F0";
 
     class EGVAR(core,Properties): EGVAR(core,Properties)
     {
@@ -97,7 +97,7 @@ class A3AU_RebHelipad_SquareNC_F: A3AU_RebHelipad_base_F
 
 class A3AU_RebHelipad_Square_F: A3AU_RebHelipad_SquareNC_F 
 {
-    displayName = $STR_A3_CFGVEHICLES_LAND_HELIPADSQUARE_F0;
+    displayName = "$STR_A3_CFGVEHICLES_LAND_HELIPADSQUARE_F0";
 
     class EGVAR(core,Properties): EGVAR(core,Properties)
     {

@@ -39,7 +39,7 @@ if !assert(canSuspend) exitWith { false };
 if (local _object) exitWith { true };
 
 private _owner = clientOwner;
-private _timeout = params[1, 10, [0]];
+private _timeout = param[1, 10, [0]];
 
 [_object, _owner] remoteExecCall["setOwner", 2];
 

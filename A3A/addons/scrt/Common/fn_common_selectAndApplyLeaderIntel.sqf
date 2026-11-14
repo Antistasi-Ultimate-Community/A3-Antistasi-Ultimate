@@ -5,6 +5,8 @@ params ["_unit", "_type", "_isRival"];
 
 if (isNil "_unit" || {isNull _unit}) exitWith {};
 
+private _side = side (group _unit);
+
 switch (true) do {
 	case ("Traitor" in _type);
 	case ("Official" in _type): {

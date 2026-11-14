@@ -24,15 +24,15 @@ if (isNil "_garrison") then {//this is for backward compatibility, remove after 
 
 while {true} do {
     _road = _positionX nearRoads _radiusX;
-    if (count _road > 0) exitWith {};
+    if (_road isNotEqualTo []) exitWith {};
     _radiusX = _radiusX + 5;
 };
 
-private _roadcon = roadsConnectedto (_road select 0);
-private _dirveh = if(count _roadcon > 0) then {[_road select 0, _roadcon select 0] call BIS_fnc_DirTo} else {random 360};
+private _roadcon = roadsConnectedTo (_road select 0);
+private _dirveh = if(_roadcon isNotEqualTo []) then {[_road select 0, _roadcon select 0] call BIS_fnc_DirTo} else {random 360};
 private _roadPosition = getPos (_road select 0);
 
-private _barricadePosition = if(count _roadcon > 0) then { getPos (_roadcon select 0); } else {[(_roadPosition select 0) - 2, (_roadPosition select 1) + 2, 0]};
+private _barricadePosition = if(_roadcon isNotEqualTo []) then { getPos (_roadcon select 0); } else {[(_roadPosition select 0) - 2, (_roadPosition select 1) + 2, 0]};
 private _barricade = "Land_Barricade_01_10m_F" createVehicle _barricadePosition;
 _barricade setDir _dirveh;
 _barricade setVectorUp surfaceNormal position _barricade;

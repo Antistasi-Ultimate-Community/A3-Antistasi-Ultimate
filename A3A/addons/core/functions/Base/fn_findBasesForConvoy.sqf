@@ -4,7 +4,7 @@ private _posDest = getMarkerPos _mrkDest;
 private _side = sidesX getVariable [_mrkDest,sideUnknown];
 if (_mrkDest in citiesX and _side == teamPlayer) then {_side = Occupants};
 
-private _bases = _possiblebases select {
+private _bases = _possibleBases select {
     (sidesX getVariable [_x,sideUnknown] == _side)
     and (_posDest distance getMarkerPos _x > 1000)
     and (_posDest distance getMarkerPos _x < 3000)
@@ -18,5 +18,5 @@ private _bases = _possiblebases select {
     };
 };
 
-if (count _bases == 0) exitWith {""};
+if (_bases isEqualTo []) exitWith {""};
 selectRandom _bases;

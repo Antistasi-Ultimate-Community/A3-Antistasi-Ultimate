@@ -29,10 +29,10 @@ if (isNull _object) exitWith {
 private _actionNames = (actionIDs _object) apply {(_object actionParams _x)#0};
 private _vehicleName = nil;
 
-if ((typeOf _object) isEqualTo FactionGet(reb, "lootCrate")) then {
+if ((typeOf _object) isEqualTo FactionGet(reb,"lootCrate")) then {
     _vehicleName = localize "STR_antistasi_actions_loot_crate";
 } else {
-    _vehicleName = getText (configFile >> "CfgVehicles" >> typeOf _object >> "displayName");
+    _vehicleName = getText (configOf _object >> "displayName");
 };
 
 private _loadText = format [(format["<img image='\a3\data_f_destroyer\data\ui\igui\cfg\holdactions\holdaction_loadvehicle_ca.paa' size='1.6' shadow=2 /> <t>%1</t>", (localize "STR_antistasi_actions_load_cargo")]), _vehicleName];
@@ -53,11 +53,11 @@ switch (_action) do {
             true,
             true,
             "",
-            QUOTE(
+            "(
                 (alive _target) &&
                 {(isNull objectParent _this) && (isNull attachedTo _target)} &&
-                {count nearestObjects[ARR_3(_target,[ARR_3('Air','LandVehicle','Ship')],10)] > ([ARR_2(1,0)] select(_target isKindOf 'ThingX'))}
-            ),
+                {count nearestObjects[_target,['Air','LandVehicle','Ship'],10] > ([1,0] select(_target isKindOf 'ThingX'))}
+            )",
             5
         ];
         _object setUserActionText [

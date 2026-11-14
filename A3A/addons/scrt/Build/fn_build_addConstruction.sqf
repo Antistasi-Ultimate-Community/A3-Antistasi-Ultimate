@@ -50,4 +50,4 @@ if(_excessiveConstructions < 0) then {
 	};
 };
 
-Info_2("Created and saved %1 object on %2 position.", _type, str _position);
+Info_2("Created and saved %1 object on %2 position.",_type,str _position);

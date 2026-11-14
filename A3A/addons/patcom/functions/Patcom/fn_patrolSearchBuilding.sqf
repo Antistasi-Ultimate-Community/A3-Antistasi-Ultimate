@@ -26,12 +26,12 @@ params ["_group"];
 private _building = nearestBuilding (getPosATL (leader _group));
 
 // Exit if for some reason the group leader is further than 250m of the building.
-if ((leader _group) distance _building > 250) exitwith {};
+if ((leader _group) distance _building > 250) exitWith {};
 
 [_group, _building] spawn {
     params ["_group", "_building"];
 
-    ServerDebug_2("PATCOM | Group: %1 | Searching Building: %2", _group, _building);
+    ServerDebug_2("PATCOM | Group: %1 | Searching Building: %2",_group,_building);
 
     private _leader = leader _group;
     _group lockWP true;

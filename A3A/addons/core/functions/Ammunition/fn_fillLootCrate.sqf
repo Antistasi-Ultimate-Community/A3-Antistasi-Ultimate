@@ -121,7 +121,7 @@ private _fnc_pickRandomFromAProbablyNotInB = {
 	private _iterations = floor (10 * _percentageLoaded);
 
 	private _choice = selectRandom _arrayA;
-    Debug_1("Function check for: %1", _choice);
+    Debug_1("Function check for: %1",_choice);
 	private _foundValid = true;
 	if (_choice in _arrayB) then {
 		_foundValid = false;
@@ -148,7 +148,7 @@ private _fnc_pickWeapon = {
 	private _category = selectRandomWeighted _weaponLootWeighting;
 	if (isNil "_category") exitWith {};
 
-	Verbose_1("Selected Weapon Category: %1", _category);
+	Verbose_1("Selected Weapon Category: %1",_category);
 	//Category is in format [allX, unlockedX];
 	[_category select 0, _category select 1] call _fnc_pickRandomFromAProbablyNotInB;
 };
@@ -182,7 +182,7 @@ if (_crateWepTypeMax != 0) then {
 		{
 			_amount = if (isNil "_crateWepNum") then {crateWepNumMax call _fnc_pickAmount;} else {_crateWepNum};
 			_crate addWeaponWithAttachmentsCargoGlobal [[ _loot, "", "", "", [], [], ""], _amount];
-            Verbose_2("Adding %1 weapons of type %2", _amount, _loot);
+            Verbose_2("Adding %1 weapons of type %2",_amount,_loot);
 
 			private _magazines = [_loot, A3U_forbiddenItems] call A3A_fnc_compatibleMagazinesWithExceptions;
 			if (count _magazines < 1) exitWith {};
@@ -195,7 +195,7 @@ if (_crateWepTypeMax != 0) then {
 				} else {
 					floor random [1,6,1]
 				};
-                Verbose_3("Spawning %1 magazines of %2 for %3", _magAmount, _magazine, _loot);
+                Verbose_3("Spawning %1 magazines of %2 for %3",_magAmount,_magazine,_loot);
 				_crate addMagazineCargoGlobal [_magazine, _magAmount];
 			};
 		};
@@ -224,7 +224,7 @@ if (_crateItemTypeMax != 0) then {
 		private _loot = selectRandom _lootList;
 		private _amount = if (isNil "_crateItemNum") then {crateItemNumMax call _fnc_pickAmount;} else {_crateItemNum};
 		_crate addItemCargoGlobal [_loot,_amount];
-		Verbose_2("Spawning %1 of %2", _amount,_loot);
+		Verbose_2("Spawning %1 of %2",_amount,_loot);
 	};
 };
 //Ammo Loot
@@ -239,7 +239,7 @@ if (_crateAmmoTypeMax != 0) then {
 		else {
 			_amount = if (isNil "_crateAmmoNum") then {crateAmmoNumMax call _fnc_pickAmount;} else {_crateAmmoNum};
 			_crate addMagazineCargoGlobal [_loot,_amount];
-            Verbose_2("Spawning %1 of %2", _amount,_loot);
+            Verbose_2("Spawning %1 of %2",_amount,_loot);
 		};
 	};
 };
@@ -255,7 +255,7 @@ if (_crateExplosiveTypeMax != 0) then {
 		else {
 			_amount = if (isNil "_crateExplosiveNum") then {crateExplosiveNumMax call _fnc_pickAmount;} else {_crateExplosiveNum};
 			_crate addMagazineCargoGlobal [_loot,_amount];
-            Verbose_2("Spawning %1 of %2", _amount,_loot);
+            Verbose_2("Spawning %1 of %2",_amount,_loot);
 		};
 	};
 };
@@ -271,7 +271,7 @@ if (_crateAttachmentTypeMax != 0) then {
 		else {
 			_amount = if (isNil "_crateAttachmentNum") then { crateAttachmentNumMax  call _fnc_pickAmount;} else {_crateAttachmentNum};
 			_crate addItemCargoGlobal [_loot,_amount];
-            Verbose_2("Spawning %1 of %2", _amount,_loot);
+            Verbose_2("Spawning %1 of %2",_amount,_loot);
 		};
 	};
 };
@@ -286,7 +286,7 @@ if (_crateBackpackTypeMax != 0) then {
 		else {
 			_amount = if (isNil "_crateBackpackNum") then {round random crateBackpackNumMax;} else {_crateBackpackNum};
 			_crate addBackpackCargoGlobal [_loot,_amount];
-            Verbose_2("Spawning %1 of %2", _amount,_loot);
+            Verbose_2("Spawning %1 of %2",_amount,_loot);
 		};
 	};
 };
@@ -301,7 +301,7 @@ if (_crateHelmetTypeMax != 0) then {
 		else {
 			_amount = if (isNil "_crateHelmetNum") then { round random crateHelmetNumMax;} else {_crateHelmetNum};
 			_crate addItemCargoGlobal [_loot,_amount];
-            Verbose_2("Spawning %1 of %2", _amount,_loot);
+            Verbose_2("Spawning %1 of %2",_amount,_loot);
 		};
 	};
 };
@@ -316,7 +316,7 @@ if (_crateVestTypeMax != 0) then {
 		else {
 			_amount = if (isNil "_crateVestNum") then { round random crateVestNumMax;} else {_crateVestNum};
 			_crate addItemCargoGlobal [_loot,_amount];
-            Verbose_2("Spawning %1 of %2", _amount,_loot);
+            Verbose_2("Spawning %1 of %2",_amount,_loot);
 		};
 	};
 };
@@ -331,7 +331,7 @@ if (_crateDeviceTypeMax != 0) then {
 		else {
 			_amount = if (isNil "_crateDeviceNum") then { round random crateDeviceNumMax;} else {_crateDeviceNum};
 			_crate addBackpackCargoGlobal [_loot,_amount];
-            Verbose_2("Spawning %1 of %2", _amount,_loot);
+            Verbose_2("Spawning %1 of %2",_amount,_loot);
 		};
 	};
 };

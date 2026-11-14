@@ -20,17 +20,17 @@ params ["_missionOrigin"];
 //Mission: Destroy the helicopter
 if (!isServer and hasInterface) exitWith{};
 
-private _difficult = if (random 10 < tierWar) then {true} else {false};
-private _bonus = if (_difficult) then {2} else {1};
+private _difficult = random 10 < tierWar;
+private _bonus = [1, 2] select (_difficult);
 private _missionOriginPos = getMarkerPos _missionOrigin;
-private _sideX = if (sidesX getVariable [_missionOrigin,sideUnknown] == Occupants) then {Occupants} else {Invaders};
+private _sideX = [Invaders, Occupants] select (sidesX getVariable [_missionOrigin,sideUnknown] == Occupants);
 private _faction = Faction(_sideX);
-Debug_3("Origin: %1, Hardmode: %2, Controlling Side: %3", _missionOrigin, _difficult, _sideX);
+Debug_3("Origin: %1, Hardmode: %2, Controlling Side: %3",_missionOrigin,_difficult,_sideX);
 
 //finding crash position
 private _ang = random 360;
 private _countX = 0;
-private _dist = if (_difficult) then {2000} else {3000};
+private _dist = [3000, 2000] select (_difficult);
 private _posCrashOrigin = [];
 while {true} do {
     _posCrashOrigin = _missionOriginPos getPos [_dist,_ang];
@@ -57,8 +57,8 @@ private _isAttackHeli = _typeVehH in ((_faction get "vehiclesHelisAttack") + (_f
 private _flatPos = [_posCrashOrigin, 0, 1000, 0, 0, 0.1] call BIS_fnc_findSafePos;
 private _posCrash = _flatPos findEmptyPosition [0,100,_typeVehH];
 if (count _posCrash == 0) then {_posCrash = _posCrashOrigin};//if no pos use _posCrashOrigin
-{[_x,true] remoteExec ["hideObjectGlobal",2]} foreach (nearestTerrainObjects [_posCrash,["tree","bush", "ROCKS"],50]);
-Debug_2("Crash Location: %1, Aircraft: %2", _posCrash, _typeVehH);
+{[_x,true] remoteExec ["hideObjectGlobal",2]} forEach (nearestTerrainObjects [_posCrash,["tree","bush", "ROCKS"],50]);
+Debug_2("Crash Location: %1, Aircraft: %2",_posCrash,_typeVehH);
 
 //creating array for cleanup
 private _vehicles = [];
@@ -140,7 +140,7 @@ private _groupVeh = _vehicleDataE select 2;
 _groups pushBack _groupVeh;
 _vehicles pushBack _vehE;
 
-Debug_2("Crash Location: %1, Lite Vehicle: %2", _posCrash, _typeVeh);
+Debug_2("Crash Location: %1, Lite Vehicle: %2",_posCrash,_typeVeh);
 
 //spawning escort inf
 private _typeGroup = selectRandom ([_faction, "groupsTierSmall"] call SCRT_fnc_unit_flattenTier);
@@ -153,7 +153,7 @@ private _escortWP = _groupVeh addWaypoint [_posCrash, 0];
 //_escortWP setWaypointType "GETOUT";
 _escortWP setWaypointStatements ["true", "if !(local this) exitWith {}; (group this) leaveVehicle (assignedVehicle this)"];
 _escortWP setWaypointBehaviour "SAFE";
-Debug_2("Placed Group: %1 in Lite Vehicle and set waypoint %2", _typeGroup, _posCrash);
+Debug_2("Placed Group: %1 in Lite Vehicle and set waypoint %2",_typeGroup,_posCrash);
 
 //creating repair vehicle
 _typeVeh = selectRandom (_faction get "vehiclesRepairTrucks");
@@ -173,8 +173,8 @@ _vehicles pushBack _vehR;
 _reapirTruckWP = _groupVehR addWaypoint [_posCrash, 0];
 _reapirTruckWP setWaypointType "MOVE";
 _reapirTruckWP setWaypointBehaviour "SAFE";
-Debug_3("Transport Vehicle: %1, Crew: %2, Waypoint: %3", _typeVeh, _vehCrewR, _posCrash);
-Debug_3("Waiting until %1 is destroyed or %2 has reached %1, or mission expires at: %3", _heli, _vehR, _dateLimit);
+Debug_3("Transport Vehicle: %1, Crew: %2, Waypoint: %3",_typeVeh,_vehCrewR,_posCrash);
+Debug_3("Waiting until %1 is destroyed or %2 has reached %1, or mission expires at: %3",_heli,_vehR,_dateLimitNum);
 
 ///////////////////////////
 //Helicopter Crew & Guard//
@@ -202,7 +202,7 @@ if !(_typeVehH in (_faction get "vehiclesHelisLight")) then {
     //tell guard group to guard heli
     _guardWP = [_guard, _posCrash, 10] call BIS_fnc_taskPatrol;
 
-    Debug_1("Location: %1, Guard Squad spawned", _posCrash);
+    Debug_1("Location: %1, Guard Squad spawned",_posCrash);
     if (_isAttackHeli) then {
         //if attack helicopter
         //creating transport vehicle
@@ -242,7 +242,7 @@ _pilotsWP setWaypointBehaviour "STEALTH";
     };
 };
 
-Debug_3("Waiting until %1 reaches origin or rebel base, gets destroyed, timer expires at %3 or %2 reaches %1", _heli, _vehR, _dateLimit);
+Debug_3("Waiting until %1 reaches origin or rebel base, gets destroyed, timer expires at %3 or %2 reaches %1",_heli,_vehR,_dateLimitNum);
 waitUntil
 {
     sleep 1;
@@ -257,7 +257,7 @@ waitUntil
 //EI Recovering Heli//
 //////////////////////
 if (_vehR distance _heli < 50) then {
-    Debug_2("Repair %1 has reached %2, starting repair...", _vehR, _heli);
+    Debug_2("Repair %1 has reached %2, starting repair...",_vehR,_heli);
     _vehR doMove position _heli;
     sleep 300; //time to repair
     if (alive _heli && alive _vehR && _vehR distance2D _heli < 50) then {
@@ -269,7 +269,7 @@ if (_vehR distance _heli < 50) then {
         deleteVehicle _smoke;
         deleteVehicle _crater;
 
-        Debug_4("%1 has repaired %2, %3 is heading back to %4", _sideX,_heli,_vehR,_missionOriginPos);
+        Debug_4("%1 has repaired %2, %3 is heading back to %4",_sideX,_heli,_vehR,_missionOriginPos);
 
         //Guards & pilots stop patrolling
         for "_i" from (count (waypoints _guard)) to 0 step -1 do {
@@ -341,7 +341,7 @@ if (_vehR distance _heli < 50) then {
 ////////////////
 //Mission done//
 ////////////////
-Debug_2("Waiting until %1 reaches origin or rebel base, gets destroyed or timer expires at %2", _heli, _dateLimit);
+Debug_2("Waiting until %1 reaches origin or rebel base, gets destroyed or timer expires at %2",_heli,_dateLimitNum);
 waitUntil
 {
     sleep 1;
@@ -356,9 +356,9 @@ waitUntil
 //Reward & completing task
 if ((not alive _heli) || (_heli distance (getMarkerPos respawnTeamPlayer) < 100) && isPlayer (driver _heli) ) then {
     if (alive _heli) then {
-        Debug_1("%1 was captured", _heli);
+        Debug_1("%1 was captured",_heli);
     } else {
-        Debug_1("%1 was captured", _heli);
+        Debug_1("%1 was captured",_heli);
     };
     [_taskId, "DES", "SUCCEEDED"] call A3A_fnc_taskSetState;
     [0,300*_bonus] remoteExec ["A3A_fnc_resourcesFIA",2];
@@ -371,7 +371,7 @@ if ((not alive _heli) || (_heli distance (getMarkerPos respawnTeamPlayer) < 100)
     [200*_bonus,theBoss, true] call A3A_fnc_addMoneyPlayer;
     if (_isAttackHeli) then {[600*_bonus, _sideX] remoteExec ["A3A_fnc_timingCA",2]};
 } else {
-    Debug_2("%1 was successfully recovered by %2, mission failed", _heli, _sideX);
+    Debug_2("%1 was successfully recovered by %2, mission failed",_heli,_sideX);
     [_taskId, "DES", "FAILED"] call A3A_fnc_taskSetState;
     [-600*_bonus, _sideX] remoteExec ["A3A_fnc_timingCA",2];
     [-10*_bonus,theBoss] call A3A_fnc_addScorePlayer;

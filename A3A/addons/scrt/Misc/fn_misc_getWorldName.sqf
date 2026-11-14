@@ -6,7 +6,7 @@ params[["_worldName", worldName, [""]]];
 
 private _config = configFile >> "CfgWorlds" >> _worldName;
 
-configProperties[_config, "configName _x isEqualTo 'description'", false] params[["_description", _worldName, [configNull]]];
+configProperties[_config, "configName _x isEqualTo 'description'", false] params[["_description", _worldName, [configNull, ""]]];
 
 // No description property; fallback to world name
 if (_description isEqualType "") then {

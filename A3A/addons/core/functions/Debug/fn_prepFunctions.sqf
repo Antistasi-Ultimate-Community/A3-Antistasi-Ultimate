@@ -20,7 +20,7 @@ Example: call A3A_fnc_prepFunctions;
 License: MIT License
 */
 private _callType = param [0, "", [""]];
-private _skipPreInit = if (_callType isEqualTo "preInit") then {false} else {true};
+private _skipPreInit = _callType isNotEqualTo "preInit";
 
 //Headers (optimised headers by Killzone_Kid)
 private _headerNoDebug = "
@@ -40,7 +40,7 @@ private _headerSystem = "
 ";
 
 //--- Compose headers based on current debug mode
-private _debug = uinamespace getvariable ["bis_fnc_initFunctions_debugMode", 0];
+private _debug = uiNamespace getVariable ["bis_fnc_initFunctions_debugMode", 0];
 private _headerDefault = switch _debug do {
 
     //--- 0 - Debug mode off

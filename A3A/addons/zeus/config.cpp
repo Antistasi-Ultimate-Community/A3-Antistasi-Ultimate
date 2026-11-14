@@ -13,8 +13,10 @@ class CfgPatches
             QGVAR(Vehicle_Ship_Base),
             QGVAR(Vehicle_Heli_Base),
             QGVAR(Vehicle_Plane_Base),
-            QGVAR(Vehicle_StaticWeapon_Base),
             QGVAR(Vehicle_StaticMortar_Base),
+            QGVAR(Vehicle_StaticMG_Base),
+            QGVAR(Vehicle_StaticAT_Base),
+            QGVAR(Vehicle_StaticAA_Base),
 
             // rebel units
             QGVAR(Rebels_Base),
@@ -54,9 +56,9 @@ class CfgPatches
 
             // occupant units
             QGVAR(Occupants_Base),
+            QGVAR(Occupants_Militia_Radioman),
             QGVAR(Occupants_Militia_Rifleman),
             QGVAR(Occupants_Militia_SquadLeader),
-            QGVAR(Occupants_Militia_staticCrew),
             QGVAR(Occupants_Militia_Medic),
             QGVAR(Occupants_Militia_Engineer),
             QGVAR(Occupants_Militia_ExplosivesExpert),
@@ -69,9 +71,9 @@ class CfgPatches
             QGVAR(Occupants_Militia_Sniper),
             QGVAR(Occupants_Militia_PatrolSniper),
             QGVAR(Occupants_Militia_PatrolSpotter),
+            QGVAR(Occupants_Military_Radioman),
             QGVAR(Occupants_Military_Rifleman),
             QGVAR(Occupants_Military_SquadLeader),
-            QGVAR(Occupants_Military_staticCrew),
             QGVAR(Occupants_Military_Medic),
             QGVAR(Occupants_Military_Engineer),
             QGVAR(Occupants_Military_ExplosivesExpert),
@@ -84,9 +86,9 @@ class CfgPatches
             QGVAR(Occupants_Military_Sniper),
             QGVAR(Occupants_Military_PatrolSniper),
             QGVAR(Occupants_Military_PatrolSpotter),
+            QGVAR(Occupants_Elite_Radioman),
             QGVAR(Occupants_Elite_Rifleman),
             QGVAR(Occupants_Elite_SquadLeader),
-            QGVAR(Occupants_Elite_staticCrew),
             QGVAR(Occupants_Elite_Medic),
             QGVAR(Occupants_Elite_Engineer),
             QGVAR(Occupants_Elite_ExplosivesExpert),
@@ -97,9 +99,11 @@ class CfgPatches
             QGVAR(Occupants_Elite_MachineGunner),
             QGVAR(Occupants_Elite_Marksman),
             QGVAR(Occupants_Elite_Sniper),
+            QGVAR(Occupants_Elite_PatrolSniper),
+            QGVAR(Occupants_Elite_PatrolSpotter),
+            QGVAR(Occupants_SpecialForces_Radioman),
             QGVAR(Occupants_SpecialForces_Rifleman),
             QGVAR(Occupants_SpecialForces_SquadLeader),
-            QGVAR(Occupants_SpecialForces_staticCrew),
             QGVAR(Occupants_SpecialForces_Medic),
             QGVAR(Occupants_SpecialForces_Engineer),
             QGVAR(Occupants_SpecialForces_ExplosivesExpert),
@@ -157,9 +161,9 @@ class CfgPatches
 
             // invader units
             QGVAR(Invaders_Base),
+            QGVAR(Invaders_Militia_Radioman),
             QGVAR(Invaders_Militia_Rifleman),
             QGVAR(Invaders_Militia_SquadLeader),
-            QGVAR(Invaders_Militia_staticCrew),
             QGVAR(Invaders_Militia_Medic),
             QGVAR(Invaders_Militia_Engineer),
             QGVAR(Invaders_Militia_ExplosivesExpert),
@@ -172,9 +176,9 @@ class CfgPatches
             QGVAR(Invaders_Militia_Sniper),
             QGVAR(Invaders_Militia_PatrolSniper),
             QGVAR(Invaders_Militia_PatrolSpotter),
+            QGVAR(Invaders_Military_Radioman),
             QGVAR(Invaders_Military_Rifleman),
             QGVAR(Invaders_Military_SquadLeader),
-            QGVAR(Invaders_Military_staticCrew),
             QGVAR(Invaders_Military_Medic),
             QGVAR(Invaders_Military_Engineer),
             QGVAR(Invaders_Military_ExplosivesExpert),
@@ -187,9 +191,9 @@ class CfgPatches
             QGVAR(Invaders_Military_Sniper),
             QGVAR(Invaders_Military_PatrolSniper),
             QGVAR(Invaders_Military_PatrolSpotter),
+            QGVAR(Invaders_Elite_Radioman),
             QGVAR(Invaders_Elite_Rifleman),
             QGVAR(Invaders_Elite_SquadLeader),
-            QGVAR(Invaders_Elite_staticCrew),
             QGVAR(Invaders_Elite_Medic),
             QGVAR(Invaders_Elite_Engineer),
             QGVAR(Invaders_Elite_ExplosivesExpert),
@@ -200,9 +204,11 @@ class CfgPatches
             QGVAR(Invaders_Elite_MachineGunner),
             QGVAR(Invaders_Elite_Marksman),
             QGVAR(Invaders_Elite_Sniper),
+            QGVAR(Invaders_Elite_PatrolSniper),
+            QGVAR(Invaders_Elite_PatrolSpotter),
+            QGVAR(Invaders_SpecialForces_Radioman),
             QGVAR(Invaders_SpecialForces_Rifleman),
             QGVAR(Invaders_SpecialForces_SquadLeader),
-            QGVAR(Invaders_SpecialForces_staticCrew),
             QGVAR(Invaders_SpecialForces_Medic),
             QGVAR(Invaders_SpecialForces_Engineer),
             QGVAR(Invaders_SpecialForces_ExplosivesExpert),
@@ -348,7 +354,7 @@ class CfgPatches
 
             // misc modules
             QGVAR(Module_Misc_Base),
-            QGVAR(Module_Misc_AddToHC),
+            QGVAR(Module_Misc_AddToHC)
         };
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
@@ -360,7 +366,6 @@ class CfgPatches
     };
 };
 
-class CBA_Extended_EventHandlers_base; // Needed for CfgVehicles.hpp
 
 #include "cfgFactionClasses.hpp"
 #include "cfgEditorSubcategories.hpp"

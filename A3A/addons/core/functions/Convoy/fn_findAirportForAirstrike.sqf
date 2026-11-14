@@ -59,10 +59,10 @@ _suitableAirports = [];
 } forEach _possibleAirports;
 
 //If some remain, choose the nearest one, else return empty string
-if (count _suitableAirports > 0) then
+if (_suitableAirports isNotEqualTo []) then
 {
     _airport = [_suitableAirports,_destinationPos] call BIS_fnc_nearestPosition;
-    Debug_2("Found %1 suitable airports, will return %2", count _suitableAirports, _airport);
+    Debug_2("Found %1 suitable airports, will return %2",count _suitableAirports,_airport);
 }
 else
 {

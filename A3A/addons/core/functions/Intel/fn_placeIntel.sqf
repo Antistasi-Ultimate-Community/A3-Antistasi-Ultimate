@@ -10,14 +10,15 @@ params["_marker", "_isLarge"];
 */
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
+#pragma hemtt ignore_variables ["_thisScript"]
 
-private _intelSize = if (_isLarge) then {"large"} else {"medium"};
-ServerDebug_2("Spawning %2 intel on marker %1", _marker, _intelSize);
+private _intelSize = ["medium", "large"] select (_isLarge);
+ServerDebug_2("Spawning %2 intel on marker %1",_marker,_intelSize);
 
 //Catch invalid cases
 if(!(_marker in airportsX || {_marker in outposts || {_marker in milbases}})) exitWith
 {
-    Error_1("Marker %1 is not suited to have intel!", _marker);
+    Error_1("Marker %1 is not suited to have intel!",_marker);
 };
 
 //Search for building to place intel in
@@ -53,8 +54,8 @@ private _searchArray = _listvnslum
 
 private _allBuildings = nearestObjects [getMarkerPos _marker, _searchArray, _radius, true];
 
-if(count _allBuildings == 0) exitWith {
-	ServerInfo_1("No suitable buildings found on marker %1", _marker);
+if(_allBuildings isEqualTo []) exitWith {
+	ServerInfo_1("No suitable buildings found on marker %1",_marker);
 };
 
 private _building = selectRandom _allBuildings;
@@ -80,7 +81,7 @@ private _spawnParameters = switch (true) do {
         [_pos, 0]
     }; //0 is table rotation
 };
-if (_spawnParameters isEqualType true) exitWith { Error_1("No spawn parameters for building %1", typeOf _building) };
+if (_spawnParameters isEqualType true) exitWith { Error_1("No spawn parameters for building %1",typeOf _building) };
 
 
 private _faction = Faction(_side);
@@ -128,7 +129,7 @@ if (_isLarge && {_isComputer}) then {
 	private _isTrap = (random 100 < (20 + (4 * tierWar)));
 	if(_isTrap) then
 	{
-		ServerDebug_1("Large intel on %1 is selected as trap, spawning explosives", _marker);
+		ServerDebug_1("Large intel on %1 is selected as trap, spawning explosives",_marker);
 		private _bomb = "DemoCharge_F" createVehicle [0,0,0];
 		_bomb setVectorDirAndUp [(vectorDir _intel), [0,0,-1]];
 		_bomb setPosWorld ((getPosWorld _intel) vectorAdd [0,0,-0.2]);

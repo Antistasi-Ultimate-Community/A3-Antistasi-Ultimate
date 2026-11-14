@@ -10,7 +10,7 @@ FIX_LINE_NUMBERS()
 
 params["_mode", "_params"];
 
-Debug_1("Params dialog called with mode %1", _mode);
+Debug_1("Params dialog called with mode %1",_mode);
 
 // Get display
 private _display = findDisplay A3A_IDD_SETUPDIALOG;
@@ -35,6 +35,7 @@ switch (_mode) do
             params ["_control", "_newText"];
 
             private _display = findDisplay A3A_IDD_SETUPDIALOG;
+            private _presetCstmCtrl = _display displayCtrl A3A_IDC_SETUP_PARAMSPRESETS_CSTM;
             private _presetSaveBtn = _display displayCtrl A3A_IDC_SETUP_PARAMSPRESETS_CSTM_SAVEBUTTON;
             private _presetRenameBtn = _display displayCtrl A3A_IDC_SETUP_PARAMSPRESETS_CSTM_RENAMEBUTTON;
 
@@ -397,7 +398,7 @@ switch (_mode) do
         private _newPreset = true;
         if (isNil "_presetName") then {
             _presetName = trim (ctrlText A3A_IDC_SETUP_PARAMSPRESETS_CSTM_NAME);
-            if (_presetName isEqualTo "" && {lbcursel _presetCstmCtrl isNotEqualTo -1}) then {
+            if (_presetName isEqualTo "" && {lbCurSel _presetCstmCtrl isNotEqualTo -1}) then {
                 _presetName = (parseSimpleArray (lbData [A3A_IDC_SETUP_PARAMSPRESETS_CSTM, lbCurSel _presetCstmCtrl])) select 0;
                 _newPreset = false;
             };

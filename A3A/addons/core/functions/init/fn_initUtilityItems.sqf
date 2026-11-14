@@ -17,7 +17,7 @@ private _medCrate = FactionGet(reb,"vehicleMedicalBox");
 private _medTent = FactionGet(reb,"vehicleHealthStation");
 private _ammoStation = FactionGet(reb,"vehicleAmmoStation");
 private _repairStation = FactionGet(reb,"vehicleRepairStation");
-private _reviveKitBox = FactionGet(reb, "reviveKitBox");
+private _reviveKitBox = FactionGet(reb,"reviveKitBox");
 private _lootCrate = [FactionGet(reb,"lootCrate"), lootCratePrice];
 private _lightSource = [FactionGet(reb,"vehicleLightSource"), 100];
 
@@ -66,7 +66,7 @@ if(A3A_hasACE) then {
 // Add packed variants so that they can be initialized properly
 {
     private _packClass = getText (configFile >> "A3A" >> "A3A_Logistics_Packable" >> _x#0 >> "packObject");
-    if (_packClass == "") then { Error_1("Packable item %1 has no packed object", _x#0); continue };
+    if (_packClass == "") then { Error_1("Packable item %1 has no packed object",_x#0); continue };
     _items pushBack [_packClass, -1, "", "", ["move", "unpack"]];
 } forEach (_items select { "pack" in _x#4 });
 

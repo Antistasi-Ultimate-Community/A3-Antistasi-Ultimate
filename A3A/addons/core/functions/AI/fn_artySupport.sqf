@@ -1,6 +1,6 @@
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
-if (count hcSelected player == 0) exitWith {[localize "STR_A3A_ai_artySupport_header", localize "STR_A3A_ai_artySupport_must_select"] call A3A_fnc_customHint;};
+if (hcSelected player isEqualTo []) exitWith {[localize "STR_A3A_ai_artySupport_header", localize "STR_A3A_ai_artySupport_must_select"] call A3A_fnc_customHint;};
 
 private ["_groups","_artyArray","_artyRoundsArr","_hasAmmunition","_areReady","_hasArtillery","_areAlive","_soldierX","_veh","_typeAmmunition","_typeArty","_positionTel","_artyArrayDef1","_artyRoundsArr1","_piece","_isInRange","_positionTel2","_rounds","_roundsMax","_markerX","_size","_forcedX","_textX","_mrkFinal","_mrkFinal2","_timeX","_eta","_countX","_pos","_ang"];
 
@@ -10,7 +10,7 @@ _unitsX = [];
 {_groupX = _x;
 {_unitsX pushBack _x} forEach units _groupX;
 } forEach _groups;
-typeAmmunition = nil;
+typeAmmunition = "";
 _artyArray = [];
 _artyRoundsArr = [];
 
@@ -24,7 +24,7 @@ _areAlive = false;
 	_veh = vehicle _soldierX;
 	if ((_veh != _soldierX) and (not(_veh in _artyArray))) then
 	{
-		if (( "Artillery" in (getArray (configfile >> "CfgVehicles" >> typeOf _veh >> "availableForSupportTypes")))) then
+		if (( "Artillery" in (getArray (configOf _veh >> "availableForSupportTypes")))) then
 		{
 			_hasArtillery = true;
 			if ((canFire _veh) and (alive _veh) and (isNil "typeAmmunition")) then
@@ -74,7 +74,7 @@ hcShowBar true;
 
 if (_typeAmmunition != "2Rnd_155mm_Mo_LG") then
 	{
-	closedialog 0;
+	closeDialog 0;
 #ifdef UseDoomGUI
 	ERROR("Disabled due to UseDoomGUI Switch.")
 #else
@@ -101,7 +101,7 @@ positionTel = [];
 if (!visibleMap) then {openMap true};
 onMapSingleClick "positionTel = _pos;";
 
-waitUntil {sleep 1; (count positionTel > 0) or (!visibleMap)};
+waitUntil {sleep 1; (positionTel isNotEqualTo []) or (!visibleMap)};
 onMapSingleClick "";
 
 if (!visibleMap) exitWith {};
@@ -122,7 +122,7 @@ for "_i" from 0 to (count _artyArray) - 1 do
 		};
 	};
 
-if (count _artyArrayDef1 == 0) exitWith {[localize "STR_A3A_ai_artySupport_header", localize "STR_A3A_ai_artySupport_out_of_bounds"] call A3A_fnc_customHint;};
+if (_artyArrayDef1 isEqualTo []) exitWith {[localize "STR_A3A_ai_artySupport_header", localize "STR_A3A_ai_artySupport_out_of_bounds"] call A3A_fnc_customHint;};
 
 _mrkFinal = createMarkerLocal [format ["Arty%1", random 100], _positionTel];
 _mrkFinal setMarkerShapeLocal "ICON";
@@ -139,7 +139,7 @@ if (_typeArty == "BARRAGE") then
 	if (!visibleMap) then {openMap true};
 	onMapSingleClick "positionTel = _pos;";
 
-	waitUntil {sleep 1; (count positionTel > 0) or (!visibleMap)};
+	waitUntil {sleep 1; (positionTel isNotEqualTo []) or (!visibleMap)};
 	onMapSingleClick "";
 
 	_positionTel2 = positionTel;
@@ -151,7 +151,7 @@ if (_typeArty != "BARRAGE") then
 	{
 	if (_typeAmmunition != "2Rnd_155mm_Mo_LG") then
 		{
-		closedialog 0;
+		closeDialog 0;
 #ifdef UseDoomGUI
 	ERROR("Disabled due to UseDoomGUI Switch.")
 #else
@@ -224,13 +224,13 @@ else
 	_timeX = time + _eta - 5;
 	if (isNil "_timeX") exitWith {
         #define ARTILLERY_ERROR_INFORMATION [_positionTel, ((getArtilleryAmmo [(_artyArrayDef1 select 0)]) select 0)]
-        Error_4("Params: %1,%2,%3,%4,%5",_artyArrayDef1 select 0,_positionTel,((getArtilleryAmmo [(_artyArrayDef1 select 0)]) select 0),(_artyArrayDef1 select 0) getArtilleryETA ARTILLERY_ERROR_INFORMATION);
+        Error_4("Params: %1,%2,%3,%4",_artyArrayDef1 select 0,_positionTel,((getArtilleryAmmo [(_artyArrayDef1 select 0)]) select 0),(_artyArrayDef1 select 0) getArtilleryETA ARTILLERY_ERROR_INFORMATION);
     };
 	_textX = format [localize "STR_chats_mortar_barrage_confirm",round _eta,_roundsMax - _rounds];
 	[_fdc,"sideChat",_textX] remoteExec ["A3A_fnc_commsMP",[teamPlayer,civilian]];
 	};
 
-_pos = [_positionTel,random 10,random 360] call BIS_fnc_relPos;
+_pos = _positionTel getPos [random 10, random 360];
 
 for "_i" from 0 to (count _artyArrayDef1) - 1 do
 	{
@@ -254,7 +254,7 @@ for "_i" from 0 to (count _artyArrayDef1) - 1 do
 					{
 					_piece commandArtilleryFire [_pos,_typeAmmunition,1];
 					sleep 2;
-					_pos = [_pos,10,_ang + 5 - (random 10)] call BIS_fnc_relPos;
+					_pos = _pos getPos [10, _ang + 5 - (random 10)];
 					};
 				};
 			_rounds = 0;
@@ -263,7 +263,7 @@ for "_i" from 0 to (count _artyArrayDef1) - 1 do
 			{
 			if (_typeArty != "BARRAGE") then
 				{
-				_piece commandArtilleryFire [[_pos,random 10,random 360] call BIS_fnc_relPos,_typeAmmunition,_countX];
+				_piece commandArtilleryFire [_pos getPos [random 10,random 360],_typeAmmunition,_countX];
 				}
 			else
 				{
@@ -271,7 +271,7 @@ for "_i" from 0 to (count _artyArrayDef1) - 1 do
 					{
 					_piece commandArtilleryFire [_pos,_typeAmmunition,1];
 					sleep 2;
-					_pos = [_pos,10,_ang + 5 - (random 10)] call BIS_fnc_relPos;
+					_pos = _pos getPos [10, _ang + 5 - (random 10)];
 					};
 					
 				};

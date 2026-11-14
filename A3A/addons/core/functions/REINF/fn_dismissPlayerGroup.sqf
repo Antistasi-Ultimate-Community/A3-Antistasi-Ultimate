@@ -6,7 +6,7 @@ params ["_units"];
 if (player != leader group player) exitWith {[localize "STR_A3A_reinf_dismiss_group_header", localize "STR_A3A_reinf_dismiss_group_no_leader"] call A3A_fnc_customHint;};
 
 _units deleteAt (_units find player);
-_units = _units select { !(isPlayer _x) && { !(_x == petros) } };
+_units = _units select { !(isPlayer _x) && { (_x != petros) } };
 if (_units isEqualTo []) exitWith {};
 if (_units findIf {!([_x] call A3A_fnc_canFight)} != -1) exitWith {[localize "STR_A3A_reinf_dismiss_group_header", localize "STR_A3A_reinf_dismiss_no_special_states"] call A3A_fnc_customHint;};
 
@@ -20,7 +20,7 @@ private _newGroup = createGroup teamPlayer;
 
 if (recruitCooldown < time) then {recruitCooldown = time + 60} else {recruitCooldown = recruitCooldown + 60};
 
-{_x domove getMarkerPos respawnTeamPlayer} forEach units _newGroup;
+{_x doMove getMarkerPos respawnTeamPlayer} forEach units _newGroup;
 
 private _timeX = time + 120;
 

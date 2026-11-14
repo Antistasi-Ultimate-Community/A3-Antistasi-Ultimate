@@ -150,7 +150,7 @@ private _fnc_validateArrayMagazines = {
 */
 private _fnc_validateMagazinesHM = {
     //hm of key: Vehicle class, Value: Array of magazine classes
-    if !(_y isEqualType createHashmap) exitWith { _invalidReasons pushBack ("Entry "+(str _entry)+" is not a hashmap, This entry should be a hashmap of vehicles and there corresponding magazine classes.") };
+    if !(_y isEqualType createHashMap) exitWith { _invalidReasons pushBack ("Entry "+(str _entry)+" is not a hashmap, This entry should be a hashmap of vehicles and there corresponding magazine classes.") };
     {
         ["CfgVehicles", _x, _entry] call _fnc_validClassCaseSensitive;
         call _fnc_validateArrayMagazines;
@@ -316,7 +316,7 @@ private _fnc_handleUniqueCases = { //handles unique name cases that the stored v
             } forEach _y;
         };
         case "petrosIdentity": {
-            if !(_y isEqualType createHashmap) exitWith {_invalidReasons pushBack ("Entry "+(str _entry)+" is not a hashmap.")};
+            if !(_y isEqualType createHashMap) exitWith {_invalidReasons pushBack ("Entry "+(str _entry)+" is not a hashmap.")};
         };
         case "diveGear"; //Mixed CFGVehicles and CFGGlasses
         case "flyGear";
@@ -349,7 +349,7 @@ private _fnc_handleUniqueCases = { //handles unique name cases that the stored v
 //=======================|
 // Process template data |
 //=======================|
-Info_2("Template validation for side: %1 | Template: %2",_side, _templatePath);
+Info_2("Template validation for side: %1 | Template: %2",_side,_templatePath);
 private _invalidReasons = [];
 {
     _x params ["_entry"];

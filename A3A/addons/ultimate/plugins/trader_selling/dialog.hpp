@@ -1,4 +1,12 @@
 #include "\x\A3A\addons\core\ui_define.hpp"
+FORWARD(RscCheckBox);
+FORWARD(RscCombo);
+FORWARD(RscEdit);
+FORWARD(RscFrame);
+FORWARD(RscListBox);
+FORWARD(RscPictureKeepAspect);
+FORWARD(RscStructuredText);
+FORWARD(RscText);
 #include "\x\A3A\addons\scrt\defines.hpp"
 #include "RscDefine.hpp"
 
@@ -165,13 +173,13 @@ class GVAR(sellDialog) {
 		
 			UI_FONT_DEFAULT;
 		};
-		class ListContainerContent: RscListbox
+		class ListContainerContent: RscListBox
 		{
 			type = CT_LISTNBOX;
-			drawSideArrows = true;
+			drawSideArrows = 1;
 			idcLeft = -1;
 			idcRight = -1;
-			tooltipPerColumn = true;
+			tooltipPerColumn = 1;
 			sizeEx = QUOTE(0.08);
 
 			idc = IDC_RSCA3USPCMSTORESELLDIALOG_LISTCONTAINERCONTENT;
@@ -191,7 +199,7 @@ class GVAR(sellDialog) {
 			w = QUOTE(0.118594 * safezoneW);
 			h = QUOTE(0.055 * safezoneH);
 		};
-		class CheckShowUnsellable: RscCheckbox
+		class CheckShowUnsellable: RscCheckBox
 		{
 			idc = IDC_RSCA3USPCMSTORESELLDIALOG_CHECKSHOWUNSELLABLE;
 			x = QUOTE(0.62375 * safezoneW + safezoneX);

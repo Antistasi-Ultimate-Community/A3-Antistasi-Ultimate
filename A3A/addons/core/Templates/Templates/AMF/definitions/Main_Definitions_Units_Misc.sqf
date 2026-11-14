@@ -1,3 +1,5 @@
+#pragma hemtt ignore_variables ["_crewTemplate", "_pilotTemplate", "_officerTemplate", "_traitorTemplate", "_UnarmedTemplate", "_policeTemplate", "_crewLoadoutData", "_pilotLoadoutData", "_militaryLoadoutData", "_militiaLoadoutData", "_policeLoadoutData", "_fnc_generateAndSaveUnitsToTemplate"]
+
 //////////////////////////////
 //  Misc Units               //
 //////////////////////////////

@@ -12,7 +12,7 @@ private _crewSeats = [_veh, false] call BIS_fnc_crewCount; // Number of crew sea
 private _cargoSeats = _totalSeats - _crewSeats;
 if (_veh in (_faction get "vehiclesPolice")) then { _cargoSeats = 6 min _cargoSeats };
 
-if (_cargoSeats < 2) exitwith { [] };
+if (_cargoSeats < 2) exitWith { [] };
 
 if (_cargoSeats < 4) exitWith
 {

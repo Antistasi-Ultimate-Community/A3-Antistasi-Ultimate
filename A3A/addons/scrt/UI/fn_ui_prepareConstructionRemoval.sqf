@@ -16,7 +16,7 @@ if(isNil "_construction" || {isNull _construction}) then {
     private _constuctions = +constructionsToSave;
     private _closeConstructions = [_constuctions, [], { player distance _x }, "ASCEND"] call BIS_fnc_sortBy;
 
-    if (count _closeConstructions > 0 && {player distance2D (_closeConstructions select 0) < 3}) then {
+    if (_closeConstructions isNotEqualTo [] && {player distance2D (_closeConstructions select 0) < 3}) then {
         _construction = _closeConstructions select 0;
     };
 };
@@ -38,7 +38,7 @@ private _display = findDisplay A3A_IDD_CONSTRUCTION_REMOVAL_CONFIRMATION;
 
 if (str (_display) != "no display") then {
 	private _childControl = _display displayCtrl A3A_IDC_CONSTRUCTION_REMOVAL_CONFIRMATION_TITLE;
-    private _name = getText (configFile >> "CfgVehicles" >> typeOf _construction >> "displayName");
+    private _name = getText (configOf _construction >> "displayName");
 	_childControl ctrlSetText format ["%1 (%2)?",localize "STR_antistasi_dialogs_remove_construction", _name];
 };
 

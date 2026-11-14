@@ -23,7 +23,7 @@ if(typeName (_add select 0) isEqualTo "STRING")then{_add = [_add]};
     private _amount = _x select 1;
 
 
-    if!(_name isEqualTo "")then{//skip empty
+    if(_name isNotEqualTo "")then{//skip empty
 
         private _found = false;
         {

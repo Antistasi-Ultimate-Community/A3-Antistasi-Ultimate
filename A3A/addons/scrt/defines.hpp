@@ -82,7 +82,7 @@ class ScrtRscCloseButton
 	colorActive[] = {1, 1, 1, 1};
 	color[] = {1, 1, 1, 1};
 	text = "\a3\3DEN\Data\ControlsGroups\Tutorial\close_ca.paa";
-	tooltip = $STR_antistasi_dialogs_generic_button_close_text;
+	tooltip = "$STR_antistasi_dialogs_generic_button_close_text";
 	sizeEx = "4.32 * (1 / (getResolution select 3)) * pixelGrid * 0.5";
 	colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R', 0])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0])", 0};
 };
@@ -276,10 +276,10 @@ class BaseComboBox
 	fade = 1;
 	type = CT_COMBO;
 	style = ST_LEFT;
-	w = 0.1 * safezoneW;
-	h = 0.025 * safezoneH;
-	x = 0 * safezoneW + safezoneX;
-	y = 0 * safezoneH + safezoneY;
+	w = QUOTE(0.1 * safezoneW);
+	h = QUOTE(0.025 * safezoneH);
+	x = QUOTE(0 * safezoneW + safezoneX);
+	y = QUOTE(0 * safezoneH + safezoneY);
 	sizeEx = "((pixelH * (pixelGridNoUIScale) * 2) * 1.25) * 0.5";
 	rowHeight = "((pixelH * (pixelGridNoUIScale) * 2) * 1.3) * 0.5";
 	wholeHeight = "((pixelH * (pixelGridNoUIScale) * 2) * 25) * 0.5";
@@ -513,10 +513,10 @@ class ScrtRscMapControl
 	style = ST_PICTURE;
 	fade = 1;
 	
-	x =0 * safezoneW + safezoneX;
-	y = 0 * safezoneH + safezoneY;
-	w = 0 * safezoneW;
-	h = 0 * safezoneH;
+	x =QUOTE(0 * safezoneW + safezoneX);
+	y = QUOTE(0 * safezoneH + safezoneY);
+	w = QUOTE(0 * safezoneW);
+	h = QUOTE(0 * safezoneH);
 	
 	alphaFadeStartScale = 2;
 	alphaFadeEndScale = 2;	
@@ -597,7 +597,7 @@ class ScrtRscMapControl
 		icon = "\A3\ui_f\data\map\mapcontrol\bunker_ca.paa";
 		color[] = {0.00, 0.0, 0.0, 1.00};
 		size = 14;
-		importance = "1.5 * 14 * 0.05";
+		importance = 1.05; // importance = "1.5 * 14 * 0.05";
 		coefMin = 0.25;
 		coefMax = 4.00;
 	};
@@ -605,7 +605,7 @@ class ScrtRscMapControl
 		icon = "\A3\ui_f\data\map\mapcontrol\bush_ca.paa";
 		color[] = {0.45,0.64,0.33,0.4};
 		size = 14;
-		importance = "0.2 * 14 * 0.05";
+		importance = 0.14; // importance = "0.2 * 14 * 0.05";
 		coefMin = 0.25;
 		coefMax = 4.00;
 	  };
@@ -613,7 +613,7 @@ class ScrtRscMapControl
 		icon = "\A3\ui_f\data\map\mapcontrol\busstop_CA.paa";
 		color[] = {1,1,1,1};
 		size = 10;
-		importance = "1 * 10 * 0.05";
+		importance = 0.5; // importance = "1 * 10 * 0.05";
 		coefMin = 0.25;
 		coefMax = 4.00;
 	  };
@@ -621,7 +621,7 @@ class ScrtRscMapControl
 		icon = "\A3\ui_f\data\map\mapcontrol\Chapel_CA.paa";
 		color[] = {0,0,0,1};
 		size = 16;
-		importance = "1 * 16 * 0.05";
+		importance = 0.8; // importance = "1 * 16 * 0.05";
 		coefMin = 0.90;
 		coefMax = 4.00;
 	};
@@ -629,7 +629,7 @@ class ScrtRscMapControl
 		icon = "\A3\ui_f\data\map\mapcontrol\church_CA.paa";
 		color[] = {1,1,1,1};
 		size = 16;
-		importance = "2 * 16 * 0.05";
+		importance = 1.6; // importance = "2 * 16 * 0.05";
 		coefMin = 0.90;
 		coefMax = 4.00;
 	};
@@ -661,7 +661,7 @@ class ScrtRscMapControl
 		icon = "\A3\ui_f\data\map\mapcontrol\bunker_ca.paa";
 		color[] = {0,0,0,1};
 		size = 16;
-		importance = "2 * 16 * 0.05";
+		importance = 1.6; // importance = "2 * 16 * 0.05";
 		coefMin = 0.25;
 		coefMax = 4.00;
 	};
@@ -670,7 +670,7 @@ class ScrtRscMapControl
 		icon = "\A3\ui_f\data\map\mapcontrol\fountain_ca.paa";
 		color[] = {0,0,0,1};
 		size = 11;
-		importance = "1 * 12 * 0.05";
+		importance = 0.6; // importance = "1 * 12 * 0.05";
 		coefMin = 0.25;
 		coefMax = 4;
 	};
@@ -759,7 +759,7 @@ class ScrtRscMapControl
 		icon = "\A3\ui_f\data\map\mapcontrol\rock_ca.paa";
 		color[] = {0.1,0.1,0.1,0.8};
 		size = 12;
-		importance = "0.5 * 12 * 0.05";
+		importance = 0.3; // importance = "0.5 * 12 * 0.05";
 		coefMin = 0.25;
 		coefMax = 4.00;
 	};	
@@ -767,7 +767,7 @@ class ScrtRscMapControl
 		icon = "\A3\ui_f\data\map\mapcontrol\ruin_ca.paa";
 		color[] = {0,0,0,1};
 		size = 16;
-		importance = "1.2 * 16 * 0.05";
+		importance = 0.96; // importance = "1.2 * 16 * 0.05";
 		coefMin = 1.00;
 		coefMax = 4.00;
 	};
@@ -783,7 +783,7 @@ class ScrtRscMapControl
 		icon = "\A3\ui_f\data\map\mapcontrol\bush_ca.paa";
 		color[] = {0.45,0.64,0.33,0.4};
 		size = 12;
-		importance = "0.6 * 12 * 0.05";
+		importance = 0.36; // importance = "0.6 * 12 * 0.05";
 		coefMin = 0.25;
 		coefMax = 4.00;
 	};
@@ -791,7 +791,7 @@ class ScrtRscMapControl
 		icon = "\A3\ui_f\data\map\mapcontrol\stack_ca.paa";
 		color[] = {0,0,0,1};
 		size = 20;
-		importance = "2 * 16 * 0.05";
+		importance = 1.6; // importance = "2 * 16 * 0.05";
 		coefMin = 0.90;
 		coefMax = 4.00;
 	};
@@ -821,7 +821,7 @@ class ScrtRscMapControl
 		icon = "\A3\ui_f\data\map\mapcontrol\tourism_ca.paa";
 		color[] = {0,0,0,1};
 		size = 16;
-		importance = "1 * 16 * 0.05";
+		importance = 0.8; // importance = "1 * 16 * 0.05";
 		coefMin = 0.70;
 		coefMax = 4.00;
 	};
@@ -837,7 +837,7 @@ class ScrtRscMapControl
 		icon = "\A3\ui_f\data\map\mapcontrol\bush_ca.paa";
 		color[] = {0.45,0.64,0.33,0.4};
 		size = 12;
-		importance = "0.9 * 16 * 0.05";
+		importance = 0.72; // importance = "0.9 * 16 * 0.05";
 		coefMin = 0.25;
 		coefMax = 4.00;
 	};	 
@@ -845,7 +845,7 @@ class ScrtRscMapControl
 		icon = "\A3\ui_f\data\map\mapcontrol\viewtower_ca.paa";
 		color[] = {0,0,0,1};
 		size = 16;
-		importance = "2.5 * 16 * 0.05";
+		importance = 2; // importance = "2.5 * 16 * 0.05";
 		coefMin = 0.50;
 		coefMax = 4.00;
 	};
@@ -918,23 +918,23 @@ class ScrtRscSimpleMenuButton
 class ArsenalButton : ScrtRscSimpleMenuButton
 {
 	text = "\a3\3den\data\displays\display3den\entitymenu\arsenal_ca.paa";
-	tooltip = $STR_antistasi_dialogs_hq_button_rebel_set_loadout_button_tooltip;
+	tooltip = "$STR_antistasi_dialogs_hq_button_rebel_set_loadout_button_tooltip";
 };
 
 class ResetButton : ScrtRscSimpleMenuButton
 {
 	text = "\a3\3den\data\displays\display3den\toolbar\undo_ca.paa";
-	tooltip = $STR_antistasi_dialogs_hq_button_rebel_reset_button_tooltip;
+	tooltip = "$STR_antistasi_dialogs_hq_button_rebel_reset_button_tooltip";
 };
 
 class CopyPasteResetButton : ResetButton
 {
-	tooltip = $STR_antistasi_dialogs_hq_button_rebel_copy_paste_reset_combo_button_tooltip;
+	tooltip = "$STR_antistasi_dialogs_hq_button_rebel_copy_paste_reset_combo_button_tooltip";
 };
 
 class SimpleMenu
 {
-	movingenable=false;
+	movingenable=0;
 	onLoad = "['on'] call SCRT_fnc_ui_toggleMenuBlur;";
 	onUnload = "['off'] call SCRT_fnc_ui_toggleMenuBlur;";
 };
@@ -947,20 +947,20 @@ class SimpleMenuBig : SimpleMenu
 		{
 			idc = -1;
 			text = "";
-			x = 0.244979 * safezoneW + safezoneX;
-			y = 0.223941 * safezoneH + safezoneY;
-			w = 0.445038 * safezoneW;
-			h = 0.492103 * safezoneH;
+			x = QUOTE(0.244979 * safezoneW + safezoneX);
+			y = QUOTE(0.223941 * safezoneH + safezoneY);
+			w = QUOTE(0.445038 * safezoneW);
+			h = QUOTE(0.492103 * safezoneH);
 		};
 
 		class titleBackground: BOX
 		{
 			idc = -1;
 			text = "";
-			x = 0.244979 * safezoneW + safezoneX;
-			y = 0.223941 * safezoneH + safezoneY;
-			w = 0.445038 * safezoneW;
-			h = 0.02 * safezoneH;
+			x = QUOTE(0.244979 * safezoneW + safezoneX);
+			y = QUOTE(0.223941 * safezoneH + safezoneY);
+			w = QUOTE(0.445038 * safezoneW);
+			h = QUOTE(0.02 * safezoneH);
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.376])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.125])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.043])",1};
 		};
 	};
@@ -974,20 +974,20 @@ class SimpleMenuBigger : SimpleMenu
 		{
 			idc = -1;
 			text = "";
-			x = 0.244979 * safezoneW + safezoneX;
-			y = 0.223941 * safezoneH + safezoneY;
-			w = 0.445038 * safezoneW;
-			h = 0.5751155 * safezoneH;
+			x = QUOTE(0.244979 * safezoneW + safezoneX);
+			y = QUOTE(0.223941 * safezoneH + safezoneY);
+			w = QUOTE(0.445038 * safezoneW);
+			h = QUOTE(0.5751155 * safezoneH);
 		};
 
 		class titleBackground: BOX
 		{
 			idc = -1;
 			text = "";
-			x = 0.244979 * safezoneW + safezoneX;
-			y = 0.223941 * safezoneH + safezoneY;
-			w = 0.445038 * safezoneW;
-			h = 0.02 * safezoneH;
+			x = QUOTE(0.244979 * safezoneW + safezoneX);
+			y = QUOTE(0.223941 * safezoneH + safezoneY);
+			w = QUOTE(0.445038 * safezoneW);
+			h = QUOTE(0.02 * safezoneH);
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.376])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.125])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.043])",1};
 		};
 	};
@@ -1001,20 +1001,20 @@ class SimpleMenuSmall : SimpleMenu
 		{
 			idc = -1;
 			text = "";
-			x = 0.244979 * safezoneW + safezoneX;
-			y = 0.223941 * safezoneH + safezoneY;
-			w = 0.445038 * safezoneW;
-			h = 0.20 * safezoneH;
+			x = QUOTE(0.244979 * safezoneW + safezoneX);
+			y = QUOTE(0.223941 * safezoneH + safezoneY);
+			w = QUOTE(0.445038 * safezoneW);
+			h = QUOTE(0.20 * safezoneH);
 		};
 
 		class titleBackground: BOX
 		{
 			idc = -1;
 			text = "";
-			x = 0.244979 * safezoneW + safezoneX;
-			y = 0.223941 * safezoneH + safezoneY;
-			w = 0.445038 * safezoneW;
-			h = 0.02 * safezoneH;
+			x = QUOTE(0.244979 * safezoneW + safezoneX);
+			y = QUOTE(0.223941 * safezoneH + safezoneY);
+			w = QUOTE(0.445038 * safezoneW);
+			h = QUOTE(0.02 * safezoneH);
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.376])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.125])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.043])",1};
 		};
 	};
@@ -1028,20 +1028,20 @@ class SimpleMenuMedium : SimpleMenu
 		{
 			idc = -1;
 			text = "";
-			x = 0.4175 * safezoneW + safezoneX;
-			y = 0.225 * safezoneH + safezoneY;
-			w = 0.165 * safezoneW;
-			h = 0.429 * safezoneH;
+			x = QUOTE(0.4175 * safezoneW + safezoneX);
+			y = QUOTE(0.225 * safezoneH + safezoneY);
+			w = QUOTE(0.165 * safezoneW);
+			h = QUOTE(0.429 * safezoneH);
 		};
 
 		class titleBackground: BOX
 		{
 			idc = -1;
 			text = "";
-			x = 0.4175 * safezoneW + safezoneX;
-			y = 0.225 * safezoneH + safezoneY;
-			w = 0.165 * safezoneW;
-			h = 0.02 * safezoneH;
+			x = QUOTE(0.4175 * safezoneW + safezoneX);
+			y = QUOTE(0.225 * safezoneH + safezoneY);
+			w = QUOTE(0.165 * safezoneW);
+			h = QUOTE(0.02 * safezoneH);
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.376])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.125])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.043])",1};
 		};
 	};
@@ -1050,10 +1050,10 @@ class SimpleMenuMedium : SimpleMenu
 class SimpleTitle: ScrtRscTextSingle
 {
 	colorText[] = {1,1,1,1};
-	x = 0.244979 * safezoneW + safezoneX;
-	y = 0.223941 * safezoneH + safezoneY;
-	w = 0.445038 * safezoneW;
-	h = 0.02 * safezoneH;
+	x = QUOTE(0.244979 * safezoneW + safezoneX);
+	y = QUOTE(0.223941 * safezoneH + safezoneY);
+	w = QUOTE(0.445038 * safezoneW);
+	h = QUOTE(0.02 * safezoneH);
 	shadow = 2;
 	sizeEx = "((pixelH * (pixelGridNoUIScale) * 2) * 1.2) * 0.5";
 };
@@ -1061,16 +1061,16 @@ class SimpleTitle: ScrtRscTextSingle
 class SimpleButton: ButtonBase
 {
 	fade = 0;
-	w = 0.2 * safezoneW;
-	h = 0.06 * safezoneH;
+	w = QUOTE(0.2 * safezoneW);
+	h = QUOTE(0.06 * safezoneH);
 	sizeEx = "((pixelH * (pixelGridNoUIScale) * 2) * 1.5) * 0.5";
 };
 
 class QuarterSimpleButton: ButtonBase
 {
 	fade = 0;
-	w = 0.049 * safezoneW;
-	h = 0.04 * safezoneH;
+	w = QUOTE(0.049 * safezoneW);
+	h = QUOTE(0.04 * safezoneH);
 	sizeEx = "((pixelH * (pixelGridNoUIScale) * 2) * 1.5) * 0.5";
 };
 

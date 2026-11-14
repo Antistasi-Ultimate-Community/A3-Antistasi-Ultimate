@@ -5,7 +5,7 @@
 params ["_plane", "_bombType", "_bombCount", "_bombRunLength", ["_isRivals", false]];
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
-Debug_1("Executing on: %1", clientOwner);
+Debug_1("Executing on: %1",clientOwner);
 
 //Ensure reasonable bomb run lenght
 if(_bombRunLength < 100) then {_bombRunLength = 100};
@@ -43,7 +43,7 @@ switch (_bombType) do {
     };
 	default
     {
-		Error_1("Invalid bomb type, given was %1", _bombType);
+		Error_1("Invalid bomb type, given was %1",_bombType);
 	};
 };
 
@@ -63,8 +63,8 @@ if (_bombType isEqualTo "CHEMICAL") then {
         if (isNil "_plane" || {!(alive _plane)}) exitWith {};
         sleep _timeBetweenBombs;
         private _bombPos = (getPos _plane) vectorAdd [0, 0, -6];
-        _bomb = _ammo createvehicle _bombPos;
-        waituntil {!isnull _bomb};
+        _bomb = _ammo createVehicle _bombPos;
+        waitUntil {!isNull _bomb};
         _bomb setDir (getDir _plane);
         _bomb setVelocity [0,0,-50];
 
@@ -89,7 +89,7 @@ if (_bombType isEqualTo "CHEMICAL") then {
         sleep _timeBetweenBombs;
         if (alive _plane) then {
             private _bombPos = (getPosATL _plane) vectorAdd [0, 0, -5];
-            _bomb = _ammo createvehicle _bombPos;
+            _bomb = _ammo createVehicle _bombPos;
             _bomb setDir (getDir _plane);
             _bomb setVelocity [0,0,-50];
             _bomb setShotParents [_plane, driver _plane];           // server exec, really?

@@ -70,7 +70,7 @@ playSound3D ["a3\sounds_f\weapons\explosion\expl_big_3.wss", objNull, false, AGL
     };
 };
 
-{ _x hideObjectGlobal true } foreach (nearestTerrainObjects [_pos,["tree","bush","small tree"],_napalmRadius]);
+{ _x hideObjectGlobal true } forEach (nearestTerrainObjects [_pos,["tree","bush","small tree"],_napalmRadius]);
 
 private _fnc_cancelRequested = { false; };// Future provisioning for implementation of cancellationTokens.
 while {_endTime > serverTime && !([_cancellationTokenUUID] call _fnc_cancelRequested)} do {
@@ -81,7 +81,7 @@ while {_endTime > serverTime && !([_cancellationTokenUUID] call _fnc_cancelReque
     isNil {  // Run in unscheduled scope to prevent parallel filtering.
         _allRenderers = _allRenderers select {
             !isNull _x &&
-            {!(getPlayerUID _x isEqualTo "")} &&
+            {(getPlayerUID _x isNotEqualTo "")} &&
             {!(_storageNamespace getVariable [getPlayerUID _x, false])}
         };    // Per napalm as every effect needs to be rendered.
         { _storageNamespace setVariable [getPlayerUID _x, true]; } forEach _allRenderers;

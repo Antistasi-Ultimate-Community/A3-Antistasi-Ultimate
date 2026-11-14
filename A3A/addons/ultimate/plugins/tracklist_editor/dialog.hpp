@@ -1,4 +1,7 @@
 #include "\x\A3A\addons\core\ui_define.hpp"
+FORWARD(RscEdit);
+FORWARD(RscListBox);
+FORWARD(RscText);
 #include "\x\A3A\addons\scrt\defines.hpp"
 #include "RscDefine.hpp"
 
@@ -88,12 +91,12 @@ class GVAR(dialog) {
 			w = QUOTE(0.33 * safezoneW);
 			h = QUOTE(0.528 * safezoneH);
 		};
-		class ListAllTracks: RscListbox
+		class ListAllTracks: RscListBox
 		{
 			type = CT_LISTNBOX;
 			idcLeft = -1;
 			idcRight = -1;
-			drawSideArrows = false;
+			drawSideArrows = 0;
 
 			font = "PuristaMedium";
 

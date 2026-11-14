@@ -46,7 +46,7 @@ private _markerPosition = getMarkerPos _markerX;
 
 [_target, "remove"] remoteExec ["A3A_fnc_flagaction",[teamPlayer,civilian],_target];
 
-waitUntil {sleep 1; (_caller != attachedTo _target) or (vehicle _caller != _caller) or (_caller distance2D _markerPosition > (_markerSize + 4)) or !([_caller] call A3A_fnc_canFight) or (!isPlayer _caller)};
+waitUntil {sleep 1; (_caller != attachedTo _target) or (!isNull objectParent _caller) or (_caller distance2D _markerPosition > (_markerSize + 4)) or !([_caller] call A3A_fnc_canFight) or (!isPlayer _caller)};
 
 [_target, _caller, _actionX] call _fnc_placeObject;
 

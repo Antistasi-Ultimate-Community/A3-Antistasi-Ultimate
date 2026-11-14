@@ -12,20 +12,20 @@
 FIX_LINE_NUMBERS()
 params ["_veh", "_sideEnemy", ["_captured", false], ["_killer", objNull]];
 
-private _type = typeof _veh;
+private _type = typeOf _veh;
 private _side = _veh getVariable ["ownerSide", teamPlayer];			// default because Zeus
 
 if (_captured && (_side == _sideEnemy)) exitWith {};
 
-private _act = if (_captured) then {"captured"} else {"destroyed"};
-ServerDebug_4("%1 of %2 %3 by %4", _type, _side, _act, _sideEnemy);
+private _act = ["destroyed", "captured"] select (_captured);
+ServerDebug_4("%1 of %2 %3 by %4",_type,_side,_act,_sideEnemy);
 
 // Kick units out of vehicles when destroyed & touching ground
-if (!_captured and count crew _veh > 0) then {
+if (!_captured and crew _veh isNotEqualTo []) then {
 	_veh spawn {
 		private _timeout = time + 30;			// sometimes destroyed vehicles return isTouchingGround false
 		waitUntil { sleep 2; time > _timeout or isTouchingGround _this };
-		while {count crew _this > 0} do {
+		while {crew _this isNotEqualTo []} do {
 			moveOut (crew _this # 0);
 			sleep 0.5;
 		};

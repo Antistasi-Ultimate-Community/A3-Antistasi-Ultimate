@@ -14,7 +14,7 @@ if (_resourcesFIA < MONEY_AMOUNT) exitWith {
 
 private _ratingLoss = round (MONEY_AMOUNT / 100);
 
-server setvariable ["resourcesFIA", _resourcesFIA - MONEY_AMOUNT, true];
+server setVariable ["resourcesFIA", _resourcesFIA - MONEY_AMOUNT, true];
 [-_ratingLoss,theBoss] call A3A_fnc_addScorePlayer;
 [MONEY_AMOUNT] call A3A_fnc_resourcesPlayer;
 

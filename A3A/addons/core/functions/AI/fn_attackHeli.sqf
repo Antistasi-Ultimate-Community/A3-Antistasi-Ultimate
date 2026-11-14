@@ -17,13 +17,14 @@ Arguments:
 
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
+#pragma hemtt ignore_variables ["_thisScript"]
 
 params ["_vehicle", "_group", "_targPos"];
 
 // Set script handle so abort routines can remove it later
 _group setVariable ["A3A_AIScriptHandle", _thisScript];
 
-while {count waypoints _group > 0} do { deleteWaypoint [_group, 0] };
+while {waypoints _group isNotEqualTo []} do { deleteWaypoint [_group, 0] };
 _group setBehaviourStrong "COMBAT";
 private _noGunner = isNull gunner _vehicle;
 
@@ -39,13 +40,13 @@ if (getNumber (configOf _vehicle >> "vtol") > 0) then {
 };
 
 private _approach = true;
-private _timeout = time + 60 + (_vehicle distance2d _targPos) / 50;
+private _timeout = time + 60 + (_vehicle distance2D _targPos) / 50;
 while {true} do {
     sleep 10;
     if !(alive _vehicle and canFire _vehicle and canMove _vehicle) exitWith {};
     if !((_noGunner or gunner _vehicle call A3A_fnc_canFight) and driver _vehicle call A3A_fnc_canFight) exitWith {};
 
-    if (_approach and { _vehicle distance2d _wayPos < 300}) then { _timeout = -1; _approach = false };
+    if (_approach and { _vehicle distance2D _wayPos < 300}) then { _timeout = -1; _approach = false };
     if (currentWaypoint _group > 0 or time > _timeout ) then {
         _wayPos = _targPos getPos [50 + random 100, random 360];
         _destroyWP setWaypointPosition [_wayPos, 0];

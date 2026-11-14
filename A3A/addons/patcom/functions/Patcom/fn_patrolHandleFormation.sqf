@@ -46,7 +46,7 @@ if (!isNull objectParent _unit && {behaviour _unit == "SAFE"}) exitWith {
 
 // City / Village
 private _nearestCity = nearestLocations [getPosASL _unit, ["nameCity", "NameVillage"], _distanceToCheck];
-if (count _nearestCity > 0) exitWith {
+if (_nearestCity isNotEqualTo []) exitWith {
     if (!isNull objectParent _unit) then {
         _group setFormation "COLUMN";
     } else {
@@ -57,14 +57,14 @@ if (count _nearestCity > 0) exitWith {
 
 // Hill
 private _nearestHill = nearestLocations [getPosASL _unit, ["Hill"], _distanceToCheck];
-if (count _nearestHill > 0) exitWith {
+if (_nearestHill isNotEqualTo []) exitWith {
     _group setFormation "LINE";
     _group setVariable ["PATCOM_Form_Set", [true, serverTime + 300]];
 };
 
 // Airports/Seaports
 private _nearestLocal = nearestLocations [getPosASL _unit, ["NameLocal"], _distanceToCheck];
-if (count _nearestLocal > 0) exitWith {
+if (_nearestLocal isNotEqualTo []) exitWith {
     _group setFormation "COLUMN"; 
     _group setVariable ["PATCOM_Form_Set", [true, serverTime + 300]];
 };

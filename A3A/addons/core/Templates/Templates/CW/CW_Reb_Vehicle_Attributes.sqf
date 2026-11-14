@@ -1,3 +1,5 @@
+#pragma hemtt ignore_variables ["_fnc_saveToTemplate"]
+
 ["attributesVehicles", [
 	["CW_Ifrit_Mando_HMG", ["rebCost", 900]],
 	["CW_Ifrit_Mando", ["rebCost", 400]],

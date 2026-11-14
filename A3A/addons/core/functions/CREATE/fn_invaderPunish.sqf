@@ -27,7 +27,7 @@ if (areInvadersDefeated) exitWith {
 
 params ["_mrkDest", "_mrkOrigin", "_delay"];
 
-ServerInfo_2("Launching CSAT Punishment Against %1 from %2", _mrkDest, _mrkOrigin);
+ServerInfo_2("Launching CSAT Punishment Against %1 from %2",_mrkDest,_mrkOrigin);
 
 // Mostly to prevent fast travel
 forcedSpawn pushBack _mrkDest; publicVariable "forcedSpawn";
@@ -43,7 +43,7 @@ private _taskId = "invaderPunish" + str A3A_taskCount;
 
 
 if (isNil "_delay") then {
-    _delay = 300 + 60 * (markerPos "Synd_HQ" distance2d _posDest) / 2000;            // +1 min per 2km
+    _delay = 300 + 60 * (markerPos "Synd_HQ" distance2D _posDest) / 2000;            // +1 min per 2km
 };
 
 // Create the attacking force
@@ -82,8 +82,8 @@ while {count _civilians < _numCiv} do
     };
     for "_i" from 1 to (4 min (_numCiv - count _civilians)) do
     {
-        private _identity = [A3A_faction_civ, FactionGet(reb, "unitUnarmed")] call A3A_fnc_createRandomIdentity;
-        private _civ = [_groupCivil, FactionGet(reb, "unitUnarmed"), _pos, [], 0, "NONE", _identity] call A3A_fnc_createUnit;
+        private _identity = [A3A_faction_civ, FactionGet(reb,"unitUnarmed")] call A3A_fnc_createRandomIdentity;
+        private _civ = [_groupCivil, FactionGet(reb,"unitUnarmed"), _pos, [], 0, "NONE", _identity] call A3A_fnc_createUnit;
         [_civ, createHashMapFromArray [["face", selectRandom (A3A_faction_civ get "faces")], ["speaker", "NoVoice"]]] call A3A_fnc_setIdentity;
         _civ forceAddUniform selectRandom (A3A_faction_civ get "uniforms");
         _civ addHeadgear selectRandom (A3A_faction_civ get "headgear");
@@ -112,7 +112,7 @@ waitUntil {
 private _fnc_adjustNearCities = {
     params ["_position", "_maxSupport", "_maxDist"];
     {
-        private _dist = getMarkerPos _x distance2d _position;
+        private _dist = getMarkerPos _x distance2D _position;
         if (_dist > _maxDist) then { continue };
         private _suppChange = linearConversion [0, _maxDist, _dist, _maxSupport, 0, true];
         [0,_suppChange,_x,false] spawn A3A_fnc_citySupportChange;		// don't scale this by pop
@@ -120,7 +120,7 @@ private _fnc_adjustNearCities = {
 };
 
 if (({_x call A3A_fnc_canFight} count _soldiers < count _soldiers / 3) or (time > _missionExpireTime)) then {
-    Info_1("Rebels defeated a punishment attack against %1", _mrkDest);
+    Info_1("Rebels defeated a punishment attack against %1",_mrkDest);
     [_taskId, "invaderPunish", "SUCCEEDED"] call A3A_fnc_taskSetState;
     [_posDest, 30, 3000] call _fnc_adjustNearCities;
 
@@ -133,7 +133,7 @@ if (({_x call A3A_fnc_canFight} count _soldiers < count _soldiers / 3) or (time 
     [10,theBoss] call A3A_fnc_addScorePlayer;
     [round (100*((tierWar/3) max 1)), theBoss, true] call A3A_fnc_addMoneyPlayer;
 } else {
-    Info_1("Rebels lost a punishment attack against %1", _mrkDest);
+    Info_1("Rebels lost a punishment attack against %1",_mrkDest);
     [_taskId, "invaderPunish", "FAILED"] call A3A_fnc_taskSetState;
     [_posDest, -30, 3000] call _fnc_adjustNearCities;
 
@@ -141,7 +141,7 @@ if (({_x call A3A_fnc_canFight} count _soldiers < count _soldiers / 3) or (time 
     private _citypop = (server getVariable _mrkDest) select 0;
     [-4 * _citypop * A3A_balancePlayerScale, Invaders, "attack"] remoteExec ["A3A_fnc_addEnemyResources", 2];
 
-    destroyedSites = destroyedSites + [_mrkDest];
+    destroyedSites pushBackUnique _mrkDest;
     publicVariable "destroyedSites";
     private _mineTypes = A3A_faction_inv get "minefieldAPERS";
     for "_i" from 1 to 60 do {

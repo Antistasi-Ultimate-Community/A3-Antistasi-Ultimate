@@ -31,7 +31,7 @@ _data params ["_magazines", "_items", "_weapons", "_containers"];
 } forEach _items;
 
 _weapons = _weapons select {count _x > 0};
-if (count _weapons > 0) then {
+if (_weapons isNotEqualTo []) then {
     {
         _container addWeaponWithAttachmentsCargoGlobal [_x, 1];
     } forEach _weapons;

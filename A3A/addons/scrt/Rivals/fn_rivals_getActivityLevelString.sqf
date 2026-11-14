@@ -23,7 +23,7 @@ private _activityLevel = switch (_level) do {
 		localize "STR_info_bar_rivals_activity_5";
     };
 	default {
-		Error_1("Bad level recieved, cannot generate string, was %1", _level);
+		Error_1("Bad level recieved, cannot generate string, was %1",_level);
 		""
 	};
 };

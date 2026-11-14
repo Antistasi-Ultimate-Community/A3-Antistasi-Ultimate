@@ -33,12 +33,12 @@ while { true } do {
 					};
 					["ABZ_chat", [format [localize "STR_A3U_Bazaar_Chat_WordOnTheStreet", _e select 5, _e select 1, _jobTxt]]] call CBA_fnc_globalEvent;
 				};
-				Info_3("[ABZ] New trader %1 (#%2) at %3", _e select 5, _e select 0, _e select 1);
+				Info_3("[ABZ] New trader %1 (#%2) at %3",_e select 5,_e select 0,_e select 1);
 				call ABZ_fnc_queueSave;
 			};
 		};
 		if (count ABZ_vendors > _want) then {
-			private _e = ABZ_vendors select ((count ABZ_vendors) - 1);
+			private _e = ABZ_vendors select -1;
 			[_e select 0] call ABZ_fnc_vendorDespawn;
 			deleteMarker format ["ABZ_vendor_%1", _e select 0];
 			ABZ_vendors deleteAt ((count ABZ_vendors) - 1);

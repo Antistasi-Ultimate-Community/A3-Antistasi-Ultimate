@@ -68,8 +68,8 @@ Info(_dmgLog);
 //////Cool down prevents multi-hit spam/////
     // Doesn't log to avoid RPT spam.
     // Doesn't use hash table to be as quick as possible.
-if (_instigator getVariable ["A3A_FFPun_CD", 0] > servertime) exitWith {"PUNISHMENT COOL-DOWN ACTIVE"};
-_instigator setVariable ["A3A_FFPun_CD", servertime + 1, false]; // Local Exec faster
+if (_instigator getVariable ["A3A_FFPun_CD", 0] > serverTime) exitWith {"PUNISHMENT COOL-DOWN ACTIVE"};
+_instigator setVariable ["A3A_FFPun_CD", serverTime + 1, false]; // Local Exec faster
 
 /////////////////Definitions////////////////
 private _victimStats = ["damaged ",["systemPunished",name _victim] select (_victim isKindOf "Man")," "] joinString "";
@@ -98,7 +98,7 @@ private _exemption = "";
 if (_victim isKindOf "Man") then {
         _exemption = switch (true) do {
         case (_vehicle isEqualTo (vehicle _victim)):            {"IN SAME VEHICLE"};  // Also fulfils role of checking whether the instigator and victim is same person.
-        case (!(side group _victim isEqualTo teamPlayer)):      {call _logPvPHurt; "VICTIM NOT REBEL"};
+        case ((side group _victim isNotEqualTo teamPlayer)):      {call _logPvPHurt; "VICTIM NOT REBEL"};
         default                                                 {_exemption};
     };
 };
@@ -106,10 +106,10 @@ _exemption = switch (true) do {  // ~0.012 ms for all false cases
     case (!tkPunish):                                       {"FF PUNISH IS DISABLED"};
     case ("HC" in (getPlayerUID _instigator)):              {"FF BY HC"};  // Quick & reliable check
     case (!(isPlayer _instigator)):                         {"FF BY AI"};
-    case (!(side group _instigator isEqualTo teamPlayer)):  {call _logPvPAttack; "INSTIGATOR NOT REBEL"};
+    case ((side group _instigator isNotEqualTo teamPlayer)):  {call _logPvPAttack; "INSTIGATOR NOT REBEL"};
     default                                                 {_exemption};
 };
-if (!(_exemption isEqualTo "")) exitWith {
+if ((_exemption isNotEqualTo "")) exitWith {
     format["NOT FF, %1", _exemption];
 };
 
@@ -118,12 +118,12 @@ if (_isCollision) then {
     _customMessage = [_customMessage,localize "STR_A3A_punishment_damaged_driver"] joinString "<br/>";
     _timeAdded = 27;
     _offenceAdded = 0.15;
-    Info_4("COLLISION | %1 [%2]'s %3 %4", name _instigator, getPlayerUID _instigator, _vehicleType, _victimStats);
+    Info_4("COLLISION | %1 [%2]'s %3 %4",name _instigator,getPlayerUID _instigator,_vehicleType,_victimStats);
 };
 
 /////////Checks for important roles/////////
 _exemption = switch (true) do {
-    case (!(admin owner _instigator isEqualTo 0) || player isEqualTo _instigator): {  // Local host included.
+    case ((admin owner _instigator isNotEqualTo 0) || player isEqualTo _instigator): {  // Local host included.
         [localize "STR_A3A_punishment_damaged_admin"] call _notifyInstigator; // Admin not reported to victim in case of Zeus remote control.
         format ["ADMIN, %1", ["Server","Voted","Logged"] select (admin owner _instigator)];
     };
@@ -134,7 +134,7 @@ _exemption = switch (true) do {
     };
     case (
         isNumber (configFile >> "CfgVehicles" >> _vehicleType >> "artilleryScanner") &&
-        {!(getNumber (configFile >> "CfgVehicles" >> _vehicleType >> "artilleryScanner") isEqualTo 0)}
+        {(getNumber (configFile >> "CfgVehicles" >> _vehicleType >> "artilleryScanner") isNotEqualTo 0)}
     ): {
         call _notifyVictim;
         [localize "STR_A3A_punishment_damaged_arty"] call _notifyInstigator;
@@ -145,9 +145,9 @@ _exemption = switch (true) do {
         // Without above: Your AI will be prosecuted for FF. Upon leaving UAV you will be punished. If you have debug console you can self forgive.
     default {""};
 };
-if (!(_exemption isEqualTo "")) exitWith {
+if ((_exemption isNotEqualTo "")) exitWith {
     private _playerStats = format["%1 [%2] %3, Avoided-time: %4, Avoided-offence: %5", name _instigator, getPlayerUID _instigator, _victimStats,str _timeAdded, str _offenceAdded];
-    Info_2("%1 | %2", _exemption, _playerStats);
+    Info_2("%1 | %2",_exemption,_playerStats);
     _exemption;
 };
 

@@ -63,6 +63,6 @@ switch (_unitFaction) do {
 		};
 	};
 	default {
-		Error_2("Unknown faction %1 for unit %2", _unitFaction, _unit)
+		Error_2("Unknown faction %1 for unit %2",_unitFaction,_unit)
 	};
 };

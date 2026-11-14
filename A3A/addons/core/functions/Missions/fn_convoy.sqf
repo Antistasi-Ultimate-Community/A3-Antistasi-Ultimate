@@ -6,8 +6,8 @@ if (!isServer and hasInterface) exitWith {};
 if (missionNamespace getVariable ["A3A_convoyInProgress", false]) exitWith {};
 params ["_mrkDest", "_mrkOrigin", ["_convoyType", ""], ["_resPool", "legacy"], ["_startDelay", -1], ["_visible", false]];
 
-private _difficult = if (random 10 < tierWar) then {true} else {false};
-private _sideX = if (sidesX getVariable [_mrkOrigin,sideUnknown] == Occupants) then {Occupants} else {Invaders};
+private _difficult = random 10 < tierWar;
+private _sideX = [Invaders, Occupants] select (sidesX getVariable [_mrkOrigin,sideUnknown] == Occupants);
 private _milFaction = Faction(_sideX);
 private _rebFaction = Faction(teamPlayer);
 private _civFaction = Faction(civilian);
@@ -165,7 +165,7 @@ private _taskId = "CONVOY" + str A3A_taskCount;
 [[teamPlayer,civilian],_taskId,[_textX,_taskTitle,_mrkDest],_posDest,false,0,true,_taskIcon,true] call BIS_fnc_taskCreate;
 [_taskId, "CONVOY", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
 
-ServerInfo_3("%1 convoy mission created from %2 to %3", _convoyType, _mrkOrigin, _mrkDest);
+ServerInfo_3("%1 convoy mission created from %2 to %3",_convoyType,_mrkOrigin,_mrkDest);
 
 
 // *********** Convoy vehicle spawning ***********************
@@ -174,15 +174,15 @@ private _route = [_posOrigin, _posDest] call A3A_fnc_findPath;
 
 private _markers = [];
 if (_visible) then {
-	private _markerColor = if (_sideX == Occupants) then {colorOccupants} else {colorInvaders};
+	private _markerColor = [colorInvaders, colorOccupants] select (_sideX == Occupants);
 	
 	{ 
 		private _waypointPosition = _x select 0;  
 		private _marker = createMarker [format ["%1convoyNode%2", random 10000, random 10000], _waypointPosition]; 
-		_marker setMarkerType "hd_dot"; 
-		_marker setMarkerSize [1, 1]; 
-		_marker setMarkerText ""; 
-		_marker setMarkerColor _markerColor; 
+		_marker setMarkerTypeLocal "hd_dot"; 
+		_marker setMarkerSizeLocal [1, 1]; 
+		_marker setMarkerTextLocal ""; 
+		_marker setMarkerColorLocal _markerColor; 
 		_marker setMarkerAlpha 1; 
 		_markers pushBack _marker;
 	} forEach _route;
@@ -199,17 +199,17 @@ private _resourcesSpent = 0;
 
 private _fnc_spawnConvoyVehicle = {
     params ["_vehType", "_markName"];
-    ServerDebug_1("Spawning vehicle type %1", _vehType);
+    ServerDebug_1("Spawning vehicle type %1",_vehType);
 
     // Find location down route
-    _pathState = [_route, [20, 0] select (count _pathState == 0), _pathState] call A3A_fnc_findPosOnRoute;
+    _pathState = [_route, [20, 0] select (_pathState isEqualTo []), _pathState] call A3A_fnc_findPosOnRoute;
     while {true} do {
         // make sure there are no other vehicles within 10m
-        if (count (ASLtoAGL (_pathState#0) nearEntities 10) == 0) exitWith {};
+        if ((ASLToAGL (_pathState#0) nearEntities 10) isEqualTo []) exitWith {};
         _pathState = [_route, 10, _pathState] call A3A_fnc_findPosOnRoute;
     };
 
-    private _veh = createVehicle [_vehType, ASLtoAGL (_pathState#0) vectorAdd [0,0,0.5]];               // Give it a little air
+    private _veh = createVehicle [_vehType, ASLToAGL (_pathState#0) vectorAdd [0,0,0.5]];               // Give it a little air
     private _vecUp = (_pathState#1) vectorCrossProduct [0,0,1] vectorCrossProduct (_pathState#1);       // correct pitch angle
     _veh setVectorDirAndUp [_pathState#1, _vecUp];
     _veh allowDamage false;
@@ -360,8 +360,8 @@ if (_resPool != "legacy") then {
 // Remove spawn-suicide protection
 sleep 2;
 {_x allowDamage true} forEach _vehiclesX;
-{_x allowDamage true; if (vehicle _x == _x) then {deleteVehicle _x}} forEach _soldiers;
-ServerInfo_2("Spawn performed: %1 ground vehicles, %2 soldiers", count _vehiclesX, count _soldiers);
+{_x allowDamage true; if (isNull objectParent _x) then {deleteVehicle _x}} forEach _soldiers;
+ServerInfo_2("Spawn performed: %1 ground vehicles, %2 soldiers",count _vehiclesX,count _soldiers);
 
 
 // Send the vehicles after the delay
@@ -385,7 +385,7 @@ reverse _markNames;
 
 // **************** Termination condition handling ********************************
 
-private _bonus = if (_difficult) then {1.5} else {1};
+private _bonus = [1, 1.5] select (_difficult);
 private _arrivalDist = 100;
 private _timeout = time + 3600;
 
@@ -393,8 +393,8 @@ private _fnc_applyResults =
 {
     params ["_success", "_success1", "_adjustCA", "_adjustBoss", "_aggroMod", "_aggroTime", "_type"];
 
-    _taskState = if (_success) then { "SUCCEEDED" } else { "FAILED" };
-    _taskState1 = if (_success1) then { "SUCCEEDED" } else { "FAILED" };
+    _taskState = ["FAILED", "SUCCEEDED"] select (_success);
+    _taskState1 = ["FAILED", "SUCCEEDED"] select (_success1);
 
     [_adjustCA, _sideX] remoteExec ["A3A_fnc_timingCA", 2];
     [_adjustBoss,theBoss] call A3A_fnc_addScorePlayer;
@@ -404,12 +404,12 @@ private _fnc_applyResults =
 
     if !(_success1) then {
         _killZones = killZones getVariable [_mrkOrigin,[]];
-        _killZones = _killZones + [_mrkDest,_mrkDest];
+        _killZones append [_mrkDest,_mrkDest];
         killZones setVariable [_mrkOrigin,_killZones,true];
     };
 
 #define CONVOY_MISSION_STATUS_ARRAY ["lost", "won"]
-    ServerDebug_2("Rebels %1 a %2 convoy mission", CONVOY_MISSION_STATUS_ARRAY select _success, _type);
+    ServerDebug_2("Rebels %1 a %2 convoy mission",CONVOY_MISSION_STATUS_ARRAY select _success,_type);
 };
 
 if (_convoyType isEqualTo "Ammunition") then
@@ -501,7 +501,7 @@ if (_convoyType isEqualTo "Prisoners") then
     };
     if (side group driver _vehObj != _sideX) then
     {
-        {_x enableAI "MOVE"; [_x] orderGetin false} forEach _POWs;
+        {_x enableAI "MOVE"; [_x] orderGetIn false} forEach _POWs;
         waitUntil {sleep 2; ({alive _x} count _POWs == 0) or ({(alive _x) and (_x distance _posHQ < 50)} count _POWs > 0) or (time > _timeout)};
 
         if (({alive _x} count _POWs == 0) or (time > _timeout)) then
@@ -678,7 +678,7 @@ missionNamespace setVariable ["A3A_convoyInProgress", false, true];
 // Hang around for a bit, and then send all escorts back to the source base
 sleep 60;
 {
-    if (count units _x > 0) then {
+    if (units _x isNotEqualTo []) then {
         private _wp = _x addWaypoint [_posOrigin, 50];
         _wp setWaypointType "MOVE";
         _x setCurrentWaypoint _wp;

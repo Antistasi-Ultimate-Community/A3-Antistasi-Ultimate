@@ -25,9 +25,9 @@ params ["_supportName", "_side", "_resPool", "_maxSpend", "_target", "_targPos",
 /// add _oppositeSide and send it into routine function 
 
 private _airport = [_side, _targPos] call A3A_fnc_availableBasesAir;
-if (isNil "_airport") exitWith { Debug_1("No airport found for %1 support", _supportName); -1; };
+if (isNil "_airport") exitWith { Debug_1("No airport found for %1 support",_supportName); -1; };
 
-private _aggro = if(_side == Occupants) then {aggressionOccupants} else {aggressionInvaders};
+private _aggro = [aggressionInvaders, aggressionOccupants] select (_side == Occupants);
 if (_delay < 0) then { _delay = (0.5 + random 1) * (450 - 15*tierWar - 1*_aggro) };
 
 private _faction = Faction(_side);
@@ -38,7 +38,7 @@ if (_side == Occupants) then {
     _oppositeSide = Occupants;
 };
 private _vehType = selectRandom (_faction get "vehiclesPlanesGunship");
-if (isNil "_vehType") exitWith { Debug_1("No gunship for faction.", _supportName); -1; };
+if (isNil "_vehType") exitWith { Debug("No gunship for faction."); -1; };
 
 private _targArray = [];
 if (_target isEqualType objNull and {!isNull _target}) then {

@@ -9,7 +9,7 @@ if (!isServer and hasInterface) exitWith{};
 private _positionX = getMarkerPos _markerX;
 private _difficultX = random 10 < tierWar;
 
-private _sideX = if (sidesX getVariable [_markerX,sideUnknown] == Occupants) then {Occupants} else {Invaders};
+private _sideX = [Invaders, Occupants] select (sidesX getVariable [_markerX,sideUnknown] == Occupants);
 private _faction = Faction(_sideX);
 
 private _limit = if (_difficultX) then {
@@ -31,22 +31,22 @@ private _taskId = "AS" + str A3A_taskCount;
 [[teamPlayer,civilian],_taskId,[_taskString,localize "STR_A3A_Missions_AS_specOP_task_header",_markerX],_positionX,false,0,true,"Kill",true] call BIS_fnc_taskCreate;
 [_taskId, "AS", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
 
-waitUntil {sleep 1;dateToNumber date > _dateLimitNum or {(spawner getVariable _markerX != 2 and !(sidesX getVariable [_markerX,sideUnknown] == teamPlayer))}};
+waitUntil {sleep 1;dateToNumber date > _dateLimitNum or {(spawner getVariable _markerX != 2 and (sidesX getVariable [_markerX,sideUnknown] != teamPlayer))}};
 
 private _groupX = createGroup _sideX;
 
-if ((spawner getVariable _markerX != 2) and {!(sidesX getVariable [_markerX,sideUnknown] == teamPlayer)}) then {
+if ((spawner getVariable _markerX != 2) and {(sidesX getVariable [_markerX,sideUnknown] != teamPlayer)}) then {
 	private _specOps = selectRandom (_faction get "groupSpecOpsRandom");
 	_groupX = [_positionX, _sideX, _specOps] call A3A_fnc_spawnGroup;
 	{[_x] call A3A_fnc_NATOinit} forEach units _groupX;
 	[_groupX, "Patrol_Area", 25, 100, 250, true, _positionX, false] call A3A_fnc_patrolLoop;
-	Info_2("SpecOps Group Array: %1, Group: %2", str _specOps, str _groupX);
+	Info_2("SpecOps Group Array: %1, Group: %2",str _specOps,str _groupX);
 };
 
 waitUntil {
 	sleep 1; 
 	_aliveCount = {alive _x} count units _groupX;
-	Info_1("SpecOps team alive count: %1", str _aliveCount);
+	Info_1("SpecOps team alive count: %1",str _aliveCount);
 	dateToNumber date > _dateLimitNum or {sidesX getVariable [_markerX,sideUnknown] == teamPlayer or {_aliveCount == 0}}};
 
 if (dateToNumber date > _dateLimitNum) then

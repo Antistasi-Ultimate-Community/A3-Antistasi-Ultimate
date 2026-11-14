@@ -26,9 +26,9 @@
 */
 
 #include "..\..\script_component.hpp"
-params [["_unit", ObjNull], ["_caller", ObjNull]];
+params [["_unit", objNull], ["_caller", objNull]];
 
-if (_unit isEqualTo ObjNull || _caller isEqualTo ObjNull) exitWith {nil};
+if (_unit isEqualTo objNull || _caller isEqualTo objNull) exitWith {nil};
 
 // Check if the caller is inside a vehicle
 if !(isNull objectParent _caller) exitWith {
@@ -110,9 +110,9 @@ if (_isDialogSuccessful) exitWith {
                             "STR_antistasi_actions_talk_with_civ_success_zone_reveal2"
                         ];
 
-                        [(_this#0), (localize _message)] remoteExec ["globalChat", _caller];
+                        [(_this#0), (localize _message)] remoteExec ["globalChat", (_this#1)];
                     },
-                    [_unit], 
+                    [_unit, _caller], 
                     5 // 5s is around the time it takes me to read the entire paragraph
                 ] call CBA_fnc_waitAndExecute;
 

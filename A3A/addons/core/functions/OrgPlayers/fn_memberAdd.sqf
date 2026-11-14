@@ -12,7 +12,7 @@ if (isNil "membersX") exitWith {
 	[localize "STR_A3A_OrgPlayers_membership_header", localize "STR_A3A_OrgPlayers_membership_noinit"] call SCRT_fnc_misc_deniedHint;
 };
 
-_target = cursortarget;
+_target = cursorTarget;
 
 if (!isPlayer _target) exitWith {
 	[localize "STR_A3A_OrgPlayers_membership_header", localize "STR_A3A_OrgPlayers_membership_notarget"] call SCRT_fnc_misc_deniedHint;

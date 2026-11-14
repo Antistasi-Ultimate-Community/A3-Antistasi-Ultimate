@@ -106,9 +106,6 @@ class CfgVehicles
 	class SPE_M4A3_T34_Calliope_Direct;
 	class SPE_M4A3_T34_Calliope;
 
-	class SPE_FR_M4A0_105_DLV;
-	class SPE_FR_M4A3_75_DLV;
-	class SPE_FR_M4A3_76_DLV;
 
 	class SPE_M4A0_composite_DLV;
 	class SPE_M4A1_75_erla_DLV;

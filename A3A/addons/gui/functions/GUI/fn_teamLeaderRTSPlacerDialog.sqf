@@ -209,7 +209,7 @@ switch (_mode) do
 
                 private _object = (A3A_building_EHDB get BUILD_OBJECT_TEMP_OBJECT);
                 private _className = _control getVariable ["className", "Land_Tyres_F"];
-                if (_className == typeof _object) exitWith {};			// refire, potentially caused by hitting space
+                if (_className == typeOf _object) exitWith {};			// refire, potentially caused by hitting space
 
                 private _price = _control getVariable ["price", 0];
                 private _supply = A3A_building_EHDB get AVAILABLE_MONEY;
@@ -261,6 +261,6 @@ switch (_mode) do
     default
     {
         // Log error if attempting to call a mode that doesn't exist
-        Error_1("Mode does not exist: %1", _mode);
+        Error_1("Mode does not exist: %1",_mode);
     };
 };

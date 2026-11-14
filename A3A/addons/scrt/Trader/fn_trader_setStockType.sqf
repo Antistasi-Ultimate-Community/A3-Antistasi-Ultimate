@@ -63,13 +63,13 @@ if (_oldCfg isNotEqualTo []) then {
         // Check if this modset is associated with a DLC
         private _dlc = _modsetToDLC get _prefix;
         if (!isNil "_dlc" && {!(_dlc in A3A_enabledDLC)}) then {
-            Verbose_2("Skipped DLC-based modset %1 (DLC %2 not enabled)", _prefix, _dlc);
+            Verbose_2("Skipped DLC-based modset %1 (DLC %2 not enabled)",_prefix,_dlc);
             continue;
         };
 
         if ([_addons] call A3U_fnc_hasAddon) then {
             _modsets pushBackUnique _prefix;
-            Error_1("Added %1 to _modsets list (old version). It is now deprecated and should be updated ASAP.", _prefix);
+            Error_1("Added %1 to _modsets list (old version). It is now deprecated and should be updated ASAP.",_prefix);
         };
     } forEach _oldCfg;
 };
@@ -91,13 +91,13 @@ private _ignoreClasses = ["traderWeapons", "traderVehicles"];
     // Check if this modset is associated with a DLC
     private _dlc = _modsetToDLC get _prefix;
     if (!isNil "_dlc" && {!(_dlc in A3A_enabledDLC)}) then {
-        Verbose_2("Skipped DLC-based modset %1 (DLC %2 not enabled)", _prefix, _dlc);
+        Verbose_2("Skipped DLC-based modset %1 (DLC %2 not enabled)",_prefix,_dlc);
         continue;
     };
 
     if ([_addons] call A3U_fnc_hasAddon) then {
         _modsets pushBackUnique _prefix;
-        Verbose_1("Added %1 to _modsets list.", _prefix);
+        Verbose_1("Added %1 to _modsets list.",_prefix);
     };
 } forEach _cfg;
 

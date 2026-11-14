@@ -4,7 +4,7 @@
 class MagRepack_Dialog_Main
 {
 	idd = -1;
-	movingenable = false;
+	movingenable = 0;
 	onLoad = "uiNamespace setVariable ['outlw_MR_Dialog_Main', (_this select 0)]";
 	onUnload = "call outlw_MR_onDialogDestroy;";
 	onMouseButtonUp = "call outlw_MR_onMouseButtonUp;";
@@ -66,7 +66,7 @@ class MagRepack_Dialog_Main
 		{
 			idc = 1000;
 
-			text = $STR_magRepack_allmags;
+			text = "$STR_magRepack_allmags";
 			x = 7.75 * GUI_GRID_W + GUI_GRID_X;
 			y = 1.25 * GUI_GRID_H + GUI_GRID_Y;
 			w = 10 * GUI_GRID_W;
@@ -136,7 +136,7 @@ class MagRepack_Dialog_Main
 			idc = 1002;
 			style = 0;
 
-			text = $STR_magRepack_source;
+			text = "$STR_magRepack_source";
 			x = 19 * GUI_GRID_W + GUI_GRID_X;
 			y = 2.8125 * GUI_GRID_H + GUI_GRID_Y;
 			w = 17 * GUI_GRID_W;
@@ -162,7 +162,7 @@ class MagRepack_Dialog_Main
 			idc = 1004;
 			style = 1;
 
-			text = $STR_magRepack_target;
+			text = "$STR_magRepack_target";
 			x = 19 * GUI_GRID_W + GUI_GRID_X;
 			y = 11.8125 * GUI_GRID_H + GUI_GRID_Y;
 			w = 17 * GUI_GRID_W;
@@ -489,13 +489,13 @@ class MagRepack_Dialog_Main
 			w = 0.76 * GUI_GRID_W;
 			h = 0.75 * GUI_GRID_H;
 			
-			default = false;
+			default = 0;
 		};
 		class MR_ButtonOptions: outlw_MR_RscButtonMenu
 		{
 			idc = 2400;
 			
-			text = $STR_magRepack_options;
+			text = "$STR_magRepack_options";
 			action = "call outlw_MR_optionsMenu;";
 			x = 18.5 * GUI_GRID_W + GUI_GRID_X;
 			y = 16.75 * GUI_GRID_H + GUI_GRID_Y;
@@ -557,7 +557,7 @@ class MagRepack_Dialog_Main
 				{
 					idc = 9001;
 
-					text = $STR_magRepack_options2;
+					text = "$STR_magRepack_options2";
 					x = 1.75 * GUI_GRID_W + GUI_GRID_X;
 					y = 0 * GUI_GRID_H + GUI_GRID_Y;
 					w = 6 * GUI_GRID_W;
@@ -573,7 +573,7 @@ class MagRepack_Dialog_Main
 				class MR_ButtonOption_Debug: outlw_MR_RscButtonMenu
 				{
 					idc = 9002;
-					text = $STR_magRepack_debug;
+					text = "$STR_magRepack_debug";
 					action = "call outlw_MR_debugSwitch;";
 					x = 0 * GUI_GRID_W + GUI_GRID_X;
 					y = 1.125 * GUI_GRID_H + GUI_GRID_Y;
@@ -585,12 +585,12 @@ class MagRepack_Dialog_Main
 						size = "0.875";
 					};
 					
-					default = false;
+					default = 0;
 				};
 				class MR_ButtonOption_ShowFull: outlw_MR_RscButtonMenu
 				{
 					idc = 9004;
-					text = $STR_magRepack_full;
+					text = "$STR_magRepack_full";
 					action = "call outlw_MR_showFullSwitch;";
 					x = 0 * GUI_GRID_W + GUI_GRID_X;
 					y = 2.125 * GUI_GRID_H + GUI_GRID_Y;
@@ -602,12 +602,12 @@ class MagRepack_Dialog_Main
 						size = "0.875";
 					};
 					
-					default = false;
+					default = 0;
 				};
 				class MR_ButtonOption_Keybindings: outlw_MR_RscButtonMenu
 				{
 					idc = 9003;
-					text = $STR_magRepack_keybindings;
+					text = "$STR_magRepack_keybindings";
 					action = "call outlw_MR_openKeybindings";
 					x = 0 * GUI_GRID_W + GUI_GRID_X;
 					y = 3.125 * GUI_GRID_H + GUI_GRID_Y;
@@ -619,12 +619,12 @@ class MagRepack_Dialog_Main
 						size = "0.875";
 					};
 					
-					default = false;
+					default = 0;
 				};
 				class MR_ButtonOption_About: outlw_MR_RscButtonMenu
 				{
 					idc = 9005;
-					text = $STR_magRepack_about_header;
+					text = "$STR_magRepack_about_header";
 					action = "call outlw_MR_openAbout";
 					x = 0 * GUI_GRID_W + GUI_GRID_X;
 					y = 4.125 * GUI_GRID_H + GUI_GRID_Y;
@@ -636,12 +636,12 @@ class MagRepack_Dialog_Main
 						size = "0.875";
 					};
 					
-					default = false;
+					default = 0;
 				};
 				class MR_ButtonOption_Hide: outlw_MR_RscButtonMenu
 				{
 					idc = 9006;
-					text = $STR_magRepack_hide;
+					text = "$STR_magRepack_hide";
 					action = "call outlw_MR_optionsMenu;";
 					x = 4.5 * GUI_GRID_W + GUI_GRID_X;
 					y = 5.25 * GUI_GRID_H + GUI_GRID_Y;
@@ -654,7 +654,7 @@ class MagRepack_Dialog_Main
 						size = "0.875";
 					};
 					
-					default = false;
+					default = 0;
 				};
 			};
 		};	

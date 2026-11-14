@@ -1,3 +1,4 @@
+#pragma hemtt ignore_variables ["_dataStore"]
 /*
  * File: fn_loadout_addMedicalSupplies.sqf
  * Author: Spoffy

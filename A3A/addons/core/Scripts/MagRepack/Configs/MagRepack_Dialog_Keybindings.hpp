@@ -24,7 +24,7 @@ class MagRepack_Dialog_Keybindings
 		class KB_MainTitle: outlw_MR_RscText
 		{
 			idc = 1000;
-			text = $STR_magRepack_keybinds;
+			text = "$STR_magRepack_keybinds";
 			
 			x = 10 * GUI_GRID_W + GUI_GRID_X;
 			y = 9.375 * GUI_GRID_H + GUI_GRID_Y;
@@ -35,7 +35,7 @@ class MagRepack_Dialog_Keybindings
 		class KB_ButtonCancel: outlw_MR_RscButtonMenu
 		{
 			idc = 2400;
-			text = $STR_magRepack_cancel;
+			text = "$STR_magRepack_cancel";
 			action = "closeDialog 0";
 			
 			x = 22.5 * GUI_GRID_W + GUI_GRID_X;
@@ -43,7 +43,7 @@ class MagRepack_Dialog_Keybindings
 			w = 7.5 * GUI_GRID_W;
 			h = 1 * GUI_GRID_H;
 			
-			default = false;
+			default = 0;
 			
 			class Attributes
 			{
@@ -63,7 +63,7 @@ class MagRepack_Dialog_Keybindings
 		class KB_ButtonApply: outlw_MR_RscButtonMenu
 		{
 			idc = 2401;
-			text = $STR_magRepack_apply;
+			text = "$STR_magRepack_apply";
 			action = "[[outlw_KB_cShift, outlw_KB_cCtrl, outlw_KB_cAlt, outlw_KB_cKey]] call outlw_MR_applyKeybinding;";
 			
 			x = 10 * GUI_GRID_W + GUI_GRID_X;
@@ -71,7 +71,7 @@ class MagRepack_Dialog_Keybindings
 			w = 7.5 * GUI_GRID_W;
 			h = 1 * GUI_GRID_H;
 			
-			default = false;
+			default = 0;
 		};
 		class KB_BG_Keybinding: outlw_MR_IGUIBack
 		{
@@ -252,7 +252,7 @@ class MagRepack_Dialog_Keybindings
 		class KB_KeyDescription: outlw_MR_RscStructuredText
 		{
 			idc = 2572;
-			text = $STR_magRepack_keybinds;
+			text = "$STR_magRepack_keybinds";
 			
 			x = 10.875 * GUI_GRID_W + GUI_GRID_X;
 			y = 11.375 * GUI_GRID_H + GUI_GRID_Y;
@@ -267,7 +267,7 @@ class MagRepack_Dialog_Keybindings
 		class KB_ModDescription: outlw_MR_RscStructuredText
 		{
 			idc = 2573;
-			text = $STR_magRepack_modifiers;
+			text = "$STR_magRepack_modifiers";
 			
 			x = 10.875 * GUI_GRID_W + GUI_GRID_X;
 			y = 12.625 * GUI_GRID_H + GUI_GRID_Y;

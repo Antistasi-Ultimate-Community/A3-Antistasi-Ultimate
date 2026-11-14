@@ -19,7 +19,7 @@ params [
 if (isNil "HALs_store_stats_weapons") exitWith {
 	// Taken from BIS_fnc_arsenal, modified by HallyG
 	HALs_store_stats_weapons = [
-		("getNumber (_x >> 'scope') isEqualTo 2 && getNumber (_x >> 'type') < 5") configClasses (configfile >> "cfgWeapons"),
+		("getNumber (_x >> 'scope') isEqualTo 2 && getNumber (_x >> 'type') < 5") configClasses (configFile >> "cfgWeapons"),
 		["reloadtime","dispersion","maxzeroing","hit","initSpeed"],
 		[true,true,false,true,false]
 	] call bis_fnc_configExtremes;

@@ -1,3 +1,5 @@
+#ifndef A3A_GUI_IDS_INC
+#define A3A_GUI_IDS_INC
 /*
 Maintainer: DoomMetal
     Contains IDDs and IDCs for the GUI.
@@ -238,8 +240,6 @@ Maintainer: DoomMetal
 ///////////////////////////
 
 // Request Mission
-#define A3A_IDD_REQUESTMISSIONDIALOG 9000
-#define A3A_IDC_REQUESTMISSIONMAIN 9001
 
 // Recruit
 #define A3A_IDD_RECRUITDIALOG 9100
@@ -560,3 +560,4 @@ Maintainer: DoomMetal
 #define A3A_IDC_EDITZONES_RESOURCESCHECKBOX 9904
 #define A3A_IDC_EDITZONES_FACTORIESCHECKBOX 9905
 #define A3A_IDC_EDITZONES_SEAPORTSCHECKBOX 9906
+#endif

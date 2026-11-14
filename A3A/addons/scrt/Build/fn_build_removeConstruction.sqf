@@ -40,7 +40,7 @@ if (_buildingIndex == -1) exitWith {
     Error("Can't find building, aborting.");
 };
 
-Info_2("Deleting %1 object on %2 position...", (typeOf _building), str (position _building));
+Info_2("Deleting %1 object on %2 position...",(typeOf _building),str (position _building));
 
 deleteVehicle _building;
 

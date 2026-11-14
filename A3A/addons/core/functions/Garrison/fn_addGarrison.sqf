@@ -37,7 +37,7 @@ private _nonReinfUnits = [["", [], []]];
     if(_index == -1) then
     {
       //Vehicle is new, will still be added with crew
-      if(_nonReinfUnits select ((count _nonReinfUnits) - 1) select 0 != "") then
+      if(_nonReinfUnits select -1 select 0 != "") then
       {
         //Current _nonReinfUnits already got a vehicle, add another
         _nonReinfUnits pushBack [_vehicle, _crew, []];
@@ -45,8 +45,8 @@ private _nonReinfUnits = [["", [], []]];
       else
       {
         //Current _nonReinfUnits got no vehicle, add there
-        (_nonReinfUnits select ((count _nonReinfUnits) - 1)) set [0, _vehicle];
-        ((_nonReinfUnits select ((count _nonReinfUnits) - 1)) select 1) append _crew;
+        (_nonReinfUnits select -1) set [0, _vehicle];
+        ((_nonReinfUnits select -1) select 1) append _crew;
       };
       _isNew = true;
     }

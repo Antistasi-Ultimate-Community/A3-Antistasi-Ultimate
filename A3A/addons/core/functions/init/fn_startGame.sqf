@@ -2,11 +2,11 @@
 FIX_LINE_NUMBERS()
 
 if (isRemoteExecuted and remoteExecutedOwner != owner A3A_setupPlayer) exitWith {
-    Error_1("Wrong player (%1) attempted to start game, ignoring", remoteExecutedOwner);
+    Error_1("Wrong player (%1) attempted to start game, ignoring",remoteExecutedOwner);
 };
 
 params ["_saveData"];
-Info_1("startGame called with data %1", _saveData);
+Info_1("startGame called with data %1",_saveData);
 
 // savedata sanity checks could go here 
 if !(_saveData get "params" isEqualType createHashMap) then {

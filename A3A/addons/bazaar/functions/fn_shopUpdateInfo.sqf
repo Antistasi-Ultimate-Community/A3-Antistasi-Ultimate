@@ -131,7 +131,7 @@ private _slot = (_shop select 3) select (_map select _row);
 _slot params ["_class", "_price", "_tier", "_qty", "_bulk", "_kind"];
 ([_tier] call ABZ_fnc_rarityInfo) params ["_rName", "_rHex"];
 private _pinBtn = _d displayCtrl ABZ_IDC_BUTTONPIN;
-_pinBtn ctrlEnable !(_kind isEqualTo "vehicle");
+_pinBtn ctrlEnable (_kind isNotEqualTo "vehicle");
 private _classBase = [_class] call ABZ_fnc_wantedBase;
 _pinBtn ctrlSetText localize (["STR_A3U_Bazaar_Shop_Pin", "STR_A3U_Bazaar_Shop_Unpin"] select (((call ABZ_fnc_wantedList) findIf { _x == _class || {_x == _classBase} }) > -1));
 

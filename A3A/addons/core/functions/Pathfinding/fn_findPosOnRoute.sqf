@@ -27,7 +27,7 @@ Example:
 */
 
 params ["_route", "_spacing", ["_state", []]];
-if (count _state == 0) then { _state = [[], 0, 0, [], ATLtoASL (_route select 0), false] };
+if (count _state == 0) then { _state = [[], 0, 0, [], ATLToASL (_route select 0), false] };
 _state params ["_vecStart", "_vecDir", "_routeIdx", "_roads", "_vecEnd", "_vecReady"];
 
 // only sanity checks would be _route >= 2 and _spacing >= 0?
@@ -49,7 +49,7 @@ while {true} do
         if (_routeIdx+1 == count _route) then {
             // Reached the end of the route. Continue in final direction. 
             private _pos = _vecStart vectorAdd (_vecDir vectorMultiply _spacing);
-            _pos set [2, 0]; _pos = ATLtoASL _pos;
+            _pos set [2, 0]; _pos = ATLToASL _pos;
             breakWith [_pos, _vecDir, _routeIdx, [], [], false];
         };
         private _road1 = roadAt (_route select _routeIdx);
@@ -67,7 +67,7 @@ while {true} do
         _vecEnd = [_roads select 0, _roads select 1] call A3A_fnc_roadConnPoint;
         _roads deleteAt 0;
     } else {
-        _vecEnd = ATLtoASL (_route select _routeIdx);
+        _vecEnd = ATLToASL (_route select _routeIdx);
     };
     _vecDir = _vecStart vectorFromTo _vecEnd;
 };

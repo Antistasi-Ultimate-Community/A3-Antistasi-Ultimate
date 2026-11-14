@@ -34,7 +34,7 @@ private _path = if (isText (missionConfigFile/"A3A"/"Navgrid"/worldName)) then {
     getText (configFile/"A3A"/"Navgrid"/worldName);
 };
 
-if (!fileExists _path) exitWith { Error_1("Invalid path to navgird: %1", _path); };
+if (!fileExists _path) exitWith { Error_1("Invalid path to navgird: %1",_path); };
 private _navGridDB_formatted = preprocessFileLineNumbers _path;
 if ("navGrid" in _navGridDB_formatted) then {   // Try to remove assignment code
     private _startIndex = (_navGridDB_formatted find "=") + 1;
@@ -46,7 +46,7 @@ if ("navGrid" in _navGridDB_formatted) then {   // Try to remove assignment code
 
 NavGrid = parseSimpleArray _navGridDB_formatted;
 if (NavGrid isEqualTo []) exitWith {
-    Error_1("Road database for %1 could not be loaded", worldName);
+    Error_1("Road database for %1 could not be loaded",worldName);
     Error("Nav Grid with the name format navGrid<WorldName> are no longer compatible! DO NOT LOAD THEM!");
 };
 

@@ -35,7 +35,7 @@ try {
 	{
 		if (!isClass (configFile >> "cfgHALsAddons" >> "cfgHALsStore" >> "stores" >> _x)) then {
 			throw ["Invalid Trader type", __LINE__];
-			Error_2("Broken Entry: %1. Full Entry: %2", _x, _traderType);
+			Error_2("Broken Entry: %1. Full Entry: %2",_x,_traderType);
 		};
 	} forEach _traderType;
 
@@ -54,7 +54,7 @@ try {
 		_categories = _categories + _categoryAdd;
 	} forEach _traderType;
 
-	Verbose_1("_categories:\n%1", _categories);
+	Verbose_1("_categories:\n%1",_categories);
 
 	private _classes = [];
 	private _stocks = [];
@@ -65,7 +65,7 @@ try {
 		_items = "true" configClasses (_configCategory) apply {configName _x};
 
 		_duplicateClass = {_classes find _x > -1} count _items > 0;
-		_duplicateItem = !(count (_items arrayIntersect _items) isEqualTo count _items);
+		_duplicateItem = (count (_items arrayIntersect _items) isNotEqualTo count _items);
 		// if (_duplicateClass || _duplicateItem) then {
 			// throw [format ["Duplicate items [category: %1, type: %2]", toUpper _x, toUpper (_traderType select 0)], __LINE__];
 		// };

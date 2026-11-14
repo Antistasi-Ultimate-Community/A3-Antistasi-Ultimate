@@ -37,3 +37,6 @@ Tools/csvparser/xlsx2csv/*.csv
 Tools/ValidationResults.txt
 Tools/ValidationTemplates.txt
 /Tools/csvparser/output
+
+#Ignore BI A3 files
+A3A/include/a3/

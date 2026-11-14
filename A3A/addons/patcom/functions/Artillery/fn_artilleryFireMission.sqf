@@ -41,18 +41,14 @@ private _side = side _callerGroup;
             private _veh = vehicle _x;
             private _class = typeOf _veh;
             if ((_class == "") || (gunner _veh != _x)) then { continue; };
-            private _artyChk = getNumber(configfile/"CfgVehicles"/_class/"artilleryScanner");
-            if (_artyChk isEqualTo 1) then {
-                if !(_veh in _batteryArray) then {
-                    _batteryArray pushBackUnique _veh;
-                };
-            };
+            private _artyChk = getNumber(configFile/"CfgVehicles"/_class/"artilleryScanner");
+            if (_artyChk isEqualTo 1) then { _batteryArray pushBackUnique _veh };
         } forEach (units _x);
     };
 } forEach ((groups _side) select {_x getVariable ["PATCOM_ArtilleryBattery", false]});
 
-if (count _batteryArray == 0) exitWith {
-    If (PATCOM_DEBUG) then {
+if (_batteryArray isEqualTo []) exitWith {
+    if (PATCOM_DEBUG) then {
         [leader _callerGroup, "NO SUPPORT AVAILABLE", 5, "Red"] call A3A_fnc_debugText3D;
     };
 };
@@ -69,7 +65,7 @@ _group setVariable ["PATCOM_ArtilleryBusy", true, true];
 
 /////// CHECK IF UNITS ARE IN DANGER CLOSE PROXIMITY \\\\\\\
 if ([_targetPos, _area, _side] call A3A_fnc_artilleryDangerClose) then {
-    If (PATCOM_DEBUG) then {
+    if (PATCOM_DEBUG) then {
         [leader _group, "DANGER CLOSE", 5, "Yellow"] call A3A_fnc_debugText3D;
     };
 
@@ -107,12 +103,12 @@ if (_batteryClass in (_faction get "staticMortars")) then {
 };
 
 if (_shellType == "") exitWith {
-    ServerDebug_1("Unable to find ammoType for Classname - %1", _batteryClass);
+    ServerDebug_1("Unable to find ammoType for Classname - %1",_batteryClass);
 };
 
 /////// FINAL ARTILLERY RANGE CHECK \\\\\\\
 if !(_targetPos inRangeOfArtillery [[_selectedBattery], _shellType]) exitWith {
-    If (PATCOM_DEBUG) then {
+    if (PATCOM_DEBUG) then {
         [leader _group, "OUT OF RANGE", 5, "Red"] call A3A_fnc_debugText3D;
     };
     _group setVariable ["PATCOM_ArtilleryBusy", false, true];
@@ -125,7 +121,7 @@ if !(_targetPos inRangeOfArtillery [[_selectedBattery], _shellType]) exitWith {
     for "_i" from 1 to _rounds do {
         private _finalTargetPos = [_targetPos, (random 50), _area, 0, 1, -1, 0] call A3A_fnc_getSafePos;
         _selectedBattery doArtilleryFire [_finalTargetPos, _shellType, 1];
-        If (PATCOM_DEBUG) then {
+        if (PATCOM_DEBUG) then {
             [leader _group, "ROUND AWAY", 1, "Green"] call A3A_fnc_debugText3D;
         };
         sleep (_reloadTime + (2 + (random 4)));

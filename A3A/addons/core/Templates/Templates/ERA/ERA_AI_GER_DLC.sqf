@@ -1,3 +1,5 @@
+#pragma hemtt ignore_variables ["_fnc_saveNames","_fnc_createLoadoutData","_fnc_copyLoadoutData","_fnc_generateAndSaveUnitsToTemplate","_fnc_saveToTemplate"]
+
 //////////////////////////
 //   Side Information   //
 //////////////////////////
@@ -72,7 +74,7 @@ if (isClass (configFile >> "CfgPatches" >> "sab_sw_i16")) then {
 	_vehiclesPlanesAA append ["sab_sw_me262","sab_sw_bf110"];
 };
 
-if (isClass (configfile >> "CfgPatches" >> "Tornado_AWS")) then {
+if (isClass (configFile >> "CfgPatches" >> "Tornado_AWS")) then {
     _vehiclesPlanesCAS append ["Tornado_AWS_camo_ger"];
     _vehiclesPlanesAA append ["Tornado_AWS_GER", "Tornado_AWS_ecr_ger"];
 };

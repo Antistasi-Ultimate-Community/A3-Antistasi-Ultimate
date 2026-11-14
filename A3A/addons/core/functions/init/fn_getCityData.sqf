@@ -13,9 +13,9 @@ private _hardCodedPopulation = _townPopulations isNotEqualTo [];
 
 private _cityConfigs = "(toLower getText (_x >> ""type"") in [""namecitycapital"",""namecity"",""namevillage"",""citycenter""]) &&
 !(getText (_x >> ""Name"") isEqualTo """") && !((configName _x) in _disabledTowns)"
-configClasses (configfile >> "CfgWorlds" >> worldName >> "Names");
+configClasses (configFile >> "CfgWorlds" >> worldName >> "Names");
 if (toLowerANSI worldName isEqualTo "blud_vidda") then {
-	private _rv133 = ("configName _x == 'DefaultKeyPoint32'" configClasses (configfile >> "CfgWorlds" >> worldName >> "Names")) select 0;
+	private _rv133 = ("configName _x == 'DefaultKeyPoint32'" configClasses (configFile >> "CfgWorlds" >> worldName >> "Names")) select 0;
 	_cityConfigs pushBack _rv133; //RV-133, big city without city marker
 };
 
@@ -33,7 +33,7 @@ _cityConfigs apply {
 		_numCiv = server getVariable [_nameX, server getVariable (configName _x)]; //backwards compat to config name based pop defines
 		if (isNil "_numCiv" || {!(_numCiv isEqualType 0)}) then
 		{
-            Error_1("Bad population count data for %1", _nameX);
+            Error_1("Bad population count data for %1",_nameX);
 			_numCiv = (count (nearestObjects [_pos, ["house"], _size]));
 		};
 	}
@@ -42,7 +42,7 @@ _cityConfigs apply {
 	};
 
 	_roads = nearestTerrainObjects [_pos, ["MAIN ROAD", "ROAD", "TRACK"], _size, true, true];
-	if (count _roads > 0) then {
+	if (_roads isNotEqualTo []) then {
 		// Move marker position to the nearest road, if any
 		_pos = _roads select 0;
 	};

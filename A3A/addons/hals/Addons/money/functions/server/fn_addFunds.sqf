@@ -25,7 +25,7 @@ private _money = ((_unit getVariable ["moneyX", 0]) + _funds) max 0;
 _money = round _money;
 
 _unit setVariable ["moneyX", _money, true];
-_sign = if(_funds > 0) then {"+"} else {""};
+_sign = ["", "+"] select (_funds > 0);
 
 _textX = format ["<br/><br/><br/><br/><br/><br/><t color='#00FF00'>%1 %2 %3</t>", _sign, _funds, A3A_faction_civ get "currencySymbol"];
 [petros,"income",_textX] remoteExec ["A3A_fnc_commsMP",_unit];

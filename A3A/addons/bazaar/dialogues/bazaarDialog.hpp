@@ -17,11 +17,11 @@
 //           argument = the list's height)
 //   wholeHeight (combo drop-downs) is screen height only, no UI scale, and
 //   the low combo is capped so the open list ends on the screen.
-// The game reads this file as text (the PBO holds config.cpp, not a
-// config.bin), so these expressions reach the dialog loader as STRINGS and
-// are evaluated with createDialog. Keep the macro bodies UNQUOTED (or use
-// QUOTE): a body written as "..." is not parameter-substituted and would
-// ship a literal (NUM). Inside a body only single quotes. missionNamespace
+// HEMTT rapifies this config, so every use of these macros is wrapped in
+// QUOTE(...): the expressions reach the dialog loader as STRINGS and are
+// evaluated with createDialog. Keep the macro bodies UNQUOTED: a body
+// written as "..." is not parameter-substituted and would ship a literal
+// (NUM). Inside a body only single quotes. missionNamespace
 // is named on purpose - UI expressions may be evaluated in uiNamespace.
 // SQF precedence: * and / bind tighter than + - min max, which bind tighter
 // than getVariable. Checked by _tools\ui_check.py (expression rule, layout
@@ -29,7 +29,6 @@
 ////////////////////////////////////////////////////////////////////
 
 #include "ids.inc"
-#define QUOTE(s) #s
 #define ABZ_FW (safeZoneW min (safeZoneH * 1.75))
 #define ABZ_X(NUM) safeZoneX + (safeZoneW - ABZ_FW) / 2 + ABZ_FW * (0.015 + 0.97 * (NUM))
 #define ABZ_Y(NUM) safeZoneY + safeZoneH * (0.02 + 0.96 * (NUM))
@@ -59,15 +58,15 @@ class ABZ_RscText
 	colorText[] = {1,1,1,1};
 	text = "";
 	fixedWidth = 0;
-	x = ABZ_X(0);
-	y = ABZ_Y(0);
-	h = ABZ_H(0.037);
-	w = ABZ_W(0.3);
+	x = QUOTE(ABZ_X(0));
+	y = QUOTE(ABZ_Y(0));
+	h = QUOTE(ABZ_H(0.037));
+	w = QUOTE(ABZ_W(0.3));
 	style = 0;
 	shadow = 1;
 	colorShadow[] = {0,0,0,0.5};
 	font = "PuristaMedium";
-	sizeEx = ABZ_F(0.04);
+	sizeEx = QUOTE(ABZ_F(0.04));
 	linespacing = 1;
 	tooltipColorText[] = {1,1,1,1};
 	tooltipColorBox[] = {1,1,1,1};
@@ -84,12 +83,12 @@ class ABZ_RscStructuredText
 	style = 0;
 	colorText[] = {1,1,1,1};
 	colorBackground[] = {0,0,0,0};
-	x = ABZ_X(0);
-	y = ABZ_Y(0);
-	h = ABZ_H(0.035);
-	w = ABZ_W(0.1);
+	x = QUOTE(ABZ_X(0));
+	y = QUOTE(ABZ_Y(0));
+	h = QUOTE(ABZ_H(0.035));
+	w = QUOTE(ABZ_W(0.1));
 	text = "";
-	size = ABZ_F(0.035);
+	size = QUOTE(ABZ_F(0.035));
 	shadow = 1;
 	class Attributes
 	{
@@ -111,15 +110,15 @@ class ABZ_RscPicture
 	colorBackground[] = {0,0,0,0};
 	colorText[] = {1,1,1,1};
 	font = "TahomaB";
-	sizeEx = ABZ_F(0.03);
+	sizeEx = QUOTE(ABZ_F(0.03));
 	lineSpacing = 0;
 	text = "";
 	fixedWidth = 0;
 	shadow = 0;
-	x = ABZ_X(0);
-	y = ABZ_Y(0);
-	w = ABZ_W(0.2);
-	h = ABZ_H(0.15);
+	x = QUOTE(ABZ_X(0));
+	y = QUOTE(ABZ_Y(0));
+	w = QUOTE(ABZ_W(0.2));
+	h = QUOTE(ABZ_H(0.15));
 };
 
 class ABZ_RscButton
@@ -143,13 +142,13 @@ class ABZ_RscButton
 	soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1};
 	idc = -1;
 	style = 2;
-	x = ABZ_X(0);
-	y = ABZ_Y(0);
-	w = ABZ_W(0.095589);
-	h = ABZ_H(0.039216);
+	x = QUOTE(ABZ_X(0));
+	y = QUOTE(ABZ_Y(0));
+	w = QUOTE(ABZ_W(0.095589));
+	h = QUOTE(ABZ_H(0.039216));
 	shadow = 2;
 	font = "PuristaMedium";
-	sizeEx = ABZ_F(0.03921);
+	sizeEx = QUOTE(ABZ_F(0.03921));
 	url = "";
 	offsetX = 0;
 	offsetY = 0;
@@ -197,17 +196,17 @@ class ABZ_RscCombo
 	};
 	style = 16;
 	font = "PuristaMedium";
-	sizeEx = ABZ_F(0.03921);
+	sizeEx = QUOTE(ABZ_F(0.03921));
 	shadow = 0;
-	x = ABZ_X(0);
-	y = ABZ_Y(0);
-	w = ABZ_W(0.12);
-	h = ABZ_H(0.035);
+	x = QUOTE(ABZ_X(0));
+	y = QUOTE(ABZ_Y(0));
+	w = QUOTE(ABZ_W(0.12));
+	h = QUOTE(ABZ_H(0.035));
 	colorActive[] = {1,0,0,1};
 	colorDisabled[] = {1,1,1,0.25};
 	arrowEmpty = "\A3\ui_f\data\GUI\RscCommon\rsccombo\arrow_combo_ca.paa";
 	arrowFull = "\A3\ui_f\data\GUI\RscCommon\rsccombo\arrow_combo_active_ca.paa";
-	wholeHeight = ABZ_H(0.45);
+	wholeHeight = QUOTE(ABZ_H(0.45));
 	maxHistoryDelay = 1;
 	soundSelect[] = {"\A3\ui_f\data\sound\RscCombo\soundSelect",0.1,1};
 	soundExpand[] = {"\A3\ui_f\data\sound\RscCombo\soundExpand",0.1,1};
@@ -222,12 +221,12 @@ class ABZ_RscListNBox
 	access = 0;
 	type = 102;
 	style = 16;
-	x = ABZ_X(0);
-	y = ABZ_Y(0);
-	w = ABZ_W(0.4);
-	h = ABZ_H(0.4);
+	x = QUOTE(ABZ_X(0));
+	y = QUOTE(ABZ_Y(0));
+	w = QUOTE(ABZ_W(0.4));
+	h = QUOTE(ABZ_H(0.4));
 	font = "PuristaMedium";
-	sizeEx = ABZ_F(0.032);
+	sizeEx = QUOTE(ABZ_F(0.032));
 	shadow = 0;
 	rowHeight = 0;		// rows follow the font
 	color[] = {1,1,1,1};
@@ -281,12 +280,12 @@ class ABZ_RscEdit
 	access = 0;
 	type = 2;
 	style = "0x00 + 0x40";
-	x = ABZ_X(0);
-	y = ABZ_Y(0);
-	w = ABZ_W(0.3);
-	h = ABZ_H(0.04);
+	x = QUOTE(ABZ_X(0));
+	y = QUOTE(ABZ_Y(0));
+	w = QUOTE(ABZ_W(0.3));
+	h = QUOTE(ABZ_H(0.04));
 	font = "PuristaMedium";
-	sizeEx = ABZ_F(0.036);
+	sizeEx = QUOTE(ABZ_F(0.036));
 	shadow = 0;
 	text = "";
 	colorBackground[] = {0,0,0,0.6};
@@ -315,10 +314,10 @@ class ABZ_RscControlsGroup
 	idc = -1;
 	style = 16;
 	shadow = 0;
-	x = ABZ_X(0);
-	y = ABZ_Y(0);
-	w = ABZ_W(0.2);
-	h = ABZ_H(0.2);
+	x = QUOTE(ABZ_X(0));
+	y = QUOTE(ABZ_Y(0));
+	w = QUOTE(ABZ_W(0.2));
+	h = QUOTE(ABZ_H(0.2));
 	class VScrollbar
 	{
 		color[] = {1,1,1,0.6};
@@ -385,21 +384,21 @@ class ABZ_Shop
 		class Background: ABZ_RscText
 		{
 			idc = -1;
-			x = ABZ_X(0);
-			y = ABZ_Y(0);
-			w = ABZ_W(1);
-			h = ABZ_H(0.935);
+			x = QUOTE(ABZ_X(0));
+			y = QUOTE(ABZ_Y(0));
+			w = QUOTE(ABZ_W(1));
+			h = QUOTE(ABZ_H(0.935));
 			colorBackground[] = {0.05,0.05,0.05,0.85};
 		};
 		class TitleBar: ABZ_RscText
 		{
 			idc = ABZ_IDC_TITLEBAR;
-			text = $STR_A3U_Bazaar_GUI_Title;
-			x = ABZ_X(0);
-			y = ABZ_Y(0);
-			w = ABZ_W(1);
-			h = ABZ_H(0.055);
-			sizeEx = ABZ_FC(0.045,0.055);
+			text = "$STR_A3U_Bazaar_GUI_Title";
+			x = QUOTE(ABZ_X(0));
+			y = QUOTE(ABZ_Y(0));
+			w = QUOTE(ABZ_W(1));
+			h = QUOTE(ABZ_H(0.055));
+			sizeEx = QUOTE(ABZ_FC(0.045,0.055));
 			colorBackground[] = {0.75,0.5,0.15,0.9};
 			colorText[] = {0,0,0,1};
 		};
@@ -411,55 +410,55 @@ class ABZ_Shop
 		class CategoryCombo: ABZ_RscCombo
 		{
 			idc = ABZ_IDC_CATEGORYCOMBO;
-			x = ABZ_X(0.015);
-			y = ABZ_Y(0.075);
-			w = ABZ_W(0.5);
-			h = ABZ_H(0.045);
-			sizeEx = ABZ_FC(0.036,0.045);
-			wholeHeight = ABZ_H(0.56);	// 11 categories at UI scale 1.8 without a scroll
+			x = QUOTE(ABZ_X(0.015));
+			y = QUOTE(ABZ_Y(0.075));
+			w = QUOTE(ABZ_W(0.5));
+			h = QUOTE(ABZ_H(0.045));
+			sizeEx = QUOTE(ABZ_FC(0.036,0.045));
+			wholeHeight = QUOTE(ABZ_H(0.56));	// 11 categories at UI scale 1.8 without a scroll
 			onLBSelChanged = "call ABZ_fnc_shopFillList";
 		};
 		class ItemList: ABZ_RscListNBox
 		{
 			idc = ABZ_IDC_ITEMLIST;
-			x = ABZ_X(0.015);
-			y = ABZ_Y(0.13);
-			w = ABZ_W(0.5);
-			h = ABZ_H(0.66);
+			x = QUOTE(ABZ_X(0.015));
+			y = QUOTE(ABZ_Y(0.13));
+			w = QUOTE(ABZ_W(0.5));
+			h = QUOTE(ABZ_H(0.66));
 			onLBSelChanged = "call ABZ_fnc_shopUpdateInfo";
 			onLBDblClick = "call ABZ_fnc_shopBuy";
 		};
 		class RestockText: ABZ_RscText
 		{
 			idc = ABZ_IDC_RESTOCKTEXT;
-			x = ABZ_X(0.015);
-			y = ABZ_Y(0.795);
-			w = ABZ_W(0.22);
-			h = ABZ_H(0.045);
-			sizeEx = ABZ_FC(0.032,0.045);
+			x = QUOTE(ABZ_X(0.015));
+			y = QUOTE(ABZ_Y(0.795));
+			w = QUOTE(ABZ_W(0.22));
+			h = QUOTE(ABZ_H(0.045));
+			sizeEx = QUOTE(ABZ_FC(0.032,0.045));
 			colorText[] = {1,0.85,0.5,1};
 		};
 		class WantedEdit: ABZ_RscEdit
 		{
 			idc = ABZ_IDC_WANTEDEDIT;
-			tooltip = $STR_A3U_Bazaar_GUI_WantedEdit;
+			tooltip = "$STR_A3U_Bazaar_GUI_WantedEdit";
 			text = "";
-			x = ABZ_X(0.015);
-			y = ABZ_Y(0.795);
-			w = ABZ_W(0.405);
-			h = ABZ_H(0.045);
-			sizeEx = ABZ_FC(0.034,0.045);
+			x = QUOTE(ABZ_X(0.015));
+			y = QUOTE(ABZ_Y(0.795));
+			w = QUOTE(ABZ_W(0.405));
+			h = QUOTE(ABZ_H(0.045));
+			sizeEx = QUOTE(ABZ_FC(0.034,0.045));
 		};
 		class ButtonWantedAdd: ABZ_RscButton
 		{
 			idc = ABZ_IDC_BUTTONWANTEDADD;
-			text = $STR_A3U_Bazaar_GUI_WantedAdd;
-			tooltip = $STR_A3U_Bazaar_GUI_WantedAdd_Tooltip;
-			x = ABZ_X(0.43);
-			y = ABZ_Y(0.795);
-			w = ABZ_W(0.085);
-			h = ABZ_H(0.045);
-			sizeEx = ABZ_FC(0.034,0.045);
+			text = "$STR_A3U_Bazaar_GUI_WantedAdd";
+			tooltip = "$STR_A3U_Bazaar_GUI_WantedAdd_Tooltip";
+			x = QUOTE(ABZ_X(0.43));
+			y = QUOTE(ABZ_Y(0.795));
+			w = QUOTE(ABZ_W(0.085));
+			h = QUOTE(ABZ_H(0.045));
+			sizeEx = QUOTE(ABZ_FC(0.034,0.045));
 			action = QUOTE([ctrlText ((findDisplay ABZ_IDD_SHOP) displayCtrl ABZ_IDC_WANTEDEDIT)] spawn ABZ_fnc_wantedFind);
 		};
 
@@ -467,17 +466,17 @@ class ABZ_Shop
 		class PreviewPic: ABZ_RscPicture
 		{
 			idc = ABZ_IDC_PREVIEWPIC;
-			x = ABZ_X(0.535);
-			y = ABZ_Y(0.075);
-			w = ABZ_W(0.45);
-			h = ABZ_H(0.27);
+			x = QUOTE(ABZ_X(0.535));
+			y = QUOTE(ABZ_Y(0.075));
+			w = QUOTE(ABZ_W(0.45));
+			h = QUOTE(ABZ_H(0.27));
 		};
 		class InfoPanel: ABZ_RscControlsGroup
 		{
-			x = ABZ_X(0.535);
-			y = ABZ_Y(0.355);
-			w = ABZ_W(0.45);
-			h = ABZ_H(0.32);
+			x = QUOTE(ABZ_X(0.535));
+			y = QUOTE(ABZ_Y(0.355));
+			w = QUOTE(ABZ_W(0.45));
+			h = QUOTE(ABZ_H(0.32));
 			class Controls
 			{
 				class InfoText: ABZ_RscStructuredText
@@ -485,28 +484,28 @@ class ABZ_Shop
 					idc = ABZ_IDC_INFOTEXT;
 					x = QUOTE(0);
 					y = QUOTE(0);
-					w = ABZ_W(0.45) - ABZ_SBW;
-					h = ABZ_H(0.32);
-					size = ABZ_F(0.031);
+					w = QUOTE(ABZ_W(0.45) - ABZ_SBW);
+					h = QUOTE(ABZ_H(0.32));
+					size = QUOTE(ABZ_F(0.031));
 				};
 			};
 		};
 		class MoneyText: ABZ_RscText
 		{
 			idc = ABZ_IDC_MONEYTEXT;
-			x = ABZ_X(0.535);
-			y = ABZ_Y(0.683);
-			w = ABZ_W(0.45);
-			h = ABZ_H(0.04);
-			sizeEx = ABZ_FC(0.034,0.04);
+			x = QUOTE(ABZ_X(0.535));
+			y = QUOTE(ABZ_Y(0.683));
+			w = QUOTE(ABZ_W(0.45));
+			h = QUOTE(ABZ_H(0.04));
+			sizeEx = QUOTE(ABZ_FC(0.034,0.04));
 			colorText[] = {0.6,1,0.6,1};
 		};
 		class HelpPanel: ABZ_RscControlsGroup
 		{
-			x = ABZ_X(0.535);
-			y = ABZ_Y(0.73);
-			w = ABZ_W(0.45);
-			h = ABZ_H(0.11);
+			x = QUOTE(ABZ_X(0.535));
+			y = QUOTE(ABZ_Y(0.73));
+			w = QUOTE(ABZ_W(0.45));
+			h = QUOTE(ABZ_H(0.11));
 			class Controls
 			{
 				class HelpText: ABZ_RscStructuredText
@@ -514,10 +513,10 @@ class ABZ_Shop
 					idc = ABZ_IDC_HELPTEXT;
 					x = QUOTE(0);
 					y = QUOTE(0);
-					w = ABZ_W(0.45) - ABZ_SBW;
-					h = ABZ_H(0.11);
-					size = ABZ_F(0.026);
-					text = $STR_A3U_Bazaar_GUI_HelpText;
+					w = QUOTE(ABZ_W(0.45) - ABZ_SBW);
+					h = QUOTE(ABZ_H(0.11));
+					size = QUOTE(ABZ_F(0.026));
+					text = "$STR_A3U_Bazaar_GUI_HelpText";
 				};
 			};
 		};
@@ -526,71 +525,71 @@ class ABZ_Shop
 		class QtyEdit: ABZ_RscEdit
 		{
 			idc = ABZ_IDC_QTYEDIT;
-			tooltip = $STR_A3U_Bazaar_GUI_QtyEdit_Tooltip;
+			tooltip = "$STR_A3U_Bazaar_GUI_QtyEdit_Tooltip";
 			text = "1";
-			x = ABZ_X(0.015);
-			y = ABZ_Y(0.86);
-			w = ABZ_W(0.075);
-			h = ABZ_H(0.055);
-			sizeEx = ABZ_FC(0.036,0.055);
+			x = QUOTE(ABZ_X(0.015));
+			y = QUOTE(ABZ_Y(0.86));
+			w = QUOTE(ABZ_W(0.075));
+			h = QUOTE(ABZ_H(0.055));
+			sizeEx = QUOTE(ABZ_FC(0.036,0.055));
 		};
 		class DestCombo: ABZ_RscCombo
 		{
 			idc = ABZ_IDC_DESTCOMBO;
-			tooltip = $STR_A3U_Bazaar_GUI_DestCombo_Tooltip;
-			x = ABZ_X(0.1);
-			y = ABZ_Y(0.86);
-			w = ABZ_W(0.255);
-			h = ABZ_H(0.055);
-			sizeEx = ABZ_FC(0.034,0.055) min (0.0336 * safeZoneH);	// 3 rows in the drop-down at any UI scale
-			wholeHeight = ABZ_H(0.16);	// the open list ends on the screen
+			tooltip = "$STR_A3U_Bazaar_GUI_DestCombo_Tooltip";
+			x = QUOTE(ABZ_X(0.1));
+			y = QUOTE(ABZ_Y(0.86));
+			w = QUOTE(ABZ_W(0.255));
+			h = QUOTE(ABZ_H(0.055));
+			sizeEx = QUOTE(ABZ_FC(0.034,0.055) min (0.0336 * safeZoneH));	// 3 rows in the drop-down at any UI scale
+			wholeHeight = QUOTE(ABZ_H(0.16));	// the open list ends on the screen
 		};
 		class ButtonBuy: ABZ_RscButton
 		{
 			idc = ABZ_IDC_BUTTONBUY;
-			text = $STR_A3U_Bazaar_GUI_ButtonBuy;
-			x = ABZ_X(0.365);
-			y = ABZ_Y(0.86);
-			w = ABZ_W(0.14);
-			h = ABZ_H(0.055);
-			sizeEx = ABZ_FC(0.038,0.055);
+			text = "$STR_A3U_Bazaar_GUI_ButtonBuy";
+			x = QUOTE(ABZ_X(0.365));
+			y = QUOTE(ABZ_Y(0.86));
+			w = QUOTE(ABZ_W(0.14));
+			h = QUOTE(ABZ_H(0.055));
+			sizeEx = QUOTE(ABZ_FC(0.038,0.055));
 			colorBackground[] = {0.55,0.35,0.1,0.9};
-			action = "call ABZ_fnc_shopBuy";
+			action = QUOTE(call ABZ_fnc_shopBuy);
 		};
 		class ButtonPin: ABZ_RscButton
 		{
 			idc = ABZ_IDC_BUTTONPIN;
-			text = $STR_A3U_Bazaar_GUI_ButtonPin;
-			tooltip = $STR_A3U_Bazaar_GUI_ButtonPin_Tooltip;
-			x = ABZ_X(0.515);
-			y = ABZ_Y(0.86);
-			w = ABZ_W(0.1);
-			h = ABZ_H(0.055);
-			sizeEx = ABZ_FC(0.036,0.055);
-			action = "call ABZ_fnc_shopPin";
+			text = "$STR_A3U_Bazaar_GUI_ButtonPin";
+			tooltip = "$STR_A3U_Bazaar_GUI_ButtonPin_Tooltip";
+			x = QUOTE(ABZ_X(0.515));
+			y = QUOTE(ABZ_Y(0.86));
+			w = QUOTE(ABZ_W(0.1));
+			h = QUOTE(ABZ_H(0.055));
+			sizeEx = QUOTE(ABZ_FC(0.036,0.055));
+			action = QUOTE(call ABZ_fnc_shopPin);
 		};
 		class ButtonRumours: ABZ_RscButton
 		{
 			idc = ABZ_IDC_BUTTONRUMOURS ;
-			text = $STR_A3U_Bazaar_GUI_ButtonRumours;
-			tooltip = $STR_A3U_Bazaar_GUI_ButtonRumours_Tooltip;
-			x = ABZ_X(0.625);
-			y = ABZ_Y(0.86);
-			w = ABZ_W(0.17);
-			h = ABZ_H(0.055);
-			sizeEx = ABZ_FC(0.036,0.055);
-			action = "call ABZ_fnc_rumours";
+			text = "$STR_A3U_Bazaar_GUI_ButtonRumours";
+			tooltip = "$STR_A3U_Bazaar_GUI_ButtonRumours_Tooltip";
+			x = QUOTE(ABZ_X(0.625));
+			y = QUOTE(ABZ_Y(0.86));
+			w = QUOTE(ABZ_W(0.17));
+			h = QUOTE(ABZ_H(0.055));
+			sizeEx = QUOTE(ABZ_FC(0.036,0.055));
+			action = QUOTE(call ABZ_fnc_rumours);
 		};
 		class ButtonClose: ABZ_RscButton
 		{
 			idc = ABZ_IDC_BUTTONCLOSE;
-			text = $STR_A3U_Bazaar_GUI_ButtonClose;
-			x = ABZ_X(0.805);
-			y = ABZ_Y(0.86);
-			w = ABZ_W(0.18);
-			h = ABZ_H(0.055);
-			sizeEx = ABZ_FC(0.036,0.055);
-			action = "closeDialog 0";
+			text = "$STR_A3U_Bazaar_GUI_ButtonClose";
+			x = QUOTE(ABZ_X(0.805));
+			y = QUOTE(ABZ_Y(0.86));
+			w = QUOTE(ABZ_W(0.18));
+			h = QUOTE(ABZ_H(0.055));
+			sizeEx = QUOTE(ABZ_FC(0.036,0.055));
+			action = QUOTE(closeDialog 0);
 		};
 	};
 };

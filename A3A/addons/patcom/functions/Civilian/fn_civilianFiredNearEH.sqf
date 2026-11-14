@@ -57,7 +57,7 @@ private _anim = "ApanPercMstpSnonWnonDnon_ApanPknlMstpSnonWnonDnon";
 if (random 1 > 0.35) then {
     // Get a list of tracks from the Civilian Fear tracks hashmap
     private _tracks = A3A_Civilian_Amb_Tracks get "Fear";
-    if (count _tracks > 0) then {
+    if (_tracks isNotEqualTo []) then {
         private _panicNoise = selectRandom _tracks;
         [_unit, _panicNoise # 0] remoteExec ["say3D"];
     } else {
