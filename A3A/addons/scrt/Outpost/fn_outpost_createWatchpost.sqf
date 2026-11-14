@@ -76,7 +76,7 @@ switch (true) do {
 		markersX pushBack _marker;
 		publicVariable "markersX";
 		spawner setVariable [_marker,2,true];
-		_nul = [-5,5,_position] remoteExec ["A3A_fnc_citySupportChange",2];
+		_nul = [0,5,_position] remoteExec ["A3A_fnc_citySupportChange",2];
 		_marker setMarkerType "A3AU_watchpost_mrk";
 		_marker setMarkerColor colorTeamPlayer;
 		_marker setMarkerText "";

@@ -35,7 +35,7 @@ private _fnc_endMission = {
 
     [_taskId, "townBattle", "FAILED"] call A3A_fnc_taskSetState;
 
-    [10,-10,_mrkDest,false] spawn A3A_fnc_citySupportChange;
+    [0,-30,_mrkDest,false] spawn A3A_fnc_citySupportChange;
     townSkirmishes = townSkirmishes - [_mrkDest, _closestAdminMarker];
     bigAttackInProgress = false; publicVariable "bigAttackInProgress";
 
@@ -119,7 +119,7 @@ private _pos = [_posDest, 1, (_sizeSpawn / 2), 3, 0, 20, 0, [], [_posDest, _posD
 private _nearestRoad = getPosATL ([_pos, _sizeSpawn] call BIS_fnc_nearestRoad);
 if (_nearestRoad isEqualTo ObjNull) then {_nearestRoad = _pos};
 
-private _vehicleClass = selectRandom ["vehiclesLightArmed", "vehiclesLightUnarmed", "vehiclesAT", "vehiclesCivCar", "vehiclesCivSupply"];
+private _vehicleClass = selectRandom ["vehiclesLightArmed", "vehiclesLightUnarmed", "vehiclesCivCar", "vehiclesCivSupply"];
 private _vipVehicleClass = selectRandom (A3A_faction_reb getOrDefault [_vehicleClass, A3A_faction_reb get "vehiclesBasic"]);
 private _vipVehicleData = [_nearestRoad, (random 360), _vipVehicleClass, _groupVIP] call A3A_fnc_spawnVehicle;
 private _vipVehicle = _vipVehicleData select 0;
@@ -150,8 +150,8 @@ if ((primaryWeapon _vip) isEqualTo "") then {
 
 // Effects
 
-private _vehicleCrashClassesRebel = (_factionReb get "vehiclesLightArmed") + (_factionReb get "vehiclesLightUnarmed") + (_factionReb get "vehiclesAT");
-private _vehicleCrashClasses = (_faction get "vehiclesMilitiaAPCs") + (_faction get "vehiclesMilitiaLightArmed") + (_faction get "vehiclesMilitiaTrucks") + _vehicleCrashClassesRebel;
+private _vehicleCrashClassesRebel = (_factionReb get "vehiclesLightArmed") + (_factionReb get "vehiclesLightUnarmed");
+private _vehicleCrashClasses = (_faction get "vehiclesMilitiaLightArmed") + (_faction get "vehiclesMilitiaTrucks") + _vehicleCrashClassesRebel;
 private _deadSoldierClassesCiv = [A3A_faction_civ, ["unitMan", "unitWorker"]];
 private _deadSoldierClassesReb = [A3A_faction_reb, ["unitRifle", "unitSL", "unitEng", "unitLAT", "unitSniper", "unitMG", "unitExp"]];
 private _deadSoldierClassesFaction = [_faction, ["unitMilitiaGrunt", "unitMilitiaMarksman", "unitMilitiaGrenadier", "unitMilitiaSniper", "unitMilitiaMedic", "unitPoliceOfficer"]];
@@ -162,6 +162,19 @@ private _damagedBuildings = (nearestObjects [_pos, ["house"], _size]) select {(c
 private _effectsFire = [];
 private _effectsVehicle = [];
 private _effectsUnits = [];
+
+if (random 100 < 15) then {
+    _vehicleCrashClasses append (_faction get "vehiclesMilitiaAPCs");
+    _vehicleCrashClasses append (_factionReb get "vehiclesAT");
+};
+
+waitUntil [
+    {
+        (call SCRT_fnc_misc_getRebelPlayers) findIf {_x inArea [_posDest, 1500, 1500, 0, false]} != -1
+    }, 
+    -1, 
+    5
+];
 
 {
     if (_forEachIndex >= 100) exitWith {};
@@ -186,7 +199,7 @@ for "_i" from 0 to round(random [4,5,6]) do {
     private _units = [_deadSoldierClasses, _posUnit, round(random [2, 3, 5])] call A3U_fnc_createDeadSoldiers;
 
     if (round(random 100) < 5) then {_vehicle setVectorUp [1, (selectRandom [0, 1]), 0]};
-    if (round(random 100) < 30) then {[_vehicle, true] call A3U_fnc_setLock};
+    if (round(random 100) < 50) then {[_vehicle, true] call A3U_fnc_setLock};
 
     _effectsFire append _fire;
     _effectsVehicle pushBack _vehicle;
@@ -197,7 +210,6 @@ for "_i" from 0 to round(random [4,5,6]) do {
 
 waitUntil {
     sleep 10; 
-    // (call SCRT_fnc_misc_getRebelPlayers) findIf {_x inArea [_posDest, 500, 500, 0, false]} != -1 || (time > _missionExpireTime); - Can re-add if wanted
     !([_vip] call A3A_fnc_canFight) || {(_vip distance2D _posDest) > _sizeFail}
     or (group _vip != _groupVIP) || (time > _missionExpireTime); // Wait until the vip is joined to a player group to trigger the boom booms
 };
@@ -207,7 +219,8 @@ if (time > _missionExpireTime) exitWith {
     [_taskId, _mrkDest, _closestAdminMarker, _vip] spawn _fnc_endMission;
 
     [_vipVehicle] spawn A3A_fnc_VEHDespawner;
-    { [_x] spawn A3A_fnc_VEHDespawner } forEach _effectsVehicle;
+    {deleteVehicle _x} forEach _effectsUnits;
+    {deleteVehicle _x} forEach _effectsVehicle;
     {deleteVehicle _x} forEach _effectsFire;
     { [_x] remoteExec ["A3A_fnc_repairRuinedBuilding", 2] } forEach _damagedBuildings;
 };
@@ -217,7 +230,8 @@ if ((_vip distance2D _posDest > _sizeFail) || !([_vip] call A3A_fnc_canFight)) e
     [_taskId, _mrkDest, _closestAdminMarker, _vip] spawn _fnc_endMission;
 
     [_vipVehicle] spawn A3A_fnc_VEHDespawner;
-    { [_x] spawn A3A_fnc_VEHDespawner } forEach _effectsVehicle;
+    {deleteVehicle _x} forEach _effectsUnits;
+    {deleteVehicle _x} forEach _effectsVehicle;
     {deleteVehicle _x} forEach _effectsFire;
     { [_x] remoteExec ["A3A_fnc_repairRuinedBuilding", 2] } forEach _damagedBuildings;
 };
@@ -293,7 +307,7 @@ if (_canSucceed) then {
     Info_2("Rebels lost a town attack against %1, %2", _side, _mrkDest);
     [_taskId, "townBattle", "FAILED"] call A3A_fnc_taskSetState;
     [_posDest, -20, 3000] call _fnc_adjustNearCities;
-    [0,-20,_mrkDest,false] spawn A3A_fnc_citySupportChange;
+    [_mrkDest, false] call A3A_fnc_citySupportReset;
 
     // Side pay extra to attack a city
     [-4 * _numCiv * A3A_balancePlayerScale, _side, "attack"] remoteExec ["A3A_fnc_addEnemyResources", 2];

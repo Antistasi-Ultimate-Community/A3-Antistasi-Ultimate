@@ -41,7 +41,7 @@ if ({alive _x} count units _groupX == 0) then {
 	watchpostsFIA = watchpostsFIA - [_markerX]; publicVariable "watchpostsFIA";
 	markersX = markersX - [_markerX]; publicVariable "markersX";
 	sidesX setVariable [_markerX,nil,true];
-	_nul = [5,-5,_positionX] remoteExec ["A3A_fnc_citySupportChange",2];
+	_nul = [5,0,_positionX] remoteExec ["A3A_fnc_citySupportChange",2];
 	deleteMarker _markerX;
 	["TaskFailed", ["", (localize "STR_notifiers_watchpost_lost")]] remoteExec ["BIS_fnc_showNotification", 0];
 };

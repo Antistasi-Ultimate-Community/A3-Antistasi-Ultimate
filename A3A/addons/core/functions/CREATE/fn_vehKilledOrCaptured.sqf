@@ -45,7 +45,7 @@ if ((_side == Occupants || _side == Invaders) && {_vehCost > 0 && {!(_type in (A
 
     [_side, round (_vehCost / 50), 45] remoteExec ["A3A_fnc_addAggression", 2];
 	if (_side == Occupants) then {
-		[-_vehCost / 100, _vehCost / 100, position _veh] remoteExec ["A3A_fnc_citySupportChange", 2];
+		[0, _vehCost / 100, position _veh] remoteExec ["A3A_fnc_citySupportChange", 2];
 	};
 };
 

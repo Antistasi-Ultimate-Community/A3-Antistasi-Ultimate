@@ -83,8 +83,8 @@ if (_sideX == Invaders) then {
 		if !(_taskId call BIS_fnc_taskCompleted) then
 		{
 			// Needs rework, probably
-            		private _reveal = [_positionX , Invaders] call A3A_fnc_calculateSupportCallReveal;
-            		[getPos _house, 4, ["QRF"], Invaders, _reveal] remoteExec ["A3A_fnc_createSupport", 2];
+			private _reveal = [_positionX , Invaders] call A3A_fnc_calculateSupportCallReveal;
+			[getPos _house, 4, ["QRF"], Invaders, _reveal] remoteExec ["A3A_fnc_createSupport", 2];
 		};
 	};
 } else {
@@ -93,24 +93,24 @@ if (_sideX == Invaders) then {
 	_roads = [];
 	_radius = 20;
 	while {count _roads == 0} do
-		{
+	{
 		_roads = (getPos _houseX) nearRoads _radius;
 		_radius = _radius + 10;
-		};
+	};
 	_road = _roads select 0;
 	_posroad = getPos _road;
 	_roadcon = roadsConnectedto _road; if (count _roadCon == 0) then {
         Error_1("Road has no connection :%1.",position _road);
-		};
+	};
 	if (count _roadCon > 0) then
-		{
+	{
 		_posrel = getPos (_roadcon select 0);
 		_dirveh = [_posroad,_posrel] call BIS_fnc_DirTo;
-		}
+	}
 	else
-		{
+	{
 		_dirVeh = getDir _road;
-		};
+	};
 	_posVeh = [_posroad, 3, _dirveh + 90] call BIS_Fnc_relPos;
 	_veh = (selectRandom (_faction get "vehiclesPolice")) createVehicle _posVeh;
 	_veh allowDamage false;
@@ -119,20 +119,20 @@ if (_sideX == Invaders) then {
 	_veh allowDamage true;
 	_nul = [_veh, Occupants] call A3A_fnc_AIVEHinit;
 	if ((random 100 < aggressionOccupants) or (_difficultX)) then
-		{
+	{
 		_groupX = [getPos _houseX,Occupants, selectRandom ([_faction, "groupsTierSquads"] call SCRT_fnc_unit_flattenTier)] call A3A_fnc_spawnGroup;
 		sleep 1;
-		}
+	}
 	else
-		{
+	{
 		_groupX = createGroup Occupants;
 		_groupX = [getPos _houseX,Occupants, _faction get "groupPoliceSquad"] call A3A_fnc_spawnGroup;
-		};
+	};
 	if (random 10 < 2.5) then
-		{
+	{
 		_dog = [_groupX, "Fin_random_F",_positionX,[],0,"FORM"] call A3A_fnc_createUnit;
 		[_dog] spawn A3A_fnc_guardDog;
-		};
+	};
 
 	[_groupX, "Patrol_Area", 25, 50, 100, true, _positionX, true] call A3A_fnc_patrolLoop;
 	
@@ -148,8 +148,8 @@ if (_sideX == Occupants) then {
 		sleep 5;
 		[_taskId, "RES", "SUCCEEDED"] call A3A_fnc_taskSetState;
 
-	private _hrMultiplier = overallHRGain / 100;
-	private _invertedMultiplier = 2 - _hrMultiplier; 
+		private _hrMultiplier = overallHRGain / 100;
+		private _invertedMultiplier = 2 - _hrMultiplier; 
 
 		_countX = {(alive _x) and (_x distance getMarkerPos respawnTeamPlayer < 150)} count _POWs;
 		_hr = ceil(_countX * _invertedMultiplier);
@@ -165,15 +165,18 @@ if (_sideX == Occupants) then {
 		[_bonusAmount,theBoss] call A3A_fnc_addScorePlayer;
 		[(_bonusAmount*10),theBoss, true] call A3A_fnc_addMoneyPlayer;
 		{[_x] join _groupPOW; [_x] orderGetin false} forEach _POWs;
+		[0,5*_bonus,_positionX] remoteExec ["A3A_fnc_citySupportChange",2];
 	} else {
 		[_taskId, "RES", "FAILED"] call A3A_fnc_taskSetState;
 		[-10*_bonus,theBoss] call A3A_fnc_addScorePlayer;
+		[5*_bonus,0,_positionX] remoteExec ["A3A_fnc_citySupportChange",2];
 	};
 } else {
 	waitUntil {sleep 1; ({alive _x} count _POWs == 0) or ({(alive _x) and (_x distance getMarkerPos respawnTeamPlayer < 50)} count _POWs > 0)};
 	if ({alive _x} count _POWs == 0) then {
 		[_taskId, "RES", "FAILED"] call A3A_fnc_taskSetState;
 		[-10*_bonus,theBoss] call A3A_fnc_addScorePlayer;
+		[5*_bonus,0,_positionX] remoteExec ["A3A_fnc_citySupportChange",2];
 	} else {
 		[_taskId, "RES", "SUCCEEDED"] call A3A_fnc_taskSetState;
 		_countX = {(alive _x) and (_x distance getMarkerPos respawnTeamPlayer < 150)} count _POWs;
@@ -189,6 +192,7 @@ if (_sideX == Occupants) then {
 		[_bonusAmount,theBoss] call A3A_fnc_addScorePlayer;
 		[(_bonusAmount*10),theBoss, true] call A3A_fnc_addMoneyPlayer;
 		{[_x] join _groupPOW; [_x] orderGetin false} forEach _POWs;
+		[0,5*_bonus,_positionX] remoteExec ["A3A_fnc_citySupportChange",2];
 	};
 };
 
@@ -197,14 +201,14 @@ _items = [];
 _ammunition = [];
 _weaponsX = [];
 {
-_unit = _x;
-if (_unit distance getMarkerPos respawnTeamPlayer < 150) then
+	_unit = _x;
+	if (_unit distance getMarkerPos respawnTeamPlayer < 150) then
 	{
-	{if (not(([_x] call BIS_fnc_baseWeapon) in unlockedWeapons)) then {_weaponsX pushBack ([_x] call BIS_fnc_baseWeapon)}} forEach weapons _unit;
-	{if (not(_x in unlockedMagazines)) then {_ammunition pushBack _x}} forEach magazines _unit;
-	_items = _items + (items _unit) + (primaryWeaponItems _unit) + (assignedItems _unit) + (secondaryWeaponItems _unit);
+		{if (not(([_x] call BIS_fnc_baseWeapon) in unlockedWeapons)) then {_weaponsX pushBack ([_x] call BIS_fnc_baseWeapon)}} forEach weapons _unit;
+		{if (not(_x in unlockedMagazines)) then {_ammunition pushBack _x}} forEach magazines _unit;
+		_items = _items + (items _unit) + (primaryWeaponItems _unit) + (assignedItems _unit) + (secondaryWeaponItems _unit);
 	};
-deleteVehicle _unit;
+	deleteVehicle _unit;
 } forEach _POWs;
 deleteGroup _groupPOW;
 {boxX addWeaponCargoGlobal [_x,1]} forEach _weaponsX;

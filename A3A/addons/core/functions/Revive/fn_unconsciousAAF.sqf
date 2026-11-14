@@ -62,7 +62,7 @@ if (time >= _bleedOutTime) exitWith
 		{
 			[2,_injurer] call A3A_fnc_addScorePlayer;
 		};
-		[-1,1,getPos _unit] remoteExec ["A3A_fnc_citySupportChange",2];
+		[0,1,getPos _unit] remoteExec ["A3A_fnc_citySupportChange",2];
 	};
     _unit setDamage 1;
 };

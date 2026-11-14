@@ -47,13 +47,13 @@ switch (_cause) do {
 	case "CAPTURE": {
 		["TaskSucceeded", ["", (localize "STR_notifiers_miladmin_captured")]] remoteExec ["BIS_fnc_showNotification", teamPlayer];
 		["TaskFailed", ["", (localize "STR_notifiers_miladmin_captured")]] remoteExec ["BIS_fnc_showNotification", Occupants];
-		[-25, 25, position _milAdministration] remoteExec ["A3A_fnc_citySupportChange",2];
+		[0, 25, position _milAdministration] remoteExec ["A3A_fnc_citySupportChange",2];
 	};
 	case "DESTROY": {
 		["TaskSucceeded", ["", (localize "STR_notifiers_miladmin_destroyed")]] remoteExec ["BIS_fnc_showNotification", teamPlayer];
 		["TaskFailed", ["", (localize "STR_notifiers_miladmin_destroyed")]] remoteExec ["BIS_fnc_showNotification", Occupants];
 		[Occupants, 15, 60] remoteExec ["A3A_fnc_addAggression",2];
-		[-25, 25, position _milAdministration] remoteExec ["A3A_fnc_citySupportChange",2];
+		[0, 25, position _milAdministration] remoteExec ["A3A_fnc_citySupportChange",2];
 
 		private _players = [300, _milAdministration] call SCRT_fnc_common_getNearPlayers;
 

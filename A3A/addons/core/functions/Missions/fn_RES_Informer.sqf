@@ -389,7 +389,7 @@ switch(true) do {
         [_side, -10, 60] remoteExec ["A3A_fnc_addAggression",2];
         [_taskId, "RES", "FAILED"] call A3A_fnc_taskSetState;
 
-        [5,-5,_positionX] remoteExec ["A3A_fnc_citySupportChange",2];
+        [5,0,_positionX] remoteExec ["A3A_fnc_citySupportChange",2];
 
         [-900, _side] remoteExec ["A3A_fnc_timingCA",2];
         [-10*_bonus,theBoss] call A3A_fnc_addScorePlayer;
@@ -397,7 +397,7 @@ switch(true) do {
     case (!alive _informer): {
         Info("Informer died, fail.");
 
-        [5,-5,_positionX] remoteExec ["A3A_fnc_citySupportChange",2];
+        [5,0,_positionX] remoteExec ["A3A_fnc_citySupportChange",2];
 
         [_side, -10, 60] remoteExec ["A3A_fnc_addAggression",2];
         [_taskId, "RES", "FAILED"] call A3A_fnc_taskSetState;
@@ -409,7 +409,7 @@ switch(true) do {
         Info("Informer survived and arrived to HQ, success.");
         [_taskId, "RES", "SUCCEEDED"] call A3A_fnc_taskSetState;
 
-        [0,10,_positionX] remoteExec ["A3A_fnc_citySupportChange",2];
+        [0,5*_bonus,_positionX] remoteExec ["A3A_fnc_citySupportChange",2];
         [1, 0] remoteExec ["A3A_fnc_resourcesFIA",2];
         [1800, _side] remoteExec ["A3A_fnc_timingCA",2];
 

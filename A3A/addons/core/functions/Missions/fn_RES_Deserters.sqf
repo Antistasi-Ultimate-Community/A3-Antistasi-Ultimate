@@ -176,7 +176,7 @@ private _bonus = if (_difficultX) then {2} else {1};
 if ({alive _x} count _Deserters == 0) then {
 	[_taskId, "RES", "FAILED"] call A3A_fnc_taskSetState;
 	{[_x,false] remoteExec ["setCaptive",0,_x]; _x setCaptive false} forEach _Deserters;
-	[-10*_bonus,theBoss] call A3A_fnc_addScorePlayer;
+	[-5*_bonus,theBoss] call A3A_fnc_addScorePlayer;
 } else {
 	sleep 5;
 	[_taskId, "RES", "SUCCEEDED"] call A3A_fnc_taskSetState;
@@ -188,7 +188,7 @@ if ({alive _x} count _Deserters == 0) then {
 	_hr = ceil((2 * _countX) * _invertedMultiplier);
 	_resourcesFIA = 100 * _countX*_bonus;
 	[_hr,_resourcesFIA] remoteExec ["A3A_fnc_resourcesFIA",2];
-	[0,10*_bonus,_positionX] remoteExec ["A3A_fnc_citySupportChange",2];
+	[0,5*_bonus,_positionX] remoteExec ["A3A_fnc_citySupportChange",2];
 	[Occupants, -(_countX * 1.5), 90] remoteExec ["A3A_fnc_addAggression",2];
 	{
 		[_countX, _x] call A3A_fnc_addScorePlayer;
