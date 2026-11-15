@@ -65,7 +65,7 @@ private _planesAA = ["B_Plane_CAS_01_dynamicLoadout_F","I_Plane_Fighter_03_dynam
 private _planesLargeAA = [];
 
 private _planesTransport = [];
-private _gunship = [];
+private _planesGunship = [];
 
 private _transportHelicopters = ["B_Heli_Transport_01_F","I_Heli_Transport_02_F"];
 
@@ -104,6 +104,47 @@ private _staticAA = ["B_static_AA_F"];
 ["staticMortars", ["B_Mortar_01_F"]] call _fnc_saveToTemplate;
 private _howitzers = [];
 
+if (_hasJets) then {
+    _planesAA pushBack "B_Plane_Fighter_01_Stealth_F";
+    _planesCAS pushBack "B_Plane_Fighter_01_F";
+};
+
+if (_hasApex) then {
+    _planesGunship pushBack "B_T_VTOL_01_armed_F";
+    _planesTransport pushBack "B_T_VTOL_01_infantry_F";
+};
+
+if (_hasHelicopters) then {
+    _transportHelicopters pushBack "B_Heli_Transport_03_F";
+};
+
+if (_hasTanks) then {
+    _lightTanks append ["B_AFV_Wheeled_01_cannon_F", "B_AFV_Wheeled_01_up_cannon_F"];
+};
+
+if (_hasRF) then {
+    _basic pushBack "B_Pickup_rf";
+    _unarmedVehicles append ["B_Pickup_rf", "B_Pickup_Comms_rf"];
+    _armedVehicles append ["B_Pickup_mmg_rf"];
+    _aa pushBack "B_Pickup_aat_rf";
+    _transportHelicopters pushBack "B_Heli_EC_04_military_RF";
+    _helisAttack pushBack "B_Heli_EC_03_RF";
+    _airPatrol pushBack "B_Heli_EC_03_RF";
+    _policeVehs append ["B_GEN_Pickup_covered_rf"];
+};
+
+if (_hasEF) then {
+    _transportBoat pushBack "EF_B_CombatBoat_Unarmed_MJTF_Des";
+    _gunBoat pushBack "EF_B_CombatBoat_HMG_MJTF_Des";
+    _policeVehs append ["EF_B_Gyra_GEN", "EF_B_Gyra_HMG_GEN"];
+    _aa pushBack "EF_B_MRAP_01_LAAD_MJTF_Des";
+};
+
+if (_hasWS) then {
+    _policeVehs pushBack "B_GEN_APC_Wheeled_02_hmg_lxWS";
+    _airborneVehicles pushBack "B_APC_Wheeled_01_atgm_lxWS";
+};
+
 ["howitzerMagazineHE", "magazine_ShipCannon_120mm_HE_shells_x32","magazine_ShipCannon_120mm_HE_cluster_shells_x2"] call _fnc_saveToTemplate;
 
 ["mortarMagazineHE", "8Rnd_82mm_Mo_shells"] call _fnc_saveToTemplate;
@@ -116,7 +157,7 @@ private _howitzers = [];
 ["vehiclesAirPatrol", _airPatrol] call _fnc_saveToTemplate;
 ["vehiclesPlanesLargeCAS", _planesLargeCAS] call _fnc_saveToTemplate;
 ["vehiclesPlanesLargeAA", _planesLargeAA] call _fnc_saveToTemplate;
-["vehiclesPlanesGunship", _gunship] call _fnc_saveToTemplate;
+["vehiclesPlanesGunship", _planesGunship] call _fnc_saveToTemplate;
 ["vehiclesTransportBoats", _transportBoat] call _fnc_saveToTemplate;
 ["vehiclesGunBoats", _gunBoat] call _fnc_saveToTemplate;
 ["vehiclesMilitiaTrucks", _militiaTrucks] call _fnc_saveToTemplate;

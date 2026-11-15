@@ -174,7 +174,9 @@
     }}, \
     {"$STR_antistasi_dialogs_construction_menu_category_helipads", "\A3\EditorPreviews_F\Data\CfgVehicles\Land_HelipadCircle_F.jpg", { \
         {"A3AU_RebHelipad_Square_F", 5000}, \
-        {"A3AU_RebHelipad_Circle_F", 5000} \
+        {"A3AU_RebHelipad_SquareNC_F", 5000}, \
+        {"A3AU_RebHelipad_Circle_F", 5000}, \
+        {"A3AU_RebHelipad_CircleNC_F", 5000} \
     }}, \
     {"$STR_antistasi_dialogs_construction_menu_category_terrain_modifiers", "\A3\EditorPreviews_F\Data\CfgVehicles\Land_Axe_F.jpg", { \
         {"A3AU_VegetationCleaner_VerySmall_F", 250}, \

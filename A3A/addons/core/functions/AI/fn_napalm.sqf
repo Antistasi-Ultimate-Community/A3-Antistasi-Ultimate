@@ -56,7 +56,7 @@ isNil {
     _storageNamespace = [localNamespace,"A3A_NapalmRegister",str _napalmID,"active",true] call A3A_fnc_setNestedObject;
 };
 
-playSound3D ["a3\sounds_f\weapons\explosion\expl_big_3.wss",_pos, false, AGLToASL _pos, 5, 0.6, 3000];   // Isn't actually audible at 3km, by 500m it's competing with footsteps.
+playSound3D ["a3\sounds_f\weapons\explosion\expl_big_3.wss", objNull, false, AGLToASL _pos, 5, 0.6, 3000];   // Isn't actually audible at 3km, by 500m it's competing with footsteps.
 [_pos,_endTime,_cancellationTokenUUID] spawn {
     params ["_pos","_endTime","_canTokUUID"];
 
@@ -65,7 +65,7 @@ playSound3D ["a3\sounds_f\weapons\explosion\expl_big_3.wss",_pos, false, AGLToAS
     private _audioEndTime = _endTime - _audioDuration;
 
     while {serverTime < _audioEndTime && !([_canTokUUID] call _fnc_cancelRequested)} do {
-        playSound3D ["a3\sounds_f\sfx\fire1_loop.wss",_pos, false, AGLToASL _pos, 5, 0.7, 3000];   // Isn't actually audible at 3km, by 500m it's competing with footsteps.
+        playSound3D ["a3\sounds_f\sfx\fire1_loop.wss", objNull, false, AGLToASL _pos, 5, 0.7, 3000];   // Isn't actually audible at 3km, by 500m it's competing with footsteps.
         uiSleep _audioDuration;
     };
 };

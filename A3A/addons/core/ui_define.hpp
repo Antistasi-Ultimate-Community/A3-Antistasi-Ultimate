@@ -8,6 +8,7 @@
 #endif // __A3ACORE_IS_3DEN__
 
 FORWARD(IGUIBack);
+FORWARD(RscActiveText);
 FORWARD(RscButton);
 FORWARD(RscButtonMenu);
 FORWARD(RscButtonMenuCancel);
@@ -18,6 +19,7 @@ FORWARD(RscControlsGroup);
 FORWARD(RscEdit);
 FORWARD(RscFrame);
 FORWARD(RscListbox);
+FORWARD(RscListNBox);
 FORWARD(RscPicture);
 FORWARD(RscPictureKeepAspect);
 FORWARD(RscShortcutButton);

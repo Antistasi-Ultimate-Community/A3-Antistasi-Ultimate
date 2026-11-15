@@ -25,10 +25,6 @@ if (_unitType == FactionGet(reb, "unitCrew") && _markerX in (watchpostsFIA + roa
 
 _positionX = getMarkerPos _markerX;
 
-if (surfaceIsWater _positionX) exitWith {
-	[localize "STR_garrison_garrison_header", localize "STR_garrison_error_still_updating", localize "STR_notifiers_fail_type"] call SCRT_fnc_ui_showDynamicTextMessage;
-};
-
 if ([_positionX] call A3A_fnc_enemyNearCheck) exitWith {
 	[localize "STR_garrison_garrison_header", localize "STR_garrison_error_enemies_near", localize "STR_notifiers_fail_type"] call SCRT_fnc_ui_showDynamicTextMessage;
 };

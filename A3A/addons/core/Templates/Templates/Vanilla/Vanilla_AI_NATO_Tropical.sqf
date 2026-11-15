@@ -97,6 +97,19 @@ private _staticAT = ["B_T_Static_AT_F","B_GMG_01_high_F"];
 ["staticMortars", ["B_T_Mortar_01_F"]] call _fnc_saveToTemplate;
 private _howitzers = [];
 
+if (_hasJets) then {
+    _planesAA pushBack "B_Plane_Fighter_01_Stealth_F";
+    _planesCAS pushBack "B_Plane_Fighter_01_F";
+};
+
+if (_hasHelicopters) then {
+    _transportHelicopters pushBack "B_Heli_Transport_03_F";
+};
+
+if (_hasTanks) then {
+    _lightTanks append ["B_T_AFV_Wheeled_01_cannon_F", "B_T_AFV_Wheeled_01_up_cannon_F"];
+};
+
 if (_hasRF) then {
     _basic pushBack "B_T_Pickup_rf";
     _unarmedVehicles append ["B_T_Pickup_rf", "B_T_Pickup_Comms_rf"];

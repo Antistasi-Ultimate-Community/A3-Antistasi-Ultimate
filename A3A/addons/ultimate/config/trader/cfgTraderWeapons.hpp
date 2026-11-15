@@ -238,3 +238,7 @@
         {
             prefix = "rearma_ru_stock";
         };
+        class weapons_rearma_cn : weapons_base
+        {
+            prefix = "rearma_cn_stock";
+        };

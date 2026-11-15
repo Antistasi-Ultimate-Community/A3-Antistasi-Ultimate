@@ -23,12 +23,17 @@ FIX_LINE_NUMBERS()
 if (!isServer) exitWith {};
 params ["_cargo"];
 
-private _vehicles = (nearestObjects [_cargo,["Car","Ship","Tank","Helicopter"], 10]) - [_cargo];
-private _vehicle = _vehicles#0;
-if (isNil "_vehicle") exitWith {
+private _vehicles = nearestObjects[_cargo, ["Car", "Ship", "Tank", "Helicopter"], 10];
+private _firstViable = _vehicles findIf {
+    (_x isNotEqualTo _cargo) &&
+    { !(isObjectHidden _x) }
+};
+
+if (_firstViable isEqualTo -1) exitWith {
     [localize "STR_A3A_Logistics_header", localize "STR_A3A_Logistics_tryLoad_novehclose"] remoteExec ["A3A_fnc_customHint", remoteExecutedOwner]
 };
 
+private _vehicle = _vehicles select _firstViable;
 private _return = [_vehicle, _cargo] call A3A_Logistics_fnc_canLoad;
 if (_return isEqualType 0) exitWith {
 

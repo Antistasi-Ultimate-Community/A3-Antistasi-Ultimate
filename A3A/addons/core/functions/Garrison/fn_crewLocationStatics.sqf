@@ -4,8 +4,8 @@ FIX_LINE_NUMBERS()
 Function: A3A_fnc_crewLocationStatics
 
 Description:
-    Event handler for "locationSpawned" event to crew statics/vehicles at a
-    watchpost, roadblock, etc.
+    Event handler for "CBA_EVENT_SERVER_SPAWN_LOCATION" event to crew
+    statics/vehicles at a watchpost, roadblock, etc.
 
 Parameters:
     0: _marker - Location marker name <STRING>
@@ -37,11 +37,11 @@ if !(_hasSpawned) exitWith {
     Debug_2("Location %1 at marker %2 despawned, skipping crewing statics",str _locationType,str _marker);
 };
 
-if !(_locationType in [
-    "RebelAAEmpl",
-    "RebelAtEmpl",
-    "RebelHmgEmpl",
-    "RebelRoadblock"
+if !(toLower _locationType in [
+    "rebelaaempl",
+    "rebelatempl",
+    "rebelhmgempl",
+    "rebelroadblock"
 ]) exitWith {
     Debug_1("Not interested in location type %1",str _locationType);
 };

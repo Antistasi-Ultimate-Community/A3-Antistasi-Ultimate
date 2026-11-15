@@ -1,0 +1,4 @@
+preset: default
+source: https://github.com/Antistasi-Ultimate-Community/A3-Antistasi-Ultimate/blob/unstable/AI_POLICY.md
+require_ai_disclosure: false
+forbid_ai_trailers: true

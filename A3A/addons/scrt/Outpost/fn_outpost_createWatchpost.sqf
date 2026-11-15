@@ -81,7 +81,7 @@ switch (true) do {
 		_marker setMarkerColor colorTeamPlayer;
 		_marker setMarkerText "";
 		[_taskId, "outpostTask", "SUCCEEDED"] call A3A_fnc_taskSetState;
-		["RebelControlCreated", [_marker, "watchpost"]] call EFUNC(Events,triggerEvent);
+		[CBA_EVENT_SERVER_CREATE_REBEL_CONTROL, [_marker, "watchpost"]] call FUNCMAIN(triggerLocalEvent);
 		[_marker] remoteExec ["A3A_fnc_mrkUpdate", 0, true];
 	};
 	default {

@@ -25,6 +25,7 @@ Environment:
 Author:
     Maxx
 ---------------------------------------------------------------------------- */
+Trace_1(QFUNCMAIN(markerContextMenu),_this);
 
 if !assert(params [["_markerName", nil, [""]]]) exitWith {};
 
@@ -32,23 +33,13 @@ private _screenPosition = param [1, [], [[]]];
 private _mapDisplay = findDisplay 12;
 if (isNull _mapDisplay || {_markerName == ""}) exitWith {};
 
+uiNamespace setVariable[QGVAR(mapDisplay), _mapDisplay];
+
 private _mapControl = _mapDisplay displayCtrl 51;
 if (isNull _mapControl) exitWith {};
 
 private _originalMarkerName = _markerName;
-if ((_originalMarkerName find "Dum") == 0) then { _originalMarkerName = _originalMarkerName select [3, (count _originalMarkerName) - 3]; };
-
-private _setButtonState = {
-    params ["_buttonControl", "_enabled", ["_tooltipText", "", [""]]];
-    _buttonControl ctrlEnable _enabled;
-    if (_enabled) then {
-        _buttonControl ctrlSetTextColor [1, 1, 1, 1];
-        _buttonControl ctrlSetTooltip "";
-    } else {
-        _buttonControl ctrlSetTextColor [1, 1, 1, 0.35];
-        if (_tooltipText != "") then { _buttonControl ctrlSetTooltip _tooltipText; };
-    };
-};
+if ((_originalMarkerName find "Dum") == 0) then { _originalMarkerName = _originalMarkerName select [3] };
 
 private _deleteGarrisonPanel = {
     params ["_display"];
@@ -192,26 +183,21 @@ if (_resolvedScreenPosition isEqualTo []) then {
 
 if (_resolvedScreenPosition isEqualTo []) then { _resolvedScreenPosition = getMousePosition; };
 
+private _contextMenu = [_markerName, player] call A3A_ultimate_dynamic_hover_menu_fnc_collectMapContextMenuItems;
 
 // --- DYNAMIC WIDTH CALCULATION FOR LOCALIZATIONS ---
 private _paddingX = 0.006 * safeZoneW;
 private _paddingY = 0.006 * safeZoneH;
 
 private _dummyCtrl = _mapDisplay ctrlCreate ["A3U_RscContextButton", -1];
-private _maxTextWidth = 0;
-{
-    _dummyCtrl ctrlSetText _x;
-    _dummyCtrl ctrlCommit 0;
-    _maxTextWidth = _maxTextWidth max (ctrlTextWidth _dummyCtrl);
-} forEach [
-    localize "STR_antistasi_dialogs_main_fast_travel",
-    localize "STR_A3A_garrison_header",
-    localize "STR_A3U_CONTEXT_DELIVER_SUPPLIES",
-    localize "STR_antistasi_dialogs_hq_garrisons_rebuild_assets_button",
-    "Close"
-];
+private _maxTextWidth = [_contextMenu, 0, {
+    _dummyCtrl ctrlSetText(_x get "title");
+    _accumulator max ctrlTextWidth _dummyCtrl;
+}] call CBA_fnc_inject;
 ctrlDelete _dummyCtrl;
 
+private _buttonGap = 0.004 * safeZoneH;
+private _buttonHeight = 0.025 * safeZoneH;
 private _buttonWidth = _maxTextWidth + (0.024 * safeZoneW); // Padding inside button
 private _leftColumnWidth = _buttonWidth + _paddingX;
 private _rightColumnWidth = (0.22 * safeZoneW - (3 * _paddingX)) * 0.666; // Retain original right column size
@@ -219,6 +205,8 @@ private _rightColumnWidth = (0.22 * safeZoneW - (3 * _paddingX)) * 0.666; // Ret
 private _groupWidth = _leftColumnWidth + _rightColumnWidth + (3 * _paddingX);
 private _groupHeight = 0.19 * safeZoneH;
 private _titleBarHeight = 0.028 * safeZoneH;
+
+_groupHeight = _groupHeight max(_titleBarHeight + _paddingY + (count(_contextMenu) * (_buttonHeight + _buttonGap)));
 // ---------------------------------------------------
 
 
@@ -427,193 +415,35 @@ _informationControl ctrlSetPosition [
 _informationControl ctrlSetStructuredText (parseText _informationText);
 _informationControl ctrlCommit 0;
 
-private _isCommander = player isEqualTo theBoss;
-private _buttonCount = 4;
-private _buttonGap = 0.004 * safeZoneH;
 private _topBottomPadding = _paddingY * 0.5;
 
-// Dynamically scale button height to ensure they never overlap, utilizing the exact available space
-private _availableHeight = _contentHeight - (_topBottomPadding * 2);
-private _buttonHeight = (_availableHeight - (_buttonGap * (_buttonCount - 1))) / _buttonCount;
-
 private _buttonPositionX = _leftColumnPositionX + (_paddingX * 0.5);
-private _buttonPositionY = _contentPositionY + _topBottomPadding;
+private _buttonPositionY = _contentPositionY + _topBottomPadding - _buttonHeight - _buttonGap;
 
+_contextMenu apply {
+    Trace_1(QFUNCMAIN(markerContextMenu),_x);
+    ADD(_buttonPositionY,_buttonHeight + _buttonGap);
 
-// --- BUTTON 1: FAST TRAVEL ---
-private _fastTravelButton = _mapDisplay ctrlCreate ["A3U_RscContextButton", -1, _menuGroup];
-_fastTravelButton ctrlSetPosition [_buttonPositionX, _buttonPositionY, _buttonWidth, _buttonHeight];
-_fastTravelButton ctrlSetText localize "STR_antistasi_dialogs_main_fast_travel";
-_fastTravelButton ctrlCommit 0;
+    private _entry = _x;
+    private _button = _mapDisplay ctrlCreate["A3U_RscContextButton", -1, _menuGroup];
 
-_fastTravelButton ctrlAddEventHandler ["ButtonClick", {
-    params ["_control"];
-    private _display = ctrlParent _control;
-    private _markerName = _display getVariable ["A3U_mrkMenu_markerOrig", ""];
-    if (_markerName == "") exitWith {};
-    [_markerName] spawn A3A_fnc_fastTravelRadio;
-}];
+    _button ctrlSetPosition[_buttonPositionX, _buttonPositionY, _buttonWidth, _buttonHeight];
+    _button ctrlSetText(_entry get "title");
+    _button ctrlSetTooltip(_entry get "tooltip");
+    _button ctrlCommit 0;
 
-private _fastTravelAllowed = _isPlayerControlled && {!_isDestroyed && !_isMilitaryAdministration};
-private _fastTravelTooltip = if (_isDestroyed && _isMilitaryAdministration) then { localize "STR_A3U_HOVER_DESTROYED_MILADMIN" } else { localize "STR_A3U_CONTEXT_FASTTRAVEL_PLAYER_ONLY" };
-[_fastTravelButton, _fastTravelAllowed, _fastTravelTooltip] call _setButtonState;
+    _button setVariable[QGVAR(contextMenuEntry), _entry];
+    _button setVariable[QGVAR(contextMenuParams), [_markerName, player]];
+    _button ctrlAddEventHandler["ButtonClick", { call A3A_ultimate_dynamic_hover_menu_fnc_onContextMenuEntryClick }];
 
+    if !(_entry get "active") then {
+        _button ctrlEnable false;
+        _button ctrlSetTextColor[1, 1, 1, 0.35];
 
-// --- BUTTON 2: GARRISON ---
-_buttonPositionY = _buttonPositionY + _buttonHeight + _buttonGap;
-private _garrisonButton = _mapDisplay ctrlCreate ["A3U_RscContextButton", -1, _menuGroup];
-_garrisonButton ctrlSetPosition [_buttonPositionX, _buttonPositionY, _buttonWidth, _buttonHeight];
-_garrisonButton ctrlSetText localize "STR_A3A_garrison_header";
-_garrisonButton ctrlCommit 0;
-
-_garrisonButton ctrlAddEventHandler ["ButtonClick", {
-    params ["_control"];
-    private _display = ctrlParent _control;
-    private _markerName = _display getVariable ["A3U_mrkMenu_markerOrig", ""];
-    if (_markerName == "") exitWith {};
-    ["add", _markerName] spawn A3A_fnc_garrisonDialog;
-    ["off"] call SCRT_fnc_ui_toggleMenuBlur;
-}];
-
-private _isBlackMarketTrader = (toLowerANSI _originalMarkerName) isEqualTo "tradermarker";
-private _garrisonAllowed = _isPlayerControlled && {_isCommander} && {!_isRallyPoint} && {!_isBlackMarketTrader} && {!_isMilitaryAdministration};
-
-private _garrisonTooltip = localize (switch true do {
-    case _isRallyPoint: { "STR_A3U_CONTEXT_GARRISON_RALLYPOINT_BLOCKED" };
-    case _isBlackMarketTrader: { "STR_A3U_CONTEXT_GARRISON_TRADER_BLOCKED" };
-    default { "STR_A3U_CONTEXT_GARRISON_REQUIREMENTS" };
-});
-
-[_garrisonButton, _garrisonAllowed, _garrisonTooltip] call _setButtonState;
-
-
-// --- BUTTON 3: DELIVER SUPPLIES OR REBUILD ASSETS ---
-_buttonPositionY = _buttonPositionY + _buttonHeight + _buttonGap;
-
-if (_originalMarkerName in citiesX && {!_isDestroyed}) then {
-
-    // DELIVER SUPPLIES
-    private _suppliesButton = _mapDisplay ctrlCreate ["A3U_RscContextButton", -1, _menuGroup];
-    _suppliesButton ctrlSetPosition [_buttonPositionX, _buttonPositionY, _buttonWidth, _buttonHeight];
-    _suppliesButton ctrlSetText localize "STR_A3U_CONTEXT_DELIVER_SUPPLIES";
-    _suppliesButton ctrlCommit 0;
-
-    private _suppliesAllowed = _isCommander;
-    private _suppliesTooltip = if (!_isCommander) then { localize "STR_A3U_CONTEXT_COMMANDER_ONLY" } else { localize "STR_A3U_CONTEXT_DELIVER_SUPPLIES_DESC" };
-    [_suppliesButton, _suppliesAllowed, _suppliesTooltip] call _setButtonState;
-
-    _suppliesButton ctrlAddEventHandler ["ButtonClick", {
-        params ["_control"];
-        private _display = ctrlParent _control;
-        private _markerName = _display getVariable ["A3U_mrkMenu_markerOrig", ""];
-        if (_markerName == "") exitWith {};
-        
-        [[_markerName], "A3A_fnc_SUPP_Supplies"] remoteExec ["A3A_fnc_scheduler", 2];
-        
-        private _menuGroup = _display getVariable ["A3U_mrkMenu_grp", controlNull];
-        private _garrisonGroup = _display getVariable ["A3U_mrkMenu_garrGrp", controlNull];
-        if (!isNull _menuGroup) then { ctrlDelete _menuGroup; };
-        if (!isNull _garrisonGroup) then { ctrlDelete _garrisonGroup; };
-        _display setVariable ["A3U_mrkMenu_grp", controlNull];
-        _display setVariable ["A3U_mrkMenu_garrGrp", controlNull];
-        _display setVariable ["A3U_mrkMenu_marker", ""];
-    }];
-
-} else {
-
-    // REBUILD ASSETS
-    private _rebuildButton = _mapDisplay ctrlCreate ["A3U_RscContextButton", -1, _menuGroup];
-    _rebuildButton ctrlSetPosition [_buttonPositionX, _buttonPositionY, _buttonWidth, _buttonHeight];
-    _rebuildButton ctrlSetText localize "STR_antistasi_dialogs_hq_garrisons_rebuild_assets_button";
-    _rebuildButton ctrlCommit 0;
-
-    private _civFaction = missionNamespace getVariable ["A3A_faction_civ", createHashMap];
-    private _currencySymbol = _civFaction getOrDefault ["currencySymbol", "$"];
-    private _rebFaction = missionNamespace getVariable ["A3A_faction_reb", createHashMap];
-    private _rebFactionName = _rebFaction getOrDefault ["name", "Rebels"];
-
-    private _isRadioTower = _originalMarkerName in mrkAntennas;
-    private _nearestTerritoryIsPlayer = true;
-
-    if (_isRadioTower) then {
-        private _mainMarkers = (resourcesX + airportsX + factories + outposts + seaports + milbases) - controlsX;
-        private _nearestTerritory = [_mainMarkers, _originalMarkerPosition] call BIS_fnc_nearestPosition;
-        if (sidesX getVariable [_nearestTerritory, sideUnknown] != teamPlayer) then {
-            _nearestTerritoryIsPlayer = false;
+        if (_entry get "tooltipDisabled" isNotEqualTo "") then {
+            _button ctrlSetTooltip(_entry get "tooltipDisabled");
         };
     };
-
-    private _rebuildAllowed = (_isPlayerControlled || (_isRadioTower && _nearestTerritoryIsPlayer)) && {_isDestroyed} && {_isCommander};
-
-    private _rebuildTooltip = call {
-        if (_isRadioTower && !_nearestTerritoryIsPlayer) exitWith { format [localize "STR_A3U_CONTEXT_REBUILD_NEAREST_NOT_PLAYER", _rebFactionName] };
-        if (!_isPlayerControlled && !_isRadioTower) exitWith { localize "STR_A3U_CONTEXT_REBUILD_PLAYER_ONLY" };
-        if (!_isDestroyed) exitWith { localize "STR_A3U_CONTEXT_REBUILD_NOT_DESTROYED" };
-        if (!_isCommander) exitWith { localize "STR_A3U_CONTEXT_COMMANDER_ONLY" };
-        "" 
-    };
-
-    [_rebuildButton, _rebuildAllowed, _rebuildTooltip] call _setButtonState;
-
-    _rebuildButton ctrlAddEventHandler ["ButtonClick", {
-        params ["_control"];
-        private _display = ctrlParent _control;
-        private _markerName = _display getVariable ["A3U_mrkMenu_markerOrig", ""];
-        if (_markerName == "") exitWith {};
-        
-        [_markerName, _display] spawn {
-            params ["_markerName", "_display"];
-            
-            private _cost = 5000;
-            if (_markerName in mrkAntennas) then { _cost = 3500; };
-            
-            private _civFaction = missionNamespace getVariable ["A3A_faction_civ", createHashMap];
-            private _currencySymbol = _civFaction getOrDefault ["currencySymbol", "$"];
-            
-            private _messageText = format ["<t align='center'>%1<br/><br/>%2</t>", format [localize "STR_A3U_CONTEXT_REBUILD_COST", _cost, _currencySymbol], localize "STR_A3U_CONTEXT_REBUILD_CONFIRM"];
-
-            private _result = [
-                parseText _messageText, 
-                localize "STR_antistasi_dialogs_hq_garrisons_rebuild_assets_button", 
-                true, 
-                true, 
-                _display
-            ] call BIS_fnc_guiMessage;
-            
-            if (_result) then {
-                private _pos = getMarkerPos _markerName;
-                [_markerName, _pos] call A3A_fnc_rebuildAssets;
-                
-                private _menuGroup = _display getVariable ["A3U_mrkMenu_grp", controlNull];
-                private _garrisonGroup = _display getVariable ["A3U_mrkMenu_garrGrp", controlNull];
-                if (!isNull _menuGroup) then { ctrlDelete _menuGroup; };
-                if (!isNull _garrisonGroup) then { ctrlDelete _garrisonGroup; };
-                _display setVariable ["A3U_mrkMenu_grp", controlNull];
-                _display setVariable ["A3U_mrkMenu_garrGrp", controlNull];
-                _display setVariable ["A3U_mrkMenu_marker", ""];
-            };
-        };
-    }];
 };
 
-
-// --- BUTTON 4: CLOSE ---
-private _closeButtonPositionY = _contentPositionY + _contentHeight - _topBottomPadding - _buttonHeight;
-private _closeButton = _mapDisplay ctrlCreate ["A3U_RscContextButton", -1, _menuGroup];
-_closeButton ctrlSetPosition [_buttonPositionX, _closeButtonPositionY, _buttonWidth, _buttonHeight];
-_closeButton ctrlSetText "Close";
-_closeButton ctrlCommit 0;
-
-_closeButton ctrlAddEventHandler ["ButtonClick", {
-    params ["_control"];
-    private _display = ctrlParent _control;
-    private _menuGroup = _display getVariable ["A3U_mrkMenu_grp", controlNull];
-    private _garrisonGroup = _display getVariable ["A3U_mrkMenu_garrGrp", controlNull];
-    
-    if (!isNull _menuGroup) then { ctrlDelete _menuGroup; };
-    if (!isNull _garrisonGroup) then { ctrlDelete _garrisonGroup; };
-
-    _display setVariable ["A3U_mrkMenu_grp", controlNull];
-    _display setVariable ["A3U_mrkMenu_garrGrp", controlNull];
-    _display setVariable ["A3U_mrkMenu_marker", ""];
-}];
+nil;

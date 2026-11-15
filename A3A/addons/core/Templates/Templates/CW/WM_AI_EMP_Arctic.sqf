@@ -7,7 +7,7 @@
 ["name", "Empire"] call _fnc_saveToTemplate;
 ["spawnMarkerName", "Imperial support corridor"] call _fnc_saveToTemplate;
 
-["flag", "ls_flag_imp"] call _fnc_saveToTemplate;
+["flag", "ls_flag_imperial"] call _fnc_saveToTemplate;
 ["flagTexture", QPATHTOFOLDER(Templates\Templates\CW\flag_Empire.paa)] call _fnc_saveToTemplate; 	
 ["flagMarkerType", "imperial_marker_white"] call _fnc_saveToTemplate;
 

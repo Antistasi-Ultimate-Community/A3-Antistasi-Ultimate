@@ -6,11 +6,7 @@ if (!isServer) exitWith {
     Error("Miscalled server-only function");
 };
 
-#define SET_UUID() if !(isNil "_uuid") then { \
-	_playerUnit setVariable[QGVAR(saveUUID), _uuid, owner _playerUnit]; \
-}
-
-params ["_playerId", "_playerUnit", ["_globalSave", false], ["_pluginsData", nil, [createHashMap]], ["_uuid", nil, [""]]];
+params ["_playerId", "_playerUnit", ["_globalSave", false], ["_pluginsData", nil, [createHashMap]]];
 
 _playerUnit = _playerUnit getVariable ["owner", _playerUnit];		// save the real player, not remote controlled AIs
 
@@ -39,7 +35,6 @@ private _continue = try {
 
 	true;
 } catch {
-	SET_UUID();
 	false;
 };
 
@@ -74,29 +69,26 @@ if (_globalSave) then
 	// Add value of live AIs owned by player
 	// plus cost of vehicles driven by player-owned units, including self
 	// plus cost of unsaved static weapons aimed by player-owned units, including self
-	{
-		if (alive _x && (_x getVariable ["owner", objNull] == _playerUnit)) then
-		{
-			if (_x != _playerUnit) then {
-				private _unitPrice = server getVariable [_x getVariable "unitType", 0];
-				_totalMoney = _totalMoney + _unitPrice;
-			};
-			private _veh = vehicle _x;
-			if (_veh == _x || {_veh in staticsToSave}) exitWith {};
-			if (_x == driver _veh || {_x == gunner _veh && {_veh isKindOf "LandVehicle" || {_veh isKindOf "Ship"}}}) then {
-				private _vehPrice = [typeof _veh] call A3A_fnc_vehiclePrice;
-				_totalMoney = _totalMoney + _vehPrice;
-			};
+	units group _playerUnit select {
+		alive _x && { _x getVariable["owner", objNull] isEqualTo _playerUnit }
+	} apply {
+		if (_x != _playerUnit) then {
+			private _unitPrice = server getVariable [_x getVariable "unitType", 0];
+			_totalMoney = _totalMoney + _unitPrice;
 		};
-	} forEach (units group _playerUnit);
+		private _veh = objectParent _x;
+		if (isNull _veh || {_veh in staticsToSave}) exitWith {};
+		if (_x == driver _veh || {_x == gunner _veh && {_veh isKindOf "LandVehicle" || {_veh isKindOf "Ship"}}}) then {
+			private _vehPrice = [typeof _veh] call A3A_fnc_vehiclePrice;
+			_totalMoney = _totalMoney + _vehPrice;
+		};
+	};
 };
 _playerHM set ["moneyX", _totalMoney];
 
 if !(isNil "_pluginsData") then {
 	_playerHM set ["pluginsData", _pluginsData];
 };
-
-SET_UUID();
 
 Trace_1(QFUNCMAIN(savePlayer),_playerHM);
 Info_4("Saved player %1: %2 rank, %3 money, %4 score", _playerId, _rankPlayer, _totalMoney toFixed 0, _scorePlayer);

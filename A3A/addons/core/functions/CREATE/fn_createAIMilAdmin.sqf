@@ -250,6 +250,8 @@ private _ammoBox = if (garrison getVariable [_marker + "_lootCD", 0] == 0) then 
 	_ammoBox;
 };
 
+[CBA_EVENT_SERVER_SPAWN_LOCATION, [_marker, "MilAdmin", true]] call FUNCMAIN(triggerLocalEvent);
+
 waitUntil {sleep 1; spawner getVariable _marker == 2 or {!alive _milAdministration or {!alive _collaborant}}};
 
 switch (true) do {
@@ -301,4 +303,6 @@ if (!isNil "_grpPOW") then {
 	[_grpPOW] spawn A3A_fnc_groupDespawner;
 };
 
-["locationSpawned", [_marker, "MilAdmin", false]] call EFUNC(Events,triggerEvent);
+[CBA_EVENT_SERVER_SPAWN_LOCATION, [_marker, "MilAdmin", false]] call FUNCMAIN(triggerLocalEvent);
+
+nil;

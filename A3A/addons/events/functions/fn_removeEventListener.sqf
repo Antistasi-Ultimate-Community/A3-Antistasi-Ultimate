@@ -26,13 +26,16 @@ if !(params [
     , ["_id", "", [""]]
 ]) exitWith { Error_1("Invalid params passed: %1", _this)};
 
-if (isNil QGVAR(EventRegistry)) exitWith { Warning_2("Attempt to remove listener for event: %1 with ID: %2 before event registry is initilized", _event, _id) };
+Warning_1("backwards compatibility to remove event with ID ""%1"" invoked.",_id);
+Warning("please update your event system implementation. The old event system WILL be removed.");
 
-if (
-    _event in GVAR(EventRegistry)
-    && { !isNil { (GVAR(EventRegistry) get _event) get _id } }
-) then {
-    (GVAR(EventRegistry) get _event) deleteAt _id;
-} else {
-    Warning_2("No listener for event %1 with ID %2 exists", _event, _id);
+if (isNil QGVAR(cbaEventIdMapper)) exitWith {};
+
+private _cbaId = GVAR(cbaEventIdMapper) get _id;
+
+if !(isNil "_cbaId") then {
+    _cbaId call FUNCMAIN(removeEventHandler);
+    GVAR(cbaEventIdMapper) deleteAt _id;
 };
+
+nil;

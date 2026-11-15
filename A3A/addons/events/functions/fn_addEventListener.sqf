@@ -33,21 +33,35 @@ if !(params [
     Error_1("Invalid params passed: %1", _this);
 };
 
-if (isNil QGVAR(EventRegistry)) then {
-    GVAR(EventRegistry) = createHashMap;
+private _cbaEvent = configFile >> "A3A" >> "Events" >> _event;
+
+if !assert(isClass _cbaEvent) exitWith {};
+if !assert(isText(_cbaEvent >> "CBA_Event")) exitWith {};
+
+_cbaEvent = getText(_cbaEvent >> "CBA_Event");
+
+Warning_2("backwards compatibility for old event ""%1"" invoked; subscribing CBA event ""%2"" instead",_event,_cbaEvent);
+Warning("please update your event system implementation. The old event system WILL be removed.");
+
+if (!isNil QGVAR(cbaEventIdMapper) && { _id in GVAR(cbaEventIdMapper) }) then {
+    [_event, _id] call FUNC(removeEventListener);
 };
 
-if !(_event in GVAR(EventRegistry)) then {
-    GVAR(EventRegistry) set [_event, createHashMap];
+if (_callback isEqualType "") then {
+    private _function = missionNamespace getVariable[_callback, uiNamespace getVariable[_callback, {}]];
+    if !assert(_function isEqualType {}) then {
+        _function = {};
+        Error_1("Failed to resolve callback function: %1", _callback);
+    };
+    _callback = _function;
 };
 
-if (!isNil ((GVAR(EventRegistry) get _event) get _id)) then {
-    Info_4(
-        "Event listener overwritten | Event: %1 ID: %2 | Old -> Callback: %3 | New -> CallBack: %4"
-        , _event, _id, ((GVAR(EventRegistry) get _event) get _id), str _callback
-    );
+private _cbaId = [_cbaEvent, _callback] call FUNCMAIN(addEventHandler);
+
+if (isNil QGVAR(cbaEventIdMapper)) then {
+    GVAR(cbaEventIdMapper) = createHashMap;
 };
 
-(GVAR(EventRegistry) get _event) set [_id, _callback];
+GVAR(cbaEventIdMapper) set[_id, [_cbaEvent, _cbaId]];
 
 [_event, _id];

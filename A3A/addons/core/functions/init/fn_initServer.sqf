@@ -15,6 +15,9 @@ Info_1("Server version: %1", QUOTE(VERSION_FULL));
 if (isClass (missionConfigFile/"CfgFunctions"/"A3A")) exitWith {};          // Pre-mod mission will break. Messaging handled in initPreJIP
 if (call A3A_fnc_modBlacklist) exitWith {};
 
+// Init despawn queue very early
+GVAR(despawnQueue) = [];
+
 // hide all the HQ objects
 {
     _x enableRopeAttach false;
@@ -38,11 +41,11 @@ if (isClass (configFile/"CfgVehicles"/"vn_module_dynamicradiomusic_disable")) th
 */
 
 // Shouldn't be anything with dependencies in here
-call A3A_fnc_initVarCommon;
-call A3A_fnc_initZones;					// needed here because new-game setup needs to know where the markers are
+[] call A3A_fnc_initVarCommon;
+[] call A3A_fnc_initZones;					// needed here because new-game setup needs to know where the markers are
 
 // Start up the monitor to handle the setup UI
-[] spawn A3A_fnc_setupMonitor;
+execFSM QPATHTOF(FSMs\initSetupMonitor.fsm);
 
 // ************************ Background init ***********************************************
 
@@ -76,17 +79,11 @@ waitUntil {sleep 0.1; !isNil "A3A_saveData"};
 A3A_startupState = "starting"; publicVariable "A3A_startupState";
 
 // Use true params list in case we're loading an autosave from a different version
-private _savedParamsHM = createHashMapFromArray (A3A_saveData get "params");
-{
-    if (getArray (_x/"texts") isEqualTo [""]) then { continue };                // spacer/title
-    private _val = _savedParamsHM getOrDefault [configName _x, getNumber (_x/"default")];
-    if (getArray (_x/"values") isEqualTo [0,1]) then {
-        if (_val isEqualType 0) then { _val = _val != 0 };                      // number -> bool
-    } else {
-        if (_val isEqualType false) then { _val = [0, 1] select _val };         // bool -> number
-    };
-    missionNamespace setVariable [configName _x, _val, true];                   // just publish them all, doesn't really hurt
-} forEach ("true" configClasses (configFile/"A3A"/"Params"));
+private _savedParams = A3A_saveData get "params";
+[_savedParams, true] call FUNCMAIN(setGameParameters);
+
+// Tell third party mods we're starting up
+[CBA_EVENT_SERVER_STARTUP, []] call FUNCMAIN(triggerLocalEvent);
 
 // Might have params dependency at some point
 if (A3A_hasACEMedical) then { call A3A_fnc_initACEUnconsciousHandler };
@@ -115,10 +112,21 @@ private _startType = A3A_saveData get "startType";
 if (_startType != "new") then
 {
     // Setup save info
-    A3A_saveTarget = [A3A_saveData get "serverID", A3A_saveData get "gameID", worldName];
-    // Sanity checks? hmm
+    private _serverID = A3A_saveData get "serverID";
+    private _campaignID = A3A_saveData get "gameID";
+    A3A_saveTarget = [_serverID, _campaignID, worldName];
+    private _namespace = [profileNamespace, missionProfileNamespace] select (_serverID isEqualTo false);
+    A3A_saveDataHM = _namespace getVariable format ["A3A_saveData_%1", _campaignID];
 
-    Info_1("Loading campaign with ID %1", A3A_saveData get "gameID");
+    // * if this hashmap does not exist, we know we're loading an old save not stored as a single hashmap
+    // * we generate a new campaign ID for the new save format and store the old one so we can delete old data,
+    // * after ensuring existing data is saved to the new format
+    if (isNil "A3A_saveDataHM") then {
+        private _newID = [] call A3A_fnc_generateSaveID;
+        A3A_saveTarget = [_serverID, _newID, worldName, _campaignID];
+    };
+
+    Info_1("Loading campaign with ID %1", _campaignID);
 
     // Do the actual game loading
     call A3A_fnc_loadServer;
@@ -193,10 +201,7 @@ if (_startType != "load") then {
     private _serverID = profileNamespace getVariable ["ss_serverID", ""];
     _serverID = [_serverID, false] select (A3A_saveData get "useNewNamespace");
 
-    // Create new campaign ID, avoiding collisions
-    private _allIDs = call A3A_fnc_collectSaveData apply { _x get "gameID" };
-    private _newID = str(floor(random(90000) + 10000));
-    while { _newID in _allIDs } do { _newID = str(floor(random(90000) + 10000)) };
+    private _newID = [] call A3A_fnc_generateSaveID;
 
     Info_1("Creating new campaign with ID %1", _newID);
 
@@ -301,7 +306,7 @@ addMissionEventHandler ["EntityKilled", {
     if !(isNil {_victim getVariable "ownerSide"}) then {
         // Antistasi-created vehicle
         [_victim, _killerSide, false, _killer] call A3A_fnc_vehKilledOrCaptured;
-        [_victim] spawn A3A_fnc_postmortem;
+        call FUNCMAIN(postmortem);
     };
 }];
 
@@ -320,6 +325,7 @@ A3A_startupState = "completed"; publicVariable "A3A_startupState";
 [] spawn A3A_fnc_resourcecheck;                     // 10-minute loop
 [] spawn A3A_fnc_aggressionUpdateLoop;              // 1-minute loop
 [] spawn A3A_fnc_garbageCleanerTracker;             // 5-minute loop
+[] spawn A3A_fnc_despawnQueueProcessor;
 [] spawn SCRT_fnc_rivals_activityUpdateLoop;
 [] spawn SCRT_fnc_rivals_eventLoop;
 if (areRandomEventsEnabled) then {

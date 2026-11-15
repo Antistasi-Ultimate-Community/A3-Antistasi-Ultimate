@@ -51,6 +51,11 @@ private _civFuel = [
 private _civPlanes = [];
 private _civHelicopter = ["C_Heli_Light_01_civil_F", "a3a_C_Heli_Transport_02_F", "a3a_C_Heli_Light_02_blue_F"];
 
+if (_hasLawsOfWar) then {
+  _civCarsWithWeights append ["C_Van_02_vehicle_F", 0.5, "C_Van_02_transport_F", 0.5];
+  _civMedical append ["C_Van_02_medevac_F", 0.3, "C_IDAP_Van_02_medevac_F", 0.3];
+};
+
 if (_hasRF) then {
   _civCarsWithWeights append ["C_Pickup_covered_rf", 5.0, "C_Pickup_rf", 6.0];
   _civHelicopter append ["C_IDAP_Heli_EC_01A_civ_RF", "C_Heli_EC_01_civ_RF", "C_Heli_EC_04_rescue_RF"];
@@ -111,7 +116,7 @@ private _faces = [
   "WhiteHead_05","WhiteHead_06","WhiteHead_07","WhiteHead_08",
   "WhiteHead_09","WhiteHead_11","WhiteHead_12","WhiteHead_14",
   "WhiteHead_15","WhiteHead_16","WhiteHead_18","WhiteHead_19","WhiteHead_20",
-  "WhiteHead_21","WhiteHead_22","WhiteHead_23", "WhiteHead_24", "WhiteHead_25",
+  "WhiteHead_21","WhiteHead_23", "WhiteHead_24", "WhiteHead_25",
   "WhiteHead_26", "WhiteHead_27", "WhiteHead_28", "WhiteHead_29", "WhiteHead_30", 
   "WhiteHead_31", "WhiteHead_32",
   "TanoanHead_A3_01",

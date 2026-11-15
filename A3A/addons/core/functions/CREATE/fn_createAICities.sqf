@@ -49,11 +49,11 @@ private _roadPositions = (_positionX nearRoads round(_patrolSize / 2));
 private _civNonHuman = Faction(civilian) getOrDefault ["attributeCivNonHuman", false];
 
 private _fnc_exit = {
-	["locationSpawned", [_markerX, "City", true]] call EFUNC(Events,triggerEvent);
+	[CBA_EVENT_SERVER_SPAWN_LOCATION, [_markerX, "City", true]] call FUNCMAIN(triggerLocalEvent);
 
 	waitUntil {sleep 1;(spawner getVariable _markerX == 2)};
 
-	["locationSpawned", [_markerX, "City", false]] call EFUNC(Events,triggerEvent);
+	[CBA_EVENT_SERVER_SPAWN_LOCATION, [_markerX, "City", false]] call FUNCMAIN(triggerLocalEvent);
 };
 
 if (_markerX in townSkirmishes) exitWith {
@@ -99,7 +99,7 @@ while {(spawner getVariable _markerX != 2) and (_countX < _num)} do {
 	_countX = _countX + 1;
 };
 
-["locationSpawned", [_markerX, "City", true]] call EFUNC(Events,triggerEvent);
+[CBA_EVENT_SERVER_SPAWN_LOCATION, [_markerX, "City", true]] call FUNCMAIN(triggerLocalEvent);
 
 waitUntil {sleep 1;(spawner getVariable _markerX == 2)};
 
@@ -107,4 +107,4 @@ waitUntil {sleep 1;(spawner getVariable _markerX == 2)};
 {deleteVehicle _x} forEach _dogs;
 { deleteGroup _x } forEach _groups;
 
-["locationSpawned", [_markerX, "City", false]] call EFUNC(Events,triggerEvent);
+[CBA_EVENT_SERVER_SPAWN_LOCATION, [_markerX, "City", false]] call FUNCMAIN(triggerLocalEvent);

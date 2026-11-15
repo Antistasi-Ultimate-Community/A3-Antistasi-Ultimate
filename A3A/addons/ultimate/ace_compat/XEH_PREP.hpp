@@ -1,0 +1,2 @@
+PREP(onEventClientPlayerLoad);
+PREP(onEventClientPlayerSave);
