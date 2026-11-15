@@ -47,6 +47,7 @@ class A3A {
     #include "Templates.hpp"
     #include "UtilityItems.hpp"
     #include "Params.hpp"
+    #include "Pricing.hpp"
 
 #if __A3_DEBUG__
     #include "CfgFunctions.hpp"
