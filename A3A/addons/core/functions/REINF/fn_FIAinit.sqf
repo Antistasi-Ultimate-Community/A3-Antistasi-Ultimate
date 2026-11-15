@@ -108,3 +108,5 @@ if (player == leader _unit) then {
 		_victim setVariable ["spawner",nil,true];
 	}];
 };
+
+[CBA_EVENT_SERVER_INIT_REBEL_UNIT, [_unit, _preserveIdentity, _equipRebel]] call FUNCMAIN(triggerServerEvent);

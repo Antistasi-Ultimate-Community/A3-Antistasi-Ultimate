@@ -254,6 +254,7 @@ A3A_fuelStations apply {
 		_mrkFinalFuel setMarkerColorLocal "ColorWhite";
 		_mrkFinalFuel setMarkerTextLocal localize "STR_fuelstation";
 		_mrkFinalFuel setMarkerAlpha 0.75;
+		fuelStationsX pushBack _mrkFinalFuel; // store marker in fuelStationsX array so we can manipulate later as needed
 		if(A3A_hasACE) then {
 			[_x, 250] call ace_refuel_fnc_setFuel; // only call on fuels that are not blacklisted and first zone init.
 		};
@@ -367,6 +368,7 @@ publicvariable "A3A_fuelStationTypes";
 publicVariable "milAdministrationsX";
 publicvariable "A3A_milAdministrations";
 publicvariable "A3A_destroyedMilAdministrations";
+publicVariable "fuelStationsX";
 
 initZonesDone = true;				// signal headless clients that they can start nav init
 publicVariable "initZonesDone";

@@ -6456,15 +6456,6 @@
                 <Chinesesimp>当敌人靠近该区域时，您无法招募部队进入驻军。</Chinesesimp>
                 <Turkish>Bölgenin yakınında düşman varken garnizona birim ekleyemezsiniz.</Turkish>
             </Key>
-            <Key ID="STR_A3A_garrison_error_still_updating">
-                <Original>This garrison is still updating, please try again in a few seconds.</Original>
-                <Russian>Этот гарнизон все еще обновляется, повторите попытку через несколько секунд.</Russian>
-                <Korean>이 주둔지는 아직 업데이트 중이니 몇 초 후에 다시 시도하십시오.</Korean>
-                <Spanish>La guarnición se está actualizando, por favor inténtalo en unos segundos.</Spanish>
-                <French>Cette garnison est en cours de mise à jour, veuillez réessayer dans quelques secondes.</French>
-                <Chinesesimp>该驻军仍在更新，请稍后重试。</Chinesesimp>
-                <Turkish>Bu garnizon hâlâ güncelleniyor, lütfen birkaç saniye sonra tekrar deneyin.</Turkish>
-            </Key>
             <Key ID="STR_A3A_garrison_error_no_mortar">
                 <Original>You can't add mortars to Roadblock or Watchpost garrisons.</Original>
                 <Russian>Вы не можете добавлять миномёты в гарнизоны блокпостов и сторожевых постов.</Russian>

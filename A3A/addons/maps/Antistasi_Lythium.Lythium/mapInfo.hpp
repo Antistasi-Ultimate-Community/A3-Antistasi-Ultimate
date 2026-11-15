@@ -50,7 +50,7 @@ class lythium
 		{"kunara", 486},
 		{"martinfob", 19}
 	};
-	disabledTowns[] = {"MilitaryBase02", "MilitaryBase03", "MilitaryBase06", "MilitaryBase08", "puestocrow", "puestovulcan", "pelotoncampbase", "martinfob", "mikisfob", "greencaampbase", "ibancampbase", "kinduffactory", "kinduf"};
+	disabledTowns[] = {"MilitaryBase02", "MilitaryBase03", "MilitaryBase06", "MilitaryBase08", "puestocrow", "puestovulcan", "pelotoncampbase", "martinfob", "mikisfob", "greencaampbase", "ibancampbase", "kinduffactory", "kinduf", "abivalley", "mozaratdeath"};
 	antennas[] = {
 		{16207.7,19631.8,0.898682},{13740.9,9353.18,-1.15576},{2981.66,9053.11,-0.42218},{8585.65,7038.04,-0.320374},{12328.4,5381.54,0}
 	};

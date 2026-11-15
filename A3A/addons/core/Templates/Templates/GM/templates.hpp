@@ -4,7 +4,7 @@
     {
         requiredAddons[] = {"gm_weapons_items","CUP_Creatures_People_Civil_Russia", "CUP_BaseConfigs", "CUP_AirVehicles_Core"};
         basepath = QPATHTOFOLDER(Templates\Templates\GM);
-        logo = "\gm\gm_core\data\logos\gm_logo_ca.paa";
+        logo = "\gm\gm_info\data\logos\gm_logo_ca.paa";
         priority = 80;
         equipFlags[] = {"specialGM"};
         forceDLC[] = {"gm"};

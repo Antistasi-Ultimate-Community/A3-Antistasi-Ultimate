@@ -1,12 +1,16 @@
+#include "..\UILayouts\ids.inc"
+#include "..\script_component.hpp"
+FIX_LINE_NUMBERS()
+
 disableSerialization;
 
 createDialog "constructionMenu";
 
-private _display = findDisplay 80000;
+private _display = findDisplay A3A_IDD_CONSTRUCTION_MENU;
 
 if (str (_display) == "no display") exitWith {};
 
-private _comboBox = _display displayCtrl 505;
+private _comboBox = _display displayCtrl A3A_IDC_CONSTRUCTION_MENU_BUILD_TYPE_COMBO_BOX;
 
 _comboBox lbAdd localize "STR_antistasi_dialogs_trenches";
 _comboBox lbSetData [0, "TRENCH"];
