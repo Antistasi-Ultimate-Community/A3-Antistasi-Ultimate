@@ -1,6 +1,8 @@
+#include "ids.inc"
+
 class garrisonRecruit: SimpleMenuBigger 
 {
-	idd = 100;
+	idd = A3A_IDD_GARRISON_RECRUIT;
 	
 	onUnload = "";
 
@@ -8,7 +10,7 @@ class garrisonRecruit: SimpleMenuBigger
 	{
 		class closeButton: ScrtRscCloseButton
 		{
-			idc = 103;
+			idc = A3A_IDC_GARRISON_RECRUIT_CLOSE_BUTTON;
 			x = 0.674 * safezoneW + safezoneX;
 			y = 0.223941 * safezoneH + safezoneY;
 			w = 0.02 * safezoneW;
@@ -24,7 +26,7 @@ class garrisonRecruit: SimpleMenuBigger
 
 		class riflemanButton: SimpleButton
 		{
-			idc = 104;
+			idc = A3A_IDC_GARRISON_RECRUIT_RIFLEMAN_BUTTON;
 			text = $STR_antistasi_dialogs_garrison_spawn_rifleman_text;
 			x = 0.257187 * safezoneW + safezoneX;
 			y = 0.29 * safezoneH + safezoneY;
@@ -33,7 +35,7 @@ class garrisonRecruit: SimpleMenuBigger
 
 		class autoriflemanButton: SimpleButton
 		{
-			idc = 105;
+			idc = A3A_IDC_GARRISON_RECRUIT_AUTORIFLEMAN_BUTTON;
 			text = $STR_antistasi_dialogs_garrison_spawn_autorifleman_text;
 			x = 0.257187 * safezoneW + safezoneX;
 			y = 0.388 * safezoneH + safezoneY;
@@ -42,7 +44,7 @@ class garrisonRecruit: SimpleMenuBigger
 
 		class medicButton: SimpleButton
 		{
-			idc = 126;
+			idc = A3A_IDC_GARRISON_RECRUIT_MEDIC_BUTTON;
 			text = $STR_antistasi_dialogs_garrison_spawn_medic_text;
 			x = 0.257187 * safezoneW + safezoneX;
 			y = 0.486 * safezoneH + safezoneY;
@@ -51,7 +53,7 @@ class garrisonRecruit: SimpleMenuBigger
 
 		class squadleaderButton: SimpleButton
 		{
-			idc = 107;
+			idc = A3A_IDC_GARRISON_RECRUIT_SQUADLEADER_BUTTON;
 			text = $STR_antistasi_dialogs_garrison_spawn_squad_lead_text;
 			x = 0.257187 * safezoneW + safezoneX;
 			y = 0.584 * safezoneH + safezoneY;
@@ -60,7 +62,7 @@ class garrisonRecruit: SimpleMenuBigger
 
 		class aaButton: SimpleButton
 		{
-			idc = 112;
+			idc = A3A_IDC_GARRISON_RECRUIT_AA_BUTTON;
 			text = $STR_antistasi_dialogs_unit_recruit_aamissile_text;
 			x = 0.257187 * safezoneW + safezoneX;
 			y = 0.680 * safezoneH + safezoneY;
@@ -69,7 +71,7 @@ class garrisonRecruit: SimpleMenuBigger
 
 		class latButton: SimpleButton
 		{
-			idc = 108;
+			idc = A3A_IDC_GARRISON_RECRUIT_LAT_BUTTON;
 			text = $STR_antistasi_dialogs_garrison_spawn_at_text;
 			x = 0.477 * safezoneW + safezoneX;
 			y = 0.29 * safezoneH + safezoneY;
@@ -78,7 +80,7 @@ class garrisonRecruit: SimpleMenuBigger
 
 		class grenadierButton: SimpleButton
 		{
-			idc = 109;
+			idc = A3A_IDC_GARRISON_RECRUIT_GRENADIER_BUTTON;
 			text = $STR_antistasi_dialogs_garrison_spawn_grenadier_text;
 			x = 0.477 * safezoneW + safezoneX;
 			y = 0.388 * safezoneH + safezoneY;
@@ -87,7 +89,7 @@ class garrisonRecruit: SimpleMenuBigger
 
 		class sniperButton: SimpleButton
 		{
-			idc = 110;
+			idc = A3A_IDC_GARRISON_RECRUIT_SNIPER_BUTTON;
 			text = $STR_antistasi_dialogs_garrison_spawn_marksman_text;
 			x = 0.477 * safezoneW + safezoneX;
 			y = 0.486 * safezoneH + safezoneY;
@@ -96,7 +98,7 @@ class garrisonRecruit: SimpleMenuBigger
 		
 		class atButton: SimpleButton
 		{
-			idc = 111;
+			idc = A3A_IDC_GARRISON_RECRUIT_AT_BUTTON;
 			text = $STR_antistasi_dialogs_unit_recruit_atmissile_text;
 			x = 0.477 * safezoneW + safezoneX;
 			y = 0.584 * safezoneH + safezoneY;
@@ -107,7 +109,7 @@ class garrisonRecruit: SimpleMenuBigger
 
 class unitRecruit: SimpleMenuBigger 
 {
-	idd=100;
+	idd=A3A_IDD_UNIT_RECRUIT;
 	
 	class Controls
 	{
@@ -129,7 +131,7 @@ class unitRecruit: SimpleMenuBigger
 
 		class riflemanButton: SimpleButton
 		{
-			idc = 104;
+			idc = A3A_IDC_UNIT_RECRUIT_RIFLEMAN_BUTTON;
 			text = $STR_antistasi_dialogs_unit_recruit_rifleman_text;
 			x = 0.257187 * safezoneW + safezoneX;
 			y = 0.29 * safezoneH + safezoneY;
@@ -138,7 +140,7 @@ class unitRecruit: SimpleMenuBigger
 
 		class autoriflemanButton: SimpleButton
 		{
-			idc = 105;
+			idc = A3A_IDC_UNIT_RECRUIT_AUTORIFLEMAN_BUTTON;
 			text = $STR_antistasi_dialogs_unit_recruit_mg_text;
 			x = 0.257187 * safezoneW + safezoneX;
 			y = 0.388 * safezoneH + safezoneY;
@@ -147,7 +149,7 @@ class unitRecruit: SimpleMenuBigger
 
 		class medicButton: SimpleButton
 		{
-			idc = 126;
+			idc = A3A_IDC_UNIT_RECRUIT_MEDIC_BUTTON;
 			text = $STR_antistasi_dialogs_unit_recruit_medic_text;
 			x = 0.257187 * safezoneW + safezoneX;
 			y = 0.486 * safezoneH + safezoneY;
@@ -156,7 +158,7 @@ class unitRecruit: SimpleMenuBigger
 
 		class engineerButton: SimpleButton
 		{
-			idc = 107;
+			idc = A3A_IDC_UNIT_RECRUIT_ENGINEER_BUTTON;
 			text = $STR_antistasi_dialogs_unit_recruit_engineer_text;
 			x = 0.257187 * safezoneW + safezoneX;
 			y = 0.584 * safezoneH + safezoneY;
@@ -165,7 +167,7 @@ class unitRecruit: SimpleMenuBigger
 
 		class atButton: SimpleButton
 		{
-			idc = 112;
+			idc = A3A_IDC_UNIT_RECRUIT_AT_BUTTON;
 			text = $STR_antistasi_dialogs_unit_recruit_atmissile_text;
 			x = 0.257187 * safezoneW + safezoneX;
 			y = 0.680 * safezoneH + safezoneY;
@@ -174,7 +176,7 @@ class unitRecruit: SimpleMenuBigger
 		
 		class explButton: SimpleButton
 		{
-			idc = 108;
+			idc = A3A_IDC_UNIT_RECRUIT_EXPL_BUTTON;
 			text = $STR_antistasi_dialogs_unit_recruit_explosive_text;
 			x = 0.477 * safezoneW + safezoneX;
 			y = 0.29 * safezoneH + safezoneY;
@@ -183,7 +185,7 @@ class unitRecruit: SimpleMenuBigger
 
 		class grenadierButton: SimpleButton
 		{
-			idc = 109;
+			idc = A3A_IDC_UNIT_RECRUIT_GRENADIER_BUTTON;
 			text = $STR_antistasi_dialogs_unit_recruit_grenadier_text;
 			x = 0.477 * safezoneW + safezoneX;
 			y = 0.388 * safezoneH + safezoneY;
@@ -192,7 +194,7 @@ class unitRecruit: SimpleMenuBigger
 
 		class sniperButton: SimpleButton
 		{
-			idc = 110;
+			idc = A3A_IDC_UNIT_RECRUIT_SNIPER_BUTTON;
 			text = $STR_antistasi_dialogs_unit_recruit_marksman_text;
 			x = 0.477 * safezoneW + safezoneX;
 			y = 0.486 * safezoneH + safezoneY;
@@ -201,7 +203,7 @@ class unitRecruit: SimpleMenuBigger
 
 		class latButton: SimpleButton
 		{
-			idc = 111;
+			idc = A3A_IDC_UNIT_RECRUIT_LAT_BUTTON;
 			text = $STR_antistasi_dialogs_unit_recruit_antitank_text;
 			x = 0.477 * safezoneW + safezoneX;
 			y = 0.584 * safezoneH + safezoneY;
@@ -210,7 +212,7 @@ class unitRecruit: SimpleMenuBigger
 
 		class aaButton: SimpleButton
 		{
-			idc = 113;
+			idc = A3A_IDC_UNIT_RECRUIT_AA_BUTTON;
 			text = $STR_antistasi_dialogs_unit_recruit_aamissile_text;
 			x = 0.477 * safezoneW + safezoneX;
 			y = 0.680 * safezoneH + safezoneY;
@@ -221,7 +223,7 @@ class unitRecruit: SimpleMenuBigger
 
 class missionMenu: SimpleMenuBig
 {
-	idd = 100;
+	idd = A3A_IDD_MISSION_MENU;
 	
 	class Controls
 	{
@@ -317,7 +319,7 @@ class missionMenu: SimpleMenuBig
 
 class radioComm: SimpleMenuBigger
 {
-	idd=100;
+	idd=A3A_IDD_RADIO_COMM;
 
 	class Controls
 	{
@@ -349,7 +351,7 @@ class radioComm: SimpleMenuBigger
 
 		class l2Button: SimpleButton
 		{
-			idc = 105;
+			idc = A3A_IDC_RADIO_COMM_L2_BUTTON;
 			text = $STR_antistasi_dialogs_undercover_title;
 			x = 0.257187 * safezoneW + safezoneX;
 			y = 0.388 * safezoneH + safezoneY;
@@ -441,7 +443,7 @@ class radioComm: SimpleMenuBigger
 
 class vehQuery: SimpleMenuSmall
 {
-	idd=100;
+	idd=A3A_IDD_VEH_QUERY;
 
 	class Controls
 	{
@@ -453,7 +455,7 @@ class vehQuery: SimpleMenuSmall
 
 		class yesButton: SimpleButton
 		{
-			idc = 104;
+			idc = A3A_IDC_VEH_QUERY_YES_BUTTON;
 			text = $STR_antistasi_dialogs_generic_button_yes_text;
 			x = 0.257187 * safezoneW + safezoneX;
 			y = 0.304 * safezoneH + safezoneY;
@@ -463,7 +465,7 @@ class vehQuery: SimpleMenuSmall
 		
 		class noButton: SimpleButton
 		{
-			idc = 105;
+			idc = A3A_IDC_VEH_QUERY_NO_BUTTON;
 			text = $STR_antistasi_dialogs_generic_button_no_text;
 			x = 0.477 * safezoneW + safezoneX;
 			y = 0.304 * safezoneH + safezoneY;
@@ -474,7 +476,7 @@ class vehQuery: SimpleMenuSmall
 
 class constructionRemovalConfirmation: SimpleMenuSmall
 {
-	idd=123;
+	idd=A3A_IDD_CONSTRUCTION_REMOVAL_CONFIRMATION;
 	onLoad = "";
 	onUnload = "";
 
@@ -482,13 +484,13 @@ class constructionRemovalConfirmation: SimpleMenuSmall
 	{
 		class title: SimpleTitle
 		{
-			idc = 1244;
+			idc = A3A_IDC_CONSTRUCTION_REMOVAL_CONFIRMATION_TITLE;
 			text = $STR_antistasi_dialogs_remove_construction_confirmation;
 		};
 
 		class yesButton: SimpleButton
 		{
-			idc = 104;
+			idc = A3A_IDC_CONSTRUCTION_REMOVAL_CONFIRMATION_YES_BUTTON;
 			text = $STR_antistasi_dialogs_generic_button_yes_text;
 			x = 0.257187 * safezoneW + safezoneX;
 			y = 0.304 * safezoneH + safezoneY;
@@ -498,7 +500,7 @@ class constructionRemovalConfirmation: SimpleMenuSmall
 		
 		class noButton: SimpleButton
 		{
-			idc = 105;
+			idc = A3A_IDC_CONSTRUCTION_REMOVAL_CONFIRMATION_NO_BUTTON;
 			text = $STR_antistasi_dialogs_generic_button_no_text;
 			x = 0.477 * safezoneW + safezoneX;
 			y = 0.304 * safezoneH + safezoneY;
@@ -515,7 +517,7 @@ class aiManagement: SimpleMenuBigger
 	{
 		class closeButton: ScrtRscCloseButton
 		{
-			idc = 103;
+			idc = A3A_IDC_AI_MANAGEMENT_CLOSE_BUTTON;
 			x = 0.674 * safezoneW + safezoneX;
 			y = 0.223941 * safezoneH + safezoneY;
 			w = 0.02 * safezoneW;
@@ -747,7 +749,7 @@ class commanderComm: SimpleMenuBigger
 
 class constructionMenu: SimpleMenuSmall
 {
-	idd = 80000;
+	idd = A3A_IDD_CONSTRUCTION_MENU;
 	
 	class Controls
 	{
@@ -769,7 +771,7 @@ class constructionMenu: SimpleMenuSmall
 
 		class buildTypeComboBox: SimpleComboBox
 		{
-			idc = 505;
+			idc = A3A_IDC_CONSTRUCTION_MENU_BUILD_TYPE_COMBO_BOX;
 			x = 0.257187 * safezoneW + safezoneX;
 			y = 0.262 * safezoneH + safezoneY;
 			w = "22 * pixelGridNoUIScale * pixelW";
@@ -779,7 +781,7 @@ class constructionMenu: SimpleMenuSmall
 
 		class buildingComboBox: SimpleComboBox
 		{
-			idc = 506;
+			idc = A3A_IDC_CONSTRUCTION_MENU_BUILDING_COMBO_BOX;
 			x = 0.257187 * safezoneW + safezoneX;
 			y = 0.304 * safezoneH + safezoneY;
 			w = "22 * pixelGridNoUIScale * pixelW";
@@ -788,7 +790,7 @@ class constructionMenu: SimpleMenuSmall
 
 		class costsText: SimpleText
 		{
-			idc = 510;
+			idc = A3A_IDC_CONSTRUCTION_MENU_COSTS_TEXT;
 			text = "";
 			x = 0.257187 * safezoneW + safezoneX;
 			y = 0.388 * safezoneH + safezoneY;
@@ -822,13 +824,13 @@ class constructionMenu: SimpleMenuSmall
 
 class squadRecruit: SimpleMenuBigger
 {
-	idd = 100;
+	idd = A3A_IDD_SQUAD_RECRUIT;
 
 	class Controls
 	{
 		class closeButton: ScrtRscCloseButton
 		{
-			idc = 103;
+			idc = A3A_IDC_SQUAD_RECRUIT_CLOSE_BUTTON;
 			x = 0.674 * safezoneW + safezoneX;
 			y = 0.223941 * safezoneH + safezoneY;
 			w = 0.02 * safezoneW;
@@ -844,7 +846,7 @@ class squadRecruit: SimpleMenuBigger
 
 		class l1Button: SimpleButton
 		{
-			idc = 104;
+			idc = A3A_IDC_SQUAD_RECRUIT_L1_BUTTON;
 			text = $STR_antistasi_dialogs_infantry_squad_title;
 			x = 0.257187 * safezoneW + safezoneX;
 			y = 0.29 * safezoneH + safezoneY;
@@ -853,7 +855,7 @@ class squadRecruit: SimpleMenuBigger
 
 		class l2Button: SimpleButton
 		{
-			idc = 106;
+			idc = A3A_IDC_SQUAD_RECRUIT_L2_BUTTON;
 			text = $STR_antistasi_dialogs_at_team_title;
 			x = 0.257187 * safezoneW + safezoneX;
 			y = 0.388 * safezoneH + safezoneY;
@@ -862,7 +864,7 @@ class squadRecruit: SimpleMenuBigger
 
 		class l3Button: SimpleButton
 		{
-			idc = 107;
+			idc = A3A_IDC_SQUAD_RECRUIT_L3_BUTTON;
 			text = $STR_antistasi_dialogs_sniper_team_title;
 			x = 0.257187 * safezoneW + safezoneX;
 			y = 0.486 * safezoneH + safezoneY;
@@ -871,7 +873,7 @@ class squadRecruit: SimpleMenuBigger
 
 		class l4Button: SimpleButton
 		{
-			idc = 108;
+			idc = A3A_IDC_SQUAD_RECRUIT_L4_BUTTON;
 			text = $STR_antistasi_dialogs_mg_team_title;
 			x = 0.257187 * safezoneW + safezoneX;
 			y = 0.584 * safezoneH + safezoneY;
@@ -880,7 +882,7 @@ class squadRecruit: SimpleMenuBigger
 
 		class l5Button: SimpleButton
 		{
-			idc = 112;
+			idc = A3A_IDC_SQUAD_RECRUIT_L5_BUTTON;
 			text = $STR_antistasi_dialogs_veh_crew_title;
 			x = 0.257187 * safezoneW + safezoneX;
 			y = 0.682 * safezoneH + safezoneY;
@@ -889,7 +891,7 @@ class squadRecruit: SimpleMenuBigger
 		
 		class r1Button: SimpleButton
 		{
-			idc = 105;
+			idc = A3A_IDC_SQUAD_RECRUIT_R1_BUTTON;
 			text = $STR_antistasi_dialogs_inf_team_title;
 			x = 0.477 * safezoneW + safezoneX;
 			y = 0.29 * safezoneH + safezoneY;
@@ -898,7 +900,7 @@ class squadRecruit: SimpleMenuBigger
 
 		class r2Button: SimpleButton
 		{
-			idc = 109;
+			idc = A3A_IDC_SQUAD_RECRUIT_R2_BUTTON;
 			text = $STR_antistasi_dialogs_at_car_title;
 			x = 0.477 * safezoneW + safezoneX;
 			y = 0.388 * safezoneH + safezoneY;
@@ -907,7 +909,7 @@ class squadRecruit: SimpleMenuBigger
 
 		class r3Button: SimpleButton
 		{
-			idc = 110;
+			idc = A3A_IDC_SQUAD_RECRUIT_R3_BUTTON;
 			text = $STR_antistasi_dialogs_aa_car_title;
 			x = 0.477 * safezoneW + safezoneX;
 			y = 0.486 * safezoneH + safezoneY;
@@ -916,7 +918,7 @@ class squadRecruit: SimpleMenuBigger
 
 		class r4Button: SimpleButton
 		{
-			idc = 111;
+			idc = A3A_IDC_SQUAD_RECRUIT_R4_BUTTON;
 			text = $STR_antistasi_dialogs_mortar_team_title;
 			x = 0.477 * safezoneW + safezoneX;
 			y = 0.584 * safezoneH + safezoneY;
@@ -924,7 +926,7 @@ class squadRecruit: SimpleMenuBigger
 		};
 		class r5Button: SimpleButton
 		{
-			idc = 113;
+			idc = A3A_IDC_SQUAD_RECRUIT_R5_BUTTON;
 			text = $STR_antistasi_dialogs_mg_car_title;
 			x = 0.477 * safezoneW + safezoneX;
 			y = 0.682 * safezoneH + safezoneY;
@@ -935,7 +937,7 @@ class squadRecruit: SimpleMenuBigger
 
 class squadOptions: SimpleMenuSmall
 {
-	idd = 100;
+	idd = A3A_IDD_SQUAD_OPTIONS;
 
 	class Controls
 	{
@@ -957,7 +959,7 @@ class squadOptions: SimpleMenuSmall
 
 		class l1Button: SimpleButton
 		{
-			idc = 104;
+			idc = A3A_IDC_SQUAD_OPTIONS_L1_BUTTON;
 			text = $STR_antistasi_dialogs_normal_squad_title;
 			x = 0.257187 * safezoneW + safezoneX;
 			y = 0.262 * safezoneH + safezoneY;
@@ -966,7 +968,7 @@ class squadOptions: SimpleMenuSmall
 
 		class l2Button: SimpleButton
 		{
-			idc = 105;
+			idc = A3A_IDC_SQUAD_OPTIONS_L2_BUTTON;
 			text = $STR_antistasi_dialogs_engineer_squad_title;
 			x = 0.257187 * safezoneW + safezoneX;
 			y = 0.346 * safezoneH + safezoneY;
@@ -975,7 +977,7 @@ class squadOptions: SimpleMenuSmall
 		
 		class r1Button: SimpleButton
 		{
-			idc = 106;
+			idc = A3A_IDC_SQUAD_OPTIONS_R1_BUTTON;
 			text = $STR_antistasi_dialogs_mg_squad_title;
 			x = 0.477 * safezoneW + safezoneX;
 			y = 0.262 * safezoneH + safezoneY;
@@ -984,7 +986,7 @@ class squadOptions: SimpleMenuSmall
 
 		class r2Button: SimpleButton
 		{
-			idc = 107;
+			idc = A3A_IDC_SQUAD_OPTIONS_R2_BUTTON;
 			text = $STR_antistasi_dialogs_mortar_squad_title;
 			x = 0.477 * safezoneW + safezoneX;
 			y = 0.346 * safezoneH + safezoneY;
@@ -1017,7 +1019,7 @@ class playerMoney: SimpleMenuSmall
 
 		class l1Button: SimpleButton
 		{
-			idc = 104;
+			idc = A3A_IDC_PLAYER_MONEY_L1_BUTTON;
 			text = $STR_antistasi_dialogs_add_server_member_title;
 			x = 0.257187 * safezoneW + safezoneX;
 			y = 0.262 * safezoneH + safezoneY;
@@ -1027,7 +1029,7 @@ class playerMoney: SimpleMenuSmall
 
 		class l2Button: SimpleButton
 		{
-			idc = 105;
+			idc = A3A_IDC_PLAYER_MONEY_L2_BUTTON;
 			text = $STR_antistasi_dialogs_remove_server_member_title;
 			x = 0.257187 * safezoneW + safezoneX;
 			y = 0.346 * safezoneH + safezoneY;
@@ -1037,7 +1039,7 @@ class playerMoney: SimpleMenuSmall
 		
 		class r1Text : SimpleText
 		{
-			idc = 120001;
+			idc = A3A_IDC_PLAYER_MONEY_R1_TEXT;
 			text = $STR_antistasi_dialogs_donate_player_title;
 			tooltip = $STR_antistasi_dialogs_donate_player_tooltip;
 			x = 0.477 * safezoneW + safezoneX;
@@ -1049,7 +1051,7 @@ class playerMoney: SimpleMenuSmall
 
 		class r1Button: QuarterSimpleButton
 		{
-			idc = 308;
+			idc = A3A_IDC_PLAYER_MONEY_R1_BUTTON;
 			text = "25%";
 			x = 0.477 * safezoneW + safezoneX;
 			y = 0.282 * safezoneH + safezoneY;
@@ -1058,7 +1060,7 @@ class playerMoney: SimpleMenuSmall
 
 		class r2Button: QuarterSimpleButton
 		{
-			idc = 308;
+			idc = A3A_IDC_PLAYER_MONEY_R2_BUTTON;
 			text = "50%";
 			x = 0.527 * safezoneW + safezoneX;
 			y = 0.282 * safezoneH + safezoneY;
@@ -1067,7 +1069,7 @@ class playerMoney: SimpleMenuSmall
 
 		class r3Button: QuarterSimpleButton
 		{
-			idc = 308;
+			idc = A3A_IDC_PLAYER_MONEY_R3_BUTTON;
 			text = "75%";
 			x = 0.577 * safezoneW + safezoneX;
 			y = 0.282 * safezoneH + safezoneY;
@@ -1076,7 +1078,7 @@ class playerMoney: SimpleMenuSmall
 
 		class r4Button: QuarterSimpleButton
 		{
-			idc = 308;
+			idc = A3A_IDC_PLAYER_MONEY_R4_BUTTON;
 			text = "100%";
 			x = 0.627 * safezoneW + safezoneX;
 			y = 0.282 * safezoneH + safezoneY;
@@ -1085,7 +1087,7 @@ class playerMoney: SimpleMenuSmall
 		
 		class r2Text : SimpleText
 		{
-			idc = 120001;
+			idc = A3A_IDC_PLAYER_MONEY_R2_TEXT;
 			text = $STR_antistasi_dialogs_donate_faction_title;
 			tooltip = $STR_antistasi_dialogs_donate_faction_tooltip;
 			x = 0.477 * safezoneW + safezoneX;
@@ -1097,7 +1099,7 @@ class playerMoney: SimpleMenuSmall
 
 		class r5Button: QuarterSimpleButton
 		{
-			idc = 308;
+			idc = A3A_IDC_PLAYER_MONEY_R5_BUTTON;
 			text = "25%";
 			x = 0.477 * safezoneW + safezoneX;
 			y = 0.366 * safezoneH + safezoneY;
@@ -1106,7 +1108,7 @@ class playerMoney: SimpleMenuSmall
 
 		class r6Button: QuarterSimpleButton
 		{
-			idc = 308;
+			idc = A3A_IDC_PLAYER_MONEY_R6_BUTTON;
 			text = "50%";
 			x = 0.527 * safezoneW + safezoneX;
 			y = 0.366 * safezoneH + safezoneY;
@@ -1115,7 +1117,7 @@ class playerMoney: SimpleMenuSmall
 
 		class r7Button: QuarterSimpleButton
 		{
-			idc = 308;
+			idc = A3A_IDC_PLAYER_MONEY_R7_BUTTON;
 			text = "75%";
 			x = 0.577 * safezoneW + safezoneX;
 			y = 0.366 * safezoneH + safezoneY;
@@ -1124,7 +1126,7 @@ class playerMoney: SimpleMenuSmall
 
 		class r8Button: QuarterSimpleButton
 		{
-			idc = 308;
+			idc = A3A_IDC_PLAYER_MONEY_R8_BUTTON;
 			text = "100%";
 			x = 0.627 * safezoneW + safezoneX;
 			y = 0.366 * safezoneH + safezoneY;
@@ -1189,7 +1191,7 @@ class roundsNumber: SimpleMenuBig
 
 		class l1Button: SimpleButton
 		{
-			idc = 104;
+			idc = A3A_IDC_ROUNDS_NUMBER_L1_BUTTON;
 			text = "1";
 			x = 0.257187 * safezoneW + safezoneX;
 			y = 0.29 * safezoneH + safezoneY;
@@ -1198,7 +1200,7 @@ class roundsNumber: SimpleMenuBig
 
 		class l2Button: SimpleButton
 		{
-			idc = 106;
+			idc = A3A_IDC_ROUNDS_NUMBER_L2_BUTTON;
 			text = "3";
 			x = 0.257187 * safezoneW + safezoneX;
 			y = 0.388 * safezoneH + safezoneY;
@@ -1207,7 +1209,7 @@ class roundsNumber: SimpleMenuBig
 
 		class l3Button: SimpleButton
 		{
-			idc = 107;
+			idc = A3A_IDC_ROUNDS_NUMBER_L3_BUTTON;
 			text = "5";
 			x = 0.257187 * safezoneW + safezoneX;
 			y = 0.486 * safezoneH + safezoneY;
@@ -1216,7 +1218,7 @@ class roundsNumber: SimpleMenuBig
 
 		class l4Button: SimpleButton
 		{
-			idc = 108;
+			idc = A3A_IDC_ROUNDS_NUMBER_L4_BUTTON;
 			text = "7";
 			x = 0.257187 * safezoneW + safezoneX;
 			y = 0.584 * safezoneH + safezoneY;
@@ -1225,7 +1227,7 @@ class roundsNumber: SimpleMenuBig
 		
 		class r1Button: SimpleButton
 		{
-			idc = 105;
+			idc = A3A_IDC_ROUNDS_NUMBER_R1_BUTTON;
 			text = "2";
 			x = 0.477 * safezoneW + safezoneX;
 			y = 0.29 * safezoneH + safezoneY;
@@ -1234,7 +1236,7 @@ class roundsNumber: SimpleMenuBig
 
 		class r2Button: SimpleButton
 		{
-			idc = 109;
+			idc = A3A_IDC_ROUNDS_NUMBER_R2_BUTTON;
 			text = "4";
 			x = 0.477 * safezoneW + safezoneX;
 			y = 0.388 * safezoneH + safezoneY;
@@ -1243,7 +1245,7 @@ class roundsNumber: SimpleMenuBig
 
 		class r3Button: SimpleButton
 		{
-			idc = 110;
+			idc = A3A_IDC_ROUNDS_NUMBER_R3_BUTTON;
 			text = "6";
 			x = 0.477 * safezoneW + safezoneX;
 			y = 0.486 * safezoneH + safezoneY;
@@ -1252,7 +1254,7 @@ class roundsNumber: SimpleMenuBig
 
 		class r4Button: SimpleButton
 		{
-			idc = 111;
+			idc = A3A_IDC_ROUNDS_NUMBER_R4_BUTTON;
 			text = "8";
 			x = 0.477 * safezoneW + safezoneX;
 			y = 0.584 * safezoneH + safezoneY;
@@ -1337,7 +1339,7 @@ class NATOPlayer: SimpleMenuSmall
 
 class rebelLoadoutMenu: SimpleMenuMedium
 {
-	idd = 120000;
+	idd = A3A_IDD_REBEL_LOADOUT_MENU;
 	onUnload ="";
 
 	class Controls
@@ -1364,163 +1366,163 @@ class rebelLoadoutMenu: SimpleMenuMedium
 
 		class l1Text: SimpleText
 		{
-			idc = 120001;
+			idc = A3A_IDC_REBEL_LOADOUT_MENU_L1_TEXT;
 			text = $STR_antistasi_dialogs_rifleman_title;
 			x = 0.422656 * safezoneW + safezoneX;
 			y = 0.258 * safezoneH + safezoneY;
 			w = 0.0773437 * safezoneW;	
 			h = 0.022 * safezoneH;
 			loadoutMoniker = "unitRifle";
-			loadoutArsenalButtonIDC = 1200101;
-			loadoutResetButtonIDC = 1200201;
+			loadoutArsenalButtonIDC = A3A_IDC_REBEL_LOADOUT_MENU_L1_ARSENAL_BUTTON;
+			loadoutResetButtonIDC = A3A_IDC_REBEL_LOADOUT_MENU_L1_RESET_BUTTON;
 		};
 
 		class l2Text: SimpleText
 		{
-			idc = 120002;
+			idc = A3A_IDC_REBEL_LOADOUT_MENU_L2_TEXT;
 			text = $STR_antistasi_dialogs_autorifleman_title;
 			x = 0.422656 * safezoneW + safezoneX;
 			y = 0.291 * safezoneH + safezoneY;
 			w = 0.0773437 * safezoneW;	
 			h = 0.022 * safezoneH;
 			loadoutMoniker = "unitMG";
-			loadoutArsenalButtonIDC = 1200102;
-			loadoutResetButtonIDC = 1200202;
+			loadoutArsenalButtonIDC = A3A_IDC_REBEL_LOADOUT_MENU_L2_ARSENAL_BUTTON;
+			loadoutResetButtonIDC = A3A_IDC_REBEL_LOADOUT_MENU_L2_RESET_BUTTON;
 		};
 
 		class l3Text: SimpleText
 		{
-			idc = 120003;
+			idc = A3A_IDC_REBEL_LOADOUT_MENU_L3_TEXT;
 			text = $STR_antistasi_dialogs_medic_title;
 			x = 0.422656 * safezoneW + safezoneX;
 			y = 0.324 * safezoneH + safezoneY;
 			w = 0.0773437 * safezoneW;	
 			h = 0.022 * safezoneH;
 			loadoutMoniker = "unitMedic";
-			loadoutArsenalButtonIDC = 1200103;
-			loadoutResetButtonIDC = 1200203;
+			loadoutArsenalButtonIDC = A3A_IDC_REBEL_LOADOUT_MENU_L3_ARSENAL_BUTTON;
+			loadoutResetButtonIDC = A3A_IDC_REBEL_LOADOUT_MENU_L3_RESET_BUTTON;
 		};
 
 		class l4Text: SimpleText
 		{
-			idc = 120004;
+			idc = A3A_IDC_REBEL_LOADOUT_MENU_L4_TEXT;
 			text = $STR_antistasi_dialogs_engineer_title;
 			x = 0.422656 * safezoneW + safezoneX;
 			y = 0.357 * safezoneH + safezoneY;
 			w = 0.0773437 * safezoneW;	
 			h = 0.022 * safezoneH;
 			loadoutMoniker = "unitEng";
-			loadoutArsenalButtonIDC = 1200104;
-			loadoutResetButtonIDC = 1200204;
+			loadoutArsenalButtonIDC = A3A_IDC_REBEL_LOADOUT_MENU_L4_ARSENAL_BUTTON;
+			loadoutResetButtonIDC = A3A_IDC_REBEL_LOADOUT_MENU_L4_RESET_BUTTON;
 		};
 
 		class l5Text: SimpleText
 		{
-			idc = 120005;
+			idc = A3A_IDC_REBEL_LOADOUT_MENU_L5_TEXT;
 			text = $STR_antistasi_dialogs_grenadier_title;
 			x = 0.422656 * safezoneW + safezoneX;
 			y = 0.39 * safezoneH + safezoneY;
 			w = 0.0773437 * safezoneW;	
 			h = 0.022 * safezoneH;
 			loadoutMoniker = "unitGL";
-			loadoutArsenalButtonIDC = 1200105;
-			loadoutResetButtonIDC = 1200205;
+			loadoutArsenalButtonIDC = A3A_IDC_REBEL_LOADOUT_MENU_L5_ARSENAL_BUTTON;
+			loadoutResetButtonIDC = A3A_IDC_REBEL_LOADOUT_MENU_L5_RESET_BUTTON;
 		};
 
 		class l6Text: SimpleText
 		{
-			idc = 120006;
+			idc = A3A_IDC_REBEL_LOADOUT_MENU_L6_TEXT;
 			text = $STR_antistasi_dialogs_marksman_title;
 			x = 0.422656 * safezoneW + safezoneX;
 			y = 0.423 * safezoneH + safezoneY;
 			w = 0.0773437 * safezoneW;	
 			h = 0.022 * safezoneH;
 			loadoutMoniker = "unitSniper";
-			loadoutArsenalButtonIDC = 1200106;
-			loadoutResetButtonIDC = 1200206;
+			loadoutArsenalButtonIDC = A3A_IDC_REBEL_LOADOUT_MENU_L6_ARSENAL_BUTTON;
+			loadoutResetButtonIDC = A3A_IDC_REBEL_LOADOUT_MENU_L6_RESET_BUTTON;
 		};
 
 		class l7Text: SimpleText
 		{
-			idc = 120007;
+			idc = A3A_IDC_REBEL_LOADOUT_MENU_L7_TEXT;
 			text = $STR_antistasi_dialogs_lat_title;
 			x = 0.422656 * safezoneW + safezoneX;
 			y = 0.456 * safezoneH + safezoneY;
 			w = 0.0773437 * safezoneW;	
 			h = 0.022 * safezoneH;
 			loadoutMoniker = "unitLAT";
-			loadoutArsenalButtonIDC = 1200107;
-			loadoutResetButtonIDC = 1200207;
+			loadoutArsenalButtonIDC = A3A_IDC_REBEL_LOADOUT_MENU_L7_ARSENAL_BUTTON;
+			loadoutResetButtonIDC = A3A_IDC_REBEL_LOADOUT_MENU_L7_RESET_BUTTON;
 		};
 
 		class l8Text: SimpleText
 		{
-			idc = 120008;
+			idc = A3A_IDC_REBEL_LOADOUT_MENU_L8_TEXT;
 			text = $STR_antistasi_dialogs_crewman_title;
 			x = 0.422656 * safezoneW + safezoneX;
 			y = 0.489 * safezoneH + safezoneY;
 			w = 0.0773437 * safezoneW;	
 			h = 0.022 * safezoneH;
 			loadoutMoniker = "unitCrew";
-			loadoutArsenalButtonIDC = 1200108;
-			loadoutResetButtonIDC = 1200208;
+			loadoutArsenalButtonIDC = A3A_IDC_REBEL_LOADOUT_MENU_L8_ARSENAL_BUTTON;
+			loadoutResetButtonIDC = A3A_IDC_REBEL_LOADOUT_MENU_L8_RESET_BUTTON;
 		};
 
 		class l9Text: SimpleText
 		{
-			idc = 120009;
+			idc = A3A_IDC_REBEL_LOADOUT_MENU_L9_TEXT;
 			text = $STR_antistasi_dialogs_squad_leader_title;
 			x = 0.422656 * safezoneW + safezoneX;
 			y = 0.522 * safezoneH + safezoneY;
 			w = 0.0773437 * safezoneW;	
 			h = 0.022 * safezoneH;
 			loadoutMoniker = "unitSL";
-			loadoutArsenalButtonIDC = 1200109;
-			loadoutResetButtonIDC = 1200209;
+			loadoutArsenalButtonIDC = A3A_IDC_REBEL_LOADOUT_MENU_L9_ARSENAL_BUTTON;
+			loadoutResetButtonIDC = A3A_IDC_REBEL_LOADOUT_MENU_L9_RESET_BUTTON;
 		};
 
 		class l10Text: SimpleText
 		{
-			idc = 120010;
+			idc = A3A_IDC_REBEL_LOADOUT_MENU_L10_TEXT;
 			text = $STR_antistasi_dialogs_sapper_title;
 			x = 0.422656 * safezoneW + safezoneX;
 			y = 0.555 * safezoneH + safezoneY;
 			w = 0.0773437 * safezoneW;	
 			h = 0.022 * safezoneH;
 			loadoutMoniker = "unitExp";
-			loadoutArsenalButtonIDC = 1200110;
-			loadoutResetButtonIDC = 1200210;
+			loadoutArsenalButtonIDC = A3A_IDC_REBEL_LOADOUT_MENU_L10_ARSENAL_BUTTON;
+			loadoutResetButtonIDC = A3A_IDC_REBEL_LOADOUT_MENU_L10_RESET_BUTTON;
 		};
 
 		class l11Text: SimpleText
 		{
-			idc = 120011;
+			idc = A3A_IDC_REBEL_LOADOUT_MENU_L11_TEXT;
 			text = $STR_antistasi_dialogs_at_title;
 			x = 0.422656 * safezoneW + safezoneX;
 			y = 0.588 * safezoneH + safezoneY;
 			w = 0.0773437 * safezoneW;	
 			h = 0.022 * safezoneH;
 			loadoutMoniker = "unitAT";
-			loadoutArsenalButtonIDC = 1200111;
-			loadoutResetButtonIDC = 1200211;
+			loadoutArsenalButtonIDC = A3A_IDC_REBEL_LOADOUT_MENU_L11_ARSENAL_BUTTON;
+			loadoutResetButtonIDC = A3A_IDC_REBEL_LOADOUT_MENU_L11_RESET_BUTTON;
 		};
 
 		class l12Text: SimpleText
 		{
-			idc = 120012;
+			idc = A3A_IDC_REBEL_LOADOUT_MENU_L12_TEXT;
 			text = $STR_antistasi_dialogs_aa_title;
 			x = 0.422656 * safezoneW + safezoneX;
 			y = 0.621 * safezoneH + safezoneY;
 			w = 0.0773437 * safezoneW;	
 			h = 0.022 * safezoneH;
 			loadoutMoniker = "unitAA";
-			loadoutArsenalButtonIDC = 1200112;
-			loadoutResetButtonIDC = 1200212;
+			loadoutArsenalButtonIDC = A3A_IDC_REBEL_LOADOUT_MENU_L12_ARSENAL_BUTTON;
+			loadoutResetButtonIDC = A3A_IDC_REBEL_LOADOUT_MENU_L12_RESET_BUTTON;
 		};
 
 		class l1ArsenalButton: ArsenalButton
 		{
-			idc = 1200101;
+			idc = A3A_IDC_REBEL_LOADOUT_MENU_L1_ARSENAL_BUTTON;
 			x = 0.54125 * safezoneW + safezoneX;
 			y = 0.258 * safezoneH + safezoneY;
 			w = 0.0103125 * safezoneW;
@@ -1529,7 +1531,7 @@ class rebelLoadoutMenu: SimpleMenuMedium
 
 		class l1ResetButton: CopyPasteResetButton
 		{
-			idc = 1200201;
+			idc = A3A_IDC_REBEL_LOADOUT_MENU_L1_RESET_BUTTON;
 			x = 0.561875 * safezoneW + safezoneX;
 			y = 0.258 * safezoneH + safezoneY;
 			w = 0.0103125 * safezoneW;
@@ -1538,7 +1540,7 @@ class rebelLoadoutMenu: SimpleMenuMedium
 
 		class l2ArsenalButton: ArsenalButton
 		{
-			idc = 1200102;
+			idc = A3A_IDC_REBEL_LOADOUT_MENU_L2_ARSENAL_BUTTON;
 			x = 0.54125 * safezoneW + safezoneX;
 			y = 0.291 * safezoneH + safezoneY;
 			w = 0.0103125 * safezoneW;
@@ -1547,7 +1549,7 @@ class rebelLoadoutMenu: SimpleMenuMedium
 
 		class l2ResetButton: CopyPasteResetButton
 		{
-			idc = 1200202;
+			idc = A3A_IDC_REBEL_LOADOUT_MENU_L2_RESET_BUTTON;
 			x = 0.561875 * safezoneW + safezoneX;
 			y = 0.291 * safezoneH + safezoneY;
 			w = 0.0103125 * safezoneW;
@@ -1556,7 +1558,7 @@ class rebelLoadoutMenu: SimpleMenuMedium
 
 		class l3ArsenalButton: ArsenalButton
 		{
-			idc = 1200103;
+			idc = A3A_IDC_REBEL_LOADOUT_MENU_L3_ARSENAL_BUTTON;
 			x = 0.54125 * safezoneW + safezoneX;
 			y = 0.324 * safezoneH + safezoneY;
 			w = 0.0103125 * safezoneW;
@@ -1565,7 +1567,7 @@ class rebelLoadoutMenu: SimpleMenuMedium
 
 		class l3ResetButton: CopyPasteResetButton
 		{
-			idc = 1200203;
+			idc = A3A_IDC_REBEL_LOADOUT_MENU_L3_RESET_BUTTON;
 			x = 0.561875 * safezoneW + safezoneX;
 			y = 0.324 * safezoneH + safezoneY;
 			w = 0.0103125 * safezoneW;
@@ -1574,7 +1576,7 @@ class rebelLoadoutMenu: SimpleMenuMedium
 
 		class l4ArsenalButton: ArsenalButton
 		{
-			idc = 1200104;
+			idc = A3A_IDC_REBEL_LOADOUT_MENU_L4_ARSENAL_BUTTON;
 			x = 0.54125 * safezoneW + safezoneX;
 			y = 0.357 * safezoneH + safezoneY;
 			w = 0.0103125 * safezoneW;
@@ -1583,7 +1585,7 @@ class rebelLoadoutMenu: SimpleMenuMedium
 
 		class l4ResetButton: CopyPasteResetButton
 		{
-			idc = 1200204;
+			idc = A3A_IDC_REBEL_LOADOUT_MENU_L4_RESET_BUTTON;
 			x = 0.561875 * safezoneW + safezoneX;
 			y = 0.357 * safezoneH + safezoneY;
 			w = 0.0103125 * safezoneW;
@@ -1592,7 +1594,7 @@ class rebelLoadoutMenu: SimpleMenuMedium
 		
 		class l5ArsenalButton: ArsenalButton
 		{
-			idc = 1200105;
+			idc = A3A_IDC_REBEL_LOADOUT_MENU_L5_ARSENAL_BUTTON;
 			x = 0.54125 * safezoneW + safezoneX;
 			y = 0.39 * safezoneH + safezoneY;
 			w = 0.0103125 * safezoneW;
@@ -1601,7 +1603,7 @@ class rebelLoadoutMenu: SimpleMenuMedium
 
 		class l5ResetButton: CopyPasteResetButton
 		{
-			idc = 1200205;
+			idc = A3A_IDC_REBEL_LOADOUT_MENU_L5_RESET_BUTTON;
 			x = 0.561875 * safezoneW + safezoneX;
 			y = 0.39 * safezoneH + safezoneY;
 			w = 0.0103125 * safezoneW;
@@ -1610,7 +1612,7 @@ class rebelLoadoutMenu: SimpleMenuMedium
 
 		class l6ArsenalButton: ArsenalButton
 		{
-			idc = 1200106;
+			idc = A3A_IDC_REBEL_LOADOUT_MENU_L6_ARSENAL_BUTTON;
 			x = 0.54125 * safezoneW + safezoneX;
 			y = 0.423 * safezoneH + safezoneY;
 			w = 0.0103125 * safezoneW;
@@ -1619,7 +1621,7 @@ class rebelLoadoutMenu: SimpleMenuMedium
 
 		class l6ResetButton: CopyPasteResetButton
 		{
-			idc = 1200206;
+			idc = A3A_IDC_REBEL_LOADOUT_MENU_L6_RESET_BUTTON;
 			x = 0.561875 * safezoneW + safezoneX;
 			y = 0.423 * safezoneH + safezoneY;
 			w = 0.0103125 * safezoneW;
@@ -1628,7 +1630,7 @@ class rebelLoadoutMenu: SimpleMenuMedium
 
 		class l7ArsenalButton: ArsenalButton
 		{
-			idc = 1200107;
+			idc = A3A_IDC_REBEL_LOADOUT_MENU_L7_ARSENAL_BUTTON;
 			x = 0.54125 * safezoneW + safezoneX;
 			y = 0.456 * safezoneH + safezoneY;
 			w = 0.0103125 * safezoneW;
@@ -1637,7 +1639,7 @@ class rebelLoadoutMenu: SimpleMenuMedium
 
 		class l7ResetButton: CopyPasteResetButton
 		{
-			idc = 1200207;
+			idc = A3A_IDC_REBEL_LOADOUT_MENU_L7_RESET_BUTTON;
 			x = 0.561875 * safezoneW + safezoneX;
 			y = 0.456 * safezoneH + safezoneY;
 			w = 0.0103125 * safezoneW;
@@ -1646,7 +1648,7 @@ class rebelLoadoutMenu: SimpleMenuMedium
 
 		class l8ArsenalButton: ArsenalButton
 		{
-			idc = 1200108;
+			idc = A3A_IDC_REBEL_LOADOUT_MENU_L8_ARSENAL_BUTTON;
 			x = 0.54125 * safezoneW + safezoneX;
 			y = 0.489 * safezoneH + safezoneY;
 			w = 0.0103125 * safezoneW;
@@ -1655,7 +1657,7 @@ class rebelLoadoutMenu: SimpleMenuMedium
 
 		class l8ResetButton: CopyPasteResetButton
 		{
-			idc = 1200208;
+			idc = A3A_IDC_REBEL_LOADOUT_MENU_L8_RESET_BUTTON;
 			x = 0.561875 * safezoneW + safezoneX;
 			y = 0.489 * safezoneH + safezoneY;
 			w = 0.0103125 * safezoneW;
@@ -1664,7 +1666,7 @@ class rebelLoadoutMenu: SimpleMenuMedium
 
 		class l9ArsenalButton: ArsenalButton
 		{
-			idc = 1200109;
+			idc = A3A_IDC_REBEL_LOADOUT_MENU_L9_ARSENAL_BUTTON;
 			x = 0.54125 * safezoneW + safezoneX;
 			y = 0.522 * safezoneH + safezoneY;
 			w = 0.0103125 * safezoneW;
@@ -1673,7 +1675,7 @@ class rebelLoadoutMenu: SimpleMenuMedium
 
 		class l9ResetButton: CopyPasteResetButton
 		{
-			idc = 1200209;
+			idc = A3A_IDC_REBEL_LOADOUT_MENU_L9_RESET_BUTTON;
 			x = 0.561875 * safezoneW + safezoneX;
 			y = 0.522 * safezoneH + safezoneY;
 			w = 0.0103125 * safezoneW;
@@ -1682,7 +1684,7 @@ class rebelLoadoutMenu: SimpleMenuMedium
 
 		class l10ArsenalButton: ArsenalButton
 		{
-			idc = 1200110;
+			idc = A3A_IDC_REBEL_LOADOUT_MENU_L10_ARSENAL_BUTTON;
 			x = 0.54125 * safezoneW + safezoneX;
 			y = 0.555 * safezoneH + safezoneY;
 			w = 0.0103125 * safezoneW;
@@ -1691,7 +1693,7 @@ class rebelLoadoutMenu: SimpleMenuMedium
 
 		class l10ResetButton: CopyPasteResetButton
 		{
-			idc = 1200210;
+			idc = A3A_IDC_REBEL_LOADOUT_MENU_L10_RESET_BUTTON;
 			x = 0.561875 * safezoneW + safezoneX;
 			y = 0.555 * safezoneH + safezoneY;
 			w = 0.0103125 * safezoneW;
@@ -1700,7 +1702,7 @@ class rebelLoadoutMenu: SimpleMenuMedium
 
 		class l11ArsenalButton: ArsenalButton
 		{
-			idc = 1200111;
+			idc = A3A_IDC_REBEL_LOADOUT_MENU_L11_ARSENAL_BUTTON;
 			x = 0.54125 * safezoneW + safezoneX;
 			y = 0.588 * safezoneH + safezoneY;
 			w = 0.0103125 * safezoneW;
@@ -1709,7 +1711,7 @@ class rebelLoadoutMenu: SimpleMenuMedium
 
 		class l11ResetButton: CopyPasteResetButton
 		{
-			idc = 1200211;
+			idc = A3A_IDC_REBEL_LOADOUT_MENU_L11_RESET_BUTTON;
 			x = 0.561875 * safezoneW + safezoneX;
 			y = 0.588 * safezoneH + safezoneY;
 			w = 0.0103125 * safezoneW;
@@ -1718,7 +1720,7 @@ class rebelLoadoutMenu: SimpleMenuMedium
 
 		class l12ArsenalButton: ArsenalButton
 		{
-			idc = 1200112;
+			idc = A3A_IDC_REBEL_LOADOUT_MENU_L12_ARSENAL_BUTTON;
 			x = 0.54125 * safezoneW + safezoneX;
 			y = 0.621 * safezoneH + safezoneY;
 			w = 0.0103125 * safezoneW;
@@ -1727,7 +1729,7 @@ class rebelLoadoutMenu: SimpleMenuMedium
 
 		class l12ResetButton: CopyPasteResetButton
 		{
-			idc = 1200212;
+			idc = A3A_IDC_REBEL_LOADOUT_MENU_L12_RESET_BUTTON;
 			x = 0.561875 * safezoneW + safezoneX;
 			y = 0.621 * safezoneH + safezoneY;
 			w = 0.0103125 * safezoneW;

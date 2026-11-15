@@ -69,4 +69,5 @@ class mapInfo {
 	#include "Antistasi_UMB_Armavir.UMB_Armavir\mapInfo.hpp"
 	#include "Antistasi_d41_ruegen.d41_ruegen\mapInfo.hpp"
 	#include "Antistasi_IslaPera.IslaPera\mapinfo.hpp"
+	#include "Antistasi_brf_sumava_winter.brf_sumava_winter\mapInfo.hpp"
 };

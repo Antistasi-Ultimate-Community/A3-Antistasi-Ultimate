@@ -74,9 +74,19 @@ if (_side isEqualTo Invaders && {areInvadersDefeated}) exitWith {
 
 private _posDest = getMarkerPos _mrkDest;
 private _posOrigin = getMarkerPos _mrkOrigin;
+
 private _size = [_mrkDest] call A3A_fnc_sizeMarker;
 private _sizeSpawn = 50 min _size;
 private _sizeFail = 200 max _size; // Minimum size of 200m
+
+// Check if players are currently in the town; abort if so
+private _playersNear = (call SCRT_fnc_misc_getRebelPlayers) findIf {
+    alive _x && {(_x distance2D _posDest) < _sizeFail}
+};
+
+if (_playersNear != -1) exitWith {
+    Info_1("Skipping town battle at %1 because a rebel player is within 500m.", _mrkDest);
+};
 
 private _faction = Faction(_side);
 private _factionReb = A3A_faction_reb;

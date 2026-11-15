@@ -317,4 +317,82 @@ class CfgMarkers
 		icon = QPATHTOFOLDER(Pictures\Markers\marker_e22_raf_ca.paa);
 		texture = QPATHTOFOLDER(Pictures\Markers\marker_e22_raf_ca.paa);
 	};
+	class a3u_flag_tke_ucn : flag_NATO 
+	{
+		name = "UCN";
+		icon = QPATHTOFOLDER(Pictures\Markers\marker_tke_ucn_ca.paa);
+		texture = QPATHTOFOLDER(Pictures\Markers\marker_tke_ucn_ca.paa);
+	};
+	class a3u_flag_tke_md : flag_NATO 
+	{
+		name = "MD";
+		icon = QPATHTOFOLDER(Pictures\Markers\marker_tke_md_ca.paa);
+		texture = QPATHTOFOLDER(Pictures\Markers\marker_tke_md_ca.paa);
+	};
+	class a3u_flag_tke_kmc : flag_NATO 
+	{
+		name = "KMC";
+		icon = QPATHTOFOLDER(Pictures\Markers\marker_tke_kmc_ca.paa);
+		texture = QPATHTOFOLDER(Pictures\Markers\marker_tke_kmc_ca.paa);
+	};
+	class a3u_flag_tke_wu : flag_NATO 
+	{
+		name = "KMC WU";
+		icon = QPATHTOFOLDER(Pictures\Markers\marker_tke_kmc_ca.paa);
+		texture = QPATHTOFOLDER(Pictures\Markers\marker_tke_kmc_ca.paa);
+	};
+	class a3u_flag_tke_fcf : flag_NATO 
+	{
+		name = "FCF";
+		icon = QPATHTOFOLDER(Pictures\Markers\marker_tke_fcf_ca.paa);
+		texture = QPATHTOFOLDER(Pictures\Markers\marker_tke_fcf_ca.paa);
+	};
+	class a3u_flag_tke_mf : flag_NATO 
+	{
+		name = "Meridian Frontier";
+		icon = QPATHTOFOLDER(Pictures\Markers\marker_tke_mf_ca.paa);
+		texture = QPATHTOFOLDER(Pictures\Markers\marker_tke_mf_ca.paa);
+	};
+	class a3u_flag_tke_mb : flag_NATO 
+	{
+		name = "Mercantile Bastion";
+		icon = QPATHTOFOLDER(Pictures\Markers\marker_tke_mb_ca.paa);
+		texture = QPATHTOFOLDER(Pictures\Markers\marker_tke_mb_ca.paa);
+	};
+	class a3u_flag_tke_echelon : flag_NATO 
+	{
+		name = "9th Echelon";
+		icon = QPATHTOFOLDER(Pictures\Markers\marker_tke_echelon_ca.paa);
+		texture = QPATHTOFOLDER(Pictures\Markers\marker_tke_echelon_ca.paa);
+	};
+	class a3u_flag_tke_hc : flag_NATO 
+	{
+		name = "Hyperion Corsairs";
+		icon = QPATHTOFOLDER(Pictures\Markers\marker_tke_hc_ca.paa);
+		texture = QPATHTOFOLDER(Pictures\Markers\marker_tke_hc_ca.paa);
+	};
+	class a3u_flag_tke_nakamura : flag_NATO 
+	{
+		name = "Nakamura";
+		icon = QPATHTOFOLDER(Pictures\Markers\marker_tke_nakamura_ca.paa);
+		texture = QPATHTOFOLDER(Pictures\Markers\marker_tke_nakamura_ca.paa);
+	};
+	class a3u_flag_tke_ita : flag_NATO 
+	{
+		name = "ITA";
+		icon = QPATHTOFOLDER(Pictures\Markers\marker_tke_ita_ca.paa);
+		texture = QPATHTOFOLDER(Pictures\Markers\marker_tke_ita_ca.paa);
+  };
+	class a3u_flag_NFtSCW_fssr : flag_NATO 
+	{
+		name = "FSSR";
+		icon = QPATHTOFOLDER(Pictures\Markers\marker_FSSR_ca.paa);
+		texture = QPATHTOFOLDER(Pictures\Markers\marker_FSSR_ca.paa);
+	};
+	class a3u_flag_kal : flag_NATO
+	{
+		name = "KOR";
+		icon = QPATHTOFOLDER(Pictures\Markers\marker_kor_co.paa);
+		texture = QPATHTOFOLDER(Pictures\Markers\marker_kor_co.paa);
+	};
 };

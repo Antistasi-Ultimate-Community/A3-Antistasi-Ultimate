@@ -44,7 +44,9 @@ class CfgFunctions {
             class setupLoadgameTab {};
             class setupParamsTab {};
             class setupConfirmDialog {};
+            class setupEditZonesDialog {};
             class setupHQPosDialog {};
+            class setupImportExportDialog {};
         };
     };
     class ADDON {
