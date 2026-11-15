@@ -92,4 +92,7 @@ _traderX setSpeaker "NoVoice";
 {_traderX disableAI _x} forEach ["CHECKVISIBLE", "MOVE", "COVER", "SUPPRESSION", "FSM"];
 _traderX setDir -30;
 
+// ! Set the trader up as a (specially-handled) bazaar vendor
+[_traderX, [_table, _chair]] call ABZ_fnc_legacyVendorSetup;
+
 _traderX

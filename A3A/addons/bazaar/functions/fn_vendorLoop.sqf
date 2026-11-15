@@ -51,5 +51,11 @@ while { true } do {
 		isNil { [_id, _humans] call ABZ_fnc_vendorTick };
 	} forEach +ABZ_vendors;
 
+	// * special handling for legacy vendor
+	// * spawned, since we're building / managing a *much* larger stock
+	if (ABZ_legacyVendorEntry isNotEqualTo [] && {time > (ABZ_legacyVendorEntry select 7)}) then {
+		spawn ABZ_fnc_legacyVendorRestock;
+	};
+
 	isNil { call ABZ_fnc_publishStalls };
 };

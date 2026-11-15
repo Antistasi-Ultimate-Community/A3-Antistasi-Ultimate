@@ -59,11 +59,20 @@
             <Key ID="STR_A3U_Bazaar_Settings_StockSource_Tooltip">
                 <Original>'Factions in play' builds the catalog from the gear of every faction in the campaign (occupiers, invaders, rebels, rivals) - so a Faction Forger faction, RHS, 3CB, whatever is fighting, is what the traders fence. 'Everything loaded' scans every mod on the server instead (falls back to this outside Antistasi).</Original>
             </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_StockSource_Blackmarket">
+                <Original>Old black market config files (same content as AU's trader in previous versions)</Original>
+            </Key>
             <Key ID="STR_A3U_Bazaar_Settings_StockSource_Factions">
                 <Original>Factions in play (Antistasi)</Original>
             </Key>
             <Key ID="STR_A3U_Bazaar_Settings_StockSource_Everything">
                 <Original>Everything loaded</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_VehStockSource">
+                <Original>Vehicle stock source</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_VehStockSource_Tooltip">
+                <Original>'Factions in play' builds the catalog from the vehicles of every faction in the campaign (occupiers, invaders, rebels, rivals). 'Everything loaded' scans every mod on the server instead (falls back to this outside Antistasi).</Original>
             </Key>
             <Key ID="STR_A3U_Bazaar_Settings_SlotCount">
                 <Original>Single-item slots per trader</Original>
@@ -76,6 +85,12 @@
             </Key>
             <Key ID="STR_A3U_Bazaar_Settings_BulkSlots_Tooltip">
                 <Original>How many sealed bulk crates a trader offers per restock. Bulk crates hold one unlock's worth of an item and must be hauled home.</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_LegacyVendorBulkSlots">
+                <Original>Bulk crate slots for the Arms Dealer</Original>
+            </Key>
+            <Key ID="STR_A3U_Bazaar_Settings_LegacyVendorBulkSlots_Tooltip">
+                <Original>How many sealed bulk crates the Arms Dealer offers per restock. Bulk crates hold one unlock's worth of an item and must be hauled home.</Original>
             </Key>
             <Key ID="STR_A3U_Bazaar_Settings_BulkSize">
                 <Original>Bulk crate size</Original>
@@ -135,7 +150,7 @@
                 <Original>Vehicle delivery</Original>
             </Key>
             <Key ID="STR_A3U_Bazaar_Settings_VehDelivery_Tooltip">
-                <Original>'Parked near the stall': the vehicle is waiting near the trader (boats at the nearest deep water) and you drive it home - it's military, so getting in breaks undercover. 'Into the HQ garage': it goes straight into Antistasi's garage (respects the garage cap; falls back to parking when there is no garage).</Original>
+                <Original>'Parked near the stall': the vehicle is waiting near the trader (boats at the nearest deep water) and you bring it home - it's military, so getting in breaks undercover. 'Into the HQ garage': it goes straight into Antistasi's garage (respects the garage cap; falls back to parking when there is no garage).</Original>
             </Key>
             <Key ID="STR_A3U_Bazaar_Settings_VehDelivery_Parked">
                 <Original>Parked near the stall - drive it home</Original>
@@ -706,6 +721,9 @@
             <Key ID="STR_A3U_Bazaar_Misc_YouHold">
                 <Original>%1 %2 (you hold %3)</Original>
             </Key>
+            <Key ID="STR_A3U_Bazaar_Misc_WarLevel">
+                <Original>war level %1 (you are at %2)</Original>
+            </Key>
             <Key ID="STR_A3U_Bazaar_Misc_Needs">
                 <Original>Needs </Original>
             </Key>
@@ -1020,7 +1038,7 @@
                 <Original>Delivered into the HQ garage.</Original>
             </Key>
             <Key ID="STR_A3U_Bazaar_Shop_VehDeliveredLand">
-                <Original>Delivered near the stall - you drive it home. It's military: getting in breaks your cover.</Original>
+                <Original>Delivered near the stall - you bring it home. It's military: getting in breaks your cover.</Original>
             </Key>
             <Key ID="STR_A3U_Bazaar_Shop_VehDeliveredWater">
                 <Original>Delivered at the nearest deep water - you sail it home.</Original>

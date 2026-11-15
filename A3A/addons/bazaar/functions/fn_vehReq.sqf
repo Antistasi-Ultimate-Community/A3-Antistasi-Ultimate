@@ -10,7 +10,13 @@
 //   boat             1 seaport
 //   APC/IFV, AA      (2 seaports or 1 military base) + 2 factories
 //   helicopter       (1 airport or 1 military base) + 2 factories
+//   plane            1 airport + 3 factories
+//   UAV              1 airport + 1 factory
 //   tank             1 military base + 3 factories
+//   artillery        3 factories + 3 resource sites
+//   static MG / AT   1 factory
+//   static AA        war level 3 + 1 factory
+//   static mortar    war level 3 + 2 factories
 // Like Antistasi, a requirement is capped at how many of that facility the
 // map has (a map with no seaports never blocks on seaports). Unlike it, a
 // destroyed site does not count until it is rebuilt.
@@ -30,8 +36,15 @@ private _clauses = switch (_cat) do {
 	case "BOAT": { [[["seaports", 1]]] };
 	case "APC";
 	case "AA": { [[["seaports", 2], ["milbases", 1]], [["factories", 2]]] };
+	case "ARTILLERY": { [[["factories", 3]], [["resources", 3]]] };
 	case "HELI": { [[["airports", 1], ["milbases", 1]], [["factories", 2]]] };
+	case "PLANE": { [[["airports", 1]], [["factories", 3]]] };
+	case "UAV": { [[["airports", 1]], [["factories", 1]]] };
 	case "TANK": { [[["milbases", 1]], [["factories", 3]]] };
+	case "STATICAT";
+	case "STATICMG": { [[["factories", 1]]] };
+	case "STATICAA": { [[["warlevel", 3]], [["factories", 1]]] };
+	case "STATICMORTAR": { [[["warlevel", 3]], [["factories", 2]]] };
 	default { [] };
 };
 
@@ -39,6 +52,8 @@ private _vars = createHashMapFromArray [["factories", "factories"], ["seaports",
 private _names = createHashMapFromArray [["factories", ["factory", "factories"]], ["seaports", ["seaport", "seaports"]], ["airports", ["airport", "airports"]], ["milbases", ["military base", "military bases"]], ["resources", ["resource site", "resource sites"]]];
 private _destroyed = missionNamespace getVariable ["destroyedSites", []];
 if !(_destroyed isEqualType []) then { _destroyed = [] };
+private _warLevel = missionNamespace getVariable ["tierWar", 1];
+if !(_warLevel isEqualType 0) then { _warLevel = 1 };
 
 private _allMet = true;
 private _rich = [];
@@ -48,6 +63,12 @@ private _plain = [];
 	private _opts = [];
 	{
 		_x params ["_type", "_n"];
+		// not a facility: the minimum war level
+		if (_type == "warlevel") then {
+			if (_warLevel >= _n) then { _clauseMet = true };
+			_opts pushBack format [localize "STR_A3U_Bazaar_Misc_WarLevel", _n, _warLevel];
+			continue;
+		};
 		private _arr = missionNamespace getVariable [_vars get _type, []];
 		if !(_arr isEqualType []) then { _arr = [] };
 		private _own = { (sidesX getVariable [_x, sideUnknown]) == teamPlayer && {!(_x in _destroyed)} } count _arr;
