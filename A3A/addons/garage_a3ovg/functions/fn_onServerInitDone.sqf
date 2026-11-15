@@ -35,6 +35,7 @@ if !assert(_serverID isEqualType false) exitWith { Error_1("%1: old-style save s
 Info_3("Server init done. serverID: %1, campaignID: %2, mapName: %3", _serverID, _campaignID, _mapName);
 
 [_campaignID] call A3OVG_fnc_setStoragePrefix;
+[] spawn A3OVG_fnc_loadGarage;
 
 [CBA_EVENT_SERVER_GAME_DELETED, FUNC(onGameDeleted)] call FUNCMAIN(addEventHandler);
 [CBA_EVENT_SERVER_GAME_SAVED, FUNC(onGameSaved)] call FUNCMAIN(addEventHandler);
