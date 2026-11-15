@@ -10,6 +10,10 @@
     #define FUNCTION_NAME_INSERT fn
 #endif // FUNCTION_NAME_INSERT
 
+#define SET_PUBLIC_VAR(var,value) \
+    var = value; \
+    publicVariable QUOTE(var); \
+
 /* -------------------------------------------
 Sub-component support
 
