@@ -96,10 +96,11 @@ private _cratePositions = _positionsTuple select 2;
 private _leaderPositions = _positionsTuple select 3;
 private _powPositions = _positionsTuple select 4;
 
-private _soilderCount = if (_isDifficult) then {round (random [4, 6, 8])} else {round (random [3, 5, 7])};
+private _soldierCount = if (_isDifficult) then {round (random [4, 6, 8])} else {round (random [3, 5, 7])};
 private _garrisonGroup = createGroup _side;
 private _pickedIndexes = [];
-for "_i" from 0 to _soilderCount do {
+private _protectedSoldiers = [];
+for "_i" from 0 to _soldierCount do {
 	private _buildingPosIndex = selectRandom _soldierPositions;
 	private _findIndex = _pickedIndexes find _buildingPosIndex;
 	while {_findIndex != -1} do {
@@ -117,10 +118,14 @@ for "_i" from 0 to _soilderCount do {
 	_soldier setunitpos "UP";
 	_soldier disableAI "PATH";
 	[_soldier] call A3A_fnc_NATOinit;
-	sleep 0.5;
-	_soldier allowDamage true;
 	_soldiers pushBack _soldier;
+	_protectedSoldiers pushBack _soldier;
 };
+
+// ? Assuming the old sleep before allowing damage was to protect against building collisions on spawn?
+// Not sure it's needed, but let's just sleep once for the whole garrison since they should spawn pretty quickly.
+sleep 0.5;
+{ _x allowDamage true } forEach _protectedSoldiers;
 _groups pushBack _garrisonGroup;
 
 /////////////
@@ -244,8 +249,11 @@ private _ammoBox = if (garrison getVariable [_marker + "_lootCD", 0] == 0) then 
 	[_ammoBox, nil, true] call A3A_Logistics_fnc_addLoadAction;
 	[_ammoBox] remoteExec ["SCRT_fnc_common_addActionMove", [teamPlayer, civilian], _ammoBox];
 
-	sleep 2;
-	_ammoBox allowDamage true;
+	[_ammoBox] spawn {
+		// Here too, not sure why we need to sleep before allowing damage, but let's do it in the background instead of blocking the garrison creation script for an entire 2s
+		sleep 2;
+		(_this#0) allowDamage true;
+	};
 
 	_ammoBox;
 };
