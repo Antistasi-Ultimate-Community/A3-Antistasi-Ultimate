@@ -460,7 +460,7 @@ class ABZ_Shop
 			w = ABZ_W(0.085);
 			h = ABZ_H(0.045);
 			sizeEx = ABZ_FC(0.034,0.045);
-			action = "[ctrlText ((findDisplay ABZ_IDD_SHOP) displayCtrl 78815)] spawn ABZ_fnc_wantedFind";
+			action = QUOTE([ctrlText ((findDisplay ABZ_IDD_SHOP) displayCtrl ABZ_IDC_WANTEDEDIT)] spawn ABZ_fnc_wantedFind);
 		};
 
 		// ---- right column: the selected item ----
