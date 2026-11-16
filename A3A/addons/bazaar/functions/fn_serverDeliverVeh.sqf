@@ -8,7 +8,7 @@ params [["_player", objNull, [objNull]], ["_class", "", [""]], ["_sideVar", "", 
 private _name = [_class] call ABZ_fnc_displayNameOf;
 
 if (_spot isEqualTo []) exitWith {
-	[[_class], ""] call HR_GRG_fnc_addVehiclesByClass;	// "" = unlocked faction vehicle
+	[[_class]] call EFUNC(core,garageVehicle);
 	["ABZ_notify", [format [localize "STR_A3U_Bazaar_Notify_VehDelivered", _name]], _player] call CBA_fnc_targetEvent;
 	ServerInfo_2("[ABZ] %1 bought vehicle %2 -> HQ garage",name _player,_class);
 };
