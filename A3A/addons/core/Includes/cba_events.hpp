@@ -433,8 +433,12 @@
             ]) exitWith {};
 
             // _PLEEEASE_ don't use "MYTAG" either; think of something else
-            _saveData set["MYTAG_object", someValue];
-            _saveData set["MYTAG_position", someValue];
+            // Also, try to write one payload of your save data in an
+            // encapsulation object rather than individual values
+            _saveData set["MYTAG_saveData", createHashMapFromArray[
+                ["object", someObject],
+                ["position", somePosition]
+            ]];
         }] call A3A_fnc_addEventHandler;
         (end example)
 
