@@ -147,6 +147,7 @@ class CfgFunctions
             class garbageCleanerTracker {};
             class garrisonInfo {};
             class getAggroLevelString {};
+            class getFactionsPositionCenter {};
             class getLocationName {};
             class getRecentDamage {};
             class getSideRadioTowerInfluence {};
@@ -203,6 +204,7 @@ class CfgFunctions
             class unlockStatic {};
             class unlockVehicle {};
             class updateRebelStatics {};
+            class updateSupportCorridors {};
             class zoneCheck {};
             class zoneCountUnits {};
             class checkWinCondition {};
