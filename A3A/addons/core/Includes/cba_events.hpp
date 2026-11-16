@@ -433,8 +433,8 @@
             ]) exitWith {};
 
             // _PLEEEASE_ don't use "MYTAG" either; think of something else
-            _saveData setVariable["MYTAG_object", someValue];
-            _saveData setVariable["MYTAG_position", someValue];
+            _saveData set["MYTAG_object", someValue];
+            _saveData set["MYTAG_position", someValue];
         }] call A3A_fnc_addEventHandler;
         (end example)
 
