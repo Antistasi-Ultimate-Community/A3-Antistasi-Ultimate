@@ -15,7 +15,7 @@ class CfgDiscordRichPresence
     defaultLargeImageKey="bornholm";
     defaultLargeImageText="Rebelling in Bornholm";
     defaultSmallImageKey="au-logo";
-    defaultSmallImageText="Antistasi Ulimate";
+    defaultSmallImageText="Antistasi Ultimate";
     useTimeElapsed=1;
 };
 //Steam Workshop: https://steamcommunity.com/sharedfiles/filedetails/?id=2914536900
