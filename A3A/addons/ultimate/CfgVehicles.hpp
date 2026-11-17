@@ -376,19 +376,20 @@ class GVAR(BaseVehicleSpawnHelperArrow): GVAR(BaseSpawnHelper) {
 
 class ReammoBox_F;
 
-class A3AU_Stash: ReammoBox_F {
+class A3U_Stash: ReammoBox_F {
     scope = 2;
     scopeCurator = 2;
+    displayName = "Stash";
     editorCategory = "EdCat_Supplies";
     editorSubcategory = "EdSubcat_Storage";
+    placement = "slope";
 
-    displayName = "Stash";
-    model = QPATHTOFOLDER(data\models\Stash\A3AU_Stash.p3d);
+    model = QPATHTOFOLDER(data\models\A3U_Stash\A3U_Stash.p3d);
 
     hiddenSelections[] = {"camo1","camo2"};
     hiddenSelectionsTextures[] = {
         "#(argb,8,8,3)color(0.5,0.5,0.5,1)",
-        QPATHTOFOLDER(data\models\Stash\A3U_Stash_co.paa)
+        QPATHTOFOLDER(data\models\A3U_Stash\A3U_Stash_co.paa)
     };
 
     maximumLoad = 999999;
