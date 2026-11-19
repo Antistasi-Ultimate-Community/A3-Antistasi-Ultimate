@@ -108,39 +108,12 @@ class A3_Static_F_HMG_02_HMG_02_F_p3d : TRIPLES(ADDON,Cargo,Base)
     isWeapon = 1;
 };
 
-class A3_Weapons_F_Ammoboxes_AmmoVeh_F : TRIPLES(ADDON,Cargo,Base)
-{
-    offset[] = {0,0,0.81};
-    rotation[] = {1,0,0};
-    size = 2;
-};
-
-class A3_Props_F_Orange_Humanitarian_Supplies_PaperBox_01_open_boxes_F_p3d : TRIPLES(ADDON,Cargo,Base)
-{
-    offset[] = {0,0,0.62};
-    rotation[] = {1,0,0};
-    size = 2;
-};
-
-class A3_Props_F_Orange_Humanitarian_Supplies_PaperBox_01_open_water_F_p3d : A3_Props_F_Orange_Humanitarian_Supplies_PaperBox_01_open_boxes_F_p3d {};
-
-class A3_Props_F_Orange_Humanitarian_Supplies_PaperBox_01_small_stacked_F_p3d : A3_Props_F_Orange_Humanitarian_Supplies_PaperBox_01_open_boxes_F_p3d {};
-
-class A3_Props_F_Orange_Humanitarian_Supplies_WaterBottle_01_stack_F_p3d : A3_Props_F_Orange_Humanitarian_Supplies_PaperBox_01_open_boxes_F_p3d {};
-
 class A3_Structures_F_Civ_Constructions_Pallet_F_p3d : TRIPLES(ADDON,Cargo,Base)
 {
     offset[] = {0,0,0.1};
     rotation[] = {1,0,0};
     size = 2;
 }
-
-class A3_Props_F_Orange_Humanitarian_Supplies_FoodSacks_01_cargonet_F_p3d : TRIPLES(ADDON,Cargo,Base)
-{
-    offset[] = {0,0,0.51};
-    rotation[] = {1,0,0};
-    size = 2;
-};
 
 class A3_Props_F_Orange_Humanitarian_Supplies_FoodSacks_01_large_F_p3d : TRIPLES(ADDON,Cargo,Base)
 {
@@ -178,14 +151,6 @@ class A3_Weapons_F_Ammoboxes_Proxy_UsBasicExplosives_p3d : TRIPLES(ADDON,Cargo,B
     rotation[] = {1,0,0};
     size = 2;
 };
-
-class A3_Weapons_F_Ammoboxes_Supplydrop_p3d : TRIPLES(ADDON,Cargo,Base)
-{
-    offset[] = {0,0,0.89};
-    rotation[] = {1,0,0};
-    size = 2;
-};
-
 
 class A3_Supplies_F_Exp_Ammoboxes_Equipment_Box_F_p3d : TRIPLES(ADDON,Cargo,Base)
 {
@@ -267,13 +232,6 @@ class A3_Supplies_F_Heli_Slingload_Slingload_01_Fuel_F_p3d : TRIPLES(ADDON,Cargo
 class A3_Weapons_F_Bootcamp_Ammoboxes_Itembox_02_F_p3d : TRIPLES(ADDON,Cargo,Base)
 {
     offset[] = {0,0,1.2};
-    rotation[] = {1,0,0};
-    size = 2;
-};
-
-class A3_Supplies_F_Heli_CargoNets_CargoNet_01_barrels_F_p3d : TRIPLES(ADDON,Cargo,Base)
-{
-    offset[] = {0,-0.8,0.53};
     rotation[] = {1,0,0};
     size = 2;
 };

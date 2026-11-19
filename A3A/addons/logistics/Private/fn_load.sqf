@@ -157,4 +157,7 @@ _vehicle setVariable ["LoadingCargo",nil,true];
 
 private _jipKey = "A3A_Logistics_unload_" + _objStringVehicle;
 [_vehicle, "unload", _jipKey] remoteExec ["A3A_Logistics_fnc_addAction", 0 ,_jipKey];
+
+_cargo setVariable ["A3A_cargo_isLoaded", true, true];
+
 nil
