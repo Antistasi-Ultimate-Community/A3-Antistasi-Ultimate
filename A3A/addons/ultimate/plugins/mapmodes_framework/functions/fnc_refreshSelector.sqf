@@ -27,7 +27,6 @@ Author:
 #include "..\script_component.hpp"
 
 params [["_rebuild", true]];
-disableSerialization;
 private _control = (findDisplay 12) displayCtrl MM_SELECTOR_IDC;
 if (isNull _control) exitWith {};
 _control setVariable [QGVAR(updating), true];
