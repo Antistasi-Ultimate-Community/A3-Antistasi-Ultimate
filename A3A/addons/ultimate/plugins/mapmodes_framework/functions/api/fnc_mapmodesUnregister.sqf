@@ -23,6 +23,5 @@ Author:
 ---------------------------------------------------------------------------- */
 
 #include "..\..\script_component.hpp"
-private _result = false;
-isNil { _result = _this call FUNC(unregisterMode); };
-_result
+
+call FUNC(unregisterMode);
