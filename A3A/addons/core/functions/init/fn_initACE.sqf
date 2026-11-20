@@ -57,8 +57,8 @@ if (isNil "ace_interact_menu_fnc_compileMenu" || isNil "ace_interact_menu_fnc_co
 // Player units
 private _unitTypes = ["I_G_soldier_F", "I_G_Soldier_TL_F", "I_G_Soldier_AR_F", "I_G_medic_F", "I_G_engineer_F", "I_G_Soldier_GL_F"];
 // AI units
-_unitTypes append ["a3a_unit_west", "a3a_unit_east", "a3a_unit_civ", "a3a_unit_reb", "a3a_unit_reb_unarmed", "a3a_unit_reb_medic", "a3a_unit_reb_sniper", "a3a_unit_reb_marksman",
-    "a3a_unit_reb_lat", "a3a_unit_reb_mg", "a3a_unit_reb_exp", "a3a_unit_reb_gl", "a3a_unit_reb_sl", "a3a_unit_reb_eng", "a3a_unit_reb_at", "a3a_unit_reb_aa", "a3a_unit_reb_petros"];
+private _a3a_units  = QUOTE((configName _x) isKindOf QQUOTE(CAManBase) && {QQUOTE(ADDON) in (configName _x)}) configClasses (configFile >> "CfgVehicles");
+_unitTypes append (_a3a_units apply {configName _x});
 
 {
     [_x] call ace_interact_menu_fnc_compileMenu;
