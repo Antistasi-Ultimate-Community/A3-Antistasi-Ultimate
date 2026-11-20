@@ -33,7 +33,7 @@ if (_map isEqualTo _previousMap && {_previousHandler >= 0}) exitWith {true};
 if (!isNull _previousMap && {_previousHandler >= 0}) then {
     _previousMap ctrlRemoveEventHandler ["Draw", _previousHandler];
 };
-private _handler = _map ctrlAddEventHandler ["Draw", { _this call FUNC(drawPlaceholder); }];
+private _handler = _map ctrlAddEventHandler ["Draw", LINKFUNC(drawPlaceholder)];
 uiNamespace setVariable [QGVAR(placeholderMap), _map];
 uiNamespace setVariable [QGVAR(placeholderDrawHandler), _handler];
 true
