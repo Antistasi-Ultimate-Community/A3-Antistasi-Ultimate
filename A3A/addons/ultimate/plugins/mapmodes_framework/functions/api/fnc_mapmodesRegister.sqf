@@ -33,6 +33,5 @@ Author:
 ---------------------------------------------------------------------------- */
 
 #include "..\..\script_component.hpp"
-private _result = false;
-isNil { _result = _this call FUNC(registerMode); };
-_result
+
+call FUNC(registerMode);
