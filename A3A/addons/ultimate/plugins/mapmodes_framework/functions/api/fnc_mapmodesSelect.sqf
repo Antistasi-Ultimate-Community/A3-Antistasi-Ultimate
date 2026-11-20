@@ -25,7 +25,9 @@ Author:
 ---------------------------------------------------------------------------- */
 
 #include "..\..\script_component.hpp"
-if !(_this isEqualType [] && {count _this isEqualTo 1} && {!isNil {_this select 0}} && {(_this select 0) isEqualType ""}) exitWith {false};
-private _result = false;
-isNil { _result = [_this select 0, true] call FUNC(selectMode); };
-_result
+
+if !assert(params[
+    ["_id", nil, [""]]
+]) exitWith { false };
+
+call FUNC(selectMode);
