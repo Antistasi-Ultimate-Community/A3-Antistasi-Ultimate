@@ -24,4 +24,4 @@ Author:
 
 #include "..\..\script_component.hpp"
 if (!hasInterface || {!(_this isEqualTo [])}) exitWith {[]};
-(missionNamespace getVariable [QGVAR(modes), []]) apply {+_x}
++(missionNamespace getVariable [QGVAR(modes), []]);
