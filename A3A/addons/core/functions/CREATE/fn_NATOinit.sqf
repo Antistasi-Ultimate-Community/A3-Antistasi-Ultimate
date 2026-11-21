@@ -152,7 +152,14 @@ switch (true) do {
 };
 [_unit, createHashMapFromArray [["face", _face], ["speaker", _voice], ["pitch", (random [0.9, 1, 1.1])]]] call A3A_fnc_setIdentity;
 _unit setSkill _skill;
-if (!isNil "_insignia" && {_insignia isNotEqualTo ""}) then {
+
+private _hiddenSelections = getArray (configFile >> "CfgVehicles" >> (uniform _unit) >> "hiddenSelections");
+if (
+    _hiddenSelections isNotEqualTo [] && 
+    {"insignia" in _hiddenSelections} && 
+    {!isNil "_insignia"} && 
+    {_insignia isNotEqualTo ""}
+) then {
    [_unit, _insignia] call BIS_fnc_setUnitInsignia;
 };
 
