@@ -4,7 +4,7 @@ class CfgPatches {
     class SUBADDON {
         addonRootClass = "A3A_ultimate";
         requiredAddons[] = {"A3A_ultimate"};
-        requiredVersion = 2.20;
+        requiredVersion = 2.22;
         units[] = {};
         weapons[] = {};
     };

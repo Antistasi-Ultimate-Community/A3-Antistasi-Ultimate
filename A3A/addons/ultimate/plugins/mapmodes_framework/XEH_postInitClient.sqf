@@ -7,6 +7,10 @@ if (!hasInterface) exitWith {};
 
 addMissionEventHandler ["Map", {
     params ["_opened"];
-    if (_opened) then { [] spawn FUNC(createSelector); };
+    if (_opened) then {
+        [] spawn FUNC(createSelector);
+    };
 }];
-if (!isNull findDisplay 12) then { [] spawn FUNC(createSelector); };
+if (!isNull findDisplay 12) then {
+    [] spawn FUNC(createSelector);
+};
