@@ -13,10 +13,10 @@
     class O_G_Soldier_lite_F;
     class C_Man_1;
 
-    A3A_UNIT_EMPTY(GVAR(Occupants_Base),B_G_Soldier_F); // TODO fix
-    A3A_UNIT_EMPTY(GVAR(Invaders_Base),O_G_Soldier_F); // TODO fix
-    A3A_UNIT_EMPTY(GVAR(Rivals_Base),O_G_Soldier_lite_F); // TODO fix
-    A3A_UNIT_EMPTY(GVAR(Civilians_Base),C_Man_1); // TODO fix
+    A3A_UNIT_EMPTY(GVAR(Occupants_Base),B_G_Soldier_F);
+    A3A_UNIT_EMPTY(GVAR(Invaders_Base),O_G_Soldier_F);
+    A3A_UNIT_EMPTY(GVAR(Rivals_Base),O_G_Soldier_lite_F);
+    A3A_UNIT_EMPTY(GVAR(Civilians_Base),C_Man_1);
 
     // Rebels
     class I_G_Survivor_F;
@@ -47,7 +47,7 @@
     A3A_UNIT_EMPTY(GVAR(Rebels_Engineer),I_G_engineer_F);
     A3A_UNIT_EMPTY(GVAR(Rebels_AT),I_Soldier_AT_F);
     A3A_UNIT_EMPTY(GVAR(Rebels_AA),I_Soldier_AA_F);
-    A3A_UNIT_EMPTY(GVAR(Rebels_Petros),I_G_officer_F); // TODO fix
+    A3A_UNIT_EMPTY(GVAR(Rebels_Petros),I_G_officer_F);
 
     // Occupants
     class B_Soldier_SL_F;
