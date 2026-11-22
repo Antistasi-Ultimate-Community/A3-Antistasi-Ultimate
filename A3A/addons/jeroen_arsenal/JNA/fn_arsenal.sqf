@@ -139,13 +139,6 @@ FIX_LINE_NUMBERS()
 #define A3A_SEARCH_ICON_START "\A3\ui_f\data\GUI\RscCommon\RscButtonSearch\search_start_ca.paa"
 #define A3A_SEARCH_ICON_END "\A3\ui_f\data\GUI\RscCommon\RscButtonSearch\search_end_ca.paa"
 
-#define A3A_IDC_SEARCH_LEFT_EDIT 97001
-#define A3A_IDC_SEARCH_LEFT_BUTTON 97002
-#define A3A_IDC_SEARCH_RIGHT_EDIT 97003
-#define A3A_IDC_SEARCH_RIGHT_BUTTON 97004
-#define A3A_SEARCH_ICON_START "\A3\ui_f\data\GUI\RscCommon\RscButtonSearch\search_start_ca.paa"
-#define A3A_SEARCH_ICON_END "\A3\ui_f\data\GUI\RscCommon\RscButtonSearch\search_end_ca.paa"
-
 disableSerialization;
 
 _arrayContains = {
@@ -764,7 +757,7 @@ switch _mode do {
   	};
 
 	case "SearchApply": {
-		params ["_ctrlSearchEdit", "_newText"];
+		_params params ["_ctrlSearchEdit", "_newText"];
 
 		private _display = ctrlParent _ctrlSearchEdit;
 		private _ctrlSearchButton = _display displayCtrl (ctrlIDC _ctrlSearchEdit + 1);
@@ -786,7 +779,7 @@ switch _mode do {
 	};
 
 	case "SearchReset": {
-		params ["_ctrlSearchButton"];
+		_params params ["_ctrlSearchButton"];
 		
 		private _display = ctrlParent _ctrlSearchButton;
 		private _ctrlSearchEdit = _display displayCtrl (ctrlIDC _ctrlSearchButton - 1);
@@ -805,7 +798,7 @@ switch _mode do {
 
 	// Toggles visibility of the search controls based on active tab selection
 	case "SearchUpdateVisibility": {
-		params ["_display"];
+		_params params ["_display"];
 		{
 			_x params ["_tabs", "_ctrlSearchEditIDC", "_ctrlSearchButtonIDC"];
 			private _show = (_tabs findIf { ctrlEnabled (_display displayCtrl (IDC_RSCDISPLAYARSENAL_LIST + _x)) }) isNotEqualTo -1;
@@ -823,7 +816,7 @@ switch _mode do {
 
 	// Left-side lists are normally only built once, so need to rebuild them when filtering by search string
 	case "RebuildLeftList": {
-		params ["_display", "_index"];
+		_params params ["_display", "_index"];
 		private _ctrlList = _display displayCtrl (IDC_RSCDISPLAYARSENAL_LIST + _index);
 		private _ctrlSort = _display displayCtrl (IDC_RSCDISPLAYARSENAL_SORT + _index);
 

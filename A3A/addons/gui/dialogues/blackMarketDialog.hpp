@@ -48,7 +48,7 @@ class A3A_BlackMarketDialog : A3A_TabbedDialogBlackmarket
                 class SearchEditBox : A3A_Edit
                 {
                     idc = A3A_IDC_BLACKMARKETSEARCH_EDITBOX;
-                    tooltip = $STR_antistasi_dialogs_vehicle_search_tooltip;
+                    tooltip = "$STR_antistasi_dialogs_vehicle_search_tooltip";
                     onEditChanged = "[""search""] call A3A_fnc_blackMarketDialog";
                     colorBackground[] = {0,0,0,0};
                     x = QUOTE(120 * GRID_W);
