@@ -44,7 +44,7 @@ switch (inactivityLevelRivals) do {
 			private _player = _x; 
 			_sites findIf {_player inArea _x} == -1 && {_rivalsLocations findIf {_player distance2D (getMarkerPos _x) < _radius} != -1} 
 		};
-		if (count _offSitePlayers > 0) then {
+		if (_offSitePlayers isNotEqualTo []) then {
 			_encounterPosition = position (selectRandom _offSitePlayers);
 		};
 	};
@@ -55,7 +55,7 @@ switch (inactivityLevelRivals) do {
 			private _player = _x; 
 			_blacklistedSites findIf {_player inArea _x} == -1 && {_rivalsLocations findIf {_player distance2D (getMarkerPos _x) < _radius} != -1} 
 		};
-		if (count _offSitePlayers > 0) then {
+		if (_offSitePlayers isNotEqualTo []) then {
 			_encounterPosition = position (selectRandom _offSitePlayers);
 		};
     };
@@ -66,7 +66,7 @@ switch (inactivityLevelRivals) do {
 			private _player = _x; 
 			_blacklistedSites findIf {_player inArea _x} == -1 && {_rivalsLocations findIf {_player distance2D (getMarkerPos _x) < _radius} != -1} 
 		};
-		if (count _offSitePlayers > 0) then {
+		if (_offSitePlayers isNotEqualTo []) then {
 			_encounterPosition = position (selectRandom _offSitePlayers);
 		};
     };
@@ -75,7 +75,7 @@ switch (inactivityLevelRivals) do {
 		_encounterPosition = position (selectRandom _players);
     };
 	default {
-		Error_1("Bad level recieved, cannot generate string, was %1", inactivityLevelRivals);
+		Error_1("Bad level recieved, cannot generate string, was %1",inactivityLevelRivals);
 		[]
 	};
 };

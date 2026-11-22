@@ -69,7 +69,7 @@ if (areRivalsDiscovered && {!areRivalsDefeated}) then {
 	(_display displayCtrl A3A_IDC_MENU_RIVALS_PROGRESS_BAR) ctrlSetTooltip format [(localize "STR_antistasi_rivals_network_progress_bar_tooltip"), A3A_faction_riv get "name"];
 
 	if (_knownLocationsCount > 0) then {
-		(_display displayCtrl A3A_IDC_MENU_RIVALS_SHOW_LOCATIONS_BUTTON) ctrlSetBackgroundColor [(profilenamespace getvariable ['GUI_BCG_RGB_R',0.376]), (profilenamespace getvariable ['GUI_BCG_RGB_G',0.125]), (profilenamespace getvariable ['GUI_BCG_RGB_B',0.043]), 1];
+		(_display displayCtrl A3A_IDC_MENU_RIVALS_SHOW_LOCATIONS_BUTTON) ctrlSetBackgroundColor [(profileNamespace getVariable ['GUI_BCG_RGB_R',0.376]), (profileNamespace getVariable ['GUI_BCG_RGB_G',0.125]), (profileNamespace getVariable ['GUI_BCG_RGB_B',0.043]), 1];
         ctrlSetText [A3A_IDC_MENU_RIVALS_SHOW_LOCATIONS_BUTTON, localize "STR_antistasi_rivals_show_activity_attack_title"];
     } else {
         ctrlSetText [A3A_IDC_MENU_RIVALS_SHOW_LOCATIONS_BUTTON, format [(localize "STR_antistasi_rivals_show_activity_title"), A3A_faction_riv get "name"]];

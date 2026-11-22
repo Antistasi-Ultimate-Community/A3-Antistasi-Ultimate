@@ -39,7 +39,7 @@ _mainMarker = getMarkerPos _marker;
   _fullName = format ["%1%2", _markerPrefix, _x];
   if(_mainMarker distance (getMarkerPos _fullName) > 500) then
   {
-    Warning_2("Placementmarker %1 is more than 500 meter away from its mainMarker %2. You may want to check that!", _fullName, _marker);
+    Warning_2("Placementmarker %1 is more than 500 meter away from its mainMarker %2. You may want to check that!",_fullName,_marker);
   };
   switch (_first) do
   {
@@ -55,10 +55,10 @@ _mainMarker = getMarkerPos _marker;
   _fullName setMarkerAlpha 0;
 } forEach _placementMarker;
 
-if(count _vehicleMarker == 0) then
+if(_vehicleMarker isEqualTo []) then
 {
   // Not automatically wrong. Some locations may not have any vehicle places
-  Warning_1("InitSpawnPlaces: Could not find any vehicle places on %1!", _marker);
+  Warning_1("InitSpawnPlaces: Could not find any vehicle places on %1!",_marker);
 };
 
 private ["_markerSize", "_distance", "_buildings", "_hangars", "_garages", "_helipads", "_markerX"];
@@ -124,7 +124,7 @@ private _hangarCount = count _hangars;
 //All additional hangar and helipads found
 
 if (_heliCount != count _helipads or _hangarCount != count _hangars) then {
-  Debug_5("Marker %1 buildings diff: %2;%3 %4;%5", _marker, _heliCount, count _helipads, _hangarCount, count _hangars);
+  Debug_5("Marker %1 buildings diff: %2;%3 %4;%5",_marker,_heliCount,count _helipads,_hangarCount,count _hangars);
 };
 
 private ["_vehicleSpawns", "_size", "_width", "_height", "_vehicleCount", "_realLength", "_realSpace", "_markerDir", "_dis", "_pos", "_heliSpawns", "_dir", "_planeSpawns", "_vehSpawns", "_mortarSpawns", "_spawns"];
@@ -137,13 +137,13 @@ _vehicleSpawns = [];
     _height = (_size select 1) * 2;
     if(_width < (4 + 2 * SPACING)) then
     {
-      Error_2("InitSpawnPlaces: Marker %1 is not wide enough for vehicles, required are %2 meters!", _x , (4 + 2 * SPACING));
+      Error_2("InitSpawnPlaces: Marker %1 is not wide enough for vehicles, required are %2 meters!",_x,(4 + 2 * SPACING));
     }
     else
     {
       if(_height < 10) then
       {
-        Error_1("InitSpawnPlaces: Marker %1 is not long enough for vehicles, required are 10 meters!", _x);
+        Error_1("InitSpawnPlaces: Marker %1 is not long enough for vehicles, required are 10 meters!",_x);
       }
       else
       {
@@ -156,7 +156,7 @@ _vehicleSpawns = [];
             {
               _x hideObject true;
             };
-          } foreach (nearestTerrainObjects [getMarkerPos _markerX, ["Tree","Bush", "Hide", "Rock", "Fence"], _radius, true]);
+          } forEach (nearestTerrainObjects [getMarkerPos _markerX, ["Tree","Bush", "Hide", "Rock", "Fence"], _radius, true]);
         }
         else
         {
@@ -165,7 +165,7 @@ _vehicleSpawns = [];
             {
               [_x,true] remoteExec ["hideObjectGlobal",2];
             }
-          } foreach (nearestTerrainObjects [getMarkerPos _markerX, ["Tree","Bush", "Hide", "Rock", "Fence"], _radius, true]);
+          } forEach (nearestTerrainObjects [getMarkerPos _markerX, ["Tree","Bush", "Hide", "Rock", "Fence"], _radius, true]);
         };
 
         //Create the places
@@ -192,13 +192,13 @@ _heliSpawns = [];
     {
       {
         _x hideObject true;
-      } foreach (nearestTerrainObjects [_pos, ["Tree","Bush", "Hide", "Rock"], 5, true]);
+      } forEach (nearestTerrainObjects [_pos, ["Tree","Bush", "Hide", "Rock"], 5, true]);
     }
     else
     {
       {
         [_x,true] remoteExec ["hideObjectGlobal",2];
-      } foreach (nearestTerrainObjects [_pos, ["Tree","Bush", "Hide", "Rock"], 5, true]);
+      } forEach (nearestTerrainObjects [_pos, ["Tree","Bush", "Hide", "Rock"], 5, true]);
     };
     _dir = direction _x;
     _heliSpawns pushBack [_pos, _dir];

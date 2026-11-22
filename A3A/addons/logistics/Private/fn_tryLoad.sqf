@@ -37,8 +37,8 @@ private _vehicle = _vehicles select _firstViable;
 private _return = [_vehicle, _cargo] call A3A_Logistics_fnc_canLoad;
 if (_return isEqualType 0) exitWith {
 
-    private _cargoName = getText (configFile >> "CfgVehicles" >> typeOf _cargo >> "displayName");
-    private _vehicleName = getText (configFile >> "CfgVehicles" >> typeOf _vehicle >> "displayName");
+    private _cargoName = getText (configOf _cargo >> "displayName");
+    private _vehicleName = getText (configOf _vehicle >> "displayName");
     if (_cargo isKindOf "CAManBase") then {_cargoName = name _cargo};
 
     switch _return do {
@@ -51,7 +51,7 @@ if (_return isEqualType 0) exitWith {
         case -7: { [localize "STR_A3A_Logistics_header", format [localize "STR_A3A_Logistics_unableToLoad", _vehicleName]] remoteExec ["A3A_fnc_customHint", remoteExecutedOwner] };
         case -8: { [localize "STR_A3A_Logistics_header", format [localize "STR_A3A_Logistics_tryLoad_not_enough_space", _vehicleName, _cargoName]] remoteExec ["A3A_fnc_customHint", remoteExecutedOwner] };
         case -9: { [localize "STR_A3A_Logistics_header", format [localize "STR_A3A_Logistics_tryLoad_blocking_plane_cargo", _vehicleName]] remoteExec ["A3A_fnc_customHint", remoteExecutedOwner] };
-        default { Error_1("Unknown error code: %1", _return) };
+        default { Error_1("Unknown error code: %1",_return) };
     };
 };
 

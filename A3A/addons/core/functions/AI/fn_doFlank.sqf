@@ -9,7 +9,7 @@ private _pos2 = _LeaderX getPos [_dist,_ang - 45];
 
 {
 	_x setVariable ["maneuvering",true];
-	private _pos = if (floor (_forEachIndex/2) == (_forEachIndex / 2)) then {_pos1} else {_pos2};
+	private _pos = [_pos2, _pos1] select (floor (_forEachIndex/2) == (_forEachIndex / 2));
 	_x doMove _pos;
 	[_x,_nearX,_pos] spawn {
 		params ["_unit", "_nearX", "_pos"];

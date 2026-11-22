@@ -18,15 +18,15 @@ FIX_LINE_NUMBERS()
 
 params ["_varName", "_varValue", "_saveTarget"];
 
-Info_1("Writing back save var with params %1", _this);
+Info_1("Writing back save var with params %1",_this);
 
 isNil {
-    private _oldTarget = if (!isNil "A3A_saveTarget") then { A3A_saveTarget };
+    private _oldTarget = if (!isNil "A3A_saveTarget") then { A3A_saveTarget } else { [] };
     if (!isNil "_saveTarget") then { A3A_saveTarget = _saveTarget };
 
     [_varName, _varValue] call A3A_fnc_setStatVariable;
 
     if (A3A_saveTarget#0 isEqualType false) then { saveMissionProfileNamespace } else { saveProfileNamespace };
 
-    if (!isNil "_oldTarget") then { A3A_saveTarget = _oldTarget };
+    if (_oldTarget isNotEqualTo []) then { A3A_saveTarget = _oldTarget };
 };

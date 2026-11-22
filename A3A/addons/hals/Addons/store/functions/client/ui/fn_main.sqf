@@ -22,14 +22,14 @@ __________________________________________________________________*/
 
 params [
 	["_mode", "onload", [""]],
-	["_this", [], [[]]]
+	["_params", [], [[]]]
 ];
 
 private _trader = player getVariable ["HALs_store_trader_current", objNull];
 
 switch (_mode) do {
 	case ("onLoad"): {
-		params [
+		_params params [
 			["_display", displayNull, [displayNull]]
 		];
 
@@ -71,12 +71,12 @@ switch (_mode) do {
 		HALs_store_blur ppEffectCommit 0.2;
 		
 		if (isNil "HALs_store_fnc_formatMoney") then {
-			HALs_store_fnc_formatMoney = {format ["%1 %2", _this, A3A_faction_civ get "currencySymbol"]};
+			HALs_store_fnc_formatMoney = {format ["%1 %2", _params, A3A_faction_civ get "currencySymbol"]};
 		};
 
 		// Get all nearby vehicles that we can sell to
 		HALs_store_vehicles = ([_trader] call HALs_store_getNearbyVehicles) apply {
-			[typeOf _x, format ["%1 (%2m)", getText(configFile >> "cfgVehicles" >> typeOf _x >> "displayName"), (_x distance2D _trader) toFixed 0], "", _x]	
+			[typeOf _x, format ["%1 (%2m)", getText(configOf _x >> "displayName"), (_x distance2D _trader) toFixed 0], "", _x]	
 		};
 		
 		// Process all items and store in trader
@@ -134,10 +134,10 @@ switch (_mode) do {
 	};
 
 	case ("listbox"): {
-		params ["_mode", "_this"];
+		_params params ["_mode", "_params"];
 
 		switch (toLower _mode) do {
-			params ["_mode", "_this"];
+			_params params ["_mode", "_params"];
 
 			case ("init"): {
 				private _ctrlList = CTRL(IDC_LISTBOX);
@@ -242,10 +242,10 @@ switch (_mode) do {
 			};
 			
 			case ("sort"): {
-				(_this select 0) ctrlSetTooltip (["Sorted ascending.", "Sorted descending."] select (_this select 1));
+				(_params select 0) ctrlSetTooltip (["Sorted ascending.", "Sorted descending."] select (_params select 1));
 			
 				private _ctrlList = CTRL(IDC_LISTBOX);
-				lbSort [_ctrlList, ["ASC", "DESC"] select (_this select 1)];
+				lbSort [_ctrlList, ["ASC", "DESC"] select (_params select 1)];
 				ctrlSetFocus _ctrlList;
 				_ctrlList lbSetCurSel ((_ctrlList getVariable ["idx", -1]) max 0);
 			};
@@ -253,10 +253,10 @@ switch (_mode) do {
 	};
 
 	case ("combobox"): {
-		params ["_mode", "_this"];
+		_params params ["_mode", "_params"];
 
 		switch (toLower _mode) do {
-			params ["_mode", "_this"];
+			_params params ["_mode", "_params"];
 
 			case ("init"): {
 				private _ctrlCategory = CTRL(IDC_COMBO_CATEGORY);
@@ -342,10 +342,10 @@ switch (_mode) do {
 	};
 
 	case ("edit"): {
-		params ["_mode", "_this"];
+		_params params ["_mode", "_params"];
 
 		switch (toLower _mode) do {
-			params ["_mode", "_this"];
+			_params params ["_mode", "_params"];
 
 			case ("init"): {
 				private _ctrlEdit = CTRLT(IDC_EDIT);
@@ -379,13 +379,13 @@ switch (_mode) do {
 	};
 
 	case ("button"): {
-		params ["_mode", "_this"];
+		_params params ["_mode", "_params"];
 
 		switch (toLower _mode) do {
-			params ["_mode", "_this"];
+			_params params ["_mode", "_params"];
 
 			case ("change"): {
-				params ["", "_checked"];
+				_params params ["", "_checked"];
 				CTRLT(IDC_BUTTON_BUY) ctrlSetText localize (["STR_HALS_STORE_BUTTON_PURCHASE", "STR_HALS_STORE_BUTTON_SELL"] select _checked);
 			};
 
@@ -461,10 +461,10 @@ switch (_mode) do {
 	};
 
 	case ("text"): {
-		params ["_mode", "_this"];
+		_params params ["_mode", "_params"];
 
 		switch (toLower _mode) do {
-			params ["_mode", "_this"];
+			_params params ["_mode", "_params"];
 
 			case ("init"): {
 				["text", ["update", ["buy", [CTRL(IDC_LISTBOX) getVariable "value", CTRLT(IDC_EDIT) getVariable "amt"]]]] call HALs_store_fnc_main;
@@ -474,13 +474,13 @@ switch (_mode) do {
 			};
 
 			case ("update"): {
-				params ["_mode", "_this"];
+				_params params ["_mode", "_params"];
 
 				switch (toLower _mode) do {
-					params ["_mode", "_this"];
+					_params params ["_mode", "_params"];
 
 					case ("buy"): {
-						params [
+						_params params [
 							["_price", 0],
 							["_amount", 0]
 						];
@@ -618,7 +618,7 @@ switch (_mode) do {
 	};
 
 	case "progressLoad": {
-		params [
+		_params params [
 			["_container", objNull, [objNull]],
 			["_data", [], [[]]],
 			["_amount", 1, [1]]
@@ -635,7 +635,7 @@ switch (_mode) do {
 
 		private _classname = _data param [0, ""];
 		_currentLoad = [_container] call HALs_store_fnc_getCargoMass;
-		_maxLoad = 1 max getNumber (configFile >> "CfgVehicles" >> typeOf _container >> "maximumLoad");
+		_maxLoad = 1 max getNumber (configOf _container >> "maximumLoad");
 	
 		if (_classname isEqualTo "" || cbChecked CTRL(IDC_CHECKBOX + 3)) exitWith {
 			_bar progressSetPosition (_currentLoad / _maxLoad);
@@ -671,7 +671,7 @@ switch (_mode) do {
 	};
 
 	case "progressStats": {
-		params [
+		_params params [
 			["_data", [], [[]]]
 		];
 

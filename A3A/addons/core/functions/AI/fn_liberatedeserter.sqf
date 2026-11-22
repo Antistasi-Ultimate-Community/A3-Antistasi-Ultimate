@@ -8,7 +8,7 @@ _playerX globalChat (localize "STR_chats_loot_flee_player");
 sleep 3;
 [_unit] join group _playerX;
 private _timeout = 10;
-waituntil {sleep 1; _timeout = _timeout-1; _timeout < 0 or (local _unit and group _unit == group _playerX)};
+waitUntil {sleep 1; _timeout = _timeout-1; _timeout < 0 or (local _unit and group _unit == group _playerX)};
 if (_timeout < 0) exitWith {};
 _unit globalChat (localize "STR_chats_loot_flee_response");
 _unit enableAI "MOVE";

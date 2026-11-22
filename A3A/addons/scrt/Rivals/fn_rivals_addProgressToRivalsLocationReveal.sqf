@@ -35,7 +35,7 @@ if (_newValue > GATE) then {
     nextRivalsLocationReveal = 0;  
     [] call SCRT_fnc_rivals_revealLocation;
 } else {
-    Info_1("New nextRivalsLocationReveal value: %1", str _newValue);
+    Info_1("New nextRivalsLocationReveal value: %1",str _newValue);
     nextRivalsLocationReveal = _newValue;
 };
 

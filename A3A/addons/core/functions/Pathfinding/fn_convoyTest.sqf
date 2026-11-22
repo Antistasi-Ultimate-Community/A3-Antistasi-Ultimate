@@ -5,7 +5,7 @@ if(!canSuspend) exitWith
 
 if(isDedicated) exitWith {};
 
-if(!isServer && {!(call BIS_fnc_admin > 0)}) exitWith
+if(!isServer && {(call BIS_fnc_admin <= 0)}) exitWith
 {
     ["Convoy Test", "Only server admins can execute the convoy test!"] call A3A_fnc_customHint;
 };
@@ -17,7 +17,7 @@ markedPos = [];
 if (!visibleMap) then {openMap true};
 onMapSingleClick "markedPos = _pos;";
 
-waitUntil {sleep 1; (count markedPos > 0) or (!visibleMap)};
+waitUntil {sleep 1; (markedPos isNotEqualTo []) or (!visibleMap)};
 onMapSingleClick "";
 
 if (!visibleMap) exitWith {};
@@ -35,7 +35,7 @@ _startMarker setMarkerTextLocal "Convoy Start";
 
 onMapSingleClick "markedPos = _pos;";
 
-waitUntil {sleep 1; (count markedPos > 0) or (!visibleMap)};
+waitUntil {sleep 1; (markedPos isNotEqualTo []) or (!visibleMap)};
 onMapSingleClick "";
 
 if (!visibleMap) exitWith {deleteMarker _startMarker};
@@ -56,4 +56,4 @@ if(_path isEqualTo []) exitWith
 private _vehicles = [["B_MRAP_01_F", ["B_W_Crew_F"], []], ["B_APC_Tracked_01_rcws_F", ["B_W_Crew_F","B_W_Crew_F","B_W_Crew_F"], []]];
 
 
-[69420, _vehicles, _startPos, _endPos, [], "ATTACK", WEST] spawn A3A_fnc_createConvoy;
+[69420, _vehicles, _startPos, _endPos, [], "ATTACK", west] spawn A3A_fnc_createConvoy;

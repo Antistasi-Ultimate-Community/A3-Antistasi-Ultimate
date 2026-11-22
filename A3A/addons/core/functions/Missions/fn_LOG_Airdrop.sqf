@@ -6,13 +6,13 @@ if (!isServer and hasInterface) exitWith{};
 
 params ["_markerX"];
 
-Info ("Airdrop mission init.");
+Info("Airdrop mission init.");
 
 private _vehicles = [];
 private _groups = [];
 private _boxes = [];
 
-private _sideX = if (sidesX getVariable [_markerX, sideUnknown] == Occupants) then {Occupants} else {Invaders};
+private _sideX = [Invaders, Occupants] select (sidesX getVariable [_markerX, sideUnknown] == Occupants);
 private _faction = Faction(_sideX);
 private _difficultX = random 10 < tierWar;
 private _positionX = getMarkerPos _markerX;
@@ -83,7 +83,7 @@ private _escortVeh = _escortVehicleData select 0;
 
 private _infantrySquadArray  = [_escortClass, _sideX] call A3A_fnc_cargoSeats;
 
-Info_2("Vehicle: %1, infantry array: %2", _escortClass, str _infantrySquadArray);
+Info_2("Vehicle: %1, infantry array: %2",_escortClass,str _infantrySquadArray);
 
 private _vehCrew = crew _escortVeh;
 {[_x] call A3A_fnc_NATOinit} forEach _vehCrew;
@@ -132,7 +132,7 @@ if(_difficultX) then {
     _infGroup2Wp setWaypointType "MOVE";
     _infGroup2Wp setWaypointBehaviour "AWARE";
     _infGroup2Wp setWaypointSpeed "FULL";
-    Info_1("Additional Group: %1", _infGroup2);
+    Info_1("Additional Group: %1",_infGroup2);
 };
 
 //moving to airdrop location
@@ -140,18 +140,18 @@ private _escortWP = _escortVehicleGroup addWaypoint [_positionX, 0];
 _escortWP setWaypointType "MOVE";
 _escortWP setWaypointBehaviour "AWARE";
 _escortWP setWaypointSpeed "FULL";
-Info_2("Placed Group: %1 in Lite Vehicle and set waypoint %2", _typeGroup, _positionX);
+Info_2("Placed Group: %1 in Lite Vehicle and set waypoint %2",_typeGroup,_positionX);
 
 _infGroup1Wp = _infGroup1 addWaypoint [_positionX, 1];
 _infGroup1Wp setWaypointType "MOVE";
 _infGroup1Wp setWaypointBehaviour "AWARE";
 _infGroup1Wp setWaypointSpeed "FULL";
-Info_1("Group: %1", _infGroup1);
+Info_1("Group: %1",_infGroup1);
 
 waitUntil {
     sleep 1;
     private _smokes = _positionX nearObjects ["SmokeShell", 200];
-    count _smokes > 0 || {dateToNumber date > _dateLimitNum}
+    _smokes isNotEqualTo [] || {dateToNumber date > _dateLimitNum}
 };
 
 Info("Players are inside, looking for smoke grenades.");
@@ -159,7 +159,7 @@ Info("Players are inside, looking for smoke grenades.");
 private _smokes = _positionX nearObjects ["SmokeShell", 200];
 private _planeVeh = objNull;
 
-if(count _smokes > 0) then {
+if(_smokes isNotEqualTo []) then {
     Info("Smoke detected, spawning airplane.");
 
     private _initialPlanePosition = [
@@ -176,7 +176,7 @@ if(count _smokes > 0) then {
     private _height = random [500, 1000, 1300];
     private _direction = [_initialPlanePosition, _positionX] call BIS_fnc_DirTo;
 
-    _planeType = selectRandom (FactionGet(reb, "vehiclesPlane"));
+    _planeType = selectRandom (FactionGet(reb,"vehiclesPlane"));
     _planeData = [[_initialPlanePosition select 0, _initialPlanePosition select 1, _height], _direction, _planeType, teamPlayer] call A3A_fnc_spawnVehicle;
     _planeVeh = _planeData select 0;
     _planeVeh setPosATL [getPosATL _planeVeh select 0, getPosATL _planeVeh select 1, _height];
@@ -195,7 +195,7 @@ if(count _smokes > 0) then {
     private _smokes = _positionX nearObjects ["SmokeShell", 200];
     private _dropPosition = _positionX;
 
-    if(count _smokes > 0) then {
+    if(_smokes isNotEqualTo []) then {
         private _smoke = _smokes select 0;
         _dropPosition = position _smoke;
     };
@@ -215,6 +215,8 @@ waitUntil {
     (!(isNull _planeVeh) && {_planeVeh inArea [_positionX, 100, 100, 0, false]}) || (dateToNumber date > _dateLimitNum) || !(alive _planeVeh)
 };
 
+private _box1 = objNull;
+private _box2 = objNull;
 private _airDropHappened = false;
 
 if(alive _planeVeh) then {
@@ -229,7 +231,7 @@ if(alive _planeVeh) then {
 
     _planeVeh allowDamage false;
     sleep 1;
-    private _box1 = [_boxType,position _planeVeh] call SCRT_fnc_common_airdropCargo;
+    _box1 = [_boxType,position _planeVeh] call SCRT_fnc_common_airdropCargo;
     _box1 enableRopeAttach true;
     _box1 allowDamage false;
     [_box1] call A3A_Logistics_fnc_addLoadAction;
@@ -245,7 +247,7 @@ if(alive _planeVeh) then {
         _faction get "ammobox"
     ] select _difficultX;
 
-    private _box2 = [_box2Class,position _planeVeh] call SCRT_fnc_common_airdropCargo;
+    _box2 = [_box2Class,position _planeVeh] call SCRT_fnc_common_airdropCargo;
     _box2 enableRopeAttach true;
     _box2 allowDamage false;
     [_box2] call A3A_Logistics_fnc_addLoadAction;
@@ -319,7 +321,7 @@ switch(true) do {
     };
     case (dateToNumber date > _dateLimitNum): {
         Info("Fail, mission Expired.");
-        [2, "Fail, mission Expired.", _fileName, true] call A3A_fnc_log;
+        [2, "Fail, mission Expired.", "fn_LOG_Airdrop", true] call A3A_fnc_log;
         [_taskId, "LOG", "FAILED"] call A3A_fnc_taskSetState;
         [-25,theBoss] call A3A_fnc_addScorePlayer;
     }; 

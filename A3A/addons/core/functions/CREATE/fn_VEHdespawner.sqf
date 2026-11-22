@@ -1,3 +1,4 @@
+#pragma hemtt ignore_variables ["_thisScript"]
 _filename = "fn_VEHdespawner";
 params ["_veh", ["_checkNonRebel", false]];
 

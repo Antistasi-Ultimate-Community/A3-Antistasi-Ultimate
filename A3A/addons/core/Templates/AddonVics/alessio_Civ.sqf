@@ -1,3 +1,5 @@
+#pragma hemtt ignore_variables ["_addon"]
+
 _addon set ["vehiclesCivCar", [
     "AlessioQuadrifoglio", 0.1,
     "AlessioR8", 0.1,

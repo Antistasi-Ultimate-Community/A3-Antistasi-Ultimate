@@ -50,22 +50,22 @@ private _route = [getMarkerPos (_base), _targpos];
 // private _routeClean = [];
 // {_routeClean pushBack (_x#0)} forEach _route; // lazy but works
 
-private _leadVehicle = ObjNull;
-private _lastVehicle = ObjNull;
+private _leadVehicle = objNull;
+private _lastVehicle = objNull;
 
 for "_i" from 1 to _vehCount do {
-    private _vehType = ObjNull;
+    private _vehType = objNull;
 
     // Attempt to grab veh types
     _vehType = selectRandom _transportPool;
     if (isNil "_vehType") then {
-        Error_1("Failed to grab land vehicle, attempting to grab a transport vehicle.", _base);
+        Error("Failed to grab land vehicle, attempting to grab a transport vehicle.");
         // exit early, somehow police have no vehicles
     };
 
     private _vehData = [_vehType, _troopType, _resPool, _landPosBlacklist, _side, _base, _targPos] call A3A_fnc_createAttackVehicle;
     if !(_vehData isEqualType []) exitWith {
-        Error_1("Failed to spawn land vehicle at marker %1", _base);
+        Error_1("Failed to spawn land vehicle at marker %1",_base);
     }; // couldn't create for some reason, assume we're out of spawn places?
 
     private _vehicle = (_vehData#0);

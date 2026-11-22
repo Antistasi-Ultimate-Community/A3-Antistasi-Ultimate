@@ -18,7 +18,7 @@ sleep _delay;
 //["_reveal", "_position", "_side", "_supportType", "_markerType", "_markerLifeTime"]
 [_reveal, _targPos, _side, "CarpetBombs", 200, 120] spawn A3A_fnc_showInterceptedSupportCall;
 
-private _carrierMarker = if (_side == Occupants) then {"NATO_carrier"} else {"CSAT_carrier"};
+private _carrierMarker = ["CSAT_carrier", "NATO_carrier"] select (_side == Occupants);
 private _dir = _targPos getDir markerPos _carrierMarker;
 
 private _vectorDir = [[1,0], _dir] call BIS_fnc_rotateVector2D;
