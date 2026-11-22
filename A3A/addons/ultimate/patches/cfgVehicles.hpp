@@ -20,7 +20,7 @@ class Prop_TFAR_SCR536: Thing
     destrType = "DestructNo";
     scope = 2;
     scopeCurator = 2;
-    model = QPATHTOFOLDER(patches\scr536);
+    model = QPATHTOFOLDER(patches\scr536.p3d);
     displayName = "SCR-536 Handie Talkie";
     // editorCategory = "";
     // vehicleClass="";

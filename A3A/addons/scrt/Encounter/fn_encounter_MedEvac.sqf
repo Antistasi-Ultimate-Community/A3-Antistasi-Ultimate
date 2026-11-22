@@ -18,7 +18,7 @@ if (isNil "_player") exitWith {
 
 private _originPosition = position _player;
 
-Info_2("%1 will be used as center of the event at %2 position.", name _player, str _originPosition);
+Info_2("%1 will be used as center of the event at %2 position.",name _player,str _originPosition);
 
 private _spawnPosition = [_originPosition, 900, distanceSPWN, 0, 0] call BIS_fnc_findSafePos;
 private _road = objNull;
@@ -30,7 +30,7 @@ private _militaryPositions = (outposts + milbases + airportsX) apply {getMarkerP
 while {true} do {
     _road = _spawnPosition nearRoads _radiusX;
     
-    if (count _road > 0 && {_road findIf {
+    if (_road isNotEqualTo [] && {_road findIf {
         private _roadPos = position _x;
         // Main condition with added check for military bases
         (_roadPos distance2D _originPosition > 500) &&
@@ -48,9 +48,9 @@ if (count _road == 0) exitWith {
 };
 
 private _selectedRoad = _road select 0;
-private _roadcon = roadsConnectedto _selectedRoad;
+private _roadcon = roadsConnectedTo _selectedRoad;
 
-private _dirveh = if (count _roadcon > 0) then {
+private _dirveh = if (_roadcon isNotEqualTo []) then {
     [_selectedRoad, _roadcon select 0] call BIS_fnc_dirTo
 } else {
     random 360
@@ -161,11 +161,11 @@ private _roadMedical = objNull;
 private _radiusX = 5;
 while {true} do {
     _roadMedical = _roadPosition nearRoads _radiusX;
-    if (count _roadMedical > 0 && {_roadMedical findIf {(position _x) distance2D _originPosition > 500 && (position _x) distance2D _roadPosition > 500} != -1}) exitWith {}; //should find position 500 away from player and 300 meters away from damaged vehicle
+    if (_roadMedical isNotEqualTo [] && {_roadMedical findIf {(position _x) distance2D _originPosition > 500 && (position _x) distance2D _roadPosition > 500} != -1}) exitWith {}; //should find position 500 away from player and 300 meters away from damaged vehicle
     _radiusX = _radiusX + 5;
 };
-private _roadconMedical = roadsConnectedto ((_roadMedical select {(position _x) distance2D _originPosition > 500 && (position _x) distance2D _roadPosition > 500}) select 0); //guaranteed due to top condition on road search
-private _dirvehMedical = if (count _roadconMedical > 0) then {[_roadMedical select 0, _roadconMedical select 0] call BIS_fnc_dirTo} else {random 360};
+private _roadconMedical = roadsConnectedTo ((_roadMedical select {(position _x) distance2D _originPosition > 500 && (position _x) distance2D _roadPosition > 500}) select 0); //guaranteed due to top condition on road search
+private _dirvehMedical = if (_roadconMedical isNotEqualTo []) then {[_roadMedical select 0, _roadconMedical select 0] call BIS_fnc_dirTo} else {random 360};
 private _roadPositionMedical = getPos (_roadMedical select 0);
 
 private _MedicalVehicleData = [_roadPositionMedical, _dirvehMedical, _MedicalVehicleClass, _side] call A3A_fnc_spawnVehicle;

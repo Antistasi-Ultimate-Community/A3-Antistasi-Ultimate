@@ -1,3 +1,5 @@
+#pragma hemtt ignore_variables ["_fnc_saveNames","_fnc_createLoadoutData","_fnc_copyLoadoutData","_fnc_generateAndSaveUnitsToTemplate","_fnc_saveToTemplate"]
+
 //////////////////////////
 //   Side Information   //
 //////////////////////////
@@ -176,11 +178,7 @@
 ["vehicleSam", ""] call _fnc_saveToTemplate;
 
 ["howitzerMagazineHE", call {
-    if (tierWar < 2) then {
-        "CUP_30Rnd_122mmHE_D30_M"
-    } else {
-        "CUP_30Rnd_105mmHE_M119_M"
-    };
+    ["CUP_30Rnd_105mmHE_M119_M", "CUP_30Rnd_122mmHE_D30_M"] select (tierWar < 2);
 }] call _fnc_saveToTemplate;
 
 ["mortarMagazineHE", "8Rnd_82mm_Mo_shells"] call _fnc_saveToTemplate;

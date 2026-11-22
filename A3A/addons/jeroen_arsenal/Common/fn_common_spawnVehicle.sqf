@@ -1,8 +1,8 @@
 #include "defineCommon.inc"
 
-params["_jn_type", _location];
+params["_jn_type", "_location"];
 private _config = (missionConfigFile >> "Vehicles" >> _jn_type);
-private _type = (_config >> "type");
+private _type = getText(_config >> "type");
 private _fuel = (_config >> "fuel");
 private _repair = (_config >> "repair");
 

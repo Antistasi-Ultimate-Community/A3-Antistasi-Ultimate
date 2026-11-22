@@ -22,6 +22,7 @@ Author:
     UnseenKill/gor3Splatter
 ---------------------------------------------------------------------------- */
 private _ignore = [
+    QUOTE(DOUBLES(PREFIX,bazaar)),
     QUOTE(DOUBLES(PREFIX,config_fixes)),
     QUOTE(DOUBLES(PREFIX,core)),
     QUOTE(DOUBLES(PREFIX,events)),
@@ -72,9 +73,9 @@ if (GVAR(extendersLoaded) isEqualTo []) then {
     Info_2("Found %1 extenders. %2 of which have compatibility issues.",count GVAR(extendersLoaded),count GVAR(extendersLoadedInvalid));
     {
         if (_x get "compatStatus" isEqualTo 0) then {
-            Info_5("#%1: %2 [title: %3, author: %4, version: %5]", _forEachIndex, _x, _x get "name", _x get "author", _x get "version");
+            Info_5("#%1: %2 [title: %3, author: %4, version: %5]",_forEachIndex,_x,_x get "name",_x get "author",_x get "version");
         } else {
-            Info_6("#%1: %2 [title: %3, author: %4, version: %5] (incompatible: %6)", _forEachIndex, _x, _x get "name", _x get "author", _x get "version", _x get "compatReason");
+            Info_6("#%1: %2 [title: %3, author: %4, version: %5] (incompatible: %6)",_forEachIndex,_x,_x get "name",_x get "author",_x get "version",_x get "compatReason");
         };
     } forEach GVAR(extendersLoaded);
 };

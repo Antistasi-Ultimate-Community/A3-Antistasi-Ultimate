@@ -1,3 +1,5 @@
+#pragma hemtt ignore_variables ["_fnc_setUniform","_fnc_addItemSet","_fnc_addMap","_fnc_addWatch","_fnc_addCompass","_fnc_addBinoculars","_fnc_setFacewear","_loadoutData","_fnc_generateAndSaveUnitsToTemplate"]
+
 /////////////////////////
 //  Rebel Unit Types  //
 ///////////////////////

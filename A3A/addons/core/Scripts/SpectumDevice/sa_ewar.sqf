@@ -42,7 +42,7 @@ if(isNil {_sa_display_ctrl}) then{
 };
 if (isNull _sa_display_ctrl) then {
 	disableSerialization;
-	uiSleep 1.;
+	uiSleep 1;
 	_sa_display_ctrl=findDisplay 46 ctrlCreate ["RscStructuredText", -1];
 	uiNamespace setVariable ['sa_display_ctrl',_sa_display_ctrl];
 	a=str _sa_display_ctrl;
@@ -87,7 +87,7 @@ sa_scan_friendly_foe={
 					//_wp setWaypointType "GETOUT";
 					_wp setWaypointStatements ["true", "if !(local this) exitWith {}; (group this) leaveVehicle (assignedVehicle this)"]; /////NEEDS TO BE TESTED
 					private _time = time;
-					waitUntil {sleep 0.1, (getPos _unit) select 2 <1.3/*  || time - _time <= 30 */};
+					waitUntil {sleep 0.1; (getPos _unit) select 2 <1.3/*  || time - _time <= 30 */};
 					{
 						_unit deleteVehicleCrew _x;
 					} forEach crew _unit;
@@ -274,7 +274,7 @@ sa_1st_antenna_swap={
 				_sel_min=missionNamespace getVariable "#EM_SelMin";
 				_sel_max=missionNamespace getVariable "#EM_SelMax";
 				sa_sel_freq=sa_visible_freq select {(((_x select 0) select 1)>=_sel_min)&&(((_x select 0) select 1)<=_sel_max)};
-				if(count sa_sel_freq>0) then {
+				if(sa_sel_freq isNotEqualTo []) then {
 					sa_scan_progress=sa_scan_progress+(sa_scan_temp*sa_scan_time_k);
 				}
 				else
@@ -324,7 +324,7 @@ _g=[] spawn {
 		};
 		_scan_complete_ons=_scan_complete;
 		
-		if (count(sa_local_jamm_buffer)>0) then{
+		if ((sa_local_jamm_buffer) isNotEqualTo []) then{
 			{
 				_unit=_x;
 				_jam_pos=sa_local_jamm_list findIf {(_x select 0)==_unit} ;
@@ -339,13 +339,15 @@ _g=[] spawn {
 			sa_local_jamm_buffer=[];
 		};
 	
-		if (count(sa_local_jamm_list)>0) then{
+		if ((sa_local_jamm_list) isNotEqualTo []) then{
 			sa_local_jamm_list apply {_x set [1,(_x select 1)-1];};
 			sa_local_jamm_list=sa_local_jamm_list select {(_x select 1)>=0};
 
-			if(count((assignedItems player) arrayIntersect ["B_UavTerminal","O_UavTerminal","I_UavTerminal","C_UavTerminal","I_E_UavTerminal"])>0) then {
-				if(count(sa_local_jamm_list select {(_x select 0)==player})>0) then {
-					player disableUAVConnectability [allUnitsUAV];
+			if(((assignedItems player) arrayIntersect ["B_UavTerminal","O_UavTerminal","I_UavTerminal","C_UavTerminal","I_E_UavTerminal"]) isNotEqualTo []) then {
+				if((sa_local_jamm_list select {(_x select 0)==player}) isNotEqualTo []) then {
+					{
+						player disableUAVConnectability [_x,false];
+					} forEach (allUnitsUAV);
 					if(count(getConnectedUAV player)>0) then {
 						player connectTerminalToUAV objNull;
 					};

@@ -13,6 +13,13 @@ if (!_final && {!isNil {A3A_saveDataHM} && {A3A_saveDataHM isEqualType createHas
 // Game not started yet (we're still in the setup UI)
 // Find the appropriate save data hashmap and store in that directly
 private _namespace = [profileNamespace, missionProfileNamespace] select (_serverID isEqualTo false);
-private _saveDataHM = _namespace getVariable [format ["A3A_saveData_%1", _campaignID], createHashMap];
-_saveDataHM set [_varName, _varValue];
-_namespace setVariable [format ["A3A_saveData_%1", _campaignID], _saveDataHM];
+private _saveDataHM = _namespace getVariable format ["A3A_saveData_%1", _campaignID];
+
+if (!isNil "_saveDataHM") exitWith {
+	_saveDataHM set [_varName, _varValue];
+	_namespace setVariable [format ["A3A_saveData_%1", _campaignID], _saveDataHM];
+};
+
+// Still a legacy game format; maintain old variable storage format so it still loads correctly until converted later
+private _legacyName = if (_serverID isEqualTo false) then { format ["%1%2", _varName, _campaignID] } else { format ["%1%2%3Antistasi%4", _varName, _serverID, _campaignID, _map] };
+_namespace setVariable [_legacyName, _varValue];

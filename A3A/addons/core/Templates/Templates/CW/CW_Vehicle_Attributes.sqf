@@ -1,3 +1,5 @@
+#pragma hemtt ignore_variables ["_fnc_saveToTemplate"]
+
 ["attributesVehicles", [
 
     ["3as_ATTE_Base", ["cost", 300]],

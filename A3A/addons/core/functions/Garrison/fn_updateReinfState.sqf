@@ -49,8 +49,8 @@ if(_loser != teamPlayer) then
 
 if(_owner != teamPlayer) then
 {
-    private _reinfMarker = if(_owner == Occupants) then {reinforceMarkerOccupants} else {reinforceMarkerInvaders};
-    private _canReinf = if(_owner == Occupants) then {canReinforceOccupants} else {canReinforceInvaders};
+    private _reinfMarker = [reinforceMarkerInvaders, reinforceMarkerOccupants] select (_owner == Occupants);
+    private _canReinf = [canReinforceInvaders, canReinforceOccupants] select (_owner == Occupants);
 
     private _isAirport = _marker in airportsX;
     private _index = _reinfMarker findIf {(_x select 1) == _marker};

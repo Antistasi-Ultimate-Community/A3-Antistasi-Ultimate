@@ -1,0 +1,24 @@
+// Client: ACCEPT / DELIVER in the "Smuggling Run" category (v1.1.0). The
+// server checks everything again (undercover, one run per player, the
+// contract still being the one shown, the crate within 30m on delivery).
+#include "..\dialogues\ids.inc"
+private _d = findDisplay ABZ_IDD_SHOP;
+if (isNull _d) exitWith {};
+private _shop = uiNamespace getVariable ["ABZ_shop", []];
+private _row = lnbCurSelRow (_d displayCtrl ABZ_IDC_ITEMLIST);
+private _map = uiNamespace getVariable ["ABZ_shopMap", []];
+if (_shop isEqualTo [] || {_row < 0} || {_row >= count _map}) exitWith {};
+(_shop param [7, [[], []]]) params [["_offer", []], ["_myRun", []]];
+switch (_map select _row) do {
+	case "offer": {
+		if (_myRun isNotEqualTo []) exitWith { [localize "STR_A3U_Bazaar_Runs_AlreadyGoing"] call ABZ_fnc_notify };
+		if (_offer isEqualTo []) exitWith {};
+		["ABZ_runAccept", [player, _shop select 0, _offer select 0, _offer select 4]] call CBA_fnc_serverEvent;
+	};
+	case "deliver": {
+		["ABZ_runDeliver", [player]] call CBA_fnc_serverEvent;
+	};
+	default {
+		[localize "STR_A3U_Bazaar_Runs_DeliveryInfo"] call ABZ_fnc_notify;
+	};
+};

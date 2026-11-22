@@ -17,7 +17,7 @@ private _bases = (seaports + airportsX + outposts + milbases) select {
 };
 if (_bases isEqualTo []) exitWith {};
 
-Debug_1("Possible patrol bases %1", _bases);
+Debug_1("Possible patrol bases %1",_bases);
 
 private _soldiers = [];
 private _vehiclesX = [];
@@ -67,7 +67,7 @@ switch (true) do {
 	};
 };
 
-Info_3("Sending patrol of type %1 vehicle %2 from %3", _typePatrol, _typeCar, _base);
+Info_3("Sending patrol of type %1 vehicle %2 from %3",_typePatrol,_typeCar,_base);
 
 private _posbase = getMarkerPos _base;
 private _arrayDestinations = [];
@@ -159,9 +159,9 @@ while {alive _veh} do {
 	_Vwp0 setWaypointSpeed "LIMITED";
 	_veh setFuel 1;
 
-	private _timeout = time + (_veh distance2d _posDestination) / 6 + 300;			// stuck detection
+	private _timeout = time + (_veh distance2D _posDestination) / 6 + 300;			// stuck detection
 	waitUntil {sleep 60; _veh distance _posDestination < _distanceX or {time > _timeout or {{[_x] call A3A_fnc_canFight} count _soldiers == 0 or {!canMove _veh}}}};
-	if !(_veh distance _posDestination < _distanceX) exitWith {};
+	if (_veh distance _posDestination >= _distanceX) exitWith {};
 
 	switch (_typePatrol) do {
 		case "AIR": {
