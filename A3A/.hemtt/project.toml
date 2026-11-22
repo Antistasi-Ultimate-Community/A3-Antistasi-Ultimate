@@ -14,8 +14,13 @@ include = [
 reasign_reserved_variable = "Warning" # All existing cleaned up, warn on new instance
 format_args = "Warning" # All existing cleaned up, warn on new instance
 invalid_comparisons = "Warning" # All existing cleaned up, warn on new instance
-banned_commands = "Warning" # Still fires on single instance of addPublicVariableEventHandler, yet to be refactored
 direct_private = false # Too much to clean up / refactor for no real gain
+
+[lints.sqf.banned_commands]
+severity = "Warning"
+options.ignore = [
+    "addPublicVariableEventHandler" # Only used in one place (initClient) where it's using main syntax, not broken alt syntax
+]
 
 [lints.sqf.var_all_caps]
 options.ignore = [
