@@ -2,9 +2,9 @@
 //      Static Weapons List      ///
 ////////////////////////////////////
 {
-if (getText (configfile >> "CfgVehicles" >> _x >> "editorSubcategory") isEqualTo "EdSubcat_Turrets") then
+if (getText (configFile >> "CfgVehicles" >> _x >> "editorSubcategory") isEqualTo "EdSubcat_Turrets") then
 	{
-	private _staticSide = getNumber (configfile >> "CfgVehicles" >> _x >> "side");
+	private _staticSide = getNumber (configFile >> "CfgVehicles" >> _x >> "side");
 	switch (_staticSide) do
 		{
 		case 0: {invaderStaticWeapon pushBack _x};

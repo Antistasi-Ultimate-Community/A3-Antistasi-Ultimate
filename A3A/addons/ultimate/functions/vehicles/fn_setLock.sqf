@@ -49,6 +49,6 @@ if (_state isEqualTo true) then {
     [_vehicle] call A3U_fnc_addLockpickAction;
 };
 
-Debug_2("%1 has been locked. State: %2", typeOf _vehicle, _state);
+Debug_2("%1 has been locked. State: %2",typeOf _vehicle,_state);
 
 true;

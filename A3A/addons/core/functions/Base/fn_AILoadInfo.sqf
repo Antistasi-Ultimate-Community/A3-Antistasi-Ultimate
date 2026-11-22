@@ -25,7 +25,7 @@ for "_i" from 0 to (count hcArray) - 1 do {
 			case civilian: {_civ = _civ + 1};
 			};
 		};
-	} forEach allUnits select {alive _x};
+	} forEach (allUnits select {alive _x});
 	_textX = format [localize "STR_A3A_Base_AI_Info_String",_textX,_indep,_west,_east,_civ,_total];
 };
 

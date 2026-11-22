@@ -52,7 +52,7 @@ private _actionX = _playerX addAction [(localize "STR_antistasi_actions_drop_her
 waitUntil {
 	sleep 1; 
 	(_playerX != attachedTo _thingX) 
-	or {(vehicle _playerX != _playerX) 
+	or {(!isNull objectParent _playerX) 
 	or {(!isPlayer _playerX) 
 	or {(isNull _playerX) 
 	or {!(alive _playerX)

@@ -36,7 +36,7 @@ private _totalMass = 0;
 ];
 
 _containers = (everyContainer _container);
-if (count _containers > 0) then {
+if (_containers isNotEqualTo []) then {
 	{
 		_totalMass = _totalMass + (_x call HALs_store_fnc_getCargoMass);
 	} forEach (_containers apply {_x select 1})

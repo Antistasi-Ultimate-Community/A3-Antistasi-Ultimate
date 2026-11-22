@@ -48,4 +48,4 @@ if(_excessiveConstructions < 0) then {
 	};
 };
 
-Info_2("Saved already created %1 object on %2 position.", (typeOf _construction), str (position _construction));
+Info_2("Saved already created %1 object on %2 position.",(typeOf _construction),str (position _construction));

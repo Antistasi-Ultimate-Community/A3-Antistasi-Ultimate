@@ -1,3 +1,5 @@
+#pragma hemtt ignore_variables ["_vehiclesBasic","_vehiclesLightUnarmed","_vehiclesLightArmed","_vehiclesTrucks","_vehiclesCargoTrucks","_vehiclesAmmoTrucks","_vehiclesRepairTrucks","_vehiclesFuelTrucks","_vehiclesMedicalTrucks","_vehiclesLightAPCs","_vehiclesAPCs","_vehiclesIFVs","_vehiclesAirborne","_vehiclesAA","_vehiclesLightTanks","_vehiclesTanks","_vehiclesTransportBoats","_vehiclesGunBoats","_vehiclesPlanesCAS","_vehiclesPlanesAA","_vehiclesPlanesTransport","_vehiclesPlanesGunship","_vehiclesPlanesLargeCAS","_vehiclesPlanesLargeAA","_vehiclesHelisLight","_vehiclesHelisTransport","_vehiclesHelisLightAttack","_vehiclesHelisAttack","_vehiclesAirPatrol","_vehiclesArtillery","_uavsPortable","_uavsAttack","_vehiclesMilitiaTrucks","_vehiclesMilitiaLightArmed","_vehiclesMilitiaCars","_vehiclesMilitiaAPCs","_vehiclesPolice","_vehiclesRadar","_vehiclesSam","_staticAA","_staticMG","_staticAT","_staticMortars","_staticHowitzers","_minefieldAT","_minefieldAPERS","_animations","_variants","_fnc_saveToTemplate"]
+
 /////////////////////////////////
 //  Vehicle Definitions          //
 /////////////////////////////////

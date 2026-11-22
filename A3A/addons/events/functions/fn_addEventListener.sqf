@@ -30,7 +30,7 @@ if !(params [
     , ["_id", "", [""]]
     , ["_callback", {}, ["", {}]]
 ]) exitWith {
-    Error_1("Invalid params passed: %1", _this);
+    Error_1("Invalid params passed: %1",_this);
 };
 
 private _cbaEvent = configFile >> "A3A" >> "Events" >> _event;
@@ -51,7 +51,7 @@ if (_callback isEqualType "") then {
     private _function = missionNamespace getVariable[_callback, uiNamespace getVariable[_callback, {}]];
     if !assert(_function isEqualType {}) then {
         _function = {};
-        Error_1("Failed to resolve callback function: %1", _callback);
+        Error_1("Failed to resolve callback function: %1",_callback);
     };
     _callback = _function;
 };

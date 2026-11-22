@@ -58,7 +58,7 @@ if(_flagCaptureETA > serverTime) exitWith
 _flagX setVariable ["A3A_flagCaptureETA", serverTime + 10, true];
 
 
-ServerInfo_3("Outpost at %1 (%2): Flag capture initiated by %3", _outpostGridSquare, _markerX, str player);
+ServerInfo_3("Outpost at %1 (%2): Flag capture initiated by %3",_outpostGridSquare,_markerX,str player);
 
 private _friendliesInArea = [];
 private _counts = [_markerX, A3A_diameterExtendedCaptureArea, {
@@ -70,7 +70,7 @@ private _enemyValue = (_counts get Occupants) + (_counts get Invaders);
 
 if (_enemyValue > 2*_rebelValue) exitWith
 {
-    ServerInfo_4("Outpost at %1 (%2): Flag capture cancelled due to enemy value (%3) greater than 2*rebel value (%4)", _outpostGridSquare, _markerX, _enemyValue, _rebelValue);
+    ServerInfo_4("Outpost at %1 (%2): Flag capture cancelled due to enemy value (%3) greater than 2*rebel value (%4)",_outpostGridSquare,_markerX,_enemyValue,_rebelValue);
     [localize "STR_A3A_Base_mrkWin_header", localize "STR_A3A_Base_mrkWin_nearenemy"] call SCRT_fnc_misc_deniedHint;
 };
 
@@ -96,7 +96,7 @@ player setUserActionText [_cancelActionID, localize "STR_A3A_Base_mrkWin_abort",
 sleep 8;
 
 if (_cancellationToken #0) exitWith {
-    ServerInfo_3("Outpost at %1 (%2): Flag capture aborted by %3", _outpostGridSquare, _markerX, str player);
+    ServerInfo_3("Outpost at %1 (%2): Flag capture aborted by %3",_outpostGridSquare,_markerX,str player);
 };
 A3A_isPlayerCapturingFlag = nil;
 player removeAction _cancelActionID;
@@ -117,5 +117,5 @@ _friendliesInArea apply {
     };
 };
 
-ServerInfo_3("Outpost at %1 (%2): Flag capture completed by %3", _outpostGridSquare, _markerX, str player);
+ServerInfo_3("Outpost at %1 (%2): Flag capture completed by %3",_outpostGridSquare,_markerX,str player);
 [teamPlayer,_markerX] remoteExec ["A3A_fnc_markerChange",2];

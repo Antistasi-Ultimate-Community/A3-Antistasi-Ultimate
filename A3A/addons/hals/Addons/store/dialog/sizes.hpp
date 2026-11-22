@@ -1,6 +1,6 @@
 #define GRID_TYPE pixelGridNoUIScale
 #define GRID_SCALE 2
-#define SCALE_FACTOR getNumber (configFile >> "uiScaleFactor")
+#define SCALE_FACTOR getNumber (configFile >> 'uiScaleFactor')
 
 #define GRID_XX(gridType, gridScale, n) (pixelW * gridType * (((n) * (gridScale)) / SCALE_FACTOR))
 #define GRID_YY(gridType, gridScale, n) (pixelH * gridType * (((n) * (gridScale)) / SCALE_FACTOR))

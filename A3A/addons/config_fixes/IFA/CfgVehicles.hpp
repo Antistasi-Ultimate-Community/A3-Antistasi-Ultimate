@@ -15,7 +15,6 @@
 		
 	};
 
-class DefaultEventHandlers;
 class CfgVehicles 
 {
 	class LIB_US_Willys_MB_M1919;

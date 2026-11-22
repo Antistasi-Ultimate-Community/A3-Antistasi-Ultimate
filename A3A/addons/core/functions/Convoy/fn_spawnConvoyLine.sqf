@@ -49,7 +49,7 @@ private _nextTurretIndex = 0;
 private _crewObjs = [];
 {
     private _unit = [_vehicleGroup, _x, _pos, [], 0, "NONE"] call A3A_fnc_createUnit;
-    Debug_4("Convoy: Moving %1 into %2 of type %3 with %4 crew turrets", _unit, _vehicleObj, _vehicleType, _turretCount);
+    Debug_4("Convoy: Moving %1 into %2 of type %3 with %4 crew turrets",_unit,_vehicleObj,_vehicleType,_turretCount);
     if(!isNull _vehicleObj) then
     {
 	  if (isNull driver _vehicleObj) then {
@@ -66,7 +66,7 @@ private _crewObjs = [];
 		};
 	  };
     };
-	if (vehicle _unit == _unit) then {
+	if (isNull objectParent _unit) then {
       _slowConvoy = true;
 	};
     [_unit] call A3A_fnc_NATOinit;
@@ -90,7 +90,7 @@ private _unit = objNull;
       _unit moveInCargo _vehicleObj;
     };
 
-	if (vehicle _unit == _unit) then
+	if (isNull objectParent _unit) then
     {
       //Units are moving by foot, slow down convoy
       _slowConvoy = true;
