@@ -15,8 +15,8 @@ params ["_group", "_vehicle", "_preference"];
 private ["_result", "_vehicleSeats"];
 _result = false;
 
-private _occGroupData = FactionGet(occ, "groups");
-private _invGroupData = FactionGet(occ, "groups");
+private _occGroupData = FactionGet(occ,"groups");
+private _invGroupData = FactionGet(occ,"groups");
 
 //Tanks are always combined with an AT team
 if(_vehicle == "LAND_TANK") exitWith {

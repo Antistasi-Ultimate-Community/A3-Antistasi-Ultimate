@@ -1,3 +1,5 @@
+#pragma hemtt ignore_variables ["_fnc_saveToTemplate"]
+
 ["attributesVehicles", [
     // Light helis
     ["RHS_MELB_AH6M_H", ["cost", 150]],     // has 2x Hellfire

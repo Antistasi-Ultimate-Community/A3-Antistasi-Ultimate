@@ -48,7 +48,7 @@ private _allVehClassToCrew = [
     [FactionGet(all,"vehicleRadars"), ["B_UAV_AI", "O_UAV_AI", "I_UAV_AI", "C_UAV_AI"]],
     [FactionGet(all,"vehicleSams"), ["B_UAV_AI", "O_UAV_AI", "I_UAV_AI", "C_UAV_AI"]],
     [FactionGet(all,"vehiclesUAVs"), ["B_UAV_AI", "O_UAV_AI", "I_UAV_AI", "C_UAV_AI"]],
-    [FactionGet(all, "vehiclesPolice"), [FactionGet(occ,"unitPoliceGrunt"), FactionGet(inv,"unitPoliceGrunt"), FactionGet(reb,"unitCrew"), FactionGet(civ,"unitMan")]]       // < vehiclesPolice is a single classname; therefore, it needs to be put into an array.
+    [FactionGet(all,"vehiclesPolice"), [FactionGet(occ,"unitPoliceGrunt"), FactionGet(inv,"unitPoliceGrunt"), FactionGet(reb,"unitCrew"), FactionGet(civ,"unitMan")]]       // < vehiclesPolice is a single classname; therefore, it needs to be put into an array.
 
 ];
 // ⬆ STOP EDITING HERE 👋 THANK YOU, COME AGAIN ⬆

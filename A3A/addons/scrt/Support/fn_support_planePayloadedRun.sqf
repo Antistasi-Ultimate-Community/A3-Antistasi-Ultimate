@@ -13,7 +13,7 @@ private _groupPlane = _planeData select 2;
 
 private _isHelicopter = _plane isKindOf "helicopter";
 
-_plane setPosATL [getPosATL _plane select 0, getPosATL _plane select 1, if (_isHelicopter) then {100} else {1000}];
+_plane setPosATL [getPosATL _plane select 0, getPosATL _plane select 1, [1000, 100] select (_isHelicopter)];
 _plane disableAI "TARGET";
 _plane disableAI "AUTOTARGET";
 _plane flyInHeight 120;

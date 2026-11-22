@@ -17,7 +17,7 @@ if(typeName (_this select 0) isEqualTo "SCALAR")then{//[_index, _item] or [_inde
 		private _item = _x select 0;
 		private _amount = _x select 1;
 
-		if!(_item isEqualTo "")then{
+		if(_item isNotEqualTo "")then{
 
 			if(_index == -1)exitWith{["ERROR in additemarsenal: %1", _this] call BIS_fnc_error};
 			if(_index == IDC_RSCDISPLAYARSENAL_TAB_CARGOMAG)then{_index = IDC_RSCDISPLAYARSENAL_TAB_CARGOMAGALL};
@@ -28,4 +28,4 @@ if(typeName (_this select 0) isEqualTo "SCALAR")then{//[_index, _item] or [_inde
 			["UpdateItemRemove",[_index, _item, _amount,true]] remoteExecCall ["jn_fnc_arsenal",_playersInArsenal];
 		};
 	} forEach _x;
-}foreach _array;
+}forEach _array;

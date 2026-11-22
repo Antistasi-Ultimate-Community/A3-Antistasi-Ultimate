@@ -6,7 +6,7 @@ class TFAR_SCR536: ItemRadio
     descriptionShort = "SCR-536";
     scope = 2;
     scopeCurator = 2;
-    model = QPATHTOFOLDER(patches\scr536);
+    model = QPATHTOFOLDER(patches\scr536.p3d);
     picture = QPATHTOFOLDER(patches\data\scr536_ca.paa);
     tf_prototype = 1;
     tf_range = 1000;

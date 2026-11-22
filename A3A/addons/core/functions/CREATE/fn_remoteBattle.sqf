@@ -1,6 +1,6 @@
 private _soldiers = _this;
 
-waitUntil {sleep 10;{([_x] call A3A_fnc_canFight) and {vehicle _x == _x}} count _soldiers == {[_x] call A3A_fnc_canFight} count _soldiers};
+waitUntil {sleep 10;{([_x] call A3A_fnc_canFight) and {isNull objectParent _x}} count _soldiers == {[_x] call A3A_fnc_canFight} count _soldiers};
 
 if ({[_x] call A3A_fnc_canFight} count _soldiers == 0) exitWith {};
 private _sideX = side (group (_soldiers select 0));
@@ -23,7 +23,7 @@ while {true} do
 		}
 	else
 		{
-		if ((_x distance _soldierX < (distanceSPWN/2)) and {[_x] call A3A_fnc_canFight} and {side group _x in _eny} and {vehicle _x == _x}) then
+		if ((_x distance _soldierX < (distanceSPWN/2)) and {[_x] call A3A_fnc_canFight} and {side group _x in _eny} and {isNull objectParent _x}) then
 			{
 			_enemiesX pushBackUnique _x;
 			};
@@ -31,7 +31,7 @@ while {true} do
 	} forEach (allUnits - _soldiers);
 	} forEach _soldiers;
 	if (_exit) exitWith {};
-	if !(_enemiesX isEqualTo []) then
+	if (_enemiesX isNotEqualTo []) then
 		{
 		_chanceToKill = 50 * ((count _soldiers) / (count _enemiesX));
 		if (random 100 <= _chanceToKill) then

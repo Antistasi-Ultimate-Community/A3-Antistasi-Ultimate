@@ -19,11 +19,11 @@ params ["_group", "_target"];
 private _side = side _group;
 
 if ((_side isEqualTo Occupants && areOccupantsDefeated) || {(_side isEqualTo Invaders && areInvadersDefeated)}) exitWith {
-    Info_1("%1 faction had been defeated earlier, aborting calling support.", _side);
+    Info_1("%1 faction had been defeated earlier, aborting calling support.",_side);
 };
 
 if(_side != Occupants && {_side != Invaders}) exitWith {
-    Error_2("Non-enemy group %1 of side %2 managed to call callForSupport", _group, _side);
+    Error_2("Non-enemy group %1 of side %2 managed to call callForSupport",_group,_side);
 };
 
 private _groupLeader = leader _group;
@@ -41,7 +41,7 @@ if((_group getVariable ["A3A_canCallSupportAt", -1]) > time) exitWith {};
 private _timeToCallSupport = (10 + random 5) / A3A_balancePlayerScale;
 _group setVariable ["A3A_canCallSupportAt", time + 15*_timeToCallSupport];
 
-ServerDebug_4("Leader of %1 (side %2) is starting to request support against %3 (type %4)", _group, _side, _target, typeof _target);
+ServerDebug_4("Leader of %1 (side %2) is starting to request support against %3 (type %4)",_group,_side,_target,typeOf _target);
 
 //Lower skill of group leader to simulate radio communication (!!!Barbolanis idea!!!)
 // Maintain differential leader skills (see NATOinit)
@@ -53,8 +53,8 @@ sleep _timeToCallSupport;
 
 //Reset leader skill
 _groupLeader setSkill _oldSkill;
-_groupLeader setskill ["courage", _oldCourage];
-_groupLeader setskill ["commanding", _oldCourage];
+_groupLeader setSkill ["courage", _oldCourage];
+_groupLeader setSkill ["commanding", _oldCourage];
 
 //If the group leader survived the call, proceed
 if(_groupLeader call A3A_fnc_canFight) then
@@ -63,12 +63,12 @@ if(_groupLeader call A3A_fnc_canFight) then
     private _revealed = [getPosATL _groupLeader, side _group] call A3A_fnc_calculateSupportCallReveal;
     private _precision = if !(_target isEqualType objNull) then [{ 0 }, { _group knowsAbout _target }];
     //Starting the support
-    ServerDebug_2("%1 managed to request support, reveal value is %2", _group, _revealed);
+    ServerDebug_2("%1 managed to request support, reveal value is %2",_group,_revealed);
     [_side, _target, getPosATL _groupLeader, _precision, _revealed] remoteExec ["A3A_fnc_requestSupport", 2];
 }
 else
 {
     //Support call failed, reset cooldown
-    ServerDebug_1("%1 failed to request support as the leader is dead or down", _group);
+    ServerDebug_1("%1 failed to request support as the leader is dead or down",_group);
     _group setVariable ["A3A_canCallSupportAt", nil];
 };

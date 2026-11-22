@@ -11,7 +11,7 @@ Arguments:
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
 
-Debug_1("CASRoutine called with %1", _this);
+Debug_1("CASRoutine called with %1",_this);
 
 params ["_suppData", "_resPool", "_airport", "_planeType", "_sleepTime", "_reveal"];
 _suppData params ["_supportName", "_side", "_suppType", "_suppCenter", "_suppRadius", "_suppTarget"];
@@ -56,13 +56,13 @@ _suppData set [4, 0];           // Set activesupport radius to zero, enabling cl
 //Have the plane fly back home
 if (canMove _plane && {driver _plane call A3A_fnc_canFight}) then
 {
-    while {count waypoints _group > 0} do { deleteWaypoint [_group, 0] };
+    while {waypoints _group isNotEqualTo []} do { deleteWaypoint [_group, 0] };
     private _wpBase = _group addWaypoint [_spawnPos, 0];
     _wpBase setWaypointSpeed "NORMAL";
     _wpBase setWaypointBehaviour "CARELESS";
     _group setCurrentWaypoint _wpBase;
 
-    private _timeout = time + (getPos _plane distance2d _spawnPos) / 20;
+    private _timeout = time + (getPos _plane distance2D _spawnPos) / 20;
     waitUntil { sleep 2; (currentWaypoint _group != 0) or (time > _timeout) };
     if (time > _timeout) exitWith {};
     { deleteVehicle _x } forEach (units _group);

@@ -1,0 +1,11 @@
+[default]
+workshop = [
+    "450814997", # CBA_A3
+]
+
+[debugging]
+extends = "default"
+workshop = [
+    "1779063631", # ZEN
+    "3499977893", # Advanced Developer Tools
+]

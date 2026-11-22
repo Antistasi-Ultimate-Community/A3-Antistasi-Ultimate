@@ -1,7 +1,7 @@
 params ["_convoyID", "_unitObjects", "_convoyPos", "_target", "_markerArray", "_convoyType", "_convoySide"];
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
-Info_1("Despawning convoy %1", _convoyID);
+Info_1("Despawning convoy %1",_convoyID);
 
 // Exit any vehicle's FSM if it's still running
 {

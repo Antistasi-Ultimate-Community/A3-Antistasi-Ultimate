@@ -8,9 +8,8 @@ class CfgWeapons
         author = "Socrates";
         displayName = "$STR_A3AP_items_crrk_name";
         model = "\A3\Props_F_Orange\Humanitarian\Camps\FirstAidKit_01_closed_F.p3d";
-        scope = 2;      
+        scope = 1;      
         scopeArsenal = 2;
-        scopeCurator = 2;
         detectRange = -1;
         simulation= "ItemMineDetector";
         picture = EQPATHTOFOLDER(core,Pictures\Items\revive_kit.paa);

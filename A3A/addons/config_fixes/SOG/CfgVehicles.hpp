@@ -100,9 +100,6 @@ class CfgVehicles
 	class vn_b_air_uh1d_03_06;
 	class vn_b_air_uh1d_04_09;
 
-	class vn_b_air_uh1e_01_04;
-	class vn_b_air_uh1e_02_04;
-	class vn_b_air_uh1e_03_04;
 
 	class vn_b_air_uh1f_01_03;
 

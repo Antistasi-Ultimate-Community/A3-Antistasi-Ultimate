@@ -22,10 +22,10 @@ class RscTitles {
                 idc = 1001;
                 style = 0x00;
                 lineSpacing = 1;
-				x = 0.103165 * safezoneW + safezoneX;
-				y = 0.007996 * safezoneH + safezoneY;//0.757996
-				w = 0.779208 * safezoneW;
-				h = 0.0660106 * safezoneH;
+				x = QUOTE(0.103165 * safezoneW + safezoneX);
+				y = QUOTE(0.007996 * safezoneH + safezoneY);//0.757996
+				w = QUOTE(0.779208 * safezoneW);
+				h = QUOTE(0.0660106 * safezoneH);
                 size = 0.055;//0.020
                 colorBackground[] = {0,0,0,0};
                 colorText[] = {0.34,0.33,0.33,0};//{1,1,1,1}
@@ -36,9 +36,9 @@ class RscTitles {
 					color = "#C1C0BB";//"#FFFFFF";
 					align = "CENTER";
 					valign = "top";
-					shadow = true;
+					shadow = 1;
 					shadowColor = "#000000";
-					underline = false;
+					underline = 0;
 					size = "4";//4
 				};
             };

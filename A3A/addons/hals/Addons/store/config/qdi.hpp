@@ -3,10 +3,10 @@ class handgunsQDI
 	displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_QDI", localize "STR_A3AU_handguns"]);
 	picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\handgun_ca.paa";
 
-	ITEM(qdi_g17, 150, PISTOL_STOCK);
-	ITEM(qdi_g22, 150, PISTOL_STOCK);
-	ITEM(qdi_g26, 150, PISTOL_STOCK);
-	ITEM(qdi_g27, 150, PISTOL_STOCK);
+	ITEM(qdi_g17, 150, PISTOL_STOCK)
+	ITEM(qdi_g22, 150, PISTOL_STOCK)
+	ITEM(qdi_g26, 150, PISTOL_STOCK)
+	ITEM(qdi_g27, 150, PISTOL_STOCK)
 };
 
 class riflesQDI
@@ -14,14 +14,14 @@ class riflesQDI
 	displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_QDI", localize "STR_A3AU_rifles"]);
 	picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\primaryWeapon_ca.paa";
 
-	ITEM(qav_amb17, 1100, RIFLE_STOCK);
-	ITEM(qav_amb17_lush, 1100, RIFLE_STOCK);
-	ITEM(qav_amb17_taiga, 1100, RIFLE_STOCK);
+	ITEM(qav_amb17, 1100, RIFLE_STOCK)
+	ITEM(qav_amb17_lush, 1100, RIFLE_STOCK)
+	ITEM(qav_amb17_taiga, 1100, RIFLE_STOCK)
 
-	ITEM(qdi_rfb, 1250, RIFLE_STOCK);
-	ITEM(qdi_rfb_afg, 1250, RIFLE_STOCK);
-	ITEM(qdi_rfb_rvg, 1250, RIFLE_STOCK);
-	ITEM(qdi_rfb_h, 1450, RIFLE_STOCK); //Has more range
+	ITEM(qdi_rfb, 1250, RIFLE_STOCK)
+	ITEM(qdi_rfb_afg, 1250, RIFLE_STOCK)
+	ITEM(qdi_rfb_rvg, 1250, RIFLE_STOCK)
+	ITEM(qdi_rfb_h, 1450, RIFLE_STOCK) //Has more range
 };
 
 class mgQDI
@@ -29,13 +29,13 @@ class mgQDI
 	displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_QDI", localize "STR_A3AU_mgs"]);
 	picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\primaryWeapon_ca.paa";
 
-	ITEM(qdi_ameli, 1500, RIFLE_STOCK); //5.56 Variant
-	ITEM(qdi_ameli_green, 1500, RIFLE_STOCK);
-	ITEM(qdi_ameli_tan, 1500, RIFLE_STOCK);
+	ITEM(qdi_ameli, 1500, RIFLE_STOCK) //5.56 Variant
+	ITEM(qdi_ameli_green, 1500, RIFLE_STOCK)
+	ITEM(qdi_ameli_tan, 1500, RIFLE_STOCK)
 
-	ITEM(qdi_ameli_65, 1750, RIFLE_STOCK); //6.5 Variant
-	ITEM(qdi_ameli_65_green, 1750, RIFLE_STOCK);
-	ITEM(qdi_ameli_65_tan, 1750, RIFLE_STOCK);
+	ITEM(qdi_ameli_65, 1750, RIFLE_STOCK) //6.5 Variant
+	ITEM(qdi_ameli_65_green, 1750, RIFLE_STOCK)
+	ITEM(qdi_ameli_65_tan, 1750, RIFLE_STOCK)
 };
 
 class sniperRiflesQDI
@@ -43,12 +43,12 @@ class sniperRiflesQDI
 	displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_QDI", localize "STR_A3AU_sniperRifles"]);
 	picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\primaryWeapon_ca.paa";
 
-	ITEM(qdi_amr25, 6000, 3);
-	ITEM(qdi_amr25_arid, 6000, 3);
-	ITEM(qdi_amr25_ctrg, 6000, 3);
-	ITEM(qdi_amr25_ghex, 6000, 3);
-	ITEM(qdi_amr25_hex, 6000, 3);
-	ITEM(qdi_amr25_lush, 6000, 3);
+	ITEM(qdi_amr25, 6000, 3)
+	ITEM(qdi_amr25_arid, 6000, 3)
+	ITEM(qdi_amr25_ctrg, 6000, 3)
+	ITEM(qdi_amr25_ghex, 6000, 3)
+	ITEM(qdi_amr25_hex, 6000, 3)
+	ITEM(qdi_amr25_lush, 6000, 3)
 };
 
 class opticsQDI

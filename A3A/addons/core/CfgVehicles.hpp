@@ -228,7 +228,7 @@ class CfgVehicles
         };
         editorPreview = QPATHTOFOLDER(Pictures\items\A3AU_Build_Box_Large_1.jpg);
         _generalMacro = "Box_NATO_WpsLaunch_F";
-        scope = 2;
+        scope = 1;
         displayName = "Build Box (Medium)";
         model = "\A3\weapons_F\AmmoBoxes\WpnsBox_long_F";
         icon = "iconCrateLong";
