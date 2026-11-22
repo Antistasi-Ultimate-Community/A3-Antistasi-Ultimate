@@ -165,7 +165,7 @@ private _taskTitle = format [localize "STR_A3A_Missions_LOG_Stash_Task_Title", _
 // -----------------------------------------------------------------------------
 // STASH SPAWNING & LOOT
 // -----------------------------------------------------------------------------
-private _stashClass = "A3AU_Stash";
+private _stashClass = "A3U_Stash";
 private _stash = _stashClass createVehicle _stashPos;
 
 if (isNull _stash) exitWith {

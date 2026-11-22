@@ -382,14 +382,13 @@ class A3U_Stash: ReammoBox_F {
     displayName = "Stash";
     editorCategory = "EdCat_Supplies";
     editorSubcategory = "EdSubcat_Storage";
-    placement = "slope";
 
     model = QPATHTOFOLDER(data\models\A3U_Stash\A3U_Stash.p3d);
 
     hiddenSelections[] = {"camo1","camo2"};
     hiddenSelectionsTextures[] = {
-        "#(argb,8,8,3)color(0.5,0.5,0.5,1)",
-        QPATHTOFOLDER(data\models\A3U_Stash\A3U_Stash_co.paa)
+        QPATHTOFOLDER(data\models\A3U_Stash\A3U_Stash_co.paa),
+        "#(argb,8,8,3)color(0.5,0.5,0.5,1)"
     };
 
     maximumLoad = 999999;
@@ -401,8 +400,8 @@ class A3U_Stash: ReammoBox_F {
     class TransportWeapons {};
     class TransportItems {};
     class TransportBackpacks {};
-
-    class EventHandlers {
-        init = "(_this select 0) setObjectTextureGlobal [0, surfaceTexture getPos (_this select 0)];";
+    class EventHandlers
+    {
+        init = "if (isServer) then { private _obj = _this select 0; _obj setObjectTextureGlobal [1, surfaceTexture (getPosWorld _obj)]; _obj enableSimulationGlobal false; };";
     };
 };
