@@ -627,26 +627,7 @@ if (magRepack) then {
 	[missionNamespace, "paradropAttendants", _paradropAttendants] call BIS_fnc_setServerVariable;
 };
 
-if (saveZeusBuildings) then {
-    Info("Initializing Curator Persistent Save.");
-	{
-		_x addEventHandler ["CuratorObjectPlaced", {
-			params ["_curator", "_entity"];
-			if !(_entity isKindOf "Building") exitWith {};
-			[_entity] remoteExecCall ["SCRT_fnc_build_saveConstruction", 2];
-		}];
-		_x addEventHandler ["CuratorObjectEdited", {
-			params ["_curator", "_entity"];
-			if !(_entity isKindOf "Building") exitWith {};
-			[_entity] remoteExecCall ["SCRT_fnc_build_updateConstruction", 2];
-		}];
-		_x addEventHandler ["CuratorObjectDeleted", {
-			params ["_curator", "_entity"];
-			if !(_entity isKindOf "Building") exitWith {};
-			[_entity] remoteExecCall ["SCRT_fnc_build_removeConstruction", 2];
-		}];
-	} forEach (allCurators);
-};
+[allCurators] call SCRT_fnc_build_initZeusPersistence;
 
 [allCurators] remoteExecCall ["A3A_fnc_initZeusLogging",0];
 

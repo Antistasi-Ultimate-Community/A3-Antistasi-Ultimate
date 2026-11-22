@@ -333,13 +333,7 @@ _arrayEst = _arrayEst apply {
 reverse _arrayEst;
 ["staticsX", _arrayEst] call A3A_fnc_setStatVariable;
 
-private _excessiveConstructions = maxConstructions - (count constructionsToSave);
-if(_excessiveConstructions < 0) then {
-	private _top = abs _excessiveConstructions;
-	for "_i" from 0 to _top do {
-		constructionsToSave deleteAt _i;
-	};
-};
+call SCRT_fnc_build_trimConstructions;
 
 _arrayConstructions = [];
 {
