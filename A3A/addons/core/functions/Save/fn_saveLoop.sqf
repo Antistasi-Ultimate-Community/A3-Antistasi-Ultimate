@@ -333,7 +333,7 @@ _arrayEst = _arrayEst apply {
 reverse _arrayEst;
 ["staticsX", _arrayEst] call A3A_fnc_setStatVariable;
 
-call SCRT_fnc_build_trimConstructions;
+[] call SCRT_fnc_build_trimConstructions;
 
 _arrayConstructions = [];
 {

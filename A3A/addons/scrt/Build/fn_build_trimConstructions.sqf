@@ -18,7 +18,7 @@
         <ARRAY> constructionsToSave
         <NUMBER> maxConstructions
 
-    Example: call SCRT_fnc_build_trimConstructions;
+    Example: [] call SCRT_fnc_build_trimConstructions;
 */
 #include "..\defines.inc"
 FIX_LINE_NUMBERS()
@@ -34,5 +34,5 @@ for "_i" from 1 to _excess do {
 };
 publicVariable "constructionsToSave";
 
-Info_1("Removed %1 oldest constructions to stay within the construction limit.", _excess);
+Info_1("Removed %1 oldest constructions to stay within the construction limit.",_excess);
 _excess;

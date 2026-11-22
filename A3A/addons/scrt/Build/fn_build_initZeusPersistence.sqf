@@ -44,5 +44,5 @@ if (!saveZeusBuildings) exitWith {};
         if !(_entity isKindOf "Building") exitWith {};
         [_entity] remoteExecCall ["SCRT_fnc_build_removeConstruction", 2];
     }];
-    Info_1("Curator persistent save initialized for %1.", _x);
+    Info_1("Curator persistent save initialized for %1.",_x);
 } forEach _curatorModules;

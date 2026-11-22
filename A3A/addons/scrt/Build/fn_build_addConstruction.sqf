@@ -41,6 +41,6 @@ constructionsToSave pushBackUnique _construction;
 publicVariable "constructionsToSave";
 
 //removing oldest constructions over the limit
-call SCRT_fnc_build_trimConstructions;
+[] call SCRT_fnc_build_trimConstructions;
 
 Info_2("Created and saved %1 object on %2 position.", _type, str _position);
