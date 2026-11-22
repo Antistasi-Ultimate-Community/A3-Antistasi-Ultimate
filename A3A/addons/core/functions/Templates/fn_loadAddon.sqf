@@ -22,10 +22,10 @@ License: MIT License
 params [["_side","",[""]], ["_path","",[""]]];
 _side = toLower _side;
 if !(fileExists _path) exitWith {
-    Error_2("File missing! - Side: %1 File: %2", _side, _path);
+    Error_2("File missing! - Side: %1 File: %2",_side,_path);
 };
 if !(_side in ["occ", "inv", "reb", "civ"]) exitWith {
-    Error_2("Invalid side of addon - Side: %1 File: %2", _side, _path);
+    Error_2("Invalid side of addon - Side: %1 File: %2",_side,_path);
 };
 
 //get the addon data

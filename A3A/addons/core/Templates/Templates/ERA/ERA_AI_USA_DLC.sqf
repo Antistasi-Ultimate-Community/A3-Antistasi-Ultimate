@@ -1,3 +1,5 @@
+#pragma hemtt ignore_variables ["_fnc_saveNames","_fnc_createLoadoutData","_fnc_copyLoadoutData","_fnc_generateAndSaveUnitsToTemplate","_fnc_saveToTemplate"]
+
 //////////////////////////
 //   Side Information   //
 //////////////////////////
@@ -48,6 +50,7 @@ if (isClass (configFile >> "CfgPatches" >> "WW2_SPEX_Assets_c_Vehicles_Boats_c")
 
 private _vehiclesPlanesCAS = ["SPE_P47", "CUP_B_A10_DYN_USA", "vn_b_air_f4c_at", "vn_b_air_f100d_at"];
 private _vehiclesPlanesAA = ["SPE_P47", "CUP_B_AV8B_DYN_USMC", "vn_b_air_f4c_cap", "vn_b_air_f100d_cap", "CUP_B_F35B_USMC"];
+private _vehiclesPlanesLargeCAS = [];
 
 private _vehiclesPlanesTransport = ["CUP_B_C130J_USMC", "CUP_B_MV22_USMC_RAMPGUN"];
 if (isClass (configFile >> "CfgPatches" >> "WW2_SPEX_Assets_m_Vehicles_Planes_m")) then {
@@ -77,6 +80,7 @@ if (isClass (configFile >> "cfgVehicles" >> "vnx_b_air_ac119_02_01")) then {
 
 ["vehiclesPlanesGunship", _gunship] call _fnc_saveToTemplate;
 ["vehiclesPlanesCAS", _vehiclesPlanesCAS] call _fnc_saveToTemplate;
+["vehiclesPlanesLargeCAS", _vehiclesPlanesLargeCAS] call _fnc_saveToTemplate;
 ["vehiclesPlanesAA", _vehiclesPlanesAA] call _fnc_saveToTemplate;
 ["vehiclesPlanesTransport", _vehiclesPlanesTransport] call _fnc_saveToTemplate;
 
@@ -239,8 +243,8 @@ _loadoutData set ["items_unarmed_extras", []];
 ///////////////////////////////////////
 
 private _sfLoadoutData = _loadoutData call _fnc_copyLoadoutData; // touch and shit breaks
-_sfLoadoutData set ["items_marksman_extras", (_mmItems + _sfmmItems)];
-_sfLoadoutData set ["items_sniper_extras", (_mmItems + _sfmmItems)];
+_sfLoadoutData set ["items_marksman_extras", _mmItems];
+_sfLoadoutData set ["items_sniper_extras", _mmItems];
 _sfLoadoutData set ["uniforms", ["CUP_U_CRYE_G3C_MC_US", "CUP_U_CRYE_G3C_MC_V2", "CUP_U_CRYE_G3C_MC", "CUP_U_CRYE_V1_Full"]];
 _sfLoadoutData set ["vests", ["CUP_V_CPC_Fastbelt_mc"]];
 _sfLoadoutData set ["mgVests", ["CUP_V_CPC_weapons_mc"]];

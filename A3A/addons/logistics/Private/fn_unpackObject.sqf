@@ -23,7 +23,7 @@ if !(isNull attachedTo _object) exitWith {};
 
 //get data 
 private _itemClassName = _object getVariable "A3A_packedObject";
-if (isNil "_itemClassName") exitwith { Error_1("No packed object for item type %1", typeof _object) };
+if (isNil "_itemClassName") exitWith { Error_1("No packed object for item type %1",typeOf _object) };
 
 private _fnc_placed = {
     params ["_item", "_oldItem"];

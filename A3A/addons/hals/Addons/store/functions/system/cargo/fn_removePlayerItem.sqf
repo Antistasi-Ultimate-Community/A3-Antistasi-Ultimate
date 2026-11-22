@@ -60,34 +60,34 @@ if (_classnameLower isEqualTo toLowerANSI handgunWeapon _unit) exitWith {
 };
 
 // Check item arrays
-if (_classnameLower in ((assignedItems _unit) apply {tolower _x})) exitWith {
+if (_classnameLower in ((assignedItems _unit) apply {toLower _x})) exitWith {
     _unit unlinkItem _classname; true;
 };
 
 // Primary weapon
-if (_classnameLower in ((primaryWeaponItems _unit) apply {tolower _x})) exitWith {
+if (_classnameLower in ((primaryWeaponItems _unit) apply {toLower _x})) exitWith {
     _unit removePrimaryWeaponItem _classname; true;
 };
 
-if (_classnameLower in ((primaryWeaponMagazine _unit) apply {tolower _x})) exitWith {
+if (_classnameLower in ((primaryWeaponMagazine _unit) apply {toLower _x})) exitWith {
     _unit removePrimaryWeaponItem _classname; true;
 };
 
 // Handgun Weapon
-if (_classnameLower in ((handgunItems _unit) apply {tolower _x})) exitWith {
+if (_classnameLower in ((handgunItems _unit) apply {toLower _x})) exitWith {
     _unit removeHandgunItem _classname; true;
 };
 
-if (_classnameLower in ((handgunMagazine _unit) apply {tolower _x})) exitWith {
+if (_classnameLower in ((handgunMagazine _unit) apply {toLower _x})) exitWith {
     _unit removeHandgunItem _classname; true;
 };
 
 // Secondary Weapon
-if (_classnameLower in ((secondaryWeaponItems _unit) apply {tolower _x})) exitWith {
+if (_classnameLower in ((secondaryWeaponItems _unit) apply {toLower _x})) exitWith {
     _unit removeSecondaryWeaponItem _classname; true;
 };
 
-if (_classnameLower in ((secondaryWeaponMagazine _unit) apply {tolower _x})) exitWith {
+if (_classnameLower in ((secondaryWeaponMagazine _unit) apply {toLower _x})) exitWith {
     _unit removeSecondaryWeaponItem _classname; true;
 };
 

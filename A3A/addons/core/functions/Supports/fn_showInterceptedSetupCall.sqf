@@ -133,7 +133,7 @@ private _timeStr = if(_setupTime < 60) then { "&lt;1" } else { str round (_setup
 
 if(_reveal >= 0.8) then
 {
-    if(toupper _supportType in ["QRFLAND", "QRFAIR", "COUNTERATTACK", "MAJORATTACK", "QRFVEHAIRDROP", "TANK"]) then
+    if(toUpper _supportType in ["QRFLAND", "QRFAIR", "COUNTERATTACK", "MAJORATTACK", "QRFVEHAIRDROP", "TANK"]) then
     {
         _text = format [localize "STR_notifiers_SUP_QRF_setup_arrival", _text, _timeStr];
     }
@@ -145,7 +145,7 @@ if(_reveal >= 0.8) then
 
 //Broadcast message to nearby players
 private _nearbyPlayers = allPlayers select {(_x distance2D _position) <= 2000};
-if(count _nearbyPlayers > 0) then
+if(_nearbyPlayers isNotEqualTo []) then
 {
     ["RadioIntercepted", [_text]] remoteExec ["BIS_fnc_showNotification",_nearbyPlayers];
 };

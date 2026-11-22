@@ -2,26 +2,26 @@
 
 class ListCategories: RscItemListBoxCategories {
 	idc = IDC_COMBO_CATEGORY;
-	x = GRID_X;
-	y = GRID_Y(LIST_Y);
-	w = GRID_X(38); 
-	h = GRID_Y(LIST_H);
+	x = QUOTE(GRID_X(0));
+	y = QUOTE(GRID_Y(LIST_Y));
+	w = QUOTE(GRID_X(38)); 
+	h = QUOTE(GRID_Y(LIST_H));
 	/* x = GRID_X(SPACE_W2);
 	y = CURRENT_Y;
 	w = GRID_X(COMBO_W);
 	h = GRID_Y(BAR_H); */
-	sizeEx = FONT(0.9);
+	sizeEx = QUOTE(FONT(0.9));
 	colorBackground[] = {0.1, 0.1, 0.1, 1};
 };
 
 class ItemCheckboxSort: RscItemCheckboxGreen {
 	idc = IDC_LISTBOX_SORT;
-	x = GRID_X(SPACE_W2 + COMBO_W + SPACE_W);
-	y = CURRENT_Y;
-	w = GRID_X(BAR_W);
-	h = GRID_Y(BAR_H);
+	x = QUOTE(GRID_X(SPACE_W2 + COMBO_W + SPACE_W));
+	y = QUOTE(CURRENT_Y);
+	w = QUOTE(GRID_X(BAR_W));
+	h = QUOTE(GRID_Y(BAR_H));
 	onCheckedChanged = "['listbox', ['sort', _this]] call HALs_store_fnc_main;";
-	sizeEx = FONT(1);
+	sizeEx = QUOTE(FONT(1));
 	color[] = {1, 1, 1, 0.7};
 	colorActive[] = {1, 1, 1, 1};
 	colorFocused[] = {1, 1, 1, 1};
@@ -46,41 +46,41 @@ class ItemCheckboxSort: RscItemCheckboxGreen {
 
 class ItemCheckboxAvailable: RscItemCheckboxGreen {
 	idc = IDC_CHECKBOX + 1;
-	x = GRID_X(SPACE_W2 + COMBO_W + SPACE_W*2 + BAR_W);
-	y = CURRENT_Y;
-	w = GRID_X(BAR_W);
-	h = GRID_Y(BAR_H);
+	x = QUOTE(GRID_X(SPACE_W2 + COMBO_W + SPACE_W*2 + BAR_W));
+	y = QUOTE(CURRENT_Y);
+	w = QUOTE(GRID_X(BAR_W));
+	h = QUOTE(GRID_Y(BAR_H));
 	onCheckedChanged = "['listbox', ['update', []]] call HALs_store_fnc_main;";
 	tooltip = "$STR_HALS_STORE_CHECKBOX_AVALIABLE";
 };
 
 class ItemCheckboxCompatible: RscItemCheckboxGreen {
 	idc = IDC_CHECKBOX + 2;
-	x = GRID_X(SPACE_W2 + COMBO_W + SPACE_W*3 + BAR_W*2);
-	y = CURRENT_Y;
-	w = GRID_X(BAR_W);
-	h = GRID_Y(BAR_H);
+	x = QUOTE(GRID_X(SPACE_W2 + COMBO_W + SPACE_W*3 + BAR_W*2));
+	y = QUOTE(CURRENT_Y);
+	w = QUOTE(GRID_X(BAR_W));
+	h = QUOTE(GRID_Y(BAR_H));
 	onCheckedChanged = "['listbox', ['update', []]] call HALs_store_fnc_main;";
 	tooltip = "$STR_HALS_STORE_CHECKBOX_COMPATIBLE";
 };
 
 class ItemCheckboxSell: RscItemCheckboxGreen {
 	idc = IDC_CHECKBOX + 3;
-	x = GRID_X(SPACE_W2 + COMBO_W + SPACE_W*4 + BAR_W*3);
-	y = CURRENT_Y;
-	w = GRID_X(BAR_W);
-	h = GRID_Y(BAR_H);
+	x = QUOTE(GRID_X(SPACE_W2 + COMBO_W + SPACE_W*4 + BAR_W*3));
+	y = QUOTE(CURRENT_Y);
+	w = QUOTE(GRID_X(BAR_W));
+	h = QUOTE(GRID_Y(BAR_H));
 	onCheckedChanged = "['button', ['change', _this]] call HALs_store_fnc_main; ['listbox', ['update', []]] call HALs_store_fnc_main;";
 	tooltip = "$STR_HALS_STORE_CHECKBOX_SELLFILTER";
 };
 
 class ItemListbox: RscItemListBox {
 	idc = IDC_LISTBOX;
-	x = GRID_X(STORE_W/4.16);
-	y = GRID_Y(LIST_Y);
-	w = GRID_X(67.6);
-	h = GRID_Y(LIST_H);
-	sizeEx = FONT(0.8);
+	x = QUOTE(GRID_X(STORE_W/4.16));
+	y = QUOTE(GRID_Y(LIST_Y));
+	w = QUOTE(GRID_X(67.6));
+	h = QUOTE(GRID_Y(LIST_H));
+	sizeEx = QUOTE(FONT(0.8));
 	font = "PuristaMedium";
 	colorTextRight[] = {0.666667, 1, 0.666667, 1};
 	colorSelectRight[] = {0.666667, 1, 0.666667, 1};

@@ -54,7 +54,7 @@ params [
         _centerPos = (getPosATL (leader _group));
     };
 
-    if !((side leader _group) == civilian) then {
+    if ((side leader _group) != civilian) then {
         _group setVariable ["PATCOM_Patrol_Params", [_patrolType, _minDist, _maxDist, _dist, _fromCenter, _centerPos, _searchBuildings]];
     };
 
@@ -70,6 +70,6 @@ params [
             [_group] call A3A_fnc_patrolCommander;
         };
 
-        sleep (round (((count allunits) / 2) * 1.2));
+        sleep (round (((count allUnits) / 2) * 1.2));
     };
 };

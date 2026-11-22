@@ -77,13 +77,13 @@ switch (inactivityLevelRivals) do {
 
 server setVariable [format ["%1_targets", _supportName], [[[_originPosition, _precision], _revealCall]], true];
 
-Info_1("%1 will be used as center of the event.", str _originPosition);
+Info_1("%1 will be used as center of the event.",str _originPosition);
 
 private _spawnPosition = [_originPosition, 1200, 2000, 8, 0, 1] call BIS_fnc_findSafePos;
 private _sites = (outposts + airportsX + resourcesX + factories + seaports + milbases) select {sidesX getVariable [_x, sideUnknown] != Rivals};
 
 //if too close to some outposts - reroll if possible
-if (count _sites > 0 && {_sites findIf {private _markerPos = getMarkerPos _x; _markerPos distance2D _spawnPosition < 800 } != -1 }) then {
+if (_sites isNotEqualTo [] && {_sites findIf {private _markerPos = getMarkerPos _x; _markerPos distance2D _spawnPosition < 800 } != -1 }) then {
     private _iterations = 0;
     private _radius = 1200;
     while {_iterations < 50} do {
@@ -101,7 +101,7 @@ private _mortar = [selectRandom (A3A_faction_riv get "staticMortars"), _spawnPos
 [_mortar, Rivals] call A3A_fnc_AIVEHinit;
 _vehicles pushBack _mortar;
 
-Info_1("Roving mortar has been created at %1 position.", str _spawnPosition);
+Info_1("Roving mortar has been created at %1 position.",str _spawnPosition);
 
 private _mortarGroup = [Rivals, _mortar, A3A_faction_riv get "unitRifle"] call A3A_fnc_RivalsCreateVehicleCrew;
 _groups pushBack _mortarGroup;

@@ -22,12 +22,12 @@ params [
 */
 
 if (isNil "_convoyID") exitWith {Error("CreateConvoy: No convoy ID given")};
-if (isNil "_units" || {count _units == 0}) exitWith {Error_1("CreateConvoy[%1]: No units given for convoy!", _convoyID)};
-if (isNil "_origin") exitWith {Error_1("CreateConvoy[%1]: No origin given for the convoy!", _convoyID)};
-if (isNil "_destination") exitWith {Error_1("CreateConvoy[%1]: No destination given for the convoy!", _convoyID)};
+if (isNil "_units" || {_units isEqualTo []}) exitWith {Error_1("CreateConvoy[%1]: No units given for convoy!",_convoyID)};
+if (isNil "_origin") exitWith {Error_1("CreateConvoy[%1]: No origin given for the convoy!",_convoyID)};
+if (isNil "_destination") exitWith {Error_1("CreateConvoy[%1]: No destination given for the convoy!",_convoyID)};
 
 private _fileName = "createConvoy";
-Debug_1("Input is %1", str _this);
+Debug_1("Input is %1",str _this);
 
 _hasAir = false;
 _hasLand = false;
@@ -73,11 +73,11 @@ else
 };
 
 if (_route isEqualTo []) exitWith {
-    Info_3("CreateConvoy[%1]: Unable to create convoy, no valid path. HasAir: %2, HasLand: %3", _convoyID, _hasAir, _hasLand);
+    Info_3("CreateConvoy[%1]: Unable to create convoy, no valid path. HasAir: %2, HasLand: %3",_convoyID,_hasAir,_hasLand);
 };
 
-_markerPrefix = if(colorTeamPlayer == "colorGUER") then {"b"} else {"n"};
-if(_convoySide == Occupants) then {_markerPrefix = if(colorInvaders == "colorBLUFOR") then {"n"} else {"b"};};
+_markerPrefix = ["n", "b"] select (colorTeamPlayer == "colorGUER");
+if(_convoySide == Occupants) then {_markerPrefix = ["b", "n"] select (colorInvaders == "colorBLUFOR");};
 if(_convoySide == Invaders) then {_markerPrefix = "o"};
 
 _markerType = "_mech_inf";
@@ -86,8 +86,8 @@ if(_type == "Mixed") then {_markerType = "_armor"};
 
 _convoyMarker = createMarker [format ["convoy%1", _convoyID], _origin];
 _convoyMarker setMarkerShapeLocal "ICON";
-_convoyMarker setMarkerType format ["%1%2", _markerPrefix, _markerType];
-_convoyMarker setMarkerAlpha 0;
+_convoyMarker setMarkerTypeLocal format ["%1%2", _markerPrefix, _markerType];
+_convoyMarker setMarkerAlphaLocal 0;
 
 if(_convoySide == Occupants) then
 {
@@ -104,6 +104,6 @@ else
     _convoyMarker setMarkerText (format [localize "STR_markers_convoy_tracker", A3A_faction_inv get "name", _convoyType, _convoyID, "GLONASS"]);
 };
 
-Info_5("CreateConvoy[%1]: Created convoy with %2 m/s and a total of %3 waypoints, marker is %4%5", _convoyID, _velocity, count _route, _markerPrefix, _markerType);
+Info_5("CreateConvoy[%1]: Created convoy with %2 m/s and a total of %3 waypoints, marker is %4%5",_convoyID,_velocity,count _route,_markerPrefix,_markerType);
 
 [_convoyID, _route, _markerArray, _velocity, _units, _convoySide, _convoyType, (!_hasLand)] spawn A3A_fnc_convoyMovement;
