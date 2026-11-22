@@ -16,7 +16,7 @@ private _fnc_lookup = {
 	params ["_map", "_key", "_def"];
 	if (isNil "_map") exitWith { _def };
 	if (_map isEqualType createHashMap) exitWith { _map getOrDefault [_key, _map getOrDefault [toLower _key, _def]] };
-	if (_map isEqualType locationNull || {_map isEqualType objNull}) exitWith { _map getVariable [_key, _def] };
+	if (_map isEqualTypeAny [locationNull, objNull]) exitWith { _map getVariable [_key, _def] };
 	_def
 };
 

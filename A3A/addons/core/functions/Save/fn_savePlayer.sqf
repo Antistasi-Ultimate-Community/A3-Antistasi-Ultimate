@@ -11,7 +11,7 @@ params ["_playerId", "_playerUnit", ["_globalSave", false], ["_pluginsData", nil
 _playerUnit = _playerUnit getVariable ["owner", _playerUnit];		// save the real player, not remote controlled AIs
 
 if (isNil "_playerUnit" || { isNull _playerUnit }) exitWith {
-    Error_1("Not saving player %1 due to missing unit", _playerId);
+    Error_1("Not saving player %1 due to missing unit",_playerId);
 };
 
 private _continue = try {
@@ -40,7 +40,7 @@ private _continue = try {
 
 if (!_continue) exitWith {};
 
-Info_2("Saving player %1 on side %2", _playerId, side group _playerUnit);
+Info_2("Saving player %1 on side %2",_playerId,side group _playerUnit);
 
 private _playerHM = A3A_playerSaveData getOrDefault [_playerID, createHashMap, true];			// ugh, switch to getOrDefaultCall after 2.12
 
@@ -48,7 +48,7 @@ private _shouldStripLoadout = false;
 if (!(alive _playerUnit) || (_playerUnit getVariable ["incapacitated", false])) then
 {
 	_shouldStripLoadout = true;
-    Info_1("Stripping saved loadout of player %1 due to saving while dead or unconcious", _playerId);
+    Info_1("Stripping saved loadout of player %1 due to saving while dead or unconcious",_playerId);
 };
 
 private _loadout = getUnitLoadout _playerUnit;
@@ -79,7 +79,7 @@ if (_globalSave) then
 		private _veh = objectParent _x;
 		if (isNull _veh || {_veh in staticsToSave}) exitWith {};
 		if (_x == driver _veh || {_x == gunner _veh && {_veh isKindOf "LandVehicle" || {_veh isKindOf "Ship"}}}) then {
-			private _vehPrice = [typeof _veh] call A3A_fnc_vehiclePrice;
+			private _vehPrice = [typeOf _veh] call A3A_fnc_vehiclePrice;
 			_totalMoney = _totalMoney + _vehPrice;
 		};
 	};
@@ -91,6 +91,6 @@ if !(isNil "_pluginsData") then {
 };
 
 Trace_1(QFUNCMAIN(savePlayer),_playerHM);
-Info_4("Saved player %1: %2 rank, %3 money, %4 score", _playerId, _rankPlayer, _totalMoney toFixed 0, _scorePlayer);
+Info_4("Saved player %1: %2 rank, %3 money, %4 score",_playerId,_rankPlayer,_totalMoney toFixed 0,_scorePlayer);
 
 true;

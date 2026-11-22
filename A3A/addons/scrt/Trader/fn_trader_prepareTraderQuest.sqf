@@ -15,7 +15,7 @@ private _potentials = [];
 
 private _sites = (controlsX select {!(isOnRoad getMarkerPos _x) && {sidesX getVariable [_x,sideUnknown] != teamPlayer}});
 
-if (count _sites > 0) then {
+if (_sites isNotEqualTo []) then {
     for "_i" from 0 to ((count _sites) - 1) do {
         private _siteX = _sites select _i;
         private _pos = getMarkerPos _siteX;

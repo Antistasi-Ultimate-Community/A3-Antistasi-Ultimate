@@ -7,7 +7,7 @@ if (isNil "logLevel") then { logLevel = 2; A3A_logDebugConsole = 1 };
 
 Info("initClient started");
 A3A_clientVersion = QUOTE(VERSION);
-Info_1("Client version: %1", QUOTE(VERSION_FULL));
+Info_1("Client version: %1",QUOTE(VERSION_FULL));
 
 // *************************** Client pre-setup init *******************************
 
@@ -30,8 +30,8 @@ hasHeadlessClients = false;     //check if has headless clients
 //enables Discord Rich Presence if game client uses English language and mod is turned on
 private _richPresenceFunc = missionNamespace getVariable "DiscordRichPresence_fnc_update";
 private _isEnglish = ((localize "STR_antistasi_dialogs_generic_button_yes_text") isEqualTo "Yes");
-isDiscordRichPresenceActive = if (isNil "_richPresenceFunc") then {false} else {true};
-Info_1("Discord Rich Presence: %1", str isDiscordRichPresenceActive);
+isDiscordRichPresenceActive = !(isNil "_richPresenceFunc");
+Info_1("Discord Rich Presence: %1",str isDiscordRichPresenceActive);
 
 //Disables rabbits and snakes, because they cause the log to be filled with "20:06:39 Ref to nonnetwork object Agent 0xf3b4a0c0"
 //Can re-enable them if we find the source of the bug.
@@ -58,8 +58,8 @@ if !(isServer) then {
         call A3A_fnc_addNodesNearMarkers;
     };
 
-    if ((isClass (configfile >> "CBA_Extended_EventHandlers")) && (
-        isClass (configfile >> "CfgPatches" >> "lambs_danger"))) then {
+    if ((isClass (configFile >> "CBA_Extended_EventHandlers")) && (
+        isClass (configFile >> "CfgPatches" >> "lambs_danger"))) then {
         // disable lambs danger fsm entrypoint
         ["CAManBase", "InitPost", {
             params ["_unit"];
@@ -194,7 +194,7 @@ if (!A3A_hasACE) then {
 };
 
 
-stragglers = creategroup teamPlayer;
+stragglers = createGroup teamPlayer;
 (group player) enableAttack false;
 
 if (isNil "ace_noradio_enabled" or {!ace_noradio_enabled}) then {
@@ -203,7 +203,7 @@ if (isNil "ace_noradio_enabled" or {!ace_noradio_enabled}) then {
 //Give the player the base loadout.
 [player] call A3A_fnc_dress;
 
-player setvariable ["compromised",0];
+player setVariable ["compromised",0];
 player addEventHandler ["FiredMan", {
     _player = _this select 0;
     if (captive _player) then {
@@ -220,7 +220,7 @@ player addEventHandler ["FiredMan", {
                 if (_player distance getMarkerPos _city < _size * 1.5) then {
                     [_player,false] remoteExec ["setCaptive",0,_player];
                     _player setCaptive false;
-                    if (vehicle _player != _player) then {
+                    if (!isNull objectParent _player) then {
                         {if (isPlayer _x) then {[_x,false] remoteExec ["setCaptive",0,_x]; _x setCaptive false}} forEach ((assignedCargo (vehicle _player)) + (crew (vehicle _player)) - [player]);
                     };
                 };
@@ -340,7 +340,7 @@ private _blackMarketStock = call A3U_fnc_grabBlackMarketVehicles;
 if ((_blackMarketStock get "ARTILLERY") isNotEqualTo createHashMap) then {
 	player addEventHandler ["GetInMan", {
 		params ["_unit", "_role", "_vehicle"];
-		private _artyTypes = keys (_blackMarketStock get "ARTILLERY");
+		private _artyTypes = keys ((call A3U_fnc_grabBlackMarketVehicles) get "ARTILLERY");
 
 		if ((typeOf _vehicle) in _artyTypes) then {
 			enableEngineArtillery false;
@@ -349,7 +349,7 @@ if ((_blackMarketStock get "ARTILLERY") isNotEqualTo createHashMap) then {
 
 	player addEventHandler ["GetOutMan", {
 		params ["_unit", "_role", "_vehicle"];
-        private _artyTypes = keys (_blackMarketStock get "ARTILLERY");
+        private _artyTypes = keys ((call A3U_fnc_grabBlackMarketVehicles) get "ARTILLERY");
 
 		if ((typeOf _vehicle) in _artyTypes) then {
 			enableEngineArtillery true;
@@ -361,15 +361,15 @@ if(isDiscordRichPresenceActive) then {
 	player addEventHandler ["GetInMan", {
 		params ["_unit", "_role", "_vehicle", "_turret"];
 
-		private _vehicleName = getText (configFile >> "CfgVehicles" >> typeOf _vehicle >> "displayName");
+		private _vehicleName = getText (configOf _vehicle >> "displayName");
 
 		switch (true) do {
 			case (_vehicle isKindOf "StaticWeapon"): {
 				[["UpdateState", format ["Operates %1", _vehicleName]]] call SCRT_fnc_misc_updateRichPresence;
 			};
 			case (_vehicle isKindOf "Air"): {
-				private _isDriver = if ((driver (vehicle player)) isEqualTo player) then {true} else {false};
-				private _isGunner = if ((gunner (vehicle player)) isEqualTo player) then {true} else {false};
+				private _isDriver = (driver (vehicle player)) isEqualTo player;
+				private _isGunner = (gunner (vehicle player)) isEqualTo player;
 
 				switch (true) do {
 					case (_isDriver): {
@@ -384,8 +384,8 @@ if(isDiscordRichPresenceActive) then {
 				};
 			};
 			default {
-				private _isDriver = if ((driver (vehicle player)) isEqualTo player) then {true} else {false};
-				private _isGunner = if ((gunner (vehicle player)) isEqualTo player) then {true} else {false};
+				private _isDriver = (driver (vehicle player)) isEqualTo player;
+				private _isGunner = (gunner (vehicle player)) isEqualTo player;
 
 				switch (true) do {
 					case (_isDriver): {
@@ -484,7 +484,7 @@ if (isServer || (!isNil "theBoss" && {player isEqualTo theBoss}) || (call BIS_fn
 };
 
 // uh, what's this for exactly? What are we doing that needs the main display?
-waituntil {!isnull (finddisplay 46)};
+waitUntil {!isNull (findDisplay 46)};
 GVAR(keys_battleMenu) = false; //initilize key flags to false
 
 

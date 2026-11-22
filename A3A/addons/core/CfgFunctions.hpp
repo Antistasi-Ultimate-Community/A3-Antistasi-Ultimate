@@ -86,7 +86,7 @@ class CfgFunctions
             class configSort {};
             class compatibleMagazinesWithExceptions {};
             class dress {};
-            class empty {};
+            class Empty {};
             class equipmentClassToCategories {};
             class equipmentIsValidForCurrentModset {};
             class equipmentSort {};
@@ -374,7 +374,6 @@ class CfgFunctions
         class Garrison {
             file = QPATHTOFOLDER(functions\Garrison);
             class addGarrison {};
-            class addRequested {};
             class checkGroupType {};
             class checkVehicleType {};
             class countGarrison {};
@@ -392,7 +391,6 @@ class CfgFunctions
             class selectReinfUnits {};
             class selectVehicleType {};
             class shouldReinforce {};
-            class updateGarrison {};
             class updatePreference {};
             class updateReinfState {};
             class updateVehicles {};

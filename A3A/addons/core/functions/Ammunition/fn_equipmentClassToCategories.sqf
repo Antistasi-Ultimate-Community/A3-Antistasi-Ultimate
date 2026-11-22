@@ -15,7 +15,7 @@ params ["_className", "_itemType"];
 
 // First check if the item has hardcoded categories
 private _categories = A3A_categoryOverrides getVariable [_className, []];
-if (count _categories > 0) exitWith { _categories };
+if (_categories isNotEqualTo []) exitWith { _categories };
 
 if (isNil "_itemType") then { _itemType = _className call A3A_fnc_itemType };
 
@@ -113,7 +113,7 @@ if (_aggregateCategory isEqualTo "Explosives") then {
 
 call {
     if (_baseCategory isEqualTo "Rifles") exitWith {
-        private _config = configfile >> "CfgWeapons" >> _className;
+        private _config = configFile >> "CfgWeapons" >> _className;
         private _muzzles = getArray (_config >> "muzzles");
         // workaround for RHS having an extra muzzle for "SAFE"
         if (count _muzzles >= 2 && {"gl" == getText (_config >> (_muzzles select 1) >> "cursorAim")}) then {
@@ -122,17 +122,17 @@ call {
     };
 
     if (_baseCategory isEqualTo "Handguns") exitWith {
-        private _config = configfile >> "CfgWeapons" >> _className;
+        private _config = configFile >> "CfgWeapons" >> _className;
     };
 
     if (_basecategory isEqualTo "Vests") exitWith {
-        if (getNumber (configfile >> "CfgWeapons" >> _className >> "ItemInfo" >> "HitpointsProtectionInfo" >> "Chest" >> "armor") > 5) then {
+        if (getNumber (configFile >> "CfgWeapons" >> _className >> "ItemInfo" >> "HitpointsProtectionInfo" >> "Chest" >> "armor") > 5) then {
             _categories pushBack "ArmoredVests";
         };
     };
 
     if (_basecategory isEqualTo "Headgear") exitWith {
-        if (getNumber (configfile >> "CfgWeapons" >> _className >> "ItemInfo" >> "HitpointsProtectionInfo" >> "Head" >> "armor") > 0) then {
+        if (getNumber (configFile >> "CfgWeapons" >> _className >> "ItemInfo" >> "HitpointsProtectionInfo" >> "Head" >> "armor") > 0) then {
             _categories pushBack "ArmoredHeadgear";
         };
     };
@@ -187,7 +187,7 @@ call {
     };
 
     if (_basecategory == "MagSmokeShell") exitWith {
-        private _nameSound = getText(configfile >> "CfgMagazines" >> _classname >> "nameSound");
+        private _nameSound = getText(configFile >> "CfgMagazines" >> _classname >> "nameSound");
         call {
             if (_nameSound == "smokeshell") exitWith { _categories pushBack "SmokeGrenades" };
             if (_nameSound == "ChemLight") exitWith { _categories pushBack "Chemlights" };
@@ -201,7 +201,7 @@ call {
     };
 
     if (_baseCategory isEqualTo "PointerAttachments") exitWith {
-        private _isLight = isClass(configfile >> "CfgWeapons" >> _classname >> "ItemInfo" >> "FlashLight" >> "Attenuation");
+        private _isLight = isClass(configFile >> "CfgWeapons" >> _classname >> "ItemInfo" >> "FlashLight" >> "Attenuation");
         _categories pushBack (["LaserAttachments", "LightAttachments"] select _isLight);
     };
 

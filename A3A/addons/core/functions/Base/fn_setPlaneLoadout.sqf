@@ -19,7 +19,7 @@ private _missileLauncher = [];
 private _bombRacks = [];
 private _diveParams = [];
 
-private _cfgPath = (configfile >> "A3U" >> "planeLoadouts");
+private _cfgPath = (configFile >> "A3U" >> "planeLoadouts");
 private _cfgAA = (_cfgPath >> "AA");
 private _cfgCASDIVE = (_cfgPath >> "CASDIVE");
 private _cfgCAS = (_cfgPath >> "CAS");
@@ -65,25 +65,25 @@ if ((typeOf _plane) in _cfg) exitWith
             _diveParams         = [(_cfgAA >> (typeOf _plane)), "diveParams", []] call BIS_fnc_returnConfigEntry;
         };
     };
-    if !(_mainGun isEqualTo "") then {
+    if (_mainGun isNotEqualTo "") then {
         _plane setVariable ["mainGun", _mainGun];
     };
-    if !(_rocketLauncher isEqualTo []) then {
+    if (_rocketLauncher isNotEqualTo []) then {
         _plane setVariable ["rocketLauncher", _rocketLauncher];
     };
-    if !(_missileLauncher isEqualTo []) then {
+    if (_missileLauncher isNotEqualTo []) then {
         _plane setVariable ["missileLauncher", _missileLauncher];
     };
-    if !(_bombRacks isEqualTo []) then {
+    if (_bombRacks isNotEqualTo []) then {
         _plane setVariable ["bombRacks", _bombRacks];
     };
-    if !(_diveParams isEqualTo []) then {
+    if (_diveParams isNotEqualTo []) then {
         _plane setVariable ["diveParams", _diveParams];
     } else {
         _plane setVariable ["diveParams", [1000, 600, 180, 55, 15, [0, 0]]]
     };
 
-    if !(_loadout isEqualTo []) then
+    if (_loadout isNotEqualTo []) then
     {
         Debug("Selected new loadout for plane, now equiping plane with it");
         {
@@ -92,14 +92,14 @@ if ((typeOf _plane) in _cfg) exitWith
         } forEach _loadout;
     } else {
         _loadout = getPylonMagazines _plane; // hacky fix, but better than the alternative
-        Debug_1("Selected default loadout for %1, now equiping plane with it. Consider giving it an actual loadout in ultimate\config\plane\cfgPlaneLoadouts.hpp", typeOf _plane);
+        Debug_1("Selected default loadout for %1, now equiping plane with it. Consider giving it an actual loadout in ultimate\config\plane\cfgPlaneLoadouts.hpp",typeOf _plane);
         {
             _plane setPylonLoadout [_forEachIndex + 1, _x, true];
             _plane setVariable ["loadout", _loadout];
         } forEach _loadout;
     };
 
-    Debug_2("Given plane class %1 a loadout of %2, from config", typeOf _plane, _loadout);
+    Debug_2("Given plane class %1 a loadout of %2, from config",typeOf _plane,_loadout);
 };
 
 if (_type == "CASDIVE") then
@@ -522,7 +522,6 @@ if (_type == "CASDIVE") then
             _plane setVariable ["diveParams", [1200, 350, 110, 55, 15, [3, 0]]];        // start (m), end (m), diveSpeed (m/s), dive start angle (deg), turnRate (deg/s), bombOffset (m)
         };
         case "3AS_BTLB_Bomber";
-        case "3AS_BTLB_Bomber_Shadow";
         case "3AS_BTLB_Bomber_RedLeader";
         case "3AS_BTLB_Bomber_Shadow":
         {
@@ -618,7 +617,7 @@ if (_type == "CASDIVE") then
         };
         default
         {
-            Error_1("Plane type %1 currently not supported for CASDIVE, please add the case!", typeOf _plane);
+            Error_1("Plane type %1 currently not supported for CASDIVE, please add the case!",typeOf _plane);
         };
     };
 };
@@ -1065,7 +1064,6 @@ if (_type == "CAS") then
             _plane setVariable ["missileLauncher", ["weapon_AGM_65Launcher","3as_ARC_Missile_AGM","weapon_HARMLauncher"]];
         };
         case "3AS_BTLB_Bomber";
-        case "3AS_BTLB_Bomber_Shadow";
         case "3AS_BTLB_Bomber_RedLeader";
         case "3AS_BTLB_Bomber_Shadow":
         {
@@ -1311,7 +1309,7 @@ if (_type == "CAS") then
         };
         default
         {
-            Error_1("Plane type %1 currently not supported for CAS, please add the case!", typeOf _plane);
+            Error_1("Plane type %1 currently not supported for CAS, please add the case!",typeOf _plane);
         };
     };
 };
@@ -1433,12 +1431,15 @@ if (_type == "AA") then
             _plane setVariable ["missileLauncher", ["weapon_AMRAAMLauncher"]];
         };
         //Vanilla-Aegis IND CAS //different case due to additional weapons not present in vanilla //in templates should use one of these classnames with proper variant skin
+        /*
+        // This case will never be selected due to earlier definition, will require additional logic or new classes to implement the desired behavior
         case "O_A_Plane_Fighter_03_dynamicLoadout_F";
         case "Atlas_O_T_Plane_Fighter_03_dynamicLoadout_F":
         {
             _loadout = ["PylonRack_19Rnd_Rocket_Skyfire","PylonRack_20Rnd_Rocket_03_HE_F","PylonRack_7Rnd_Rocket_50mm","PylonWeapon_300Rnd_20mm_shells","PylonRack_6Rnd_Vikhr_missiles"];
             _plane setVariable ["mainGun", "Twin_Cannon_20mm_gunpod"];
         };
+        */
         //RHS US Air superiority fighter
         case "rhsusf_f22":
         {
@@ -1449,7 +1450,6 @@ if (_type == "AA") then
             _loadout = ["rhs_mag_aim9m","rhs_mag_aim120","rhs_mag_aim120","rhs_mag_zpl20_mixed","rhs_mag_aim120","rhs_mag_aim120","rhs_mag_aim9m","rhsusf_ANALE40_CMFlare_Chaff_Magazine_x2"];
         };
         //RHS Russian Air superiority
-        case "rhs_mig29sm_vvs";
         case "rhs_mig29s_vvs";
         case "rhs_mig29sm_vvs";
         case "UK3CB_ARD_O_MIG29S";
@@ -1807,12 +1807,12 @@ if (_type == "AA") then
         };
         default
         {
-            Error_1("Plane type %1 currently not supported for AA, please add the case!", typeOf _plane);
+            Error_1("Plane type %1 currently not supported for AA, please add the case!",typeOf _plane);
         };
     };
 };
 
-if !(_loadout isEqualTo []) then
+if (_loadout isNotEqualTo []) then
 {
     Debug("Selected new loadout for plane, now equiping plane with it");
     {
@@ -1821,11 +1821,11 @@ if !(_loadout isEqualTo []) then
     } forEach _loadout;
 } else {
     _loadout = getPylonMagazines _plane; // hacky fix, but better than the alternative
-    Debug_1("Selected default loadout for %1, now equiping plane with it. Consider giving it an actual loadout in ultimate\config\plane\cfgPlaneLoadouts.hpp", typeOf _plane);
+    Debug_1("Selected default loadout for %1, now equiping plane with it. Consider giving it an actual loadout in ultimate\config\plane\cfgPlaneLoadouts.hpp",typeOf _plane);
     {
         _plane setPylonLoadout [_forEachIndex + 1, _x, true];
         _plane setVariable ["loadout", _loadout];
     } forEach _loadout;
 };
 
-Debug_2("Given plane class %1 a loadout of %2", typeOf _plane, _loadout);
+Debug_2("Given plane class %1 a loadout of %2",typeOf _plane,_loadout);

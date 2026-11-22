@@ -1,3 +1,5 @@
+#pragma hemtt ignore_variables ["_fnc_saveToTemplate"]
+
 ["attributesVehicles", [
     ["vn_o_air_mig19_gun", ["rebCost", 999999]],
 	

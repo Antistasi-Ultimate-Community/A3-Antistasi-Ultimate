@@ -2,7 +2,7 @@
 #include "..\defines.inc"
 FIX_LINE_NUMBERS()
 
-Info( "Police Car Event Init.");
+Info("Police Car Event Init.");
 
 private _vehicles = [];
 private _groups = [];
@@ -30,12 +30,12 @@ private _radiusX = 5;
 
 while {true} do {
     _road = _cityPosition nearRoads _radiusX;
-    if (count _road > 0) exitWith {};
+    if (_road isNotEqualTo []) exitWith {};
     _radiusX = _radiusX + 5;
 };
 
-private _roadcon = roadsConnectedto (_road select 0);
-private _dirveh = if(count _roadcon > 0) then {[_road select 0, _roadcon select 0] call BIS_fnc_dirTo} else {random 360};
+private _roadcon = roadsConnectedTo (_road select 0);
+private _dirveh = if(_roadcon isNotEqualTo []) then {[_road select 0, _roadcon select 0] call BIS_fnc_dirTo} else {random 360};
 private _roadPosition = getPos (_road select 0);
 
 private _policeVehicleClass = selectRandom (A3A_faction_occ get "vehiclesPolice");
@@ -74,7 +74,7 @@ private _relativePositions = [];
     private _radiusX = 5;
     while {true} do {
         _road = _rndPosition nearRoads _radiusX;
-        if (count _road > 0) exitWith {};
+        if (_road isNotEqualTo []) exitWith {};
         _radiusX = _radiusX + 5;
     };
     private _roadPosition = getPos (_road select 0);

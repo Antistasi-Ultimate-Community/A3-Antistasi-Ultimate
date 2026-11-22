@@ -12,7 +12,7 @@ Arguments:
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
 
-Debug_1("tankRoutine called with %1", _this);
+Debug_1("tankRoutine called with %1",_this);
 
 params ["_suppData", "_resPool", "_base", "_vehCount", "_sleepTime", "_estResources"];
 _suppData params ["_supportName", "_side", "_suppType", "_suppCenter", "_suppRadius", "_suppTarget"];
@@ -22,7 +22,7 @@ sleep _sleepTime;
 // Only spawn tanks
 private _data = [_side, _base, _suppCenter, _resPool, _vehCount, _vehCount, 2, "Normal", true] call A3A_fnc_createAttackForceLand;
 _data params ["_resources", "_vehicles", "_crewGroups", "_cargoGroups"];
-Info_1("Spawn performed: Vehicles %1", _vehicles apply { typeOf _x });
+Info_1("Spawn performed: Vehicles %1",_vehicles apply { typeOf _x });
 
 // Update the resource usage for the final value
 [_estResources - _resources, _side, _resPool] remoteExec ["A3A_fnc_addEnemyResources", 2];
@@ -41,13 +41,13 @@ while {true} do
 {
     private _remVehicles = _vehicles select { canFire _x and canMove _x and side _x == _side };
     if (_remVehicles isEqualTo []) exitWith {
-        Info_1("%1 has been defeated, starting retreat", _supportName);
+        Info_1("%1 has been defeated, starting retreat",_supportName);
     };
     if (time > _timeOut) exitWith {
-        Info_1("%1 has timed out, starting retreat", _supportName);
+        Info_1("%1 has timed out, starting retreat",_supportName);
     };
     if (_remTargets <= 0) exitWith {
-        Info_1("%1 has run out of targets, aborting routine", _supportName);
+        Info_1("%1 has run out of targets, aborting routine",_supportName);
     };
 
     switch (_state) do
@@ -55,7 +55,7 @@ while {true} do
         case STATE_TRAVEL: {
             if (_remVehicles inAreaArray [_suppCenter, _suppRadius, _suppRadius] isEqualTo []) exitWith { sleep 5 };
 
-            Debug_1("%1 reached patrol zone, acquiring target", _supportName);
+            Debug_1("%1 reached patrol zone, acquiring target",_supportName);
             _state = STATE_ACQUIRE;
             continue;
         };
@@ -66,12 +66,12 @@ while {true} do
             _targetObj = _suppTarget select 0;
             if !(_targetObj call A3A_fnc_canFight) exitWith {
                 _suppTarget resize 0;
-                Debug_1("%1 skips target, as it is already dead", _supportName);
+                Debug_1("%1 skips target, as it is already dead",_supportName);
             };
-            Debug_2("Next target for %2 is %1", _suppTarget, _supportName);
+            Debug_2("Next target for %2 is %1",_suppTarget,_supportName);
 
             private _lastKnownPos = _suppTarget select 1;
-            private _knownDist = _lastKnownPos distance2d getPosATL _targetObj;
+            private _knownDist = _lastKnownPos distance2D getPosATL _targetObj;
             private _knowledge = random 0.3 + _knownDist / _suppRadius;
 
             {
@@ -103,9 +103,9 @@ while {true} do
             _suppTarget resize 0;           // clear target array so support routines can add the next
 
             if !(alive _targetObj) then {
-                Debug_1("Target destroyed, %1 returns to cycle mode", _supportName);
+                Debug_1("Target destroyed, %1 returns to cycle mode",_supportName);
             } else {
-                Debug_1("Target evaded, %1 returns to cycle mode", _supportName);
+                Debug_1("Target evaded, %1 returns to cycle mode",_supportName);
             };
 
             {

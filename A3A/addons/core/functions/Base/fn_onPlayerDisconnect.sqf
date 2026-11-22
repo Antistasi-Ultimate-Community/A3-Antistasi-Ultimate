@@ -4,7 +4,7 @@ FIX_LINE_NUMBERS()
 
 params ["_unit", "_id", "_uid"];
 
-Info_3("Player disconnected with id %1 and unit %2 on side %3", _uid, _unit, side _unit);
+Info_3("Player disconnected with id %1 and unit %2 on side %3",_uid,_unit,side _unit);
 
 if (side _unit == sideLogic || {_uid == ""}) exitWith {
     Error("Exiting onPlayerDisconnect due to no UID or sideLogic unit. Possible Headless Client disconnect?");
@@ -14,7 +14,7 @@ if (side _unit == sideLogic || {_uid == ""}) exitWith {
 // find original player unit in case of remote control
 private _realUnit = _unit getVariable ["owner", _unit];
 
-Debug_3("Player unit %1, original unit %2, boss %3", _unit, _realUnit, theBoss);
+Debug_3("Player unit %1, original unit %2, boss %3",_unit,_realUnit,theBoss);
 
 if (_realUnit == theBoss) then
 {

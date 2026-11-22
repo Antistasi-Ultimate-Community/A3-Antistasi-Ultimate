@@ -18,7 +18,7 @@ if (isNil "_varValue") then {
 	_abort = true;
 };
 if (_abort) exitWith {
-    Error_3("Save invalid for %1, saving %3 as %2", _playerUID, _varName, _varValue);
+    Error_3("Save invalid for %1, saving %3 as %2",_playerUID,_varName,_varValue);
 };
 private _playerVarName = format ["player_%1_%2", _playerUID, _varName];
 [_playerVarName, _varValue] call A3A_fnc_setStatVariable;

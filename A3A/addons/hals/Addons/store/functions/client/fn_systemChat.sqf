@@ -18,7 +18,7 @@ params [
 	["_sound", "", [""]]
 ];
 
-if (count _sound > 0 && {isClass (configfile >> "CfgSounds" >> _sound)}) then {
+if (count _sound > 0 && {isClass (configFile >> "CfgSounds" >> _sound)}) then {
 	playSound _sound;
 };
 
