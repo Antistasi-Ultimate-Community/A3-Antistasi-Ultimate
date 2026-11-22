@@ -6,8 +6,8 @@ class Params
         class ParamClass : ParentClass // all fields are required unless specified otherwise
         {
             type = "TypeString"; // Used to group parameters in the GUI. Required for section titles, can be inherited for actual parameters.
-            title = $STR_params_name; // stringtable entry for the parameter or section name
-            tooltip = $STR_params_name_desc; // stringtable entry for the parameter tooltip (optional)
+            title = "$STR_params_name"; // stringtable entry for the parameter or section name
+            tooltip = "$STR_params_name_desc"; // stringtable entry for the parameter tooltip (optional)
             values[] = {0,1,2,3}; // integer values for the actual parameter value. If values is {0,1} they will be converted to boolean when loading the save.
             texts[] = {}; // string values for the parameter options, shown in the setup GUI dropdown
             default = 0; // default integer value for the parameter
@@ -15,7 +15,7 @@ class Params
             lockOnSave = 0; // Set to 1 if parameter should not be changeable after saving a game (optional, default 0)
             lockInGame = 0; // Set to 1 if parameter value should not be changeable while in-game (optional, default 0)
             lockCondition = "false;"; // SQF code run while setup GUI is open that returns true/false to determine if the parameter should be changeable (optional, default "false;" (meaning, not locked))
-            lockConditionTooltip = $STR_antistasi_dialogs_setup_param_locked_bycondition; // stringtable entry for the tooltip to show when the parameter is locked by the lockCondition (optional)
+            lockConditionTooltip = "$STR_antistasi_dialogs_setup_param_locked_bycondition"; // stringtable entry for the tooltip to show when the parameter is locked by the lockCondition (optional)
             class dependencies // this block is used to define which other parameters depend on this one, and what values they should take when this parameter is set to a certain value (optional)
             {
                 class AnotherParameterName // the name of the parameter this one affects (must match the class name in this file){
@@ -23,7 +23,7 @@ class Params
                     value = -1; // the value of this parameter that triggers the dependency (required if using this block)
                     dependentValue = 0; // the value to set the dependent parameter to when this parameter is set to 'value' (optional, default nil)
                     lockedByDependency = 1; // set to 1 if the dependent parameter should be locked when this dependency is active (optional, default 0)
-                    dependencyTooltip = $STR_antistasi_dialogs_setup_param_locked_bydependency; // stringtable entry for the tooltip to show when the dependent parameter is locked by this dependency (optional)
+                    dependencyTooltip = "$STR_antistasi_dialogs_setup_param_locked_bydependency"; // stringtable entry for the tooltip to show when the dependent parameter is locked by this dependency (optional)
                 };
             };
             class difficulty // this block is used to define different default values based on desired difficulty and amount of players (optional)
@@ -63,15 +63,15 @@ class Params
         };
         class Spacer102: SuperDuperCoolParams
         {
-            title = $STR_SuperDuperCool_params_name;
+            title = "$STR_SuperDuperCool_params_name";
             values[] = {};
             texts[] = {};
             default = 0;
         };
         class aReallyCoolParam: SuperDuperCoolParams
         {
-            title = $STR_SuperDuperCool_new_param;
-            tooltip = $STR_SuperDuperCool_new_param_desc;
+            title = "$STR_SuperDuperCool_new_param";
+            tooltip = "$STR_SuperDuperCool_new_param_desc";
             values[] = {0, 69, 420};
             texts[] = {"0","69","420"};
             default = 69;
@@ -136,7 +136,7 @@ class Params
     {
         type = "Scenario";
         title = "$STR_params_scenarioParams";
-        //tooltip = $STR_params_scenarioParams_desc;
+        //tooltip = "$STR_params_scenarioParams_desc";
         values[] = {};
         texts[] = {};
         default = 0;
@@ -275,7 +275,7 @@ class Params
     {
         type = "Member";
         title = "$STR_params_member";
-        //tooltip = $STR_params_member_desc;
+        //tooltip = "$STR_params_member_desc";
         values[] = {};
         texts[] = {};
         default = 0;
@@ -342,7 +342,7 @@ class Params
     {
         type = "Script";
         title = "$STR_params_scriptParams";
-        //tooltip = $STR_params_scriptParams_desc;
+        //tooltip = "$STR_params_scriptParams_desc";
         values[] = {};
         texts[] = {};
         default = 0;
@@ -381,7 +381,7 @@ class Params
     {
         type = "Timer";
         title = "$STR_params_timerParams";
-        //tooltip = $STR_params_timerParams_desc;
+        //tooltip = "$STR_params_timerParams_desc";
         values[] = {};
         texts[] = {};
         default = 0;
@@ -556,7 +556,7 @@ class Params
     {
         type = "AI";
         title = "$STR_params_ai";
-        //tooltip = $STR_params_ai_desc;
+        //tooltip = "$STR_params_ai_desc";
         values[] = {};
         texts[] = {};
         default = 0;
@@ -833,6 +833,14 @@ class Params
         default = 5;
         lockInGame = 1;
     };
+    class AIrevivesOutsideSquad : AIParams
+    {
+        title = "$STR_params_AIrevivesOutsideSquad";
+        tooltip = "$STR_params_AIrevivesOutsideSquad_desc";
+        values[] = {25, 50, 75, 100, -1};
+        texts[] = {"25", "50", "75", "100", "$STR_params_afk_disabled"};
+        default = -1;
+    };
 
     class BalanceParamsSpacer : AIParamsSpacer
     {
@@ -842,7 +850,7 @@ class Params
     {
         type = "RebelBalance";
         title = "$STR_params_rebelBalanceParams";
-        //tooltip = $STR_params_rebelBalanceParams_desc;
+        //tooltip = "$STR_params_rebelBalanceParams_desc";
         values[] = {};
         texts[] = {};
         default = 0;
@@ -1482,7 +1490,7 @@ class Params
     {
         type = "AIBalance";
         title = "$STR_params_aiBalanceParams";
-        //tooltip = $STR_params_aiBalanceParams_desc;
+        //tooltip = "$STR_params_aiBalanceParams_desc";
         values[] = {};
         texts[] = {};
         default = 0;
@@ -1907,6 +1915,48 @@ class Params
         };
         default = 0;
     };
+    class A3U_disablePATCOMMortars : AIBalanceParams
+    {
+        title = "$STR_params_disablePATCOMMortars";
+        tooltip = "$STR_params_disablePATCOMMortars_desc";
+        values[] = {0, 1};
+        texts[] = {"$STR_antistasi_dialogs_generic_button_no_text", "$STR_antistasi_dialogs_generic_button_yes_text"};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 1;
+                medium = 0;
+                hard = 0;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
+        default = 0;
+        lockInGame = 1;
+    };
+    class A3U_disableMortars : AIBalanceParams
+    {
+        title = "$STR_params_disableMortars";
+        tooltip = "$STR_params_disableMortars_desc";
+        values[] = {0, 1};
+        texts[] = {"$STR_antistasi_dialogs_generic_button_no_text", "$STR_antistasi_dialogs_generic_button_yes_text"};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 1;
+                medium = 0;
+                hard = 0;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
+        default = 0;
+        lockInGame = 0;
+    };
     class A3A_UAVSpawnChance: AIBalanceParams
     {
         title = "$STR_params_UAVSpawnChance";
@@ -2001,7 +2051,7 @@ class Params
     {
         type = "MiscBalance";
         title = "$STR_params_miscBalanceParams";
-        //tooltip = $STR_params_miscBalanceParams_desc;
+        //tooltip = "$STR_params_miscBalanceParams_desc";
         values[] = {};
         texts[] = {};
         default = 0;
@@ -2140,6 +2190,81 @@ class Params
         };
         default = 0;
     };
+    class A3A_diameterExtendedCaptureArea: MiscBalanceParams
+    {
+        title = "$STR_A3A_Params_diameterExtendedCaptureArea_title";
+        tooltip = "$STR_A3A_Params_diameterExtendedCaptureArea_tooltip";
+        values[] = {0,150,250,300,350,400,450,500};
+        texts[] = {"$STR_A3A_Params_diameterExtendedCaptureArea_traditional", "150m", "250m", "300m", "350m", "400m", "450m", "500m"};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 0;
+                medium = 300;
+                hard = 500;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
+        default = 0;
+    };
+    class EGVAR(ultimate,allowLockpickKits) : MiscBalanceParams
+    {
+        title = "$STR_params_ultimate_allowLockpickKits";
+        tooltip = "$STR_params_ultimate_allowLockpickKits_Tooltip";
+        values[] = {0, 1};
+        texts[] = {"$STR_antistasi_dialogs_generic_button_no_text", "$STR_antistasi_dialogs_generic_button_yes_text"};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 1;
+                medium = 1;
+                hard = 0;
+            };
+            class small : solo {};
+            class medium : solo {};
+            class large : solo {};
+        };
+        default = 0;
+    };
+    class EGVAR(ultimate,lockpickKitBreakChance) : MiscBalanceParams
+    {
+        title = "$STR_params_ultimate_lockpickKitBreakChance";
+        tooltip = "$STR_params_ultimate_lockpickKitBreakChance_Tooltip";
+        values[] = {0, 10, 20, 25, 30, 40, 50};
+        texts[] = {"0%", "10%", "20%", "25%", "30%", "40%", "50%"};
+        class difficulty
+        {
+            class solo
+            {
+                easy = 0;
+                medium = 10;
+                hard = 20;
+            };
+            class small
+            {
+                easy = 10;
+                medium = 20;
+                hard = 30;
+            };
+            class medium
+            {
+                easy = 20;
+                medium = 30;
+                hard = 40;
+            };
+            class large
+            {
+                easy = 30;
+                medium = 40;
+                hard = 50;
+            };
+        };
+        default = 25;
+    };
     class AIParamsSpacer2 : AllParams
     {
         type = "AI";
@@ -2153,7 +2278,7 @@ class Params
     {
         type = "BlackMarket";
         title = "$STR_params_blackmarket";
-        //tooltip = $STR_params_blackmarket_desc;
+        //tooltip = "$STR_params_blackmarket_desc";
         values[] = {};
         texts[] = {};
         default = 0;
@@ -2379,7 +2504,7 @@ class Params
     {
         type = "Unlocks";
         title = "$STR_params_unlockParams";
-        //tooltip = $STR_params_unlockParams_desc;
+        //tooltip = "$STR_params_unlockParams_desc";
         values[] = {};
         texts[] = {};
         default = 0;
@@ -2557,7 +2682,7 @@ class Params
     {
         type = "Crates";
         title = "$STR_params_crateParams";
-        //tooltip = $STR_params_crateParams_desc;
+        //tooltip = "$STR_params_crateParams_desc";
         values[] = {};
         texts[] = {};
         default = 0;
@@ -2910,7 +3035,7 @@ class Params
     {
         type = "VehicleLoot";
         title = "$STR_params_vehicleLootParams";
-        //tooltip = $STR_params_vehicleLootParams_desc;
+        //tooltip = "$STR_params_vehicleLootParams_desc";
         values[] = {};
         texts[] = {};
         default = 0;
@@ -2969,7 +3094,7 @@ class Params
     {
         type = "MiscLoot";
         title = "$STR_params_miscLootParams";
-        //tooltip = $STR_params_miscLootParams_desc;
+        //tooltip = "$STR_params_miscLootParams_desc";
         values[] = {};
         texts[] = {};
         default = 0;
@@ -3048,131 +3173,6 @@ class Params
         default = 0;
         lockOnSave = 0; // ! Nothing in this section should ever have to be locked. We wouldn't want an *experimental* param to bork a save.
     };
-    class A3A_diameterExtendedCaptureArea: ExperimentalParams
-    {
-        title = "$STR_A3A_Params_diameterExtendedCaptureArea_title";
-        tooltip = "$STR_A3A_Params_diameterExtendedCaptureArea_tooltip";
-        values[] = {0,150,250,300,350,400,450,500};
-        texts[] = {"$STR_A3A_Params_diameterExtendedCaptureArea_traditional", "150m", "250m", "300m", "350m", "400m", "450m", "500m"};
-        class difficulty
-        {
-            class solo
-            {
-                easy = 0;
-                medium = 300;
-                hard = 500;
-            };
-            class small : solo {};
-            class medium : solo {};
-            class large : solo {};
-        };
-        default = 0;
-    };
-    class A3U_disablePATCOMMortars : ExperimentalParams
-    {
-        title = "$STR_params_disablePATCOMMortars";
-        tooltip = "$STR_params_disablePATCOMMortars_desc";
-        values[] = {0, 1};
-        texts[] = {"$STR_antistasi_dialogs_generic_button_no_text", "$STR_antistasi_dialogs_generic_button_yes_text"};
-        class difficulty
-        {
-            class solo
-            {
-                easy = 1;
-                medium = 0;
-                hard = 0;
-            };
-            class small : solo {};
-            class medium : solo {};
-            class large : solo {};
-        };
-        default = 0;
-        lockInGame = 1;
-    };
-    class A3U_disableMortars : ExperimentalParams
-    {
-        title = "$STR_params_disableMortars";
-        tooltip = "$STR_params_disableMortars_desc";
-        values[] = {0, 1};
-        texts[] = {"$STR_antistasi_dialogs_generic_button_no_text", "$STR_antistasi_dialogs_generic_button_yes_text"};
-        class difficulty
-        {
-            class solo
-            {
-                easy = 1;
-                medium = 0;
-                hard = 0;
-            };
-            class small : solo {};
-            class medium : solo {};
-            class large : solo {};
-        };
-        default = 0;
-        lockInGame = 0;
-    };
-    class EGVAR(ultimate,allowLockpickKits) : ExperimentalParams
-    {
-        title = "$STR_params_ultimate_allowLockpickKits";
-        tooltip = "$STR_params_ultimate_allowLockpickKits_Tooltip";
-        values[] = {0, 1};
-        texts[] = {"$STR_antistasi_dialogs_generic_button_no_text", "$STR_antistasi_dialogs_generic_button_yes_text"};
-        class difficulty
-        {
-            class solo
-            {
-                easy = 1;
-                medium = 1;
-                hard = 0;
-            };
-            class small : solo {};
-            class medium : solo {};
-            class large : solo {};
-        };
-        default = 0;
-    };
-    class EGVAR(ultimate,lockpickKitBreakChance) : ExperimentalParams
-    {
-        title = "$STR_params_ultimate_lockpickKitBreakChance";
-        tooltip = "$STR_params_ultimate_lockpickKitBreakChance_Tooltip";
-        values[] = {0, 10, 20, 25, 30, 40, 50};
-        texts[] = {"0%", "10%", "20%", "25%", "30%", "40%", "50%"};
-        class difficulty
-        {
-            class solo
-            {
-                easy = 0;
-                medium = 10;
-                hard = 20;
-            };
-            class small
-            {
-                easy = 10;
-                medium = 20;
-                hard = 30;
-            };
-            class medium
-            {
-                easy = 20;
-                medium = 30;
-                hard = 40;
-            };
-            class large
-            {
-                easy = 30;
-                medium = 40;
-                hard = 50;
-            };
-        };
-        default = 25;
-    };
-    class AIrevivesOutsideSquad : ExperimentalParams
-    {
-        title = "$STR_params_AIrevivesOutsideSquad";
-        tooltip = "$STR_params_AIrevivesOutsideSquad_desc";
-        values[] = {25, 50, 75, 100, -1};
-        texts[] = {"25", "50", "75", "100", "$STR_params_afk_disabled"};
-        default = -1;
-    };
 
     class DevelopmentParamsSpacer : AllParams
     {
@@ -3182,7 +3182,7 @@ class Params
     {
         type = "Development";
         title = "$STR_params_development";
-        //tooltip = $STR_params_development_desc;
+        //tooltip = "$STR_params_development_desc";
         values[] = {};
         texts[] = {};
         default = 0;
@@ -3202,6 +3202,20 @@ class Params
         values[] = {-1,1,2};
         texts[] = {"$STR_params_A3A_logDebugConsole_none", "$STR_params_A3A_logDebugConsole_allnondev", "$STR_params_A3A_logDebugConsole_all"};
         default = 1;
+    };
+
+    class DeprecatedParamsSpacer : AllParams
+    {
+        type = "Deprecated";
+    };
+    class DeprecatedParams : AllParams
+    {
+        type = "Deprecated";
+        title = "$STR_params_deprecated";
+        tooltip = "$STR_params_deprecated_desc";
+        values[] = {};
+        texts[] = {};
+        default = 0;
     };
 
     // * Ported from community, deliberately not categorized in Ultimate so it's not shown, and default changed to 0 to disable for now to preserve our existing behavior

@@ -64,7 +64,7 @@ player setCaptive true;
 if (player == leader group player) then
 {
     {
-        if ((!isPlayer _x) && (local _x) && (_x getVariable["owner", _x] == player)) then
+        if ((!isPlayer _x) && {local _x} && {_x getVariable["owner", _x] == player || {_x isEqualTo petros}}) then
         {
             [_x] spawn A3A_fnc_undercoverAI;
         };

@@ -18,7 +18,7 @@ if (_vest isEqualTo "") then {
         _vest = selectRandomWeighted (A3A_rebelGear get "CivilianVests");
     };
 };
-petros addVest _vest;
+if (_vest isNotEqualTo "") then { petros addVest _vest };
 
 // Headgear
 removeHeadgear petros;
@@ -150,3 +150,5 @@ private _marker = "respawn_guerrila";
 _marker setMarkerType "A3AU_RebelHQ_mrk";
 
 Info("initPetros completed");
+
+[CBA_EVENT_SERVER_INIT_PETROS, [petros]] call FUNCMAIN(triggerServerEvent);

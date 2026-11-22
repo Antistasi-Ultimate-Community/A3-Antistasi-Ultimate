@@ -864,7 +864,7 @@ class A3A_SetupEditZonesDialog : A3A_SetupHQPosDialog
             x = QUOTE(safeZoneX);
             y = QUOTE(8 * GRID_H);
             w = QUOTE(30 * GRID_W);
-            h = QUOTE(40 * GRID_H);
+            h = QUOTE(46 * GRID_H);
 
             class Controls
             {
@@ -886,7 +886,7 @@ class A3A_SetupEditZonesDialog : A3A_SetupHQPosDialog
                     x = 0;
                     y = 0;
                     w = QUOTE(30 * GRID_W);
-                    h = QUOTE(40 * GRID_H);
+                    h = QUOTE(46 * GRID_H);
                 };
                 class OutpostsCheck : A3A_CheckBox
                 {
@@ -946,6 +946,16 @@ class A3A_SetupEditZonesDialog : A3A_SetupHQPosDialog
                 {
                     text = "$STR_antistasi_dialogs_setup_ez_factories";
                     y = QUOTE(30 * GRID_H);
+                };
+                class SeaportsCheck : OutpostsCheck
+                {
+                    idc = A3A_IDC_EDITZONES_SEAPORTSCHECKBOX;
+                    y = QUOTE(36 * GRID_H);
+                };
+                class SeaportsText : OutpostsText
+                {
+                    text = "$STR_antistasi_dialogs_setup_ez_seaports";
+                    y = QUOTE(36 * GRID_H);
                 };
             };
         };

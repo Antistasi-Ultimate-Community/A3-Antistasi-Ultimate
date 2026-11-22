@@ -603,6 +603,24 @@
 #define CBA_EVENT_SERVER_INIT_DONE QUOTE(TRIPLES(PREFIX_CONST,event,serverInitDone))
 
 /* -------------------------------------------
+    Event: CBA_EVENT_SERVER_INIT_PETROS
+        Triggered when Petros is initialized on the server.
+
+    Parameters:
+        0: unit - Petros unit reference <OBJECT>
+
+    Broadcast:
+        No
+
+    Sent by:
+        Server
+    
+    Recipients:
+        Server
+------------------------------------------- */
+#define CBA_EVENT_SERVER_INIT_PETROS QUOTE(TRIPLES(PREFIX_CONST,event,serverInitPetros))
+
+/* -------------------------------------------
     Event: CBA_EVENT_SERVER_INIT_REBEL_UNIT
         Triggered when a Rebel unit is initialized on the server.
 

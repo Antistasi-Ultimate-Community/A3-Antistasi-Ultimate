@@ -43,8 +43,9 @@ switch (_mode) do
 
         _display setVariable ["dangerZones", _allEnemyMarkers];
 
-        // ! Override airport marker type to force them to show on the map
+        // ! Override airport and seaport marker type to force them to show on the map
         { _x setMarkerTypeLocal "A3AU_airport_mrk" } forEach (airportsX apply {"Dum"+_x});
+        { _x setMarkerTypeLocal "A3AU_seaport_mrk"} forEach (seaports apply {"Dum"+_x});
 
         // ! Force hide fuel stations because they clutter the map way too much
         { _x setMarkerAlpha 0 } forEach (fuelStationsX);
@@ -117,6 +118,7 @@ switch (_mode) do
         private _airportsCheck = cbChecked (_display displayCtrl A3A_IDC_EDITZONES_AIRPORTSCHECKBOX);
         private _resourcesCheck = cbChecked (_display displayCtrl A3A_IDC_EDITZONES_RESOURCESCHECKBOX);
         private _factoriesCheck = cbChecked (_display displayCtrl A3A_IDC_EDITZONES_FACTORIESCHECKBOX);
+        private _seaportsCheck = cbChecked (_display displayCtrl A3A_IDC_EDITZONES_SEAPORTSCHECKBOX);
 
         //{ _x setMarkerAlphaLocal ([0, 1] select _airportsCheck) } forEach (airportsX apply { "Dum"+_x });
 
@@ -126,6 +128,7 @@ switch (_mode) do
         if (_airportsCheck) then { _revealedZones append airportsX };
         if (_resourcesCheck) then { _revealedZones append resourcesX };
         if (_factoriesCheck) then { _revealedZones append factories };
+        if (_seaportsCheck) then { _revealedZones append seaports };
 
         revealedZones = _revealedZones;
         publicVariable "revealedZones";

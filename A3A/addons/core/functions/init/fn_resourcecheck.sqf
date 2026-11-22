@@ -122,9 +122,11 @@ while {true} do {
 
 		if (_canFlip) then {
 			if (_canStartSkirmish) then {
+				if (areOccupantsDefeated) then {_citySide = Invaders}; // They won't capture it but they will attack it
 				private _possibleOrigins = outposts select {sidesX getVariable [_x, sideUnknown] == _citySide};
 				private _finalOrigin = selectRandom (_possibleOrigins select { (getMarkerPos _x) distance2D (getMarkerPos _city) < 3000 });
 				if (isNil "_finalOrigin") then { _finalOrigin = selectRandom _possibleOrigins };
+				if (isNil "_finalOrigin") exitWith { [_city, true] call A3A_fnc_cityChangeSide }; // Worst case scenario, no outposts available
 				[_citySide, _city, _finalOrigin] spawn A3A_fnc_townBattle;
 				uiSleep 1;
 			} else {

@@ -2650,28 +2650,28 @@
                 <Turkish>%1 size hasar verdi!</Turkish>
             </Key>
             <Key ID="STR_A3A_punishment_guilty">
-                <Original>has been found guilty of FF (3+ Strikes).&lt;br/&gt;&lt;br/&gt;If you believe this is a mistake, you can forgive him with the corresponding scroll-menu action.</Original>
-                <French>a été reconnu coupable de tirs amis (plus de trois incidents)..&lt;br/&gt;&lt;br/&gt;Si vous pensez qu'il s'agit d'une erreur, vous pouvez lui pardonner avec l'action correspondante du menu déroulant.</French>
-                <Russian>был признан виновным в дружественном огне (3+ случая).&lt;br/&gt;&lt;br/&gt;Если вы думаете, что это ошибка правосудия, вы можете простить его соответствующим действием в контекстном меню на колёсико мыши.</Russian>
+                <Original> has been found guilty of FF (3+ Strikes).&lt;br/&gt;&lt;br/&gt;If you believe this is a mistake, you can forgive him with the corresponding scroll-menu action.</Original>
+                <French> a été reconnu coupable de tirs amis (plus de trois incidents)..&lt;br/&gt;&lt;br/&gt;Si vous pensez qu'il s'agit d'une erreur, vous pouvez lui pardonner avec l'action correspondante du menu déroulant.</French>
+                <Russian> был признан виновным в дружественном огне (3+ случая).&lt;br/&gt;&lt;br/&gt;Если вы думаете, что это ошибка правосудия, вы можете простить его соответствующим действием в контекстном меню на колёсико мыши.</Russian>
                 <Korean>이(가) 아군오사(3회 이상 공격)에 대해 유죄 판결을 받았습니다.&lt;br/&gt;&lt;br/&gt;실수인 것 같다고 생각한다면 그에 대한 스크롤 메뉴 행동으로 그를 용서할 수 있습니다.</Korean>
                 <Chinesesimp>已被判误伤（3次以上）。&lt;br/&gt;&lt;br/&gt;如果您认为这是误判，您可以通过鼠标滚轮菜单中的适当操作来原谅它。</Chinesesimp>
-                <Turkish>dost ateşinden (3+ İhlal) suçlu bulundu.&lt;br/&gt;&lt;br/&gt;Bunun bir hata olduğunu düşünüyorsanız, ilgili kaydırma menüsü (scroll-menu) eylemiyle onu affedebilirsiniz.</Turkish>
+                <Turkish> dost ateşinden (3+ İhlal) suçlu bulundu.&lt;br/&gt;&lt;br/&gt;Bunun bir hata olduğunu düşünüyorsanız, ilgili kaydırma menüsü (scroll-menu) eylemiyle onu affedebilirsiniz.</Turkish>
             </Key>
             <Key ID="STR_A3A_punishment_hurt_you">
-                <Original>hurt you!</Original>
-                <French>a fait des dégâts!</French>
-                <Russian>нанёс вам урон!</Russian>
-                <Korean>이(가) 당신을 다치게 했습니다!</Korean>
-                <Chinesesimp>伤害你！</Chinesesimp>
-                <Turkish>size hasar verdi!</Turkish>
+                <Original>  hurt you!</Original>
+                <French> a fait des dégâts!</French>
+                <Russian>  нанёс вам урон!</Russian>
+                <Korean>  이(가) 당신을 다치게 했습니다!</Korean>
+                <Chinesesimp>  伤害你！</Chinesesimp>
+                <Turkish>  size hasar verdi!</Turkish>
             </Key>
             <Key ID="STR_A3A_punishment_injured_comrade">
-                <Original>Injured comrade:</Original>
+                <Original>Injured comrade: </Original>
                 <French>Camarade blessé:</French>
-                <Russian>Раненый товарищ:</Russian>
-                <Korean>부상당한 아군:</Korean>
-                <Chinesesimp>受伤的同志：</Chinesesimp>
-                <Turkish>Yaralı yoldaş:</Turkish>
+                <Russian>Раненый товарищ: </Russian>
+                <Korean>부상당한 아군: </Korean>
+                <Chinesesimp>受伤的同志： </Chinesesimp>
+                <Turkish>Yaralı yoldaş: </Turkish>
             </Key>
             <Key ID="STR_A3A_punishment_no_grenades">
                 <Original>You can't throw grenades or place explosives within 75m of HQ.</Original>
@@ -3043,6 +3043,22 @@
                 <Korean>위치로 이동하지 않았으며, 건설 시간이 초과되었습니다.</Korean>
                 <Chinesesimp>你没有接近施工现场，建筑已经超时了。</Chinesesimp>
                 <Turkish>Konuma gitmediniz, inşaat süresi doldu.</Turkish>
+            </Key>
+            <Key ID="STR_A3A_reinf_build_actionProgress">
+                <Original>Building...</Original>
+                <French>Construction en cours...</French>
+                <Russian>Идёт строительство...</Russian>
+                <Korean>건설 중...</Korean>
+                <Chinesesimp>正在建造...</Chinesesimp>
+                <Turkish>İnşa ediliyor...</Turkish>
+            </Key>
+            <Key ID="STR_A3A_reinf_build_actionTitle">
+                <Original>Build</Original>
+                <French>Construire</French>
+                <Russian>Построить</Russian>
+                <Korean>건설하기</Korean>
+                <Chinesesimp>建造</Chinesesimp>
+                <Turkish>İnşa et</Turkish>
             </Key>
             <Key ID="STR_A3A_reinf_build_engie_human_engie">
                 <Original>There is a human engineer in your squad. Ask them to build.&lt;br/&gt;</Original>
@@ -3563,20 +3579,20 @@
                 <Turkish>Kalıcı Kayıt</Turkish>
             </Key>
             <Key ID="STR_A3A_save_persisent_save_0">
-                <Original>Assets:&lt;br/&gt;&lt;t color='#f0d498'&gt;HR:</Original>
-                <French>Actifs:&lt;br/&gt;&lt;t color='#f0d498'&gt;HR:</French>
-                <Russian>Имущество:&lt;br/&gt;&lt;t color='#f0d498'&gt;ЛР:</Russian>
-                <Korean>자산:&lt;br/&gt;&lt;t color='#f0d498'&gt;인력:</Korean>
-                <Chinesesimp>资产:&lt;br/&gt;&lt;t color='#f0d498'&gt;人力:</Chinesesimp>
-                <Turkish>Varlıklar:&lt;br/&gt;&lt;t color='#f0d498'&gt;İK:</Turkish>
+                <Original> Assets:&lt;br/&gt;&lt;t color='#f0d498'&gt;HR: </Original>
+                <French> Actifs:&lt;br/&gt;&lt;t color='#f0d498'&gt;HR:</French>
+                <Russian> Имущество:&lt;br/&gt;&lt;t color='#f0d498'&gt;ЛР: </Russian>
+                <Korean> 자산:&lt;br/&gt;&lt;t color='#f0d498'&gt;인력: </Korean>
+                <Chinesesimp>资产:&lt;br/&gt;&lt;t color='#f0d498'&gt;人力: </Chinesesimp>
+                <Turkish> Varlıklar:&lt;br/&gt;&lt;t color='#f0d498'&gt;İK: </Turkish>
             </Key>
             <Key ID="STR_A3A_save_persisent_save_1">
-                <Original>&lt;br/&gt;Money:</Original>
+                <Original>&lt;br/&gt;Money: </Original>
                 <French>&lt;br/&gt;Argent :</French>
-                <Russian>&lt;br/&gt;Деньги:</Russian>
-                <Korean>&lt;br/&gt;자금:</Korean>
-                <Chinesesimp>&lt;br/&gt;钱:</Chinesesimp>
-                <Turkish>&lt;br/&gt;Para:</Turkish>
+                <Russian>&lt;br/&gt;Деньги: </Russian>
+                <Korean>&lt;br/&gt;자금: </Korean>
+                <Chinesesimp>&lt;br/&gt;钱: </Chinesesimp>
+                <Turkish>&lt;br/&gt;Para: </Turkish>
             </Key>
             <Key ID="STR_A3A_save_save_game_desc">
                 <Original>Server data save is still in progress...</Original>
@@ -4530,7 +4546,7 @@
             <Key ID="STR_chats_radiocheck">
                 <Original>This is %1, radiocheck OK.</Original>
                 <French>Il s'agit de %1, contrôle radio OK.</French>
-                <Russian>Это %1, проверка связи, как слышно? Приём.</Russian>
+                <Russian>Это %1, проверка связи, как слышно? Приём. </Russian>
                 <Korean>여기는 %1, 무전 체크 양호.</Korean>
                 <Chinesesimp>这是%1，无线电检查正常。</Chinesesimp>
                 <Turkish>Ben %1, telsiz kontrolü tamam.</Turkish>
@@ -4732,7 +4748,7 @@
             </Key>
             <Key ID="STR_antistasi_actions_carry_crate">
                 <Original>Carry crate</Original>
-                <French>Porter la caisse</French>
+                <French>Porter la caisse </French>
                 <Russian>Поднять ящик</Russian>
                 <Korean>상자 옮기기</Korean>
                 <Chinesesimp>搬箱子</Chinesesimp>
@@ -4843,10 +4859,10 @@
                 <Turkish>Çekme halatını bırak</Turkish>
             </Key>
             <Key ID="STR_antistasi_actions_ff_forgive">
-                <Original>[Forgive Friendly Fire]</Original>
-                <French>[Pardonnez les tirs amis]</French>
-                <Russian>[Простить дружественный огонь]</Russian>
-                <Korean>[아군오사 용서]</Korean>
+                <Original>[Forgive Friendly Fire] </Original>
+                <French>[Pardonnez les tirs amis] </French>
+                <Russian>[Простить дружественный огонь] </Russian>
+                <Korean>[아군오사 용서] </Korean>
                 <Chinesesimp>[原谅友军伤害]</Chinesesimp>
                 <Turkish>[Dost Ateşini Affet]</Turkish>
             </Key>
@@ -6091,15 +6107,15 @@
                 <Turkish>Sonraki %1 Konumunun Açığa Çıkması.</Turkish>
             </Key>
             <Key ID="STR_antistasi_rivals_reveal_location_city_hint_text">
-                <Original>&lt;t size='0.6'&gt;Our efforts have paid off - we now know where another &lt;t size='0.6' color='#800000'&gt;%1&lt;/t&gt; cell is located - it is in the %2. We can launch an attack on it at any moment.&lt;/t&gt;</Original>
-                <French>&lt;t size='0.6'&gt;Nos efforts ont porté leurs fruits - nous savons maintenant où se trouve une autre &lt;t size='0.6' color='#800000'&gt;cellule %1&lt;/t&gt; elle se trouve dans le %2. Nous pouvons l'attaquer à tout moment.&lt;/t&gt;</French>
+                <Original>&lt;t size='0.6'&gt;Our efforts have paid off - we now know where another &lt;t size='0.6' color='#800000'&gt;%1&lt;/t&gt; cell is located - it is in %2. We can launch an attack on it at any moment.&lt;/t&gt;</Original>
+                <French> &lt;t size='0.6'&gt;Nos efforts ont porté leurs fruits - nous savons maintenant où se trouve une autre &lt;t size='0.6' color='#800000'&gt;cellule %1&lt;/t&gt; elle se trouve dans le %2. Nous pouvons l'attaquer à tout moment.&lt;/t&gt;</French>
                 <Russian>&lt;t size='0.6'&gt;Наши усилия дали результат - мы теперь знаем где находится ещё одна ячейка &lt;t size='0.6' color='#800000'&gt;%1&lt;/t&gt; - это в %2. Мы можем начать атаку на него в любой момент.&lt;/t&gt;</Russian>
                 <Korean>&lt;t size='0.6'&gt;우리들의 노력이 결실을 맺었으며, 이제 우리는 또 다른 &lt;t size='0.6' color='#800000'&gt;%1&lt;/t&gt;의 셀이 어디에 있는지 알게 되었고, 현재 %2에 있습니다. 언제든지 공격할 수 있습니다.&lt;/t&gt;</Korean>
                 <Chinesesimp>&lt;t size='0.6'&gt;我们的努力得到了回报 - 我们现在知道另一个 &lt;t size='0.6' color='#800000'&gt;%1&lt;/t&gt; 密室已找到 - 它在 %2 中。 我们随时可以对其发起攻击。&lt;/t&gt;</Chinesesimp>
                 <Turkish>&lt;t size='0.6'&gt;Çabalarımız sonuç verdi - artık başka bir &lt;t size='0.6' color='#800000'&gt;%1&lt;/t&gt; hücresinin nerede olduğunu biliyoruz - %2 bölgesinde. Her an oraya bir saldırı başlatabiliriz.&lt;/t&gt;</Turkish>
             </Key>
             <Key ID="STR_antistasi_rivals_reveal_location_hideout_hint_text">
-                <Original>&lt;t size='0.6'&gt;Our efforts have paid off - we now know where another &lt;t size='0.6' color='#800000'&gt;%1&lt;/t&gt; hideout is located - it is in the %2. We can launch an attack on it at any moment.&lt;/t&gt;</Original>
+                <Original>&lt;t size='0.6'&gt;Our efforts have paid off - we now know where another &lt;t size='0.6' color='#800000'&gt;%1&lt;/t&gt; hideout is located - it is in %2. We can launch an attack on it at any moment.&lt;/t&gt;</Original>
                 <French>&lt;t size='0.6'&gt;Nos efforts ont porté leurs fruits : nous savons maintenant où se trouve une autre &lt;t size='0.6' color='#800000'&gt;%1&lt;/t&gt; cachette - elle se trouve dans le %2. Nous pouvons l'attaquer à tout moment.&lt;/t&gt;</French>
                 <Russian>&lt;t size='0.6'&gt;Наши усилия дали результат - мы теперь знаем где находится ещё одно логово &lt;t size='0.6' color='#800000'&gt;%1&lt;/t&gt; - это в %2. Мы можем начать атаку на него в любой момент.&lt;/t&gt;</Russian>
                 <Korean>&lt;t size='0.6'&gt;우리들의 노력이 결실을 맺었으며, 이제 우리는 또 다른 &lt;t size='0.6' color='#800000'&gt;%1&lt;/t&gt;의 은신처가 어디에 있는지 알게 되었고, 현재 %2에 있습니다. 언제든지 공격할 수 있습니다.&lt;/t&gt;</Korean>
@@ -6347,7 +6363,7 @@
             <Key ID="STR_antistasi_dialogs_hq_button_rebel_set_loadout_loadout_saved">
                 <Original>loadout has been saved.</Original>
                 <French>l'équipement a été sauvegardé</French>
-                <Russian>снаряжение было сохранено.</Russian>
+                <Russian>снаряжение было сохранено. </Russian>
                 <Korean>로드아웃이 저장되었습니다.</Korean>
                 <Chinesesimp>以保存装载</Chinesesimp>
                 <Turkish>Teçhizat kaydedildi.</Turkish>
@@ -7249,7 +7265,7 @@
                 <French>Le groupe %1 a été transféré sous votre commandement.&lt;br/&gt;&lt;br/&gt;Les groupes sont gérés à partir de la barre de commande supérieure (par défaut : CTRL+ESPACE)&lt;br/&gt;&lt;br/&gt;</French>
                 <Russian>Группа %1 была переведена под ваше командование.&lt;br/&gt;&lt;br/&gt;Группами можно управлять в режиме главнокомандующего (Ctrl + Пробел)&lt;br/&gt;&lt;br/&gt;</Russian>
                 <Korean>%1 그룹이 당신 지휘 하에 들어갔습니다.&lt;br/&gt;&lt;br/&gt;그룹은 하이 커맨드 표시줄(기본값: 컨트롤 + 스페이스)에서 관리됩니다.&lt;br/&gt;&lt;br/&gt;</Korean>
-                <Chinesesimp>%1 组已转移到您的指挥下。&lt;br/&gt;&lt;br/&gt;从高级命令栏管理（默认：CTRL+SPACE）&lt;br/&gt;&lt;br/&gt;</Chinesesimp>
+                <Chinesesimp> %1 组已转移到您的指挥下。&lt;br/&gt;&lt;br/&gt;从高级命令栏管理（默认：CTRL+SPACE）&lt;br/&gt;&lt;br/&gt;</Chinesesimp>
                 <Turkish>%1 Grubu komutanıza devredildi.&lt;br/&gt;&lt;br/&gt;Gruplar, Yüksek Komuta çubuğundan yönetilir (Varsayılan: CTRL+SPACE)&lt;br/&gt;&lt;br/&gt;</Turkish>
             </Key>
             <Key ID="STR_hints_intel_no_one_in_range">
@@ -7368,12 +7384,12 @@
                 <Turkish>Mevcut Değil</Turkish>
             </Key>
             <Key ID="STR_info_bar_aggr">
-                <Original>| %1 Aggr: %2 |</Original>
+                <Original>| %1 Aggr: %2 | </Original>
                 <French>| %1 Aggr : %2</French>
-                <Russian>| Агр. %1: %2 |</Russian>
-                <Korean>| %1 어그로: %2 |</Korean>
-                <Chinesesimp>| %1 侵略性: %2 |</Chinesesimp>
-                <Turkish>| %1 Agres.: %2 |</Turkish>
+                <Russian>| Агр. %1: %2 | </Russian>
+                <Korean>| %1 어그로: %2 | </Korean>
+                <Chinesesimp>| %1 侵略性: %2 | </Chinesesimp>
+                <Turkish>| %1 Agres.: %2 | </Turkish>
             </Key>
             <Key ID="STR_info_bar_aggr_1">
                 <Original>Low</Original>
@@ -7472,12 +7488,12 @@
                 <Turkish>Açık</Turkish>
             </Key>
             <Key ID="STR_info_bar_rivals_activity">
-                <Original>%1 Act.: %2 |</Original>
-                <French>%1 Acte: %2 |</French>
-                <Russian>Акт. %1: %2 |</Russian>
-                <Korean>%1 활동: %2 |</Korean>
-                <Chinesesimp>%1 活动水平: %2 |</Chinesesimp>
-                <Turkish>%1 Etk.: %2 |</Turkish>
+                <Original> %1 Act.: %2 |</Original>
+                <French> %1 Acte: %2 |</French>
+                <Russian> Акт. %1: %2 |</Russian>
+                <Korean> %1 활동: %2 |</Korean>
+                <Chinesesimp> %1 活动水平: %2 |</Chinesesimp>
+                <Turkish> %1 Etk.: %2 |</Turkish>
             </Key>
             <Key ID="STR_info_bar_rivals_activity_1">
                 <Original>&lt;t color='#AE1330'&gt;Omnipresent&lt;/t&gt;</Original>
@@ -7556,7 +7572,7 @@
                 <Turkish>%2 konvoyunun %1 şifre çözme anahtarını bulduk!&lt;br/&gt;%3 konvoyları haritada işaretlendi!</Turkish>
             </Key>
             <Key ID="STR_intel_convoy_route">
-                <Original>We found some information about a possible convoy route from the %1 to the %2. The route has been marked on map. We can prepare an ambush for it.</Original>
+                <Original>We found some information about a possible convoy route from %1 to %2. The route has been marked on map. We can prepare an ambush for it.</Original>
                 <French>Nous avons trouvé des informations sur l'itinéraire possible d'un convoi de %1 à %2. L'itinéraire a été marqué sur la carte. Nous pouvons préparer une embuscade.</French>
                 <Russian>У нас есть информация о возможном маршруте конвоя из %1 в %2. Мы можем подготовить засаду на него. Маршрут отмечен на карте.</Russian>
                 <Korean>%1에서 %2까지의 가능한 호송 경로에 대한 정보를 찾았습니다. 경로가 지도에 표시되었습니다. 그 곳에 매복을 준비할 수 있습니다.</Korean>
@@ -8512,7 +8528,7 @@
                 <French>Port fluvial à proximité de %1</French>
                 <Russian>Речной порт недалеко от %1</Russian>
                 <Korean>%1 인근 강항</Korean>
-                <Chinesesimp>%1 附近的河港</Chinesesimp>
+                <Chinesesimp> %1 附近的河港</Chinesesimp>
                 <Turkish>%1 yakınındaki nehir limanı</Turkish>
             </Key>
             <Key ID="STR_localizar_roadblock">
@@ -8520,7 +8536,7 @@
                 <French>Barrage routier à proximité de %1</French>
                 <Russian>Блокпост возле %1</Russian>
                 <Korean>%1 인근 검문소</Korean>
-                <Chinesesimp>%1 附近的路障</Chinesesimp>
+                <Chinesesimp> %1 附近的路障</Chinesesimp>
                 <Turkish>%1 yakınındaki yol barikatı</Turkish>
             </Key>
             <Key ID="STR_localizar_seaport">
@@ -8528,7 +8544,7 @@
                 <French>Port maritime à proximité de %1</French>
                 <Russian>Морской порт недалеко от %1</Russian>
                 <Korean>%1 인근 항구</Korean>
-                <Chinesesimp>%1 附近的海港</Chinesesimp>
+                <Chinesesimp> %1 附近的海港</Chinesesimp>
                 <Turkish>%1 yakınındaki deniz limanı</Turkish>
             </Key>
             <Key ID="STR_localizar_supportcorridor">
@@ -8722,28 +8738,28 @@
                 <Turkish>Şarjör Birleştirme Başlatıldı.</Turkish>
             </Key>
             <Key ID="STR_magRepack_keybind">
-                <Original>Keybinding:</Original>
-                <French>Raccourcis clavier:</French>
-                <Russian>Связка клавиш:</Russian>
-                <Korean>키 설정:</Korean>
-                <Chinesesimp>按键绑定:</Chinesesimp>
-                <Turkish>Tuş Ataması:</Turkish>
+                <Original>Keybinding: </Original>
+                <French>Raccourcis clavier: </French>
+                <Russian>Связка клавиш: </Russian>
+                <Korean>키 설정: </Korean>
+                <Chinesesimp>按键绑定: </Chinesesimp>
+                <Turkish>Tuş Ataması: </Turkish>
             </Key>
             <Key ID="STR_magRepack_keybind_reset">
-                <Original>Mag Repack keybinding has been reset to</Original>
+                <Original>Mag Repack keybinding has been reset to </Original>
                 <French>Le raccourci clavier de la réorganisation des chargeurs a été réinitialisé</French>
-                <Russian>Назначение клавиш Mag Repack'а было сброшено на</Russian>
-                <Korean>탄약 재포장 키 설정이 다음 키로 초기화 되었습니다:</Korean>
-                <Chinesesimp>Mag Repack 按键绑定已重置为</Chinesesimp>
-                <Turkish>Şarjör Birleştirme tuş ataması şuna sıfırlandı:</Turkish>
+                <Russian>Назначение клавиш Mag Repack'а было сброшено на </Russian>
+                <Korean>탄약 재포장 키 설정이 다음 키로 초기화 되었습니다: </Korean>
+                <Chinesesimp>Mag Repack 按键绑定已重置为 </Chinesesimp>
+                <Turkish>Şarjör Birleştirme tuş ataması şuna sıfırlandı: </Turkish>
             </Key>
             <Key ID="STR_magRepack_keybind_update">
-                <Original>Mag Repack keybinding has been updated to</Original>
+                <Original>Mag Repack keybinding has been updated to </Original>
                 <French>Le raccourci clavier de la réorganisation des chargeurs a été mis à jour</French>
-                <Russian>Назначение клавиш Mag Repack'а было обновлено на</Russian>
-                <Korean>탄약 재포장 키 설정이 다음 키로 업데이트되었습니다:</Korean>
-                <Chinesesimp>Mag Repack 按键绑定已更新为</Chinesesimp>
-                <Turkish>Şarjör Birleştirme tuş ataması şuna güncellendi:</Turkish>
+                <Russian>Назначение клавиш Mag Repack'а было обновлено на </Russian>
+                <Korean>탄약 재포장 키 설정이 다음 키로 업데이트되었습니다: </Korean>
+                <Chinesesimp>Mag Repack 按键绑定已更新为 </Chinesesimp>
+                <Turkish>Şarjör Birleştirme tuş ataması şuna güncellendi: </Turkish>
             </Key>
             <Key ID="STR_magRepack_keybinding">
                 <Original>Keybinding</Original>
@@ -8842,12 +8858,12 @@
                 <Turkish>Birleştir</Turkish>
             </Key>
             <Key ID="STR_magRepack_source">
-                <Original>Source</Original>
-                <French>Source</French>
-                <Russian>Источник</Russian>
-                <Korean>원본</Korean>
-                <Chinesesimp>来源</Chinesesimp>
-                <Turkish>Kaynak</Turkish>
+                <Original> Source</Original>
+                <French> Source</French>
+                <Russian> Источник</Russian>
+                <Korean> 원본</Korean>
+                <Chinesesimp> 来源</Chinesesimp>
+                <Turkish> Kaynak</Turkish>
             </Key>
             <Key ID="STR_magRepack_source_defined">
                 <Original>Source is already defined!</Original>
@@ -8866,12 +8882,12 @@
                 <Turkish>Kaynak boş olamaz!</Turkish>
             </Key>
             <Key ID="STR_magRepack_target">
-                <Original>Target</Original>
-                <French>Cible</French>
-                <Russian>Цель</Russian>
-                <Korean>대상</Korean>
-                <Chinesesimp>目标</Chinesesimp>
-                <Turkish>Hedef</Turkish>
+                <Original>Target </Original>
+                <French>Cible </French>
+                <Russian>Цель </Russian>
+                <Korean>대상 </Korean>
+                <Chinesesimp>目标 </Chinesesimp>
+                <Turkish>Hedef </Turkish>
             </Key>
             <Key ID="STR_magRepack_target_belt">
                 <Original>The Target requires a belt, not individual bullets!</Original>
@@ -8911,7 +8927,7 @@
                 <Russian>Версия:</Russian>
                 <Korean>버전:</Korean>
                 <Chinesesimp>版本：</Chinesesimp>
-                <Turkish>Sürüm:</Turkish>
+                <Turkish>Sürüm: </Turkish>
             </Key>
             <!--
             <Key ID="STR_params_development_desc">
@@ -9177,18 +9193,18 @@
                 <Turkish>Sivil Konvoyu</Turkish>
             </Key>
             <Key ID="STR_marker_convoy_escort_vehicle">
-                <Original>Convoy Escort</Original>
-                <Russian>Конвой (эскорт)</Russian>
-                <Korean>호송대 호위</Korean>
+                <Original> Convoy Escort</Original>
+                <Russian> Конвой (эскорт)</Russian>
+                <Korean> 호송대 호위</Korean>
                 <Chinesesimp>车队护卫</Chinesesimp>
-                <Turkish>Konvoy Eskortu</Turkish>
+                <Turkish> Konvoy Eskortu</Turkish>
             </Key>
             <Key ID="STR_marker_convoy_lead_vehicle">
-                <Original>Convoy Lead</Original>
-                <Russian>Конвой (ведущий)</Russian>
-                <Korean>호송대 선두</Korean>
+                <Original> Convoy Lead</Original>
+                <Russian> Конвой (ведущий)</Russian>
+                <Korean> 호송대 선두</Korean>
                 <Chinesesimp>车队头车</Chinesesimp>
-                <Turkish>Konvoy Öncüsü</Turkish>
+                <Turkish> Konvoy Öncüsü</Turkish>
             </Key>
             <Key ID="STR_marker_convoy_objective">
                 <Original>Convoy Objective</Original>
@@ -9199,12 +9215,12 @@
                 <Turkish>Konvoy Hedefi</Turkish>
             </Key>
             <Key ID="STR_marker_convoy_objective_space">
-                <Original>Convoy Objective</Original>
-                <French>Objectif du convoi</French>
-                <Russian>Конвой (цель)</Russian>
-                <Korean>호송대 목표</Korean>
-                <Chinesesimp>车队目标</Chinesesimp>
-                <Turkish>Konvoy Hedefi</Turkish>
+                <Original> Convoy Objective</Original>
+                <French> Objectif du convoi</French>
+                <Russian> Конвой (цель)</Russian>
+                <Korean> 호송대 목표</Korean>
+                <Chinesesimp> 车队目标</Chinesesimp>
+                <Turkish> Konvoy Hedefi</Turkish>
             </Key>
             <Key ID="STR_marker_cruise_missile_target">
                 <Original>Cruise Missile Target</Original>
@@ -9250,7 +9266,7 @@
                 <French>%1 Champ de mines</French>
                 <Russian>Минное поле %1</Russian>
                 <Korean>%1 지뢰지대</Korean>
-                <Chinesesimp>%1 雷区</Chinesesimp>
+                <Chinesesimp> %1 雷区</Chinesesimp>
                 <Turkish>%1 Mayın Tarlası</Turkish>
             </Key>
             <Key ID="STR_marker_mission_vehicle">
@@ -11457,6 +11473,22 @@
                 <Korean>플레이어가 죽을 때 잃는 금액의 비율입니다. 값이 높을수록 죽음의 재정적 위험이 커집니다. 플레이어는 죽음 시 경제적 손실 위험을 최소화하기 위해 주기적으로 진영에 돈을 기부해야 합니다.</Korean>
                 <Chinesesimp>玩家死亡时损失的金钱百分比。更高的值增加死亡的经济风险。玩家应定期向阵营捐赠资金，以最小化死亡时的经济损失风险。</Chinesesimp>
             </Key>
+            <Key ID="STR_params_deprecated">
+                <Original>DEPRECATED OPTIONS</Original>
+                <French>OPTIONS DÉPRÉCIÉES</French>
+                <Russian>УСТАРЕВШИЕ НАСТРОЙКИ</Russian>
+                <Korean>사용되지 않는 옵션</Korean>
+                <Chinesesimp>已弃用选项</Chinesesimp>
+                <Turkish>KULLANIMDIŞI SEÇENEKLER</Turkish>
+            </Key>
+            <Key ID="STR_params_deprecated_desc">
+                <Original>Options that have been deprecated and will be removed in a future version of Antistasi Ultimate.</Original>
+                <French>Options qui ont été dépréciées et seront supprimées dans une future version d'Antistasi Ultimate.</French>
+                <Russian>Настройки, которые устарели и будут удалены в будущей версии Antistasi Ultimate.</Russian>
+                <Korean>사용되지 않는 옵션으로, 향후 Antistasi Ultimate 버전에서 제거될 예정입니다.</Korean>
+                <Chinesesimp>已弃用的选项，将在未来版本的 Antistasi Ultimate 中移除。</Chinesesimp>
+                <Turkish>Kullanımdan kaldırılmış ve gelecekteki bir Antistasi Ultimate sürümünde kaldırılacak seçenekler.</Turkish>
+            </Key>
             <Key ID="STR_params_dev_header">
                 <Original>DEVELOPMENT OPTIONS</Original>
                 <French>OPTIONS DE DÉVELOPPEMENT</French>
@@ -12051,7 +12083,7 @@
             </Key>
             <Key ID="STR_params_loadoutArsenalDefaultOverride_desc">
                 <Original>If enabled, legacy custom loadout behavior will be preserved; when saving a loadout, all items in the loadout will be saved unless specifically excluded. If disabled, only the items in tabs specifically enabled will be saved. All other items will be randomized.</Original>
-                <French>Si activé, le comportement ancien des chargements personnalisés est conservé : lors de l'enregistrement d'un chargement, tous les objets du chargement seront sauvegardés sauf s'ils sont explicitement exclus. Si désactivé, seuls les objets dans les onglets spécifiquement activés seront sauvegardés. Tous les autres objets seront choisis aléatoirement.</French>
+                <French>Si activé, le comportement ancien des chargements personnalisés est conservé : lors de l'enregistrement d'un chargement, tous les objets du chargement seront sauvegardés sauf s'ils sont explicitement exclus. Si désactivé, seuls les objets dans les onglets spécifiquement activés seront sauvegardés. Tous les autres objets seront choisis aléatoirement.</French>
                 <Russian>Если включено, будет сохранено старое поведение пользовательских снаряжений: при сохранении набора будут сохраняться все предметы, если они явно не исключены. Если отключено, будут сохраняться только предметы из вкладок, специально включённых для сохранения. Предметы в несохранённых вкладках будут рандомизированы.</Russian>
                 <Korean>활성화하면 기존 커스텀 로드아웃 동작이 유지됩니다. 로드아웃을 저장할 때 명시적으로 제외하지 않는 한 로드아웃의 모든 항목이 저장됩니다. 비활성화하면 명시적으로 활성화된 탭의 항목만 저장되며, 나머지 항목은 무작위로 선택됩니다.</Korean>
                 <Chinesesimp>启用时，会保留旧版自定义装备行为；保存装备时，除非被明确排除，否则装备中的所有物品都会被保存。禁用时，只有在专门启用的选项卡中的物品会被保存，其他所有物品将被随机化。</Chinesesimp>
@@ -12769,7 +12801,7 @@
             <Key ID="STR_params_startWithLongRangeRadio">
                 <Original>[TFAR] Start with Long Range Radio</Original>
                 <French>[TFAR] Commencer avec la radio longue portée</French>
-                <Russian>[TFAR] Начинать с рюкзаком ДВ-радиосвязи</Russian>
+                <Russian>[TFAR] Начинать с рюкзаком ДВ-радиосвязи </Russian>
                 <Korean>[TFAR] 장파 무전기 기본 지급</Korean>
                 <Chinesesimp>(TFAR)从远程无线电开始</Chinesesimp>
                 <Turkish>[TFAR] Uzun Menzilli Telsiz ile Başla</Turkish>
@@ -14980,9 +15012,9 @@
             <Key ID="STR_A3AP_setupFactionsTab_fia">
                 <Original>Freedom and Independence Army (FIA).\nStandard issue guerilla faction. Smoothbore rifles and a little bit of courage will pave your way to freedom.</Original>
                 <French>Armée de la liberté et de l'indépendance (FIA).\nFaction de guérilla standard. Des fusils à canon lisse et un peu de courage vous permettront d'accéder à la liberté.</French>
-                <Russian>Армия свободы и независимости (FIA).\nСтандартная партизанская фракция. Гладкоствольные ружья и немного отваги проложат путь к свободе.</Russian>
+                <Russian>Армия свободы и независимости (FIA).\nСтандартная партизанская фракция. Гладкоствольные ружья и немного отваги проложат путь к свободе. </Russian>
                 <Korean>자유독립군(FIA).\n표준 게릴라 팩션. 무강선총과 약간의 용기가 당신의 자유를 위한 길을 열어줄 것입니다.</Korean>
-                <Chinesesimp>自由独立军 (FIA)\n标准游击队派系。滑膛枪和一点点的勇气将为你铺平通往自由的道路。</Chinesesimp>
+                <Chinesesimp>自由独立军 (FIA)\n标准游击队派系。滑膛枪和一点点的勇气将为你铺平通往自由的道路。 </Chinesesimp>
                 <Turkish>Özgürlük ve Bağımsızlık Ordusu (FIA).\nStandart bir gerilla grubu. Yivsiz tüfekler ve bir parça cesaret, özgürlüğe giden yolunuzu açacaktır.</Turkish>
             </Key>
             <Key ID="STR_A3AP_setupFactionsTab_fia_3cbf">
@@ -15534,25 +15566,25 @@
                 <Original>Available Airstrikes:</Original>
                 <French>Frappes aériennes disponibles:</French>
                 <Russian>Доступные авиаудары:</Russian>
-                <Korean>사용 가능한 공습 포인트:</Korean>
+                <Korean>사용 가능한 공습 포인트: </Korean>
                 <Chinesesimp>可用空袭：</Chinesesimp>
                 <Turkish>Mevcut Hava Saldırıları:</Turkish>
             </Key>
             <Key ID="STR_commander_menu_abilities_available_supports">
-                <Original>Available Support Points:</Original>
+                <Original>Available Support Points: </Original>
                 <French>Points d'appui disponibles:</French>
-                <Russian>Доступные очки поддержки:</Russian>
-                <Korean>사용 가능한 지원 포인트:</Korean>
+                <Russian>Доступные очки поддержки: </Russian>
+                <Korean>사용 가능한 지원 포인트: </Korean>
                 <Chinesesimp>可用的支援点：</Chinesesimp>
-                <Turkish>Mevcut Destek Puanları:</Turkish>
+                <Turkish>Mevcut Destek Puanları: </Turkish>
             </Key>
             <Key ID="STR_commander_menu_abilities_captured_airports">
-                <Original>Captured Airbases:</Original>
+                <Original>Captured Airbases: </Original>
                 <French>Bases aériennes capturées:</French>
-                <Russian>Захваченные авиабазы:</Russian>
-                <Korean>점령한 공군 기지:</Korean>
+                <Russian>Захваченные авиабазы: </Russian>
+                <Korean>점령한 공군 기지: </Korean>
                 <Chinesesimp>占领的空军基地：</Chinesesimp>
-                <Turkish>Ele Geçirilen Hava Üsleri:</Turkish>
+                <Turkish>Ele Geçirilen Hava Üsleri: </Turkish>
             </Key>
             <Key ID="STR_commander_menu_abilities_cost_airstrike">
                 <Original>Costs 1 Airstrike</Original>
@@ -16598,7 +16630,7 @@
                 <French>Monter / Descendre</French>
                 <Russian>Сесть / Вылезти</Russian>
                 <Korean>차량에 고정화기를 고정/해제합니다.</Korean>
-                <Chinesesimp>上 / 下</Chinesesimp>
+                <Chinesesimp>上 / 下 </Chinesesimp>
                 <Turkish>Bin / İn</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_sitrep_tooltip">
@@ -18274,7 +18306,7 @@
         </Container>
         <Container name="tasks">
             <Key ID="STR_A3A_Missions_AS_Ambush_task_desc">
-                <Original>A high-ranking %5 officer will move from the %1 to the %2 at %3. Intercept his vehicle and eliminate him. We must do this before %4.</Original>
+                <Original>A high-ranking %5 officer will move from %1 to %2 at %3. Intercept his vehicle and eliminate him. We must do this before %4.</Original>
                 <French>Un officier de haut rang %5 se déplacera de %1 à %2 à %3. Interceptez son véhicule et éliminez-le. Nous devons le faire avant %4.</French>
                 <Russian>Высокоранговый офицер %5 поедет из %1 в %2 (время: %3). Перехватите его транспортное средство и устраните его. Мы должны сделать это до %4.</Russian>
                 <Korean>%5 고위 장교는 %1에서 %3의 %2로 이동할 것입니다. 그의 차량을 막아서 그를 사살하십시오. %4 이전에 완료하십시오.</Korean>
@@ -18290,7 +18322,7 @@
                 <Turkish>%1 Subayına Pusu Kur</Turkish>
             </Key>
             <Key ID="STR_A3A_Missions_AS_Convoy_task_dest_ammo">
-                <Original>A convoy from the %1 is about to depart at %2. It will provide ammunition to the %3. Try to intercept it. Steal or destroy that truck before it reaches its destination.</Original>
+                <Original>A convoy from %1 is about to depart at %2. It will provide ammunition to the %3. Try to intercept it. Steal or destroy that truck before it reaches its destination.</Original>
                 <French>Un convoi de %1 est sur le point de partir à %2. Il fournira des munitions à %3. Essayez de l'intercepter. Volez ou détruisez ce camion avant qu'il n'atteigne sa destination.</French>
                 <Russian>Конвой из %1 скоро начнёт движение в пункт назначения в %2. Он привезёт боеприпасы в %3. Попробуйте перехватить его. Украдите или уничтожьте грузовик с искомым содержимым до того, как он достигнет точки назначения.</Russian>
                 <Korean>%1의 호송 차량이 %2에서 출발하려고 합니다. %3에 탄약을 제공할 것입니다. 그들을 방해하십시오. 목적지에 도착하기 전에 트럭을 훔치거나 파괴하십시오.</Korean>
@@ -18298,7 +18330,7 @@
                 <Turkish>%1 grubuna ait bir konvoy %2 vaktinde hareket etmek üzere. Bu konvoy %3 tarafına mühimmat sağlayacak. Önünü kesmeye çalışın. Kamyon hedefine ulaşmadan önce onu çalın veya imha edin.</Turkish>
             </Key>
             <Key ID="STR_A3A_Missions_AS_Convoy_task_dest_armor">
-                <Original>A convoy from the %1 is about to depart at %2. It will reinforce the %3 with armored vehicles. Try to intercept it. Steal or destroy that armor before it reaches its destination.</Original>
+                <Original>A convoy from %1 is about to depart at %2. It will reinforce the %3 with armored vehicles. Try to intercept it. Steal or destroy that armor before it reaches its destination.</Original>
                 <French>Un convoi de %1 est sur le point de partir à %2. Il renforcera %3 avec des véhicules blindés. Essayez de l'intercepter. Volez ou détruisez ce camion avant qu'il n'atteigne sa destination.</French>
                 <Russian>Конвой из %1 скоро начнёт движение в пункт назначения в %2. Он усилит %3 тяжелой техникой. Попробуйте перехватить его. Украдите или уничтожьте бронетехнику до того, как она достигнет точки назначения.</Russian>
                 <Korean>%1의 호송 차량이 %2에서 출발하려고 합니다. %3을 장갑 차량으로 증원할 것입니다. 그들을 방해하십시오. 목적지에 도착하기 전에 차량을 훔치거나 파괴하십시오.</Korean>
@@ -18306,7 +18338,7 @@
                 <Turkish>%1 grubuna ait bir konvoy %2 vaktinde hareket etmek üzere. Bu konvoy %3 tarafını zırhlı araçlarla takviye edecek. Önünü kesmeye çalışın. Zırhlı araç hedefine ulaşmadan önce onu çalın veya imha edin.</Turkish>
             </Key>
             <Key ID="STR_A3A_Missions_AS_Convoy_task_dest_food">
-                <Original>A truck with much needed food for the people is about to depart at %2 from the %1 (destination %3). Steal that truck, bring it to %3, and let the people there know it is us who's responsible.</Original>
+                <Original>A truck with much needed food for the people is about to depart at %2 from %1 (destination %3). Steal that truck, bring it to %3, and let the people there know it is us who's responsible.</Original>
                 <French>Un convoi alimentaire est sur le point de partir à %2 de %1 (destination %3). Volez ce camion, amenez-le en %3 et faites savoir aux gens qui s'y trouvent que c'est %4 qui distribue ces sacs de nourriture.</French>
                 <Russian>Грузовик с так необходимой людям едой скоро отъедет из %1 в %3, он начнёт движение в %2. Украдите этот грузовик, привезите его в %3 первыми и раздайте еду нуждающимся, позволив узнать, кто (%4) на самом деле им помогает.</Russian>
                 <Korean>식량이 매우 필요한 사람들을 위한 식량 트럭이 %3을(를) 목적지로 %1에서 %2(으)로 출발하려고 합니다. 트럭을 훔쳐서 %3으로 가져와서 해당 주민들에게 이 음식들을 주는 사람이 %4이라는 것을 알리십시오.</Korean>
@@ -18314,7 +18346,7 @@
                 <Turkish>Halk için çok gerekli olan gıdaları taşıyan bir kamyon, %1 bölgesinden %2 vaktinde hareket etmek üzere (hedef %3). O kamyonu çalın, %3 mevkisine götürün ve oradaki insanların bunun sorumlusunun biz olduğumuzu bilmesini sağlayın.</Turkish>
             </Key>
             <Key ID="STR_A3A_Missions_AS_Convoy_task_dest_fuel">
-                <Original>A convoy from the %1 is about to depart at %2. It will provide fuel to the %3. Try to intercept it. Steal or destroy that truck before it reaches its destination.</Original>
+                <Original>A convoy from %1 is about to depart at %2. It will provide fuel to the %3. Try to intercept it. Steal or destroy that truck before it reaches its destination.</Original>
                 <French>Un convoi en provenance de %1 est sur le point de partir à %2. Il fournira du carburant à %3. Essayez de l'intercepter. Volez ou détruisez ce camion avant qu'il n'atteigne sa destination.</French>
                 <Russian>Конвой из %1 скоро начнёт движение в пункт назначения в %2. Он привезёт топливо в %3. Попробуйте перехватить его. Украдите или уничтожьте грузовик с искомым содержимым до того, как он достигнет точки назначения.</Russian>
                 <Korean>%1의 호송 차량이 %2에서 출발하려고 합니다. %3에 연료를 제공할 것입니다. 그들을 방해하십시오. 목적지에 도착하기 전에 트럭을 훔치거나 파괴하십시오.</Korean>
@@ -18330,7 +18362,7 @@
                 <Turkish>Bol miktarda para taşıyan bir kamyon %1 mevkisinden %3 mevkisine taşınıyor ve %2 vaktinde hareket etmek üzere. O parayı çalın ve karargaha getirin. Bu fonlar bizim için çok makbule geçecek.</Turkish>
             </Key>
             <Key ID="STR_A3A_Missions_AS_Convoy_task_dest_prisoners">
-                <Original>A group of POWs is being transported from the %1 to the %3, the convoy will depart at %2. Try to intercept it. Kill or capture the truck driver to free the prisoners and bring them to HQ.</Original>
+                <Original>A group of POWs is being transported from %1 to %3, the convoy will depart at %2. Try to intercept it. Kill or capture the truck driver to free the prisoners and bring them to HQ.</Original>
                 <French>Un groupe de prisonniers de guerre est transporté de %1 à %3, et il est sur le point de partir à %2. Essayez de l'intercepter. Tuez ou capturez le chauffeur du camion pour qu'ils vous rejoignent et les amènent au QG. En vie si possible.</French>
                 <Russian>Группа из наших пленных скоро будет перевозиться из %1 в %3, конвой начнёт движение в %2. Попробуйте перехватить его. Заставьте водителя грузовика покинуть своё место и привезите наших пленников в штаб. Живыми.</Russian>
                 <Korean>%1에서 %3(으)로 포로들이 수송되고 있으며 %2에서 출발하려고 합니다. 그들을 방해하십시오. 트럭 운전사를 죽이거나 붙잡아 합류시켜서 본부로 데려오십시오. 가능하면 살아 있어야 합니다.</Korean>
@@ -18338,7 +18370,7 @@
                 <Turkish>Bir grup savaş esiri %1 mevkisinden %3 mevkisine naklediliyor; konvoy %2 vaktinde hareket edecek. Önünü kesmeye çalışın. Mahkumları serbest bırakmak için kamyon şoförünü öldürün veya etkisiz hale getirin ve onları karargaha getirin.</Turkish>
             </Key>
             <Key ID="STR_A3A_Missions_AS_Convoy_task_dest_reinf">
-                <Original>Reinforcements are being sent from the %1 to the %3 in a convoy, and it's about to depart at %2. Try to intercept and kill all the troops and destroy their transports.</Original>
+                <Original>Reinforcements are being sent from %1 to the %3 in a convoy, and it's about to depart at %2. Try to intercept and kill all the troops and destroy their transports.</Original>
                 <French>Des renforts sont envoyés de %1 à %3 dans un convoi, et il est sur le point de partir à %2. Essayez d'intercepter et de tuer toutes les troupes et le véhicule objectif.</French>
                 <Russian>Подкрепление было отправлено из %1 в %3 с конвоем, он начнёт движение в %2. Попробуйте перехватить его и перебить всё подкрепление, а также не забыть о грузовике.</Russian>
                 <Korean>증원군이 %1에서 %3(으)로 호송 중이며 %2에서 출발하려고 합니다. 모든 병력과 차량 목표물을 방해하여 죽이십시오.</Korean>
@@ -18360,7 +18392,7 @@
                 <Turkish>%1 konumundan %2 saatinde %3 yönüne bir tamir aracı yola çıkacak. Bu aracı çal ve karargaha götür, filomuzla ilgilenme zamanı geldi.</Turkish>
             </Key>
             <Key ID="STR_A3A_Missions_AS_Convoy_task_dest_supplies">
-                <Original>A truck with medical supplies destined for %3 is about to depart at %2 from the %1. Steal that truck, bring it to %3, and let the people there know it is us who's responsible.</Original>
+                <Original>A truck with medical supplies destined for %3 is about to depart at %2 from %1. Steal that truck, bring it to %3, and let the people there know it is us who's responsible.</Original>
                 <French>Un camion de matériel médical à destination de %3 est sur le point de partir à %2 de %1. Volez ce camion, amenez-le en %3 et faites savoir aux gens qui s'y trouvent que c'est %4 qui distribue ces fournitures.</French>
                 <Russian>Грузовик с медикаментами и медицинским оборудованием собирается поехать из %1 в %3, он начнёт движение в %2. Украдите этот грузовик, привезите его в %3 первыми и раздайте медикаменты нуждающимся в них людям, позволив узнать, кто (%4) на самом деле им помогает.</Russian>
                 <Korean>의료 보급품이 있는 트럭이 %3을(를) 목적지로 %1에서 %2(으)로 출발하려고 합니다. 트럭을 훔쳐서 %3으로 가져오고 해당 주민들에게 그 보급품을 주는 사람이 %4이라는 것을 알리십시오.</Korean>
@@ -18446,7 +18478,7 @@
                 <Turkish>İkmal Konvoyunun Önünü Kes</Turkish>
             </Key>
             <Key ID="STR_A3A_Missions_AS_Official_task_desc">
-                <Original>A %1 officer is inspecting the %2. Go there and kill him before %3.</Original>
+                <Original>A %1 officer is inspecting %2. Go there and kill him before %3.</Original>
                 <French>Un officier %1 est en train d'inspecter %2. Allez-y et tuez-le avant %3.</French>
                 <Russian>Офицер %1 инспектирует %2. Отправляйтесь туда и убейте его до %3.</Russian>
                 <Korean>%1의 장교가 %2을(를) 시찰 중입니다. 해당 지역으로 가서 %3:%4 이전까지 그를 사살하십시오.</Korean>
@@ -18458,7 +18490,7 @@
                 <French>Tuer %1 Officier</French>
                 <Russian>Убейте офицера %1</Russian>
                 <Korean>%1 장교 사살</Korean>
-                <Chinesesimp>杀死 %1 军官</Chinesesimp>
+                <Chinesesimp>杀死 %1 军官 </Chinesesimp>
                 <Turkish>%1 Subayını Öldür</Turkish>
             </Key>
             <Key ID="STR_A3A_Missions_AS_RIV_Traitor_task_desc">
@@ -18518,7 +18550,7 @@
                 <Turkish>Şehir İstilasını Durdur</Turkish>
             </Key>
             <Key ID="STR_A3A_Missions_AS_specOP_task_desc">
-                <Original>We have spotted a %1 SpecOps team patrolling around a %2. Eliminate them and we will have one less problem. Do this before %3. Be careful, they are very experienced and tough boys.</Original>
+                <Original>We have spotted a %1 SpecOps team patrolling around %2. Eliminate them and we will have one less problem. Do this before %3. Be careful, they are very experienced and tough boys.</Original>
                 <French>Nous avons repéré une équipe de %1 SpecOps qui patrouille autour d'un %2. Éliminez-les et nous aurons un problème de moins. Faites-le avant %3. Faites attention, ce sont des gars très expérimentés et très durs.</French>
                 <Russian>Мы обнаружили отряд специального назначения %1, патрулирующий окрестности %2. Устраните их и у нас будет на одну проблему меньше. Сделайте это до %3. Будьте осторожны - они довольно профессиональные и крепкие ребята.</Russian>
                 <Korean>%1의 특수부대 팀이 %2 주위를 순찰하는 걸 발견했습니다. 그들을 제거하면 우린 문제가 하나 줄어들 것입니다. %3 이전에 완료하십시오. 조심하십시오, 그들은 저렇게 보여도 만만한 녀석들이 아닙니다.</Korean>
@@ -18542,7 +18574,7 @@
                 <Turkish>Bir uçak %1 mevkisine kargo bırakacak. Oraya gidin ve yere bir sis bombası atın; pilot sinyali fark edecek ve kargoyu bırakacaktır. Kargoyu karargaha geri getirin. Bunu %2 vaktinden önce yapın.</Turkish>
             </Key>
             <Key ID="STR_A3A_Missions_DES_Antenna_task_desc">
-                <Original>We need to destroy or take the radio tower at the %1. This will interrupt the %3's communications and propaganda nework. Do it before %2.</Original>
+                <Original>We need to destroy or take the radio tower at %1. This will interrupt the %3's communications and propaganda nework. Do it before %2.</Original>
                 <French>Nous devons détruire ou prendre une tour radio à %1. Cela interrompra %3 réseau de propagande. Faites-le avant %2.</French>
                 <Russian>Мы должны уничтожить или захватить радиовышку в %1. Это ослабит влияние пропаганды %3. Сделайте это до %2.</Russian>
                 <Korean>%1의 통신탑을 파괴하거나 점령해야 합니다 %3의 선전이 중단될 것입니다. %2 이전에 완료하십시오.</Korean>
@@ -18558,7 +18590,7 @@
                 <Turkish>Radyo Kulesini İmha Et veya Ele Geçir</Turkish>
             </Key>
             <Key ID="STR_A3A_Missions_DES_Artillery_task_desc">
-                <Original>Artillery is firing at our positions from the %1. We must destroy it or kill its crew. Do this before %2, or they will destroy something important!</Original>
+                <Original>Artillery is firing at our positions from %1. We must destroy it or kill its crew. Do this before %2, or they will destroy something important!</Original>
                 <French>L'artillerie tire sur nos positions depuis %1. Nous devons la détruire ou tuer son équipage. Faites-le avant %2, ou ils détruiront quelque chose de précieux.</French>
                 <Russian>Артиллерия стреляет по нашим позициям с %1. Мы должнны уничтожить её или её экипаж. Сделайте это до %2, или враг уничтожит что-нибудь ценное.</Russian>
                 <Korean>야포가 %1에서 우리 위치를 향해 발사하고 있습니다. 그것을 파괴하거나 해당 사수들을 죽여야 합니다. %2 이전에 완료하십시오. 그렇지 않으면 그들이 어떤 가치있는 것을 파괴할 것입니다.</Korean>
@@ -18590,7 +18622,7 @@
                 <Turkish>Düşürülmüş Helikopteri İmha Et</Turkish>
             </Key>
             <Key ID="STR_A3A_Missions_DES_Vehicle_task_desc">
-                <Original>We know a %3 is stationed in the %1. This is a good opportunity to destroy or capture it before it causes us any damage. Do it before %2.</Original>
+                <Original>We know a %3 is stationed in %1. This is a good opportunity to destroy or capture it before it causes us any damage. Do it before %2.</Original>
                 <French>Nous savons qu'un blindé ennemi (%3) est stationné en %1. C'est une bonne occasion de le détruire ou de le voler avant qu'il ne cause plus de dégâts. Faites-le avant %2.</French>
                 <Russian>Мы знаем, что вражеская бронетехника (%3) развернута в  %1. У нас есть хороший шанс украсть её или уничтожить, пока она не нанесла нам ущерб. Сделайте это до %2.</Russian>
                 <Korean>%1에 적의 장갑차량 (%3)이(가) 주둔하고 있습니다. 더 많은 피해를 주기 전에 파괴하거나 노획할 수 있는 좋은 기회입니다. %2 이전에 완료하십시오.</Korean>
@@ -18614,7 +18646,7 @@
                 <Turkish>İkmal Paketini Yakala</Turkish>
             </Key>
             <Key ID="STR_A3A_Missions_LOG_Ammo_task_desc">
-                <Original>We've spotted an ammo truck in the %1. Go there and destroy or steal it. Do it before %2.</Original>
+                <Original>We've spotted an ammo truck in %1. Go there and destroy or steal it. Do it before %2.</Original>
                 <French>Nous avons repéré un camion de munitions en %1. Allez-y et détruisez-le ou volez-le. Faites-le avant %2.</French>
                 <Russian>Мы заметили грузовик с боеприпасами в %1. Идите туда и либо угоните его в штаб, либо уничтожьте. Сделайте это до %2.</Russian>
                 <Korean>%1에서 탄약트럭이 포착되었습니다. 가서 파괴하거나 노획하십시오. %2 이전에 완료하십시오.</Korean>
@@ -18630,7 +18662,7 @@
                 <Turkish>Mühimmat Kamyonunu Çal veya İmha Et</Turkish>
             </Key>
             <Key ID="STR_A3A_Missions_LOG_Bank_task_desc">
-                <Original>We know that %3 are guarding a large amount of money in the bank of %1. Take this truck and go there before %2, hold the truck close to tha bank's main entrance for 2 minutes and the money will be transferred to the truck. Bring it back to HQ and the money will be ours.</Original>
+                <Original>We know that %3 are guarding a large amount of money in the bank of %1. Take this truck and go there before %2, hold the truck close to the bank's main entrance for 2 minutes and the money will be transferred to the truck. Bring it back to HQ and the money will be ours.</Original>
                 <French>Nous savons que %3 gardent une grosse somme d'argent dans la banque de %1. Prenez ce camion et allez-y avant %2, tenez le camion près de l'entrée principale de la banque pendant 2 minutes et l'argent sera transféré dans le camion. Ramenez-le au QG et l'argent sera à nous.</French>
                 <Russian>Мы заметили, что %3 охраняют большое количество денег в банке города %1. Возьмите специальный грузовик в штабе и подъедьте туда, подгоните грузовик к главному входу банка на 2 минуты, тем самым перегрузив деньги из банка в грузовик. Затем пригоните грузовик обратно и деньги у нас в кармане. Сделайте это до %2.</Russian>
                 <Korean>우리는 %3이 %1의 은행에서 거금을 예치 중이란 것을 알아냈습니다. 이 트럭을 타고 %2 이전까지 가서 2분 동안 은행 정문 가까이에서 트럭을 정차시키고 있으면 돈이 트럭으로 옮겨질 것입니다. 본부로 가져오면 해당 자금은 우리 것이 될 것입니다.</Korean>
@@ -18678,7 +18710,7 @@
                 <Turkish>Helikopter Enkaz Alanı</Turkish>
             </Key>
             <Key ID="STR_A3A_Missions_LOG_Salvage_task_desc">
-                <Original>A supply shipment was sunk outside of the %1. Go there and recover the supplies before %2. You will need to get a hold of a boat with a winch and cargo capabilities to recover the shipment (rescue boat, motor boat or similar ones will fit), check beaches for civilian boats you can commandeer. You may find diving gear in any enemy seaport crate or in the arsenal if you have captured any seaport and delivered the crate from it before.</Original>
+                <Original>A supply shipment was sunk outside of %1. Go there and recover the supplies before %2. You will need to get a hold of a boat with a winch and cargo capabilities to recover the shipment (rescue boat, motor boat or similar ones will fit), check beaches for civilian boats you can commandeer. You may find diving gear in any enemy seaport crate or in the arsenal if you have captured any seaport and delivered the crate from it before.</Original>
                 <French>Une cargaison de ravitaillement a été coulée à l'extérieur de %1. Allez-y et récupérez le matériel avant %2. Vous aurez besoin d'un bateau avec un treuil et des capacités de chargement pour récupérer la cargaison (un bateau de sauvetage, un bateau à moteur ou des bateaux similaires conviendront), vérifiez sur les plages s'il y a des bateaux civils que vous pouvez réquisitionner. Vous pouvez trouver du matériel de plongée dans n'importe quelle caisse de port maritime ennemi ou dans l'arsenal si vous avez capturé un port maritime et livré une caisse depuis celui-ci auparavant.</French>
                 <Russian>Грузовой корабль с поставкой припасов затонул недалеко от %1. Идите туда и вытащите груз до %2. Вам потребуется лодка с лебёдкой, чтобы достать поставку. Сгодится любая лодка c лебёдкой и возможностью принять груз (подойдут спасательные, скоростные лодки и похожие на них) - вы можете либо использовать наши лодки, либо воспользоваться пришвартованными гражданскими судами. Также вы можете найти дайверское снаряжение в ящике со снаряжением в любом вражеском морском порту или в арсенале, если вы захватывали и успешно довозили до штаба ящик из морского порта ранее.</Russian>
                 <Korean>%1 외곽에서 보급 선적물이 가라앉았습니다. 가서 %2 이전에 보급품을 되찾으십시오. 선적물을 회수하려면 윈치와 화물 기능이 있는 보트를 입수하고(구조 보트, 모터 보트 또는 유사한 보트가 적합합니다), 징발할 수 있는 민간 보트가 있는지 해변을 확인하십시오. 만약 당신이 이전에 어떤 항구를 점령하고 그 곳에서 상자를 배달했다면, 당신은 적의 상자나 무기고에서 다이빙 장비를 발견할 수 있습니다.</Korean>
@@ -18715,7 +18747,7 @@
                 <Turkish>Keşif Aracı Kaza Alanı</Turkish>
             </Key>
             <Key ID="STR_A3A_Missions_REP_Antenna_task_desc">
-                <Original>%1 is trying to rebuild the radio tower at the %2. If we want to maintain the enemy comms breakdown, the repair must be stopped. Destroy or steal the repair truck parked nearby or alternatively capture the zone. The work will be finished by %3.</Original>
+                <Original>%1 is trying to rebuild the radio tower at %2. If we want to maintain the enemy comms breakdown, the repair must be stopped. Destroy or steal the repair truck parked nearby or alternatively capture the zone. The work will be finished by %3.</Original>
                 <French>%1 tente de reconstruire une tour radio à %2. Si nous voulons maintenir la panne des communications ennemies, les travaux doivent être interrompus. Détruisez le camion de réparation stationné à proximité ou capturez la zone. Les travaux seront terminés le %3.</French>
                 <Russian>%1 пытаются отремонтировать радиовышку в %2. Если мы хотим продолжать нарушать радиосвязь и пропаганду противника в этом районе, мы должны помешать восстановительным работам. Уничтожьте ремонтную машину, которая наверняка будет где-то рядом с вышкой либо захватите локацию. Работы противника будут окончены до %3.</Russian>
                 <Korean>%1이(가) %2에서 통신탑을 재건축하려 합니다. 우리가 적의 통신을 차단하려면 해당 작업을 중지시켜야 합니다. 근처에 주차된 수리 트럭을 파괴하거나 해당 구역을 점령하십시오. %3에 작업이 완료될 예정입니다.</Korean>
@@ -18731,8 +18763,8 @@
                 <Turkish>Kule Onarımını Engelle</Turkish>
             </Key>
             <Key ID="STR_A3A_Missions_RES_Deserters_task_desc">
-                <Original>A group of enemy deserters is hiding at the %1, they are hunted by enemy group. We must rescue them before %2. Bring them to HQ.</Original>
-                <Russian>Группа вражеских дезертиров прячется в %1, их преследует вражеская группа. Мы должны спасти их до %2. Привезите их в штаб.</Russian>
+                <Original>A group of enemy deserters is hiding at %1, they are hunted by enemy group. We must rescue them before %2. Bring them to HQ.</Original>
+                <Russian>Группа вражеских дезертиров прячется в %1, их преследует вражеская группа. Мы должны спасти их до %2. Привезите их в штаб. </Russian>
                 <Korean>탈주자 구조적의 탈영병 무리가 %1에 숨어 있고, 적 부대에게 쫓기고 있습니다. %2 이전에 구출해야 합니다. 본부로 데려오십시오.</Korean>
                 <Chinesesimp>一群敌方逃兵躲藏在 %1，他们正在被敌方追捕。我们必须在 %2 之前救出他们。将他们带到总部。</Chinesesimp>
                 <Turkish>Bir grup düşman firarisi %1 mevkisinde saklanıyor ve düşman grubu tarafından avlanıyorlar. Onları %2 vaktinden önce kurtarmalıyız. Onları karargaha getirin.</Turkish>
@@ -18761,9 +18793,9 @@
                 <Turkish>Muhbiri Kurtar</Turkish>
             </Key>
             <Key ID="STR_A3A_Missions_RES_Prisoners_task_desc">
-                <Original>A group of POWs is awaiting execution at the %1. We must rescue them before %2. Bring them to HQ.</Original>
+                <Original>A group of POWs is awaiting execution at %1. We must rescue them before %2. Bring them to HQ.</Original>
                 <French>Un groupe de prisonniers de guerre attend d'être exécuté à %1. Nous devons les sauver avant %2. Amenez-les au QG.</French>
-                <Russian>Группа наших пленников ожидает казни в %1. Мы должны спасти их до %2. Привезите их в штаб.</Russian>
+                <Russian>Группа наших пленников ожидает казни в %1. Мы должны спасти их до %2. Привезите их в штаб. </Russian>
                 <Korean>%1에서 처형 대기 중인 포로가 있습니다. %2 이전까지 그들을 구출해야 합니다. 그들을 본부로 데려오십시오.</Korean>
                 <Chinesesimp>我们的一群战俘在 %1 等待处决。 我们必须在 %2 之前营救他们。 把他们带到总部。</Chinesesimp>
                 <Turkish>Bir grup savaş esiri %1 mevkisinde infaz edilmeyi bekliyor. Onları %2 vaktinden önce kurtarmalıyız. Onları karargaha getirin.</Turkish>
@@ -18777,7 +18809,7 @@
                 <Turkish>Savaş Esiri Kurtarma</Turkish>
             </Key>
             <Key ID="STR_A3A_Missions_RES_Refugees_task_desc_1">
-                <Original>A group of civilian %1 supportes have been arrested in %2 and they are about to be sent to prison. Go there, free them and bring them to HQ and they will join our cause. Do this before %3.</Original>
+                <Original>A group of civilian %1 supporters have been arrested in %2 and they are about to be sent to prison. Go there, free them and bring them to HQ and they will join our cause. Do this before %3.</Original>
                 <French>Un groupe de supporters civils de %1 a été arrêté à %2 et est sur le point d'être envoyé en prison. Allez-y, libérez-les et amenez-les au QG pour qu'ils rejoignent notre cause. Faites-le avant %3.</French>
                 <Russian>Группа гражданских сторонников %1 была арестована в %2 и их скоро отправят в тюрьму. Спасите их, привезите в штаб и они присоединятся к нам. Сделайте это до %3.</Russian>
                 <Korean>%2에서 %1의 민간 지지자들이 체포되었고 곧 수용소로 보내질 예정입니다. 가서 그들을 풀어주고 본부로 데려오면 우리 편이 될 것입니다. %3 이전에 완료하십시오.</Korean>
@@ -18825,7 +18857,7 @@
                 <Turkish>Gemi Kazazedelerini Kurtar</Turkish>
             </Key>
             <Key ID="STR_A3A_Missions_RIV_RES_Prisoners_task_desc">
-                <Original>%1 are about to execute our comrades at the %2. We must rescue them before %3. Bring them to HQ.</Original>
+                <Original>%1 are about to execute our comrades at %2. We must rescue them before %3. Bring them to HQ.</Original>
                 <French>%1 sont sur le point d'exécuter nos camarades en %2. Nous devons les sauver avant %3. Amenez-les au QG.</French>
                 <Russian>%1 собираются казнить наших товарищей в %2. Мы должны спасти их до %3. Привезите их в штаб.</Russian>
                 <Korean>%1이 %2에서 우리 동지들을 처형하려고 합니다. %3 이전까지 그들을 구출해야 합니다. 그들을 본부로 데려오십시오.</Korean>
@@ -19122,7 +19154,7 @@
                 <Turkish>Cephe Hattında Kaynak Edinimi</Turkish>
             </Key>
             <Key ID="STR_CON_Outpost_resources_desc">
-                <Original>The %1 would be a fine addition to our cause. Go there and capture it before %2.</Original>
+                <Original>%1 would be a fine addition to our cause. Go there and capture it before %2.</Original>
                 <French>Un %1 serait un bon complément à notre cause. Allez-y et capturez-le avant %2.</French>
                 <Russian>%1 был бы прекрасным дополнением к нашему общему делу. Отправляйтесь туда и захватите его до %2.</Russian>
                 <Korean>%1은(는) 우리의 대의에 훌륭한 지원이 될 것입니다. 해당 지역으로 가서 %2 이전까지 점령하십시오.</Korean>
@@ -19146,7 +19178,7 @@
                 <Turkish>%1 Hücre Liderini Öldür</Turkish>
             </Key>
             <Key ID="STR_RIV_ATT_cell_text">
-                <Original>%1 cell in the %2 has been compromised, it's time to act - go there and kill the leader of this cell, this will stop %1 from conducting covert operations against us in this particular area. Our informer provides intel that they know we're coming. Do this before %3.</Original>
+                <Original>%1 cell in %2 has been compromised, it's time to act - go there and kill the leader of this cell, this will stop %1 from conducting covert operations against us in this particular area. Our informer provides intel that they know we're coming. Do this before %3.</Original>
                 <French>La cellule %1 dans le %2 a été compromise, il est temps d'agir - allez-y et tuez le chef de cette cellule, cela empêchera %1 de mener des opérations secrètes contre nous dans cette zone particulière. Notre informateur nous dit qu'ils savent que nous arrivons. Faites-le avant %3.</French>
                 <Russian>Ячейка %1 в %2 скомпрометирована, а это значит, что пришло время действовать - идите туда и уничтожьте лидера ячейки, это остудит их пыл, %1 перестанут проводить свои тайные операции против нас в этой зоне. Наш информатор предоставляет данные что они знают, что мы скоро придём. Сделайте это до %3.</Russian>
                 <Korean>%2에서의 %1의 셀이 탄로났습니다. 이제 행동할 시간입니다. 가서 해당 지역의 셀 리더를 죽이면 %1이(가) 이 지역에서 우리를 상대로 비밀 작전을 수행하는 것을 막을 수 있습니다. 우리 정보원은 우리가 올 것을 알고 있다는 정보를 제공했습니다. %3 이전에 완료하십시오.</Korean>

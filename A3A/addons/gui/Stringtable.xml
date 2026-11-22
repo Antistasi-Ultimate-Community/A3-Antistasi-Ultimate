@@ -2824,7 +2824,104 @@
                 <Turkish>Araçlar</Turkish>
             </Key>
         </Container>
-        <Container name="dialog_mission_request"></Container>
+        <Container name="dialog_mission_request">
+            <Key ID="STR_antistasi_dialogs_mission_request_assassination">
+                <Original>Assassination</Original>
+                <Czech>Atentát</Czech>
+                <French>Assassinat</French>
+                <Spanish>Asesinato</Spanish>
+                <Italian>Assassinio</Italian>
+                <Polish>Zamach</Polish>
+                <Russian>Ликвидация</Russian>
+                <Korean>암살</Korean>
+                <Chinesesimp>暗杀</Chinesesimp>
+                <Turkish>Suikast</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_mission_request_conquest">
+                <Original>Conquest</Original>
+                <Czech>Dobytí</Czech>
+                <French>Conquête</French>
+                <Spanish>Conquista</Spanish>
+                <Italian>Conquista</Italian>
+                <Polish>Podbój</Polish>
+                <Russian>Захват</Russian>
+                <Korean>점령</Korean>
+                <Chinesesimp>征服</Chinesesimp>
+                <Turkish>Hakimiyet</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_mission_request_convoy">
+                <Original>Convoy Ambush</Original>
+                <Czech>Přepadení konvoje</Czech>
+                <French>Embuscade de convoi</French>
+                <Spanish>Emboscar Convoy</Spanish>
+                <Italian>Imboscata al Convoglio</Italian>
+                <Polish>Zasadzka na Konwój</Polish>
+                <Russian>Засада на конвой</Russian>
+                <Korean>호송대 매복</Korean>
+                <Chinesesimp>伏击车队</Chinesesimp>
+                <Turkish>Konvoy Pususu</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_mission_request_destroy">
+                <Original>Destroy</Original>
+                <Czech>Zničit</Czech>
+                <French>Détruire</French>
+                <Spanish>Destruye</Spanish>
+                <Italian>Distruggi</Italian>
+                <Polish>Zniszcz</Polish>
+                <Russian>Уничтожение</Russian>
+                <Korean>파괴</Korean>
+                <Chinesesimp>摧毁</Chinesesimp>
+                <Turkish>İmha Et</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_mission_request_logistics">
+                <Original>Logistics</Original>
+                <Czech>Logistika</Czech>
+                <French>Logistique</French>
+                <Spanish>Logística</Spanish>
+                <Italian>Logistica</Italian>
+                <Polish>Logistyka</Polish>
+                <Russian>Логистика</Russian>
+                <Korean>물자 확보보</Korean>
+                <Chinesesimp>后勤</Chinesesimp>
+                <Turkish>Lojistik</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_mission_request_rescue">
+                <Original>Rescue</Original>
+                <Czech>Záhrana</Czech>
+                <French>Sauvetage</French>
+                <Spanish>Rescate</Spanish>
+                <Italian>Soccorso</Italian>
+                <Polish>Ratunek</Polish>
+                <Russian>Спасение</Russian>
+                <Korean>구출</Korean>
+                <Chinesesimp>救援</Chinesesimp>
+                <Turkish>Kurtarma</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_mission_request_support">
+                <Original>Support</Original>
+                <Czech>Podpora</Czech>
+                <French>Soutien</French>
+                <Spanish>Soporte</Spanish>
+                <Italian>Supporto</Italian>
+                <Polish>Wsparcie</Polish>
+                <Russian>Поддержка</Russian>
+                <Korean>지원</Korean>
+                <Chinesesimp>支援</Chinesesimp>
+                <Turkish>Destek</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_mission_request_titlebar">
+                <Original>REQUEST MISSION</Original>
+                <Czech>POŽÁDAT O MISI</Czech>
+                <French>DEMANDE DE MISSION</French>
+                <Spanish>PEDIR MISIÓN</Spanish>
+                <Italian>RICHIEDI MISSIONE</Italian>
+                <Polish>ŻĄDAJ MISJĘ</Polish>
+                <Russian>ЗАПРОС МИССИИ</Russian>
+                <Korean>임무 요청</Korean>
+                <Chinesesimp>请求任务</Chinesesimp>
+                <Turkish>GÖREV İSTE</Turkish>
+            </Key>
+        </Container>
         <Container name="dialog_recruit_squad">
             <Key ID="STR_antistasi_dialogs_recruit_squad_aa_truck">
                 <Original>AA Truck</Original>
@@ -3574,36 +3671,36 @@
                 <Original>Occupants: %3\n Invaders: %4\n Rebels: %1\n Rivals: %5\n Civilians: %2</Original>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_confirm_game_name">
-                <Original>name "%1",</Original>
-                <French>nom "%1",</French>
-                <Russian>названием "%1",</Russian>
-                <Korean>"%1"(으)로 명명,</Korean>
+                <Original>name "%1", </Original>
+                <French>nom "%1", </French>
+                <Russian>названием "%1", </Russian>
+                <Korean>"%1"(으)로 명명, </Korean>
                 <Chinesesimp>名称“%1”，</Chinesesimp>
-                <Turkish>isim "%1",</Turkish>
+                <Turkish> isim "%1", </Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_confirm_start_copy">
-                <Original>Copy game with ID %1,</Original>
+                <Original>Copy game with ID %1, </Original>
                 <French>Copier la partie avec ID %1,</French>
-                <Russian>Копировать игру с ID %1,</Russian>
-                <Korean>ID가 %1인 게임 복사,</Korean>
+                <Russian>Копировать игру с ID %1, </Russian>
+                <Korean>ID가 %1인 게임 복사, </Korean>
                 <Chinesesimp>复制 ID 为 %1 的游戏，</Chinesesimp>
-                <Turkish>%1 kimliğiyle Oyunu kopyala,</Turkish>
+                <Turkish>%1 kimliğiyle Oyunu kopyala, </Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_confirm_start_create">
-                <Original>Create new game with</Original>
+                <Original>Create new game with </Original>
                 <French>Créer une nouvelle partie avec</French>
-                <Russian>Создать новую игру с</Russian>
-                <Korean>새 게임 만들기:</Korean>
+                <Russian>Создать новую игру с </Russian>
+                <Korean>새 게임 만들기: </Korean>
                 <Chinesesimp>创建新游戏</Chinesesimp>
-                <Turkish>Yeni oyun:</Turkish>
+                <Turkish>Yeni oyun: </Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_confirm_start_load">
-                <Original>Load game with ID %1,</Original>
+                <Original>Load game with ID %1, </Original>
                 <French>Charger la partie avec l' ID %1,</French>
-                <Russian>Загрузить игру с ID %1,</Russian>
-                <Korean>ID가 %1인 게임 불러오기,</Korean>
+                <Russian>Загрузить игру с ID %1, </Russian>
+                <Korean>ID가 %1인 게임 불러오기, </Korean>
                 <Chinesesimp>加载 ID 为 %1 的游戏，</Chinesesimp>
-                <Turkish>%1 kimliğiyle oyunu yükle,</Turkish>
+                <Turkish>%1 kimliğiyle oyunu yükle, </Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_confirm_title">
                 <Original>CONFIRM ACTION</Original>
@@ -3800,6 +3897,14 @@
                 <Russian>Ресурсы</Russian>
                 <Korean>자원</Korean>
                 <Chinesesimp>资源</Chinesesimp>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_ez_seaports">
+                <Original>Seaports</Original>
+                <Italian>Porti</Italian>
+                <Portuguese>Portos</Portuguese>
+                <Russian>Морские порты</Russian>
+                <Korean>항구</Korean>
+                <Chinesesimp>海港</Chinesesimp>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_faction_tab_button">
                 <Original>Factions</Original>
@@ -4428,6 +4533,18 @@
                 <Korean>빌더 매개변수</Korean>
                 <Chinesesimp>构建器参数</Chinesesimp>
                 <Turkish>İnşa Parametreleri</Turkish>
+            </Key>
+            <Key ID="STR_antistasi_dialogs_setup_params_dep_label">
+                <Original>Deprecated Parameters</Original>
+                <Czech>Zastaralé parametry</Czech>
+                <French>Paramètres obsolètes</French>
+                <Italian>Parametri deprecati</Italian>
+                <Polish>Przestarzałe parametry</Polish>
+                <Portuguese>Parâmetros obsoletos</Portuguese>
+                <Russian>Устаревшие параметры</Russian>
+                <Korean>사용되지 않는 매개 변수</Korean>
+                <Chinesesimp>已弃用参数</Chinesesimp>
+                <Turkish>Eski Parametreler</Turkish>
             </Key>
             <Key ID="STR_antistasi_dialogs_setup_params_dev_label">
                 <Original>Experimental and Development Parameters</Original>

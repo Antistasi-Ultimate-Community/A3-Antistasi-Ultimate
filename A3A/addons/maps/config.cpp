@@ -96,6 +96,7 @@ class CfgMissions
 		A3A_Mission(UMB_Armavir, "Antistasi Ultimate - Armavir")
 		A3A_Mission(d41_ruegen, "Antistasi Ultimate - Ruegen")
 		A3A_Mission(IslaPera, "Antistasi Ultimate - IslaPera")
+		A3A_Mission(brf_sumava_winter, "Antistasi Ultimate - Sumava Winter")
 #if __A3_DEBUG__
         A3A_Mission(Stratis, $STR_antistasi_mission_info_Stratis_mapname_text)
 #endif
