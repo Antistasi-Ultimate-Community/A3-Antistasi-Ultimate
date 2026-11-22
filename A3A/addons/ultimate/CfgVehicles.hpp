@@ -373,3 +373,35 @@ class GVAR(BaseVehicleSpawnHelperArrow): GVAR(BaseSpawnHelper) {
     displayName = "Vehicle Spawn Helper";
     GVAR(spawnTypes)[] = {"hc","mineSweep","outpost"};
 };
+
+class ReammoBox_F;
+
+class A3U_Stash: ReammoBox_F {
+    scope = 2;
+    scopeCurator = 2;
+    displayName = "Stash";
+    editorCategory = "EdCat_Supplies";
+    editorSubcategory = "EdSubcat_Storage";
+
+    model = QPATHTOFOLDER(data\models\A3U_Stash\A3U_Stash.p3d);
+
+    hiddenSelections[] = {"camo1","camo2"};
+    hiddenSelectionsTextures[] = {
+        QPATHTOFOLDER(data\models\A3U_Stash\A3U_Stash_co.paa),
+        "#(argb,8,8,3)color(0.5,0.5,0.5,1)"
+    };
+
+    maximumLoad = 999999;
+    transportMaxWeapons = 9999;
+    transportMaxMagazines = 9999;
+    transportMaxBackpacks = 9999;
+
+    class TransportMagazines {};
+    class TransportWeapons {};
+    class TransportItems {};
+    class TransportBackpacks {};
+    class EventHandlers
+    {
+        init = "if (isServer) then { private _obj = _this select 0; _obj setObjectTextureGlobal [1, surfaceTexture (getPosWorld _obj)]; _obj enableSimulationGlobal false; };";
+    };
+};
