@@ -69,21 +69,21 @@ private _vestCurrentLoad = 0;
 private _backpackMaxLoad = 0;
 private _backpackCurrentLoad = 0;
 
-if (count _uniform > 0) then {
+if (_uniform isNotEqualTo []) then {
 	_uniformMaxLoad = getContainerMaxLoad (_uniform select 0);
 	{
 		_uniformCurrentLoad = _uniformCurrentLoad + ([_x] call A3A_fnc_loadout_itemLoad);
 	} forEach (_uniform select 1);
 };
 
-if (count _vest > 0) then {
+if (_vest isNotEqualTo []) then {
 	_vestMaxLoad = getContainerMaxLoad (_vest select 0);
 	{
 		_vestCurrentLoad = _vestCurrentLoad + ([_x] call A3A_fnc_loadout_itemLoad);
 	} forEach (_vest select 1);
 };
 
-if (count _backpack > 0) then {
+if (_backpack isNotEqualTo []) then {
 	_backpackMaxLoad = getContainerMaxLoad (_backpack select 0);
 	{
 		_backpackCurrentLoad = _backpackCurrentLoad + ([_x] call A3A_fnc_loadout_itemLoad);

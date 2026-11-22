@@ -8,7 +8,7 @@ if (!isServer and hasInterface) exitWith{};
 
 private _markerX = [markersX, _antenna] call BIS_fnc_nearestPosition;
 
-private _difficultX = if (random 10 < tierWar) then {true} else {false};
+private _difficultX = random 10 < tierWar;
 private _nameDest = [_markerX] call A3A_fnc_localizar;
 private _positionX = getPos _antenna;
 
@@ -41,9 +41,9 @@ private _taskId = "DES" + str A3A_taskCount;
 	true
 	] call BIS_fnc_taskCreate;
 [_taskId, "DES", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
-waitUntil {sleep 1; dateToNumber date > _dateLimitNum or {!alive _antenna or {!(sidesX getVariable [_markerX,sideUnknown] == Occupants)}}};
+waitUntil {sleep 1; dateToNumber date > _dateLimitNum or {!alive _antenna or {(sidesX getVariable [_markerX,sideUnknown] != Occupants)}}};
 
-private _bonus = if (_difficultX) then {2} else {1};
+private _bonus = [1, 2] select (_difficultX);
 
 if (dateToNumber date > _dateLimitNum) then {
 	[_taskId, "DES", "FAILED"] call A3A_fnc_taskSetState;

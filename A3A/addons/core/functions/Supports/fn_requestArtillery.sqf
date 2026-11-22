@@ -24,7 +24,7 @@ params ["_side", "_target", "_resPool", "_precision", "_reveal", "_delay"];     
 waitUntil { isNil "A3A_supportCallInProgress" };
 A3A_supportCallInProgress = true;
 
-Info_3("Requested artillery against %1 from %2 pool by side %3", _target, _resPool, _side);
+Info_3("Requested artillery against %1 from %2 pool by side %3",_target,_resPool,_side);
 
 // Sort out target info
 private _deprecisionRange = random (150 - ((_precision/4) * (_precision/4) * 125));
@@ -36,7 +36,7 @@ if (_target isEqualType objNull) then {
 } else {
     _target = objNull;
 };
-Debug_2("Final target %1 at position %2", _target, _targPos);
+Debug_2("Final target %1 at position %2",_target,_targPos);
 
 
 // Build hashmap of active supports with spare targets capable of hitting the area
@@ -44,11 +44,11 @@ private _actSuppHM = createHashMap;
 {
     _x params ["_suppName", "_suppSide", "_suppType", "_center", "_radius", "_suppTarg", ["_minRadius", 0]];
     if (_suppSide != _side or _suppType in _actSuppHM) then { continue };         // only use first one found
-    private _dist = _targpos distance2d _center;
+    private _dist = _targpos distance2D _center;
     if (_suppTarg isNotEqualTo [] or _dist > _radius or _dist < _minRadius) then { continue };        // ready for new target + in range
     _actSuppHM set [_suppType, _x];
 } forEach A3A_activeSupports;
-Debug_1("Relevant active supports found: %1", _actSuppHM);
+Debug_1("Relevant active supports found: %1",_actSuppHM);
 
 
 // Now determine the weight of each support type
@@ -69,7 +69,7 @@ private _availParams = [_target, _side, 200, keys _supportTypesHM];
     _weightedSupports append [_x, _finalWeight];
 
 } forEach _supportTypesHM;           // Hashmap of support type to [baseClass, typeWeight, effectRadius]
-Debug_1("Weighted supports: %1", _weightedSupports);
+Debug_1("Weighted supports: %1",_weightedSupports);
 
 A3A_supportCallInProgress = nil;
 

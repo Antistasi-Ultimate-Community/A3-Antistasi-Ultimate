@@ -26,16 +26,16 @@ if (getText(configfile >> "CfgMagazines" >> _x >> "nameSound") isEqualTo "") the
 } forEach allMagSmokeShell;
 */
 {
-     if (getText(configfile >> "CfgMagazines" >> _x >> "nameSound") isEqualTo "smokeshell") then
+     if (getText(configFile >> "CfgMagazines" >> _x >> "nameSound") isEqualTo "smokeshell") then
      {
-          allSmokeGrenades pushback _x;
+          allSmokeGrenades pushBack _x;
      };
 } forEach allMagSmokeShell;
 
 //Flares ID
 //PBP - NOT WORKING
-private _uglMag = getArray (configfile >> "CfgMagazineWells" >> "UGL_40x36" >> "BI_Magazines");
-_uglMag append (getArray(configfile >> "CfgMagazineWells" >> "3UGL_40x36" >> "BI_Magazines"));
+private _uglMag = getArray (configFile >> "CfgMagazineWells" >> "UGL_40x36" >> "BI_Magazines");
+_uglMag append (getArray(configFile >> "CfgMagazineWells" >> "3UGL_40x36" >> "BI_Magazines"));
 {
      if (_x in _uglMag) then
      {
@@ -49,7 +49,7 @@ _uglMag append (getArray(configfile >> "CfgMagazineWells" >> "3UGL_40x36" >> "BI
 
 //IR Grenades
 {
-     if (getText (configfile >> "CfgMagazines" >> _x >> "displayNameShort") isEqualTo "IR Grenade") then
+     if (getText (configFile >> "CfgMagazines" >> _x >> "displayNameShort") isEqualTo "IR Grenade") then
      {
           allIRGrenades pushBack _x;
      };
@@ -62,7 +62,7 @@ _uglMag append (getArray(configfile >> "CfgMagazineWells" >> "3UGL_40x36" >> "BI
 
 //LaserDesignator Batteries
 {
-     if (getText (configfile >> "CfgMagazines" >> _x >> "displayName") isEqualTo "Designator Batteries") then
+     if (getText (configFile >> "CfgMagazines" >> _x >> "displayName") isEqualTo "Designator Batteries") then
      {
           allLaserBatteries pushBack _x;
      };

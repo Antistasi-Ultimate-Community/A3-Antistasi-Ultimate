@@ -8,7 +8,7 @@ isNil {
 	A3A_oldHQInfoOcc pushBack +_oldPos;
 	A3A_curHQInfoOcc = 0;
 	{
-		private _dist = _x distance2d _newPosition;
+		private _dist = _x distance2D _newPosition;
 		A3A_curHQInfoOcc = A3A_curHQInfoOcc max linearConversion [0, 1000, _dist, _x#2, 0, true];
 	} forEach A3A_oldHQInfoOcc;
 
@@ -16,7 +16,7 @@ isNil {
 	A3A_oldHQInfoInv pushBack +_oldPos;
 	A3A_curHQInfoInv = 0;
 	{
-		private _dist = _x distance2d _newPosition;
+		private _dist = _x distance2D _newPosition;
 		A3A_curHQInfoInv = A3A_curHQInfoInv max linearConversion [0, 1000, _dist, _x#2, 0, true];
 	} forEach A3A_oldHQInfoInv;
 };
@@ -39,7 +39,7 @@ private _alignNormals = {
 };
 
 private _firePos = [_newPosition, 3, getDir petros] call BIS_Fnc_relPos;
-_rnd = getdir petros;
+_rnd = getDir petros;
 _pos = [_firePos, 3, _rnd] call BIS_Fnc_relPos;
 boxX setPos _pos;
 _rnd = _rnd + 45;
@@ -51,7 +51,7 @@ _pos = [_firePos, 3, _rnd] call BIS_Fnc_relPos;
 _rnd = _rnd + 45;
 _pos = [_firePos, 3, _rnd] call BIS_Fnc_relPos;
 _emptyPos = _pos findEmptyPosition [0,50,(typeOf flagX)];
-_pos = if (count _emptyPos > 0) then {_emptyPos} else {_pos};
+_pos = [_pos, _emptyPos] select (_emptyPos isNotEqualTo []);
 flagX setPos _pos;
 _rnd = _rnd + 45;
 _pos = [_firePos, 3, _rnd] call BIS_Fnc_relPos;

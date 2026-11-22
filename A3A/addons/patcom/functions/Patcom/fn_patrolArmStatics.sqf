@@ -34,7 +34,7 @@ private _staticsNear = nearestObjects [_leader, ["StaticWeapon"], 150];
 _staticsNear = _staticsNear select {alive _x};
 
 // Only get statics which currently are not crewed.
-_staticsNear = _staticsNear select {(crew _x) isequalto []};
+_staticsNear = _staticsNear select {(crew _x) isEqualTo []};
 
 // Only get statics which are not currently assigned. Also no AI-locked or cargo-loaded statics.
 _staticsNear = _staticsNear select {
@@ -46,7 +46,7 @@ _staticsNear = _staticsNear select {
 };
 
 // Exit if no statics are near.
-if (count _staticsNear == 0) exitWith {};
+if (_staticsNear isEqualTo []) exitWith {};
 
 // Get all units in the current group looking for statics.
 private _unitArray = units _group;
@@ -58,19 +58,19 @@ _unitArray deleteAt (_unitArray find _leader);
 _unitArray = _unitArray select {isNull objectParent _x};
 
 // Exit if no units are available to be used in the statics.
-if (count _unitArray == 0) exitWith {};
+if (_unitArray isEqualTo []) exitWith {};
 
 {
     // Exit if unitArray is empty.
-    if (count _unitArray == 0) exitWith {};
+    if (_unitArray isEqualTo []) exitWith {};
 
     private _unit = selectRandom _unitArray;
     if (_unit distance2D _x < 100) then {
-        _assignedPairs pushback [_unit, _x, _group];
+        _assignedPairs pushBack [_unit, _x, _group];
         _unitArray deleteAt (_unitArray find _unit);	
     };
 
-} foreach _staticsNear;
+} forEach _staticsNear;
 
 if (count _assignedPairs isEqualTo 0) exitWith {};
 
@@ -79,7 +79,7 @@ if (count _assignedPairs isEqualTo 0) exitWith {};
         params ["_unit", "_static", "_group"];
         private _assignedGunner = assignedGunner _static;
         if ((isNull _assignedGunner) && ((_static getVariable ["PATCOM_STATIC_ASSIGNED", false]) == false)) then {
-            [_unit] joinSilent grpnull;
+            [_unit] joinSilent grpNull;
             _static setVariable ["PATCOM_STATIC_ASSIGNED", true];
             _unit setCombatBehaviour "SAFE"; 
             _unit setUnitCombatMode "BLUE";
@@ -99,7 +99,7 @@ if (count _assignedPairs isEqualTo 0) exitWith {};
             _unit setCombatBehaviour "AWARE"; 
             _unit setUnitCombatMode "YELLOW";
 
-            if (typeOf _static in FactionGet(all, "vehiclesArtillery")) then {
+            if (typeOf _static in FactionGet(all,"vehiclesArtillery")) then {
                 [_group] call A3A_fnc_artilleryAdd;
             };
 
@@ -136,4 +136,4 @@ if (count _assignedPairs isEqualTo 0) exitWith {};
             };
         };		
     };	
-} foreach _assignedPairs;
+} forEach _assignedPairs;

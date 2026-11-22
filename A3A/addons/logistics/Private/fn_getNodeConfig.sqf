@@ -40,7 +40,7 @@ if (isClass (MissionNodes/_class)) exitWith { (MissionNodes/_class) };
 if (isClass VehicleNodes) exitWith { VehicleNodes };
 if (isClass (CfgNodes/_class)) exitWith { (CfgNodes/_class) };
 
-private _model = modelOfClass(_class);
+private _model = MODEL_OF_CLASS(_class);
 if (isClass (MissionNodes/_model)) exitWith { (MissionNodes/_model) };
 if (isClass (CfgNodes/_model)) exitWith { (CfgNodes/_model) };
 configNull;

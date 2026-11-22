@@ -45,7 +45,7 @@ class egl_laghisola {
 		{6533.75,2389.875,0}
 	};
 	garrison[] = {
-		{},{airport_2,outpost_8,outpost_7,milbase_3},{},{control_9}
+		{},{"airport_2","outpost_8","outpost_7","milbase_3"},{},{"control_9"}
 	};
 	fuelStationTypes[] = {
 		"Land_FuelStation_Feed_F","Land_fs_feed_F","Land_FuelStation_01_pump_malevil_F","Land_FuelStation_01_pump_F","Land_FuelStation_02_pump_F","Land_FuelStation_03_pump_F","Land_A_FuelStation_Feed","Land_Ind_FuelStation_Feed_EP1","Land_FuelStation_Feed_PMC"

@@ -10,13 +10,13 @@ private _sites = citiesX select {
 };
 
 //fallback in case nothing would be found
-if (count _sites == 0) then {
+if (_sites isEqualTo []) then {
     _sites = citiesX;
 };
 
 private _missionSite = selectRandom _sites;
 
-Info_1("Using %1 as rivals site", _missionSite);
+Info_1("Using %1 as rivals site",_missionSite);
 
 isRivalsDiscoveryQuestAssigned = true;
 publicVariable "isRivalsDiscoveryQuestAssigned";
