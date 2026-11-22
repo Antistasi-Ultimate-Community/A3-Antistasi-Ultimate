@@ -160,7 +160,7 @@ switch (_type) do {
 	};
 
 case "LOG": {
-        if (random 100 < 20) then {
+        if (random 100 =< 5) then {
             [["random"], "A3A_fnc_LOG_Stash"] remoteExec ["A3A_fnc_scheduler", 2];
         } else {
             // Add unspawned outposts for ammo trucks, and seaports for salvage
