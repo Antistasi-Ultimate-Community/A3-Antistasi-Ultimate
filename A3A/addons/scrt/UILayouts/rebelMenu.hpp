@@ -3,7 +3,7 @@
 class rebelMenu 
 {
 	idd = A3A_IDD_REBEL_MENU;
-	movingenable = false;
+	movingenable = 0;
 	onLoad = "['on'] call SCRT_fnc_ui_toggleMenuBlur";
 	onUnload = "isMenuOpen = false; closeDialog 0; ['off'] call SCRT_fnc_ui_toggleMenuBlur; [] spawn SCRT_fnc_ui_dispose;";
 	
@@ -12,7 +12,7 @@ class rebelMenu
 		class menuTitle: TextBase
 		{
 			idc = A3A_IDC_MENU_TITLE;
-			text = $STR_rebel_menu_header;
+			text = "$STR_rebel_menu_header";
 			x = "safezoneX + (1 * pixelGridNoUIScale * pixelW)";
 			y = "safezoneY + (4 * pixelGridNoUIScale * pixelH)";	
 			w = "24 * pixelGridNoUIScale * pixelW";
@@ -68,7 +68,7 @@ class rebelMenu
 		{
 			idc = A3A_IDC_MENU_TAB_SELECTOR_TITLE;			
 			style = ST_CENTER;
-			text = $STR_commander_menu_game_options_header_upper;
+			text = "$STR_commander_menu_game_options_header_upper";
 			x = "safezoneX + (0 * pixelGridNoUIScale * pixelW)";
 			y = "safezoneY + (8 * pixelGridNoUIScale * pixelH)";
 			w = "24 * pixelGridNoUIScale * pixelW";	
@@ -105,7 +105,7 @@ class rebelMenu
 		class RivalsTab: ScrtRscControlsGroup 
 		{
 			idc = A3A_IDC_MENU_RIVALS_TAB;			
-			x = -0.4 * safezoneW + safezoneX;
+			x = QUOTE(-0.4 * safezoneW + safezoneX);
 			y = "safezoneY + (12 * pixelGridNoUIScale * pixelH)";
 			w = "26 * pixelGridNoUIScale * pixelW";			
 			h = "safezoneH - (12 * pixelGridNoUIScale * pixelH)";
@@ -113,7 +113,7 @@ class rebelMenu
 				class hideoutsDescriptionTitle: TextBase
 				{
 					idc = A3A_IDC_MENU_RIVALS_DESCRIPTION_TITLE;
-					text = $STR_antistasi_rivals_network_header;
+					text = "$STR_antistasi_rivals_network_header";
 					x = "1 * pixelGridNoUIScale * pixelW";
 					y = "0 * pixelGridNoUIScale * pixelH";	
 					w = "22 * pixelGridNoUIScale * pixelW";	
@@ -123,7 +123,7 @@ class rebelMenu
 				class hideoutsDescriptionText: TextBaseMT
 				{
 					idc = A3A_IDC_MENU_RIVALS_DESCRIPTION_TEXT;			
-					text = $STR_antistasi_rivals_network_description;
+					text = "$STR_antistasi_rivals_network_description";
 					x = "1 * pixelGridNoUIScale * pixelW";
 					y = "2 * pixelGridNoUIScale * pixelH";	
 					w = "22 * pixelGridNoUIScale * pixelW";	
@@ -138,13 +138,13 @@ class rebelMenu
 					y = "13.5 * pixelGridNoUIScale * pixelH";					
 					w = "22 * pixelGridNoUIScale * pixelW";
 					h = "2 * pixelGridNoUIScale * pixelH";	
-					tooltip = $STR_antistasi_rivals_network_progress_bar_tooltip;
+					tooltip = "$STR_antistasi_rivals_network_progress_bar_tooltip";
 				};
 
 				class totalLocationsText: TextBase
 				{
 					idc = A3A_IDC_MENU_RIVALS_TOTAL_LOCATIONS_TEXT;
-					text = $STR_antistasi_rivals_total_locations_label;
+					text = "$STR_antistasi_rivals_total_locations_label";
 					x = "1 * pixelGridNoUIScale * pixelW";
 					y = "safezoneH - (30 * pixelGridNoUIScale * pixelH)";	
 					w = "22 * pixelGridNoUIScale * pixelW";	
@@ -154,7 +154,7 @@ class rebelMenu
 				class knownLocationsText: TextBase
 				{
 					idc = A3A_IDC_MENU_RIVALS_KNOWN_LOCATIONS_TEXT;
-					text = $STR_antistasi_rivals_attackable_locations_label;
+					text = "$STR_antistasi_rivals_attackable_locations_label";
 					x = "1 * pixelGridNoUIScale * pixelW";
 					y = "safezoneH - (28 * pixelGridNoUIScale * pixelH)";	
 					w = "22 * pixelGridNoUIScale * pixelW";	
@@ -164,8 +164,8 @@ class rebelMenu
 				class showLocationsButton: ButtonBase
 				{			
 					idc = A3A_IDC_MENU_RIVALS_SHOW_LOCATIONS_BUTTON;
-					text = $STR_antistasi_rivals_show_activity_title;
-					tooltip = $STR_antistasi_rivals_show_activity_tooltip;
+					text = "$STR_antistasi_rivals_show_activity_title";
+					tooltip = "$STR_antistasi_rivals_show_activity_tooltip";
 					x = "1 * pixelGridNoUIScale * pixelW";
 					y = "34 * pixelGridNoUIScale * pixelH";
 					w = "22 * pixelGridNoUIScale * pixelW";	
@@ -181,7 +181,7 @@ class rebelMenu
 		class OptionsLiteTab: ScrtRscControlsGroup 
 		{
 			idc = A3A_IDC_REBEL_MENU_OPTIONS_TAB;			
-			x = safezoneX;
+			x = QUOTE(safezoneX);
 			y = "safezoneY + (12 * pixelGridNoUIScale * pixelH)";
 			w = "26 * pixelGridNoUIScale * pixelW";			
 			h = "safezoneH - (12 * pixelGridNoUIScale * pixelH)";
@@ -191,7 +191,7 @@ class rebelMenu
 				class clientOptionsDescriptionTitle: TextBase
 				{
 					idc = A3A_IDC_REBEL_MENU_CLIENT_OPTIONS_DESCRIPTION_TITLE;
-					text = $STR_commander_menu_local_options_title;
+					text = "$STR_commander_menu_local_options_title";
 					x = "1 * pixelGridNoUIScale * pixelW";
 					y = "0 * pixelGridNoUIScale * pixelH";	
 					w = "22 * pixelGridNoUIScale * pixelW";	
@@ -201,7 +201,7 @@ class rebelMenu
 				class clientOptionsDescriptionText: TextBaseMT
 				{
 					idc = A3A_IDC_REBEL_MENU_CLIENT_OPTIONS_DESCRIPTION_TEXT;			
-					text = $STR_commander_menu_local_options_tooltip;
+					text = "$STR_commander_menu_local_options_tooltip";
 					x = "1 * pixelGridNoUIScale * pixelW";
 					y = "2 * pixelGridNoUIScale * pixelH";	
 					w = "22 * pixelGridNoUIScale * pixelW";	
@@ -223,17 +223,17 @@ class rebelMenu
 						class SwitchTitle: switchButtonTitle
 						{			
 							idc = A3A_IDC_MENU_MUSIC_SWITCH_TITLE;	
-							text = $STR_commander_menu_music_switch;
+							text = "$STR_commander_menu_music_switch";
 						};
 						class SwitchText: switchButtonSelect
 						{			
 							idc = A3A_IDC_MENU_MUSIC_SWITCH_TEXT;
 							text = "";
 						};
-						class SwitchButton: switchButton {
+						class SwitchButton: SwitchButton {
 							idc = A3A_IDC_MENU_MUSIC_SWITCH_TOGGLE;
-							action = QUOTE([ARR_4('MAIN', A3A_IDC_MENU_MUSIC_SWITCH_BUTTON, true, 'MUSIC')] call SCRT_fnc_ui_switchButton);
-							tooltip = $STR_commander_menu_music_switch_tooltip;
+							action = QUOTE([ARR_4('MAIN',A3A_IDC_MENU_MUSIC_SWITCH_BUTTON,true,'MUSIC')] call SCRT_fnc_ui_switchButton);
+							tooltip = "$STR_commander_menu_music_switch_tooltip";
 						};
 					};		
 				};
@@ -241,8 +241,8 @@ class rebelMenu
 				class musicTrackEditorButton: ButtonBase
 				{			
 					idc = A3A_IDC_MENU_MUSIC_TRACK_EDITOR_BUTTON;
-					text = $STR_commander_menu_tracklist_editor_button;
-					tooltip = $STR_commander_menu_tracklist_editor_button_tooltip;
+					text = "$STR_commander_menu_tracklist_editor_button";
+					tooltip = "$STR_commander_menu_tracklist_editor_button_tooltip";
 					x = "1 * pixelGridNoUIScale * pixelW";
 					y = "7.5 * pixelGridNoUIScale * pixelH";
 					w = "22 * pixelGridNoUIScale * pixelW";	
@@ -266,17 +266,17 @@ class rebelMenu
 						class SwitchTitle: switchButtonTitle
 						{			
 							idc = A3A_IDC_MENU_PARADROP_SWITCH_TITLE;	
-							text = $STR_commander_paradrop_switch;
+							text = "$STR_commander_paradrop_switch";
 						};
 						class SwitchText: switchButtonSelect
 						{			
 							idc = A3A_IDC_MENU_PARADROP_SWITCH_TEXT;
 							text = "";
 						};
-						class SwitchButton: switchButton {
+						class SwitchButton: SwitchButton {
 							idc = A3A_IDC_MENU_PARADROP_SWITCH_TOGGLE;
-							action = QUOTE([ARR_4('MAIN', A3A_IDC_MENU_PARADROP_SWITCH_BUTTON, true, 'PARADROP')] call SCRT_fnc_ui_switchButton);
-							tooltip = $STR_commander_menu_paradrop_tooltip_noncomm;
+							action = QUOTE([ARR_4('MAIN',A3A_IDC_MENU_PARADROP_SWITCH_BUTTON,true,'PARADROP')] call SCRT_fnc_ui_switchButton);
+							tooltip = "$STR_commander_menu_paradrop_tooltip_noncomm";
 						};
 					};
 				};
@@ -284,7 +284,7 @@ class rebelMenu
 				class paradropDescriptionText: TextBaseMT
 				{
 					idc = A3A_IDC_REBEL_MENU_PARADROP_DESCRIPTION_TEXT;			
-					text = $STR_commander_menu_paradrop_tooltip_noncomm;
+					text = "$STR_commander_menu_paradrop_tooltip_noncomm";
 					x = "1 * pixelGridNoUIScale * pixelW";
 					y = "14.5 * pixelGridNoUIScale * pixelH";	
 					w = "22 * pixelGridNoUIScale * pixelW";	
@@ -309,8 +309,8 @@ class rebelMenu
 				class EditParamsButton: ButtonBase
 				{			
 					idc = A3A_IDC_MENU_EDIT_PARAMS_BUTTON;
-					text = $STR_commander_menu_edit_params_button;
-					tooltip= $STR_commander_menu_edit_params_button_tooltip;
+					text = "$STR_commander_menu_edit_params_button";
+					tooltip= "$STR_commander_menu_edit_params_button_tooltip";
 					x = "1 * pixelGridNoUIScale * pixelW";
 					y = "30 * pixelGridNoUIScale * pixelH";
 					w = "22 * pixelGridNoUIScale * pixelW";	
@@ -324,7 +324,7 @@ class rebelMenu
 				class saveGameButton: ButtonBase
 				{		
 					idc = A3A_IDC_MENU_SAVE_GAME_BUTTON;
-					text = $STR_commander_menu_personal_save_button;
+					text = "$STR_commander_menu_personal_save_button";
 					x = "1 * pixelGridNoUIScale * pixelW";
 					y = "safezoneH - (26 * pixelGridNoUIScale * pixelH)";
 					w = "22 * pixelGridNoUIScale * pixelW";	
@@ -332,7 +332,7 @@ class rebelMenu
 					sizeEx = "((pixelH * (pixelGridNoUIScale) * 2) * 1.25) * 0.5";	
 					shadow = 2;			
 					colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.376])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.125])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.043])",1};
-					tooltip = $STR_commander_menu_personal_save_button_tooltip;
+					tooltip = "$STR_commander_menu_personal_save_button_tooltip";
 					action = "closeDialog 0; closeDialog 0; [] spawn A3A_fnc_persistentSave;";				
 				};
 			};
@@ -342,7 +342,7 @@ class rebelMenu
 		class GameInfoTab: ScrtRscControlsGroup 
 		{
 			idc = A3A_IDC_REBEL_MENU_GAME_INFO_TAB;			
-			x = -0.4 * safezoneW + safezoneX;
+			x = QUOTE(-0.4 * safezoneW + safezoneX);
 			y = "safezoneY + (12 * pixelGridNoUIScale * pixelH)";
 			w = "26 * pixelGridNoUIScale * pixelW";			
 			h = "safezoneH - (12 * pixelGridNoUIScale * pixelH)";
@@ -352,7 +352,7 @@ class rebelMenu
 				class gameInfoDescriptionTitle: TextBase
 				{
 					idc = A3A_IDC_REBEL_MENU_GAME_INFO_DESCRIPTION_TITLE;
-					text = $STR_commander_menu_game_info_header;
+					text = "$STR_commander_menu_game_info_header";
 					x = "1 * pixelGridNoUIScale * pixelW";
 					y = "0 * pixelGridNoUIScale * pixelH";	
 					w = "22 * pixelGridNoUIScale * pixelW";	

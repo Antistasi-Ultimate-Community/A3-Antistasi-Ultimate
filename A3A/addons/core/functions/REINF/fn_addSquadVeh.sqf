@@ -4,9 +4,9 @@ if (count hcSelected player != 1) exitWith {[localize "STR_A3A_reinf_addSquadVeh
 
 _groupX = (hcSelected player select 0);
 
-if ((groupID _groupX == "Watch") or (groupID _groupX == "MineF")) exitwith {[localize "STR_A3A_reinf_addSquadVeh_header", localize "STR_A3A_reinf_addSquadVeh_already_Veh"] call A3A_fnc_customHint;};
+if ((groupId _groupX == "Watch") or (groupId _groupX == "MineF")) exitWith {[localize "STR_A3A_reinf_addSquadVeh_header", localize "STR_A3A_reinf_addSquadVeh_already_Veh"] call A3A_fnc_customHint;};
 
-_veh = cursortarget;
+_veh = cursorTarget;
 
 _typeX = typeOf _veh;
 
@@ -22,7 +22,7 @@ if (_esStatic) exitWith {[localize "STR_A3A_reinf_addSquadVeh_header", localize 
 _maxCargo = (getNumber (configFile >> "CfgVehicles" >> (_typeX) >> "transportSoldier")) + (count allTurrets [_veh, true]) + 1;
 if ({alive _x} count units _groupX > _maxCargo) exitWith {[localize "STR_A3A_reinf_addSquadVeh_header", localize "STR_A3A_reinf_addSquadVeh_no_room"] call A3A_fnc_customHint;};
 
-[localize "STR_A3A_reinf_addSquadVeh_header", format [localize "STR_A3A_reinf_addSquadVeh_success", groupID _groupX]] call A3A_fnc_customHint;
+[localize "STR_A3A_reinf_addSquadVeh_header", format [localize "STR_A3A_reinf_addSquadVeh_success", groupId _groupX]] call A3A_fnc_customHint;
 playSound "A3AP_UiSuccess";
 
 _owner = _veh getVariable "owner";

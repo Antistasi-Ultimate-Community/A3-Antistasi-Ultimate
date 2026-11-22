@@ -23,14 +23,14 @@ private _wear = ["Uniform", "Vest", "Headgear", "Glasses", "Backpack"];
 
 private _kind = switch (_type) do {
 	case "Weapon": {
-		if (_sub in ["AssaultRifle", "Rifle", "SubmachineGun", "Shotgun", "Handgun", "MachineGun", "SniperRifle", "RocketLauncher", "MissileLauncher"]) then { "weapon" } else { "" }
+		["", "weapon"] select (_sub in ["AssaultRifle", "Rifle", "SubmachineGun", "Shotgun", "Handgun", "MachineGun", "SniperRifle", "RocketLauncher", "MissileLauncher"])
 	};
 	case "Magazine": {
-		if (_sub in ["Bullet", "ShotgunShell", "Grenade", "SmokeShell", "Flare", "Shell", "Rocket", "Missile"]) then { "ammo" } else { "" }
+		["", "ammo"] select (_sub in ["Bullet", "ShotgunShell", "Grenade", "SmokeShell", "Flare", "Shell", "Rocket", "Missile"])
 	};
 	case "Mine": { "ammo" };
-	case "Item": { if (_sub in _wear) then { "clothing" } else { "gear" } };
-	case "Equipment": { if (_sub in _wear) then { "clothing" } else { "gear" } };
+	case "Item";
+	case "Equipment": { ["gear", "clothing"] select (_sub in _wear) };
 	default { "" };
 };
 

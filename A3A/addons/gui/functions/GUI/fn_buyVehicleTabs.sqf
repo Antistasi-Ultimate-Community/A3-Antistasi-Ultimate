@@ -90,18 +90,18 @@ if (_tab isEqualTo "vehicles") then
         private _label = _display ctrlCreate ["A3A_SectionStructuredLabelLeftHQstore", -1, _itemControlsGroup]; ///A3A_PictureStroke
         _label ctrlSetPosition [36 * GRID_W, 0.55 * GRID_H, 8 * GRID_W, 8 * GRID_H];
         private _dlc = "";
-        private _addons = configsourceaddonlist _configClass;
-        if (count _addons > 0) then {
-        	private _mods = configsourcemodlist (configfile >> "CfgPatches" >> _addons select 0);
-        	if (count _mods > 0) then {
+        private _addons = configSourceAddonList _configClass;
+        if (_addons isNotEqualTo []) then {
+        	private _mods = configSourceModList (configFile >> "CfgPatches" >> _addons select 0);
+        	if (_mods isNotEqualTo []) then {
         		_dlc = _mods select 0;
         	};
         };
         private _dlcParams = modParams [_dlc,["logo","logoOver"]];
         private _logo = _dlcParams param [0,""];
         private _logoOver = _dlcParams param [1,""];
-        private _fieldManualTopicAndHint = getarray (configfile >> "cfgMods" >> _dlc >> "fieldManualTopicAndHint");
-        _label ctrlseteventhandler ["buttonclick",format ["if (count %1 > 0) then {(%1 + [ctrlparent (_this select 0)]) call bis_fnc_openFieldManual;};",_fieldManualTopicAndHint]];
+        private _fieldManualTopicAndHint = getArray (configFile >> "cfgMods" >> _dlc >> "fieldManualTopicAndHint");
+        _label ctrlSetEventHandler ["buttonclick",format ["if (count %1 > 0) then {(%1 + [ctrlparent (_this select 0)]) call bis_fnc_openFieldManual;};",_fieldManualTopicAndHint]];
         private _OriginsText = composeText [
             "",image _logo
         ];
@@ -187,8 +187,8 @@ if (_tab isEqualTo "vehicles") then
         };
 
         // Crew icons and counts
-        private _hasGunners = if (_gunners > 0) then {1} else {0}; // Is there a better way to just return all positive numbers as 1?
-        private _hasPassengers = if (_passengers > 0) then {1} else {0}; // Too sleepy to think of one right now...
+        private _hasGunners = parseNumber (_gunners > 0);
+        private _hasPassengers = parseNumber (_passengers > 0);
         private _numberOfCrewTypes = (_driver + _commander + _hasGunners + _hasPassengers);
         private _crewCountHeight = _numberOfCrewTypes * 4.5 * GRID_H;
         private _crewCountYpos = 24 * GRID_H - _crewCountHeight;

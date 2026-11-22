@@ -32,7 +32,7 @@ if (gameMode == 1) then {
     if (_targetSide != teamPlayer) exitWith { _maxResources = _maxResources * (0.3 + (100-_aggro)/400) };
     _maxResources = _maxResources * (0.6 + _aggro/400);
 };
-Debug_2("Current resources %1, max resources %2", _curResources, _maxResources);
+Debug_2("Current resources %1, max resources %2",_curResources,_maxResources);
 if (_curResources < 0) exitWith { 0 };
 
 
@@ -71,7 +71,7 @@ if (_target isEqualType objNull and {_target isKindOf "Air"}) exitWith
 
     } forEach A3A_supportSpends;
 
-    Debug_5("Cur AA spend %1, max AA spend %2, targ threat %3, targ spend %4, threshold %5", _curAASpend, _maxAASpend, _targThreat, _targSpend, _threshold);
+    Debug_5("Cur AA spend %1, max AA spend %2, targ threat %3, targ spend %4, threshold %5",_curAASpend,_maxAASpend,_targThreat,_targSpend,_threshold);
     _curResources min _maxSpendTarg min (_maxAASpend - _curAASpend);
 };
 
@@ -82,15 +82,15 @@ private _threatBalance = 1;
 if (_callPos isEqualType "") then
 {
     // If target is a marker, just return the location's maximum
-    private _mrkIndex = A3A_supportMarkerTypes findif { _callPos == _x#0 };     // lookup marker name
+    private _mrkIndex = A3A_supportMarkerTypes findIf { _callPos == _x#0 };     // lookup marker name
     _callPos = markerPos _callPos;
     if (_mrkIndex == -1) exitWith {
-        Error_1("Unknown support marker: %1", _target);
+        Error_1("Unknown support marker: %1",_target);
         _maxSpendLoc = _maxSpendLoc * 0.15;
     };
     private _mrkType = A3A_supportMarkerTypes select _mrkIndex;
     _maxSpendLoc = _maxSpendLoc * (_mrkType#3);     // * _mrkType#4;            // location type multiplier * time-based random
-    Debug_1("Marker max spend %1", _maxSpendLoc);
+    Debug_1("Marker max spend %1",_maxSpendLoc);
 }
 else 
 {
@@ -104,15 +104,15 @@ else
     {
         private _mrkType = A3A_supportMarkerTypes select (_x#2);
         if (sidesX getVariable (_mrkType#0) != _side) then {        // enemy marker
-            private _dist = _x distance2d _targPos;
+            private _dist = _x distance2D _targPos;
             _defSub = _defSub max (_mrkType#3 * (1 - _dist / 500));
         } else {                                                      // friendly marker
-            private _dist = _x distance2d _callPos;
+            private _dist = _x distance2D _callPos;
             _defMul = _defMul max (_mrkType#3 * (1 - _dist / 1000));
         };
     } forEach _closeMrk;
     _maxSpendLoc = _maxSpendLoc * (_defMul - _defSub);
-    Debug_3("Max location spend %1 from defmul %2 and defsub %3", _maxSpendLoc, _defMul, _defSub);
+    Debug_3("Max location spend %1 from defmul %2 and defsub %3",_maxSpendLoc,_defMul,_defSub);
 
 
     // Prevent overreacting to threats: recentDamage + enemyStr - friendlyStr
@@ -127,7 +127,7 @@ else
         if !(_x call A3A_fnc_canFight) then { continue };
         if (vehicle _x isKindOf "Air") then { continue };
         _enemyStr = _enemyStr + ([10, 30] select isPlayer _x);          // TODO: parameterize player multiplier
-        if (vehicle _x != _x and {_x == gunner vehicle _x}) then {
+        if (!isNull objectParent _x and {_x == gunner vehicle _x}) then {
             _enemyStr = _enemyStr + (A3A_groundVehicleThreat getOrDefault [typeOf vehicle _x, 0]);
         };
     } forEach _nearEnemies;
@@ -141,14 +141,14 @@ else
         if (_x getVariable ["A3A_resPool", ""] isEqualTo "defence") then { continue };      // accounted for in supportSpends
         _friendStr = _friendStr + 10;
         // Don't include friendly statics atm because they're not remanned and not registered in recentDamage if gunner killed 
-        //if (vehicle _x != _x and {_x == gunner vehicle _x}) then {
+        //if (!isNull objectParent _x and {_x == gunner vehicle _x}) then {
         //    _friendStr = _friendStr + (A3A_groundVehicleThreat getOrDefault [typeOf vehicle _x, 0]);
         //};
     } forEach _nearFriends;
 
     _threatBalance = (2*_recentDamage + _enemyStr) / (_friendStr max 1);
     _threatBalance = 1 min (_threatBalance - 1);
-    Debug_4("Threat balance %1 from: Recent damage %2 enemy strength %3 friend strength %4", _threatBalance, _recentDamage, _enemyStr, _friendStr);
+    Debug_4("Threat balance %1 from: Recent damage %2 enemy strength %3 friend strength %4",_threatBalance,_recentDamage,_enemyStr,_friendStr);
 
 //    _maxSpend = _maxSpend min 2*(2*_recentDamage + _enemyStr - _friendStr);
 };
@@ -168,16 +168,16 @@ private _targPosSpend = 0;
     private _res = linearConversion [_spTime, (_spTime)+3600, time, _spRes, 0, true];
 
     // Falloff resource spend to 0 at 500m distance
-    private _callDist = _spCallPos distance2d _callPos;
+    private _callDist = _spCallPos distance2D _callPos;
     _callPosSpend = _callPosSpend + linearConversion [0, 500, _callDist, _res, 0, true];
 
     if (_target isEqualType west) then { continue };
-    private _targDist = _spTargPos distance2d _target;
+    private _targDist = _spTargPos distance2D _target;
     _targPosSpend = _targPosSpend + linearConversion [0, 500, _targDist, _res, 0, true];
 
 } forEach A3A_supportSpends;
 
-Debug_2("Callpos spend %1, targpos spend %2", _callPosSpend, _targPosSpend);
+Debug_2("Callpos spend %1, targpos spend %2",_callPosSpend,_targPosSpend);
 
 private _maxSpend = _threatBalance*_maxSpendLoc - (_callPosSpend max _targPosSpend);      // reduce by what's already been spent
 _maxSpend = _maxSpend min _curResources min (_maxResMod*_maxSpendLoc);
@@ -186,6 +186,6 @@ _maxSpend = _maxSpend min _curResources min (_maxResMod*_maxSpendLoc);
 // Does this adequately replace the counterAttack size check? Probably...
 private _minThreshold = (2.1 * A3A_balanceVehicleCost) min (0.5 * _maxSpendLoc);
 private _minResponse = round (time / 120) random _minThreshold;
-Debug_3("Max spend %1 with minThreshold %2 and minResponse %3", _maxSpend, _minThreshold, _minResponse);
+Debug_3("Max spend %1 with minThreshold %2 and minResponse %3",_maxSpend,_minThreshold,_minResponse);
 if (_maxSpend < _minResponse) then { _maxSpend = 0 };
 _maxSpend;

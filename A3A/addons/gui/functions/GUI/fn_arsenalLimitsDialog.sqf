@@ -54,7 +54,7 @@ switch (_mode) do
 
         // color-invert the selected button, restore the others 
         {
-            private _ctrl = _display displayctrl (A3A_IDC_ARSLIMTYPESBASE + _x);
+            private _ctrl = _display displayCtrl (A3A_IDC_ARSLIMTYPESBASE + _x);
             _ctrl ctrlEnable ([true, false] select (_x == _typeIndex));
         } forEach [0,1,2,3,4,5,6,8,9,11,12,18,19,20,22,23,24,25,26];
     };

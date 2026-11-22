@@ -1,3 +1,5 @@
+#pragma hemtt ignore_variables ["_addon"]
+
 _addon set ["vehiclesCivCar", [
   "ivory_gti",2.0          //VW Golf GTI
   ,"ivory_prius",2.0      //Toyota Prius

@@ -12,7 +12,7 @@
     class GVAR(Rivals_Partisan) : GVAR(Rivals_Base) {
         scope = 2;
         scopeCurator = 2;
-        displayName = $STR_A3U_Zeus_UnitType_Partisan;
+        displayName = "$STR_A3U_Zeus_UnitType_Partisan";
         editorSubcategory = QGVAR(Militia);
         role = "Rifleman";
         nameSound = "veh_infantry_s";
@@ -22,25 +22,25 @@
         GVAR(unitType) = QUOTE(Partisan);
     };
     class GVAR(Rivals_Mercenary) : GVAR(Rivals_Partisan) {
-        displayName = $STR_A3U_Zeus_UnitType_Mercenary;
+        displayName = "$STR_A3U_Zeus_UnitType_Mercenary";
         GVAR(unitType) = QUOTE(Mercenary);
     };
     class GVAR(Rivals_Minuteman) : GVAR(Rivals_Partisan) {
-        displayName = $STR_A3U_Zeus_UnitType_Minuteman;
+        displayName = "$STR_A3U_Zeus_UnitType_Minuteman";
         GVAR(unitType) = QUOTE(Minuteman);
     };
     class GVAR(Rivals_Enforcer) : GVAR(Rivals_Partisan) {
-        displayName = $STR_A3U_Zeus_UnitType_Enforcer;
+        displayName = "$STR_A3U_Zeus_UnitType_Enforcer";
         GVAR(unitType) = QUOTE(Enforcer);
     };
     class GVAR(Rivals_CellLeader) : GVAR(Rivals_Partisan) {
-        displayName = $STR_A3U_Zeus_UnitType_CellLeader;
+        displayName = "$STR_A3U_Zeus_UnitType_CellLeader";
         icon = "iconManLeader";
         role = "SquadLeader";
         GVAR(unitType) = QUOTE(CellLeader);
     };
     class GVAR(Rivals_Commander) : GVAR(Rivals_Partisan) {
-        displayName = $STR_A3U_Zeus_UnitType_Commander;
+        displayName = "$STR_A3U_Zeus_UnitType_Commander";
         icon = "iconManOfficer";
         role = "SquadLeader";
         nameSound = "veh_infantry_officer_s";
@@ -49,7 +49,7 @@
         GVAR(unitType) = QUOTE(Commander);
     };
     class GVAR(Rivals_Medic) : GVAR(Rivals_Partisan) {
-        displayName = $STR_A3U_Zeus_UnitType_Medic;
+        displayName = "$STR_A3U_Zeus_UnitType_Medic";
         attendant = 1;
         icon = "iconManMedic";
         picture = "pictureHeal";
@@ -60,7 +60,7 @@
         GVAR(unitType) = QUOTE(Medic);
     };
     class GVAR(Rivals_ExplosivesExpert) : GVAR(Rivals_Partisan) {
-        displayName = $STR_A3U_Zeus_UnitType_EExpert;
+        displayName = "$STR_A3U_Zeus_UnitType_EExpert";
         canDeactivateMines = 1;
         icon = "iconManExplosive";
         picture = "pictureExplosive";
@@ -68,12 +68,12 @@
         GVAR(unitType) = QUOTE(ExplosivesExpert);
     };
     class GVAR(Rivals_Saboteur) : GVAR(Rivals_Partisan) {
-        displayName = $STR_A3U_Zeus_UnitType_Saboteur;
+        displayName = "$STR_A3U_Zeus_UnitType_Saboteur";
         role = "Grenadier";
         GVAR(unitType) = QUOTE(Saboteur);
     };
     class GVAR(Rivals_SpecialistAT) : GVAR(Rivals_Partisan) {
-        displayName = $STR_A3U_Zeus_UnitType_ATSpecialist;
+        displayName = "$STR_A3U_Zeus_UnitType_ATSpecialist";
         icon = "iconManAT";
         role = "ATSpecialist";
         nameSound = "veh_infantry_AT_s";
@@ -82,12 +82,12 @@
         GVAR(unitType) = QUOTE(SpecialistAT);
     };
     class GVAR(Rivals_SpecialistAA) : GVAR(Rivals_Partisan) {
-        displayName = $STR_A3U_Zeus_UnitType_AASpecialist;
+        displayName = "$STR_A3U_Zeus_UnitType_AASpecialist";
         role = "AASpecialist";
         GVAR(unitType) = QUOTE(SpecialistAA);
     };
     class GVAR(Rivals_Oppressor) : GVAR(Rivals_Partisan) {
-        displayName = $STR_A3U_Zeus_UnitType_Oppressor;
+        displayName = "$STR_A3U_Zeus_UnitType_Oppressor";
         icon = "iconManMG";
         role = "MachineGunner";
         nameSound = "veh_infantry_MG_s";
@@ -96,7 +96,7 @@
         GVAR(unitType) = QUOTE(Oppressor);
     };
     class GVAR(Rivals_Sharpshooter) : GVAR(Rivals_Partisan) {
-        displayName = $STR_A3U_Zeus_UnitType_Marksman;
+        displayName = "$STR_A3U_Zeus_UnitType_Marksman";
         role = "Marksman";
         nameSound = "veh_infantry_sniper_s";
         textSingular = "sniper";
@@ -104,12 +104,12 @@
         GVAR(unitType) = QUOTE(Sharpshooter);
     };
     class GVAR(Rivals_Crew) : GVAR(Rivals_Partisan) {
-        displayName = $STR_A3U_Zeus_UnitType_Crew;
+        displayName = "$STR_A3U_Zeus_UnitType_Crew";
         role = "Crew";
         GVAR(unitType) = QUOTE(Crew);
     };
     class GVAR(Rivals_Pilot) : GVAR(Rivals_Partisan) {
-        displayName = $STR_A3U_Zeus_UnitType_Pilot;
+        displayName = "$STR_A3U_Zeus_UnitType_Pilot";
         role = "Pilot";
         nameSound = "veh_infantry_pilot_s";
         textSingular = "pilot";
@@ -117,7 +117,7 @@
         GVAR(unitType) = QUOTE(Pilot);
     };
     class GVAR(Rivals_Unarmed) : GVAR(Rivals_Partisan) {
-        displayName = $STR_A3U_Zeus_UnitType_Unarmed;
+        displayName = "$STR_A3U_Zeus_UnitType_Unarmed";
         role = "Unarmed";
         GVAR(unitType) = QUOTE(Unarmed);
     };
@@ -128,16 +128,16 @@
         scopeCurator = 2;
         faction = QGVAR(Rivals);
         side = 0;
-        displayName = $STR_A3U_Zeus_VehicleType_LightUnarmed;
+        displayName = "$STR_A3U_Zeus_VehicleType_LightUnarmed";
         GVAR(vehFaction) = QUOTE(riv);
         GVAR(vehType) = QUOTE(vehiclesRivalsCars);
     };
     class GVAR(Rivals_Vehicle_LightArmed) : GVAR(Rivals_Vehicle_LightUnarmed) {
-        displayName = $STR_A3U_Zeus_VehicleType_LightArmed;
+        displayName = "$STR_A3U_Zeus_VehicleType_LightArmed";
         GVAR(vehType) = QUOTE(vehiclesRivalsLightArmed);
     };
     class GVAR(Rivals_Vehicle_Truck) : GVAR(Rivals_Vehicle_LightUnarmed) {
-        displayName = $STR_A3U_Zeus_VehicleType_Truck;
+        displayName = "$STR_A3U_Zeus_VehicleType_Truck";
         GVAR(vehType) = QUOTE(vehiclesRivalsTrucks);
     };
     class GVAR(Rivals_Vehicle_APC) : GVAR(Vehicle_APC_Base) {
@@ -145,7 +145,7 @@
         scopeCurator = 2;
         faction = QGVAR(Rivals);
         side = 0;
-        displayName = $STR_A3U_Zeus_VehicleType_APC;
+        displayName = "$STR_A3U_Zeus_VehicleType_APC";
         GVAR(vehFaction) = QUOTE(riv);
         GVAR(vehType) = QUOTE(vehiclesRivalsAPCs);
     };
@@ -154,7 +154,7 @@
         scopeCurator = 2;
         faction = QGVAR(Rivals);
         side = 0;
-        displayName = $STR_A3U_Zeus_VehicleType_Tank;
+        displayName = "$STR_A3U_Zeus_VehicleType_Tank";
         GVAR(vehFaction) = QUOTE(riv);
         GVAR(vehType) = QUOTE(vehiclesRivalsTanks);
     };
@@ -163,7 +163,7 @@
         scopeCurator = 2;
         faction = QGVAR(Rivals);
         side = 0;
-        displayName = $STR_A3U_Zeus_VehicleType_Heli;
+        displayName = "$STR_A3U_Zeus_VehicleType_Heli";
         GVAR(vehFaction) = QUOTE(riv);
         GVAR(vehType) = QUOTE(vehiclesRivalsHelis);
     };
@@ -172,14 +172,14 @@
         scopeCurator = 2;
         faction = QGVAR(Rivals);
         side = 0;
-        displayName = $STR_A3U_Zeus_VehicleType_StaticWpn;
+        displayName = "$STR_A3U_Zeus_VehicleType_StaticWpn";
         GVAR(vehFaction) = QUOTE(riv);
         GVAR(vehType) = QUOTE(staticLowWeapons);
     };
     class GVAR(Rivals_Vehicle_Mortar) : GVAR(Vehicle_StaticMortar_Base) {
         scope = 2;
         scopeCurator = 2;
-        displayName = $STR_A3U_Zeus_VehicleType_Mortar;
+        displayName = "$STR_A3U_Zeus_VehicleType_Mortar";
         faction = QGVAR(Rivals);
         side = 0;
         GVAR(vehFaction) = QUOTE(riv);

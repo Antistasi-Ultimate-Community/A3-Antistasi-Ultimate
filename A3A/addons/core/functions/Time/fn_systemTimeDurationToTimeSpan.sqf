@@ -127,7 +127,7 @@ if(_durationHOUR < 0) then
 };
 
 private _durationDAYS = _finalTime # DAYS - _initTime # DAYS;
-if(_durationDAYS < 0) exitwith
+if(_durationDAYS < 0) exitWith
 {
     // days are not uniform, so just do this shit. WELCOME TO HELL.
     [false, 0, 0, 0, 0, 0, 0, 0]	

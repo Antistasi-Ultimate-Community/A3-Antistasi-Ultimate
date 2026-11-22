@@ -29,7 +29,7 @@ if (_target isKindOf "Man") then { _targetOffset getPos [random 100, random 360]
 private _inPosition = false;
 while {true} do {
     if (!alive _target or !canMove _plane or isNull driver _plane) exitWith {
-        Debug_1("Divebomb pre-dive for %1 terminated before completion", _supportName);
+        Debug_1("Divebomb pre-dive for %1 terminated before completion",_supportName);
     };
 
     // Target lead calc
@@ -44,13 +44,13 @@ while {true} do {
     _plane flyInHeight _startAlt;
     _group setCurrentWaypoint _waypoint;
 
-    private _horizDist = _plane distance2d _targetPos;
+    private _horizDist = _plane distance2D _targetPos;
     private _diveDist = (getPosATL _plane#2) / tan _diveAngle;      //_cpHorizDist + 
     private _remDist = _horizDist - _diveDist;
 
-    Debug_3("HorizDist %1, diveDist %2, heading %3", _horizDist, _diveDist, _targDirFwd vectorDotProduct vectorDir _plane);
+    Debug_3("HorizDist %1, diveDist %2, heading %3",_horizDist,_diveDist,_targDirFwd vectorDotProduct vectorDir _plane);
 
-    if (_remDist < -25) exitWith { Debug_1("Divebomb pre-dive for %1 terminated due to overshoot", _supportName) };
+    if (_remDist < -25) exitWith { Debug_1("Divebomb pre-dive for %1 terminated due to overshoot",_supportName) };
     if (_remDist < 25 and _targDirFwd vectorDotProduct vectorDir _plane > 0.9) exitWith { _inPosition = true };
 
     private _sleepTime = 0.1 max (_remDist / (1.2 * vectorMagnitude velocity _plane)) min 1;
@@ -58,7 +58,7 @@ while {true} do {
 };
 
 if (!_inPosition) exitWith { false };
-Debug_1("Divebomb dive started for %1", _supportName);
+Debug_1("Divebomb dive started for %1",_supportName);
 
 
 // Remove weapon inaccuracy from bombs

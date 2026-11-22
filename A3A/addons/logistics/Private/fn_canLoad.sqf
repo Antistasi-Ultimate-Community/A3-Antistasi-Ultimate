@@ -56,7 +56,7 @@ private _weapon = 1 == getNumber (_cargoConfig/"isWeapon");
 private _allowed = if (!_weapon) then {true} else {
     if (0 == getNumber (_vehConfig/"canLoadWeapon")) exitWith {false};
 
-    private _vehModel = getText (configFile/"CfgVehicles"/typeOf _vehicle/"model");
+    private _vehModel = getText (configOf _vehicle/"model");
     private _blackList = getArray (_cargoConfig/"blackList");
     !(
         _vehModel in _blackList
@@ -134,6 +134,6 @@ if ((_node#0) isEqualType []) then {
     _seats append (_node#2);
     _turrets append (_node#3);
 };
-if !(_fullCrew findIf {_x#2 in _seats || {_x#3 in _turrets}} isEqualTo -1) exitWith {-9};
+if (_fullCrew findIf {_x#2 in _seats || {_x#3 in _turrets}} isNotEqualTo -1) exitWith {-9};
 
 [_object, _vehicle, _node, _weapon]

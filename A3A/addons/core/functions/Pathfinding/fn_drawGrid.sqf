@@ -25,17 +25,17 @@ params
 
 {
     private _roadMarker = createMarker [format ["Marker%1", _forEachIndex], (_x select 0)];
-    _roadMarker setMarkerShape "ICON";
-    _roadMarker setMarkerAlpha 1;
+    _roadMarker setMarkerShapeLocal "ICON";
+    _roadMarker setMarkerAlphaLocal 1;
     if(_x select 2) then
     {
-        _roadMarker setMarkerColor "ColorGreen";
+        _roadMarker setMarkerColorLocal "ColorGreen";
     }
     else
     {
-        _roadMarker setMarkerColor "ColorGrey";
+        _roadMarker setMarkerColorLocal "ColorGrey";
     };
-    _roadMarker setMarkerText (str (count (_x select 3)));
+    _roadMarker setMarkerTextLocal (str (count (_x select 3)));
     if(count (_x select 3) > 2) then
     {
         _roadMarker setMarkerType "mil_box";

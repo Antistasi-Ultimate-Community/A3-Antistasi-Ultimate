@@ -13,7 +13,7 @@ private _vehicles = [];
 private _groups = [];
 private _props = [];
 
-private _sideX = if (sidesX getVariable [_markerX, sideUnknown] == Occupants) then {Occupants} else {Invaders};
+private _sideX = [Invaders, Occupants] select (sidesX getVariable [_markerX, sideUnknown] == Occupants);
 private _faction = Faction(_sideX);
 private _difficultX = random 10 < tierWar;
 private _positionX = getMarkerPos _markerX;
@@ -354,7 +354,7 @@ waitUntil {
     ({(alive _x) and (_x distance getMarkerPos respawnTeamPlayer < 50)} count _POWs > 0)
 };
 
-_bonus = if (_difficultX) then {2} else {1};
+_bonus = [1, 2] select (_difficultX);
 
 if ({alive _x} count _POWs == 0) then {
 	[_taskId, "RES", "FAILED"] call A3A_fnc_taskSetState;
@@ -388,7 +388,7 @@ if ({alive _x} count _POWs == 0) then {
 
 	{
         [_x] join _grpPOW; 
-        [_x] orderGetin false
+        [_x] orderGetIn false
     } forEach _POWs;
 
     private _ammoBox = (_faction get "ammobox") createVehicle (getMarkerPos "Synd_HQ");
