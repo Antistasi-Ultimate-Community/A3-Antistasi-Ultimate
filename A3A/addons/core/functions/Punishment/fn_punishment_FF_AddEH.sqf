@@ -39,7 +39,7 @@ if (!(_unit isKindOf "Man")) exitWith {
     false;
 };
 
-private _isAI = !isPlayer _unit || !hasInterface || {!(_unit isEqualTo player)}; // Avoiding adding fired handlers for Ai. Needs to be local for ace, self punishment, and checkStatus.
+private _isAI = !isPlayer _unit || !hasInterface || {(_unit isNotEqualTo player)}; // Avoiding adding fired handlers for Ai. Needs to be local for ace, self punishment, and checkStatus.
 
 if (_isAI && !_addToAI) exitWith {true};
 
@@ -61,7 +61,7 @@ _unit addEventHandler ["Killed", {
 _unit addEventHandler ["Hit", {
     params ["_unit", "_source", "_damage", "_instigator"];
 
-    private _suspect = [_instigator, _killer] select isNull _instigator;
+    private _suspect = [_instigator, _source] select isNull _instigator;
     HANDLE_ZEUS_EXCEPTION(_suspect);
 
     [[_instigator,_source], 60, 0.4, _unit] remoteExecCall ["A3A_fnc_punishment_evaluateEvent",2,false];

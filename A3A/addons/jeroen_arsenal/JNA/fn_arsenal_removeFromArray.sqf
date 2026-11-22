@@ -23,7 +23,7 @@ if(typeName (_remove select 0) isEqualTo "STRING")then{_remove = [_remove]};
     private _name = _x select 0;
     private _amount = _x select 1;
 
-    if!(_name isEqualTo "")then{//skip items with no nam
+    if(_name isNotEqualTo "")then{//skip items with no nam
         {
             private _index2 = _forEachIndex;
             private _name2 = _x select 0;

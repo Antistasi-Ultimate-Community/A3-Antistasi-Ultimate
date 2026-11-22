@@ -1,3 +1,5 @@
+#pragma hemtt ignore_variables ["_fnc_saveToTemplate","_fnc_getFromTemplate"]
+
 ["attributesVehicles", [
     ["I_SDV_01_F", ["rebCost", 3000]],
     ["I_Boat_Armed_01_minigun_F", ["rebCost", 5000]],

@@ -8,12 +8,12 @@ private _planeVehicle = vehicle _plane;
 sleep random 5;
 
 private _nearestLocation = nearestLocation [getPos _planeVehicle, "NameCity"];
-Info_2("Dropping cargo at %1 (near %2)", getPos _planeVehicle, text _nearestLocation);
+Info_2("Dropping cargo at %1 (near %2)",getPos _planeVehicle,text _nearestLocation);
 
 if (alive _planeVehicle) then {
 
     private _supplyDrop = createVehicle [_payload, [getPos _planeVehicle select 0, getPos _planeVehicle select 1, (getPos _planeVehicle select 2)- 5], [], 0, "NONE"];
-    waituntil {!isnull _supplyDrop};
+    waitUntil {!isNull _supplyDrop};
     sleep 1.5;
 
     private _paraPos = nil;
@@ -37,8 +37,8 @@ if (alive _planeVehicle) then {
     
 	private _startTime = time;
 
-    [_supplyDrop, _para] spawn {
-        params ["_obj","_para"];
+    [_supplyDrop, _para, _startTime] spawn {
+        params ["_obj","_para","_startTime"];
 
         private _smokeShellVariants = ["SmokeShellRed", "SmokeShellGreen", "SmokeShellYellow", "SmokeShellPurple", "SmokeShellBlue", "SmokeShellOrange"];
 

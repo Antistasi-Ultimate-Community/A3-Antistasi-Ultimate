@@ -37,7 +37,7 @@ if !assert(isClass(_config)) exitWith { false };
 
 // Quick check if the mag exists at all
 if !(_magazine in magazineCargo _unit) exitWith {
-    Debug_2("Magazine %1 not found in unit %2", _magazine, _unit);
+    Debug_2("Magazine %1 not found in unit %2",_magazine,_unit);
     false;
 };
 

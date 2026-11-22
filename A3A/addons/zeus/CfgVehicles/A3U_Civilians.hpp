@@ -20,7 +20,7 @@
         magazines[] = {};
         respawnMagazines[] = {};
         GVAR(unitFaction) = QUOTE(civ);
-        class EventHandlers {
+        class EventHandlers : EventHandlers {
             class ADDON {
                 PostInit = UNIT_INIT_HANDLER;
             };
@@ -30,7 +30,7 @@
         scope = 2;
         scopeCurator = 2;
         editorSubcategory = QGVAR(Other);
-        displayName = $STR_A3U_Zeus_UnitType_Man;
+        displayName = "$STR_A3U_Zeus_UnitType_Man";
         //role = "Rifleman";
         nameSound = "veh_infantry_civilian_s";
         textSingular = "civilian";
@@ -39,11 +39,11 @@
         GVAR(unitType) = QUOTE(Man);
     };
 	class GVAR(Civilians_Press) : GVAR(Civilians_Man) {
-		displayName = $STR_A3U_Zeus_UnitType_Press;
+		displayName = "$STR_A3U_Zeus_UnitType_Press";
 		GVAR(unitType) = QUOTE(Press);
 	};
 	class GVAR(Civilians_Worker) : GVAR(Civilians_Man) {
-		displayName = $STR_A3U_Zeus_UnitType_Worker;
+		displayName = "$STR_A3U_Zeus_UnitType_Worker";
 		GVAR(unitType) = QUOTE(Worker);
 	};
 
@@ -54,25 +54,25 @@
         faction = QGVAR(Civilians);
         side = 3;
         GVAR(vehFaction) = QUOTE(civ);
-        displayName = $STR_A3U_Zeus_VehicleType_CivCar;
+        displayName = "$STR_A3U_Zeus_VehicleType_CivCar";
         GVAR(vehType) = QUOTE(vehiclesCivCar);
     };
     class GVAR(Civilians_Vehicle_Industrial) : GVAR(Civilians_Vehicle_Car) {
-        displayName = $STR_A3U_Zeus_VehicleType_CivIndustrial;
+        displayName = "$STR_A3U_Zeus_VehicleType_CivIndustrial";
         GVAR(vehType) = QUOTE(vehiclesCivIndustrial);
     };
 	class GVAR(Civilians_Vehicle_Repair) : GVAR(Civilians_Vehicle_Car) {
-        displayName = $STR_A3U_Zeus_VehicleType_CivRepair;
+        displayName = "$STR_A3U_Zeus_VehicleType_CivRepair";
         GVAR(vehType) = QUOTE(vehiclesCivRepair);
     };
 	class GVAR(Civilians_Vehicle_Medical) : GVAR(Civilians_Vehicle_Car) {
-        displayName = $STR_A3U_Zeus_VehicleType_CivMedical;
+        displayName = "$STR_A3U_Zeus_VehicleType_CivMedical";
         GVAR(vehType) = QUOTE(vehiclesCivMedical);
     };
 	class GVAR(Civilians_Vehicle_Boat) : GVAR(Vehicle_Ship_Base) {
         scope = 2;
         scopeCurator = 2;
-        displayName = $STR_A3U_Zeus_VehicleType_CivBoat;
+        displayName = "$STR_A3U_Zeus_VehicleType_CivBoat";
         faction = QGVAR(Civilians);
         side = 3;
         GVAR(vehFaction) = QUOTE(civ);

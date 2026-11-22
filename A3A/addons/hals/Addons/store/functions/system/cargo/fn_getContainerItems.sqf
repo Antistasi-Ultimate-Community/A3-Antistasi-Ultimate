@@ -17,16 +17,16 @@ params [
 ];
 
 private _containerItems = [];
-if (isNull _unit) exitWith {_containerItems};
+if (isNull _container) exitWith {_containerItems};
 
 private _backpack = backpackCargo _container;
-if (count _backpack > 0) then {_containerItems append _backpack};
+if (_backpack isNotEqualTo []) then {_containerItems append _backpack};
 
 private _magazines = magazineCargo _container;
-if (count _magazines > 0) then {_containerItems append _magazines};
+if (_magazines isNotEqualTo []) then {_containerItems append _magazines};
 
 private _weapons = weaponsItemsCargo _container;
-if (count _weapons > 0) then {
+if (_weapons isNotEqualTo []) then {
     {
         {
             if (_x isEqualType []) then {

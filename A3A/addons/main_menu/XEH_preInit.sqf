@@ -2,7 +2,7 @@
 
 private _settingHeader = "[Antistasi Ultimate]"; // This ensures it's at the top
 
-private _images = (configfile >> "A3AU_Images") call BIS_fnc_getCfgSubClasses;
+private _images = (configFile >> "A3AU_Images") call BIS_fnc_getCfgSubClasses;
 
 private _cfgNameArray = [];
 private _pathArray = [];

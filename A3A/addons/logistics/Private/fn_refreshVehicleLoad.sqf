@@ -20,7 +20,7 @@
 params ["_vehicle"];
 
 private _cargo = _vehicle getVariable ["Cargo",[]];
-if (_cargo findIf {!((_x#0) isEqualTo objNull)} isEqualTo -1) then { //if all remaining cargo on list is objNull, reset list
+if (_cargo findIf {((_x#0) isNotEqualTo objNull)} isEqualTo -1) then { //if all remaining cargo on list is objNull, reset list
     private _nodes = [_vehicle] call A3A_Logistics_fnc_getVehicleNodes;
     _vehicle setVariable [QGVAR(Nodes),_nodes];
     _vehicle setVariable ["Cargo", []];

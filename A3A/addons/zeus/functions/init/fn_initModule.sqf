@@ -37,17 +37,17 @@ private _fnc_addToGroup = {
 	private _group = missionNamespace getVariable format ["bis_fnc_initmodules_%1", _category];
 	[_module] joinSilent _group;
 
-	Debug_2("Module %1 joined group %2", _module, _group);
+	Debug_2("Module %1 joined group %2",_module,_group);
 };
 
 private _fnc_validateArgsAndRun = {
 	params ["_module", ["_cfg", configNull]];
 
-	Debug_1("Module: %1 | Validating args.", _module);
+	Debug_1("Module: %1 | Validating args.",_module);
 
 	private _category = (_cfg >> "category") call BIS_fnc_getCfgData;
 	private _target = attachedTo _module;
-	Debug_2("Module: %1 | Attached To: %2", _module, _target);
+	Debug_2("Module: %1 | Attached To: %2",_module,_target);
 	
 	private ["_argsValidated"];
 	switch (_category) do {
@@ -91,15 +91,15 @@ private _fnc_validateArgsAndRun = {
 	};
 
 	private _function = (_cfg >> "function") call BIS_fnc_getCfgData;
-	Debug_3("Module: %1 | Validated args: %2 | Function: %3", _module, _argsValidated, _function);
+	Debug_3("Module: %1 | Validated args: %2 | Function: %3",_module,_argsValidated,_function);
 	if (_function isEqualType "") then { _function = missionNamespace getVariable _function };
-	if (isNil "_function") exitWith { Error_2("Module: %1 attempted to spawn invalid function: %2", _module, _function) };
+	if (isNil "_function") exitWith { Error_2("Module: %1 attempted to spawn invalid function: %2",_module,_function) };
 
 	_argsValidated spawn _function;
 	deleteVehicle _module;
 };
 
-Debug_1("Initializing module: %1", _module);
+Debug_1("Initializing module: %1",_module);
 
 if (isNil "_module") exitWith {};
 
