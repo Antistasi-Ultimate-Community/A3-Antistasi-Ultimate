@@ -40,6 +40,19 @@ jobs:
           persist-credentials: false
           submodules: true # for A3OVG (and any other submodules) use later
 
+      - name: Add missing includes from target branch # Workflow checks out the PR, which if created before includes were added will be missing the includes. Add them here so HEMTT can use them.
+        shell: pwsh
+        run: |
+          $source = (Resolve-Path .\base\A3A\include).Path
+          Get-ChildItem $source -Recurse -File | ForEach-Object {
+            $destination = Join-Path .\pr\A3A\include $_.FullName.Substring($source.Length)
+            if (-not (Test-Path -LiteralPath $destination)) {
+              New-Item -ItemType Directory -Path (Split-Path $destination) -Force | Out-Null
+              Copy-Item -LiteralPath $_.FullName -Destination $destination
+              "Added $destination"
+            }
+          }
+
       - name: Setup HEMTT
         uses: arma-actions/hemtt@v1
         with:
