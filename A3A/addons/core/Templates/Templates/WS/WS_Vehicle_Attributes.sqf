@@ -1,3 +1,5 @@
+#pragma hemtt ignore_variables ["_fnc_saveToTemplate"]
+
 ["attributesVehicles", [
     // Attack helis with only fixed miniguns
     ["O_Heli_Light_02_dynamicLoadout_F", ["cost", 100]],

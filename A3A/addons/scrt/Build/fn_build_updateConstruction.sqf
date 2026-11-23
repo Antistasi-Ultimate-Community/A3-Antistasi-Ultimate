@@ -42,4 +42,4 @@ if (_buildingIndex == -1) exitWith {
 constructionsToSave set [_buildingIndex, _building];
 publicVariable "constructionsToSave";
 
-Info_2("Updated already created %1 object on %2 position.", (typeOf _construction), str (position _construction));
+Info_2("Updated already created %1 object on %2 position.",(typeOf _building),str (position _building));

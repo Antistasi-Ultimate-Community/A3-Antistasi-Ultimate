@@ -1,23 +1,845 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="HALLYG_STORE">
+    <Package name="A3AU_hals_store">
+        <!-- category names -->
+        <Container name="A3AU_hals_store_categories">
+            <Key ID="STR_A3AU_backpacks">
+                <Original>Backpacks</Original>
+                <Russian>Рюкзаки</Russian>
+                <Korean>군장</Korean>
+                <Chinesesimp>背包</Chinesesimp>
+                <Turkish>Sırt Çantaları</Turkish>
+            </Key>
+            <Key ID="STR_A3AU_bagsStatics">
+                <Original>Bags with Statics</Original>
+                <French>Sacs avec statique</French>
+                <Russian>Сумки со Стационарным оружием</Russian>
+                <Korean>고정화기 가방</Korean>
+                <Chinesesimp>装有静态武器的背包</Chinesesimp>
+                <Turkish>Statik Silah Çantaları</Turkish>
+            </Key>
+            <Key ID="STR_A3AU_binoculars">
+                <Original>Binoculars</Original>
+                <French>Jumelles</French>
+                <Russian>Бинокли</Russian>
+                <Korean>쌍안경</Korean>
+                <Chinesesimp>望远镜</Chinesesimp>
+                <Turkish>Dürbünler</Turkish>
+            </Key>
+            <Key ID="STR_A3AU_bipods">
+                <Original>Bipods</Original>
+                <French>Bipieds</French>
+                <Russian>Сошки</Russian>
+                <Korean>양각대</Korean>
+                <Chinesesimp>脚架</Chinesesimp>
+                <Turkish>Çatalayak</Turkish>
+            </Key>
+            <Key ID="STR_A3AU_camouflage">
+                <Original>Camouflage</Original>
+                <French>Camouflage</French>
+                <Russian>Камуфляж</Russian>
+                <Korean>위장복</Korean>
+                <Chinesesimp>迷彩</Chinesesimp>
+                <Turkish>Kamuflaj</Turkish>
+            </Key>
+            <Key ID="STR_A3AU_facewear">
+                <Original>Facewear</Original>
+                <Russian>Очки/шарфы</Russian>
+                <Korean>페이스웨어</Korean>
+                <Chinesesimp>面部装备</Chinesesimp>
+                <Turkish>Yüz Aksesuarları</Turkish>
+            </Key>
+            <Key ID="STR_A3AU_flashlights">
+                <Original>Flashlights</Original>
+                <French>Lampes de poche</French>
+                <Russian>Фонарики</Russian>
+                <Korean>손전등</Korean>
+                <Chinesesimp>手电筒</Chinesesimp>
+                <Turkish>Fenerler</Turkish>
+            </Key>
+            <Key ID="STR_A3AU_glGrenades">
+                <Original>GL Grenades</Original>
+                <French>GL Grenades</French>
+                <Russian>Подствольные Гранаты</Russian>
+                <Korean>유탄발사기</Korean>
+                <Chinesesimp>榴弹</Chinesesimp>
+                <Turkish>Bombaatar Mühimmatları</Turkish>
+            </Key>
+            <Key ID="STR_A3AU_gps">
+                <Original>GPS</Original>
+                <French>GPS</French>
+                <Russian>GPS</Russian>
+                <Korean>GPS</Korean>
+                <Chinesesimp>GPS</Chinesesimp>
+                <Turkish>GPS</Turkish>
+            </Key>
+            <Key ID="STR_A3AU_grips">
+                <Original>Grips</Original>
+                <French>Crosses</French>
+                <Russian>Рукоятки</Russian>
+                <Korean>그립</Korean>
+                <Chinesesimp>握把</Chinesesimp>
+                <Turkish>Tutamaklar</Turkish>
+            </Key>
+            <Key ID="STR_A3AU_handguns">
+                <Original>Handguns</Original>
+                <French>Armes de poing</French>
+                <Russian>Пистолеты</Russian>
+                <Korean>권총</Korean>
+                <Chinesesimp>手枪</Chinesesimp>
+                <Turkish>Tabancalar</Turkish>
+            </Key>
+            <Key ID="STR_A3AU_handles">
+                <Original>Handles</Original>
+                <French>Poignées</French>
+                <Russian>Рукоятки</Russian>
+                <Korean>손잡이</Korean>
+                <Chinesesimp>提把</Chinesesimp>
+                <Turkish>Kollar</Turkish>
+            </Key>
+            <Key ID="STR_A3AU_helmets">
+                <Original>Helmets</Original>
+                <Russian>Шлемы</Russian>
+                <Korean>헬멧</Korean>
+                <Chinesesimp>头盔</Chinesesimp>
+                <Turkish>Kasklar</Turkish>
+            </Key>
+            <Key ID="STR_A3AU_launcherAmmo">
+                <Original>Missiles and Rockets</Original>
+                <French>Missiles et roquettes</French>
+                <Russian>Ракеты и Реактивные гранаты</Russian>
+                <Korean>미사일과 로켓</Korean>
+                <Chinesesimp>导弹和火箭弹</Chinesesimp>
+                <Turkish>Füzeler ve Roketler</Turkish>
+            </Key>
+            <Key ID="STR_A3AU_launchers">
+                <Original>Launchers</Original>
+                <French>Lanceurs</French>
+                <Russian>Пусковые Установки</Russian>
+                <Korean>발사기</Korean>
+                <Chinesesimp>发射器</Chinesesimp>
+                <Turkish>Fırlatıcılar</Turkish>
+            </Key>
+            <Key ID="STR_A3AU_magazines">
+                <Original>Magazines</Original>
+                <French>Magasins</French>
+                <Russian>Магазины</Russian>
+                <Korean>탄창</Korean>
+                <Chinesesimp>弹匣</Chinesesimp>
+                <Turkish>Şarjörler</Turkish>
+            </Key>
+            <Key ID="STR_A3AU_mgs">
+                <Original>MGs</Original>
+                <French>MGs</French>
+                <Russian>Пулемёты</Russian>
+                <Korean>기관총</Korean>
+                <Chinesesimp>机枪</Chinesesimp>
+                <Turkish>Makineli Tüfekler</Turkish>
+            </Key>
+            <Key ID="STR_A3AU_misc">
+                <Original>Misc</Original>
+                <French>Divers</French>
+                <Russian>Прочее</Russian>
+                <Korean>기타</Korean>
+                <Chinesesimp>杂项</Chinesesimp>
+                <Turkish>Çeşitli</Turkish>
+            </Key>
+            <Key ID="STR_A3AU_muzzles">
+                <Original>Muzzle Devices</Original>
+                <French>Dispositifs de mise à feu</French>
+                <Russian>Дульные Устройства</Russian>
+                <Korean>총구부착물</Korean>
+                <Chinesesimp>枪口装置</Chinesesimp>
+                <Turkish>Namluağzı Aparatları</Turkish>
+            </Key>
+            <Key ID="STR_A3AU_nvgs">
+                <Original>NVGs</Original>
+                <French>NVG</French>
+                <Russian>ПНВ</Russian>
+                <Korean>야간투시경</Korean>
+                <Chinesesimp>夜视仪</Chinesesimp>
+                <Turkish>Gece Görüş Gözlükleri</Turkish>
+            </Key>
+            <Key ID="STR_A3AU_pointers">
+                <Original>Pointers</Original>
+                <French>Pointeurs</French>
+                <Russian>ЛЦУ</Russian>
+                <Korean>레이저 지시기</Korean>
+                <Chinesesimp>指示器</Chinesesimp>
+                <Turkish>Lazerler</Turkish>
+            </Key>
+            <Key ID="STR_A3AU_rifles">
+                <Original>Rifles</Original>
+                <French>Fusils</French>
+                <Russian>Штурмовые Винтовки</Russian>
+                <Korean>소총</Korean>
+                <Chinesesimp>步枪</Chinesesimp>
+                <Turkish>Tüfekler</Turkish>
+            </Key>
+            <Key ID="STR_A3AU_sights">
+                <Original>Sights</Original>
+                <French>Vue d'ensemble</French>
+                <Russian>Прицелы</Russian>
+                <Korean>조준기</Korean>
+                <Chinesesimp>瞄具</Chinesesimp>
+                <Turkish>Nişangahlar</Turkish>
+            </Key>
+            <Key ID="STR_A3AU_smgs">
+                <Original>SMGs</Original>
+                <French>SMGs</French>
+                <Russian>Пистолеты-пулемёты</Russian>
+                <Korean>기관단총</Korean>
+                <Chinesesimp>冲锋枪</Chinesesimp>
+                <Turkish>Hafif Makineli Silahlar</Turkish>
+            </Key>
+            <Key ID="STR_A3AU_sniperRifles">
+                <Original>Sniper Rifles</Original>
+                <French>Fusils de sniper</French>
+                <Russian>Снайперские Винтовки</Russian>
+                <Korean>저격소총</Korean>
+                <Chinesesimp>狙击步枪</Chinesesimp>
+                <Turkish>Keskin Nişancı Tüfekleri</Turkish>
+            </Key>
+            <Key ID="STR_A3AU_specialWeapons">
+                <Original>Special Weapons</Original>
+                <French>Armes spéciales</French>
+                <Russian>Спецоружие</Russian>
+                <Korean>특수화기</Korean>
+                <Chinesesimp>特殊武器</Chinesesimp>
+                <Turkish>Özel Silahlar</Turkish>
+            </Key>
+            <Key ID="STR_A3AU_srMagazines">
+                <Original>Sniper Rifle Magazines</Original>
+                <French>Magasins de fusils de sniper</French>
+                <Russian>Магазины для Снайперских Винтовок</Russian>
+                <Korean>저격소총 탄창</Korean>
+                <Chinesesimp>狙击步枪弹匣</Chinesesimp>
+                <Turkish>K.N.Tüfeği Şarjörleri</Turkish>
+            </Key>
+            <Key ID="STR_A3AU_uniforms">
+                <Original>Uniforms</Original>
+                <Russian>Униформы</Russian>
+                <Korean>유니폼</Korean>
+                <Chinesesimp>制服</Chinesesimp>
+                <Turkish>Üniformalar</Turkish>
+            </Key>
+            <Key ID="STR_A3AU_utility">
+                <Original>Utility</Original>
+                <Russian>Служебные</Russian>
+                <Korean>기타 아이템</Korean>
+                <Chinesesimp>一般物品</Chinesesimp>
+                <Turkish>Yardımcı Ekipman</Turkish>
+            </Key>
+            <Key ID="STR_A3AU_vests">
+                <Original>Vests</Original>
+                <Russian>Разгрузки</Russian>
+                <Korean>조끼</Korean>
+                <Chinesesimp>背心</Chinesesimp>
+                <Turkish>Yelekler</Turkish>
+            </Key>
+        </Container>
+        <!-- helpers -->
+        <Container name="A3AU_hals_store_helpers">
+            <Key ID="STR_A3AU_3cbbaf">
+                <Original>3CBBAF</Original>
+                <French>3CBBAF</French>
+                <Russian>3CBBAF</Russian>
+                <Korean>3CBBAF</Korean>
+                <Chinesesimp>3CBBAF</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3AU_3cbf">
+                <Original>3CB</Original>
+                <French>3CB</French>
+                <Russian>3CB</Russian>
+                <Korean>3CB</Korean>
+                <Chinesesimp>3CB</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3AU_3cbfcw">
+                <Original>3CBFCW</Original>
+                <French>3CBFCW</French>
+                <Russian>3CBFCW</Russian>
+                <Korean>3CBFCW</Korean>
+                <Chinesesimp>3CBFCW</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3AU_Aegis">
+                <Original>Aegis</Original>
+                <French>Aegis</French>
+                <Russian>Aegis</Russian>
+                <Korean>Aegis</Korean>
+                <Chinesesimp>Aegis</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3AU_Apex">
+                <Original>Apex</Original>
+                <Russian>Apex</Russian>
+                <Korean>Apex</Korean>
+                <Chinesesimp>Apex</Chinesesimp>
+                <Turkish>Apex</Turkish>
+            </Key>
+            <Key ID="STR_A3AU_Artofwar">
+                <Original>Art of war</Original>
+                <Russian>Art of war</Russian>
+                <Korean>Art of war</Korean>
+                <Chinesesimp>Art of war</Chinesesimp>
+                <Turkish>Art of war</Turkish>
+            </Key>
+            <Key ID="STR_A3AU_Atlas">
+                <Original>Atlas</Original>
+                <English>Atlas</English>
+                <French>Atlas</French>
+                <Russian>Atlas</Russian>
+                <Korean>Atlas</Korean>
+                <Chinesesimp>Atlas</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3AU_Braf">
+                <Original>BRAF</Original>
+                <French>BRAF</French>
+                <Russian>BRAF</Russian>
+                <Korean>BRAF</Korean>
+                <Chinesesimp>BRAF</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3AU_CSLA">
+                <Original>CSLA</Original>
+                <French>CSLA</French>
+                <Russian>CSLA</Russian>
+                <Korean>CSLA</Korean>
+                <Chinesesimp>CSLA</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3AU_Contact">
+                <Original>Contact</Original>
+                <Russian>Contact</Russian>
+                <Korean>Contact</Korean>
+                <Chinesesimp>Contact</Chinesesimp>
+                <Turkish>Contact</Turkish>
+            </Key>
+            <Key ID="STR_A3AU_EF">
+                <Original>Expeditionary Forces</Original>
+                <French>Force de Expéditionnaire</French>
+                <Russian>Expeditionary Forces</Russian>
+                <Korean>Expeditionary Forces</Korean>
+                <Chinesesimp>Expeditionary Forces</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3AU_JCA_ARSENAL">
+                <Original>JCA</Original>
+                <French>JCA</French>
+                <Russian>JCA</Russian>
+                <German>JCA</German>
+                <Korean>JCA</Korean>
+                <Chinesesimp>JCA</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3AU_Jets">
+                <Original>Jets</Original>
+                <Russian>Jets</Russian>
+                <Korean>Jets</Korean>
+                <Chinesesimp>Jets</Chinesesimp>
+                <Turkish>Jets</Turkish>
+            </Key>
+            <Key ID="STR_A3AU_Kart">
+                <Original>Kart</Original>
+                <Russian>Kart</Russian>
+                <Korean>Kart</Korean>
+                <Chinesesimp>Kart</Chinesesimp>
+                <Turkish>Kart</Turkish>
+            </Key>
+            <Key ID="STR_A3AU_Lawsofwar">
+                <Original>Laws of war</Original>
+                <Russian>Laws of war</Russian>
+                <Korean>Laws of war</Korean>
+                <Chinesesimp>Laws of war</Chinesesimp>
+                <Turkish>Laws of war</Turkish>
+            </Key>
+            <Key ID="STR_A3AU_MPP_ARSENAL">
+                <Original>MPP</Original>
+                <French>MPP</French>
+                <Russian>MPP</Russian>
+                <German>MPP</German>
+                <Korean>MPP</Korean>
+                <Chinesesimp>MPP</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3AU_Marksmen">
+                <Original>Marksmen</Original>
+                <Russian>Marksmen</Russian>
+                <Korean>Marksmen</Korean>
+                <Chinesesimp>Marksmen</Chinesesimp>
+                <Turkish>Marksmen</Turkish>
+            </Key>
+            <Key ID="STR_A3AU_OpposingForces">
+                <Original>Atlas Opposing Forces</Original>
+                <English>Atlas Opposing Forces</English>
+                <French>Atlas Opposing Forces</French>
+                <Russian>Atlas Opposing Forces</Russian>
+                <Korean>Atlas Opposing Forces</Korean>
+                <Chinesesimp>Atlas Opposing Forces</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3AU_PROJINF">
+                <Original>P.I.</Original>
+                <French>P.I.</French>
+                <Russian>P.I.</Russian>
+                <German>P.I.</German>
+                <Korean>P.I.</Korean>
+                <Chinesesimp>P.I.</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3AU_Police">
+                <Original>Aegis Police</Original>
+                <English>Aegis Police</English>
+                <French>Aegis Police</French>
+                <Russian>Aegis Police</Russian>
+                <Korean>Aegis Police</Korean>
+                <Chinesesimp>Aegis Police</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3AU_QDI">
+                <Original>QDI</Original>
+                <French>QDI</French>
+                <Russian>QDI</Russian>
+                <German>QDI</German>
+                <Korean>QDI</Korean>
+                <Chinesesimp>QDI</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3AU_RF">
+                <Original>Reaction Forces</Original>
+                <French>Force de réaction</French>
+                <Russian>Reaction Forces</Russian>
+                <Korean>Reaction Forces</Korean>
+                <Chinesesimp>Reaction Force</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3AU_ReArma_CN">
+                <Original>ReArma CN</Original>
+                <French>ReArma CN</French>
+                <Russian>ReArma CN</Russian>
+                <German>ReArma CN</German>
+                <Korean>ReArma CN</Korean>
+                <Chinesesimp>ReArma CN</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3AU_ReArma_RU">
+                <Original>ReArma RU</Original>
+                <French>ReArma RU</French>
+                <Russian>ReArma RU</Russian>
+                <German>ReArma RU</German>
+                <Korean>ReArma RU</Korean>
+                <Chinesesimp>ReArma RU</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3AU_ReArma_US">
+                <Original>ReArma US</Original>
+                <French>ReAReArma USrma</French>
+                <Russian>ReArma US</Russian>
+                <German>ReArma US</German>
+                <Korean>ReArma US</Korean>
+                <Chinesesimp>ReArma US</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3AU_Tanks">
+                <Original>Tanks</Original>
+                <Russian>Tanks</Russian>
+                <Korean>Tanks</Korean>
+                <Chinesesimp>Tanks</Chinesesimp>
+                <Turkish>Tanks</Turkish>
+            </Key>
+            <Key ID="STR_A3AU_Ultimate">
+                <Original>Antistasi Ultimate</Original>
+                <Russian>Antistasi Ultimate</Russian>
+                <Korean>Antistasi Ultimate</Korean>
+                <Chinesesimp>Antistasi Ultimate</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3AU_Vanilla">
+                <Original>Arma 3</Original>
+                <French>Arma 3</French>
+                <Russian>Арма 3</Russian>
+                <Korean>아르마 3</Korean>
+                <Chinesesimp>Arma 3</Chinesesimp>
+                <Turkish>Arma 3</Turkish>
+            </Key>
+            <Key ID="STR_A3AU_and">
+                <Original>and</Original>
+                <French>et</French>
+                <Russian>и</Russian>
+                <German>und</German>
+                <Korean>그리고</Korean>
+                <Chinesesimp>和</Chinesesimp>
+                <Turkish>ve</Turkish>
+            </Key>
+            <Key ID="STR_A3AU_barret">
+                <Original>Barret</Original>
+                <French>Barret</French>
+                <Russian>Barret</Russian>
+                <Korean>Barret</Korean>
+                <Chinesesimp>Barret</Chinesesimp>
+                <Turkish>Barret</Turkish>
+            </Key>
+            <Key ID="STR_A3AU_bwa">
+                <Original>BWA</Original>
+                <French>BWA</French>
+                <Russian>BWA</Russian>
+                <Korean>BWA</Korean>
+                <Chinesesimp>BWA</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3AU_csa">
+                <Original>CSA38</Original>
+                <French>CSA38</French>
+                <Russian>CSA38</Russian>
+                <Korean>CSA38</Korean>
+                <Chinesesimp>CSA38</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3AU_cup">
+                <Original>CUP</Original>
+                <French>CUP</French>
+                <Russian>CUP</Russian>
+                <Korean>CUP</Korean>
+                <Chinesesimp>CUP</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3AU_cw">
+                <Original>CW</Original>
+                <French>CW</French>
+                <Russian>CW</Russian>
+                <Korean>CW</Korean>
+                <Chinesesimp>CW</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3AU_cwr">
+                <Original>Cold War ReArmed</Original>
+                <French>Cold War ReArmed</French>
+                <Russian>Cold War ReArmed</Russian>
+                <Korean>Cold War ReArmed</Korean>
+                <Chinesesimp>Cold War ReArmed</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3AU_eaw">
+                <Original>East Asia War</Original>
+                <French>East Asia War</French>
+                <Russian>East Asia War</Russian>
+                <Korean>East Asia War</Korean>
+                <Chinesesimp>East Asia War</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3AU_empire">
+                <Original>Empire</Original>
+                <French>Empire</French>
+                <Russian>Empire</Russian>
+                <Korean>Empire</Korean>
+                <Chinesesimp>Empire</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3AU_ffaa">
+                <Original>FFAA</Original>
+                <French>FFAA</French>
+                <Russian>FFAA</Russian>
+                <Korean>FFAA</Korean>
+                <Chinesesimp>FFAA</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3AU_ffp">
+                <Original>FFP</Original>
+                <French>FFP</French>
+                <Russian>FFP</Russian>
+                <Korean>FFP</Korean>
+                <Chinesesimp>FFP</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3AU_fow">
+                <Original>FoW</Original>
+                <French>FoW</French>
+                <Russian>FoW</Russian>
+                <Korean>FoW</Korean>
+                <Chinesesimp>FoW</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3AU_fwa">
+                <Original>FWA</Original>
+                <French>FWA</French>
+                <Russian>FWA</Russian>
+                <Korean>FWA</Korean>
+                <Chinesesimp>FWA</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3AU_gm">
+                <Original>GM</Original>
+                <French>GM</French>
+                <Russian>GM</Russian>
+                <Korean>GM</Korean>
+                <Chinesesimp>GM</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3AU_hafm">
+                <Original>HAFM</Original>
+                <French>HAFM</French>
+                <Russian>HAFM</Russian>
+                <Korean>HAFM</Korean>
+                <Chinesesimp>HAFM</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3AU_ifa">
+                <Original>IFA</Original>
+                <French>IFA</French>
+                <Russian>IFA</Russian>
+                <Korean>IFA</Korean>
+                <Chinesesimp>IFA</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3AU_italy">
+                <Original>Pedagne</Original>
+                <French>Pedagne</French>
+                <Russian>Pedagne</Russian>
+                <Korean>Pedagne</Korean>
+                <Chinesesimp>Pedagne</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3AU_kkiv2035">
+                <Original>Kkiv 2035</Original>
+                <Russian>Kkiv 2035</Russian>
+                <Korean>Kkiv 2035</Korean>
+                <Chinesesimp>Kkiv 2035</Chinesesimp>
+                <Turkish>Kkiv 2035</Turkish>
+            </Key>
+            <Key ID="STR_A3AU_mss">
+                <Original>MSS</Original>
+                <French>MSS</French>
+                <Russian>MSS</Russian>
+                <Korean>MSS</Korean>
+                <Chinesesimp>MSS</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3AU_nfts">
+                <Original>Northern Fronts</Original>
+                <French>Northern Fronts</French>
+                <Russian>Northern Fronts</Russian>
+                <Korean>Northern Fronts</Korean>
+                <Chinesesimp>Northern Fronts</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3AU_niarms">
+                <Original>NIArms</Original>
+                <French>NIArms</French>
+                <Russian>NIArms</Russian>
+                <Korean>NIArms</Korean>
+                <Chinesesimp>NIArms</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3AU_nickelsteel">
+                <Original>Nickel steel</Original>
+                <French>Nickel steel</French>
+                <Russian>Nickel steel</Russian>
+                <Korean>Nickel steel</Korean>
+            </Key>
+            <Key ID="STR_A3AU_optre">
+                <Original>OPTRE</Original>
+                <French>OPTRE</French>
+                <Russian>OPTRE</Russian>
+                <Korean>OPTRE</Korean>
+                <Chinesesimp>OPTRE</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3AU_pla">
+                <Original>PLA</Original>
+                <French>PLA</French>
+                <Russian>PLA</Russian>
+                <Korean>PLA</Korean>
+                <Chinesesimp>PLA</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3AU_rhs">
+                <Original>RHS</Original>
+                <French>RHS</French>
+                <Russian>RHS</Russian>
+                <Korean>RHS</Korean>
+                <Chinesesimp>RHS</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3AU_sfp">
+                <Original>SFP</Original>
+                <French>SFP</French>
+                <Russian>SFP</Russian>
+                <Korean>SFP</Korean>
+                <Chinesesimp>SFP</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3AU_sma">
+                <Original>SMA</Original>
+                <French>SMA</French>
+                <Russian>SMA</Russian>
+                <Korean>SMA</Korean>
+                <Chinesesimp>SMA</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3AU_spearhead">
+                <Original>SPE</Original>
+                <French>SPE</French>
+                <Russian>SPE</Russian>
+                <Korean>SPE</Korean>
+                <Chinesesimp>SPE</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3AU_spex">
+                <Original>SPEX</Original>
+                <French>SPEX</French>
+                <Russian>SPEX</Russian>
+                <Korean>SPEX</Korean>
+            </Key>
+            <Key ID="STR_A3AU_tow">
+                <Original>Tier 1</Original>
+                <French>Tier 1</French>
+                <Russian>Tier 1</Russian>
+                <Korean>Tier 1</Korean>
+                <Chinesesimp>Tier 1</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3AU_unsung">
+                <Original>Unsung</Original>
+                <French>Unsung</French>
+                <Russian>Unsung</Russian>
+                <Korean>Unsung</Korean>
+                <Chinesesimp>Unsung</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3AU_vn">
+                <Original>VN</Original>
+                <French>VN</French>
+                <Russian>VN</Russian>
+                <Korean>VN</Korean>
+                <Chinesesimp>VN</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3AU_wrs">
+                <Original>Research and Security</Original>
+                <French>Research and Security</French>
+                <Russian>Research and Security</Russian>
+                <Korean>Research and Security</Korean>
+                <Chinesesimp>Research and Security</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3AU_ws">
+                <Original>Western Sahara</Original>
+                <French>Western Sahara</French>
+                <Russian>Western Sahara</Russian>
+                <Korean>Western Sahara</Korean>
+                <Chinesesimp>Western Sahara</Chinesesimp>
+            </Key>
+            <Key ID="STR_A3AU_ylarms">
+                <Original>YLArms</Original>
+                <French>YLArms</French>
+                <Russian>YLArms</Russian>
+                <Korean>YLArms</Korean>
+                <Chinesesimp>YLArms</Chinesesimp>
+            </Key>
+        </Container>
+        <!-- <Key ID="STR_HALS_STORE_LISTBOX_NOMONEY">
+            <Original>%1¢ more required.</Original>
+            <German>%1¢ mehr benötigt.</German>
+            <Russian>Не хватает %1¢.</Russian>
+            <Chinesesimp>还需要 %1¢。</Chinesesimp>
+            <Korean>%1¢가 더 필요합니다.</Korean>
+        </Key> -->
+        <!-- Thanks to JakeHekesFists -->
+        <!-- <Key ID="STR_HALS_STORE_ITEM_SELL_NOTEMPTY">
+            <Original>You cannot sell your %1 (%2) because it is not empty.</Original>
+            <Russian>Вы не можете продать %1 (%2), поскольку он не пустой.</Russian>
+            <Chinesesimp>无法出售 %1 (%2), 因为它不是空的。</Chinesesimp>
+            <Korean>%1 (%2)이(가) 비어 있지 않으므로 판매할 수 없습니다.</Korean>
+        </Key> -->
+        <!-- <Key ID="STR_HALS_STORE_ITEM_SELL_SOLD">
+            <Original>Sold x%1 %2(s) for $%3.</Original>
+            <Russian>Продано x%1 %2(s) за $%3.</Russian>
+            <Chinesesimp>卖掉 %2 x%1 以换取 $%3。</Chinesesimp>
+            <Korean>%1 개의 %2을(를) %3€에 팔았습니다.</Korean>
+        </Key> -->
+    </Package>
+    <Package name="Dialog">
+        <Key ID="STR_HALS_STORE_BUTTON_PURCHASE">
+            <Original>Purchase</Original>
+            <French>Achat</French>
+            <Russian>Купить</Russian>
+            <German>Kaufen</German>
+            <Korean>구입</Korean>
+            <Chinesesimp>购买</Chinesesimp>
+            <Turkish>Satın Al</Turkish>
+        </Key>
+        <!-- SELL BUTTON -->
+        <Key ID="STR_HALS_STORE_BUTTON_SELL">
+            <Original>Sell</Original>
+            <French>Vendre</French>
+            <Russian>Продать</Russian>
+            <German>Verkaufen</German>
+            <Korean>판매</Korean>
+            <Chinesesimp>出售</Chinesesimp>
+            <Turkish>Sat</Turkish>
+        </Key>
+        <!-- <Key ID="STR_HALS_STORE_CHECKBOX_AFFORD">
+            <Original>Only show items which the player can afford.</Original>
+            <German>Zeige nur Gegenstände, die sich der Spieler leisten kann.</German>
+            <Russian>Показывать только предметы, на которые хватает денег</Russian>
+            <Chinesesimp>只显示玩家买得起的商品。</Chinesesimp>
+            <Korean>플레이어가 현재 구입 가능한 아이템만 표시합니다.</Korean>
+        </Key> -->
+        <Key ID="STR_HALS_STORE_CHECKBOX_AVALIABLE">
+            <Original>Only show items that are available for purchase.</Original>
+            <French>Seuls les articles disponibles à l'achat sont affichés.</French>
+            <Russian>Показывать только предметы, доступные к покупке.</Russian>
+            <Korean>플레이어가 구입 가능한 아이템만 표시합니다.</Korean>
+            <Chinesesimp>只显示可供购买的商品。</Chinesesimp>
+            <Turkish>Sadece satın alınabilir eşyaları göster.</Turkish>
+        </Key>
+        <!-- <Key ID="STR_HALS_STORE_CHECKBOX_STOCK">
+            <Original>Only show items which are in stock.</Original>
+            <German>Zeige nur Gegenstände, die auf Lager sind.</German>
+            <Russian>Показывать только предметы, доступные для продажи.</Russian>
+            <Chinesesimp>只显示有货的商品。</Chinesesimp>
+            <Korean>재고가 있는 아이템만 표시합니다.</Korean>
+        </Key> -->
+        <Key ID="STR_HALS_STORE_CHECKBOX_COMPATIBLE">
+            <Original>Only show items compatible with the player's equipped weapons.</Original>
+            <French>N'afficher que les objets compatibles avec les armes équipées par le joueur.</French>
+            <Russian>Показывать только предметы, совместимые с оружием игрока.</Russian>
+            <German>Zeige nur Gegenstände, die mit der ausgerüsteten Waffe des Spielers kompatibel sind.</German>
+            <Korean>플레이어가 장착한 무기와 호환되는 아이템만 표시합니다.</Korean>
+            <Chinesesimp>只显示与玩家当前武器兼容的商品。</Chinesesimp>
+            <Turkish>Sadece kuşanılmış silahlarla uyumlu eşyaları göster.</Turkish>
+        </Key>
+        <Key ID="STR_HALS_STORE_CHECKBOX_EQUIP">
+            <Original>Equip item upon purchase (if possible).</Original>
+            <French>Équiper l'objet lors de l'achat (si possible).</French>
+            <Russian>Экипировать после покупки (по возможности).</Russian>
+            <German>Gegenstand beim Kauf ausrüsten (wenn möglich).</German>
+            <Korean>구매 시 장비 착용. (가능 시)</Korean>
+            <Chinesesimp>成交后立即装备物品(如果可以的话)。</Chinesesimp>
+            <Turkish>Satın alındığında kuşan (mümkünse).</Turkish>
+        </Key>
+        <!-- SELL BOX -->
+        <Key ID="STR_HALS_STORE_CHECKBOX_SELLFILTER">
+            <Original>Only show items that the player can sell.</Original>
+            <French>N'afficher que les objets que le joueur peut vendre.</French>
+            <Russian>Показывать только предметы, которые можно продать.</Russian>
+            <Korean>플레이어가 판매할 수 있는 아이템만 표시합니다.</Korean>
+            <Chinesesimp>只显示玩家可以出售的物品。</Chinesesimp>
+            <Turkish>Sadece satılabilecek eşyaları göster.</Turkish>
+        </Key>
+        <Key ID="STR_HALS_STORE_TEXT_INSTOCK">
+            <Original>IN STOCK</Original>
+            <French>EN STOCK</French>
+            <Russian>В ПРОДАЖЕ</Russian>
+            <German>AUF LAGER</German>
+            <Korean>재고 있음</Korean>
+            <Chinesesimp>现货</Chinesesimp>
+            <Turkish>STOKTA VAR</Turkish>
+        </Key>
+        <Key ID="STR_HALS_STORE_TEXT_NOSTOCK">
+            <Original>OUT OF STOCK.</Original>
+            <French>EN RUPTURE DE STOCK.</French>
+            <Russian>ЗАКОНЧИЛСЯ</Russian>
+            <German>AUSVERKAUFT.</German>
+            <Korean>재고 없음.</Korean>
+            <Chinesesimp>售罄</Chinesesimp>
+            <Turkish>STOKTA YOK.</Turkish>
+        </Key>
+        <Key ID="STR_HALS_STORE_TEXT_PRICE">
+            <Original>Price</Original>
+            <French>Prix</French>
+            <Russian>Цена</Russian>
+            <German>Preis</German>
+            <Korean>가격</Korean>
+            <Chinesesimp>价格</Chinesesimp>
+            <Turkish>Fiyat</Turkish>
+        </Key>
+        <!-- <Key ID="STR_HALS_STORE_LISTBOX_NOMONEY">
+            <Original>%1¢ more required.</Original>
+            <German>%1¢ mehr benötigt.</German>
+            <Russian>Не хватает %1¢.</Russian>
+            <Chinesesimp>还需要 %1¢。</Chinesesimp>
+            <Korean>%1¢가 더 필요합니다.</Korean>
+        </Key> -->
+        <!-- Thanks to JakeHekesFists -->
+        <!-- <Key ID="STR_HALS_STORE_ITEM_SELL_NOTEMPTY">
+            <Original>You cannot sell your %1 (%2) because it is not empty.</Original>
+            <Russian>Вы не можете продать %1 (%2), поскольку он не пустой.</Russian>
+            <Chinesesimp>无法出售 %1 (%2), 因为它不是空的。</Chinesesimp>
+            <Korean>%1 (%2)이(가) 비어 있지 않으므로 판매할 수 없습니다.</Korean>
+        </Key> -->
+        <!-- <Key ID="STR_HALS_STORE_ITEM_SELL_SOLD">
+            <Original>Sold x%1 %2(s) for $%3.</Original>
+            <Russian>Продано x%1 %2(s) за $%3.</Russian>
+            <Chinesesimp>卖掉 %2 x%1 以换取 $%3。</Chinesesimp>
+            <Korean>%1 개의 %2을(를) %3€에 팔았습니다.</Korean>
+        </Key> -->
+    </Package>
     <Package name="General">
         <Key ID="STR_ARMS_DEALER_STORE">
             <Original>Arms Dealer Store</Original>
-            <German>Laden für Waffenhändler</German>
-            <Russian>Магазин Оружейного Торговца</Russian>
-            <Chinesesimp>军火商商店</Chinesesimp>
-            <Korean>암거래상 상점</Korean>
             <French>Magasin de vente d'armes</French>
+            <Russian>Магазин Оружейного Торговца</Russian>
+            <German>Laden für Waffenhändler</German>
+            <Korean>암거래상 상점</Korean>
+            <Chinesesimp>军火商商店</Chinesesimp>
             <Turkish>Silah Tüccarı Mağazası</Turkish>
-        </Key>
-        <Key ID="STR_HALS_STORE_ALL">
-            <Original>All</Original>
-            <German>Alle</German>
-            <Russian>Всё</Russian>
-            <Chinesesimp>全部</Chinesesimp>
-            <Korean>모두</Korean>
-            <French>Tous</French>
-            <Turkish>Hepsi</Turkish>
         </Key>
         <!-- <Key ID="STR_HALS_STORE_HANDGUNS">
             <Original>Handguns</Original>
@@ -182,77 +1004,93 @@
         </Key> -->
         <Key ID="STR_HALS_STORE_ACTION">
             <Original>Store</Original>
-            <German>Geschäft</German>
-            <Russian>Магазин</Russian>
-            <Chinesesimp>商店</Chinesesimp>
-            <Korean>상점</Korean>
             <French>Magasin</French>
+            <Russian>Магазин</Russian>
+            <German>Geschäft</German>
+            <Korean>상점</Korean>
+            <Chinesesimp>商店</Chinesesimp>
             <Turkish>Mağaza</Turkish>
         </Key>
-        <Key ID="STR_HALS_STORE_OPEN_ACTION">
-            <Original>Open the %1</Original>
-            <!--e.g. open the Weapons Store-->
-            <German>Offener %1</German>
-            <Russian>Открыть %1</Russian>
-            <Chinesesimp>打开 %1</Chinesesimp>
-            <Korean>%1 열어보기</Korean>
-            <French>Ouvrir le %1</French>
-            <Turkish>%1 Aç</Turkish>
-        </Key>
-        <Key ID="STR_HALS_STORE_ITEM_UNAVALIABLE">
-            <Original>Item unavailable.</Original>
-            <German>Gegenstand nicht verfügbar.</German>
-            <Russian>Предмет недоступен</Russian>
-            <Chinesesimp>物品不可用。</Chinesesimp>
-            <Korean>아이템 이용 불가.</Korean>
-            <French>Article indisponible.</French>
-            <Turkish>Eşya mevcut değil.</Turkish>
-        </Key>
-        <Key ID="STR_HALS_STORE_ITEM_OUTOFSTOCK">
-            <Original>Insufficient stock.</Original>
-            <German>Ausverkauft.</German>
-            <Russian>Товар закончился</Russian>
-            <Chinesesimp>已售罄。</Chinesesimp>
-            <Korean>재고 부족.</Korean>
-            <French>Stock insuffisant.</French>
-            <Turkish>Yetersiz stok.</Turkish>
-        </Key>
-        <Key ID="STR_HALS_STORE_ITEM_TOOEXPENSIVE">
-            <Original>Insufficient funds.</Original>
-            <German>Zu wenig Geld.</German>
-            <Russian>Недостаточно средств</Russian>
-            <Chinesesimp>资金不足。</Chinesesimp>
-            <Korean>자금 부족.</Korean>
-            <French>Fonds insuffisants.</French>
-            <Turkish>Yetersiz bakiye.</Turkish>
-        </Key>
-        <Key ID="STR_HALS_STORE_ITEM_NOEQUIP">
-            <Original>Unable to equip.</Original>
-            <German>Ausrüsten fehlgeschlagen.</German>
-            <Russian>Невозможно экипировать</Russian>
-            <Chinesesimp>无法装备。</Chinesesimp>
-            <Korean>장비 불가.</Korean>
-            <French>Impossible d'équiper</French>
-            <Turkish>Kuşanılamıyor.</Turkish>
+        <Key ID="STR_HALS_STORE_ALL">
+            <Original>All</Original>
+            <French>Tous</French>
+            <Russian>Всё</Russian>
+            <German>Alle</German>
+            <Korean>모두</Korean>
+            <Chinesesimp>全部</Chinesesimp>
+            <Turkish>Hepsi</Turkish>
         </Key>
         <Key ID="STR_HALS_STORE_ITEM_NOCARGOSPACE">
             <Original>Insufficient cargo space.</Original>
-            <German>Nicht genug Platz.</German>
-            <Russian>Не хватает места в инвентаре</Russian>
-            <Chinesesimp>货舱空间不足。</Chinesesimp>
-            <Korean>화물 공간 부족.</Korean>
             <French>Espace de chargement insuffisant.</French>
+            <Russian>Не хватает места в инвентаре</Russian>
+            <German>Nicht genug Platz.</German>
+            <Korean>화물 공간 부족.</Korean>
+            <Chinesesimp>货舱空间不足。</Chinesesimp>
             <Turkish>Yetersiz kargo alanı.</Turkish>
+        </Key>
+        <Key ID="STR_HALS_STORE_ITEM_NOEQUIP">
+            <Original>Unable to equip.</Original>
+            <French>Impossible d'équiper</French>
+            <Russian>Невозможно экипировать</Russian>
+            <German>Ausrüsten fehlgeschlagen.</German>
+            <Korean>장비 불가.</Korean>
+            <Chinesesimp>无法装备。</Chinesesimp>
+            <Turkish>Kuşanılamıyor.</Turkish>
+        </Key>
+        <Key ID="STR_HALS_STORE_ITEM_OUTOFSTOCK">
+            <Original>Insufficient stock.</Original>
+            <French>Stock insuffisant.</French>
+            <Russian>Товар закончился</Russian>
+            <German>Ausverkauft.</German>
+            <Korean>재고 부족.</Korean>
+            <Chinesesimp>已售罄。</Chinesesimp>
+            <Turkish>Yetersiz stok.</Turkish>
         </Key>
         <Key ID="STR_HALS_STORE_ITEM_PURCHASED">
             <Original>purchased</Original>
-            <German>gekauft</German>
-            <Russian>куплен</Russian>
-            <Chinesesimp>成交</Chinesesimp>
-            <Korean>구입 완료</Korean>
             <French>achetés</French>
+            <Russian>куплен</Russian>
+            <German>gekauft</German>
+            <Korean>구입 완료</Korean>
+            <Chinesesimp>成交</Chinesesimp>
             <Turkish>satın alındı</Turkish>
         </Key>
+        <Key ID="STR_HALS_STORE_ITEM_TOOEXPENSIVE">
+            <Original>Insufficient funds.</Original>
+            <French>Fonds insuffisants.</French>
+            <Russian>Недостаточно средств</Russian>
+            <German>Zu wenig Geld.</German>
+            <Korean>자금 부족.</Korean>
+            <Chinesesimp>资金不足。</Chinesesimp>
+            <Turkish>Yetersiz bakiye.</Turkish>
+        </Key>
+        <Key ID="STR_HALS_STORE_ITEM_UNAVALIABLE">
+            <Original>Item unavailable.</Original>
+            <French>Article indisponible.</French>
+            <Russian>Предмет недоступен</Russian>
+            <German>Gegenstand nicht verfügbar.</German>
+            <Korean>아이템 이용 불가.</Korean>
+            <Chinesesimp>物品不可用。</Chinesesimp>
+            <Turkish>Eşya mevcut değil.</Turkish>
+        </Key>
+        <Key ID="STR_HALS_STORE_OPEN_ACTION">
+            <Original>Open the %1</Original>
+            <French>Ouvrir le %1</French>
+            <Russian>Открыть %1</Russian>
+            <!--e.g. open the Weapons Store-->
+            <German>Offener %1</German>
+            <Korean>%1 열어보기</Korean>
+            <Chinesesimp>打开 %1</Chinesesimp>
+            <Turkish>%1 Aç</Turkish>
+        </Key>
+        <!-- <Key ID="STR_HALS_STORE_LISTBOX_NOMONEY">
+            <Original>%1¢ more required.</Original>
+            <German>%1¢ mehr benötigt.</German>
+            <Russian>Не хватает %1¢.</Russian>
+            <Chinesesimp>还需要 %1¢。</Chinesesimp>
+            <Korean>%1¢가 더 필요합니다.</Korean>
+        </Key> -->
         <!-- Thanks to JakeHekesFists -->
         <!-- <Key ID="STR_HALS_STORE_ITEM_SELL_NOTEMPTY">
             <Original>You cannot sell your %1 (%2) because it is not empty.</Original>
@@ -266,818 +1104,5 @@
             <Chinesesimp>卖掉 %2 x%1 以换取 $%3。</Chinesesimp>
             <Korean>%1 개의 %2을(를) %3€에 팔았습니다.</Korean>
         </Key> -->
-    </Package>
-    <Package name="Dialog">
-        <!-- <Key ID="STR_HALS_STORE_CHECKBOX_AFFORD">
-            <Original>Only show items which the player can afford.</Original>
-            <German>Zeige nur Gegenstände, die sich der Spieler leisten kann.</German>
-            <Russian>Показывать только предметы, на которые хватает денег</Russian>
-            <Chinesesimp>只显示玩家买得起的商品。</Chinesesimp>
-            <Korean>플레이어가 현재 구입 가능한 아이템만 표시합니다.</Korean>
-        </Key> -->
-        <Key ID="STR_HALS_STORE_CHECKBOX_AVALIABLE">
-            <Original>Only show items that are available for purchase.</Original>
-            <Russian>Показывать только предметы, доступные к покупке.</Russian>
-            <Chinesesimp>只显示可供购买的商品。</Chinesesimp>
-            <Korean>플레이어가 구입 가능한 아이템만 표시합니다.</Korean>
-            <French>Seuls les articles disponibles à l'achat sont affichés.</French>
-            <Turkish>Sadece satın alınabilir eşyaları göster.</Turkish>
-        </Key>
-        <!-- <Key ID="STR_HALS_STORE_CHECKBOX_STOCK">
-            <Original>Only show items which are in stock.</Original>
-            <German>Zeige nur Gegenstände, die auf Lager sind.</German>
-            <Russian>Показывать только предметы, доступные для продажи.</Russian>
-            <Chinesesimp>只显示有货的商品。</Chinesesimp>
-            <Korean>재고가 있는 아이템만 표시합니다.</Korean>
-        </Key> -->
-        <Key ID="STR_HALS_STORE_CHECKBOX_COMPATIBLE">
-            <Original>Only show items compatible with the player's equipped weapons.</Original>
-            <German>Zeige nur Gegenstände, die mit der ausgerüsteten Waffe des Spielers kompatibel sind.</German>
-            <Russian>Показывать только предметы, совместимые с оружием игрока.</Russian>
-            <Chinesesimp>只显示与玩家当前武器兼容的商品。</Chinesesimp>
-            <Korean>플레이어가 장착한 무기와 호환되는 아이템만 표시합니다.</Korean>
-            <French>N'afficher que les objets compatibles avec les armes équipées par le joueur.</French>
-            <Turkish>Sadece kuşanılmış silahlarla uyumlu eşyaları göster.</Turkish>
-        </Key>
-        <!-- SELL BOX -->
-        <Key ID="STR_HALS_STORE_CHECKBOX_SELLFILTER">
-            <Original>Only show items that the player can sell.</Original>
-            <Russian>Показывать только предметы, которые можно продать.</Russian>
-            <Chinesesimp>只显示玩家可以出售的物品。</Chinesesimp>
-            <Korean>플레이어가 판매할 수 있는 아이템만 표시합니다.</Korean>
-            <French>N'afficher que les objets que le joueur peut vendre.</French>
-            <Turkish>Sadece satılabilecek eşyaları göster.</Turkish>
-        </Key>
-        <!-- SELL BUTTON -->
-        <Key ID="STR_HALS_STORE_BUTTON_SELL">
-            <Original>Sell</Original>
-            <German>Verkaufen</German>
-            <Russian>Продать</Russian>
-            <Chinesesimp>出售</Chinesesimp>
-            <Korean>판매</Korean>
-            <French>Vendre</French>
-            <Turkish>Sat</Turkish>
-        </Key>
-        <Key ID="STR_HALS_STORE_CHECKBOX_EQUIP">
-            <Original>Equip item upon purchase (if possible).</Original>
-            <German>Gegenstand beim Kauf ausrüsten (wenn möglich).</German>
-            <Russian>Экипировать после покупки (по возможности).</Russian>
-            <Chinesesimp>成交后立即装备物品(如果可以的话)。</Chinesesimp>
-            <Korean>구매 시 장비 착용. (가능 시)</Korean>
-            <French>Équiper l'objet lors de l'achat (si possible).</French>
-            <Turkish>Satın alındığında kuşan (mümkünse).</Turkish>
-        </Key>
-        <Key ID="STR_HALS_STORE_BUTTON_PURCHASE">
-            <Original>Purchase</Original>
-            <German>Kaufen</German>
-            <Russian>Купить</Russian>
-            <Chinesesimp>购买</Chinesesimp>
-            <Korean>구입</Korean>
-            <French>Achat</French>
-            <Turkish>Satın Al</Turkish>
-        </Key>
-        <Key ID="STR_HALS_STORE_TEXT_PRICE">
-            <Original>Price</Original>
-            <German>Preis</German>
-            <Russian>Цена</Russian>
-            <Chinesesimp>价格</Chinesesimp>
-            <Korean>가격</Korean>
-            <French>Prix</French>
-            <Turkish>Fiyat</Turkish>
-        </Key>
-        <Key ID="STR_HALS_STORE_TEXT_INSTOCK">
-            <Original>IN STOCK</Original>
-            <German>AUF LAGER</German>
-            <Russian>В ПРОДАЖЕ</Russian>
-            <Chinesesimp>现货</Chinesesimp>
-            <Korean>재고 있음</Korean>
-            <French>EN STOCK</French>
-            <Turkish>STOKTA VAR</Turkish>
-        </Key>
-        <Key ID="STR_HALS_STORE_TEXT_NOSTOCK">
-            <Original>OUT OF STOCK.</Original>
-            <German>AUSVERKAUFT.</German>
-            <Russian>ЗАКОНЧИЛСЯ</Russian>
-            <Chinesesimp>售罄</Chinesesimp>
-            <Korean>재고 없음.</Korean>
-            <French>EN RUPTURE DE STOCK.</French>
-            <Turkish>STOKTA YOK.</Turkish>
-        </Key>
-        <!-- <Key ID="STR_HALS_STORE_LISTBOX_NOMONEY">
-            <Original>%1¢ more required.</Original>
-            <German>%1¢ mehr benötigt.</German>
-            <Russian>Не хватает %1¢.</Russian>
-            <Chinesesimp>还需要 %1¢。</Chinesesimp>
-            <Korean>%1¢가 더 필요합니다.</Korean>
-        </Key> -->
-    </Package>
-    <Package name="A3AU_hals_store">
-        <!-- category names -->
-        <Container name="A3AU_hals_store_categories">
-            <Key ID="STR_A3AU_handguns">
-                <Original>Handguns</Original>
-                <Russian>Пистолеты</Russian>
-                <Korean>권총</Korean>
-                <French>Armes de poing</French>
-                <Chinesesimp>手枪</Chinesesimp>
-                <Turkish>Tabancalar</Turkish>
-            </Key>
-            <Key ID="STR_A3AU_smgs">
-                <Original>SMGs</Original>
-                <Russian>Пистолеты-пулемёты</Russian>
-                <Korean>기관단총</Korean>
-                <French>SMGs</French>
-                <Chinesesimp>冲锋枪</Chinesesimp>
-                <Turkish>Hafif Makineli Silahlar</Turkish>
-            </Key>
-            <Key ID="STR_A3AU_rifles">
-                <Original>Rifles</Original>
-                <Russian>Штурмовые Винтовки</Russian>
-                <Korean>소총</Korean>
-                <French>Fusils</French>
-                <Chinesesimp>步枪</Chinesesimp>
-                <Turkish>Tüfekler</Turkish>
-            </Key>
-            <Key ID="STR_A3AU_sniperRifles">
-                <Original>Sniper Rifles</Original>
-                <Russian>Снайперские Винтовки</Russian>
-                <Korean>저격소총</Korean>
-                <French>Fusils de sniper</French>
-                <Chinesesimp>狙击步枪</Chinesesimp>
-                <Turkish>Keskin Nişancı Tüfekleri</Turkish>
-            </Key>
-            <Key ID="STR_A3AU_mgs">
-                <Original>MGs</Original>
-                <Russian>Пулемёты</Russian>
-                <Korean>기관총</Korean>
-                <French>MGs</French>
-                <Chinesesimp>机枪</Chinesesimp>
-                <Turkish>Makineli Tüfekler</Turkish>
-            </Key>
-            <Key ID="STR_A3AU_launchers">
-                <Original>Launchers</Original>
-                <Russian>Пусковые Установки</Russian>
-                <Korean>발사기</Korean>
-                <French>Lanceurs</French>
-                <Chinesesimp>发射器</Chinesesimp>
-                <Turkish>Fırlatıcılar</Turkish>
-            </Key>
-            <Key ID="STR_A3AU_specialWeapons">
-                <Original>Special Weapons</Original>
-                <Russian>Спецоружие</Russian>
-                <Korean>특수화기</Korean>
-                <French>Armes spéciales</French>
-                <Chinesesimp>特殊武器</Chinesesimp>
-                <Turkish>Özel Silahlar</Turkish>
-            </Key>
-            <Key ID="STR_A3AU_magazines">
-                <Original>Magazines</Original>
-                <Russian>Магазины</Russian>
-                <Korean>탄창</Korean>
-                <French>Magasins</French>
-                <Chinesesimp>弹匣</Chinesesimp>
-                <Turkish>Şarjörler</Turkish>
-            </Key>
-            <Key ID="STR_A3AU_glGrenades">
-                <Original>GL Grenades</Original>
-                <Russian>Подствольные Гранаты</Russian>
-                <Korean>유탄발사기</Korean>
-                <French>GL Grenades</French>
-                <Chinesesimp>榴弹</Chinesesimp>
-                <Turkish>Bombaatar Mühimmatları</Turkish>
-            </Key>
-            <Key ID="STR_A3AU_launcherAmmo">
-                <Original>Missiles and Rockets</Original>
-                <Russian>Ракеты и Реактивные гранаты</Russian>
-                <Korean>미사일과 로켓</Korean>
-                <French>Missiles et roquettes</French>
-                <Chinesesimp>导弹和火箭弹</Chinesesimp>
-                <Turkish>Füzeler ve Roketler</Turkish>
-            </Key>
-            <Key ID="STR_A3AU_sights">
-                <Original>Sights</Original>
-                <Russian>Прицелы</Russian>
-                <Korean>조준기</Korean>
-                <French>Vue d'ensemble</French>
-                <Chinesesimp>瞄具</Chinesesimp>
-                <Turkish>Nişangahlar</Turkish>
-            </Key>
-            <Key ID="STR_A3AU_muzzles">
-                <Original>Muzzle Devices</Original>
-                <Russian>Дульные Устройства</Russian>
-                <Korean>총구부착물</Korean>
-                <French>Dispositifs de mise à feu</French>
-                <Chinesesimp>枪口装置</Chinesesimp>
-                <Turkish>Namluağzı Aparatları</Turkish>
-            </Key>
-            <Key ID="STR_A3AU_bipods">
-                <Original>Bipods</Original>
-                <Russian>Сошки</Russian>
-                <Korean>양각대</Korean>
-                <French>Bipieds</French>
-                <Chinesesimp>脚架</Chinesesimp>
-                <Turkish>Çatalayak</Turkish>
-            </Key>
-            <Key ID="STR_A3AU_grips">
-                <Original>Grips</Original>
-                <Russian>Рукоятки</Russian>
-                <Korean>그립</Korean>
-                <French>Crosses</French>
-                <Chinesesimp>握把</Chinesesimp>
-                <Turkish>Tutamaklar</Turkish>
-            </Key>
-            <Key ID="STR_A3AU_handles">
-                <Original>Handles</Original>
-                <Russian>Рукоятки</Russian>
-                <Korean>손잡이</Korean>
-                <French>Poignées</French>
-                <Chinesesimp>提把</Chinesesimp>
-                <Turkish>Kollar</Turkish>
-            </Key>
-            <Key ID="STR_A3AU_pointers">
-                <Original>Pointers</Original>
-                <Russian>ЛЦУ</Russian>
-                <Korean>레이저 지시기</Korean>
-                <French>Pointeurs</French>
-                <Chinesesimp>指示器</Chinesesimp>
-                <Turkish>Lazerler</Turkish>
-            </Key>
-            <Key ID="STR_A3AU_flashlights">
-                <Original>Flashlights</Original>
-                <Russian>Фонарики</Russian>
-                <Korean>손전등</Korean>
-                <French>Lampes de poche</French>
-                <Chinesesimp>手电筒</Chinesesimp>
-                <Turkish>Fenerler</Turkish>
-            </Key>
-            <Key ID="STR_A3AU_gps">
-                <Original>GPS</Original>
-                <Russian>GPS</Russian>
-                <Korean>GPS</Korean>
-                <French>GPS</French>
-                <Chinesesimp>GPS</Chinesesimp>
-                <Turkish>GPS</Turkish>
-            </Key>
-            <Key ID="STR_A3AU_binoculars">
-                <Original>Binoculars</Original>
-                <Russian>Бинокли</Russian>
-                <Korean>쌍안경</Korean>
-                <French>Jumelles</French>
-                <Chinesesimp>望远镜</Chinesesimp>
-                <Turkish>Dürbünler</Turkish>
-            </Key>
-            <Key ID="STR_A3AU_nvgs">
-                <Original>NVGs</Original>
-                <Russian>ПНВ</Russian>
-                <Korean>야간투시경</Korean>
-                <French>NVG</French>
-                <Chinesesimp>夜视仪</Chinesesimp>
-                <Turkish>Gece Görüş Gözlükleri</Turkish>
-            </Key>
-            <Key ID="STR_A3AU_misc">
-                <Original>Misc</Original>
-                <Russian>Прочее</Russian>
-                <Korean>기타</Korean>
-                <French>Divers</French>
-                <Chinesesimp>杂项</Chinesesimp>
-                <Turkish>Çeşitli</Turkish>
-            </Key>
-            <Key ID="STR_A3AU_bagsStatics">
-                <Original>Bags with Statics</Original>
-                <Russian>Сумки со Стационарным оружием</Russian>
-                <Korean>고정화기 가방</Korean>
-                <French>Sacs avec statique</French>
-                <Chinesesimp>装有静态武器的背包</Chinesesimp>
-                <Turkish>Statik Silah Çantaları</Turkish>
-            </Key>
-            <Key ID="STR_A3AU_srMagazines">
-                <Original>Sniper Rifle Magazines</Original>
-                <Russian>Магазины для Снайперских Винтовок</Russian>
-                <Korean>저격소총 탄창</Korean>
-                <French>Magasins de fusils de sniper</French>
-                <Chinesesimp>狙击步枪弹匣</Chinesesimp>
-                <Turkish>K.N.Tüfeği Şarjörleri</Turkish>
-            </Key>
-            <Key ID="STR_A3AU_camouflage">
-                <Original>Camouflage</Original>
-                <Russian>Камуфляж</Russian>
-                <Korean>위장복</Korean>
-                <French>Camouflage</French>
-                <Chinesesimp>迷彩</Chinesesimp>
-                <Turkish>Kamuflaj</Turkish>
-            </Key>
-            <Key ID="STR_A3AU_helmets">
-                <Original>Helmets</Original>
-                <Russian>Шлемы</Russian>
-                <Chinesesimp>头盔</Chinesesimp>
-                <Korean>헬멧</Korean>
-                <Turkish>Kasklar</Turkish>
-            </Key>
-            <Key ID="STR_A3AU_uniforms">
-                <Original>Uniforms</Original>
-                <Russian>Униформы</Russian>
-                <Chinesesimp>制服</Chinesesimp>
-                <Korean>유니폼</Korean>
-                <Turkish>Üniformalar</Turkish>
-            </Key>
-            <Key ID="STR_A3AU_backpacks">
-                <Original>Backpacks</Original>
-                <Russian>Рюкзаки</Russian>
-                <Chinesesimp>背包</Chinesesimp>
-                <Korean>군장</Korean>
-                <Turkish>Sırt Çantaları</Turkish>
-            </Key>
-            <Key ID="STR_A3AU_facewear">
-                <Original>Facewear</Original>
-                <Russian>Очки/шарфы</Russian>
-                <Chinesesimp>面部装备</Chinesesimp>
-                <Korean>페이스웨어</Korean>
-                <Turkish>Yüz Aksesuarları</Turkish>
-            </Key>
-            <Key ID="STR_A3AU_vests">
-                <Original>Vests</Original>
-                <Russian>Разгрузки</Russian>
-                <Chinesesimp>背心</Chinesesimp>
-                <Korean>조끼</Korean>
-                <Turkish>Yelekler</Turkish>
-            </Key>
-            <Key ID="STR_A3AU_utility">
-                <Original>Utility</Original>
-                <Russian>Служебные</Russian>
-                <Chinesesimp>一般物品</Chinesesimp>
-                <Korean>기타 아이템</Korean>
-                <Turkish>Yardımcı Ekipman</Turkish>
-            </Key>
-        </Container>
-        <!-- helpers -->
-        <Container name="A3AU_hals_store_helpers">
-            <Key ID="STR_A3AU_and">
-                <Original>and</Original>
-                <Russian>и</Russian>
-                <German>und</German>
-                <Korean>그리고</Korean>
-                <French>et</French>
-                <Chinesesimp>和</Chinesesimp>
-                <Turkish>ve</Turkish>
-            </Key>
-            <Key ID="STR_A3AU_barret">
-                <Original>Barret</Original>
-                <Russian>Barret</Russian>
-                <Korean>Barret</Korean>
-                <French>Barret</French>
-                <Chinesesimp>Barret</Chinesesimp>
-                <Turkish>Barret</Turkish>
-            </Key>
-            <Key ID="STR_A3AU_Vanilla">
-                <Original>Arma 3</Original>
-                <Russian>Арма 3</Russian>
-                <Korean>아르마 3</Korean>
-                <French>Arma 3</French>
-                <Chinesesimp>Arma 3</Chinesesimp>
-                <Turkish>Arma 3</Turkish>
-            </Key>
-            <Key ID="STR_A3AU_Apex">
-                <Original>Apex</Original>
-                <Russian>Apex</Russian>
-                <Chinesesimp>Apex</Chinesesimp>
-                <Korean>Apex</Korean>
-                <Turkish>Apex</Turkish>
-            </Key>
-            <Key ID="STR_A3AU_Artofwar">
-                <Original>Art of war</Original>
-                <Russian>Art of war</Russian>
-                <Chinesesimp>Art of war</Chinesesimp>
-                <Korean>Art of war</Korean>
-                <Turkish>Art of war</Turkish>
-            </Key>
-            <Key ID="STR_A3AU_Contact">
-                <Original>Contact</Original>
-                <Russian>Contact</Russian>
-                <Chinesesimp>Contact</Chinesesimp>
-                <Korean>Contact</Korean>
-                <Turkish>Contact</Turkish>
-            </Key>
-            <Key ID="STR_A3AU_Jets">
-                <Original>Jets</Original>
-                <Russian>Jets</Russian>
-                <Chinesesimp>Jets</Chinesesimp>
-                <Korean>Jets</Korean>
-                <Turkish>Jets</Turkish>
-            </Key>
-            <Key ID="STR_A3AU_Kart">
-                <Original>Kart</Original>
-                <Russian>Kart</Russian>
-                <Chinesesimp>Kart</Chinesesimp>
-                <Korean>Kart</Korean>
-                <Turkish>Kart</Turkish>
-            </Key>
-            <Key ID="STR_A3AU_Lawsofwar">
-                <Original>Laws of war</Original>
-                <Russian>Laws of war</Russian>
-                <Chinesesimp>Laws of war</Chinesesimp>
-                <Korean>Laws of war</Korean>
-                <Turkish>Laws of war</Turkish>
-            </Key>
-            <Key ID="STR_A3AU_Marksmen">
-                <Original>Marksmen</Original>
-                <Russian>Marksmen</Russian>
-                <Chinesesimp>Marksmen</Chinesesimp>
-                <Korean>Marksmen</Korean>
-                <Turkish>Marksmen</Turkish>
-            </Key>
-            <Key ID="STR_A3AU_Tanks">
-                <Original>Tanks</Original>
-                <Russian>Tanks</Russian>
-                <Chinesesimp>Tanks</Chinesesimp>
-                <Korean>Tanks</Korean>
-                <Turkish>Tanks</Turkish>
-                </Key>
-            <Key ID="STR_A3AU_Ultimate">
-                <Original>Antistasi Ultimate</Original>
-                <Russian>Antistasi Ultimate</Russian>
-                <Chinesesimp>Antistasi Ultimate</Chinesesimp>
-                <Korean>Antistasi Ultimate</Korean>
-            </Key>
-            <Key ID="STR_A3AU_kkiv2035">
-                <Original>Kkiv 2035</Original>
-                <Russian>Kkiv 2035</Russian>
-                <Chinesesimp>Kkiv 2035</Chinesesimp>
-                <Korean>Kkiv 2035</Korean>
-                <Turkish>Kkiv 2035</Turkish>
-            </Key>
-            <Key ID="STR_A3AU_CSLA">
-                <Original>CSLA</Original>
-                <Russian>CSLA</Russian>
-                <French>CSLA</French>
-                <Korean>CSLA</Korean>
-                <Chinesesimp>CSLA</Chinesesimp>
-            </Key>
-            <Key ID="STR_A3AU_RF">
-                <Original>Reaction Forces</Original>
-                <Russian>Reaction Forces</Russian>
-                <Korean>Reaction Forces</Korean>
-                <French>Force de réaction</French>
-                <Chinesesimp>Reaction Force</Chinesesimp>
-            </Key>
-            <Key ID="STR_A3AU_EF">
-                <Original>Expeditionary Forces</Original>
-                <Russian>Expeditionary Forces</Russian>
-                <Korean>Expeditionary Forces</Korean>
-                <French>Force de Expéditionnaire</French>
-                <Chinesesimp>Expeditionary Forces</Chinesesimp>
-            </Key>
-            <Key ID="STR_A3AU_3cbbaf">
-                <Original>3CBBAF</Original>
-                <Russian>3CBBAF</Russian>
-                <Korean>3CBBAF</Korean>
-                <French>3CBBAF</French>
-                <Chinesesimp>3CBBAF</Chinesesimp>
-            </Key>
-            <Key ID="STR_A3AU_3cbf">
-                <Original>3CB</Original>
-                <Russian>3CB</Russian>
-                <Korean>3CB</Korean>
-                <French>3CB</French>
-                <Chinesesimp>3CB</Chinesesimp>
-            </Key>
-            <Key ID="STR_A3AU_3cbfcw">
-                <Original>3CBFCW</Original>
-                <Russian>3CBFCW</Russian>
-                <Korean>3CBFCW</Korean>
-                <French>3CBFCW</French>
-                <Chinesesimp>3CBFCW</Chinesesimp>
-            </Key>
-            <Key ID="STR_A3AU_Aegis">
-                <Original>Aegis</Original>
-                <Russian>Aegis</Russian>
-                <Korean>Aegis</Korean>
-                <French>Aegis</French>
-                <Chinesesimp>Aegis</Chinesesimp>
-            </Key>
-            <Key ID="STR_A3AU_Atlas">
-                <Original>Atlas</Original>
-                <English>Atlas</English>
-                <Russian>Atlas</Russian>
-                <Korean>Atlas</Korean>
-                <French>Atlas</French>
-                <Chinesesimp>Atlas</Chinesesimp>
-            </Key>
-            <Key ID="STR_A3AU_Police">
-                <Original>Aegis Police</Original>
-                <English>Aegis Police</English>
-                <Russian>Aegis Police</Russian>
-                <Korean>Aegis Police</Korean>
-                <French>Aegis Police</French>
-                <Chinesesimp>Aegis Police</Chinesesimp>
-            </Key>
-            <Key ID="STR_A3AU_OpposingForces">
-                <Original>Atlas Opposing Forces</Original>
-                <English>Atlas Opposing Forces</English>
-                <Russian>Atlas Opposing Forces</Russian>
-                <Korean>Atlas Opposing Forces</Korean>
-                <French>Atlas Opposing Forces</French>
-                <Chinesesimp>Atlas Opposing Forces</Chinesesimp>
-            </Key>
-            <Key ID="STR_A3AU_Braf">
-                <Original>BRAF</Original>
-                <Russian>BRAF</Russian>
-                <Korean>BRAF</Korean>
-                <French>BRAF</French>
-                <Chinesesimp>BRAF</Chinesesimp>
-            </Key>
-            <Key ID="STR_A3AU_bwa">
-                <Original>BWA</Original>
-                <Russian>BWA</Russian>
-                <Korean>BWA</Korean>
-                <French>BWA</French>
-                <Chinesesimp>BWA</Chinesesimp>
-            </Key>
-            <Key ID="STR_A3AU_csa">
-                <Original>CSA38</Original>
-                <Russian>CSA38</Russian>
-                <Korean>CSA38</Korean>
-                <French>CSA38</French>
-                <Chinesesimp>CSA38</Chinesesimp>
-            </Key>
-            <Key ID="STR_A3AU_cup">
-                <Original>CUP</Original>
-                <Russian>CUP</Russian>
-                <Korean>CUP</Korean>
-                <French>CUP</French>
-                <Chinesesimp>CUP</Chinesesimp>
-            </Key>
-            <Key ID="STR_A3AU_cw">
-                <Original>CW</Original>
-                <Russian>CW</Russian>
-                <Korean>CW</Korean>
-                <French>CW</French>
-                <Chinesesimp>CW</Chinesesimp>
-            </Key>
-            <Key ID="STR_A3AU_empire">
-                <Original>Empire</Original>
-                <Russian>Empire</Russian>
-                <Korean>Empire</Korean>
-                <French>Empire</French>
-                <Chinesesimp>Empire</Chinesesimp>
-            </Key>
-            <Key ID="STR_A3AU_ffaa">
-                <Original>FFAA</Original>
-                <Russian>FFAA</Russian>
-                <Korean>FFAA</Korean>
-                <French>FFAA</French>
-                <Chinesesimp>FFAA</Chinesesimp>
-            </Key>
-            <Key ID="STR_A3AU_fwa">
-                <Original>FWA</Original>
-                <Russian>FWA</Russian>
-                <Korean>FWA</Korean>
-                <French>FWA</French>
-                <Chinesesimp>FWA</Chinesesimp>
-            </Key>
-            <Key ID="STR_A3AU_gm">
-                <Original>GM</Original>
-                <Russian>GM</Russian>
-                <Korean>GM</Korean>
-                <French>GM</French>
-                <Chinesesimp>GM</Chinesesimp>
-            </Key>
-            <Key ID="STR_A3AU_ifa">
-                <Original>IFA</Original>
-                <Russian>IFA</Russian>
-                <Korean>IFA</Korean>
-                <French>IFA</French>
-                <Chinesesimp>IFA</Chinesesimp>
-            </Key>
-            <Key ID="STR_A3AU_fow">
-                <Original>FoW</Original>
-                <Russian>FoW</Russian>
-                <Korean>FoW</Korean>
-                <French>FoW</French>
-                <Chinesesimp>FoW</Chinesesimp>
-            </Key>
-            <Key ID="STR_A3AU_italy">
-                <Original>Pedagne</Original>
-                <Russian>Pedagne</Russian>
-                <Korean>Pedagne</Korean>
-                <French>Pedagne</French>
-                <Chinesesimp>Pedagne</Chinesesimp>
-            </Key>
-            <Key ID="STR_A3AU_niarms">
-                <Original>NIArms</Original>
-                <Russian>NIArms</Russian>
-                <Korean>NIArms</Korean>
-                <French>NIArms</French>
-                <Chinesesimp>NIArms</Chinesesimp>
-            </Key>
-            <Key ID="STR_A3AU_optre">
-                <Original>OPTRE</Original>
-                <Russian>OPTRE</Russian>
-                <Korean>OPTRE</Korean>
-                <French>OPTRE</French>
-                <Chinesesimp>OPTRE</Chinesesimp>
-            </Key>
-            <Key ID="STR_A3AU_pla">
-                <Original>PLA</Original>
-                <Russian>PLA</Russian>
-                <Korean>PLA</Korean>
-                <French>PLA</French>
-                <Chinesesimp>PLA</Chinesesimp>
-            </Key>
-            <Key ID="STR_A3AU_rhs">
-                <Original>RHS</Original>
-                <Russian>RHS</Russian>
-                <Korean>RHS</Korean>
-                <French>RHS</French>
-                <Chinesesimp>RHS</Chinesesimp>
-            </Key>
-            <Key ID="STR_A3AU_mss">
-                <Original>MSS</Original>
-                <Russian>MSS</Russian>
-                <Korean>MSS</Korean>
-                <French>MSS</French>
-                <Chinesesimp>MSS</Chinesesimp>
-            </Key>
-            <Key ID="STR_A3AU_sfp">
-                <Original>SFP</Original>
-                <Russian>SFP</Russian>
-                <Korean>SFP</Korean>
-                <French>SFP</French>
-                <Chinesesimp>SFP</Chinesesimp>
-            </Key>
-            <Key ID="STR_A3AU_sma">
-                <Original>SMA</Original>
-                <Russian>SMA</Russian>
-                <Korean>SMA</Korean>
-                <French>SMA</French>
-                <Chinesesimp>SMA</Chinesesimp>
-            </Key>
-            <Key ID="STR_A3AU_spearhead">
-                <Original>SPE</Original>
-                <Russian>SPE</Russian>
-                <Korean>SPE</Korean>
-                <French>SPE</French>
-                <Chinesesimp>SPE</Chinesesimp>
-            </Key>
-            <Key ID="STR_A3AU_spex">
-                <Original>SPEX</Original>
-                <Russian>SPEX</Russian>
-                <Korean>SPEX</Korean>
-                <French>SPEX</French>
-            </Key>
-            <Key ID="STR_A3AU_tow">
-                <Original>Tier 1</Original>
-                <Russian>Tier 1</Russian>
-                <Korean>Tier 1</Korean>
-                <French>Tier 1</French>
-                <Chinesesimp>Tier 1</Chinesesimp>
-            </Key>
-            <Key ID="STR_A3AU_unsung">
-                <Original>Unsung</Original>
-                <Russian>Unsung</Russian>
-                <Korean>Unsung</Korean>
-                <French>Unsung</French>
-                <Chinesesimp>Unsung</Chinesesimp>
-            </Key>
-            <Key ID="STR_A3AU_vn">
-                <Original>VN</Original>
-                <Russian>VN</Russian>
-                <Korean>VN</Korean>
-                <French>VN</French>
-                <Chinesesimp>VN</Chinesesimp>
-            </Key>
-            <Key ID="STR_A3AU_nickelsteel">
-                <Original>Nickel steel</Original>
-                <Russian>Nickel steel</Russian>
-                <Korean>Nickel steel</Korean>
-                <French>Nickel steel</French>
-            </Key>
-            <Key ID="STR_A3AU_wrs">
-                <Original>Research and Security</Original>
-                <Russian>Research and Security</Russian>
-                <Korean>Research and Security</Korean>
-                <French>Research and Security</French>
-                <Chinesesimp>Research and Security</Chinesesimp>
-            </Key>
-            <Key ID="STR_A3AU_ws">
-                <Original>Western Sahara</Original>
-                <Russian>Western Sahara</Russian>
-                <Korean>Western Sahara</Korean>
-                <French>Western Sahara</French>
-                <Chinesesimp>Western Sahara</Chinesesimp>
-            </Key>
-            <Key ID="STR_A3AU_nfts">
-                <Original>Northern Fronts</Original>
-                <Russian>Northern Fronts</Russian>
-                <Korean>Northern Fronts</Korean>
-                <French>Northern Fronts</French>
-                <Chinesesimp>Northern Fronts</Chinesesimp>
-            </Key>
-            <Key ID="STR_A3AU_eaw">
-                <Original>East Asia War</Original>
-                <Russian>East Asia War</Russian>
-                <Korean>East Asia War</Korean>
-                <French>East Asia War</French>
-                <Chinesesimp>East Asia War</Chinesesimp>
-            </Key>
-            <Key ID="STR_A3AU_cwr">
-                <Original>Cold War ReArmed</Original>
-                <Russian>Cold War ReArmed</Russian>
-                <Korean>Cold War ReArmed</Korean>
-                <French>Cold War ReArmed</French>
-                <Chinesesimp>Cold War ReArmed</Chinesesimp>
-            </Key>
-            <Key ID="STR_A3AU_ylarms">
-                <Original>YLArms</Original>
-                <Russian>YLArms</Russian>
-                <Korean>YLArms</Korean>
-                <French>YLArms</French>
-                <Chinesesimp>YLArms</Chinesesimp>
-            </Key>
-            <Key ID="STR_A3AU_PROJINF">
-                <Original>P.I.</Original>
-                <German>P.I.</German>
-                <Russian>P.I.</Russian>
-                <Chinesesimp>P.I.</Chinesesimp>
-                <Korean>P.I.</Korean>
-                <French>P.I.</French>
-            </Key>
-            <Key ID="STR_A3AU_JCA_ARSENAL">
-                <Original>JCA</Original>
-                <German>JCA</German>
-                <Russian>JCA</Russian>
-                <Chinesesimp>JCA</Chinesesimp>
-                <Korean>JCA</Korean>
-                <French>JCA</French>
-            </Key>
-            <Key ID="STR_A3AU_ffp">
-                <Original>FFP</Original>
-                <Russian>FFP</Russian>
-                <Korean>FFP</Korean>
-                <French>FFP</French>
-                <Chinesesimp>FFP</Chinesesimp>
-            </Key>
-            <Key ID="STR_A3AU_hafm">
-                <Original>HAFM</Original>
-                <Russian>HAFM</Russian>
-                <Korean>HAFM</Korean>
-                <French>HAFM</French>
-                <Chinesesimp>HAFM</Chinesesimp>
-            </Key>
-            <Key ID="STR_A3AU_MPP_ARSENAL">
-                <Original>MPP</Original>
-                <German>MPP</German>
-                <Russian>MPP</Russian>
-                <Chinesesimp>MPP</Chinesesimp>
-                <Korean>MPP</Korean>
-                <French>MPP</French>
-            </Key>
-            <Key ID="STR_A3AU_ReArma_US">
-                <Original>ReArma US</Original>
-                <German>ReArma US</German>
-                <Russian>ReArma US</Russian>
-                <Chinesesimp>ReArma US</Chinesesimp>
-                <Korean>ReArma US</Korean>
-                <French>ReAReArma USrma</French>
-            </Key>
-            <Key ID="STR_A3AU_ReArma_RU">
-                <Original>ReArma RU</Original>
-                <German>ReArma RU</German>
-                <Russian>ReArma RU</Russian>
-                <Chinesesimp>ReArma RU</Chinesesimp>
-                <Korean>ReArma RU</Korean>
-                <French>ReArma RU</French>
-            </Key>
-            <Key ID="STR_A3AU_ReArma_CN">
-                <Original>ReArma CN</Original>
-                <German>ReArma CN</German>
-                <Russian>ReArma CN</Russian>
-                <Chinesesimp>ReArma CN</Chinesesimp>
-                <Korean>ReArma CN</Korean>
-                <French>ReArma CN</French>
-            </Key>
-            <Key ID="STR_A3AU_QDI">
-                <Original>QDI</Original>
-                <German>QDI</German>
-                <Russian>QDI</Russian>
-                <Chinesesimp>QDI</Chinesesimp>
-                <Korean>QDI</Korean>
-                <French>QDI</French>
-            </Key>
-            <!-- <Key ID="STR_A3AU_PROJINF">
-                <Original>P.I.</Original>
-                <German>P.I.</German>
-                <Russian>P.I.</Russian>
-                <Chinesesimp>P.I.</Chinesesimp>
-                <Korean>P.I.</Korean>
-                <French>P.I.</French>
-            <Key ID="STR_A3AU_JCA_ARSENAL">
-                <Original>JCA</Original>
-                <German>JCA</German>
-                <Russian>JCA</Russian>
-                <Chinesesimp>JCA</Chinesesimp>
-                <Korean>JCA</Korean>
-                <French>JCA</French>
-           </Key> -->
-        </Container>
     </Package>
 </Project>

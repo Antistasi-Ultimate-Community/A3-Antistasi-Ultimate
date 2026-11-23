@@ -28,7 +28,7 @@ private _enterable = [];
 
 {
     if ([_x] call A3A_fnc_patrolBuildingEnterable) then {
-        _enterable pushback _x;
+        _enterable pushBack _x;
     };
 } forEach (nearestObjects [_position, ["House","Building"], _radius]);
 

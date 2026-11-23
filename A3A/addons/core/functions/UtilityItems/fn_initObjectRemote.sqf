@@ -22,14 +22,14 @@ Example:
 params [["_object", objNull, [objNull]],["_jipKey", "", [""]]];
 
 // If object no longer exists, clear the JIP entry
-if (isNull _object) exitwith {remoteExec ["", _jipKey]};
+if (isNull _object) exitWith {remoteExec ["", _jipKey]};
 
 // Wait until client init is complete so that all the subsystems (inc utilityItemHM) are ready
 if (isNil "initClientDone") then {
     waitUntil {sleep 1; !isNil "initClientDone"};
 };
 
-private _flags = (A3A_utilityItemHM get typeof _object) # 4;
+private _flags = (A3A_utilityItemHM get typeOf _object) # 4;
 
 // movable object
 // TODO: Do we really want rotate on everything?
@@ -38,7 +38,7 @@ if ("move" in _flags) then {
         localize "STR_A3A_carryObject",
         A3A_fnc_carryItem,
         _object, 1.5, true, true, "",
-        "!(call A3A_fnc_isCarrying) and (vehicle _this == _this)
+        "!(call A3A_fnc_isCarrying) and (isNull objectParent _this)
             and (isNull attachedTo _originalTarget)", 8
     ];
 };

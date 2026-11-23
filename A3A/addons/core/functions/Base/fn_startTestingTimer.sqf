@@ -35,9 +35,9 @@ private _playersActive = 0;
 while {true} do
 {
     //Sleep if no player is online
-    if (count (allPlayers - (entities "HeadlessClient_F")) == 0) then
+    if ((allPlayers - (entities "HeadlessClient_F")) isEqualTo []) then
     {
-        waitUntil {sleep 10; (count (allPlayers - (entities "HeadlessClient_F")) > 0)};
+        waitUntil {sleep 10; ((allPlayers - (entities "HeadlessClient_F")) isNotEqualTo [])};
     };
 
     //Sleep 5 minutes

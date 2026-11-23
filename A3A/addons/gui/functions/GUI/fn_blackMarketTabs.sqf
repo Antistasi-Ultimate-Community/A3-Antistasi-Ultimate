@@ -80,10 +80,10 @@ _bmData apply {
         };
 
         private _dlc = "";
-        private _addons = configsourceaddonlist _configClass;
-        if (count _addons > 0) then {
-            private _mods = configsourcemodlist (configfile >> "CfgPatches" >> (_addons select 0));
-            if (count _mods > 0) then {
+        private _addons = configSourceAddonList _configClass;
+        if (_addons isNotEqualTo []) then {
+            private _mods = configSourceModList (configFile >> "CfgPatches" >> (_addons select 0));
+            if (_mods isNotEqualTo []) then {
                 _dlc = _mods select 0;
             };
         };
@@ -137,13 +137,13 @@ _bmData apply {
         private _dlcParams = modParams [_dlc, ["logo", "logoOver"]];
         _dlcMetadata = createHashMapFromArray [
             ["logo", _dlcParams param [0, ""]],
-            ["fieldManualTopicAndHint", getArray (configfile >> "CfgMods" >> _dlc >> "fieldManualTopicAndHint")]
+            ["fieldManualTopicAndHint", getArray (configFile >> "CfgMods" >> _dlc >> "fieldManualTopicAndHint")]
         ];
         _dlcMetadataCache set [_dlc, _dlcMetadata];
     };
     private _logo = _dlcMetadata get "logo";
     private _fieldManualTopicAndHint = _dlcMetadata get "fieldManualTopicAndHint";
-    _label ctrlseteventhandler ["buttonclick",format ["if (count %1 > 0) then {(%1 + [ctrlparent (_this select 0)]) call bis_fnc_openFieldManual;};",_fieldManualTopicAndHint]];
+    _label ctrlSetEventHandler ["buttonclick",format ["if (count %1 > 0) then {(%1 + [ctrlparent (_this select 0)]) call bis_fnc_openFieldManual;};",_fieldManualTopicAndHint]];
     private _OriginsText = composeText [
         _displayName," ",image _logo
     ];
@@ -253,7 +253,7 @@ _bmData apply {
     if (_passengers > 0) then { _crewRows pushBack [A3A_Icon_Cargo, _passengers, false, localize "STR_antistasi_dialogs_buy_vehicle_passenger_tooltip"]; };
     if (_passengersFFV > 0) then { _crewRows pushBack [A3A_Icon_FFV, _passengersFFV, true, localize "STR_antistasi_dialogs_buy_vehicle_ffv_tooltip"]; };
 
-    if (count _crewRows > 0) then {
+    if (_crewRows isNotEqualTo []) then {
         private _crewCountHeight = (count _crewRows) * (3.6 * GRID_H);
         private _crewCountYpos = 7 * GRID_H;
         private _maxCrewYpos = (24 * GRID_H) - _crewCountHeight;
@@ -269,7 +269,7 @@ _bmData apply {
         private _crewTooltipLines = [];
         {
             _x params ["_icon", "_count", "_isSecondary", "_tooltipText"];
-            private _linePrefix = if (_isSecondary) then {"<t align='left' color='#CCCCCC'>"} else {"<t align='left'>"};
+            private _linePrefix = ["<t align='left'>", "<t align='left' color='#CCCCCC'>"] select (_isSecondary);
             _crewLines pushBack format ["%1<img image='%2' size='0.8'/> x%3</t>", _linePrefix, _icon, _count];
             _crewTooltipLines pushBack format ["%1: %2", _tooltipText, _count];
         } forEach _crewRows;

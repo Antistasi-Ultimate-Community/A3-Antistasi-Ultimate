@@ -29,10 +29,10 @@ _possibleTargets = _possibleTargets select {sidesX getVariable [_x,sideUnknown] 
 private _hqInfo = [A3A_curHQInfoOcc, A3A_curHQInfoInv] select (_side == Invaders);
 if (_targetSide == teamPlayer and _hqInfo >= 1) then { _possibleTargets pushBack "Synd_HQ" };
 
-if (count _possibleTargets == 0 || count _possibleStartBases == 0) exitWith {
+if (_possibleTargets isEqualTo [] || _possibleStartBases isEqualTo []) exitWith {
     Info("Attack found no suitable targets or no suitable start bases, aborting!"); [[], []];
 };
-Debug_2("%1 possible targets for attack found, possible start points are %2", count _possibleTargets, _possibleStartBases);
+Debug_2("%1 possible targets for attack found, possible start points are %2",count _possibleTargets,_possibleStartBases);
 
 
 //**************** Data preparation *************************************************************
@@ -116,7 +116,7 @@ private _finalWeights = [];
     private _nonLocalMarkers = _markersXYT - _localMarkers;
     private _localThreat = 0;
     {
-        private _dist = _x distance2d _targpos;
+        private _dist = _x distance2D _targpos;
         private _threat = (_x#2) * linearConversion [500, 1500, _dist, 1, 0, true];
         _localThreat = _localThreat + _threat;
         if (_dist > 500) then { _nonLocalMarkers pushBack [_x#0, _x#1, (_x#2) - _threat] };
@@ -153,7 +153,7 @@ private _finalWeights = [];
     private _maxWeight = 0;
     {
         private _basePos = markerPos _x;
-        private _dist = _basePos distance2d _targPos;
+        private _dist = _basePos distance2D _targPos;
         if (_dist > distanceForAirAttack) then { continue };
         private _midpoint = (_basePos vectorAdd _targPos) vectorMultiply 0.5;
         private _targDir = _basePos getDir _targPos;
@@ -201,7 +201,7 @@ private _finalWeights = [];
 // Multiply up for readability
 _finalWeights = _finalWeights apply { _x * 10 };
 {
-    Debug_2("Target: weight %1, %2", (_finalWeights#_forEachIndex) toFixed 3, _x);
+    Debug_2("Target: weight %1, %2",(_finalWeights#_forEachIndex) toFixed 3,_x);
 } forEach _finalTargets;
 
 [_finalTargets, _finalWeights];

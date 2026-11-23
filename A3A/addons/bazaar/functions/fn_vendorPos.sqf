@@ -3,7 +3,7 @@
 // centre. Returns posATL with z = 0.
 params [["_center", [0,0,0], [[]]]];
 
-private _houses = (nearestObjects [_center, ["House"], 200]) select { alive _x && {count (_x buildingPos -1) > 0} };
+private _houses = (nearestObjects [_center, ["House"], 200]) select { alive _x && {(_x buildingPos -1) isNotEqualTo []} };
 private _pos = [];
 for "_i" from 1 to 30 do {
 	private _base = if (_houses isEqualTo []) then { _center } else { getPosATL (selectRandom _houses) };

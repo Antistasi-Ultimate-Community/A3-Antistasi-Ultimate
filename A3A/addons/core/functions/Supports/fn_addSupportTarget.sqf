@@ -25,19 +25,19 @@ if (_activeSupport isEqualType "") then {
     };
     if (_index != -1) then { _activeSupport = A3A_activeSupports select _index };
 };
-if (_activeSupport isEqualType "") exitWith { Error_1("Support name %1 not in active list", _activeSupport); false; };
+if (_activeSupport isEqualType "") exitWith { Error_1("Support name %1 not in active list",_activeSupport); false; };
 
 _activeSupport params ["_suppName", "_suppSide", "_suppType", "_center", "_radius", "_suppTarget"];
 // Shouldn't really need these checks but whatever
-if (_radius == 0 or _suppTarget isNotEqualTo []) exitWith { Error_1("No remaining targets for support %1", _suppName) };
+if (_radius == 0 or _suppTarget isNotEqualTo []) exitWith { Error_1("No remaining targets for support %1",_suppName) };
 
 _suppTarget append [_target, _targPos];              // target list may need both
-Info_3("Added target %1 (position %2) to support %3", _target, _targPos, _suppName);
+Info_3("Added target %1 (position %2) to support %3",_target,_targPos,_suppName);
 
 // Add the strike call here so that we don't repeat it
-private _suppTypeHM = [A3A_supportTypesOcc, A3A_supportTypesInv] select (_side == Invaders);
+private _suppTypeHM = [A3A_supportTypesOcc, A3A_supportTypesInv] select (_suppSide == Invaders);
 (_suppTypeHM get _suppType) params ["_baseType", "", "", "_strikePower"];
-private _strikeTarg = if (_baseType == "TARGET") then { _target } else { _targPos };
+private _strikeTarg = [_targPos, _target] select (_baseType == "TARGET");
 A3A_supportStrikes pushBack [_suppSide, _baseType, _strikeTarg, time + 20*60, 20*60, _strikePower];
 
 true;

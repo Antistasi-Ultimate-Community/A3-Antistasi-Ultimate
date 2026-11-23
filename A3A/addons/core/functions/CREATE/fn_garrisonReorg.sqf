@@ -19,7 +19,7 @@ if (_medCount > 0) then
 	};
 if (_pool isEqualTo []) exitWith {_this};
 private _result = [];
-while {!(_pool isEqualTo [])} do
+while {_pool isNotEqualTo []} do
 	{
 	_squad = [];
 	_countX = A3A_rebelGarrisonGroupSize;

@@ -77,7 +77,7 @@ private _smokes = _AirDropPosition nearObjects ["SmokeShell", 200];
 _others append _smokes;
 private _planeVeh = objNull;
 
-if(count _smokes > 0) then {
+if(_smokes isNotEqualTo []) then {
     Info("Smoke detected, spawning airplane.");
 
     private _initialPlanePosition = [
@@ -113,7 +113,7 @@ if(count _smokes > 0) then {
     private _smokes = _AirDropPosition nearObjects ["SmokeShell", 200];
     private _dropPosition = _AirDropPosition;
 
-    if(count _smokes > 0) then {
+    if(_smokes isNotEqualTo []) then {
         private _smoke = _smokes select 0;
         _dropPosition = position _smoke;
     };
@@ -138,6 +138,8 @@ waitUntil {
 };
 
 
+private _box1 = objNull;
+private _box2 = objNull;
 if(alive _planeVeh) then {
     
     private _boxType = selectRandom [
@@ -149,7 +151,7 @@ if(alive _planeVeh) then {
 
     _planeVeh allowDamage false;
     sleep 1;
-    private _box1 = [_boxType,position _planeVeh] call SCRT_fnc_common_airdropCargo;
+    _box1 = [_boxType,position _planeVeh] call SCRT_fnc_common_airdropCargo;
     _box1 enableRopeAttach true;
     _box1 allowDamage false;
     [_box1] call A3A_Logistics_fnc_addLoadAction;
@@ -165,7 +167,7 @@ if(alive _planeVeh) then {
         _faction get "ammobox"
     ] select _difficult;
 
-    private _box2 = [_box2Class,position _planeVeh] call SCRT_fnc_common_airdropCargo;
+    _box2 = [_box2Class,position _planeVeh] call SCRT_fnc_common_airdropCargo;
     _box2 enableRopeAttach true;
     _box2 allowDamage false;
     [_box2] call A3A_Logistics_fnc_addLoadAction;
