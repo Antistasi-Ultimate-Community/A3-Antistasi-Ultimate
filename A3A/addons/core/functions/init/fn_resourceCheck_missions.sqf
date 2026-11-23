@@ -49,7 +49,7 @@ if (_numWreckedAntennas > 0 && {_shouldSpawnRepairThisTick && {!("REP" in A3A_ac
 
 // sleep 4;
 
-if (areRivalsEnabled && tierWar > 3 && !areRivalsDiscovered && !isRivalsDiscoveryQuestAssigned) then {
+if (areRivalsEnabled && {tierWar > 3} && {!areRivalsDiscovered} && {!isRivalsDiscoveryQuestAssigned}) then {
     Info_1("Rivals roll: %1", _rivalsTaskChance);
     if (random 100 < _rivalsTaskChance) then {
         Info("Assigning Rivals Discovery Task...");
@@ -62,7 +62,7 @@ if (areRivalsEnabled && tierWar > 3 && !areRivalsDiscovered && !isRivalsDiscover
     };
 };
 
-if (tierWar > 2 && !isTraderQuestCompleted && !isTraderQuestAssigned) then {
+if (tierWar > 2 && {!isTraderQuestCompleted} && {!isTraderQuestAssigned}) then {
     Info_1("Arms Dealer roll: %1", _traderTaskChance);
     if (random 100 < _traderTaskChance) then {
         Info("Assigning Arms Dealer Task...");
