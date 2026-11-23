@@ -26,7 +26,7 @@ if (units _group isEqualTo []) exitWith { deleteGroup _group };
 private _fnc_nearestBase = {
     params ["_group", "_potentials"];
 	_potentials = _potentials select { (spawner getVariable _x == 2) and (sidesX getVariable [_x, sideUnknown] == side _group) };
-	if (count _potentials == 0) exitWith {nil};
+	if (_potentials isEqualTo []) exitWith {nil};
     [_potentials, leader _group] call BIS_fnc_nearestPosition;
 };
 
@@ -36,7 +36,7 @@ if (!isNil "_AIScriptHandle") then { terminate _AIScriptHandle; };   // _group s
 
 // Remove any current waypoints
 // Turns out that this is actually bugged (for infantry?) and followed vs visible waypoints desync in unpredictable ways
-while {count waypoints _group > 0} do { deleteWaypoint [_group, 0] };
+while {waypoints _group isNotEqualTo []} do { deleteWaypoint [_group, 0] };
 
 // Group in vehicle
 if (vehicle leader _group != leader _group) exitWith
@@ -55,7 +55,7 @@ if (vehicle leader _group != leader _group) exitWith
     { _x disableAI "AUTOCOMBAT" } forEach units _group;
     _group setBehaviourStrong "AWARE";
     private _wp = _group addWaypoint [markerPos _marker, 50];
-    ServerDebug_2("Group %1 with vehicle %2 returning to base", _group, typeof vehicle leader _group);
+    ServerDebug_2("Group %1 with vehicle %2 returning to base",_group,typeOf vehicle leader _group);
     _group setCurrentWaypoint _wp;
 };
 
@@ -65,14 +65,14 @@ if (vehicle leader _group != leader _group) exitWith
 if (_marker != "") then {
     if (([_marker] call A3A_fnc_garrisonSize) - count (garrison getVariable [_marker, []]) <= 0) exitWith { _marker = "" };
     if (sidesX getVariable _marker != side _group) exitWith { _marker = "" }; 
-    if (markerPos _marker distance2d leader _group >= 500) exitWith { _marker = "" };
+    if (markerPos _marker distance2D leader _group >= 500) exitWith { _marker = "" };
 };
 if (_marker != "") exitWith { [_group, _marker] call A3A_fnc_enemyGarrison };
 
 // Foot troops can retreat to any unspawned friendly location
 _marker = [_group, outposts + airportsX + milbases + resourcesX + factories + seaports] call _fnc_nearestBase;
 if (isNil "_marker") exitWith {
-    ServerDebug_1("Group %1 surrendering due to no retreat locations", _group);
+    ServerDebug_1("Group %1 surrendering due to no retreat locations",_group);
     { _x spawn A3A_fnc_surrenderAction } forEach units _group;
 };
 [_group] spawn A3A_fnc_groupDespawner;
@@ -81,4 +81,4 @@ if (isNil "_marker") exitWith {
 _group setBehaviourStrong "AWARE";
 private _wp = _group addWaypoint [markerPos _marker, 50];
 _group setCurrentWaypoint _wp;
-ServerDebug_1("Group %1 returning to base on foot", _group);
+ServerDebug_1("Group %1 returning to base on foot",_group);

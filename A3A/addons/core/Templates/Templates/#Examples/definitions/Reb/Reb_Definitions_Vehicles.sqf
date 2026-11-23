@@ -1,3 +1,5 @@
+#pragma hemtt ignore_variables ["_vehiclesBasic","_vehiclesLightUnarmed","_vehiclesLightArmed","_vehiclesAT","_vehiclesAA","_vehiclesTruck","_vehiclesMedical","_vehiclesBoat","_vehiclesPlane","_vehiclesCivCar","_vehiclesCivTruck","_vehiclesCivSupply","_vehiclesCivHelicopter","_vehiclesCivBoat","_vehiclesCivPlane","_fnc_saveToTemplate"]
+
 ["vehiclesBasic", _vehiclesBasic] call _fnc_saveToTemplate;
 ["vehiclesLightUnarmed", _vehiclesLightUnarmed] call _fnc_saveToTemplate;
 ["vehiclesLightArmed", _vehiclesLightArmed] call _fnc_saveToTemplate;

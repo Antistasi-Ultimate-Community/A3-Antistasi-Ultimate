@@ -101,7 +101,7 @@ _strikeGroup deleteGroupWhenEmpty true;
 private _distance = _strikePlane distance2D _supportPos;
 private _angle = asin (1500/_distance);
 private _lenght = cos (_angle) * _distance;
-Debug_3("Distance %1 Length %2 Angle %3", _distance, _lenght, _angle);
+Debug_3("Distance %1 Length %2 Angle %3",_distance,_lenght,_angle);
 private _height = (ATLToASL _supportPos) select 2;
 _height = _height + 600;
 //Sets minimal height in relation to ground
@@ -123,7 +123,7 @@ switch (true) do
 	default {_strikePlane flyInHeight 600;};
 };
 private _entryPos = _spawnPos getPos [_lenght, _startDir + _angle];
-Debug_1("Entry Pos: %1", _entryPos);
+Debug_1("Entry Pos: %1",_entryPos);
 _entryPos set [2, _height];
 private _entryPoint = _strikeGroup addWaypoint [_entryPos, 0, 1];
 _entryPoint setWaypointType "MOVE";

@@ -1,7 +1,7 @@
 #include "..\defines.inc"
 FIX_LINE_NUMBERS()
 
-private _lootCrateType = FactionGet(reb, "lootCrate");
+private _lootCrateType = FactionGet(reb,"lootCrate");
 private _cost = lootCratePrice;
 private _resourcesFIA = 0;
 

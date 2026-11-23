@@ -11,9 +11,9 @@ if (count paradropAttendants == 0) exitWith {
 };
 
 private _readyPlayers = paradropAttendants apply {_x call BIS_fnc_getUnitByUID};
-_readyPlayers = _readyPlayers select {_x distance2D (getMarkerPos "Synd_HQ") < 50 && {vehicle _x == _x && {[_x] call A3A_fnc_canFight}} };
+_readyPlayers = _readyPlayers select {_x distance2D (getMarkerPos "Synd_HQ") < 50 && {isNull objectParent _x && {[_x] call A3A_fnc_canFight}} };
 
-if (isNil "_readyPlayers" || {count _readyPlayers == 0}) then {
+if (isNil "_readyPlayers" || {_readyPlayers isEqualTo []}) then {
     [
         localize "STR_A3AP_paradrop_header", 
         localize "STR_A3AP_paradrop_players_condition"
@@ -22,6 +22,6 @@ if (isNil "_readyPlayers" || {count _readyPlayers == 0}) then {
     []
 };
 
-Info_1("Paradrop players: %1", str _readyPlayers);
+Info_1("Paradrop players: %1",str _readyPlayers);
 
 _readyPlayers

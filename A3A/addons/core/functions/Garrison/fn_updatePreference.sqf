@@ -9,7 +9,7 @@
 */
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
-Debug_1("Updating preferences now, tierWar is %1", tierWar);
+Debug_1("Updating preferences now, tierWar is %1",tierWar);
 
 //No need to update the preferences
 if(tierPreference >= tierWar) exitWith {Debug("Aborting update of preferences!")};
@@ -37,7 +37,7 @@ for "_i" from (tierPreference + 1) to tierWar do
 
     if(true || debug) then
     {
-      Debug_1("Airport_preference hit level %1", tierWar);
+      Debug_1("Airport_preference hit level %1",tierWar);
       DebugArray("Airport_preference",_preference);
     };
     garrison setVariable ["Airport_preference", _preference, true];
@@ -65,7 +65,7 @@ for "_i" from (tierPreference + 1) to tierWar do
 
     if(true || debug) then
     {
-      Debug_1("MilitaryBase_preference hit level %1", tierWar);
+      Debug_1("MilitaryBase_preference hit level %1",tierWar);
       DebugArray("MilitaryBase_preference",_preference);
     };
     garrison setVariable ["MilitaryBase_preference", _preference, true];
@@ -90,7 +90,7 @@ for "_i" from (tierPreference + 1) to tierWar do
     };
     if(true || debug) then
     {
-      Debug_1("Outpost_preference hit level %1", tierWar);
+      Debug_1("Outpost_preference hit level %1",tierWar);
       DebugArray("Outpost_preference",_preference);
     };
     garrison setVariable ["Outpost_preference", _preference, true];
@@ -105,7 +105,7 @@ for "_i" from (tierPreference + 1) to tierWar do
 
     if(true || debug) then
     {
-        Debug_1("City_preference hit level %1", tierWar);
+        Debug_1("City_preference hit level %1",tierWar);
         DebugArray("City_preference",_preference);
     };
     garrison setVariable ["City_preference", _preference, true];
@@ -126,7 +126,7 @@ for "_i" from (tierPreference + 1) to tierWar do
 
     if(true || debug) then
     {
-      Debug_1("Other_preference hit level %1", tierWar);
+      Debug_1("Other_preference hit level %1",tierWar);
       DebugArray("Other_preference",_preference);
     };
     garrison setVariable ["Other_preference", _preference, true];

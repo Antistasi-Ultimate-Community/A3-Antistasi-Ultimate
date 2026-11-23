@@ -1,9 +1,9 @@
 params [["_isHex", false]];
 
 private _accentColorRgba = [
-	(profilenamespace getvariable ['GUI_BCG_RGB_R',0.376]),
-	(profilenamespace getvariable ['GUI_BCG_RGB_G',0.125]),
-	(profilenamespace getvariable ['GUI_BCG_RGB_B',0.043]),
+	(profileNamespace getVariable ['GUI_BCG_RGB_R',0.376]),
+	(profileNamespace getVariable ['GUI_BCG_RGB_G',0.125]),
+	(profileNamespace getVariable ['GUI_BCG_RGB_B',0.043]),
 	1
 ];
 

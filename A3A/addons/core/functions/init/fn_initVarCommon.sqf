@@ -89,7 +89,7 @@ allCategories = allCategoriesExceptSpecial + specialCategories;
 Info("Starting mod detection");
 
 // Load the climate here for the moment, because we need it early and globally
-private _worldName = toLowerAnsi worldName;
+private _worldName = toLowerANSI worldName;
 A3A_climate = toLower (if (isText (missionConfigFile/"A3A"/"mapInfo"/_worldName/"climate")) then {
     getText (missionConfigFile/"A3A"/"mapInfo"/_worldName/"climate")
 } else {

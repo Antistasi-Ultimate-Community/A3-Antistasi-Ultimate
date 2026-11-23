@@ -25,14 +25,14 @@ if (_state isEqualTo "CREATED") exitWith
 {
     A3A_taskCount = A3A_taskCount + 1; publicVariable "A3A_taskCount";
 
-    if (_taskIndex != -1) exitWith { Error_1("Non-unique task ID %1 created", _taskId) };
+    if (_taskIndex != -1) exitWith { Error_1("Non-unique task ID %1 created",_taskId) };
     A3A_tasksData pushBack [_taskId, _taskType, "CREATED", serverTime];
 
-    if (A3A_activeTasks find _taskType != -1) exitWith { Error_1("Task type %1 already active", _taskType) };
+    if (A3A_activeTasks find _taskType != -1) exitWith { Error_1("Task type %1 already active",_taskType) };
     A3A_activeTasks pushBack _taskType; publicVariable "A3A_activeTasks";
 };
 
-if (_taskIndex == -1) exitWith { Error_2("Task ID %1 not found for state %2", _taskId, _state) };
+if (_taskIndex == -1) exitWith { Error_2("Task ID %1 not found for state %2",_taskId,_state) };
 
 if (_state isEqualTo "DELETED") exitWith {
     A3A_tasksData deleteAt _taskIndex;
@@ -40,5 +40,5 @@ if (_state isEqualTo "DELETED") exitWith {
     A3A_activeTasks deleteAt (A3A_activeTasks find _taskType); publicVariable "A3A_activeTasks";
 };
 
-if !(_state in ["SUCCEEDED", "FAILED"]) exitWith { Error_2("Bad state %1 for task ID %2", _state, _taskId) };
+if !(_state in ["SUCCEEDED", "FAILED"]) exitWith { Error_2("Bad state %1 for task ID %2",_state,_taskId) };
 (A3A_tasksData#_taskIndex) set [2, _state];

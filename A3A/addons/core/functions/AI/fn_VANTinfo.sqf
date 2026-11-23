@@ -2,7 +2,7 @@ params ["_veh", "_markerX", "_sideX"];
 
 
 private _positionX = getMarkerPos _markerX;
-private _enemiesS = if (_sideX == Invaders) then {Occupants} else {Invaders};
+private _enemiesS = [Invaders, Occupants] select (_sideX == Invaders);
 private ["_groups","_knownX","_groupX"];
 
 while {alive _veh} do {

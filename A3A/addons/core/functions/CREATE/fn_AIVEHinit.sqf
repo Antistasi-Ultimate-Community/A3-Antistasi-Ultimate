@@ -20,10 +20,10 @@ if (isNil "_veh") exitWith {};
 // Not a crewed vehicle, nothing to do here
 if (fullCrew [_veh, "", true] isEqualTo []) exitWith {
 	// buyable item, use initObject. Happens on game loading at the moment
-	if (typeof _veh in A3A_utilityItemHM) then { _veh call A3A_fnc_initObject };
+	if (typeOf _veh in A3A_utilityItemHM) then { _veh call A3A_fnc_initObject };
 };
 
-_veh setVehicleRadar ([0, 1] select (getNumber(configOf _veh >> "radarType") in [2, 4]));
+_veh setVehicleRadar (parseNumber (getNumber(configOf _veh >> "radarType") in [2, 4]));
 _veh setVehicleReceiveRemoteTargets true;
 _veh setVehicleReportRemoteTargets true;
 _veh setVehicleReportOwnPosition true;
@@ -122,11 +122,11 @@ if ((_veh isKindOf  "LandVehicle") || (_veh isKindOf  "Ship")) then {
 		
 		[_veh, _flagAction] remoteExec ["A3A_fnc_flagAction", [teamPlayer, civilian], _veh];
 		
-		if !(locked _veh < 2) exitWith {};
+		if (locked _veh >= 2) exitWith {};
 		private _isUAV = unitIsUAV _veh; // ! HR Garage force-crews all rebel UAVs, so call unlockStatic to update staticsToFlip and available vehicle actions appropriately
 		private _saved = _veh in staticsToSave;
 		private _flipped = _veh in staticsToFlip;
-		_veh call ([A3A_fnc_lockStatic, A3A_fnc_unlockStatic] select (_isUAV || {_saved && {XOR(A3U_enableVehiclesForAI, _flipped)}}));
+		_veh call ([A3A_fnc_lockStatic, A3A_fnc_unlockStatic] select (_isUAV || {_saved && {XOR(A3U_enableVehiclesForAI,_flipped)}}));
 
 		// add *all* rebel vehicles to staticsToSave since we don't have an appropriate rebelVehicles var
 		// only vehicles in staticsToSave AND near a rebel marker will actually be saved during the save loop
@@ -172,7 +172,7 @@ if (_side == Invaders || _side == Occupants) then {
 		if (_veh getVariable "ownerSide" != _veh getVariable "originalSide") exitWith { nil };
 
 		// Add 1/3 cost to recent casualties list on server
-		private _vehCost = A3A_vehicleResourceCosts getOrDefault [typeof _veh, 0];
+		private _vehCost = A3A_vehicleResourceCosts getOrDefault [typeOf _veh, 0];
 		[_veh getVariable "ownerSide", getPos _veh, _vehCost/3, _source] remoteExec ["A3A_fnc_addRecentDamage", 2];
 
 		// Attempt to call for support if there's a crew. Assume local, should be true
@@ -196,7 +196,7 @@ if (_side == Invaders || _side == Occupants) then {
 		params ["_veh", "_ammo", "_source", "_instigator"];
 		private _group = group _veh;
 		if (isNull _group or { side _group == teamPlayer }) exitWith { _veh removeEventHandler ["IncomingMissile", _thisEventHandler] };
-		private _isRival = (units _group) findIf {_unit getVariable ["isRival", false]} != -1;
+		private _isRival = (units _group) findIf {_x getVariable ["isRival", false]} != -1;
 		if (_isRival) exitWith { _veh removeEventHandler ["IncomingMissile", _thisEventHandler] };
 
 		//it would be really annoying if on each missile launch support will be called
@@ -234,7 +234,7 @@ if (_side != teamPlayer) then
 		private _oldside = _veh getVariable ["ownerSide", teamPlayer];
 		if (_oldside != teamPlayer) then
 		{
-			ServerDebug_2("%1 switching side from %2 to rebels", typeof _veh, _oldside);
+			ServerDebug_2("%1 switching side from %2 to rebels",typeOf _veh,_oldside);
 			[_veh, teamPlayer, true] call A3A_fnc_vehKilledOrCaptured;
 		};
 		_veh removeEventHandler ["GetIn", _thisEventHandler];
@@ -261,10 +261,10 @@ if(([_veh] call A3A_Logistics_fnc_getVehCapacity) > 1) then {
 		private _cargo = _vehicle call A3A_Logistics_fnc_getCargo;
 		if (_cargo isEqualTo []) exitWith {};
 
-		_cargo = _cargo select {typeOf _x isEqualTo FactionGet(reb, "lootCrate")};
+		_cargo = _cargo select {typeOf _x isEqualTo FactionGet(reb,"lootCrate")};
 
 		{
-			_cargoItem setDamage 1; 
+			_x setDamage 1; 
 			[_x] spawn {
 				params["_cargoItem"];
 				sleep 4;
@@ -275,7 +275,7 @@ if(([_veh] call A3A_Logistics_fnc_getVehCapacity) > 1) then {
 };
 
 // Handler for refunding vehicles after cleanup
-if (A3A_vehicleResourceCosts getOrDefault [typeof _veh, 0] > 0) then {
+if (A3A_vehicleResourceCosts getOrDefault [typeOf _veh, 0] > 0) then {
 	_veh addEventHandler ["Deleted", A3A_fnc_vehicleDeletedEH];
 };
 

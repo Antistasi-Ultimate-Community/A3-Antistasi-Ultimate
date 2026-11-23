@@ -7,11 +7,11 @@ if (!isServer) exitWith {
 params ["_playerId", "_unit"];
 
 if !(_playerId in A3A_playerSaveData) exitWith {
-    Info_1("No save found for player ID %1", _playerId);
+    Info_1("No save found for player ID %1",_playerId);
 	[_playerId, _unit] call A3A_fnc_resetPlayer;
 };
 
-Info_2("Loading player data for ID %1 into unit %2", _playerId, _unit);
+Info_2("Loading player data for ID %1 into unit %2",_playerId,_unit);
 
 private _playerHM = A3A_playerSaveData get _playerID;
 private _loadout = _playerHM get "loadoutPlayer";
@@ -47,4 +47,4 @@ if (isNil { _playerHM get "pluginsData" }) then {
 [] remoteExec ["A3A_fnc_statistics", _unit];
 _unit setVariable ["canSave", true, true];
 
-Info_5("Player %1: Score %2, rank %3, money %4, garage count %5", _playerId, _score, _rank, _money, count _garage);
+Info_5("Player %1: Score %2, rank %3, money %4, garage count %5",_playerId,_score,_rank,_money,count _garage);

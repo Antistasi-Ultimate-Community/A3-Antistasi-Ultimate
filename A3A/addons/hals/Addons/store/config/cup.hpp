@@ -6,39 +6,39 @@
 			displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_cup", localize "STR_A3AU_handguns"]);
 			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\handgun_ca.paa";
 
-			ITEM(hgun_Rook40_F, 150, PISTOL_STOCK);
+			ITEM(hgun_Rook40_F, 150, PISTOL_STOCK)
 
-			ITEM(hgun_ACPC2_F, 200, PISTOL_STOCK);
-			ITEM(CUP_hgun_Colt1911, 200, PISTOL_STOCK);
-			ITEM(CUP_hgun_Mk23, 250, PISTOL_STOCK);
+			ITEM(hgun_ACPC2_F, 200, PISTOL_STOCK)
+			ITEM(CUP_hgun_Colt1911, 200, PISTOL_STOCK)
+			ITEM(CUP_hgun_Mk23, 250, PISTOL_STOCK)
 
-			ITEM(CUP_hgun_Compact, 150, PISTOL_STOCK);
-			ITEM(CUP_hgun_Duty, 125, PISTOL_STOCK);
-			ITEM(CUP_hgun_Phantom, 200, PISTOL_STOCK);
+			ITEM(CUP_hgun_Compact, 150, PISTOL_STOCK)
+			ITEM(CUP_hgun_Duty, 125, PISTOL_STOCK)
+			ITEM(CUP_hgun_Phantom, 200, PISTOL_STOCK)
 
-			ITEM(CUP_hgun_M9, 200, PISTOL_STOCK);
-			ITEM(CUP_hgun_Browning_HP, 200, PISTOL_STOCK);
-			ITEM(CUP_hgun_M9A1, 200, PISTOL_STOCK);
+			ITEM(CUP_hgun_M9, 200, PISTOL_STOCK)
+			ITEM(CUP_hgun_Browning_HP, 200, PISTOL_STOCK)
+			ITEM(CUP_hgun_M9A1, 200, PISTOL_STOCK)
 
-			ITEM(CUP_hgun_Glock17, 250, PISTOL_STOCK);
-			ITEM(CUP_hgun_Glock17_blk, 250, PISTOL_STOCK);
-			ITEM(CUP_hgun_Glock17_tan, 250, PISTOL_STOCK);
+			ITEM(CUP_hgun_Glock17, 250, PISTOL_STOCK)
+			ITEM(CUP_hgun_Glock17_blk, 250, PISTOL_STOCK)
+			ITEM(CUP_hgun_Glock17_tan, 250, PISTOL_STOCK)
 
-			ITEM(hgun_Pistol_heavy_01_F, 450, PISTOL_STOCK);
+			ITEM(hgun_Pistol_heavy_01_F, 450, PISTOL_STOCK)
 
-			ITEM(CUP_hgun_Deagle, 400, PISTOL_STOCK);
-			ITEM(CUP_hgun_PB6P9, 250, PISTOL_STOCK);
-			ITEM(CUP_hgun_PMM, 200, PISTOL_STOCK);
-			ITEM(CUP_hgun_TaurusTracker455_gold, 500, PISTOL_STOCK);
-			ITEM(CUP_hgun_TEC9, 150, PISTOL_STOCK);
-			ITEM(CUP_hgun_TEC9_FA, 300, PISTOL_STOCK);
-			ITEM(CUP_hgun_Mac10, 350, PISTOL_STOCK);
+			ITEM(CUP_hgun_Deagle, 400, PISTOL_STOCK)
+			ITEM(CUP_hgun_PB6P9, 250, PISTOL_STOCK)
+			ITEM(CUP_hgun_PMM, 200, PISTOL_STOCK)
+			ITEM(CUP_hgun_TaurusTracker455_gold, 500, PISTOL_STOCK)
+			ITEM(CUP_hgun_TEC9, 150, PISTOL_STOCK)
+			ITEM(CUP_hgun_TEC9_FA, 300, PISTOL_STOCK)
+			ITEM(CUP_hgun_Mac10, 350, PISTOL_STOCK)
 
-			ITEM(hgun_Pistol_heavy_02_F, 800, PISTOL_STOCK);
+			ITEM(hgun_Pistol_heavy_02_F, 800, PISTOL_STOCK)
 
-			ITEM(CUP_hgun_MP7, 800, PISTOL_STOCK);
-			ITEM(CUP_hgun_MP7_desert, 800, PISTOL_STOCK);
-			ITEM(CUP_hgun_MP7_woodland, 800, PISTOL_STOCK);
+			ITEM(CUP_hgun_MP7, 800, PISTOL_STOCK)
+			ITEM(CUP_hgun_MP7_desert, 800, PISTOL_STOCK)
+			ITEM(CUP_hgun_MP7_woodland, 800, PISTOL_STOCK)
 		};
 
 		class smgCup 
@@ -46,58 +46,58 @@
 			displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_cup", localize "STR_A3AU_smgs"]);
 			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\primaryWeapon_ca.paa";
 
-			ITEM(CUP_smg_PS90_olive, 350, PISTOL_STOCK);
+			ITEM(CUP_smg_PS90_olive, 350, PISTOL_STOCK)
 
-			ITEM(CUP_smg_bizon, 700, RIFLE_STOCK);
+			ITEM(CUP_smg_bizon, 700, RIFLE_STOCK)
 
-			ITEM(CUP_smg_vityaz, 300, RIFLE_STOCK);
-			ITEM(CUP_smg_vityaz_vfg_front_rail, 350, RIFLE_STOCK);
-			ITEM(CUP_smg_vityaz_vfg, 365, RIFLE_STOCK);
-			ITEM(CUP_smg_vityaz_vfg_top_rail, 365, RIFLE_STOCK);
-			ITEM(CUP_smg_vityaz_top_rail, 325, RIFLE_STOCK);
+			ITEM(CUP_smg_vityaz, 300, RIFLE_STOCK)
+			ITEM(CUP_smg_vityaz_vfg_front_rail, 350, RIFLE_STOCK)
+			ITEM(CUP_smg_vityaz_vfg, 365, RIFLE_STOCK)
+			ITEM(CUP_smg_vityaz_vfg_top_rail, 365, RIFLE_STOCK)
+			ITEM(CUP_smg_vityaz_top_rail, 325, RIFLE_STOCK)
 
-			ITEM(SMG_03C_TR_black, 450, RIFLE_STOCK);
-			ITEM(SMG_03C_TR_camo, 450, RIFLE_STOCK);
-			ITEM(SMG_03C_TR_hex, 450, RIFLE_STOCK);
-			ITEM(SMG_03C_TR_khaki, 450, RIFLE_STOCK);
+			ITEM(SMG_03C_TR_black, 450, RIFLE_STOCK)
+			ITEM(SMG_03C_TR_camo, 450, RIFLE_STOCK)
+			ITEM(SMG_03C_TR_hex, 450, RIFLE_STOCK)
+			ITEM(SMG_03C_TR_khaki, 450, RIFLE_STOCK)
 
-			ITEM(SMG_03C_black, 550, RIFLE_STOCK);
-			ITEM(SMG_03C_camo, 550, RIFLE_STOCK);
-			ITEM(SMG_03C_hex, 550, RIFLE_STOCK);
-			ITEM(SMG_03C_khaki, 550, RIFLE_STOCK);
+			ITEM(SMG_03C_black, 550, RIFLE_STOCK)
+			ITEM(SMG_03C_camo, 550, RIFLE_STOCK)
+			ITEM(SMG_03C_hex, 550, RIFLE_STOCK)
+			ITEM(SMG_03C_khaki, 550, RIFLE_STOCK)
 
-			ITEM(SMG_03_TR_black, 425, RIFLE_STOCK);
-			ITEM(SMG_03_TR_camo, 425, RIFLE_STOCK);
-			ITEM(SMG_03_TR_hex, 425, RIFLE_STOCK);
-			ITEM(SMG_03_TR_khaki, 425, RIFLE_STOCK);
+			ITEM(SMG_03_TR_black, 425, RIFLE_STOCK)
+			ITEM(SMG_03_TR_camo, 425, RIFLE_STOCK)
+			ITEM(SMG_03_TR_hex, 425, RIFLE_STOCK)
+			ITEM(SMG_03_TR_khaki, 425, RIFLE_STOCK)
 			
-			ITEM(SMG_03_black, 525, RIFLE_STOCK);
-			ITEM(SMG_03_camo, 525, RIFLE_STOCK);
-			ITEM(SMG_03_hex, 525, RIFLE_STOCK);
-			ITEM(SMG_03_khaki, 525, RIFLE_STOCK);
+			ITEM(SMG_03_black, 525, RIFLE_STOCK)
+			ITEM(SMG_03_camo, 525, RIFLE_STOCK)
+			ITEM(SMG_03_hex, 525, RIFLE_STOCK)
+			ITEM(SMG_03_khaki, 525, RIFLE_STOCK)
 
-			ITEM(SMG_01_F, 400, RIFLE_STOCK);
-			ITEM(SMG_02_F, 400, RIFLE_STOCK);
+			ITEM(SMG_01_F, 400, RIFLE_STOCK)
+			ITEM(SMG_02_F, 400, RIFLE_STOCK)
 
-			ITEM(CUP_smg_MP5A5, 350, RIFLE_STOCK);
-			ITEM(CUP_smg_MP5A5_flashlight, 365, RIFLE_STOCK);
-			ITEM(CUP_smg_MP5SD6, 425, RIFLE_STOCK);
+			ITEM(CUP_smg_MP5A5, 350, RIFLE_STOCK)
+			ITEM(CUP_smg_MP5A5_flashlight, 365, RIFLE_STOCK)
+			ITEM(CUP_smg_MP5SD6, 425, RIFLE_STOCK)
 
-			ITEM(CUP_smg_MP7, 800, PISTOL_STOCK);
-			ITEM(CUP_smg_MP7_desert, 800, PISTOL_STOCK);
-			ITEM(CUP_smg_MP7_woodland, 800, PISTOL_STOCK);
+			ITEM(CUP_smg_MP7, 800, PISTOL_STOCK)
+			ITEM(CUP_smg_MP7_desert, 800, PISTOL_STOCK)
+			ITEM(CUP_smg_MP7_woodland, 800, PISTOL_STOCK)
 
-			ITEM(CUP_arifle_SR3M_Vikhr, 500, RIFLE_STOCK);
-			ITEM(CUP_arifle_SR3M_Vikhr_VFG, 550, RIFLE_STOCK);
-			ITEM(CUP_arifle_SR3M_Vikhr_top_rail, 575, RIFLE_STOCK);
-			ITEM(CUP_arifle_SR3M_Vikhr_VFG_top_rail, 600, RIFLE_STOCK);
+			ITEM(CUP_arifle_SR3M_Vikhr, 500, RIFLE_STOCK)
+			ITEM(CUP_arifle_SR3M_Vikhr_VFG, 550, RIFLE_STOCK)
+			ITEM(CUP_arifle_SR3M_Vikhr_top_rail, 575, RIFLE_STOCK)
+			ITEM(CUP_arifle_SR3M_Vikhr_VFG_top_rail, 600, RIFLE_STOCK)
 
-			ITEM(CUP_arifle_AS_VAL, 1050, RIFLE_STOCK);
-			ITEM(CUP_arifle_AS_VAL_flash, 1075, RIFLE_STOCK);
-			ITEM(CUP_arifle_AS_VAL_VFG, 1065, RIFLE_STOCK);
-			ITEM(CUP_arifle_AS_VAL_top_rail, 1050, RIFLE_STOCK);
-			ITEM(CUP_arifle_AS_VAL_flash_top, 1175, RIFLE_STOCK);
-			ITEM(CUP_arifle_AS_VAL_VFG_top_rail, 1165, RIFLE_STOCK);
+			ITEM(CUP_arifle_AS_VAL, 1050, RIFLE_STOCK)
+			ITEM(CUP_arifle_AS_VAL_flash, 1075, RIFLE_STOCK)
+			ITEM(CUP_arifle_AS_VAL_VFG, 1065, RIFLE_STOCK)
+			ITEM(CUP_arifle_AS_VAL_top_rail, 1050, RIFLE_STOCK)
+			ITEM(CUP_arifle_AS_VAL_flash_top, 1175, RIFLE_STOCK)
+			ITEM(CUP_arifle_AS_VAL_VFG_top_rail, 1165, RIFLE_STOCK)
 		};
 
 		class launchersCup 
@@ -105,47 +105,47 @@
 			displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_cup", localize "STR_A3AU_launchers"]);
 			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\secondaryWeapon_ca.paa";
 
-			ITEM(CUP_launch_RShG2, 250, 50);
-			ITEM(CUP_launch_RPG26, 250, 50);
+			ITEM(CUP_launch_RShG2, 250, 50)
+			ITEM(CUP_launch_RPG26, 250, 50)
 
-			ITEM(CUP_launch_M72A6, 350, 50);
+			ITEM(CUP_launch_M72A6, 350, 50)
 
-			ITEM(CUP_launch_BF3, 400, 50);
-			ITEM(CUP_launch_HCPF3, 500, 50);
-			ITEM(CUP_launch_PzF3, 450, 50);
+			ITEM(CUP_launch_BF3, 400, 50)
+			ITEM(CUP_launch_HCPF3, 500, 50)
+			ITEM(CUP_launch_PzF3, 450, 50)
 
-			ITEM(CUP_launch_NLAW, 1100, 10);
+			ITEM(CUP_launch_NLAW, 1100, 10)
 
-			ITEM(CUP_launch_RPG7V, 650, 50);
+			ITEM(CUP_launch_RPG7V, 650, 50)
 
-			ITEM(launch_RPG32_F, 1400, LAUNCHER_STOCK);
-			ITEM(launch_RPG32_green_F, 1400, LAUNCHER_STOCK);
-			ITEM(launch_RPG32_ghex_F, 1400, LAUNCHER_STOCK);
+			ITEM(launch_RPG32_F, 1400, LAUNCHER_STOCK)
+			ITEM(launch_RPG32_green_F, 1400, LAUNCHER_STOCK)
+			ITEM(launch_RPG32_ghex_F, 1400, LAUNCHER_STOCK)
 
-			ITEM(launch_MRAWS_olive_F, 1600, LAUNCHER_STOCK);
-			ITEM(launch_MRAWS_olive_rail_F, 1250, LAUNCHER_STOCK);
-			ITEM(launch_MRAWS_green_F, 1600, LAUNCHER_STOCK);
-			ITEM(launch_MRAWS_green_rail_F, 1250, LAUNCHER_STOCK);
-			ITEM(launch_MRAWS_sand_F, 1600, LAUNCHER_STOCK);
-			ITEM(launch_MRAWS_sand_rail_F, 1250, LAUNCHER_STOCK);
-			ITEM(CUP_launch_MAAWS, 1250, LAUNCHER_STOCK);
+			ITEM(launch_MRAWS_olive_F, 1600, LAUNCHER_STOCK)
+			ITEM(launch_MRAWS_olive_rail_F, 1250, LAUNCHER_STOCK)
+			ITEM(launch_MRAWS_green_F, 1600, LAUNCHER_STOCK)
+			ITEM(launch_MRAWS_green_rail_F, 1250, LAUNCHER_STOCK)
+			ITEM(launch_MRAWS_sand_F, 1600, LAUNCHER_STOCK)
+			ITEM(launch_MRAWS_sand_rail_F, 1250, LAUNCHER_STOCK)
+			ITEM(CUP_launch_MAAWS, 1250, LAUNCHER_STOCK)
 
-			ITEM(CUP_launch_Mk153Mod0, 1650, LAUNCHER_STOCK);
-			ITEM(CUP_launch_Mk153Mod0_blk, 1650, LAUNCHER_STOCK);
+			ITEM(CUP_launch_Mk153Mod0, 1650, LAUNCHER_STOCK)
+			ITEM(CUP_launch_Mk153Mod0_blk, 1650, LAUNCHER_STOCK)
 
-			ITEM(launch_O_Vorona_brown_F, 3000, 4);
-			ITEM(launch_O_Vorona_green_F, 3000, 4);
+			ITEM(launch_O_Vorona_brown_F, 3000, 4)
+			ITEM(launch_O_Vorona_green_F, 3000, 4)
 
-			ITEM(CUP_launch_M136, 500, 50);
-			ITEM(CUP_launch_RPG18, 150, 50);
+			ITEM(CUP_launch_M136, 500, 50)
+			ITEM(CUP_launch_RPG18, 150, 50)
 
-			ITEM(CUP_launch_APILAS, 1250, 50);
+			ITEM(CUP_launch_APILAS, 1250, 50)
 
-			ITEM(CUP_launch_Igla, 1300, 50);
-			ITEM(CUP_launch_FIM92Stinger, 1600, 50);
-			ITEM(CUP_launch_9K32Strela, 1900, 50);
-			ITEM(CUP_launch_M47, 3400, 8);
-			ITEM(CUP_launch_Javelin, 6500, 3);
+			ITEM(CUP_launch_Igla, 1300, 50)
+			ITEM(CUP_launch_FIM92Stinger, 1600, 50)
+			ITEM(CUP_launch_9K32Strela, 1900, 50)
+			ITEM(CUP_launch_M47, 3400, 8)
+			ITEM(CUP_launch_Javelin, 6500, 3)
 		};
 
 		class launcherMagazinesCup 
@@ -252,21 +252,21 @@
 			displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_cup", localize "STR_A3AU_specialWeapons"]);
 			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\primaryWeapon_ca.paa";
 
-			ITEM(CUP_hgun_BallisticShield_Armed, 300, RIFLE_STOCK);
+			ITEM(CUP_hgun_BallisticShield_Armed, 300, RIFLE_STOCK)
 
-			ITEM(CUP_glaunch_M79, 350, RIFLE_STOCK);
-			ITEM(CUP_glaunch_Mk13, 500, RIFLE_STOCK);
+			ITEM(CUP_glaunch_M79, 350, RIFLE_STOCK)
+			ITEM(CUP_glaunch_Mk13, 500, RIFLE_STOCK)
 
-			ITEM(CUP_glaunch_6G30, 800, RIFLE_STOCK);
-			ITEM(CUP_glaunch_M32, 950, RIFLE_STOCK);
+			ITEM(CUP_glaunch_6G30, 800, RIFLE_STOCK)
+			ITEM(CUP_glaunch_M32, 950, RIFLE_STOCK)
 
-			ITEM(CUP_sgun_AA12, 1000, RIFLE_STOCK);
-			ITEM(CUP_sgun_M1014_Entry, 200, RIFLE_STOCK);
-			ITEM(CUP_sgun_M1014_Entry_vfg, 200, RIFLE_STOCK);
-			ITEM(CUP_sgun_M1014, 300, RIFLE_STOCK);
-			ITEM(CUP_sgun_M1014_vfg, 350, RIFLE_STOCK);
-			ITEM(CUP_sgun_M1014_solidstock, 400, RIFLE_STOCK);
-			ITEM(CUP_sgun_Saiga12K, 300, RIFLE_STOCK);
+			ITEM(CUP_sgun_AA12, 1000, RIFLE_STOCK)
+			ITEM(CUP_sgun_M1014_Entry, 200, RIFLE_STOCK)
+			ITEM(CUP_sgun_M1014_Entry_vfg, 200, RIFLE_STOCK)
+			ITEM(CUP_sgun_M1014, 300, RIFLE_STOCK)
+			ITEM(CUP_sgun_M1014_vfg, 350, RIFLE_STOCK)
+			ITEM(CUP_sgun_M1014_solidstock, 400, RIFLE_STOCK)
+			ITEM(CUP_sgun_Saiga12K, 300, RIFLE_STOCK)
 		};
 
 		class sniperRiflesCup 
@@ -274,142 +274,142 @@
 			displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_cup", localize "STR_A3AU_sniperRifles"]);
 			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\primaryWeapon_ca.paa";
 
-			ITEM(CUP_SKS, 350, RIFLE_STOCK);
-			ITEM(CUP_srifle_CZ550, 700, RIFLE_STOCK);
+			ITEM(CUP_SKS, 350, RIFLE_STOCK)
+			ITEM(CUP_srifle_CZ550, 700, RIFLE_STOCK)
 
-			ITEM(CUP_srifle_Mosin_Nagant, 450, RIFLE_STOCK);
-			ITEM(CUP_srifle_LeeEnfield, 500, RIFLE_STOCK);
-			ITEM(CUP_srifle_LeeEnfield_rail, 900, RIFLE_STOCK);
+			ITEM(CUP_srifle_Mosin_Nagant, 450, RIFLE_STOCK)
+			ITEM(CUP_srifle_LeeEnfield, 500, RIFLE_STOCK)
+			ITEM(CUP_srifle_LeeEnfield_rail, 900, RIFLE_STOCK)
 
-			ITEM(CUP_arifle_IMI_Romat, 1200, RIFLE_STOCK);
-			ITEM(CUP_arifle_IMI_Romat_railed, 1600, RIFLE_STOCK);
+			ITEM(CUP_arifle_IMI_Romat, 1200, RIFLE_STOCK)
+			ITEM(CUP_arifle_IMI_Romat_railed, 1600, RIFLE_STOCK)
 
-			ITEM(CUP_arifle_FNFAL5061_wooden, 1400, RIFLE_STOCK);
-			ITEM(CUP_arifle_FNFAL5061_wooden_railed, 1700, RIFLE_STOCK);
-			ITEM(CUP_arifle_Gewehr1, 1400, RIFLE_STOCK);
-			ITEM(CUP_arifle_Gewehr1_railed, 1700, RIFLE_STOCK);
+			ITEM(CUP_arifle_FNFAL5061_wooden, 1400, RIFLE_STOCK)
+			ITEM(CUP_arifle_FNFAL5061_wooden_railed, 1700, RIFLE_STOCK)
+			ITEM(CUP_arifle_Gewehr1, 1400, RIFLE_STOCK)
+			ITEM(CUP_arifle_Gewehr1_railed, 1700, RIFLE_STOCK)
 
-			ITEM(CUP_arifle_FNFAL, 1500, RIFLE_STOCK);
-			ITEM(CUP_arifle_FNFAL_desert, 1500, RIFLE_STOCK);
-			ITEM(CUP_arifle_FNFAL_sand, 1500, RIFLE_STOCK);
-			ITEM(CUP_arifle_FNFAL_woodland, 1500, RIFLE_STOCK);
+			ITEM(CUP_arifle_FNFAL, 1500, RIFLE_STOCK)
+			ITEM(CUP_arifle_FNFAL_desert, 1500, RIFLE_STOCK)
+			ITEM(CUP_arifle_FNFAL_sand, 1500, RIFLE_STOCK)
+			ITEM(CUP_arifle_FNFAL_woodland, 1500, RIFLE_STOCK)
 
-			ITEM(CUP_arifle_FNFAL5061, 1600, RIFLE_STOCK);
-			ITEM(CUP_arifle_FNFAL5061_railed, 1700, RIFLE_STOCK);
+			ITEM(CUP_arifle_FNFAL5061, 1600, RIFLE_STOCK)
+			ITEM(CUP_arifle_FNFAL5061_railed, 1700, RIFLE_STOCK)
 
-			ITEM(CUP_arifle_xm8_sharpshooter, 1100, RIFLE_STOCK);
+			ITEM(CUP_arifle_xm8_sharpshooter, 1100, RIFLE_STOCK)
 
-			ITEM(CUP_srifle_VSSVintorez, 1300, 15);
-			ITEM(CUP_srifle_VSSVintorez_flash, 1325, 15);
-			ITEM(CUP_srifle_VSSVintorez_VFG, 1350, 15);
-			ITEM(CUP_srifle_VSSVintorez_top_rail, 1400, 15);
-			ITEM(CUP_srifle_VSSVintorez_flash_top, 1425, 15);
-			ITEM(CUP_srifle_VSSVintorez_VFG_top_rail, 1450, 15);
+			ITEM(CUP_srifle_VSSVintorez, 1300, 15)
+			ITEM(CUP_srifle_VSSVintorez_flash, 1325, 15)
+			ITEM(CUP_srifle_VSSVintorez_VFG, 1350, 15)
+			ITEM(CUP_srifle_VSSVintorez_top_rail, 1400, 15)
+			ITEM(CUP_srifle_VSSVintorez_flash_top, 1425, 15)
+			ITEM(CUP_srifle_VSSVintorez_VFG_top_rail, 1450, 15)
 
-			ITEM(CUP_arifle_G3A3_ris, 1500, RIFLE_STOCK);
-			ITEM(CUP_arifle_G3A3_ris_vfg_black, 1600, RIFLE_STOCK);
-			ITEM(CUP_arifle_G3A3_modern_ris, 1500, RIFLE_STOCK);
-			ITEM(CUP_arifle_G3A3_modern_ris_black, 1800, RIFLE_STOCK);
+			ITEM(CUP_arifle_G3A3_ris, 1500, RIFLE_STOCK)
+			ITEM(CUP_arifle_G3A3_ris_vfg_black, 1600, RIFLE_STOCK)
+			ITEM(CUP_arifle_G3A3_modern_ris, 1500, RIFLE_STOCK)
+			ITEM(CUP_arifle_G3A3_modern_ris_black, 1800, RIFLE_STOCK)
 
-			ITEM(CUP_srifle_M24_wdl, 1200, RIFLE_STOCK);
-			ITEM(CUP_srifle_M24_blk, 1200, RIFLE_STOCK);
-			ITEM(CUP_srifle_M24_des, 1200, RIFLE_STOCK);
+			ITEM(CUP_srifle_M24_wdl, 1200, RIFLE_STOCK)
+			ITEM(CUP_srifle_M24_blk, 1200, RIFLE_STOCK)
+			ITEM(CUP_srifle_M24_des, 1200, RIFLE_STOCK)
 
-			ITEM(CUP_srifle_M40A3, 1350, RIFLE_STOCK);
+			ITEM(CUP_srifle_M40A3, 1350, RIFLE_STOCK)
 
-			ITEM(CUP_srifle_AWM_wdl, 1700, RIFLE_STOCK);
-			ITEM(CUP_srifle_AWM_blk, 1700, RIFLE_STOCK);
-			ITEM(CUP_srifle_AWM_des, 1700, RIFLE_STOCK);
+			ITEM(CUP_srifle_AWM_wdl, 1700, RIFLE_STOCK)
+			ITEM(CUP_srifle_AWM_blk, 1700, RIFLE_STOCK)
+			ITEM(CUP_srifle_AWM_des, 1700, RIFLE_STOCK)
 
-			ITEM(CUP_srifle_SVD, 1500, RIFLE_STOCK);
-			ITEM(CUP_srifle_SVD_des, 1500, RIFLE_STOCK);
-			ITEM(CUP_srifle_SVD_wdl, 1500, RIFLE_STOCK);
+			ITEM(CUP_srifle_SVD, 1500, RIFLE_STOCK)
+			ITEM(CUP_srifle_SVD_des, 1500, RIFLE_STOCK)
+			ITEM(CUP_srifle_SVD_wdl, 1500, RIFLE_STOCK)
 
-			ITEM(arifle_MSBS65_Mark_F, 1650, RIFLE_STOCK);
-			ITEM(arifle_MSBS65_Mark_black_F, 1650, RIFLE_STOCK);
-			ITEM(arifle_MSBS65_Mark_camo_F, 1650, RIFLE_STOCK);
-			ITEM(arifle_MSBS65_Mark_sand_F, 1650, RIFLE_STOCK);
+			ITEM(arifle_MSBS65_Mark_F, 1650, RIFLE_STOCK)
+			ITEM(arifle_MSBS65_Mark_black_F, 1650, RIFLE_STOCK)
+			ITEM(arifle_MSBS65_Mark_camo_F, 1650, RIFLE_STOCK)
+			ITEM(arifle_MSBS65_Mark_sand_F, 1650, RIFLE_STOCK)
 
-			ITEM(CUP_srifle_RSASS_Black, 2100, RIFLE_STOCK);
-			ITEM(CUP_srifle_RSASS_Dazzle, 2100, RIFLE_STOCK);
-			ITEM(CUP_srifle_RSASS_Jungle, 2100, RIFLE_STOCK);
-			ITEM(CUP_srifle_RSASS_Sand, 2100, RIFLE_STOCK);
-			ITEM(CUP_srifle_RSASS_Winter, 2100, RIFLE_STOCK);
-			ITEM(CUP_srifle_RSASS_WDLNet, 2100, RIFLE_STOCK);
-			ITEM(CUP_srifle_RSASS_WDL, 2100, RIFLE_STOCK);
+			ITEM(CUP_srifle_RSASS_Black, 2100, RIFLE_STOCK)
+			ITEM(CUP_srifle_RSASS_Dazzle, 2100, RIFLE_STOCK)
+			ITEM(CUP_srifle_RSASS_Jungle, 2100, RIFLE_STOCK)
+			ITEM(CUP_srifle_RSASS_Sand, 2100, RIFLE_STOCK)
+			ITEM(CUP_srifle_RSASS_Winter, 2100, RIFLE_STOCK)
+			ITEM(CUP_srifle_RSASS_WDLNet, 2100, RIFLE_STOCK)
+			ITEM(CUP_srifle_RSASS_WDL, 2100, RIFLE_STOCK)
 
-			ITEM(CUP_srifle_m110_kac_black, 2100, RIFLE_STOCK);
-			ITEM(CUP_srifle_M110_black, 2100, RIFLE_STOCK);
-			ITEM(CUP_srifle_M110, 2100, RIFLE_STOCK);
-			ITEM(CUP_srifle_M110_woodland, 2100, RIFLE_STOCK);
-			ITEM(CUP_srifle_m110_kac, 2100, RIFLE_STOCK);
-			ITEM(CUP_srifle_m110_kac_woodland, 2100, RIFLE_STOCK);
+			ITEM(CUP_srifle_m110_kac_black, 2100, RIFLE_STOCK)
+			ITEM(CUP_srifle_M110_black, 2100, RIFLE_STOCK)
+			ITEM(CUP_srifle_M110, 2100, RIFLE_STOCK)
+			ITEM(CUP_srifle_M110_woodland, 2100, RIFLE_STOCK)
+			ITEM(CUP_srifle_m110_kac, 2100, RIFLE_STOCK)
+			ITEM(CUP_srifle_m110_kac_woodland, 2100, RIFLE_STOCK)
 
-			ITEM(srifle_DMR_01_F, 2350, RIFLE_STOCK);
+			ITEM(srifle_DMR_01_F, 2350, RIFLE_STOCK)
 
-			ITEM(CUP_arifle_DSA_SA58_OSW_M203, 2500, RIFLE_STOCK);
-			ITEM(CUP_arifle_DSA_SA58_DMR, 2000, RIFLE_STOCK);
-			ITEM(CUP_arifle_DSA_SA58_OSW, 1800, RIFLE_STOCK);
-			ITEM(CUP_arifle_DSA_SA58_OSW_VFG, 1850, RIFLE_STOCK);
+			ITEM(CUP_arifle_DSA_SA58_OSW_M203, 2500, RIFLE_STOCK)
+			ITEM(CUP_arifle_DSA_SA58_DMR, 2000, RIFLE_STOCK)
+			ITEM(CUP_arifle_DSA_SA58_OSW, 1800, RIFLE_STOCK)
+			ITEM(CUP_arifle_DSA_SA58_OSW_VFG, 1850, RIFLE_STOCK)
 
-			ITEM(CUP_arifle_DSA_SA58_OSW_VFG_Desert, 1850, RIFLE_STOCK);
-			ITEM(CUP_arifle_DSA_SA58_OSW_Desert, 1800, RIFLE_STOCK);
+			ITEM(CUP_arifle_DSA_SA58_OSW_VFG_Desert, 1850, RIFLE_STOCK)
+			ITEM(CUP_arifle_DSA_SA58_OSW_Desert, 1800, RIFLE_STOCK)
 
-			ITEM(CUP_arifle_DSA_SA58_OSW_VFG_Sand, 1850, RIFLE_STOCK);
-			ITEM(CUP_arifle_DSA_SA58_OSW_Sand, 1800, RIFLE_STOCK);
+			ITEM(CUP_arifle_DSA_SA58_OSW_VFG_Sand, 1850, RIFLE_STOCK)
+			ITEM(CUP_arifle_DSA_SA58_OSW_Sand, 1800, RIFLE_STOCK)
 
-			ITEM(CUP_arifle_DSA_SA58_OSW_VFG_Woodland, 1850, RIFLE_STOCK);
-			ITEM(CUP_arifle_DSA_SA58_OSW_Woodland, 1800, RIFLE_STOCK);
+			ITEM(CUP_arifle_DSA_SA58_OSW_VFG_Woodland, 1850, RIFLE_STOCK)
+			ITEM(CUP_arifle_DSA_SA58_OSW_Woodland, 1800, RIFLE_STOCK)
 
-			ITEM(CUP_srifle_M21, 1900, RIFLE_STOCK);
-			ITEM(CUP_srifle_M14, 1800, RIFLE_STOCK);
-			ITEM(CUP_srifle_M14_DMR, 2200, RIFLE_STOCK);
-			ITEM(CUP_srifle_M21_ris, 2350, RIFLE_STOCK);
+			ITEM(CUP_srifle_M21, 1900, RIFLE_STOCK)
+			ITEM(CUP_srifle_M14, 1800, RIFLE_STOCK)
+			ITEM(CUP_srifle_M14_DMR, 2200, RIFLE_STOCK)
+			ITEM(CUP_srifle_M21_ris, 2350, RIFLE_STOCK)
 
-			ITEM(srifle_DMR_03_F, 2200, RIFLE_STOCK);
-			ITEM(srifle_DMR_03_multicam_F, 2200, RIFLE_STOCK);
-			ITEM(srifle_DMR_03_khaki_F, 2200, RIFLE_STOCK);
-			ITEM(srifle_DMR_03_tan_F, 2200, RIFLE_STOCK);
-			ITEM(srifle_DMR_03_woodland_F, 2200, RIFLE_STOCK);
+			ITEM(srifle_DMR_03_F, 2200, RIFLE_STOCK)
+			ITEM(srifle_DMR_03_multicam_F, 2200, RIFLE_STOCK)
+			ITEM(srifle_DMR_03_khaki_F, 2200, RIFLE_STOCK)
+			ITEM(srifle_DMR_03_tan_F, 2200, RIFLE_STOCK)
+			ITEM(srifle_DMR_03_woodland_F, 2200, RIFLE_STOCK)
 
-			ITEM(srifle_EBR_F, 2500, RIFLE_STOCK);
-			ITEM(CUP_srifle_Mk18_blk, 2500, RIFLE_STOCK);
-			ITEM(CUP_srifle_Mk18_des, 2500, RIFLE_STOCK);
-			ITEM(CUP_srifle_Mk18_wdl, 2500, RIFLE_STOCK);
+			ITEM(srifle_EBR_F, 2500, RIFLE_STOCK)
+			ITEM(CUP_srifle_Mk18_blk, 2500, RIFLE_STOCK)
+			ITEM(CUP_srifle_Mk18_des, 2500, RIFLE_STOCK)
+			ITEM(CUP_srifle_Mk18_wdl, 2500, RIFLE_STOCK)
 
-			ITEM(arifle_SPAR_03_blk_F, 2700, RIFLE_STOCK);
-			ITEM(arifle_SPAR_03_khk_F, 2700, RIFLE_STOCK);
-			ITEM(arifle_SPAR_03_snd_F, 2700, RIFLE_STOCK);
+			ITEM(arifle_SPAR_03_blk_F, 2700, RIFLE_STOCK)
+			ITEM(arifle_SPAR_03_khk_F, 2700, RIFLE_STOCK)
+			ITEM(arifle_SPAR_03_snd_F, 2700, RIFLE_STOCK)
 
-			ITEM(srifle_DMR_02_F, 3500, 10);
-			ITEM(srifle_DMR_02_camo_F, 3500, 10);
-			ITEM(srifle_DMR_02_sniper_F, 3500, 10);
+			ITEM(srifle_DMR_02_F, 3500, 10)
+			ITEM(srifle_DMR_02_camo_F, 3500, 10)
+			ITEM(srifle_DMR_02_sniper_F, 3500, 10)
 
-			ITEM(srifle_DMR_05_blk_F, 3300, 10);
-			ITEM(srifle_DMR_05_hex_F, 3300, 10);
-			ITEM(srifle_DMR_05_tan_f, 3300, 10);
+			ITEM(srifle_DMR_05_blk_F, 3300, 10)
+			ITEM(srifle_DMR_05_hex_F, 3300, 10)
+			ITEM(srifle_DMR_05_tan_f, 3300, 10)
 
-			ITEM(CUP_arifle_Mk20, 3750, 15);
-			ITEM(CUP_arifle_Mk20_black, 3750, 15);
-			ITEM(CUP_arifle_Mk20_woodland, 3750, 15);
+			ITEM(CUP_arifle_Mk20, 3750, 15)
+			ITEM(CUP_arifle_Mk20_black, 3750, 15)
+			ITEM(CUP_arifle_Mk20_woodland, 3750, 15)
 
-			ITEM(srifle_DMR_04_F, 3500, 10);
+			ITEM(srifle_DMR_04_F, 3500, 10)
 
-			ITEM(srifle_LRR_F, 3100, 5);
-			ITEM(srifle_LRR_tna_F, 3100, 5);
-			ITEM(srifle_LRR_camo_F, 3100, 5);
+			ITEM(srifle_LRR_F, 3100, 5)
+			ITEM(srifle_LRR_tna_F, 3100, 5)
+			ITEM(srifle_LRR_camo_F, 3100, 5)
 
-			ITEM(srifle_GM6_F, 2999, 5);
-			ITEM(srifle_GM6_camo_F, 2999, 5);
-			ITEM(srifle_GM6_ghex_F, 2999, 5);
+			ITEM(srifle_GM6_F, 2999, 5)
+			ITEM(srifle_GM6_camo_F, 2999, 5)
+			ITEM(srifle_GM6_ghex_F, 2999, 5)
 
-			ITEM(CUP_srifle_M107_Base, 3400, 5);
-			ITEM(CUP_srifle_M107_Pristine, 3400, 5);
-			ITEM(CUP_srifle_M107_Desert, 3400, 5);
-			ITEM(CUP_srifle_M107_Snow, 3400, 5);
-			ITEM(CUP_srifle_M107_Woodland, 3400, 5);
+			ITEM(CUP_srifle_M107_Base, 3400, 5)
+			ITEM(CUP_srifle_M107_Pristine, 3400, 5)
+			ITEM(CUP_srifle_M107_Desert, 3400, 5)
+			ITEM(CUP_srifle_M107_Snow, 3400, 5)
+			ITEM(CUP_srifle_M107_Woodland, 3400, 5)
 
-			ITEM(CUP_srifle_ksvk, 2800, 5);
+			ITEM(CUP_srifle_ksvk, 2800, 5)
 		};
 
 		class mgCup 
@@ -417,89 +417,89 @@
 			displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_cup", localize "STR_A3AU_mgs"]);
 			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\primaryWeapon_ca.paa";
 
-			ITEM(CUP_lmg_UK59, 1100, RIFLE_STOCK);
+			ITEM(CUP_lmg_UK59, 1100, RIFLE_STOCK)
 
-			ITEM(CUP_lmg_PKM, 1700, RIFLE_STOCK);
-			ITEM(CUP_lmg_PKMN, 1850, RIFLE_STOCK);
-			ITEM(CUP_lmg_PKM_B50_vfg, 1750, RIFLE_STOCK);
-			ITEM(CUP_lmg_PKM_front_rail_B50_vfg, 2050, RIFLE_STOCK);
-			ITEM(CUP_lmg_PKM_top_rail, 2000, RIFLE_STOCK);
-			ITEM(CUP_lmg_PKM_top_rail_B50_vfg, 2050, RIFLE_STOCK);
+			ITEM(CUP_lmg_PKM, 1700, RIFLE_STOCK)
+			ITEM(CUP_lmg_PKMN, 1850, RIFLE_STOCK)
+			ITEM(CUP_lmg_PKM_B50_vfg, 1750, RIFLE_STOCK)
+			ITEM(CUP_lmg_PKM_front_rail_B50_vfg, 2050, RIFLE_STOCK)
+			ITEM(CUP_lmg_PKM_top_rail, 2000, RIFLE_STOCK)
+			ITEM(CUP_lmg_PKM_top_rail_B50_vfg, 2050, RIFLE_STOCK)
 
-			ITEM(CUP_lmg_M60, 1700, RIFLE_STOCK);
+			ITEM(CUP_lmg_M60, 1700, RIFLE_STOCK)
 
-			ITEM(CUP_lmg_MG3, 2300, RIFLE_STOCK);
-			ITEM(CUP_lmg_MG3_rail, 2350, RIFLE_STOCK);
+			ITEM(CUP_lmg_MG3, 2300, RIFLE_STOCK)
+			ITEM(CUP_lmg_MG3_rail, 2350, RIFLE_STOCK)
 
-			ITEM(CUP_arifle_MG36, 1200, RIFLE_STOCK);
-			ITEM(CUP_arifle_MG36_camo, 1200, RIFLE_STOCK);
-			ITEM(CUP_arifle_MG36_hex, 1200, RIFLE_STOCK);
-			ITEM(CUP_arifle_MG36_wdl, 1200, RIFLE_STOCK);
-			ITEM(CUP_arifle_xm8_SAW, 1250, RIFLE_STOCK);
+			ITEM(CUP_arifle_MG36, 1200, RIFLE_STOCK)
+			ITEM(CUP_arifle_MG36_camo, 1200, RIFLE_STOCK)
+			ITEM(CUP_arifle_MG36_hex, 1200, RIFLE_STOCK)
+			ITEM(CUP_arifle_MG36_wdl, 1200, RIFLE_STOCK)
+			ITEM(CUP_arifle_xm8_SAW, 1250, RIFLE_STOCK)
 			
-			ITEM(CUP_lmg_M60E4_norail, 1800, RIFLE_STOCK);
-			ITEM(CUP_lmg_M60E4_norail_desert, 1700, RIFLE_STOCK);
-			ITEM(CUP_lmg_M60E4_norail_jungle, 1700, RIFLE_STOCK);
-			ITEM(CUP_lmg_M60E4_jungle, 1700, RIFLE_STOCK);
-			ITEM(CUP_lmg_M60E4, 2000, RIFLE_STOCK);
-			ITEM(CUP_lmg_M60E4_desert, 2000, RIFLE_STOCK);
-			ITEM(CUP_lmg_M60E4_wood, 2000, RIFLE_STOCK);
-			ITEM(CUP_lmg_M60E4_norail_wood, 2000, RIFLE_STOCK);
+			ITEM(CUP_lmg_M60E4_norail, 1800, RIFLE_STOCK)
+			ITEM(CUP_lmg_M60E4_norail_desert, 1700, RIFLE_STOCK)
+			ITEM(CUP_lmg_M60E4_norail_jungle, 1700, RIFLE_STOCK)
+			ITEM(CUP_lmg_M60E4_jungle, 1700, RIFLE_STOCK)
+			ITEM(CUP_lmg_M60E4, 2000, RIFLE_STOCK)
+			ITEM(CUP_lmg_M60E4_desert, 2000, RIFLE_STOCK)
+			ITEM(CUP_lmg_M60E4_wood, 2000, RIFLE_STOCK)
+			ITEM(CUP_lmg_M60E4_norail_wood, 2000, RIFLE_STOCK)
 
-			ITEM(CUP_arifle_Galil_556_black, 900, RIFLE_STOCK);
-			ITEM(CUP_arifle_Galil_SAR_black, 1050, RIFLE_STOCK);
+			ITEM(CUP_arifle_Galil_556_black, 900, RIFLE_STOCK)
+			ITEM(CUP_arifle_Galil_SAR_black, 1050, RIFLE_STOCK)
 
-			ITEM(CUP_arifle_Galil_black, 1200, RIFLE_STOCK);
+			ITEM(CUP_arifle_Galil_black, 1200, RIFLE_STOCK)
 
-			ITEM(CUP_arifle_RPK74, 700, RIFLE_STOCK);
+			ITEM(CUP_arifle_RPK74, 700, RIFLE_STOCK)
 
-			ITEM(CUP_arifle_L86A2, 900, RIFLE_STOCK);
+			ITEM(CUP_arifle_L86A2, 900, RIFLE_STOCK)
 
-			ITEM(CUP_lmg_M249_E1, 1300, RIFLE_STOCK);
-			ITEM(CUP_lmg_M249_E2, 1350, RIFLE_STOCK);
-			ITEM(CUP_lmg_m249_pip1, 1400, RIFLE_STOCK);
-			ITEM(CUP_lmg_m249_pip3, 1425, RIFLE_STOCK);
-			ITEM(CUP_lmg_m249_pip4, 1450, RIFLE_STOCK);
+			ITEM(CUP_lmg_M249_E1, 1300, RIFLE_STOCK)
+			ITEM(CUP_lmg_M249_E2, 1350, RIFLE_STOCK)
+			ITEM(CUP_lmg_m249_pip1, 1400, RIFLE_STOCK)
+			ITEM(CUP_lmg_m249_pip3, 1425, RIFLE_STOCK)
+			ITEM(CUP_lmg_m249_pip4, 1450, RIFLE_STOCK)
 
-			ITEM(CUP_lmg_m249_para_gl, 2500, RIFLE_STOCK);
+			ITEM(CUP_lmg_m249_para_gl, 2500, RIFLE_STOCK)
 
-			ITEM(CUP_lmg_FNMAG, 1900, RIFLE_STOCK);
-			ITEM(CUP_lmg_FNMAG_RIS, 1950, RIFLE_STOCK);
-			ITEM(CUP_lmg_FNMAG_RIS_modern, 2100, RIFLE_STOCK);
+			ITEM(CUP_lmg_FNMAG, 1900, RIFLE_STOCK)
+			ITEM(CUP_lmg_FNMAG_RIS, 1950, RIFLE_STOCK)
+			ITEM(CUP_lmg_FNMAG_RIS_modern, 2100, RIFLE_STOCK)
 
-			ITEM(CUP_lmg_M240_norail, 2000, RIFLE_STOCK);
-			ITEM(CUP_lmg_M240_B, 2100, RIFLE_STOCK);
-			ITEM(CUP_lmg_M240, 2100, RIFLE_STOCK);
+			ITEM(CUP_lmg_M240_norail, 2000, RIFLE_STOCK)
+			ITEM(CUP_lmg_M240_B, 2100, RIFLE_STOCK)
+			ITEM(CUP_lmg_M240, 2100, RIFLE_STOCK)
 
-			ITEM(CUP_lmg_Pecheneg, 1950, RIFLE_STOCK);
-			ITEM(CUP_lmg_Pecheneg_desert, 1950, RIFLE_STOCK);
-			ITEM(CUP_lmg_Pecheneg_woodland, 1950, RIFLE_STOCK);
+			ITEM(CUP_lmg_Pecheneg, 1950, RIFLE_STOCK)
+			ITEM(CUP_lmg_Pecheneg_desert, 1950, RIFLE_STOCK)
+			ITEM(CUP_lmg_Pecheneg_woodland, 1950, RIFLE_STOCK)
 
-			ITEM(arifle_SPAR_02_blk_F, 1800, RIFLE_STOCK);
-			ITEM(arifle_SPAR_02_khk_F, 1800, RIFLE_STOCK);
-			ITEM(LMG_03_F, 1500, RIFLE_STOCK);
+			ITEM(arifle_SPAR_02_blk_F, 1800, RIFLE_STOCK)
+			ITEM(arifle_SPAR_02_khk_F, 1800, RIFLE_STOCK)
+			ITEM(LMG_03_F, 1500, RIFLE_STOCK)
 			
-			ITEM(LMG_Mk200_F, 1800, RIFLE_STOCK);
-			ITEM(LMG_Mk200_black_F, 1800, RIFLE_STOCK);
+			ITEM(LMG_Mk200_F, 1800, RIFLE_STOCK)
+			ITEM(LMG_Mk200_black_F, 1800, RIFLE_STOCK)
 
-			ITEM(CUP_lmg_Mk48, 2400, RIFLE_STOCK);
-			ITEM(CUP_lmg_Mk48_des, 2400, RIFLE_STOCK);
-			ITEM(CUP_lmg_Mk48_od, 2400, RIFLE_STOCK);
-			ITEM(CUP_lmg_Mk48_tan, 2400, RIFLE_STOCK);
-			ITEM(CUP_lmg_Mk48_wdl, 2400, RIFLE_STOCK);
+			ITEM(CUP_lmg_Mk48, 2400, RIFLE_STOCK)
+			ITEM(CUP_lmg_Mk48_des, 2400, RIFLE_STOCK)
+			ITEM(CUP_lmg_Mk48_od, 2400, RIFLE_STOCK)
+			ITEM(CUP_lmg_Mk48_tan, 2400, RIFLE_STOCK)
+			ITEM(CUP_lmg_Mk48_wdl, 2400, RIFLE_STOCK)
 
-			ITEM(arifle_RPK12_F, 2000, RIFLE_STOCK);
-			ITEM(arifle_RPK12_arid_F, 2000, RIFLE_STOCK);
-			ITEM(arifle_RPK12_lush_F, 2000, RIFLE_STOCK);
+			ITEM(arifle_RPK12_F, 2000, RIFLE_STOCK)
+			ITEM(arifle_RPK12_arid_F, 2000, RIFLE_STOCK)
+			ITEM(arifle_RPK12_lush_F, 2000, RIFLE_STOCK)
 
-			ITEM(LMG_Zafir_F, 2700, RIFLE_STOCK);
+			ITEM(LMG_Zafir_F, 2700, RIFLE_STOCK)
 
-			ITEM(MMG_01_hex_F, 4000, 10);
-			ITEM(MMG_01_tan_F, 4000, 10);
+			ITEM(MMG_01_hex_F, 4000, 10)
+			ITEM(MMG_01_tan_F, 4000, 10)
 
-			ITEM(MMG_02_black_F, 3500, 10);
-			ITEM(MMG_02_camo_F, 3500, 10);
-			ITEM(MMG_02_sand_F, 3500, 10);
+			ITEM(MMG_02_black_F, 3500, 10)
+			ITEM(MMG_02_camo_F, 3500, 10)
+			ITEM(MMG_02_sand_F, 3500, 10)
 		};
 
 		class riflesCup 
@@ -507,218 +507,218 @@
 			displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_cup", localize "STR_A3AU_rifles"]);
 			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\primaryWeapon_ca.paa";
 
-			ITEM(arifle_AKS_F, 200, RIFLE_STOCK);
+			ITEM(arifle_AKS_F, 200, RIFLE_STOCK)
 
-			ITEM(CUP_arifle_SAIGA_MK03, 200, RIFLE_STOCK);
-			ITEM(CUP_arifle_SAIGA_MK03_Wood, 200, RIFLE_STOCK);
+			ITEM(CUP_arifle_SAIGA_MK03, 200, RIFLE_STOCK)
+			ITEM(CUP_arifle_SAIGA_MK03_Wood, 200, RIFLE_STOCK)
 
-			ITEM(CUP_arifle_Fort224, 550, RIFLE_STOCK);
+			ITEM(CUP_arifle_Fort224, 550, RIFLE_STOCK)
 
-			ITEM(CUP_arifle_M16A2, 500, RIFLE_STOCK);
-			ITEM(CUP_arifle_M16A2_GL, 650, RIFLE_STOCK);
+			ITEM(CUP_arifle_M16A2, 500, RIFLE_STOCK)
+			ITEM(CUP_arifle_M16A2_GL, 650, RIFLE_STOCK)
 
-			ITEM(CUP_arifle_M4A1, 650, RIFLE_STOCK);
+			ITEM(CUP_arifle_M4A1, 650, RIFLE_STOCK)
 
-			ITEM(CUP_arifle_M16A4_Base, 550, RIFLE_STOCK);
-			ITEM(CUP_arifle_M16A4_GL, 700, RIFLE_STOCK);
+			ITEM(CUP_arifle_M16A4_Base, 550, RIFLE_STOCK)
+			ITEM(CUP_arifle_M16A4_GL, 700, RIFLE_STOCK)
 			
-			ITEM(arifle_TRG21_F, 700, RIFLE_STOCK);
-			ITEM(arifle_TRG20_F, 650, RIFLE_STOCK);
-			ITEM(arifle_TRG21_GL_F, 850, RIFLE_STOCK);
+			ITEM(arifle_TRG21_F, 700, RIFLE_STOCK)
+			ITEM(arifle_TRG20_F, 650, RIFLE_STOCK)
+			ITEM(arifle_TRG21_GL_F, 850, RIFLE_STOCK)
 
-			ITEM(arifle_Mk20_plain_F, 800, RIFLE_STOCK);
-			ITEM(arifle_Mk20C_plain_F, 750, RIFLE_STOCK);
-			ITEM(arifle_Mk20_GL_plain_F, 950, RIFLE_STOCK);
+			ITEM(arifle_Mk20_plain_F, 800, RIFLE_STOCK)
+			ITEM(arifle_Mk20C_plain_F, 750, RIFLE_STOCK)
+			ITEM(arifle_Mk20_GL_plain_F, 950, RIFLE_STOCK)
 
-			ITEM(CUP_arifle_OTS14_GROZA, 700, RIFLE_STOCK);
-			ITEM(CUP_arifle_OTS14_GROZA_GL, 950, RIFLE_STOCK);
+			ITEM(CUP_arifle_OTS14_GROZA, 700, RIFLE_STOCK)
+			ITEM(CUP_arifle_OTS14_GROZA_GL, 950, RIFLE_STOCK)
 
-			ITEM(CUP_arifle_AK74M, 500, RIFLE_STOCK);
-			ITEM(CUP_arifle_AK74M_camo, 7500, RIFLE_STOCK);
-			ITEM(CUP_arifle_AK74M_top_rail, 550, RIFLE_STOCK);
-			ITEM(CUP_arifle_AK74M_top_rail_camo, 550, RIFLE_STOCK);
-			ITEM(CUP_arifle_AK74M_railed_afg, 600, RIFLE_STOCK);
-			ITEM(CUP_arifle_AK74M_railed_afg_camo, 600, RIFLE_STOCK);
+			ITEM(CUP_arifle_AK74M, 500, RIFLE_STOCK)
+			ITEM(CUP_arifle_AK74M_camo, 7500, RIFLE_STOCK)
+			ITEM(CUP_arifle_AK74M_top_rail, 550, RIFLE_STOCK)
+			ITEM(CUP_arifle_AK74M_top_rail_camo, 550, RIFLE_STOCK)
+			ITEM(CUP_arifle_AK74M_railed_afg, 600, RIFLE_STOCK)
+			ITEM(CUP_arifle_AK74M_railed_afg_camo, 600, RIFLE_STOCK)
 
-			ITEM(CUP_arifle_AK74M_GL, 650, RIFLE_STOCK);
-			ITEM(CUP_arifle_AK74M_GL_top_rail, 750, RIFLE_STOCK);
-			ITEM(CUP_arifle_AK74M_GL_camo, 650, RIFLE_STOCK);
-			ITEM(CUP_arifle_AK74M_GL_top_rail_camo, 750, RIFLE_STOCK);
-			ITEM(CUP_arifle_AK74M_GL_railed, 700, RIFLE_STOCK);
-			ITEM(CUP_arifle_AK74M_GL_railed_camo, 700, RIFLE_STOCK);
+			ITEM(CUP_arifle_AK74M_GL, 650, RIFLE_STOCK)
+			ITEM(CUP_arifle_AK74M_GL_top_rail, 750, RIFLE_STOCK)
+			ITEM(CUP_arifle_AK74M_GL_camo, 650, RIFLE_STOCK)
+			ITEM(CUP_arifle_AK74M_GL_top_rail_camo, 750, RIFLE_STOCK)
+			ITEM(CUP_arifle_AK74M_GL_railed, 700, RIFLE_STOCK)
+			ITEM(CUP_arifle_AK74M_GL_railed_camo, 700, RIFLE_STOCK)
 
-			ITEM(arifle_AKM_F, 800, RIFLE_STOCK);
-			ITEM(CUP_arifle_AK47_Early, 750, RIFLE_STOCK);
-			ITEM(CUP_arifle_TYPE_56_2_Early, 700, RIFLE_STOCK);
+			ITEM(arifle_AKM_F, 800, RIFLE_STOCK)
+			ITEM(CUP_arifle_AK47_Early, 750, RIFLE_STOCK)
+			ITEM(CUP_arifle_TYPE_56_2_Early, 700, RIFLE_STOCK)
 
 			
-			ITEM(CUP_arifle_Sa58V, 1000, RIFLE_STOCK);
-			ITEM(CUP_arifle_Sa58V_camo, 1000, RIFLE_STOCK);
-			ITEM(CUP_arifle_Sa58RIS1_des, 1050, RIFLE_STOCK);
-			ITEM(CUP_arifle_Sa58V_rearris, 1050, RIFLE_STOCK);
-			ITEM(CUP_arifle_Sa58V_frontris, 1050, RIFLE_STOCK);
-			ITEM(CUP_arifle_Sa58RIS1, 1050, RIFLE_STOCK);
-			ITEM(CUP_arifle_Sa58V_wood, 1000, RIFLE_STOCK);
-			ITEM(CUP_arifle_Sa58V_woodland, 1000, RIFLE_STOCK);
-			ITEM(CUP_arifle_Sa58RIS1_woodland, 1050, RIFLE_STOCK);
+			ITEM(CUP_arifle_Sa58V, 1000, RIFLE_STOCK)
+			ITEM(CUP_arifle_Sa58V_camo, 1000, RIFLE_STOCK)
+			ITEM(CUP_arifle_Sa58RIS1_des, 1050, RIFLE_STOCK)
+			ITEM(CUP_arifle_Sa58V_rearris, 1050, RIFLE_STOCK)
+			ITEM(CUP_arifle_Sa58V_frontris, 1050, RIFLE_STOCK)
+			ITEM(CUP_arifle_Sa58RIS1, 1050, RIFLE_STOCK)
+			ITEM(CUP_arifle_Sa58V_wood, 1000, RIFLE_STOCK)
+			ITEM(CUP_arifle_Sa58V_woodland, 1000, RIFLE_STOCK)
+			ITEM(CUP_arifle_Sa58RIS1_woodland, 1050, RIFLE_STOCK)
 
-			ITEM(CUP_arifle_Sa58P_woodland, 1000, RIFLE_STOCK);
-			ITEM(CUP_arifle_Sa58P_wood, 1000, RIFLE_STOCK);
-			ITEM(CUP_arifle_Sa58P, 1000, RIFLE_STOCK);
-			ITEM(CUP_arifle_Sa58P_rearris, 1050, RIFLE_STOCK);
-			ITEM(CUP_arifle_Sa58P_frontris, 1050, RIFLE_STOCK);
+			ITEM(CUP_arifle_Sa58P_woodland, 1000, RIFLE_STOCK)
+			ITEM(CUP_arifle_Sa58P_wood, 1000, RIFLE_STOCK)
+			ITEM(CUP_arifle_Sa58P, 1000, RIFLE_STOCK)
+			ITEM(CUP_arifle_Sa58P_rearris, 1050, RIFLE_STOCK)
+			ITEM(CUP_arifle_Sa58P_frontris, 1050, RIFLE_STOCK)
 
-			ITEM(CUP_arifle_Sa58P_des, 1000, RIFLE_STOCK);
-			ITEM(CUP_arifle_Sa58P_frontris_woodland, 1050, RIFLE_STOCK);
-			ITEM(CUP_arifle_Sa58P_frontris_desert, 1050, RIFLE_STOCK);
+			ITEM(CUP_arifle_Sa58P_des, 1000, RIFLE_STOCK)
+			ITEM(CUP_arifle_Sa58P_frontris_woodland, 1050, RIFLE_STOCK)
+			ITEM(CUP_arifle_Sa58P_frontris_desert, 1050, RIFLE_STOCK)
 
-			ITEM(CUP_arifle_Sa58P_RIS1, 1050, RIFLE_STOCK);
-			ITEM(CUP_arifle_Sa58RIS2, 1050, RIFLE_STOCK);
-			ITEM(CUP_arifle_Sa58RIS2_camo, 1050, RIFLE_STOCK);
-			ITEM(CUP_arifle_Sa58RIS2_woodland, 1050, RIFLE_STOCK);
+			ITEM(CUP_arifle_Sa58P_RIS1, 1050, RIFLE_STOCK)
+			ITEM(CUP_arifle_Sa58RIS2, 1050, RIFLE_STOCK)
+			ITEM(CUP_arifle_Sa58RIS2_camo, 1050, RIFLE_STOCK)
+			ITEM(CUP_arifle_Sa58RIS2_woodland, 1050, RIFLE_STOCK)
 
-			ITEM(CUP_arifle_Sa58RIS2_gl, 1300, RIFLE_STOCK);
-			ITEM(CUP_arifle_Sa58RIS2_gl_desert, 1300, RIFLE_STOCK);
-			ITEM(CUP_arifle_Sa58RIS2_gl_woodland, 1300, RIFLE_STOCK);
+			ITEM(CUP_arifle_Sa58RIS2_gl, 1300, RIFLE_STOCK)
+			ITEM(CUP_arifle_Sa58RIS2_gl_desert, 1300, RIFLE_STOCK)
+			ITEM(CUP_arifle_Sa58RIS2_gl_woodland, 1300, RIFLE_STOCK)
 
-			ITEM(CUP_arifle_AUG_A1, 900, RIFLE_STOCK);
+			ITEM(CUP_arifle_AUG_A1, 900, RIFLE_STOCK)
 
-			ITEM(CUP_arifle_XM8_Compact, 1100, RIFLE_STOCK);
-			ITEM(CUP_arifle_XM8_Compact_Rail, 1150, RIFLE_STOCK);
-			ITEM(CUP_arifle_XM8_Carbine_GL, 1300, RIFLE_STOCK);
-			ITEM(CUP_arifle_XM8_Railed, 1250, RIFLE_STOCK);
-			ITEM(CUP_arifle_XM8_Carbine_FG, 1250, RIFLE_STOCK);
-			ITEM(CUP_arifle_XM8_Carbine, 1200, RIFLE_STOCK);
+			ITEM(CUP_arifle_XM8_Compact, 1100, RIFLE_STOCK)
+			ITEM(CUP_arifle_XM8_Compact_Rail, 1150, RIFLE_STOCK)
+			ITEM(CUP_arifle_XM8_Carbine_GL, 1300, RIFLE_STOCK)
+			ITEM(CUP_arifle_XM8_Railed, 1250, RIFLE_STOCK)
+			ITEM(CUP_arifle_XM8_Carbine_FG, 1250, RIFLE_STOCK)
+			ITEM(CUP_arifle_XM8_Carbine, 1200, RIFLE_STOCK)
 
-			ITEM(CUP_arifle_AK102, 800, RIFLE_STOCK);
-			ITEM(CUP_arifle_AK102_top_rail, 850, RIFLE_STOCK);
-			ITEM(CUP_arifle_AK102_railed, 875, RIFLE_STOCK);
+			ITEM(CUP_arifle_AK102, 800, RIFLE_STOCK)
+			ITEM(CUP_arifle_AK102_top_rail, 850, RIFLE_STOCK)
+			ITEM(CUP_arifle_AK102_railed, 875, RIFLE_STOCK)
 
-			ITEM(CUP_arifle_AK101, 800, RIFLE_STOCK);
-			ITEM(CUP_arifle_AK101_top_rail, 850, RIFLE_STOCK);
-			ITEM(CUP_arifle_AK101_railed, 875, RIFLE_STOCK);
+			ITEM(CUP_arifle_AK101, 800, RIFLE_STOCK)
+			ITEM(CUP_arifle_AK101_top_rail, 850, RIFLE_STOCK)
+			ITEM(CUP_arifle_AK101_railed, 875, RIFLE_STOCK)
 
-			ITEM(CUP_arifle_AK101_GL, 1000, RIFLE_STOCK);
-			ITEM(CUP_arifle_AK101_GL_top_rail, 1150, RIFLE_STOCK);
-			ITEM(CUP_arifle_AK101_GL_railed, 1175, RIFLE_STOCK);
+			ITEM(CUP_arifle_AK101_GL, 1000, RIFLE_STOCK)
+			ITEM(CUP_arifle_AK101_GL_top_rail, 1150, RIFLE_STOCK)
+			ITEM(CUP_arifle_AK101_GL_railed, 1175, RIFLE_STOCK)
 
-			ITEM(CUP_arifle_AK108, 1100, RIFLE_STOCK);
-			ITEM(CUP_arifle_AK108_top_rail, 1150, RIFLE_STOCK);
-			ITEM(CUP_arifle_AK108_railed, 1175, RIFLE_STOCK);
+			ITEM(CUP_arifle_AK108, 1100, RIFLE_STOCK)
+			ITEM(CUP_arifle_AK108_top_rail, 1150, RIFLE_STOCK)
+			ITEM(CUP_arifle_AK108_railed, 1175, RIFLE_STOCK)
 
-			ITEM(CUP_arifle_AK108_GL, 1300, RIFLE_STOCK);
-			ITEM(CUP_arifle_AK108_GL_top_rail, 1350, RIFLE_STOCK);
-			ITEM(CUP_arifle_AK108_GL_railed, 1375, RIFLE_STOCK);
+			ITEM(CUP_arifle_AK108_GL, 1300, RIFLE_STOCK)
+			ITEM(CUP_arifle_AK108_GL_top_rail, 1350, RIFLE_STOCK)
+			ITEM(CUP_arifle_AK108_GL_railed, 1375, RIFLE_STOCK)
 
-			ITEM(CUP_arifle_ACRC_blk_68,1750,RIFLE_STOCK);
-			ITEM(CUP_arifle_ACRC_snw_68,1750,RIFLE_STOCK);
-			ITEM(CUP_arifle_ACRC_tan_68,1750,RIFLE_STOCK);
-			ITEM(CUP_arifle_ACRC_wdl_68,1750,RIFLE_STOCK);
+			ITEM(CUP_arifle_ACRC_blk_68,1750,RIFLE_STOCK)
+			ITEM(CUP_arifle_ACRC_snw_68,1750,RIFLE_STOCK)
+			ITEM(CUP_arifle_ACRC_tan_68,1750,RIFLE_STOCK)
+			ITEM(CUP_arifle_ACRC_wdl_68,1750,RIFLE_STOCK)
 
-			ITEM(CUP_arifle_ACRC_EGLM_blk_68,1900,RIFLE_STOCK);
-			ITEM(CUP_arifle_ACRC_EGLM_snw_68,1900,RIFLE_STOCK);
-			ITEM(CUP_arifle_ACRC_EGLM_tan_68,1900,RIFLE_STOCK);
-			ITEM(CUP_arifle_ACRC_EGLM_wdl_68,1900,RIFLE_STOCK);
+			ITEM(CUP_arifle_ACRC_EGLM_blk_68,1900,RIFLE_STOCK)
+			ITEM(CUP_arifle_ACRC_EGLM_snw_68,1900,RIFLE_STOCK)
+			ITEM(CUP_arifle_ACRC_EGLM_tan_68,1900,RIFLE_STOCK)
+			ITEM(CUP_arifle_ACRC_EGLM_wdl_68,1900,RIFLE_STOCK)
 
-			ITEM(CUP_arifle_ACR_blk_68,1750,RIFLE_STOCK);
-			ITEM(CUP_arifle_ACR_snw_68,1750,RIFLE_STOCK);
-			ITEM(CUP_arifle_ACR_tan_68,1750,RIFLE_STOCK);
-			ITEM(CUP_arifle_ACR_wdl_68,1750,RIFLE_STOCK);
+			ITEM(CUP_arifle_ACR_blk_68,1750,RIFLE_STOCK)
+			ITEM(CUP_arifle_ACR_snw_68,1750,RIFLE_STOCK)
+			ITEM(CUP_arifle_ACR_tan_68,1750,RIFLE_STOCK)
+			ITEM(CUP_arifle_ACR_wdl_68,1750,RIFLE_STOCK)
 
-			ITEM(CUP_arifle_ACR_DMR_blk_68,1900,RIFLE_STOCK);
-			ITEM(CUP_arifle_ACR_DMR_snw_68,1900,RIFLE_STOCK);
-			ITEM(CUP_arifle_ACR_DMR_tan_68,1900,RIFLE_STOCK);
-			ITEM(CUP_arifle_ACR_DMR_wdl_68,1900,RIFLE_STOCK);
+			ITEM(CUP_arifle_ACR_DMR_blk_68,1900,RIFLE_STOCK)
+			ITEM(CUP_arifle_ACR_DMR_snw_68,1900,RIFLE_STOCK)
+			ITEM(CUP_arifle_ACR_DMR_tan_68,1900,RIFLE_STOCK)
+			ITEM(CUP_arifle_ACR_DMR_wdl_68,1900,RIFLE_STOCK)
 
-			ITEM(CUP_arifle_ACR_EGLM_blk_68,1900,RIFLE_STOCK);
-			ITEM(CUP_arifle_ACR_EGLM_snw_68,1900,RIFLE_STOCK);
-			ITEM(CUP_arifle_ACR_EGLM_tan_68,1900,RIFLE_STOCK);
-			ITEM(CUP_arifle_ACR_EGLM_wdl_68,1900,RIFLE_STOCK);
+			ITEM(CUP_arifle_ACR_EGLM_blk_68,1900,RIFLE_STOCK)
+			ITEM(CUP_arifle_ACR_EGLM_snw_68,1900,RIFLE_STOCK)
+			ITEM(CUP_arifle_ACR_EGLM_tan_68,1900,RIFLE_STOCK)
+			ITEM(CUP_arifle_ACR_EGLM_wdl_68,1900,RIFLE_STOCK)
 
-			ITEM(CUP_arifle_Mk16_CQC, 2000, RIFLE_STOCK);
-			ITEM(CUP_arifle_Mk16_CQC_AFG, 2050, RIFLE_STOCK);
-			ITEM(CUP_arifle_Mk16_CQC_AFG_black, 2050, RIFLE_STOCK);
-			ITEM(CUP_arifle_Mk16_CQC_AFG_woodland, 2050, RIFLE_STOCK);
-			ITEM(CUP_arifle_Mk16_CQC_FG, 2050, RIFLE_STOCK);
-			ITEM(CUP_arifle_Mk16_CQC_FG_black, 2050, RIFLE_STOCK);
-			ITEM(CUP_arifle_Mk16_CQC_FG_woodland, 2050, RIFLE_STOCK);
+			ITEM(CUP_arifle_Mk16_CQC, 2000, RIFLE_STOCK)
+			ITEM(CUP_arifle_Mk16_CQC_AFG, 2050, RIFLE_STOCK)
+			ITEM(CUP_arifle_Mk16_CQC_AFG_black, 2050, RIFLE_STOCK)
+			ITEM(CUP_arifle_Mk16_CQC_AFG_woodland, 2050, RIFLE_STOCK)
+			ITEM(CUP_arifle_Mk16_CQC_FG, 2050, RIFLE_STOCK)
+			ITEM(CUP_arifle_Mk16_CQC_FG_black, 2050, RIFLE_STOCK)
+			ITEM(CUP_arifle_Mk16_CQC_FG_woodland, 2050, RIFLE_STOCK)
 
-			ITEM(CUP_arifle_Mk16_CQC_SFG, 2025, RIFLE_STOCK);
-			ITEM(CUP_arifle_Mk16_CQC_SFG_black, 2025, RIFLE_STOCK);
-			ITEM(CUP_arifle_Mk16_CQC_SFG_woodland, 2025, RIFLE_STOCK);
+			ITEM(CUP_arifle_Mk16_CQC_SFG, 2025, RIFLE_STOCK)
+			ITEM(CUP_arifle_Mk16_CQC_SFG_black, 2025, RIFLE_STOCK)
+			ITEM(CUP_arifle_Mk16_CQC_SFG_woodland, 2025, RIFLE_STOCK)
 
-			ITEM(CUP_arifle_Mk16_CQC_EGLM, 2250, RIFLE_STOCK);
-			ITEM(CUP_arifle_Mk16_CQC_EGLM_black, 2250, RIFLE_STOCK);
-			ITEM(CUP_arifle_Mk16_CQC_EGLM_woodland, 2250, RIFLE_STOCK);
+			ITEM(CUP_arifle_Mk16_CQC_EGLM, 2250, RIFLE_STOCK)
+			ITEM(CUP_arifle_Mk16_CQC_EGLM_black, 2250, RIFLE_STOCK)
+			ITEM(CUP_arifle_Mk16_CQC_EGLM_woodland, 2250, RIFLE_STOCK)
 
-			ITEM(CUP_arifle_Mk16_STD, 2100, RIFLE_STOCK);
-			ITEM(CUP_arifle_Mk16_STD_AFG, 2150, RIFLE_STOCK);
-			ITEM(CUP_arifle_Mk16_STD_AFG_black, 2150, RIFLE_STOCK);
-			ITEM(CUP_arifle_Mk16_STD_AFG_woodland, 2150, RIFLE_STOCK);
-			ITEM(CUP_arifle_Mk16_STD_black, 2150, RIFLE_STOCK);
-			ITEM(CUP_arifle_Mk16_STD_FG, 2150, RIFLE_STOCK);
-			ITEM(CUP_arifle_Mk16_STD_FG_black, 2150, RIFLE_STOCK);
-			ITEM(CUP_arifle_Mk16_STD_FG_woodland, 2150, RIFLE_STOCK);
-			ITEM(CUP_arifle_Mk16_STD_SFG, 2175, RIFLE_STOCK);
+			ITEM(CUP_arifle_Mk16_STD, 2100, RIFLE_STOCK)
+			ITEM(CUP_arifle_Mk16_STD_AFG, 2150, RIFLE_STOCK)
+			ITEM(CUP_arifle_Mk16_STD_AFG_black, 2150, RIFLE_STOCK)
+			ITEM(CUP_arifle_Mk16_STD_AFG_woodland, 2150, RIFLE_STOCK)
+			ITEM(CUP_arifle_Mk16_STD_black, 2150, RIFLE_STOCK)
+			ITEM(CUP_arifle_Mk16_STD_FG, 2150, RIFLE_STOCK)
+			ITEM(CUP_arifle_Mk16_STD_FG_black, 2150, RIFLE_STOCK)
+			ITEM(CUP_arifle_Mk16_STD_FG_woodland, 2150, RIFLE_STOCK)
+			ITEM(CUP_arifle_Mk16_STD_SFG, 2175, RIFLE_STOCK)
 
-			ITEM(CUP_arifle_Mk16_SV, 2250, RIFLE_STOCK);
-			ITEM(CUP_arifle_Mk16_SV_black, 2250, RIFLE_STOCK); 
-			ITEM(CUP_arifle_Mk16_SV_woodland, 2250, RIFLE_STOCK);
+			ITEM(CUP_arifle_Mk16_SV, 2250, RIFLE_STOCK)
+			ITEM(CUP_arifle_Mk16_SV_black, 2250, RIFLE_STOCK) 
+			ITEM(CUP_arifle_Mk16_SV_woodland, 2250, RIFLE_STOCK)
 
-			ITEM(arifle_SPAR_01_blk_F, 1700, RIFLE_STOCK);
-			ITEM(arifle_SPAR_01_GL_blk_F, 1850, RIFLE_STOCK);
+			ITEM(arifle_SPAR_01_blk_F, 1700, RIFLE_STOCK)
+			ITEM(arifle_SPAR_01_GL_blk_F, 1850, RIFLE_STOCK)
 
-			ITEM(arifle_SPAR_01_khk_F, 1700, RIFLE_STOCK);
-			ITEM(arifle_SPAR_01_GL_khk_F, 1850, RIFLE_STOCK);
+			ITEM(arifle_SPAR_01_khk_F, 1700, RIFLE_STOCK)
+			ITEM(arifle_SPAR_01_GL_khk_F, 1850, RIFLE_STOCK)
 
-			ITEM(arifle_AK12U_F, 1950, RIFLE_STOCK);
-			ITEM(arifle_AK12_F, 2000, RIFLE_STOCK);
-			ITEM(arifle_AK12_GL_F, 2150, RIFLE_STOCK);
+			ITEM(arifle_AK12U_F, 1950, RIFLE_STOCK)
+			ITEM(arifle_AK12_F, 2000, RIFLE_STOCK)
+			ITEM(arifle_AK12_GL_F, 2150, RIFLE_STOCK)
 
-			ITEM(arifle_AK12U_arid_F, 1950, RIFLE_STOCK);
-			ITEM(arifle_AK12_arid_F, 2000, RIFLE_STOCK);
-			ITEM(arifle_AK12_GL_arid_F, 2150, RIFLE_STOCK);
+			ITEM(arifle_AK12U_arid_F, 1950, RIFLE_STOCK)
+			ITEM(arifle_AK12_arid_F, 2000, RIFLE_STOCK)
+			ITEM(arifle_AK12_GL_arid_F, 2150, RIFLE_STOCK)
 
-			ITEM(arifle_AK12U_lush_F, 1950, RIFLE_STOCK);
-			ITEM(arifle_AK12_lush_F, 2000, RIFLE_STOCK);
-			ITEM(arifle_AK12_GL_lush_F, 2150, RIFLE_STOCK);
+			ITEM(arifle_AK12U_lush_F, 1950, RIFLE_STOCK)
+			ITEM(arifle_AK12_lush_F, 2000, RIFLE_STOCK)
+			ITEM(arifle_AK12_GL_lush_F, 2150, RIFLE_STOCK)
 
-			ITEM(CUP_CZ_BREN2_762_8, 4050, RIFLE_STOCK);
-			ITEM(CUP_CZ_BREN2_762_14, 4250, RIFLE_STOCK);
-			ITEM(CUP_CZ_BREN2_762_14_GL, 4500, RIFLE_STOCK);
+			ITEM(CUP_CZ_BREN2_762_8, 4050, RIFLE_STOCK)
+			ITEM(CUP_CZ_BREN2_762_14, 4250, RIFLE_STOCK)
+			ITEM(CUP_CZ_BREN2_762_14_GL, 4500, RIFLE_STOCK)
 
-			ITEM(arifle_ARX_blk_F, 3000, RIFLE_STOCK);
-			ITEM(arifle_ARX_ghex_F, 3000, RIFLE_STOCK);
-			ITEM(arifle_ARX_hex_F, 3000, RIFLE_STOCK);
+			ITEM(arifle_ARX_blk_F, 3000, RIFLE_STOCK)
+			ITEM(arifle_ARX_ghex_F, 3000, RIFLE_STOCK)
+			ITEM(arifle_ARX_hex_F, 3000, RIFLE_STOCK)
 
-			ITEM(CUP_arifle_Mk17_CQC, 2500, RIFLE_STOCK);
-			ITEM(CUP_arifle_Mk17_CQC_AFG, 2550, RIFLE_STOCK);
-			ITEM(CUP_arifle_Mk17_CQC_AFG_black, 2550, RIFLE_STOCK);
-			ITEM(CUP_arifle_Mk17_CQC_AFG_woodland, 2550, RIFLE_STOCK);
+			ITEM(CUP_arifle_Mk17_CQC, 2500, RIFLE_STOCK)
+			ITEM(CUP_arifle_Mk17_CQC_AFG, 2550, RIFLE_STOCK)
+			ITEM(CUP_arifle_Mk17_CQC_AFG_black, 2550, RIFLE_STOCK)
+			ITEM(CUP_arifle_Mk17_CQC_AFG_woodland, 2550, RIFLE_STOCK)
 
-			ITEM(CUP_arifle_Mk17_CQC_Black, 2500, RIFLE_STOCK);
-			ITEM(CUP_arifle_Mk17_CQC_FG, 2550, RIFLE_STOCK);
-			ITEM(CUP_arifle_Mk17_CQC_FG_black, 2550, RIFLE_STOCK);
-			ITEM(CUP_arifle_Mk17_CQC_FG_woodland, 2550, RIFLE_STOCK);
+			ITEM(CUP_arifle_Mk17_CQC_Black, 2500, RIFLE_STOCK)
+			ITEM(CUP_arifle_Mk17_CQC_FG, 2550, RIFLE_STOCK)
+			ITEM(CUP_arifle_Mk17_CQC_FG_black, 2550, RIFLE_STOCK)
+			ITEM(CUP_arifle_Mk17_CQC_FG_woodland, 2550, RIFLE_STOCK)
 
-			ITEM(CUP_arifle_Mk17_CQC_woodland, 2500, RIFLE_STOCK);
-			ITEM(CUP_arifle_Mk17_CQC_EGLM, 2750, RIFLE_STOCK);
-			ITEM(CUP_arifle_Mk17_CQC_EGLM_black, 2750, RIFLE_STOCK);
-			ITEM(CUP_arifle_Mk17_CQC_EGLM_woodland, 2750, RIFLE_STOCK);
+			ITEM(CUP_arifle_Mk17_CQC_woodland, 2500, RIFLE_STOCK)
+			ITEM(CUP_arifle_Mk17_CQC_EGLM, 2750, RIFLE_STOCK)
+			ITEM(CUP_arifle_Mk17_CQC_EGLM_black, 2750, RIFLE_STOCK)
+			ITEM(CUP_arifle_Mk17_CQC_EGLM_woodland, 2750, RIFLE_STOCK)
 
-			ITEM(CUP_arifle_Mk17_STD, 2700, RIFLE_STOCK);
-			ITEM(CUP_arifle_Mk17_STD_AFG, 2750, RIFLE_STOCK);
-			ITEM(CUP_arifle_Mk17_STD_AFG_black, 2750, RIFLE_STOCK);
-			ITEM(CUP_arifle_Mk17_STD_woodland, 2750, RIFLE_STOCK);
+			ITEM(CUP_arifle_Mk17_STD, 2700, RIFLE_STOCK)
+			ITEM(CUP_arifle_Mk17_STD_AFG, 2750, RIFLE_STOCK)
+			ITEM(CUP_arifle_Mk17_STD_AFG_black, 2750, RIFLE_STOCK)
+			ITEM(CUP_arifle_Mk17_STD_woodland, 2750, RIFLE_STOCK)
 
-			ITEM(CUP_arifle_Mk17_STD_black, 2700, RIFLE_STOCK);
-			ITEM(CUP_arifle_Mk17_STD_FG, 2750, RIFLE_STOCK);
-			ITEM(CUP_arifle_Mk17_STD_FG_black, 2750, RIFLE_STOCK);
-			ITEM(CUP_arifle_Mk17_STD_FG_woodland, 2750, RIFLE_STOCK);
+			ITEM(CUP_arifle_Mk17_STD_black, 2700, RIFLE_STOCK)
+			ITEM(CUP_arifle_Mk17_STD_FG, 2750, RIFLE_STOCK)
+			ITEM(CUP_arifle_Mk17_STD_FG_black, 2750, RIFLE_STOCK)
+			ITEM(CUP_arifle_Mk17_STD_FG_woodland, 2750, RIFLE_STOCK)
 
-			ITEM(CUP_arifle_Mk17_STD_EGLM, 2900, RIFLE_STOCK);
-			ITEM(CUP_arifle_Mk17_STD_EGLM_black, 2900, RIFLE_STOCK);
-			ITEM(CUP_arifle_Mk17_STD_EGLM_woodland, 2900, RIFLE_STOCK);
+			ITEM(CUP_arifle_Mk17_STD_EGLM, 2900, RIFLE_STOCK)
+			ITEM(CUP_arifle_Mk17_STD_EGLM_black, 2900, RIFLE_STOCK)
+			ITEM(CUP_arifle_Mk17_STD_EGLM_woodland, 2900, RIFLE_STOCK)
 		};
 
 		class magazinesCup 
@@ -2476,19 +2476,19 @@
 			displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_cup", localize "STR_A3AU_bipods"]);
 			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\itemBipod_ca.paa";
 
-			ITEM(bipod_02_F_arid, 100, 50);
-			ITEM(bipod_03_F_blk, 100, 50);
-			ITEM(bipod_02_F_blk, 100, 50);
-			ITEM(bipod_01_F_blk, 100, 50);
-			ITEM(bipod_02_F_hex, 100, 50);
-			ITEM(bipod_01_F_khk, 100, 50);
-			ITEM(bipod_02_F_lush, 100, 50);
-			ITEM(bipod_01_F_mtp, 100, 50);
-			ITEM(bipod_03_F_oli, 100, 50);
-			ITEM(bipod_01_F_snd, 100, 50);
-			ITEM(bipod_02_F_tan, 100, 50);
+			ITEM(bipod_02_F_arid, 100, 50)
+			ITEM(bipod_03_F_blk, 100, 50)
+			ITEM(bipod_02_F_blk, 100, 50)
+			ITEM(bipod_01_F_blk, 100, 50)
+			ITEM(bipod_02_F_hex, 100, 50)
+			ITEM(bipod_01_F_khk, 100, 50)
+			ITEM(bipod_02_F_lush, 100, 50)
+			ITEM(bipod_01_F_mtp, 100, 50)
+			ITEM(bipod_03_F_oli, 100, 50)
+			ITEM(bipod_01_F_snd, 100, 50)
+			ITEM(bipod_02_F_tan, 100, 50)
 			
-			ITEM(CUP_bipod_FNFAL, 100, 50);
+			ITEM(CUP_bipod_FNFAL, 100, 50)
 		};
 
 		class pointersCup 
@@ -2496,36 +2496,36 @@
 			displayName = __EVAL(formatText ["%1 %2 %3 %4", localize "STR_A3AU_cup", localize "STR_A3AU_pointers", localize "STR_A3AU_and", localize "STR_A3AU_flashlights"]);
 			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\itemAcc_ca.paa";
 
-			ITEM(acc_flashlight, 75, PN_STOCK);
-			ITEM(acc_flashlight_smg_01, 75, PN_STOCK);
-			ITEM(acc_pointer_IR, 100, PN_STOCK);
-			ITEM(acc_flashlight_pistol, 75, PN_STOCK);
+			ITEM(acc_flashlight, 75, PN_STOCK)
+			ITEM(acc_flashlight_smg_01, 75, PN_STOCK)
+			ITEM(acc_pointer_IR, 100, PN_STOCK)
+			ITEM(acc_flashlight_pistol, 75, PN_STOCK)
 
-			ITEM(CUP_acc_ANPEQ_15_Black, 100, PN_STOCK);
-			ITEM(CUP_acc_ANPEQ_15_OD, 100, PN_STOCK);
-			ITEM(CUP_acc_ANPEQ_15_OD_Top, 100, PN_STOCK);
-			ITEM(CUP_acc_ANPEQ_15, 100, PN_STOCK);
-			ITEM(CUP_acc_ANPEQ_15_Black_Top, 100, PN_STOCK);
-			ITEM(CUP_acc_ANPEQ_15_Tan_Top, 100, PN_STOCK);
-			ITEM(CUP_acc_ANPEQ_15_Flashlight_Black_L, 150, PN_STOCK);
-			ITEM(CUP_acc_ANPEQ_15_Flashlight_OD_L, 150, PN_STOCK);
-			ITEM(CUP_acc_ANPEQ_15_Flashlight_Tan_L, 150, PN_STOCK);
-			ITEM(CUP_acc_ANPEQ_15_Top_Flashlight_Black_L, 150, PN_STOCK);
-			ITEM(CUP_acc_ANPEQ_15_Top_Flashlight_OD_L, 150, PN_STOCK);
-			ITEM(CUP_acc_ANPEQ_15_Top_Flashlight_Tan_L, 150, PN_STOCK);
+			ITEM(CUP_acc_ANPEQ_15_Black, 100, PN_STOCK)
+			ITEM(CUP_acc_ANPEQ_15_OD, 100, PN_STOCK)
+			ITEM(CUP_acc_ANPEQ_15_OD_Top, 100, PN_STOCK)
+			ITEM(CUP_acc_ANPEQ_15, 100, PN_STOCK)
+			ITEM(CUP_acc_ANPEQ_15_Black_Top, 100, PN_STOCK)
+			ITEM(CUP_acc_ANPEQ_15_Tan_Top, 100, PN_STOCK)
+			ITEM(CUP_acc_ANPEQ_15_Flashlight_Black_L, 150, PN_STOCK)
+			ITEM(CUP_acc_ANPEQ_15_Flashlight_OD_L, 150, PN_STOCK)
+			ITEM(CUP_acc_ANPEQ_15_Flashlight_Tan_L, 150, PN_STOCK)
+			ITEM(CUP_acc_ANPEQ_15_Top_Flashlight_Black_L, 150, PN_STOCK)
+			ITEM(CUP_acc_ANPEQ_15_Top_Flashlight_OD_L, 150, PN_STOCK)
+			ITEM(CUP_acc_ANPEQ_15_Top_Flashlight_Tan_L, 150, PN_STOCK)
 
-			ITEM(CUP_acc_Flashlight, 50, PN_STOCK);
-			ITEM(CUP_acc_Flashlight_desert, 50, PN_STOCK);
-			ITEM(CUP_acc_Flashlight_wdl, 50, PN_STOCK);
+			ITEM(CUP_acc_Flashlight, 50, PN_STOCK)
+			ITEM(CUP_acc_Flashlight_desert, 50, PN_STOCK)
+			ITEM(CUP_acc_Flashlight_wdl, 50, PN_STOCK)
 			
-			ITEM(CUP_acc_CZ_M3X, 75, PN_STOCK);
-			ITEM(CUP_acc_Glock17_Flashlight, 75, PN_STOCK);
-			ITEM(CUP_acc_MLPLS_Laser, 75, PN_STOCK);
+			ITEM(CUP_acc_CZ_M3X, 75, PN_STOCK)
+			ITEM(CUP_acc_Glock17_Flashlight, 75, PN_STOCK)
+			ITEM(CUP_acc_MLPLS_Laser, 75, PN_STOCK)
 
-			ITEM(CUP_SVD_camo_d, 25, PN_STOCK);
-			ITEM(CUP_SVD_camo_g, 25, PN_STOCK);
-			ITEM(CUP_SVD_camo_d_half, 15, PN_STOCK);
-			ITEM(CUP_SVD_camo_g_half, 15, PN_STOCK);
+			ITEM(CUP_SVD_camo_d, 25, PN_STOCK)
+			ITEM(CUP_SVD_camo_g, 25, PN_STOCK)
+			ITEM(CUP_SVD_camo_d_half, 15, PN_STOCK)
+			ITEM(CUP_SVD_camo_g_half, 15, PN_STOCK)
 		};
 
 		class muzzlesCup 
@@ -2533,70 +2533,70 @@
 			displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_cup", localize "STR_A3AU_muzzles"]);
 			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\itemMuzzle_ca.paa";
 
-			ITEM(muzzle_snds_338_black, 500, MZ_STOCK); //5
-			ITEM(muzzle_snds_338_green, 500, MZ_STOCK);
-			ITEM(muzzle_snds_338_sand, 500, MZ_STOCK);
-			ITEM(muzzle_snds_93mmg, 600, MZ_STOCK); //4
-			ITEM(muzzle_snds_93mmg_tan, 600, MZ_STOCK);
-			ITEM(muzzle_snds_acp, 150, MZ_STOCK);
-			ITEM(muzzle_snds_B, 200, MZ_STOCK);//3
-			ITEM(muzzle_snds_B_khk_F, 200, MZ_STOCK);
-			ITEM(muzzle_snds_B_snd_F, 200, MZ_STOCK);
-			ITEM(muzzle_snds_H, 200, MZ_STOCK);//2
-			ITEM(muzzle_snds_H_khk_F, 200, MZ_STOCK);//2
-			ITEM(muzzle_snds_H_snd_F, 200, MZ_STOCK);
-			ITEM(muzzle_snds_H_MG, 200, MZ_STOCK);
-			ITEM(muzzle_snds_H_SW, 200, MZ_STOCK);
-			ITEM(muzzle_snds_L, 200, MZ_STOCK);//1
-			ITEM(muzzle_snds_M, 200, MZ_STOCK);
-			ITEM(muzzle_snds_58_blk_F, 150, MZ_STOCK);//1
-			ITEM(muzzle_snds_m_khk_F, 200, MZ_STOCK);
-			ITEM(muzzle_snds_m_snd_F, 200, MZ_STOCK);
-			ITEM(muzzle_snds_58_wdm_F, 150, MZ_STOCK);//1
-			ITEM(muzzle_snds_58_ghex_F, 150, MZ_STOCK);
-			ITEM(muzzle_snds_58_hex_F, 150, MZ_STOCK);
-			ITEM(muzzle_snds_65_TI_blk_F, 350, MZ_STOCK); //2
-			ITEM(muzzle_snds_65_TI_hex_F, 350, MZ_STOCK);
-			ITEM(muzzle_snds_65_TI_ghex_F, 350, MZ_STOCK);
-			ITEM(muzzle_snds_H_MG_blk_F, 200, MZ_STOCK);
-			ITEM(muzzle_snds_H_MG_khk_F, 200, MZ_STOCK);
+			ITEM(muzzle_snds_338_black, 500, MZ_STOCK) //5
+			ITEM(muzzle_snds_338_green, 500, MZ_STOCK)
+			ITEM(muzzle_snds_338_sand, 500, MZ_STOCK)
+			ITEM(muzzle_snds_93mmg, 600, MZ_STOCK) //4
+			ITEM(muzzle_snds_93mmg_tan, 600, MZ_STOCK)
+			ITEM(muzzle_snds_acp, 150, MZ_STOCK)
+			ITEM(muzzle_snds_B, 200, MZ_STOCK)//3
+			ITEM(muzzle_snds_B_khk_F, 200, MZ_STOCK)
+			ITEM(muzzle_snds_B_snd_F, 200, MZ_STOCK)
+			ITEM(muzzle_snds_H, 200, MZ_STOCK)//2
+			ITEM(muzzle_snds_H_khk_F, 200, MZ_STOCK)//2
+			ITEM(muzzle_snds_H_snd_F, 200, MZ_STOCK)
+			ITEM(muzzle_snds_H_MG, 200, MZ_STOCK)
+			ITEM(muzzle_snds_H_SW, 200, MZ_STOCK)
+			ITEM(muzzle_snds_L, 200, MZ_STOCK)//1
+			ITEM(muzzle_snds_M, 200, MZ_STOCK)
+			ITEM(muzzle_snds_58_blk_F, 150, MZ_STOCK)//1
+			ITEM(muzzle_snds_m_khk_F, 200, MZ_STOCK)
+			ITEM(muzzle_snds_m_snd_F, 200, MZ_STOCK)
+			ITEM(muzzle_snds_58_wdm_F, 150, MZ_STOCK)//1
+			ITEM(muzzle_snds_58_ghex_F, 150, MZ_STOCK)
+			ITEM(muzzle_snds_58_hex_F, 150, MZ_STOCK)
+			ITEM(muzzle_snds_65_TI_blk_F, 350, MZ_STOCK) //2
+			ITEM(muzzle_snds_65_TI_hex_F, 350, MZ_STOCK)
+			ITEM(muzzle_snds_65_TI_ghex_F, 350, MZ_STOCK)
+			ITEM(muzzle_snds_H_MG_blk_F, 200, MZ_STOCK)
+			ITEM(muzzle_snds_H_MG_khk_F, 200, MZ_STOCK)
 
-			ITEM(CUP_muzzle_mfsup_Suppressor_Mac10, 100, MZ_STOCK);
-			ITEM(CUP_muzzle_PB6P9, 150, MZ_STOCK);
-			ITEM(CUP_muzzle_snds_mk23, 150, MZ_STOCK);
+			ITEM(CUP_muzzle_mfsup_Suppressor_Mac10, 100, MZ_STOCK)
+			ITEM(CUP_muzzle_PB6P9, 150, MZ_STOCK)
+			ITEM(CUP_muzzle_snds_mk23, 150, MZ_STOCK)
 
-			ITEM(CUP_muzzle_mfsup_Flashhider_545x39_Black, 100, MZ_STOCK);
-			ITEM(CUP_muzzle_mfsup_Flashhider_545x39_OD, 100, MZ_STOCK);
-			ITEM(CUP_muzzle_mfsup_Flashhider_545x39_Tan, 100, MZ_STOCK);
+			ITEM(CUP_muzzle_mfsup_Flashhider_545x39_Black, 100, MZ_STOCK)
+			ITEM(CUP_muzzle_mfsup_Flashhider_545x39_OD, 100, MZ_STOCK)
+			ITEM(CUP_muzzle_mfsup_Flashhider_545x39_Tan, 100, MZ_STOCK)
 
-			ITEM(CUP_muzzle_snds_KZRZP_AK545, 150, MZ_STOCK);
-			ITEM(CUP_muzzle_snds_KZRZP_AK545_desert, 150, MZ_STOCK);
-			ITEM(CUP_muzzle_snds_KZRZP_AK545_woodland, 150, MZ_STOCK);
+			ITEM(CUP_muzzle_snds_KZRZP_AK545, 150, MZ_STOCK)
+			ITEM(CUP_muzzle_snds_KZRZP_AK545_desert, 150, MZ_STOCK)
+			ITEM(CUP_muzzle_snds_KZRZP_AK545_woodland, 150, MZ_STOCK)
 
-			ITEM(CUP_muzzle_PBS4, 150, MZ_STOCK);
+			ITEM(CUP_muzzle_PBS4, 150, MZ_STOCK)
 			
-			ITEM(CUP_muzzle_TGPA, 150, MZ_STOCK);
-			ITEM(CUP_muzzle_TGPA_desert, 150, MZ_STOCK);
-			ITEM(CUP_muzzle_TGPA_woodland, 150, MZ_STOCK);
+			ITEM(CUP_muzzle_TGPA, 150, MZ_STOCK)
+			ITEM(CUP_muzzle_TGPA_desert, 150, MZ_STOCK)
+			ITEM(CUP_muzzle_TGPA_woodland, 150, MZ_STOCK)
 
-			ITEM(CUP_muzzle_snds_68SPC, 300, MZ_STOCK);
-			ITEM(CUP_muzzle_snds_groza, 300, MZ_STOCK);
+			ITEM(CUP_muzzle_snds_68SPC, 300, MZ_STOCK)
+			ITEM(CUP_muzzle_snds_groza, 300, MZ_STOCK)
 
-			ITEM(CUP_muzzle_Bizon, 300, MZ_STOCK);
-			ITEM(CUP_muzzle_snds_AWM, 400, MZ_STOCK);
-			ITEM(CUP_muzzle_mfsup_Suppressor_M107_Black, 760, MZ_STOCK);
+			ITEM(CUP_muzzle_Bizon, 300, MZ_STOCK)
+			ITEM(CUP_muzzle_snds_AWM, 400, MZ_STOCK)
+			ITEM(CUP_muzzle_mfsup_Suppressor_M107_Black, 760, MZ_STOCK)
 
-			ITEM(CUP_muzzle_snds_KZRZP_SVD, 300, MZ_STOCK);
-			ITEM(CUP_muzzle_snds_KZRZP_SVD_desert, 300, MZ_STOCK);
-			ITEM(CUP_muzzle_snds_KZRZP_SVD_woodland, 300, MZ_STOCK);
+			ITEM(CUP_muzzle_snds_KZRZP_SVD, 300, MZ_STOCK)
+			ITEM(CUP_muzzle_snds_KZRZP_SVD_desert, 300, MZ_STOCK)
+			ITEM(CUP_muzzle_snds_KZRZP_SVD_woodland, 300, MZ_STOCK)
 
-			ITEM(CUP_muzzle_snds_M9, 150, MZ_STOCK);
-			ITEM(CUP_muzzle_snds_SR3M, 250, MZ_STOCK);
+			ITEM(CUP_muzzle_snds_M9, 150, MZ_STOCK)
+			ITEM(CUP_muzzle_snds_SR3M, 250, MZ_STOCK)
 
-			ITEM(CUP_muzzle_mfsup_Flashhider_762x39_Black, 300, MZ_STOCK);
-			ITEM(CUP_muzzle_mfsup_Flashhider_762x39_OD, 300, MZ_STOCK);
-			ITEM(CUP_muzzle_mfsup_Flashhider_762x39_Tan, 300, MZ_STOCK);
-			ITEM(CUP_muzzle_snds_SCAR_H, 400, MZ_STOCK);
+			ITEM(CUP_muzzle_mfsup_Flashhider_762x39_Black, 300, MZ_STOCK)
+			ITEM(CUP_muzzle_mfsup_Flashhider_762x39_OD, 300, MZ_STOCK)
+			ITEM(CUP_muzzle_mfsup_Flashhider_762x39_Tan, 300, MZ_STOCK)
+			ITEM(CUP_muzzle_snds_SCAR_H, 400, MZ_STOCK)
 		};
 
 		class opticsCup 
@@ -3228,27 +3228,27 @@
 			displayName = __EVAL(formatText ["%1 %2, %3 %4 %5", localize "STR_A3AU_cup", localize "STR_A3AU_gps", localize "STR_A3AU_binoculars", localize "STR_A3AU_and", localize "STR_A3AU_nvgs"]);
 			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\compass_ca.paa";
 
-			ITEM(ItemGPS, 300, NN_STOCK);
-			ITEM(ItemRadio, 75, NN_STOCK);
-			ITEM(Rangefinder, 600, NN_STOCK);
-			ITEM(CUP_Vector21Nite, 600, NN_STOCK);
-			ITEM(Laserdesignator, 1500, NN_STOCK);
-			ITEM(Laserdesignator_02, 1500, NN_STOCK);
-			ITEM(Laserdesignator_03, 1500, NN_STOCK);
-			ITEM(CUP_SOFLAM, 1500, NN_STOCK);
-			ITEM(CUP_LRTV, 1500, NN_STOCK);
-			ITEM(NVGoggles, 500, NN_STOCK);
-			ITEM(CUP_NVG_PVS15_tan, 1000, NN_STOCK);
-			ITEM(CUP_NVG_PVS15_green, 1000, NN_STOCK);
-			ITEM(CUP_NVG_PVS15_black, 1000, NN_STOCK);
-			ITEM(CUP_NVG_PVS15_winter, 1000, NN_STOCK);
-			ITEM(CUP_NVG_PVS7, 1000, NN_STOCK);
-			ITEM(CUP_NVG_PVS14, 1000, NN_STOCK);
-			ITEM(CUP_NVG_GPNVG_black, 1000, NN_STOCK);
-			ITEM(CUP_NVG_GPNVG_green, 1000, NN_STOCK);
-			ITEM(CUP_NVG_GPNVG_tan, 1000, NN_STOCK);
-			ITEM(CUP_NVG_GPNVG_winter, 1000, NN_STOCK);
-			ITEM(CUP_NVG_HMNVS, 1000, NN_STOCK);
+			ITEM(ItemGPS, 300, NN_STOCK)
+			ITEM(ItemRadio, 75, NN_STOCK)
+			ITEM(Rangefinder, 600, NN_STOCK)
+			ITEM(CUP_Vector21Nite, 600, NN_STOCK)
+			ITEM(Laserdesignator, 1500, NN_STOCK)
+			ITEM(Laserdesignator_02, 1500, NN_STOCK)
+			ITEM(Laserdesignator_03, 1500, NN_STOCK)
+			ITEM(CUP_SOFLAM, 1500, NN_STOCK)
+			ITEM(CUP_LRTV, 1500, NN_STOCK)
+			ITEM(NVGoggles, 500, NN_STOCK)
+			ITEM(CUP_NVG_PVS15_tan, 1000, NN_STOCK)
+			ITEM(CUP_NVG_PVS15_green, 1000, NN_STOCK)
+			ITEM(CUP_NVG_PVS15_black, 1000, NN_STOCK)
+			ITEM(CUP_NVG_PVS15_winter, 1000, NN_STOCK)
+			ITEM(CUP_NVG_PVS7, 1000, NN_STOCK)
+			ITEM(CUP_NVG_PVS14, 1000, NN_STOCK)
+			ITEM(CUP_NVG_GPNVG_black, 1000, NN_STOCK)
+			ITEM(CUP_NVG_GPNVG_green, 1000, NN_STOCK)
+			ITEM(CUP_NVG_GPNVG_tan, 1000, NN_STOCK)
+			ITEM(CUP_NVG_GPNVG_winter, 1000, NN_STOCK)
+			ITEM(CUP_NVG_HMNVS, 1000, NN_STOCK)
 		};
 
 		class miscCup 
@@ -3256,46 +3256,46 @@
 			displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_cup", localize "STR_A3AU_misc"]);
 			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\backpack_ca.paa";
 
-			ITEM(B_Bergen_dgtl_F, 900, MISC_STOCK);
-			ITEM(B_Bergen_hex_F, 900, MISC_STOCK);
-			ITEM(B_Bergen_mcamo_F, 900, MISC_STOCK);
-			ITEM(B_Bergen_tna_F, 900, MISC_STOCK);
-			ITEM(CUP_O_RUS_Patrol_bag_BeigeDigital, 650, MISC_STOCK);
-			ITEM(CUP_O_RUS_Patrol_bag_BeigeDigital_Shovel, 650, MISC_STOCK);
-			ITEM(CUP_O_RUS_Patrol_bag_Green, 650, MISC_STOCK);
-			ITEM(CUP_O_RUS_Patrol_bag_Green_Shovel, 650, MISC_STOCK);
-			ITEM(CUP_O_RUS_Patrol_bag_Desert, 650, MISC_STOCK);
-			ITEM(CUP_O_RUS_Patrol_bag_Desert_Shovel, 650, MISC_STOCK);
-			ITEM(CUP_O_RUS_Patrol_bag_Summer, 650, MISC_STOCK);
-			ITEM(CUP_O_RUS_Patrol_bag_Summer_Shovel, 650, MISC_STOCK);
-			ITEM(CUP_O_RUS_Patrol_bag_Winter, 650, MISC_STOCK);
+			ITEM(B_Bergen_dgtl_F, 900, MISC_STOCK)
+			ITEM(B_Bergen_hex_F, 900, MISC_STOCK)
+			ITEM(B_Bergen_mcamo_F, 900, MISC_STOCK)
+			ITEM(B_Bergen_tna_F, 900, MISC_STOCK)
+			ITEM(CUP_O_RUS_Patrol_bag_BeigeDigital, 650, MISC_STOCK)
+			ITEM(CUP_O_RUS_Patrol_bag_BeigeDigital_Shovel, 650, MISC_STOCK)
+			ITEM(CUP_O_RUS_Patrol_bag_Green, 650, MISC_STOCK)
+			ITEM(CUP_O_RUS_Patrol_bag_Green_Shovel, 650, MISC_STOCK)
+			ITEM(CUP_O_RUS_Patrol_bag_Desert, 650, MISC_STOCK)
+			ITEM(CUP_O_RUS_Patrol_bag_Desert_Shovel, 650, MISC_STOCK)
+			ITEM(CUP_O_RUS_Patrol_bag_Summer, 650, MISC_STOCK)
+			ITEM(CUP_O_RUS_Patrol_bag_Summer_Shovel, 650, MISC_STOCK)
+			ITEM(CUP_O_RUS_Patrol_bag_Winter, 650, MISC_STOCK)
 
-			ITEM(U_I_FullGhillie_lsh, 1000, MISC_STOCK);
-			ITEM(U_I_FullGhillie_ard, 1000, MISC_STOCK);
-			ITEM(U_I_FullGhillie_sard, 1000, MISC_STOCK);
+			ITEM(U_I_FullGhillie_lsh, 1000, MISC_STOCK)
+			ITEM(U_I_FullGhillie_ard, 1000, MISC_STOCK)
+			ITEM(U_I_FullGhillie_sard, 1000, MISC_STOCK)
 
-			ITEM(IEDUrbanSmall_Remote_Mag, 500, MISC_STOCK);
-			ITEM(IEDLandSmall_Remote_Mag, 500, MISC_STOCK);
-			ITEM(IEDLandBig_Remote_Mag, 750, MISC_STOCK);
-			ITEM(IEDUrbanBig_Remote_Mag, 750, MISC_STOCK);
+			ITEM(IEDUrbanSmall_Remote_Mag, 500, MISC_STOCK)
+			ITEM(IEDLandSmall_Remote_Mag, 500, MISC_STOCK)
+			ITEM(IEDLandBig_Remote_Mag, 750, MISC_STOCK)
+			ITEM(IEDUrbanBig_Remote_Mag, 750, MISC_STOCK)
 
-			ITEM(APERSMineDispenser_Mag, 400, MISC_STOCK);
-			ITEM(ClaymoreDirectionalMine_Remote_Mag, 300, MISC_STOCK);
-			ITEM(DemoCharge_Remote_Mag, 250, MISC_STOCK);
-			ITEM(SatchelCharge_Remote_Mag, 500, MISC_STOCK);
-			ITEM(SLAMDirectionalMine_Wire_Mag, 400, MISC_STOCK);
-			ITEM(ATMine_Range_Mag, 200, MISC_STOCK);
-			ITEM(APERSMine_Range_Mag, 200, MISC_STOCK);
-			ITEM(APERSBoundingMine_Range_Mag, 150, MISC_STOCK);
-			ITEM(APERSTripMine_Wire_Mag, 100, MISC_STOCK);
+			ITEM(APERSMineDispenser_Mag, 400, MISC_STOCK)
+			ITEM(ClaymoreDirectionalMine_Remote_Mag, 300, MISC_STOCK)
+			ITEM(DemoCharge_Remote_Mag, 250, MISC_STOCK)
+			ITEM(SatchelCharge_Remote_Mag, 500, MISC_STOCK)
+			ITEM(SLAMDirectionalMine_Wire_Mag, 400, MISC_STOCK)
+			ITEM(ATMine_Range_Mag, 200, MISC_STOCK)
+			ITEM(APERSMine_Range_Mag, 200, MISC_STOCK)
+			ITEM(APERSBoundingMine_Range_Mag, 150, MISC_STOCK)
+			ITEM(APERSTripMine_Wire_Mag, 100, MISC_STOCK)
 
-			ITEM(G_RegulatorMask_F, 200, MISC_STOCK);
-			ITEM(G_AirPurifyingRespirator_01_F, 200, MISC_STOCK);
-			ITEM(G_AirPurifyingRespirator_02_sand_F, 200, MISC_STOCK);
-			ITEM(G_AirPurifyingRespirator_02_olive_F, 200, MISC_STOCK);
-			ITEM(G_AirPurifyingRespirator_02_black_F, 200, MISC_STOCK);
+			ITEM(G_RegulatorMask_F, 200, MISC_STOCK)
+			ITEM(G_AirPurifyingRespirator_01_F, 200, MISC_STOCK)
+			ITEM(G_AirPurifyingRespirator_02_sand_F, 200, MISC_STOCK)
+			ITEM(G_AirPurifyingRespirator_02_olive_F, 200, MISC_STOCK)
+			ITEM(G_AirPurifyingRespirator_02_black_F, 200, MISC_STOCK)
 
-			ITEM(I_UavTerminal, 800, MISC_STOCK);
-			ITEM(O_UavTerminal, 800, MISC_STOCK);
-			ITEM(B_UavTerminal, 800, MISC_STOCK);
+			ITEM(I_UavTerminal, 800, MISC_STOCK)
+			ITEM(O_UavTerminal, 800, MISC_STOCK)
+			ITEM(B_UavTerminal, 800, MISC_STOCK)
 		};

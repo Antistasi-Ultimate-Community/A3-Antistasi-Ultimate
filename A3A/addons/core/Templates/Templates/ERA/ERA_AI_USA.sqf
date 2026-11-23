@@ -1,3 +1,5 @@
+#pragma hemtt ignore_variables ["_fnc_saveNames","_fnc_createLoadoutData","_fnc_copyLoadoutData","_fnc_generateAndSaveUnitsToTemplate","_fnc_saveToTemplate"]
+
 //////////////////////////
 //   Side Information   //
 //////////////////////////
@@ -225,8 +227,8 @@ _loadoutData set ["items_unarmed_extras", []];
 ///////////////////////////////////////
 
 private _sfLoadoutData = _loadoutData call _fnc_copyLoadoutData;
-_sfLoadoutData set ["items_marksman_extras", (_mmItems + _sfmmItems)];
-_sfLoadoutData set ["items_sniper_extras", (_mmItems + _sfmmItems)];
+_sfLoadoutData set ["items_marksman_extras", _mmItems];
+_sfLoadoutData set ["items_sniper_extras", _mmItems];
 _sfLoadoutData set ["uniforms", ["CUP_U_CRYE_G3C_MC_US", "CUP_U_CRYE_G3C_MC_V2", "CUP_U_CRYE_G3C_MC", "CUP_U_CRYE_V1_Full"]];
 _sfLoadoutData set ["vests", ["CUP_V_CPC_Fastbelt_mc"]];
 _sfLoadoutData set ["mgVests", ["CUP_V_CPC_weapons_mc"]];
@@ -421,7 +423,7 @@ _militaryLoadoutData set ["binoculars", ["uns_binocular_army"]];
 _militaryLoadoutData set ["sniHats", ["UNS_M1_2", "uns_simc_m1_bitch_op"]];
 _militaryLoadoutData set ["slHat", ["UNS_M1_2"]];
 _militaryLoadoutData set ["gpses", []];
-_militiaLoadoutData set ["NVGs", []];
+_militaryLoadoutData set ["NVGs", []];
 
 _militaryLoadoutData set ["rifles", [
 	["uns_M16A1", "", "", "", ["uns_30Rnd_556x45_Stanag"], [], ""],
