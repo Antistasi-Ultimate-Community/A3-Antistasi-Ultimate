@@ -14,6 +14,7 @@ jobs:
   check:
     if: |
       github.event.pull_request.draft == false &&
+      contains(github.event.pull_request.labels.*.name, 'infrastructure') == false &&
       contains(github.event.pull_request.labels.*.name, 'documentation') == false &&
       contains(github.event.pull_request.labels.*.name, 'not-now') == false
     runs-on: windows-latest
