@@ -18,7 +18,7 @@ private _cityData = A3A_townData get _city;
 if (isNil "_cityData" || {!(_cityData isEqualType [])}) exitWith
 {
 	cityIsSupportChanging = false;
-    Error_1("No data found for city %1", _city);
+    Error_1("No data found for city %1",_city);
 };
 _cityData params ["_numCiv", "_numVeh", "_supportGov", "_supportReb"];
 

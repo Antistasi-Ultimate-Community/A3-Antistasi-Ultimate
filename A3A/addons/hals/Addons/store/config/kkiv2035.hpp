@@ -3,7 +3,7 @@
 			displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_kkiv2035", localize "STR_A3AU_sniperRifles"]);
 			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\primaryWeapon_ca.paa";
 
-			ITEM(kio_KKiv_2035, 6000, RIFLE_STOCK);
+			ITEM(kio_KKiv_2035, 6000, RIFLE_STOCK)
 
 		};
 

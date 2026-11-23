@@ -11,10 +11,10 @@ Info("Helicrash mission init.");
 
 private _missionOriginPos = getMarkerPos _markerX;
 private _difficult = random 10 < tierWar;
-private _bonus = if (_difficult) then {2} else {1};
-private _sideX = if (sidesX getVariable [_markerX,sideUnknown] == Occupants) then {Occupants} else {Invaders};
+private _bonus = [1, 2] select (_difficult);
+private _sideX = [Invaders, Occupants] select (sidesX getVariable [_markerX,sideUnknown] == Occupants);
 private _faction = Faction(_sideX);
-Info_3("Origin: %1, Hardmode: %2, Controlling Side: %3", _markerX, _difficult, _sideX);
+Info_3("Origin: %1, Hardmode: %2, Controlling Side: %3",_markerX,_difficult,_sideX);
 
 private _limit = if (_difficult) then {
 	45 call SCRT_fnc_misc_getTimeLimit
@@ -34,18 +34,18 @@ private _effectsAndProps = [];
 private _potentialSites = outposts + milbases + airportsX;
 _potentialSites = _potentialSites select {sidesX getVariable [_x,sideUnknown] != teamPlayer};
 private _deliverySite = getMarkerPos _markerX;
-if(count _potentialSites > 0) then {
+if(_potentialSites isNotEqualTo []) then {
     //TODO: find closest enemy outposts
     _randomEnemySite = selectRandom _potentialSites;
     _deliverySite = getMarkerPos _randomEnemySite;
 };
 
-Info_3("Difficulty: %1, Side: %2, Destination: %3", str _difficult, str _sideX, _destinationName);
+Info_3("Difficulty: %1, Side: %2, Destination: %3",str _difficult,str _sideX,_destinationName);
 
 //finding crash position
 private _angle = random 360;
 private _countX = 0;
-private _distance = if (_difficult) then {2000} else {3000};
+private _distance = [3000, 2000] select (_difficult);
 private _posCrashOrigin = [];
 private _respawnTeamPlayerMarkerPos = getMarkerPos respawnTeamPlayer;
 while {true} do {
@@ -104,8 +104,8 @@ while {_iterations < 30} do {
 };
 if (count _crashPosition == 0) then {_crashPosition = _posCrashOrigin};
 
-Debug_1("Helicrash position has been found after %1 iterations.", str _iterations);
-Info_1("Helicrash position: %1", str _crashPosition);
+Debug_1("Helicrash position has been found after %1 iterations.",str _iterations);
+Info_1("Helicrash position: %1",str _crashPosition);
 
 {  
 	[_x, true] remoteExec ["hideObject", 0, true];
@@ -115,7 +115,7 @@ Info_1("Helicrash position: %1", str _crashPosition);
     _x setDamage 1;
 } forEach nearestTerrainObjects [_crashPosition, ["Tree", "Bush", "BUILDING","RUIN","POWERWIND","POWERWAVE","POWERSOLAR","POWER LINES","MAIN ROAD","LIGHTHOUSE","HOUSE","HOSPITAL","HIDE","FUELSTATION","FOUNTAIN","FORTRESS","FENCE","CROSS","CHURCH","CHAPEL","BUSSTOP","BUNKER","QUAY","ROAD","SMALL TREE","STACK","TOURISM","TRACK","TRAIL","TRANSMITTER","VIEW-TOWER","WALL","WATERTOWER"], 20, false, true];
 
-Info_2("Crash Location: %1, Aircraft: %2", _crashPosition, _helicopterClass);
+Info_2("Crash Location: %1, Aircraft: %2",_crashPosition,_helicopterClass);
 
 //creating crashed helicopter
 private _crater = "CraterLong_02_F" createVehicle _crashPosition;
@@ -241,7 +241,7 @@ _box allowDamage false;
 sleep 1;
 _box allowDamage true;
 
-Info_1("Box position: %1", position _box);
+Info_1("Box position: %1",position _box);
 
 ////////////////
 //convoy spawn//
@@ -252,7 +252,7 @@ private _radiusX = 1500;
 private _roads = [];
 while {true} do {
 	_roads = (position _box) nearRoads _radiusX;
-	if (count _roads > 0) exitWith {};
+	if (_roads isNotEqualTo []) exitWith {};
 	_radiusX = _radiusX + 25;
 };
 private _roadR = _roads select 0;
@@ -386,7 +386,7 @@ if(_cargoVehicle distance _box < 50 && {alive _cargoVehicle} && {!isNull (driver
 
     Info("Departing.");
 
-    if(count waypoints _cargoVehicleGroup > 0) then {
+    if(waypoints _cargoVehicleGroup isNotEqualTo []) then {
         for "_i" from count waypoints _cargoVehicleGroup - 1 to 0 step -1 do {
             deleteWaypoint [_cargoVehicleGroup, _i];
         };
@@ -404,7 +404,7 @@ if(_cargoVehicle distance _box < 50 && {alive _cargoVehicle} && {!isNull (driver
        _cargoWp2 setWaypointBehaviour "SAFE";
     };
 
-    if(count waypoints _heliVehicleGroup > 0) then {
+    if(waypoints _heliVehicleGroup isNotEqualTo []) then {
         for "_i" from count waypoints _heliVehicleGroup - 1 to 0 step -1 do {
             deleteWaypoint [_heliVehicleGroup, _i];
         };

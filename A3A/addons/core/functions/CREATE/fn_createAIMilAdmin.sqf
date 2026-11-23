@@ -8,7 +8,7 @@ if (!isServer and hasInterface) exitWith {};
 private _milAdministrationPos = getMarkerPos _marker;
 private _milAdministrationIndex = A3A_milAdministrations findIf { _milAdministrationPos distance2D _x < 30 };
 if (_milAdministrationIndex isEqualTo -1) exitWith {
-	Error_1("For some reason %1 mil administration has no corresponding building, aborting.", _marker);
+	Error_1("For some reason %1 mil administration has no corresponding building, aborting.",_marker);
 };
 
 private _milAdministration = A3A_milAdministrations select _milAdministrationIndex;
@@ -17,19 +17,19 @@ if (_marker in townSkirmishes) exitWith {
 	Info("Aborting mil admin spawn; is in town skirmish");
 };
 if (_milAdministration isEqualTo objNull) exitWith {
-	Error_1("For some reason mil administration %1 object is null, aborting.", _marker);
+	Error_1("For some reason mil administration %1 object is null, aborting.",_marker);
 };
 if (!alive _milAdministration) exitWith {
-	Warning_1("Mil Admin building %1 was destroyed before (should not spawn at all, suspicious), aborting.", _marker);
+	Warning_1("Mil Admin building %1 was destroyed before (should not spawn at all, suspicious), aborting.",_marker);
 };
 
 private _side = sidesX getVariable [_marker, sideUnknown];
 
 if (_side isEqualTo sideUnknown) exitWith {
-	Error_2("For some reason mil administration %1 side is %2, aborting.", _marker, str _side);
+	Error_2("For some reason mil administration %1 side is %2, aborting.",_marker,str _side);
 };
 
-Info_2("Spawning military administration personel for %1 marker on %2 position.", _marker, str _milAdministrationPos);
+Info_2("Spawning military administration personel for %1 marker on %2 position.",_marker,str _milAdministrationPos);
 
 private _vehicles = [];
 private _groups = [];
@@ -114,7 +114,7 @@ for "_i" from 0 to _soilderCount do {
 	};
 	private _soldier = [_garrisonGroup, (selectRandom _unitPool), _buildingPosition, [], 0, "NONE"] call A3A_fnc_createUnit;
 	_soldier allowDamage false;
-	_soldier setunitpos "UP";
+	_soldier setUnitPos "UP";
 	_soldier disableAI "PATH";
 	[_soldier] call A3A_fnc_NATOinit;
 	sleep 0.5;
@@ -174,12 +174,12 @@ private _radiusX = 5;
 
 while {true} do {
 	_road = _milAdministrationPos nearRoads _radiusX;
-	if (count _road > 0) exitWith {};
+	if (_road isNotEqualTo []) exitWith {};
 	_radiusX = _radiusX + 5;
 };
 
-private _roadcon = roadsConnectedto (_road select 0);
-private _dirveh = if(count _roadcon > 0) then {[_road select 0, _roadcon select 0] call BIS_fnc_DirTo} else {random 360};
+private _roadcon = roadsConnectedTo (_road select 0);
+private _dirveh = if(_roadcon isNotEqualTo []) then {[_road select 0, _roadcon select 0] call BIS_fnc_DirTo} else {random 360};
 private _roadPosition = getPos (_road select 0);
 
 private _vehClass = selectRandom _carPool;
@@ -210,7 +210,7 @@ private _buildingPosition = _buildingPositions select _buildingPosIndex;
 
 private _collaborant = [_groupCollaborant, (_faction get "unitOfficial"), _buildingPosition, [], 0, "NONE"] call A3A_fnc_createUnit;
 _collaborant setPosATL _buildingPosition;
-_collaborant setunitpos "UP";
+_collaborant setUnitPos "UP";
 _collaborant disableAI "PATH";
 [_collaborant] call A3A_fnc_NATOinit;
 
@@ -248,7 +248,7 @@ private _ammoBox = if (garrison getVariable [_marker + "_lootCD", 0] == 0) then 
 	_ammoBox allowDamage true;
 
 	_ammoBox;
-};
+} else { objNull };
 
 [CBA_EVENT_SERVER_SPAWN_LOCATION, [_marker, "MilAdmin", true]] call FUNCMAIN(triggerLocalEvent);
 
@@ -256,13 +256,13 @@ waitUntil {sleep 1; spawner getVariable _marker == 2 or {!alive _milAdministrati
 
 switch (true) do {
     case (!alive _collaborant): {
-        Info_1("Military Administration %1 was captured - collaborant has been killed.", _marker);
+        Info_1("Military Administration %1 was captured - collaborant has been killed.",_marker);
         [_milAdministration, "CAPTURE"] call SCRT_fnc_location_removeMilAdmin;
         sleep 1;
         [_marker] call A3A_fnc_mrkUpdate;
     };
     case (!alive _milAdministration): {
-        Info_1("Military Administration %1 was destroyed.", _marker);
+        Info_1("Military Administration %1 was destroyed.",_marker);
         [_milAdministration, "DESTROY"] call SCRT_fnc_location_removeMilAdmin;
         destroyedSites pushBackUnique _marker;
         publicVariable "destroyedSites";
@@ -279,14 +279,14 @@ waitUntil {sleep 1; (spawner getVariable _marker == 2)};
 {
 	// delete all vehicles that haven't been stolen
 	if (_x getVariable ["ownerSide", _side] == _side) then {
-		if (_x distance2d (_x getVariable "originalPos") < 100) then { deleteVehicle _x }
+		if (_x distance2D (_x getVariable "originalPos") < 100) then { deleteVehicle _x }
 		else { if !(_x isKindOf "StaticWeapon") then { [_x] spawn A3A_fnc_VEHdespawner } };
 	};
 } forEach _vehicles;
 
 // If loot crate was stolen, set the cooldown
 if (!isNil "_ammoBox") then {
-	if ((alive _ammoBox) and (_ammoBox distance2d _milAdministrationPos < 100)) exitWith { deleteVehicle _ammoBox };
+	if ((alive _ammoBox) and (_ammoBox distance2D _milAdministrationPos < 100)) exitWith { deleteVehicle _ammoBox };
 	if (alive _ammoBox) then { [_ammoBox] spawn A3A_fnc_VEHdespawner };
 	private _lootCD = 120*16 / ([_marker] call A3A_fnc_garrisonSize);
 	garrison setVariable [_marker + "_lootCD", _lootCD, true];

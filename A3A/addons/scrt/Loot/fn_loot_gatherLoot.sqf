@@ -29,10 +29,10 @@ if ((_time - (_vehicle getVariable ["lastLooted", -10])) < 10) exitWith {
 };
 _vehicle setVariable ["lastLooted", _time, true];
 
-private _position = if (!(_overridePosition isEqualTo [])) then {_overridePosition} else {position _vehicle};
+private _position = if (_overridePosition isNotEqualTo []) then {_overridePosition} else {position _vehicle};
 private _supplies = (_position nearSupplies _radius) select {
     ((_x isKindOf "Man" && !(alive _x)) || 
-    {(typeOf _x) in ([FactionGet(inv, "surrenderCrate"), FactionGet(occ, "surrenderCrate"), FactionGet(riv, "surrenderCrate"), "WeaponHolderSimulated", "GroundWeaponHolder", "WeaponHolder"])}) &&
+    {(typeOf _x) in ([FactionGet(inv,"surrenderCrate"), FactionGet(occ,"surrenderCrate"), FactionGet(riv,"surrenderCrate"), "WeaponHolderSimulated", "GroundWeaponHolder", "WeaponHolder"])}) &&
     !(_x getVariable ["isLooted", false])
 };
 
@@ -68,7 +68,7 @@ private _data = [];
 
     };
     
-    if (count _magazines > 0) then {
+    if (_magazines isNotEqualTo []) then {
         {
             if(_x in arrayMoney) then {
                 _moneyIndex = arrayMoney find _x;
@@ -81,21 +81,21 @@ private _data = [];
         } forEach _magazines;
     };
 
-    if (count _backpacks > 0) then {
+    if (_backpacks isNotEqualTo []) then {
         {
             if ((lootCrateUnlockedItems isEqualTo true) && {_x in unlockedBackpacks}) exitWith {};
             _vehicle addBackpackCargoGlobal [_x, 1];
         } forEach _backpacks;
     };
 
-    if (count _items > 0) then {
+    if (_items isNotEqualTo []) then {
         {
             if ((lootCrateUnlockedItems isEqualTo true) && {_x in unlockedItems}) exitWith {};
             _vehicle addItemCargoGlobal [_x, 1];
         } forEach _items;
     };
 
-    if (count _weaponsWithAttachments > 0) then {
+    if (_weaponsWithAttachments isNotEqualTo []) then {
         {
             if ((lootCrateUnlockedItems isEqualTo true) && {_x in unlockedWeapons}) exitWith {};
             _vehicle addWeaponWithAttachmentsCargoGlobal [_x, 1];
@@ -125,7 +125,7 @@ private _data = [];
 
             };
             
-            if (count _assignedItems > 0) then {
+            if (_assignedItems isNotEqualTo []) then {
                 {
                     _vehicle addItemCargoGlobal [_x,1];
                     _lootContainer unassignItem _x;
@@ -133,7 +133,7 @@ private _data = [];
                 } forEach _assignedItems;
             };
 
-            if (count _lootContainerMagazines > 0) then {
+            if (_lootContainerMagazines isNotEqualTo []) then {
                 {
                     if (_x in arrayMoney) then {
                         _moneyIndex = arrayMoney find _x;
@@ -165,7 +165,7 @@ private _data = [];
                 removeBackpackGlobal _lootContainer;
             };
 
-            if (count _lootContainerWeapons > 0) then {
+            if (_lootContainerWeapons isNotEqualTo []) then {
                 {
                     if ((lootCrateUnlockedItems isEqualTo true) && {_x in unlockedWeapons}) exitWith {_lootContainer removeWeaponGlobal _x};
                     _lootContainer addWeaponWithAttachmentsCargoGlobal [_x, 1];
@@ -197,7 +197,7 @@ if (_moneyEarned > 0) then {
     };
 };
 
-private _volume = if (_overridePosition isNotEqualTo []) then {500} else {_radius};
+private _volume = [_radius, 500] select (_overridePosition isNotEqualTo []);
 playSound3D ["x\A3A\addons\core\Sounds\Misc\LootSuccess.ogg", _vehicle, false, getPosASL _vehicle, 3, 1, _volume];
 
 {

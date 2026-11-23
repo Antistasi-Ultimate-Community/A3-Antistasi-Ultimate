@@ -3,7 +3,7 @@ FIX_LINE_NUMBERS()
 Info("loadServer Starting.");
 if (isServer) then {
     Info("Starting Persistent Load.");
-	petros allowdamage false;
+	petros allowDamage false;
 
 	// Tell third party mods we're loading the game. Do this very early in case
 	// they attempt to overwrite stuff we're loading later below.
@@ -121,7 +121,7 @@ if (isServer) then {
 		} forEach _unlockedItemsInTab;
 	} forEach jna_dataList;
 
-	Info_1("Categories to publish: %1", keys _categoriesToPublish);
+	Info_1("Categories to publish: %1",keys _categoriesToPublish);
 
 	// Publish the unlocked categories (once each)
 	{ publicVariable ("unlocked" + _x) } forEach keys _categoriesToPublish;
@@ -140,8 +140,8 @@ if (isServer) then {
     } forEach controlsX;
 
     [markersX - controlsX] call A3U_fnc_mrkUpdateBulk;
-    if !(milAdministrationsX isEqualTo []) then {[milAdministrationsX] call A3U_fnc_mrkUpdateBulk};
-    if !(mrkAntennas isEqualTo []) then {[mrkAntennas] call A3U_fnc_mrkUpdateBulk};
+    if (milAdministrationsX isNotEqualTo []) then {[milAdministrationsX] call A3U_fnc_mrkUpdateBulk};
+    if (mrkAntennas isNotEqualTo []) then {[mrkAntennas] call A3U_fnc_mrkUpdateBulk};
     // ---------------------------
 
 	markersX append (watchpostsFIA + roadblocksFIA + aapostsFIA + atpostsFIA + hmgpostsFIA);
@@ -192,7 +192,7 @@ if (isServer) then {
 			_playerData set [_x, [_uid, _x] call A3A_fnc_retrievePlayerStat];
 		} forEach ["moneyX", "loadoutPlayer", "scorePlayer", "rankPlayer", "personalGarage", "pluginsData"];
 
-		if (isNil {_playerData get "moneyX"}) then { Error_1("Saved player %1 has no money var", _uid); continue };
+		if (isNil {_playerData get "moneyX"}) then { Error_1("Saved player %1 has no money var",_uid); continue };
 		A3A_playerSaveData set [_uid, _playerData];
 	} forEach _savedPlayers;
 
@@ -201,7 +201,7 @@ if (isServer) then {
 	[CBA_EVENT_SERVER_SPAWN_LOCATION, LINKFUNCMAIN(crewLocationStatics)] call FUNCMAIN(addEventHandler);
 
 	statsLoaded = 0; publicVariable "statsLoaded";
-	petros allowdamage true;
+	petros allowDamage true;
 
 	{specialVarLoads deleteAt _x;} forEach (keys specialVarLoads);
 	specialVarLoads = nil;

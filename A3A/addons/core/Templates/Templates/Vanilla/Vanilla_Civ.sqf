@@ -1,3 +1,5 @@
+#pragma hemtt ignore_variables ["_fnc_saveNames","_fnc_createLoadoutData","_fnc_copyLoadoutData","_fnc_generateAndSaveUnitsToTemplate","_fnc_saveToTemplate"]
+
 private _hasWs = "ws" in A3A_enabledDLC;
 private _hasLawsOfWar = "orange" in A3A_enabledDLC;
 private _hasApex = "expansion" in A3A_enabledDLC;
@@ -73,9 +75,11 @@ if (_hasRF) then {
 ["vehiclesCivPlanes", _civPlanes] call _fnc_saveToTemplate;
 
 ["animations", [
-  #include "..\vehicleAnimations\vehicleAnimations_RF.sqf",
-  #include "..\vehicleAnimations\vehicleAnimations_WS.sqf",
-  #include "..\vehicleAnimations\vehicleAnimations_Vanilla.sqf"
+  #include "..\vehicleAnimations\vehicleAnimations_RF.inc"
+  ,
+  #include "..\vehicleAnimations\vehicleAnimations_WS.inc"
+  ,
+  #include "..\vehicleAnimations\vehicleAnimations_Vanilla.inc"
 ]] call _fnc_saveToTemplate;
 
 //////////////////////////

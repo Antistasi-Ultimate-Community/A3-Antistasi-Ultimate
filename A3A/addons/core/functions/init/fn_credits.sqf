@@ -37,35 +37,35 @@ private _layer = "credits1" call bis_fnc_rscLayer;
 	{
 		//Second line break controls size of gap between authors. &#160; is a non-breaking space character, which prevents the size being ignored.
 		_text = _text + _x + "<br /><t size='0.2'>&#160;</t><br />";
-	} foreach _names;
+	} forEach _names;
 
 	_text = format ["<t size='1' shadow='2'>%1</t>",_text];
 	_index = _foreachindex % 2;
 	[_layer,_text,_index, DURATION] spawn {
-		disableserialization;
+		disableSerialization;
 		params ["_layer", "_text", "_index", "_duration"];
 		_fadeTime = 0.5;
 		_time = time + _duration - _fadeTime;
 		_layer cutRsc ["RscDynamicText","plain"];
-		_display = uinamespace getvariable ["BIS_dynamicText",displaynull];
-		_ctrlText = _display displayctrl 9999;
-		_ctrlText ctrlsetstructuredtext parsetext _text;
+		_display = uiNamespace getVariable ["BIS_dynamicText",displayNull];
+		_ctrlText = _display displayCtrl 9999;
+		_ctrlText ctrlSetStructuredText parseText _text;
 		_offsetX = 0.1;
 		_offsetY = 0.3;
 
 		_width = safeZoneW;
-		_height = ctrltextheight _ctrlText;
-		_pos = [safezoneX, safeZoneY + _offsetY,_width,_height];
+		_height = ctrlTextHeight _ctrlText;
+		_pos = [safeZoneX, safeZoneY + _offsetY,_width,_height];
 
-		_ctrlText ctrlsetposition _pos;
-		_ctrlText ctrlsetfade 1;
-		_ctrlText ctrlcommit 0;
-		_ctrlText ctrlsetfade 0;
-		_ctrlText ctrlcommit _fadeTime;
-		waituntil {time > _time};
-		_ctrlText ctrlsetfade 1;
-		_ctrlText ctrlcommit _fadeTime;
+		_ctrlText ctrlSetPosition _pos;
+		_ctrlText ctrlSetFade 1;
+		_ctrlText ctrlCommit 0;
+		_ctrlText ctrlSetFade 0;
+		_ctrlText ctrlCommit _fadeTime;
+		waitUntil {time > _time};
+		_ctrlText ctrlSetFade 1;
+		_ctrlText ctrlCommit _fadeTime;
 	};
 	_time = time + DELAY;
-	waituntil {time > _time};
-} foreach _credits;
+	waitUntil {time > _time};
+} forEach _credits;

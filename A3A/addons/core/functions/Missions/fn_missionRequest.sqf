@@ -11,7 +11,7 @@ A3A_missionRequestInProgress = true;
 if(isNil "_type" || {!(isNil "_type") && (_type isEqualTo "RAN")}) then {
 	private _types = ["CON","DES","LOG","SUPP","RES","CONVOY"];
 	_type = selectRandom (_types - A3A_activeTasks);
-	_silent = !(_type isEqualTo "RAN");
+	_silent = (_type isNotEqualTo "RAN");
 }; // tfw you add a "random mission" button just to realize it already checks for isNil anyway
 if (isNil "_type" or leader group petros != petros) exitWith { A3A_missionRequestInProgress = nil };
 if (_type in A3A_activeTasks) exitWith {
@@ -38,7 +38,7 @@ switch (_type) do {
 		};
 		_nearbyFriendlyMarkers deleteAt (_nearbyFriendlyMarkers find "Synd_HQ");
 		{
-			private _pos = getmarkerPos _x;
+			private _pos = getMarkerPos _x;
 			if !(isOnRoad _pos) then {
 				if (_nearbyFriendlyMarkers findIf {getMarkerPos _x distance _pos < distanceSPWN} != -1) then {_possibleMarkers pushBack _x};
 			};
@@ -119,7 +119,7 @@ switch (_type) do {
 		};
 		_nearbyFriendlyMarkers deleteAt (_nearbyFriendlyMarkers find "Synd_HQ");
 		{
-			private _pos = getmarkerPos _x;
+			private _pos = getMarkerPos _x;
 			if (_nearbyFriendlyMarkers findIf {getMarkerPos _x distance _pos < distanceSPWN} != -1) then {
 				_possibleMarkers pushBack _x
 			};
@@ -224,7 +224,7 @@ switch (_type) do {
 				[petros,"hint",format [localize "STR_chats_mission_request_no_SUPP_hint_text", str distanceMission], localize "STR_chats_mission_request_header"] remoteExec ["A3A_fnc_commsMP",_requester];
 			};
 		} else {
-            Debug_1("City weights: %1", _weightedMarkers);
+            Debug_1("City weights: %1",_weightedMarkers);
 			private _site = selectRandomWeighted _weightedMarkers;
 
 			if (([_site] call _checkRivalsTaskPossibility)) then {
@@ -331,11 +331,11 @@ switch (_type) do {
 	};
 
 	default {
-        Error_1("%1 is not an accepted task type.", _type);
+        Error_1("%1 is not an accepted task type.",_type);
 	};
 };
 
-if (count _possibleMarkers > 0) then {
+if (_possibleMarkers isNotEqualTo []) then {
 	if (!_silent) then {
 		[petros, "globalChat", localize "STR_chats_mission_request_success"] remoteExec ["A3A_fnc_commsMP",_requester]
 	};

@@ -31,8 +31,8 @@ private _maxVehiclesNeeded = _maxRequested select 0;
 private _maxCargoSpaceNeeded = _maxRequested select 2;
 private _currentUnitCount = 0;
 
-Verbose_2("Gathered data for unit selection, available are %1, %2 cargo units needed", _maxUnitSend, _maxCargoSpaceNeeded);
-Verbose_2("Reinforcments requested from %1 for: %2", _target, _reinf);
+Verbose_2("Gathered data for unit selection, available are %1, %2 cargo units needed",_maxUnitSend,_maxCargoSpaceNeeded);
+Verbose_2("Reinforcments requested from %1 for: %2",_target,_reinf);
 
 private _finishedSelection = false;
 
@@ -77,7 +77,7 @@ while {_currentUnitCount < (_maxUnitSend - 2) && {_maxCargoSpaceNeeded+_maxVehic
         }
         else
         {
-            Error_1("Tried to delete reinf vehicle, but couldn't find it after selection, vehicle was %1!", _currentSelected);
+            Error_1("Tried to delete reinf vehicle, but couldn't find it after selection, vehicle was %1!",_currentSelected);
         };
     };
 
@@ -94,7 +94,7 @@ while {_currentUnitCount < (_maxUnitSend - 2) && {_maxCargoSpaceNeeded+_maxVehic
         }
         else
         {
-            Verbose_1("No reinf vehicle found, selecting not needed transport vehicle, needs space for %1 passengers", _neededCargoSpace);
+            Verbose_1("No reinf vehicle found, selecting not needed transport vehicle, needs space for %1 passengers",_neededCargoSpace);
             if (_isAir) then
             {
                 if (_neededCargoSpace <= 4) then
@@ -105,7 +105,7 @@ while {_currentUnitCount < (_maxUnitSend - 2) && {_maxCargoSpaceNeeded+_maxVehic
                 {
                     _currentSelected = selectRandom ((_faction get "vehiclesHelisLight") + (_faction get "vehiclesHelisTransport"));
                 };
-                Verbose_1("Selected %1 as an air transport vehicle", _currentSelected);
+                Verbose_1("Selected %1 as an air transport vehicle",_currentSelected);
             }
             else
             {
@@ -127,7 +127,7 @@ while {_currentUnitCount < (_maxUnitSend - 2) && {_maxCargoSpaceNeeded+_maxVehic
                         _currentSelected = selectRandom ((_faction get "vehiclesLightUnarmed") + (_faction get "vehiclesHelisLight") + (_faction get "vehiclesHelisTransport"));
                     };
                 };
-                Verbose_1("Selected %1 as an ground or air transport vehicle", _currentSelected);
+                Verbose_1("Selected %1 as an ground or air transport vehicle",_currentSelected);
             };
             _seatCount = [_currentSelected, true] call BIS_fnc_crewCount;
             _crewSeats = [_currentSelected, false] call BIS_fnc_crewCount;
@@ -173,7 +173,7 @@ while {_currentUnitCount < (_maxUnitSend - 2) && {_maxCargoSpaceNeeded+_maxVehic
             if(_abort) exitWith {};
         };
         _unitsSend pushBack [_currentSelected, _crew, _cargo];
-        Debug_3("Units selected, Vehicle is %1, crew is %2, cargo is %3", _currentSelected, _crew, _cargo);
+        Debug_3("Units selected, Vehicle is %1, crew is %2, cargo is %3",_currentSelected,_crew,_cargo);
     }
     else
     {

@@ -14,7 +14,7 @@
         name = "Aegis AUKUS Arid";
         file = "Aegis_AI_AUKUS_Arid";
         climate[] = {"arid"};
-        description = $STR_A3AP_setupFactionsTab_aegis_aukus;
+        description = "$STR_A3AP_setupFactionsTab_aegis_aukus";
     };
     class Aegis_AUKUS_Temperate : Aegis_AUKUS_Arid
     {
@@ -36,7 +36,7 @@
         name = "Aegis AFRF Arid";
         file = "Aegis_AI_AFRF_Arid";
         climate[] = {"arid"};
-        description = $STR_A3AP_setupFactionsTab_aegis_afrf;
+        description = "$STR_A3AP_setupFactionsTab_aegis_afrf";
     };
 
     class Aegis_AFRF_Temperate : Aegis_Base
@@ -46,7 +46,7 @@
         name = "Aegis AFRF Temperate";
         file = "Aegis_AI_AFRF_Temperate";
         climate[] = {"temperate"};
-        description = $STR_A3AP_setupFactionsTab_aegis_afrf;
+        description = "$STR_A3AP_setupFactionsTab_aegis_afrf";
     };
 
     class Aegis_AAF : Aegis_Base
@@ -57,7 +57,7 @@
         file = "Aegis_AI_AAF";
         maps[] = {"altis", "malden"};
         climate[] = {"arid"};
-        description = $STR_A3AP_setupFactionsTab_aaf;
+        description = "$STR_A3AP_setupFactionsTab_aaf";
     };
 
     class Aegis_CSAT_Arid : Aegis_Base
@@ -67,7 +67,7 @@
         name = "Aegis CSAT Arid";
         file = "Aegis_AI_CSAT_Arid";
         climate[] = {"arid", "arctic"};
-        description = $STR_A3AP_setupFactionsTab_csat;
+        description = "$STR_A3AP_setupFactionsTab_csat";
     };
     class Aegis_CSAT_Temperate : Aegis_CSAT_Arid
     {
@@ -83,7 +83,7 @@
         name = "Aegis NATO Arid";
         file = "Aegis_AI_NATO_Arid";
         climate[] = {"arid"};
-        description = $STR_A3AP_setupFactionsTab_nato;
+        description = "$STR_A3AP_setupFactionsTab_nato";
     };
     class Aegis_NATO_Temperate : Aegis_NATO_Arid
     {
@@ -105,7 +105,7 @@
         name = "Aegis FIA";
         file = "Aegis_Reb_FIA";
         climate[] = {"arid"};
-        description = $STR_A3AP_setupFactionsTab_fia;
+        description = "$STR_A3AP_setupFactionsTab_fia";
     };
 
     class Aegis_SDK : Aegis_Base
@@ -115,7 +115,7 @@
         name = "Aegis SDK";
         file = "Aegis_Reb_SDK";
         climate[] = {"tropical"};
-        description = $STR_A3AP_setupFactionsTab_sdk;
+        description = "$STR_A3AP_setupFactionsTab_sdk";
     };
 
     class Aegis_LM : Aegis_Base
@@ -125,7 +125,7 @@
         name = "Aegis LM";
         file = "Aegis_Reb_LM";
         climate[] = {"temperate"};
-        description = $STR_A3AP_setupFactionsTab_lm;
+        description = "$STR_A3AP_setupFactionsTab_lm";
     };
 
     class Aegis_CHDKZ : Aegis_Base
@@ -134,7 +134,7 @@
         flagTexture = "A3_Opf\Data_F_Opf\Flags\flag_ChDKZ_CO.paa";
         name = "Aegis CHDKZ";
         file = "Aegis_Riv_CHDKZ";
-        description = $STR_A3AP_setupFactionsTab_chdkz;
+        description = "$STR_A3AP_setupFactionsTab_chdkz";
     };
 
     class Aegis_Ion : Aegis_Base
@@ -143,7 +143,7 @@
         flagTexture = "A3_Aegis\Data_F_Aegis\Flags\flag_ION_CO.paa";
         name = "Aegis Ion PMC";
         file = "Aegis_Riv_Ion";
-        description = $STR_A3AP_setupFactionsTab_ion;
+        description = "$STR_A3AP_setupFactionsTab_ion";
     };
 
     class Aegis_Civ : Aegis_Base
@@ -152,7 +152,7 @@
         flagTexture = "\A3\Data_F\Flags\Flag_Altis_CO.paa";
         name = "Aegis";
         file = "Aegis_Civ";
-        description = $STR_A3AP_setupFactionsTab_vanilla_civ;
+        description = "$STR_A3AP_setupFactionsTab_vanilla_civ";
     };
 
     class Aegis_CDF_2035 : Aegis_Base

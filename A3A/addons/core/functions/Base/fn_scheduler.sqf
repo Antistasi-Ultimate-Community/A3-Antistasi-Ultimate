@@ -4,7 +4,7 @@ if (!isServer) exitWith {};
 FIX_LINE_NUMBERS()
 
 params ["_params", "_function"];
-Info_2("Scheduled function: %1, Function params: %2", _function, _params);
+Info_2("Scheduled function: %1, Function params: %2",_function,_params);
 
 if (count hcArray == 0) exitWith {_params remoteExec [_function,2]};
 //if (count hcArray == 1) exitWith {_params remoteExec [_function,hcArray select 0]};
@@ -20,5 +20,5 @@ private _min = ({local _x} count allUnits) * 2;			// use server too when it's qu
 	};
 } forEach hcArray;
 
-Info_2("Executing on machine ID %1, minimum units %2", _targetID, _min);
+Info_2("Executing on machine ID %1, minimum units %2",_targetID,_min);
 _params remoteExec [_function, _targetID];

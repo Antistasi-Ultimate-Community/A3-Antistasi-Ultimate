@@ -3,16 +3,16 @@ FIX_LINE_NUMBERS()
 
 private _unit = _this select 0;
 if (debug) then {
-    Debug_1("Unit: %1", _unit);
+    Debug_1("Unit: %1",_unit);
 };
 if ((isNil "_unit") || (isNull _unit)) exitWith {
-    Error_1("Problem with NATO Param: %1", _this);
+    Error_1("Problem with NATO Param: %1",_this);
 };
 private  _markerX = "";
 if (count _this > 1) then {
 	_markerX = _this select 1;
 	_unit setVariable ["markerX",_markerX,true];
-	if ((spawner getVariable _markerX != 0) and (vehicle _unit != _unit)) then {
+	if ((spawner getVariable _markerX != 0) and (!isNull objectParent _unit)) then {
 		[_unit,false] remoteExec ["enableSimulationGlobal",2];
 	};
 };
@@ -25,12 +25,12 @@ private _skill = (0.1 + 0.1*A3A_rebelSkillMul + 0.015 * skillFIA);
 _unit setSkill _skill;
 
 if (_typeX isEqualTo FactionGet(reb,"unitSL")) then {
-	_unit setskill ["courage",_skill + 0.2];
-	_unit setskill ["commanding",_skill + 0.2];
+	_unit setSkill ["courage",_skill + 0.2];
+	_unit setSkill ["commanding",_skill + 0.2];
 };
 if (_typeX isEqualTo FactionGet(reb,"unitSniper")) then {
-	_unit setskill ["aimingAccuracy",_skill + 0.2];
-	_unit setskill ["aimingShake",_skill + 0.2];
+	_unit setSkill ["aimingAccuracy",_skill + 0.2];
+	_unit setSkill ["aimingShake",_skill + 0.2];
 };
 
 [_unit, 2] call A3A_fnc_equipRebel;			// 2 = garrison unit

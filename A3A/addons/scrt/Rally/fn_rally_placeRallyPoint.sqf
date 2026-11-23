@@ -6,7 +6,7 @@ params ["_posWorld"];
 if (rallyPointSpawnCount isEqualTo 0) exitWith
 { 
 	private _warningText = "<t font ='PuristaSemibold' align = 'center' shadow='1' shadowColor='#000000' size='0.8' color='#ebebeb'>" + localize "STR_params_rallyPointSpawnCountDisabled" +"</t>"; 
-	[_warningText,0,safezoneY+0.5] spawn BIS_fnc_dynamicText; 
+	[_warningText,0,safeZoneY+0.5] spawn BIS_fnc_dynamicText; 
 };
 
 private _rallyPointClass = FactionGet(reb,"rallyPoint");
@@ -44,10 +44,10 @@ _ammobox setDir 115;
 [rallyPointRoot, [0, 0, -0.5], 0.2] remoteExec ["SCRT_fnc_common_attachLightSource", 0, rallyPointRoot];
 
 rallyPointMarker = createMarker ["RallyPointMarker", _rootPos];
-rallyPointMarker setMarkerType "A3AU_fasttravel_mrk";
-rallyPointMarker setMarkerSize [1, 1];
-rallyPointMarker setMarkerText "";
-rallyPointMarker setMarkerColor "colorIndependent";
+rallyPointMarker setMarkerTypeLocal "A3AU_fasttravel_mrk";
+rallyPointMarker setMarkerSizeLocal [1, 1];
+rallyPointMarker setMarkerTextLocal "";
+rallyPointMarker setMarkerColorLocal "colorIndependent";
 rallyPointMarker setMarkerAlpha 1;
 sidesX setVariable [rallyPointMarker,teamPlayer,true];
 publicVariable "rallyPointMarker";

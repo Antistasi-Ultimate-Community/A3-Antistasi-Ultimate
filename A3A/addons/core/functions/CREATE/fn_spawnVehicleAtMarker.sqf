@@ -23,7 +23,7 @@ FIX_LINE_NUMBERS()
 
 if(_vehicle == "" || _marker == "") exitWith
 {
-    Error_1("Function called with bad input, was %1", _this);
+    Error_1("Function called with bad input, was %1",_this);
     objNull;
 };
 

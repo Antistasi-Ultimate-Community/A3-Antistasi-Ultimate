@@ -29,7 +29,7 @@
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
 
-params [["_unit", ObjNull]];
+params [["_unit", objNull]];
 
 if !(allowCivDialog) exitWith {false};
 

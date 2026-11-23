@@ -51,8 +51,8 @@ if (count waypoints _group > 1 && waypointName _waypoint isEqualTo _waypointName
     if (_radius == -1) then {
         // When using negative radius, the center position supplied must be PositionASL, 
         // only then the resulting waypointPosition will be in format PositionAGL and not buried under the ground ¯\_(ツ)_/¯ Thanks Bi.
-        _waypointPos = AGLtoASL waypointPosition _waypoint;
-        _position = AGLtoASL _position;
+        _waypointPos = AGLToASL waypointPosition _waypoint;
+        _position = AGLToASL _position;
     } else {
         _waypointPos = waypointPosition _waypoint;
     };
@@ -62,7 +62,7 @@ if (count waypoints _group > 1 && waypointName _waypoint isEqualTo _waypointName
         _waypoint setWaypointPosition [_position, _radius];
     };
 } else {
-    _waypoint = _group addWaypoint [AGLtoASL _position, _radius];
+    _waypoint = _group addWaypoint [AGLToASL _position, _radius];
     _waypoint setWaypointName _waypointName;
 };
 

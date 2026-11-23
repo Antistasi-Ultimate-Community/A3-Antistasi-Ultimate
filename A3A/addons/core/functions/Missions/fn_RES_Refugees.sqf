@@ -28,7 +28,7 @@ private _limit = if (_difficultX) then {
 };
 _limit params ["_dateLimitNum", "_displayTime"];
 
-private _sideX = if (sidesX getVariable [_markerX,sideUnknown] == Occupants) then {Occupants} else {Invaders};
+private _sideX = [Invaders, Occupants] select (sidesX getVariable [_markerX,sideUnknown] == Occupants);
 private _faction = Faction(_sideX);
 
 private _text = nil;
@@ -36,8 +36,8 @@ private _header = nil;
 private _posTsk = nil;
 
 if (_sideX == Occupants) then {
-	_text = format [localize "STR_A3A_Missions_RES_Refugees_task_desc_1",FactionGet(reb, "name"), _nameDest,_displayTime];
-	_header = format [localize "STR_A3A_Missions_RES_Refugees_task_header_1",FactionGet(reb, "name")];
+	_text = format [localize "STR_A3A_Missions_RES_Refugees_task_desc_1",FactionGet(reb,"name"), _nameDest,_displayTime];
+	_header = format [localize "STR_A3A_Missions_RES_Refugees_task_header_1",FactionGet(reb,"name")];
 	_posTsk = (position _houseX) getPos [random 100, random 360];
 } else {
 	_text = format [localize "STR_A3A_Missions_RES_Refugees_task_desc_2",_nameDest, _faction get "name",_displayTime];
@@ -53,7 +53,7 @@ _groupPOW = createGroup teamPlayer;
 for "_i" from 1 to (((count _posHouse) - 1) min 6) do {
 	_unit = [_groupPOW, FactionGet(reb,"unitUnarmed"), _posHouse select _i, [], 0, "NONE"] call A3A_fnc_createUnit;
 	[_unit, createHashMapFromArray [["face", selectRandom (A3A_faction_reb get "faces")], ["speaker", selectRandom (A3A_faction_reb get "voices")]]] call A3A_fnc_setIdentity;
-	_unit allowdamage false;
+	_unit allowDamage false;
 	_unit disableAI "MOVE";
 	_unit disableAI "AUTOTARGET";
 	_unit disableAI "TARGET";
@@ -76,9 +76,9 @@ private _groupX = grpNull;
 private _veh = objNull;
 private _groupX1 = grpNull;
 if (_sideX == Invaders) then {
-	[_houseX, _difficultX] spawn
+	[_houseX, _difficultX, _taskId, _positionX] spawn
 	{
-		params ["_house", "_isDifficult"];
+		params ["_house", "_isDifficult", "_taskId", "_positionX"];
 		if (_isDifficult) then {sleep 300} else {sleep (300 + random 1800)};
 		if !(_taskId call BIS_fnc_taskCompleted) then
 		{
@@ -92,17 +92,17 @@ if (_sideX == Invaders) then {
 	_dirVeh = 0;
 	_roads = [];
 	_radius = 20;
-	while {count _roads == 0} do
+	while {_roads isEqualTo []} do
 		{
 		_roads = (getPos _houseX) nearRoads _radius;
 		_radius = _radius + 10;
 		};
 	_road = _roads select 0;
 	_posroad = getPos _road;
-	_roadcon = roadsConnectedto _road; if (count _roadCon == 0) then {
+	_roadcon = roadsConnectedTo _road; if (_roadCon isEqualTo []) then {
         Error_1("Road has no connection :%1.",position _road);
 		};
-	if (count _roadCon > 0) then
+	if (_roadCon isNotEqualTo []) then
 		{
 		_posrel = getPos (_roadcon select 0);
 		_dirveh = [_posroad,_posrel] call BIS_fnc_DirTo;
@@ -140,7 +140,7 @@ if (_sideX == Invaders) then {
 	_groupX1 = [_houseX buildingExit 0, Occupants, _faction get "groupPolice"] call A3A_fnc_spawnGroup;
 };
 
-private _bonus = if (_difficultX) then {2} else {1};
+private _bonus = [1, 2] select (_difficultX);
 
 if (_sideX == Occupants) then {
 	waitUntil {sleep 1; ({alive _x} count _POWs == 0) or ({(alive _x) and (_x distance getMarkerPos respawnTeamPlayer < 50)} count _POWs > 0) or (dateToNumber date > _dateLimitNum)};
@@ -164,7 +164,7 @@ if (_sideX == Occupants) then {
 		private _bonusAmount = round (_countX*_bonus/2);
 		[_bonusAmount,theBoss] call A3A_fnc_addScorePlayer;
 		[(_bonusAmount*10),theBoss, true] call A3A_fnc_addMoneyPlayer;
-		{[_x] join _groupPOW; [_x] orderGetin false} forEach _POWs;
+		{[_x] join _groupPOW; [_x] orderGetIn false} forEach _POWs;
 	} else {
 		[_taskId, "RES", "FAILED"] call A3A_fnc_taskSetState;
 		[-10*_bonus,theBoss] call A3A_fnc_addScorePlayer;
@@ -188,7 +188,7 @@ if (_sideX == Occupants) then {
 		private _bonusAmount = round (_countX*_bonus/2);
 		[_bonusAmount,theBoss] call A3A_fnc_addScorePlayer;
 		[(_bonusAmount*10),theBoss, true] call A3A_fnc_addMoneyPlayer;
-		{[_x] join _groupPOW; [_x] orderGetin false} forEach _POWs;
+		{[_x] join _groupPOW; [_x] orderGetIn false} forEach _POWs;
 	};
 };
 

@@ -1,3 +1,5 @@
+#pragma hemtt ignore_variables ["_fnc_saveNames","_fnc_createLoadoutData","_fnc_copyLoadoutData","_fnc_generateAndSaveUnitsToTemplate","_fnc_saveToTemplate"]
+
 private _hasWs = "ws" in A3A_enabledDLC;
 private _hasMarksman = "mark" in A3A_enabledDLC;
 private _hasTanks = "tank" in A3A_enabledDLC;
@@ -150,14 +152,17 @@ private _howitzers = [];
 #include "WS_Vehicle_Attributes.sqf"
 
 ["animations", [
-    #include "..\vehicleAnimations\vehicleAnimations_Vanilla.sqf",
-    #include "..\vehicleAnimations\vehicleAnimations_WS.sqf",
-    #include "..\vehicleAnimations\vehicleAnimations_RF.sqf"
+    #include "..\vehicleAnimations\vehicleAnimations_Vanilla.inc"
+    ,
+    #include "..\vehicleAnimations\vehicleAnimations_WS.inc"
+    ,
+    #include "..\vehicleAnimations\vehicleAnimations_RF.inc"
 ]] call _fnc_saveToTemplate;
 
 ["variants", [
-    #include "..\vehicleVariants\Vanilla_CSAT_Arid\Vanilla_CSAT_Arid.sqf",
-    #include "..\vehicleVariants\WS_SFIA\WS_CSAT&SFIA.sqf"
+    #include "..\vehicleVariants\Vanilla_CSAT_Arid\Vanilla_CSAT_Arid.inc"
+    ,
+    #include "..\vehicleVariants\WS_SFIA\WS_CSAT&SFIA.inc"
 ]] call _fnc_saveToTemplate;
 
 /////////////////////

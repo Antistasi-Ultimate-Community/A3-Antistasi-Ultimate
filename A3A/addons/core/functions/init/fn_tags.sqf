@@ -13,13 +13,13 @@ private _layer = ["A3A_tags"] call BIS_fnc_rscLayer;
 while{ true } do {
    // PLAYER NAME CHECK AND DISPLAY
 	_target = cursorTarget;
-	if (_target isKindOf "CAManBase" && player == vehicle player) then{
+	if (_target isKindOf "CAManBase" && {isNull objectParent player}) then{
 			if((side _target == playerSide) && ((player distance _target) < _distance))then {
 			_weaponsplayer = weapons _target;
 			_name = name _target;
 			_nameString = "<t size='0.5' shadow='2' color='#7FFF00'>" + format['%1',_target getVariable ['unitname', name _target]] + "</t>";
 			_rank = [_target,"displayNameShort"] call BIS_fnc_rankParams;
-			if (count _weaponsPlayer > 0) then {
+			if (_weaponsPlayer isNotEqualTo []) then {
 				_weaponsplayer =  _weaponsplayer select 0;
 				_weaponsplayername = getText (configFile >> "CfgWeapons" >> _weaponsplayer >> "displayname");
 				_weaponspic = getText (configFile >> "CfgWeapons" >> _weaponsplayer >> "picture");
