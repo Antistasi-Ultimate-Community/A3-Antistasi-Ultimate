@@ -10,7 +10,7 @@ params ["_vehicle", "_radius", ["_overridePosition",[]]];
 
 private _time = serverTime;
 
-if (_overridePosition isEqualTo [] && {[getPosATL player, _radius] call A3A_fnc_enemyNearCheck}) exitWith {
+if (_overridePosition isEqualTo [] && {[getPosATL _vehicle, _radius] call A3A_fnc_enemyNearCheck}) exitWith {
     if (hasInterface) then {
         {
             [localize "STR_antistasi_actions_looter_enemies_nearby"] remoteExecCall ["systemChat", _x];
