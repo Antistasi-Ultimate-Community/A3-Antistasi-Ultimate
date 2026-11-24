@@ -4,20 +4,21 @@ OnLoadName = "$STR_antistasi_mission_info_bornholm_mapname_short_text";
 OnLoadMission = "$STR_antistasi_mission_info_bornholm_blurb_text";
 briefingName = "$STR_antistasi_mission_info_bornholm_mapname_text";
 overviewText = "$STR_antistasi_mission_info_bornholm_description_text";
-loadScreen = "\x\A3A\addons\maps\images_co.jpg"; // NB, this will resolve from root // NB, this will resolve from root
-overviewPicture = "\x\A3A\addons\maps\images_co.jpg"; // NB, this will resolve from root
+loadScreen = LOAD_SCREEN_IMAGE;
+overviewPicture = OVERVIEW_IMAGE;
 
 class CfgDiscordRichPresence
 {
-    applicationID="819852407265034260";
-    defaultDetails="";
-    defaultState="";
+    applicationID="1270380812684230746";
+    defaultDetails="In campaign";
+    defaultState="Bornholm";
     defaultLargeImageKey="bornholm";
-    defaultLargeImageText="Antistasi Ultimate - Bornholm";
-    defaultSmallImageKey="arma_3_logo";
-    defaultSmallImageText="Arma 3 Custom Scenario";
+    defaultLargeImageText="Rebelling in Bornholm";
+    defaultSmallImageKey="au-logo";
+    defaultSmallImageText="Antistasi Ultimate";
     useTimeElapsed=1;
 };
+//Steam Workshop: https://steamcommunity.com/sharedfiles/filedetails/?id=2914536900
 
 class CfgNotifications
 {
