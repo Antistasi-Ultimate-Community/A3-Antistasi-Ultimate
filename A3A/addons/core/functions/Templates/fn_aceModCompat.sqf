@@ -64,11 +64,12 @@ advItems = [
 	"adv_aceCPR_AED"
 ];
 
-katMedItems = [ //Support and tested with KAM 2.13.3 Stable
+katMedItems = [ //Support and tested with KAM 3.2.1
 	"kat_accuvac",	//KAT Airway - Item
 	"kat_guedel",	//KAT Airway - Item
 	"kat_larynx",	//KAT Airway - Item
-	
+	"kat_suction",	//KAT Airway - Item
+
 	"kat_Pulseoximeter",	//KAT Breathing - Item
 	"kat_chestSeal",	//KAT Breathing - Item
 	"kat_aatKit",	//KAT Breathing - Item
@@ -76,17 +77,20 @@ katMedItems = [ //Support and tested with KAM 2.13.3 Stable
 	"kat_stethoscope",	//KAT Breathing - Item
 	"kat_BVM",	//KAT Breathing - Item
 	"kat_pocketBVM",	//KAT Breathing - Item
+	"kat_nasal",	//KAT Breathing - Item
 	"kat_oxygenTank_150_Empty",	//KAT Breathing - Item
-	"kat_oxygenTank_150_Item",	//KAT Breathing - Item
 	"kat_oxygenTank_300_Empty",	//KAT Breathing - Item
-	"kat_oxygenTank_300_Item",	//KAT Breathing - Item
 	"kat_oxygenTank_150",	//KAT Breathing - Magazine
 	"kat_oxygenTank_300",	//KAT Breathing - Magazine
-	
+	"kat_personal_oxygen",	//KAT Breathing - Magazine
+
 	//"kat_mask_M04",	//KAT Chemical - Glasses
 	//"kat_mask_M50",	//KAT Chemical - Glasses
 	"kat_gasmaskFilter",	//KAT Chemical - Item
 	"kat_sealant",	//KAT Chemical - Item
+	"kat_m8paper",	//KAT Chemical - Item
+	"kat_decon_kit",	//KAT Chemical - Item
+	"KAT_ChemicalDetector",	//KAT Chemical - Watch
 	//"KAT_1Rnd_82mm_Mo_Type0",	//KAT Chemical - Magazine for Mortar shell
 	//"KAT_1Rnd_82mm_Mo_TypeCS",	//KAT Chemical - Magazine for Mortar shell
 	//"KAT_M7A3",	//KAT Chemical - Magazine for HandGrenade
@@ -121,17 +125,24 @@ katMedItems = [ //Support and tested with KAM 2.13.3 Stable
 	"kat_AED",	//KAT Circulation - Item
 	"kat_X_AED",	//KAT Circulation - Item
 	"kat_crossPanel",	//KAT Circulation - Item
-	
-	"kat_PainkillerItem",	//KAT Pharmacy - Item
+	"kat_BPCuff",	//KAT Circulation - Item
+
+	"kat_handWarmer",	//KAT Hypothermia - Item
+	"kat_fluidWarmer",	//KAT Hypothermia - Item
+
+	"kat_eyecovers",	//KAT Ophthalmology - Item
+	"KAT_Eyewasher",	//KAT Ophthalmology - Magazine
+
 	"kat_Painkiller",	//KAT Pharmacy - Magazine
-	"kat_CarbonateItem",	//KAT Pharmacy - Item
 	"kat_Carbonate",	//KAT Pharmacy - Magazine
-	"kat_PervitinItem",	//KAT Pharmacy - Item
 	"kat_Pervitin",	//KAT Pharmacy - Magazine
-	"kat_CaffeineItem",	//KAT Pharmacy - Item
 	"kat_Caffeine",	//KAT Pharmacy - Magazine
-	"kat_PenthroxItem",	//KAT Pharmacy - Item
 	"kat_Penthrox",	//KAT Pharmacy - Magazine
+	"kat_phenylephrineAuto",	//KAT Pharmacy - Item
+	"kat_dexamethasone",	//KAT Pharmacy - Item
+	"kat_atnaa",	//KAT Pharmacy - Item
+	"kat_epinephrineIV",	//KAT Pharmacy - Item
+	"kat_coag_sense",	//KAT Pharmacy - Item
 	"kat_IV_16",	//KAT Pharmacy - Item
 	"kat_IO_FAST",	//KAT Pharmacy - Item
 	"kat_naloxone",	//KAT Pharmacy - Item
@@ -155,17 +166,26 @@ katMedItems = [ //Support and tested with KAM 2.13.3 Stable
 	"kat_clamp",	//KAT Surgery - Item
 	"kat_plate",	//KAT Surgery - Item
 	"kat_vacuum",	//KAT Surgery - Item
-	
-	//"kat_armband_doctor",	//KAT Misc - Glasses (Cosmetics)
+	"kat_ultrasound",	//KAT Surgery - Item
+	"kat_reboa",	//KAT Surgery - Item
+
+	"kat_basicDiagnostic",	//KAT Vitals - Item
+
+	"KAT_Katmin",	//KAT Watch - Watch
+	"KAT_Cavmin",	//KAT Watch - Watch
+	"KAT_STS",	//KAT Watch - Watch
+	"KAT_Ranger",	//KAT Watch - Watch
+
+	//"kat_Armband_Doctor_Goggles",	//KAT Misc - Glasses (Cosmetics)
 	//"kat_Armband_Doctor_Item",	//KAT Misc - Item (Cosmetics)
-	//"kat_armband_kat",	//KAT Misc - Glasses (Cosmetics)
+	//"kat_Armband_Kat_Goggles",	//KAT Misc - Glasses (Cosmetics)
 	//"kat_Armband_Kat_Item",	//KAT Misc - Item (Cosmetics)
-	//"kat_armband_medic",	//KAT Misc - Glasses (Cosmetics)
+	//"kat_Armband_Medic_Goggles",	//KAT Misc - Glasses (Cosmetics)
 	//"kat_Armband_Medic_Item",	//KAT Misc - Item (Cosmetics)
-	//"kat_armband_red_cross",	//KAT Misc - Glasses (Cosmetics)
+	//"kat_Armband_Red_Cross_Goggles",	//KAT Misc - Glasses (Cosmetics)
 	//"kat_Armband_Red_Cross_Item",	//KAT Misc - Item (Cosmetics)
-	"Attachable_Helistretcher",	//KAT Misc - Item
-	"kat_Bubble_Wrap_Item",	//KAT Misc - Item
+	"kat_helistretcher",	//KAT Stretcher - Item
+	"kat_CarryStretcherBag",	//KAT Stretcher - Launcher
 	"kat_Bubble_Wrap",	//KAT Misc - Magazine
 	"kat_IFAK",	//KAT Misc - Item
 	"kat_IFAK_Magazine",	//KAT Misc - Magazine
