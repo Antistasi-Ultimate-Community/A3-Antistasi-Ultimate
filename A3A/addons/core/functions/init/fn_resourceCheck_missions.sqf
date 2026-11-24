@@ -25,7 +25,7 @@ if (_numWreckedAntennas > 0 && {_shouldSpawnRepairThisTick && {!("REP" in A3A_ac
             };
         };
     } forEach antennasDead;
-    if (count _potentials > 0) then {
+    if (_potentials isNotEqualTo []) then {
         private _potential = selectRandom _potentials;
         [[_potential select 0,_potential select 1],"A3A_fnc_REP_Antenna"] call A3A_fnc_scheduler;
     };
@@ -50,7 +50,7 @@ if (_numWreckedAntennas > 0 && {_shouldSpawnRepairThisTick && {!("REP" in A3A_ac
 // sleep 4;
 
 if (areRivalsEnabled && {tierWar > 3} && {!areRivalsDiscovered} && {!isRivalsDiscoveryQuestAssigned}) then {
-    Info_1("Rivals roll: %1", _rivalsTaskChance);
+    Info_1("Rivals roll: %1",_rivalsTaskChance);
     if (random 100 < _rivalsTaskChance) then {
         Info("Assigning Rivals Discovery Task...");
         [] call SCRT_fnc_rivals_prepareQuest;
@@ -63,7 +63,7 @@ if (areRivalsEnabled && {tierWar > 3} && {!areRivalsDiscovered} && {!isRivalsDis
 };
 
 if (tierWar > 2 && {!isTraderQuestCompleted} && {!isTraderQuestAssigned}) then {
-    Info_1("Arms Dealer roll: %1", _traderTaskChance);
+    Info_1("Arms Dealer roll: %1",_traderTaskChance);
     if (random 100 < _traderTaskChance) then {
         Info("Assigning Arms Dealer Task...");
         [] remoteExec ["SCRT_fnc_trader_prepareTraderQuest", 2];
