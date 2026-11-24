@@ -400,6 +400,10 @@ Maintainer: DoomMetal
 #define	A3A_IDC_BUYSTATICVEHICLEMORTAR 	            10371
 #define	A3A_IDC_STATICVEHICLESGROUPMORTAR 	        10372
 
+// Search box
+#define	A3A_IDC_BLACKMARKETSEARCH_EDITBOX 	        10380
+#define	A3A_IDC_BLACKMARKETSEARCH_BUTTON 	        10381
+
 // Load last save
 #define A3A_IDC_LOADDIALOG 9400
 

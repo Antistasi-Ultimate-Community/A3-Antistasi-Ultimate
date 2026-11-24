@@ -348,6 +348,18 @@
                 <Chinesesimp>这个载具可以使用伪装模式</Chinesesimp>
                 <Turkish>Bu araç gizliliğe uygundur</Turkish>
             </Key>
+            <Key ID="STR_antistasi_dialogs_vehicle_search_tooltip">
+                <Original>Search vehicles</Original>
+                <Czech>Hledat vozidla</Czech>
+                <French>Rechercher des véhicules</French>
+                <Spanish>Buscar vehículos</Spanish>
+                <Italian>Cerca veicoli</Italian>
+                <Polish>Szukaj pojazdów</Polish>
+                <Russian>Поиск техники</Russian>
+                <Korean>차량 검색</Korean>
+                <Chinesesimp>搜索载具</Chinesesimp>
+                <Turkish>Araçları Ara</Turkish>
+            </Key>
             <Key ID="STR_antistasi_dialogs_vehicle_tab_AA">
                 <Original>AA</Original>
                 <Russian>ПВО</Russian>
