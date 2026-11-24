@@ -27,7 +27,7 @@ Antistasi-Ultimate.biprivatekey
 #Ignore Python bytecode files and bytecode-cache folder
 __pycache__/
 build/
-release/
+release*/
 dev/
 Tools/TownGenerator/output.txt
 Tools/csvparser/output/*.txt
