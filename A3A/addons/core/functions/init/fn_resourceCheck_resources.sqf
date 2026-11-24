@@ -5,8 +5,8 @@ if (!isServer) exitWith {
 };
 
 params [
-    ["_resAdd", 0],
-    ["_hrAdd", 0]
+    ["_resAdd", 0, [0]],
+    ["_hrAdd", 0, [0]]
 ];
 
 private _ownedFactories = {sidesX getVariable [_x, sideUnknown] == teamPlayer && !(_x in destroyedSites)} count factories;

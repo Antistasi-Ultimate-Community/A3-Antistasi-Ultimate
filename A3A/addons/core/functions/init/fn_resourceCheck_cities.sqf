@@ -72,7 +72,7 @@ private _hrAdd = 0;
     private _canFlipEnemy = (_canFlipBase && (_isNowEnemy && _citySide isEqualTo teamPlayer));
     private _canStartSkirmish = (_popAboveMin && (random 100 <= townSkirmishChance) && !(_isSkirmish)); // !(bigAttackInProgress) - Will keep, interesting experiment for now
 
-    Debug_8("City: %1 | Side: %2 | Pop: %3 | Gov: %4 | Reb: %5 | CanFlip: %6 | CanFlipEnemy: %7 | CanStartSkirmish: %8", _city, _citySide, _numCiv, _popGov, _popReb, _canFlip, _canFlipEnemy, _canStartSkirmish);
+    Debug_8("City: %1 | Side: %2 | Pop: %3 | Gov: %4 | Reb: %5 | CanFlip: %6 | CanFlipEnemy: %7 | CanStartSkirmish: %8",_city,_citySide,_numCiv,_popGov,_popReb,_canFlip,_canFlipEnemy,_canStartSkirmish);
 
     if (_canFlip) then {
         if (_canStartSkirmish) then {

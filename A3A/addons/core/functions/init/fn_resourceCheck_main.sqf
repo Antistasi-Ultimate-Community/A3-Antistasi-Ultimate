@@ -12,9 +12,7 @@ if (_blackMarketConditions isEqualTo []) then {
 
 // We need _resAdd/_hrAdd in both _cities and _resources, however _resources finalises the data
 // INFO: We look at win/loss conditions in here too, makes sense to run directly *after* cities
-private _cityResults = call A3A_fnc_resourceCheck_cities;
-_resAdd = _cityResults#0;
-_hrAdd = _cityResults#1;
+(call A3A_fnc_resourceCheck_cities) params ["_resAdd", "_hrAdd"];
 
 // Process FIA resources, salary, HR and bomb points
 [_resAdd, _hrAdd] spawn A3A_fnc_resourceCheck_resources;

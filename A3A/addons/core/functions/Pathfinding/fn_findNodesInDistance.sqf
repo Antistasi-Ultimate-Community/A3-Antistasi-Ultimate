@@ -60,7 +60,7 @@ _openList pushBack [_startNav, 0, 0];
 missionNamespace setVariable [format ["PF_%1", str (_startNav select 0)], WORKSTATE_OPENED];
 _touchedNodes pushBack (str (_startNav select 0));
 
-while {count _openList > 0} do
+while {_openList isNotEqualTo []} do
 {
     //Select node with lowest score
     private _current = _openList deleteAt 0;

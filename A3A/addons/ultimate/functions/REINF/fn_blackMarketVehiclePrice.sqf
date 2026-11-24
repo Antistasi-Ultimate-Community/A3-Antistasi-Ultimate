@@ -11,7 +11,7 @@ private _bMStock = createHashMap;
 private _cost = _bMStock get _typeX;
 
 if (isNil "_cost") exitWith {
-	Error_1("Invalid vehicle price at %1.", _typeX);
+	Error_1("Invalid vehicle price at %1.",_typeX);
 
 	0;
 };

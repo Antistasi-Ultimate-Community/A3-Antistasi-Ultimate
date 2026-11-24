@@ -61,9 +61,9 @@ switch (_itemCategory) do {
 
 	case "Item": {
 		switch (_itemType) do {
-			case "AccessoryMuzzle",
-			case "AccessoryPointer",
-			case "AccessorySights",
+			case "AccessoryMuzzle";
+			case "AccessoryPointer";
+			case "AccessorySights";
 			case "AccessoryBipod": {
 				_attachmentSlotIndex = switch (_itemType) do {
 					case "AccessoryMuzzle": {0};
@@ -90,8 +90,8 @@ switch (_itemCategory) do {
 			};
 
 			case "NVGoggles": {_canAdd = (hmd _unit) isEqualTo ""};
-			case "Glasses",
-			case "LaserDesignator",
+			case "Glasses";
+			case "LaserDesignator";
 			case "Binocular": {_canAdd = (binocular _unit) isEqualTo ""};
 			default {
 				_canAdd = !(_classname in (assignedItems _unit apply {toLower _x}))

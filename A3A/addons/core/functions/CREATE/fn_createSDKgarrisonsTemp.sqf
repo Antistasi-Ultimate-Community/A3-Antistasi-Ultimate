@@ -45,7 +45,7 @@ if (_typeX isEqualType "") then {
             private _groupX = group _unit;
             if ((_unit getVariable "unitType") isEqualTo FactionGet(reb,"unitCrew")) then {deleteVehicle (vehicle _unit)};
             deleteVehicle _unit;
-            if (count units _groupX == 0) then {deleteGroup _groupX};
+            if (units _groupX isEqualTo []) then {deleteGroup _groupX};
         };
     };
 };

@@ -1,5 +1,17 @@
 # 12
 
+# 12.4.2
+
+### Fixed:
+> - Fix rename path for legacy games breaking ability to load them (#1099)
+>   - Renaming pre-12.2 games will no longer prevent their loading
+> - Ignore case for location type when crewing statics at locations (#1102)
+>   - Rebel AI at AA emplacements will man additional placed statics according to players' preferences after despawn / respawn of the zone
+> - Fix fast travel collisions (#1103)
+>   - Fast traveling a group in more than one vehicle should no longer spawn the vehicles on top of each other
+> - Misc Bazaar Bugs (#1105)
+>   - Fixes `PIN` / wanted add button in bazaar trader UI and fixes localization of `Buy Back` and its additional note
+
 # 12.4.1
 
 ### New Factions:

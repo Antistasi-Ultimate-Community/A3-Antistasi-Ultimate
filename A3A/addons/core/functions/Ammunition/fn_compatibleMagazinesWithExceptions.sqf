@@ -39,25 +39,25 @@ if (isClass _weaponCfg) then
 		_muzzle = if (_x == "this") then {_weaponCfg} else {_weaponCfg >> _x};
 
 		// Get magazines from "magazines" array
-		_magazinesList = getarray (_muzzle >> "magazines");
+		_magazinesList = getArray (_muzzle >> "magazines");
 
 		// Add magazines from magazine wells
 		{
 			{
 				_magazinesList append (getArray _x);
-			}foreach  configproperties [configFile >> "CfgMagazineWells" >> _x,"isArray _x"];
-		} foreach getArray (_muzzle >> "magazineWell");
+			}forEach  configProperties [configFile >> "CfgMagazineWells" >> _x,"isArray _x"];
+		} forEach getArray (_muzzle >> "magazineWell");
 
 		// Add only unique entries to output
 		{
 			private _magazine		= _x;
-			private _magazineCfg	= configfile >> "cfgMagazines" >> _magazine;
+			private _magazineCfg	= configFile >> "cfgMagazines" >> _magazine;
 
-			if ( ((getnumber (_magazineCfg >> "scope") isEqualTo 2) || _showHidden) && !(_magazine in _forbiddenList) ) then {
+			if ( ((getNumber (_magazineCfg >> "scope") isEqualTo 2) || _showHidden) && !(_magazine in _forbiddenList) ) then {
 				_compatibleMagazines pushBackUnique _magazine;
 			};
-		} foreach _magazinesList;
-	} foreach getarray (_weaponCfg >> "muzzles");
+		} forEach _magazinesList;
+	} forEach getArray (_weaponCfg >> "muzzles");
 
 	_compatibleMagazines
 } else {

@@ -13,8 +13,7 @@ private _blackMarketConditions = call A3A_fnc_resourceCheck_initBM;
 
 while {A3A_tick_continue} do {
 	private _nextTick = time + A3A_tick_time;
-	waitUntil [{time >= _nextTick}, -1,30];
-	waitUntil [{A3A_activePlayerCount > 0}, -1, 30];
+	waitUntil [{time >= _nextTick && {A3A_activePlayerCount > 0}}, -1, 30];
 
 	// Runs in sequence: cities, resources, misc, missions, BM
 	[_blackMarketConditions] call A3A_fnc_resourceCheck_main;

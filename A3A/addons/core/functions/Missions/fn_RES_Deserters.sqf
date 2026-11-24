@@ -8,7 +8,7 @@ private _Deserters = [];
 private _vehicles = [];
 private _groups = [];
 private _props = [];
-private _sideX = if (sidesX getVariable [_markerX, sideUnknown] == Occupants) then {Occupants} else {Invaders};
+private _sideX = [Invaders, Occupants] select (sidesX getVariable [_markerX, sideUnknown] == Occupants);
 private _faction = Faction(_sideX);
 private _difficultX = random 10 < tierWar;
 private _positionX = getMarkerPos _markerX;
@@ -31,7 +31,7 @@ for "_i" from 0 to (count _houses) - 1 do {
 	_posHouse = [_houseX] call BIS_fnc_buildingPositions;
 	if (count _posHouse > 1) then {_potentials pushBack _houseX};
 };
-if (count _potentials > 0) then {
+if (_potentials isNotEqualTo []) then {
 	_houseX = selectRandom _potentials;
 	_spawnPos = _houseX;
 	_posHouse = [_houseX] call BIS_fnc_buildingPositions;
@@ -46,7 +46,7 @@ if (count _potentials > 0) then {
 	};
 };
 private _taskId = "RES" + str A3A_taskCount;
-if (count _potentials > 0) then {
+if (_potentials isNotEqualTo []) then {
 	[[teamPlayer,civilian],_taskId,[format [localize "STR_A3A_Missions_RES_Deserters_task_desc",_nameDest,_displayTime],localize "STR_A3A_Missions_RES_Deserters_task_header",_markerX],_spawnPos,false,0,true,"run",true] call BIS_fnc_taskCreate;///add stringtables
 	[_taskId, "RES", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
 } else {
@@ -120,7 +120,7 @@ private _unitTypes = [(_faction get "unitMilitiaGrunt"),(_faction get "unitMilit
 for "_i" from 0 to _countX do {
 	_unitRandom = selectRandom _unitTypes;
 	if (_sideX == Occupants) then {
-		if (count _potentials > 0) then {
+		if (_potentials isNotEqualTo []) then {
 			
 			_unit = [_grpDeserters, _unitRandom,_spawnPos, [], 3, "NONE"] call A3A_fnc_createUnit;
 			[_unit, createHashMapFromArray [["face", selectRandom (A3A_faction_occ get "faces")], ["speaker", selectRandom (A3A_faction_occ get "voices")]]] call A3A_fnc_setIdentity;
@@ -129,7 +129,7 @@ for "_i" from 0 to _countX do {
 			[_unit, createHashMapFromArray [["face", selectRandom (A3A_faction_occ get "faces")], ["speaker", selectRandom (A3A_faction_occ get "voices")]]] call A3A_fnc_setIdentity;
 		};
 	} else {
-		if (count _potentials > 0) then {
+		if (_potentials isNotEqualTo []) then {
 			_unit = [_grpDeserters, _unitRandom, (_posHouse select _i), [], 0, "NONE"] call A3A_fnc_createUnit;
 			[_unit, createHashMapFromArray [["face", selectRandom (A3A_faction_inv get "faces")], ["speaker", selectRandom (A3A_faction_inv get "voices")]]] call A3A_fnc_setIdentity;
 		} else {
@@ -172,7 +172,7 @@ if (count _soldersPatrol <= (count (_soldersPatrol))/2) then { ///doesn't work ,
 	
 //};
 waitUntil {sleep 1; {alive _x} count _Deserters == 0 or {{(alive _x) and (_x distance getMarkerPos respawnTeamPlayer < 50)} count _Deserters > 0}};
-private _bonus = if (_difficultX) then {2} else {1};
+private _bonus = [1, 2] select (_difficultX);
 if ({alive _x} count _Deserters == 0) then {
 	[_taskId, "RES", "FAILED"] call A3A_fnc_taskSetState;
 	{[_x,false] remoteExec ["setCaptive",0,_x]; _x setCaptive false} forEach _Deserters;
@@ -204,7 +204,7 @@ if ({alive _x} count _Deserters == 0) then {
 	private _bonusAmount = round (_countX*_bonus/2);
 	[_bonusAmount,theBoss] call A3A_fnc_addScorePlayer;
     [(_bonusAmount*10),theBoss, true] call A3A_fnc_addMoneyPlayer;
-	{[_x] join _grpDeserters; [_x] orderGetin false} forEach _Deserters;
+	{[_x] join _grpDeserters; [_x] orderGetIn false} forEach _Deserters;
 };
 sleep 60;
 private _items = [];

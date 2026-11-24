@@ -41,12 +41,12 @@ try {
 	private _trader = _unit getVariable ["HALs_store_trader_current", objNull];
 	if (isNull _trader) then {throw [""]};
 
-	private _forbiddenItem_is_unlimited = 0;
+	private _is_forbiddenItemUnlimited = 0;
 
 	if (_classname in A3U_forbiddenItems) then {
 		private _is_forbiddenItem = isClass (configFile >> "A3U" >> "forbiddenItems" >> _classname);
 
-		Debug_1("%1 is a forbidden item.", _classname);
+		Debug_1("%1 is a forbidden item.",_classname);
 
 		if (_is_forbiddenItem) then {
 			_is_forbiddenItemUnlimited = (getNumber (configFile >> "A3U" >> "forbiddenItems" >> _classname >> "unlimited"));
@@ -92,7 +92,7 @@ try {
 		(jna_dataList select IDC_RSCDISPLAYARSENAL_TAB_VEST)
 	) select {(_x select 1) == -1 || {(_x select 1) >= minWeaps && {_is_forbiddenItemUnlimited isEqualTo 0}}}) apply {_x select 0};
 
-	Debug_2("%1 unlock state: %2", _classname, (_classname in _unlockedItems));
+	Debug_2("%1 unlock state: %2",_classname,(_classname in _unlockedItems));
 
 	if (_classname in _unlockedItems) then {
 		throw ["The trader is not interested in this item, no deal."]

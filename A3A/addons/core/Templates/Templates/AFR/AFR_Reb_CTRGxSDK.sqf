@@ -1,3 +1,5 @@
+#pragma hemtt ignore_variables ["_fnc_saveNames","_fnc_createLoadoutData","_fnc_copyLoadoutData","_fnc_generateAndSaveUnitsToTemplate","_fnc_saveToTemplate"]
+
 private _hasWs = "ws" in A3A_enabledDLC;
 private _hasMarksman = "mark" in A3A_enabledDLC;
 private _hasLawsOfWar = "orange" in A3A_enabledDLC;
@@ -41,7 +43,7 @@ private _hasEF = "ef" in A3A_enabledDLC;
 
 private _vehicleBasic = ["AFR_B_CTRG_rhsusf_mrzr4_d"];
 private _vehicleLightUnarmed = ["AFR_I_Syndi_HIDF_m998_2d", "rhsgref_nat_uaz_open"]; 
-private _vehiclesightArmed = ["rhssaf_m1025_olive_m2"];
+private _vehiclesLightArmed = ["rhssaf_m1025_olive_m2"];
 private _vehicleTruck = ["AFR_I_Syndi_rhsgref_tla_kraz255b1_cargo_open"];
 private _vehicleAT = ["AFR_I_Syndi_Offroad_02_AT_F", "rhsgref_nat_uaz_spg9"];
 private _vehicleAA = [];
@@ -67,7 +69,7 @@ if (_hasEF) then {
 
 if (_hasRF) then {
   _vehicleLightUnarmed append ["a3a_black_Pickup_mmg_rf", "a3u_black_Pickup_mmg_frame_rf", "a3u_black_Pickup_mmg_alt_rf"];
-  _vehicleLightArmed pushBack "a3u_black_Pickup_rival_rf";
+  _vehiclesLightArmed pushBack "a3u_black_Pickup_rival_rf";
   _vehicleCivCar append ["C_Pickup_rf", "C_Pickup_covered_rf"];
   _vehicleCivHelicopter append ["C_Heli_EC_01A_civ_RF", "C_Heli_EC_01_civ_RF"];
 };
@@ -141,7 +143,7 @@ if (_hasRF) then {
 ["vehiclesAA", _vehicleAA] call _fnc_saveToTemplate;
 ["vehiclesCivCar", _vehicleCivCar] call _fnc_saveToTemplate;
 ["vehiclesLightUnarmed", _vehicleLightUnarmed] call _fnc_saveToTemplate;
-["vehiclesLightArmed", _vehicleLightArmed] call _fnc_saveToTemplate;
+["vehiclesLightArmed", _vehiclesLightArmed] call _fnc_saveToTemplate;
 ["vehiclesAT", _vehicleAT] call _fnc_saveToTemplate;
 
 ///////////////////////////

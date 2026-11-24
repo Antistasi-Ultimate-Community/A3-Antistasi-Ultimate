@@ -37,7 +37,7 @@ _centre = _centre call {
 	[0, 0, 0]
 };
 
-if (!(isClass (configfile >> "cfgVehicles" >> _object)) || _centre isEqualTo [0, 0, 0]) exitWith {
+if (!(isClass (configFile >> "cfgVehicles" >> _object)) || _centre isEqualTo [0, 0, 0]) exitWith {
 	objNull
 };
 
