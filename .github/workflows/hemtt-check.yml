@@ -1,0 +1,112 @@
+name: HEMTT check
+
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+permissions: {}
+
+concurrency:
+  group: hemtt-check-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    if: |
+      github.event.pull_request.draft == false &&
+      contains(github.event.pull_request.labels.*.name, 'infrastructure') == false &&
+      contains(github.event.pull_request.labels.*.name, 'documentation') == false &&
+      contains(github.event.pull_request.labels.*.name, 'not-now') == false
+    runs-on: windows-latest
+    timeout-minutes: 20 # Should we lower the timeout? HEMTT *should* only take a couple minutes at most to check, but idk how long the CI setup takes
+    permissions:
+      contents: read
+    outputs:
+      exit_code: ${{ steps.hemtt.outputs.exit_code }}
+      output: ${{ steps.hemtt.outputs.output }}
+    steps:
+      - name: Checkout wrapper and baseline from target branch # So they can't be changed by the PR itself to mask errors
+        uses: actions/checkout@v6
+        with:
+          ref: ${{ github.event.pull_request.base.sha }}
+          path: base
+          persist-credentials: false
+
+      - name: Checkout pull request
+        uses: actions/checkout@v6
+        with:
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          ref: ${{ github.event.pull_request.head.sha }}
+          path: pr
+          persist-credentials: false
+          submodules: true # for A3OVG (and any other submodules) use later
+
+      - name: Add missing includes from target branch # Workflow checks out the PR, which if created before includes were added will be missing the includes. Add them here so HEMTT can use them.
+        shell: pwsh
+        run: |
+          $source = (Resolve-Path .\base\A3A\include).Path
+          Get-ChildItem $source -Recurse -File | ForEach-Object {
+            $destination = Join-Path .\pr\A3A\include $_.FullName.Substring($source.Length)
+            if (-not (Test-Path -LiteralPath $destination)) {
+              New-Item -ItemType Directory -Path (Split-Path $destination) -Force | Out-Null
+              Copy-Item -LiteralPath $_.FullName -Destination $destination
+              "Added $destination"
+            }
+          }
+
+      - name: Setup HEMTT
+        uses: arma-actions/hemtt@v1
+        with:
+          version: 'v1.23.1'
+          annotate: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Run HEMTT check
+        id: hemtt
+        shell: pwsh
+        run: |
+          .\base\Tools\hemtt-check.ps1 -ProjectPath .\pr\A3A -BaselinePath .\base\A3A\.hemtt\baseline.txt *>&1 |
+            Tee-Object -FilePath "$env:RUNNER_TEMP\hemtt-check.txt"
+          "exit_code=$LASTEXITCODE" >> $env:GITHUB_OUTPUT
+          $output = Get-Content "$env:RUNNER_TEMP\hemtt-check.txt" -Raw
+          if ($output.Length -gt 60000) { $output = $output.Substring(0, 60000) + "`n... output truncated, see the workflow log." }
+          # Base64 keeps PR-controlled text from injecting extra step outputs.
+          "output=$([Convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes($output)))" >> $env:GITHUB_OUTPUT
+          "## HEMTT check`n`n" + '````text' + "`n$output`n" + '````' >> $env:GITHUB_STEP_SUMMARY
+          exit 0
+
+      - name: Fail on HEMTT errors
+        if: steps.hemtt.outputs.exit_code != '0'
+        shell: pwsh
+        run: exit 1
+
+  comment:
+    needs: check
+    if: always() && (needs.check.result == 'success' || needs.check.result == 'failure') # Only post a comment if the check job succeeded or failed, not if it was cancelled or skipped (e.g. for a documentation-labeled PR)
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      pull-requests: write
+    steps:
+      - name: Post review comment
+        uses: actions/github-script@v7
+        env:
+          HEMTT_OUTPUT: ${{ needs.check.outputs.output }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        with:
+          script: |
+            let output = Buffer.from(process.env.HEMTT_OUTPUT || '', 'base64').toString('utf8').trim();
+            if (!output) output = 'HEMTT check did not produce any output. See the workflow log.';
+            // Use a fence longer than any backtick run in the output so it can't escape the code block.
+            const longest = Math.max(0, ...(output.match(/`+/g) || []).map(run => run.length));
+            const fence = '`'.repeat(Math.max(3, longest + 1));
+            await github.rest.pulls.createReview({
+              ...context.repo,
+              pull_number: Number(process.env.PR_NUMBER),
+              commit_id: process.env.HEAD_SHA,
+              event: 'COMMENT',
+              body: `## HEMTT check\n\n${fence}text\n${output}\n${fence}\n\n[Workflow run](${process.env.RUN_URL})`
+            });
