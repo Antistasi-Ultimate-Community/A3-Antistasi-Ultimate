@@ -40,14 +40,7 @@ _construction setDir _direction;
 constructionsToSave pushBackUnique _construction;
 publicVariable "constructionsToSave";
 
-//removing previous
-private _excessiveConstructions = maxConstructions - (count constructionsToSave);
-if(_excessiveConstructions < 0) then {
-	private _top = abs _excessiveConstructions;
-	for "_i" from 0 to _top do {
-		deleteVehicle (constructionsToSave select _i);
-		constructionsToSave deleteAt _i;
-	};
-};
+//removing oldest constructions over the limit
+[] call SCRT_fnc_build_trimConstructions;
 
 Info_2("Created and saved %1 object on %2 position.",_type,str _position);

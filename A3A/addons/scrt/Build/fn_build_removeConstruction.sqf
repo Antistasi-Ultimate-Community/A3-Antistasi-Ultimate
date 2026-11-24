@@ -27,11 +27,17 @@ params ["_building"];
 
 if (!isServer) exitWith {
     Error("Function miscalled locally, rerouting execution on server...");
-    _building remoteExecCall ["SCRT_fnc_build_removeConstruction", 2];
+    [_building] remoteExecCall ["SCRT_fnc_build_removeConstruction", 2];
 };
 
 if (isNil "constructionsToSave") exitWith {
     Error("For some reason constructionsToSave doesn't exist.");
+};
+
+// Zeus deletion can reach the server after the object is already gone
+if (isNull _building) exitWith {
+    constructionsToSave = constructionsToSave select {!isNull _x};
+    publicVariable "constructionsToSave";
 };
 
 private _buildingIndex = constructionsToSave find _building;

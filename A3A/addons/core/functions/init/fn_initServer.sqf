@@ -390,6 +390,7 @@ if(A3A_hasZen) then
 
             //now add the logging to the module
             [[getAssignedCuratorLogic _unit]] remoteExecCall ["A3A_fnc_initZeusLogging",0];
+            [[getAssignedCuratorLogic _unit]] remoteExecCall ["SCRT_fnc_build_initZeusPersistence", 0, true];
         };
     }] call CBA_fnc_addEventHandler;
 };
@@ -405,6 +406,7 @@ if(A3A_hasACE) then
 
             //now add the logging to the module
             [[getAssignedCuratorLogic _unit]] remoteExecCall ["A3A_fnc_initZeusLogging",0];
+            [[getAssignedCuratorLogic _unit]] remoteExecCall ["SCRT_fnc_build_initZeusPersistence", 0, true];
         };
     }] call CBA_fnc_addEventHandler;
 };
