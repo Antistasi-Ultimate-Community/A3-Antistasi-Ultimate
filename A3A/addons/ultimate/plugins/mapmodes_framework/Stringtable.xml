@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="Antistasi Ultimate Mapmodes Framework">
+    <Package name="Mapmodes">
+        <Container name="Selector">
+            <Key ID="STR_A3A_ultimate_mapmodes_framework_Default"><Original>Default Mapmode</Original></Key>
+            <Key ID="STR_A3A_ultimate_mapmodes_framework_Selector"><Original>Mapmode</Original></Key>
+            <!-- TO BE REMOVED | DEV TEST PROVIDER MAPMODE: diagnostic provider label. -->
+            <Key ID="STR_A3A_ultimate_mapmodes_framework_Placeholder"><Original>Test-Map-Mode</Original></Key>
+        </Container>
+    </Package>
+</Project>

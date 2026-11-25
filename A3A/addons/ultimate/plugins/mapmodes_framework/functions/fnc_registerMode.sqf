@@ -1,0 +1,85 @@
+/* ----------------------------------------------------------------------------
+	Function: A3A_ultimate_mapmodes_framework_fnc_registerMode
+	
+	Description:
+	    Registers one provider and refreshes the cached list. Restores an unavailable
+	    saved choice when it registers, unless the player already chose another mode.
+	
+	Parameters:
+	    0: _id - Unique namespaced provider ID <String>
+	    1: _label - Localized display name <String>
+	    2: _activate - Provider activation callback <Code>
+	    3: _deactivate - Provider cleanup callback <Code>
+	
+	Optional:
+	    4: _order - sort priority within its group; default 100 <Number>
+	    5: _icon - Texture path displayed before the label; default empty <String>
+	
+	Example:
+	    ["MyAddon_supply", "Supply", {}, {}, 100] call A3A_ultimate_mapmodes_framework_fnc_registerMode;
+	
+	Returns:
+	    <Boolean> true on registration; false for invalid input, duplicates or reentrancy.
+	
+	Scope:
+	    Client
+	
+	Author:
+	    eirish
+---------------------------------------------------------------------------- */
+
+#include "..\script_component.hpp"
+
+if (!hasInterface || {
+	missionNamespace getVariable [QGVAR(transitioning), false]
+}) exitWith {
+	false
+};
+if !(_this isEqualType [] && {
+	count _this in [4, 5, 6]
+} && {
+	_this findIf {
+		isNil "_x"
+	} < 0
+}) exitWith {
+	false
+};
+if !assert(params [
+	["_id", nil, [""]],
+	["_label", nil, [""]],
+	["_activate", nil, [{}]],
+	["_deactivate", nil, [{}]],
+	["_order", 100, [0]],
+	["_icon", "", [""]]
+	]) exitWith {
+		false
+	};
+	if (_id isEqualTo "" || {
+		_label isEqualTo ""
+	} || {
+		!finite _order
+	}) exitWith {
+		false
+	};
+	private _official = getArray (configFile >> "A3U" >> "MapmodesFramework" >> "officialIds");
+	if !(_id in _official || {
+		(_id find "_") > 0
+	}) exitWith {
+		false
+	};
+	private _registry = missionNamespace getVariable [QGVAR(registry), createHashMap];
+	if (_id in _registry) exitWith {
+		false
+	};
+	_registry set [_id, [_label, _activate, _deactivate, _order, _id in _official, _icon]];
+	missionNamespace setVariable [QGVAR(registry), _registry];
+	[] call FUNC(refreshModes);
+	if (!(missionNamespace getVariable [QGVAR(explicitSelection), false]) && {
+		!(missionNamespace getVariable [QGVAR(restored), false])
+	} && {
+		_id isEqualTo (missionNamespace getVariable [QGVAR(preferred), ""])
+	}) then {
+		missionNamespace setVariable [QGVAR(restored), true];
+		[_id, false] call FUNC(selectMode);
+	};
+	true
