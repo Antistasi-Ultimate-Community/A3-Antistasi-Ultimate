@@ -3,7 +3,7 @@
 		jwoodruff40
 	
 	Description:
-		Create flag for marker
+		Create ammo box(es) for marker
 	
 	Params:
 		_markerX <STRING> <Default: NONE>
@@ -76,5 +76,9 @@ if (_markerX in airportsX) then {
 	};
 };
 [_ammoBoxX, nil, true] call A3A_Logistics_fnc_addLoadAction;
+
+if (EGVAR(ultimate,lockAmmoBoxes)) then {
+	[_ammoBoxX, true] call A3U_fnc_setLock;
+};
 
 _return;
