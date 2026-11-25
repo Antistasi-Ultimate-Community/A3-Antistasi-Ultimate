@@ -1,3 +1,5 @@
 params ["_vehicle"];
 
-(locked _vehicle >= 2);
+private _locked = locked _vehicle;
+
+(_locked >= 2 || {_locked isEqualTo -1 && {lockedInventory _vehicle}});

@@ -12104,6 +12104,22 @@
                 <Korean>단위 유형별로 생성되는 AI 커스텀 로드아웃 수입니다. 값이 클수록 다양성은 증가하지만 로드 시간이 길어집니다.</Korean>
                 <Chinesesimp>每种单位类型生成的AI自定义装备数量。更高数值增加多样性但会显著增加加载时间。</Chinesesimp>
             </Key>
+            <Key ID="STR_params_lockAmmoBoxes">
+                <Original>Lock ammo boxes</Original>
+                <French>Verrouiller les caisses de munitions</French>
+                <Russian>Блокировка ящиков с боеприпасами</Russian>
+                <Korean>탄약 상자 잠금</Korean>
+                <Chinesesimp>锁定弹药箱</Chinesesimp>
+                <Turkish>Cephane kutularını kilitle</Turkish>
+            </Key>
+            <Key ID="STR_params_lockAmmoBoxes_desc">
+                <Original>Should ammo boxes within enemy zones be locked automatically, requiring lockpicking by an engineer rebel?</Original>
+                <French>Les boîtes à munitions dans les zones ennemies doivent-elles être verrouillées automatiquement, nécessitant un crochetage par un ingénieur rebelle?</French>
+                <Russian>Должны ли ящики с боеприпасами внутри вражеских зон автоматически блокироваться, требуя взлома замков инженером-повстанцем?</Russian>
+                <Korean>적 구역 내 탄약 상자는 자동으로 잠가져서 엔지니어 반군이 자물쇠 따기를 해야 하나요?</Korean>
+                <Chinesesimp>敌方区域内的弹药箱是否应该自动上锁，需要工程师叛军开锁？</Chinesesimp>
+                <Turkish>Düşman bölgelerindeki cephane kutuları otomatik olarak kilitlenmeli mi, böylece bir mühendis isyancısı kilit açma gerektirmeli mi?</Turkish>
+            </Key>
             <Key ID="STR_params_lootCrateDistance">
                 <Original>Loot crate gather distance</Original>
                 <French>Distance de collecte des caisses de butin</French>
