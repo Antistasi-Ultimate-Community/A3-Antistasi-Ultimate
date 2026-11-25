@@ -33,7 +33,37 @@ class A3A_BlackMarketDialog : A3A_TabbedDialogBlackmarket
                     access = 1;
                     x = QUOTE(0 * GRID_W);
                     y = 0;
-                    w = QUOTE(160 * GRID_W);
+                    w = QUOTE(120 * GRID_W);
+                    h = QUOTE(5 * GRID_H);
+                };
+                class SearchBackground : A3A_Background
+                {
+                    idc = -1;
+                    colorBackground[] = {0,0,0,1};
+                    x = QUOTE(120 * GRID_W);
+                    y = 0;
+                    w = QUOTE(40 * GRID_W);
+                    h = QUOTE(5 * GRID_H);
+                };
+                class SearchEditBox : A3A_Edit
+                {
+                    idc = A3A_IDC_BLACKMARKETSEARCH_EDITBOX;
+                    tooltip = "$STR_antistasi_dialogs_vehicle_search_tooltip";
+                    onEditChanged = "[""search""] call A3A_fnc_blackMarketDialog";
+                    colorBackground[] = {0,0,0,0};
+                    x = QUOTE(120 * GRID_W);
+                    y = 0;
+                    w = QUOTE(35 * GRID_W);
+                    h = QUOTE(5 * GRID_H);
+                };
+                class SearchButton : A3A_ActivePicture
+                {
+                    idc = A3A_IDC_BLACKMARKETSEARCH_BUTTON;
+                    text = "\A3\ui_f\data\GUI\RscCommon\RscButtonSearch\search_start_ca.paa";
+                    onButtonClick = "[""clearSearch""] call A3A_fnc_blackMarketDialog";
+                    x = QUOTE(155 * GRID_W);
+                    y = 0;
+                    w = QUOTE(5 * GRID_W);
                     h = QUOTE(5 * GRID_H);
                 };
             };
