@@ -131,6 +131,8 @@ class CfgFunctions {
 			class build_saveConstruction {};
 			class build_updateConstruction {};
 			class build_removeConstruction {};
+			class build_trimConstructions {};
+			class build_initZeusPersistence {};
 		};
 
 		class Location {
