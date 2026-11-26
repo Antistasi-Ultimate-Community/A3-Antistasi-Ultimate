@@ -203,7 +203,7 @@ if (_toTable > 0) then {
 		// price change would otherwise sell the new arrivals cheap)
 		(_stock select _slot) set [1, ((_stock select _slot) select 1) max ([_class] call ABZ_fnc_unitPrice)];
 	} else {
-		if (count _stock < 40) then {
+		if (_id isEqualTo ABZ_legacyVendorId || {count _stock < 40}) then {
 			([_class] call ABZ_fnc_itemKind) params ["_kind", "_sub"];
 			private _tier = [[_class, _kind, _sub] call ABZ_fnc_itemPrice] call ABZ_fnc_tierOf;
 			_stock pushBack [_class, [_class] call ABZ_fnc_unitPrice, _tier, _toTable, false, _kind];

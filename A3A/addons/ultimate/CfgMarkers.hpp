@@ -23,6 +23,15 @@ class A3AU_airport_mrk : A3AU_Factory_mrk
     markerClass = "A3AU_MRK";
 };
 
+class A3AU_bazaar_mrk : A3AU_Factory_mrk
+{
+	name = "Bazaar";
+	icon = QPATHTOFOLDER(data\A3AU_bazaar_mrk.paa);
+	texture = QPATHTOFOLDER(data\A3AU_bazaar_mrk.paa);
+	markerClass = "A3AU_MRK";
+	size = 18;
+};
+
 class A3AU_city_mrk : A3AU_Factory_mrk
 {
 	name = "City";

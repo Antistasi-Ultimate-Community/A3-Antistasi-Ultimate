@@ -233,14 +233,7 @@ private _ammoBox = if (garrison getVariable [_marker + "_lootCD", 0] == 0) then 
 	// Otherwise when destroyed, ammoboxes sink 100m underground and are never cleared up
 	_ammoBox addEventHandler ["Killed", { [_this#0] spawn { sleep 10; deleteVehicle (_this#0) } }];
 
-	private _playerCount = count (allPlayers - entities "HeadlessClient_F");
-	private _crateContents = selectRandom [
-		[_ammoBox, 2, _playerCount, 0, 0, 1, (round random [6,8,9]), 0, 0, 0, 0, 0, 0, 0, 0, 1, _playerCount, 0, 0],
-		[_ammoBox, 3, _playerCount, 0, 0, 1, (round random [4,5,7]), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-		[_ammoBox, 4, _playerCount, 0, 0, 1, (round random [6,8,9]), 1, 1, 0, 0, 0, 0, 1, 0, 0, _playerCount, 0, 0]
-	];
-
-	_crateContents call A3A_fnc_fillLootCrate;
+	[_ammoBox] call A3A_fnc_fillLootCrate;
 	[_ammoBox, nil, true] call A3A_Logistics_fnc_addLoadAction;
 	[_ammoBox] remoteExec ["SCRT_fnc_common_addActionMove", [teamPlayer, civilian], _ammoBox];
 

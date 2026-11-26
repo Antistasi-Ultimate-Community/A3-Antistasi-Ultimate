@@ -2,7 +2,10 @@
 // ammo, gear and clothing drawn by rarity, with a magazine that fits most
 // weapons, plus a few sealed bulk crates (one arsenal unlock each).
 // Slot layout: [class, price, tier, qtyLeft, isBulk, kind]
-params [["_entry", [], [[]]]];
+params [
+	["_entry", [], [[]]], // trader entry, [] when filling a loot crate
+	["_qtyScalar", 1, [0]] // quantity scalar for adjusting stock amounts
+];
 if (ABZ_pool isEqualTo []) exitWith { [] };
 // "Rarity gate by war tier" (v1.1.0): the strongest stock waits for the war
 private _gate = call ABZ_fnc_progressGate;	// [highest single/vehicle tier, highest crate tier]
@@ -70,7 +73,7 @@ private _fnc_add = {
 		// ammo is a consumable - stock it three times as deep so a real
 		// resupply run (20-30 mags) is possible in one visit
 		if ((_item select 3) == "ammo") then { _qty = _qty * 3 };
-		_qty = 1 max round (_qty * _fQty);
+		_qty = 1 max round (_qty * _fQty * _qtyScalar);
 	};
 	_stock pushBack [_item select 0, _price, _item select 2, _qty, _bulk, _item select 3];
 	true

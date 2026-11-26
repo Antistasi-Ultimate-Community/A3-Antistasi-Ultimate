@@ -28,7 +28,6 @@
 
 #include "..\script_component.hpp"
 if (!isServer) exitWith {};
-if (EGVAR(ultimate,disableBazaar)) exitWith {};
 
 private _fnc_load = {
     // SERVER: restores traders and sealed crates from the profile save.
@@ -148,8 +147,14 @@ private _fnc_load = {
 };
 
 sleep 5;	// let Antistasi finish stamping its factions/arsenal
+
+// we (may) need these regardless of whether bazaar traders are disabled, for loot crates and the legacy arms dealer
 call ABZ_fnc_buildPool;
 call ABZ_fnc_buildVehPool;
+call ABZ_fnc_legacyVendorRestock;	// initial stock fill for legacy vendor
+
+if (EGVAR(ultimate,disableBazaar)) exitWith {};
+// we don't need the rest of these, if bazaar traders are disabled
 call ABZ_fnc_dealerReach;	// build the Arms Dealer lookup here, scheduled, not mid-restock
 call _fnc_load;
 call ABZ_fnc_publishStalls;

@@ -9,6 +9,6 @@ private _mode = missionNamespace getVariable ["ABZ_markerMode", 1];
 if (_mode == 0 || {_state != "ok"}) exitWith {};
 
 private _m = createMarker [_name, [_center, _pos] select (_mode == 2)];
-_m setMarkerTypeLocal "mil_dot";
+_m setMarkerTypeLocal "A3AU_bazaar_mrk";
 _m setMarkerColorLocal "ColorOrange";
-_m setMarkerText ([format ["Bazaar - %1", _town], format ["Bazaar - %1 (%2)", _vname, _town]] select (_mode == 2));
+//_m setMarkerText ([format ["Bazaar - %1", _town], format ["Bazaar - %1 (%2)", _vname, _town]] select (_mode == 2));
