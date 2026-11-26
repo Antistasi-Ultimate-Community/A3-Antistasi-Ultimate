@@ -1,5 +1,6 @@
 .vscode/
-.github/
+.github/*
+!.github/workflows/
 .hemttout/
 .idea/
 *.biprivatekey
@@ -26,7 +27,7 @@ Antistasi-Ultimate.biprivatekey
 #Ignore Python bytecode files and bytecode-cache folder
 __pycache__/
 build/
-release/
+release*/
 dev/
 Tools/TownGenerator/output.txt
 Tools/csvparser/output/*.txt
@@ -37,6 +38,3 @@ Tools/csvparser/xlsx2csv/*.csv
 Tools/ValidationResults.txt
 Tools/ValidationTemplates.txt
 /Tools/csvparser/output
-
-#Ignore BI A3 files
-A3A/include/a3/

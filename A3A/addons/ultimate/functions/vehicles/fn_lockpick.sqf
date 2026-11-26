@@ -69,7 +69,7 @@ _vehicle setVariable [QGVAR(lockpickAction),
                 _progressDuration,
                 {
                     params ["_args"];
-                    _args params ["_target", "_caller", "_lockpickBreakTime", "_speedrunHint"];
+                    _args params ["_target", "_caller", "_lockpickBreakTime"];
 
                     //Stop the progress bar if the lockpick breaks after certain time
                     private _elapsedTime = _this param [2, 0];
@@ -106,7 +106,7 @@ _vehicle setVariable [QGVAR(lockpickAction),
                         [_target, _caller] call A3U_fnc_lockpickOnFail;
                     };
                 },
-                [_target, _caller, _lockpickBreakTime, _speedrunHint]
+                [_target, _caller, _lockpickBreakTime]
             ] call CBA_fnc_progressBar;
         },
         [_pickRoll],
