@@ -42,9 +42,6 @@ clearWeaponCargoGlobal _crate;
 clearItemCargoGlobal _crate;
 clearBackpackCargoGlobal _crate;
 
-// Build pool if not already built (e.g. if bazaar traders are disabled)
-if (ABZ_pool isEqualTo []) then { [] call ABZ_fnc_buildPool };
-
 //Double max types if the crate is an ammo truck
 private _crateQtyScalar = [1,2] select (typeOf _crate in FactionGet(all,"vehiclesAmmoTrucks"));
 
@@ -55,13 +52,6 @@ private _quantityScalingFactor = if (minWeaps < 0) then {1} else {
 	1 / (1 + _playerCount / 20);
 };
 _crateQtyScalar = _crateQtyScalar * _quantityScalingFactor;
-*/
-
-/* Crate functions:
-addWeaponWithAttachmentsCargoGlobal
-addMagazineCargoGlobal
-addItemCargoGlobal
-addBackpackCargoGlobal
 */
 
 private _stock = [[], _crateQtyScalar] call ABZ_fnc_rollStock;
