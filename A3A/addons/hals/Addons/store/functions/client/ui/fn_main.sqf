@@ -71,7 +71,7 @@ switch (_mode) do {
 		HALs_store_blur ppEffectCommit 0.2;
 		
 		if (isNil "HALs_store_fnc_formatMoney") then {
-			HALs_store_fnc_formatMoney = {format ["%1 %2", _params, A3A_faction_civ get "currencySymbol"]};
+			HALs_store_fnc_formatMoney = {format ["%1 %2", _this, A3A_faction_civ get "currencySymbol"]};
 		};
 
 		// Get all nearby vehicles that we can sell to
