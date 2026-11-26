@@ -10,8 +10,8 @@
 params [["_classes", [], [[]]]];
 if !(call ABZ_fnc_isAntistasi) exitWith { false };
 
-private _ll = missionNamespace getVariable ["cba_disposable_LoadedLaunchers", nil];
-private _nl = missionNamespace getVariable ["cba_disposable_NormalLaunchers", nil];
+private _ll = missionNamespace getVariable ["cba_disposable_LoadedLaunchers", createHashMap];
+private _nl = missionNamespace getVariable ["cba_disposable_NormalLaunchers", createHashMap];
 private _fnc_lookup = {
 	params ["_map", "_key", "_def"];
 	if (isNil "_map") exitWith { _def };
