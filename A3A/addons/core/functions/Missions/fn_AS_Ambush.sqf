@@ -99,8 +99,8 @@ private _roadR = _roads select 0;
 sleep 1;
 
 //creating Task
-private _rebelTaskText = format [
-    localize "STR_A3A_Missions_AS_Ambush_task_desc", 
+private _rebelTaskText = [
+    "STR_A3A_Missions_AS_Ambush_task_desc",
     _originName, 
     _destinationName,
     _departingDisplayTime,
@@ -108,19 +108,24 @@ private _rebelTaskText = format [
     _faction get "name"
 ];
 private _taskId = "AS" + str A3A_taskCount;
-
 [
-    [teamPlayer,civilian],
-    _taskId,
-    [_rebelTaskText, format [localize "STR_A3A_Missions_AS_Ambush_task_header", _faction get "name"], _missionOrigin],
-    (position _roadR),
-    false,
-    0,
-    true,
-    "car",
-    true
-] call BIS_fnc_taskCreate;
-[_taskId, "AS", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
+    "AS",
+    [
+        [teamPlayer,civilian],
+        _taskId,
+        [
+            _rebelTaskText,
+            ["STR_A3A_Missions_AS_Ambush_task_header", _faction get "name"],
+            _missionOrigin
+        ],
+        (position _roadR),
+        false,
+        0,
+        true,
+        "car",
+        true
+    ]
+ ] call A3A_fnc_taskCreate;
 
 
 //spawning escort

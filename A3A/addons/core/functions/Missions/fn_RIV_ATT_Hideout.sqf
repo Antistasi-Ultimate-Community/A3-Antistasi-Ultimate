@@ -73,21 +73,23 @@ if(!(_radGrad > -0.25 && _radGrad < 0.25) || {isOnRoad _hideoutPosition || {surf
 private _taskId = "RIV_ATT" + str A3A_taskCount;
 
 [
-    [teamPlayer,civilian],
-    _taskId,
+    "RIV_ATT",
     [
-        format [localize "STR_RIV_ATT_hideout_text", A3A_faction_riv get "name", ([_marker] call A3A_fnc_localizar), _displayTime],
-        format [localize "STR_RIV_ATT_hideout_header", A3A_faction_riv get "name"],
-        _marker
-    ],
-    _hideoutPosition,
-    false,
-    0,
-    true,
-    "destroy",
-    true
-] call BIS_fnc_taskCreate;
-[_taskId, "RIV_ATT", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
+        [teamPlayer,civilian],
+        _taskId,
+        [
+            ["STR_RIV_ATT_hideout_text", A3A_faction_riv get "name", ([_marker] call A3A_fnc_localizar), _displayTime],
+            ["STR_RIV_ATT_hideout_header", A3A_faction_riv get "name"],
+            _marker
+        ],
+        _hideoutPosition,
+        false,
+        0,
+        true,
+        "destroy",
+        true
+    ]
+] call A3A_fnc_taskCreate;
 
 waitUntil {
     sleep 1;

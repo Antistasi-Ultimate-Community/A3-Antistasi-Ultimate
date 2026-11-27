@@ -79,21 +79,23 @@ _worldName = [] call SCRT_fnc_misc_getWorldName;
 private _taskId = "TRADER" + str A3A_taskCount;
 
 [
-    [teamPlayer,civilian],
-    _taskId,
+    "TRADER",
     [
-        format [localize "STR_trader_quest_description", FactionGet(occ,"name"), _worldName, name traderX, FactionGet(occ,"name")],
-        localize "STR_trader_quest_header",
-        _traderMarkerVague
-    ],
-    _markerVaguePosition,
-    false,
-    0,
-    true,
-    "meet",
-    true
-] call BIS_fnc_taskCreate;
-[_taskId, "TRADER", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
+        [teamPlayer,civilian],
+        _taskId,
+        [
+            ["STR_trader_quest_description", FactionGet(occ,"name"), _worldName, name traderX, FactionGet(occ,"name")],
+            ["STR_trader_quest_header"],
+            _traderMarkerVague
+        ],
+        _markerVaguePosition,
+        false,
+        0,
+        true,
+        "meet",
+        true
+    ]
+] call A3A_fnc_taskCreate;
 
 private _trigger = createTrigger ["EmptyDetector", _traderPosition];
 _trigger setTriggerArea [30, 30, 0, false];

@@ -27,8 +27,24 @@ _limit params ["_dateLimitNum", "_displayTime"];
 
 private _nameDest = [_markerX] call A3A_fnc_localizar;
 private _taskId = "SUPP" + str A3A_taskCount;
-[[teamPlayer,civilian],_taskId,[format [localize "STR_A3A_Missions_SUPP_Supplies_task_desc",_nameDest,_displayTime],format [localize "STR_A3A_Missions_SUPP_Supplies_task_header", _nameDest],_markerX],_positionX,false,0,true,"Heal",true] call BIS_fnc_taskCreate;
-[_taskId, "SUPP", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
+[
+	"SUPP",
+	[
+		[teamPlayer,civilian],
+		_taskId,
+		[
+			["STR_A3A_Missions_SUPP_Supplies_task_desc",_nameDest,_displayTime],
+			["STR_A3A_Missions_SUPP_Supplies_task_header", _nameDest],
+			_markerX
+		],
+		_positionX,
+		false,
+		0,
+		true,
+		"Heal",
+		true
+	]
+] call A3A_fnc_taskCreate;
 
 //Creating the box
 private _pos = (getMarkerPos respawnTeamPlayer) findEmptyPosition [1,50,"Land_FoodSacks_01_cargo_brown_F"];

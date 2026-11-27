@@ -24,22 +24,23 @@ forcedSpawn pushBack "Synd_HQ"; publicVariable "forcedSpawn";
 
 private _taskId = "DEF_HQ" + str A3A_taskCount;
 [
-    [teamPlayer,civilian],
-    _taskId,
+    "DEF_HQ",
     [
-        localize "STR_tasks_attackHq_desc",
-        localize "STR_tasks_attackHq_header",
-        respawnTeamPlayer
-    ],
-    _targPos,
-    true,
-    10,
-    true,
-    "Defend",
-    true
-] call BIS_fnc_taskCreate;
-
-[_taskId, "DEF_HQ", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
+        [teamPlayer,civilian],
+        _taskId,
+        [
+            ["STR_tasks_attackHq_desc"],
+            ["STR_tasks_attackHq_header"],
+            respawnTeamPlayer
+        ],
+        _targPos,
+        true,
+        10,
+        true,
+        "Defend",
+        true
+    ]
+] call A3A_fnc_taskCreate;
 
 
 // Send in a UAV. Add half a vehicle if they're unavailable

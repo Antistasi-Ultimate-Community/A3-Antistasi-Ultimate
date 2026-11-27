@@ -38,8 +38,24 @@ private _size = [_mrkDest] call A3A_fnc_sizeMarker;
 
 private _nameDest = [_mrkDest] call A3A_fnc_localizar;
 private _taskId = "invaderPunish" + str A3A_taskCount;
-[[teamPlayer,civilian,Occupants],_taskId,[format [localize "STR_invaderPunish_desc",_nameDest,FactionGet(inv,"name")],format [localize "STR_invaderPunish_task",FactionGet(inv,"name")],_mrkDest],_posDest,false,0,true,"Defend",true] call BIS_fnc_taskCreate;
-[_taskId, "invaderPunish", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
+[
+    "invaderPunish",
+    [
+        [teamPlayer,civilian,Occupants],
+        _taskId,
+        [
+            ["STR_invaderPunish_desc",_nameDest,FactionGet(inv,"name")],
+            ["STR_invaderPunish_task",FactionGet(inv,"name")],
+            _mrkDest
+        ],
+        _posDest,
+        false,
+        0,
+        true,
+        "Defend",
+        true
+    ]
+] call A3A_fnc_taskCreate;
 
 
 if (isNil "_delay") then {
