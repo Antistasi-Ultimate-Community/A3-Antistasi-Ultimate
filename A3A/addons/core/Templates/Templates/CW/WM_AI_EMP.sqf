@@ -1,3 +1,5 @@
+#pragma hemtt ignore_variables ["_fnc_saveNames","_fnc_createLoadoutData","_fnc_copyLoadoutData","_fnc_generateAndSaveUnitsToTemplate","_fnc_saveToTemplate"]
+
 //////////////////////////
 //   Side Information   //
 //////////////////////////
@@ -7,15 +9,13 @@
 ["name", "Empire"] call _fnc_saveToTemplate;
 ["spawnMarkerName", "Imperial support corridor"] call _fnc_saveToTemplate;
 
-["flag", "ls_flag_imp"] call _fnc_saveToTemplate;
+["flag", "ls_flag_imperial"] call _fnc_saveToTemplate;
 ["flagTexture", QPATHTOFOLDER(Templates\Templates\CW\flag_Empire.paa)] call _fnc_saveToTemplate; 	
 ["flagMarkerType", "imperial_marker_white"] call _fnc_saveToTemplate;
 
 //////////////////////////
 //       Vehicles       //
 //////////////////////////
-
-["vehiclesDropPod", ["3AS_Rho_Crate_IMP_Transport"]] call _fnc_saveToTemplate; 
 
 ["ammobox", "B_supplyCrate_F"] call _fnc_saveToTemplate;     //Don't touch or you die a sad and lonely death!
 ["surrenderCrate", "Box_IND_Wps_F"] call _fnc_saveToTemplate; //Changeing this from default will require you to define logistics attachement offset for the box type

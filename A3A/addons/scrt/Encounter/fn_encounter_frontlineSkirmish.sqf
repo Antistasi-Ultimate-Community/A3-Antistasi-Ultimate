@@ -30,7 +30,7 @@ private _faction = Faction(_side);
 private _faction2 = Faction(_side2);
 private _FrontlineOutpostPosition = getMarkerPos _FrontlineOutpost;
 
-Info_2("Frontline outpost %1 at %2 will be used as center of the event.", _FrontlineOutpost, str _FrontlineOutpostPosition);
+Info_2("Frontline outpost %1 at %2 will be used as center of the event.",_FrontlineOutpost,str _FrontlineOutpostPosition);
 
 private _specOpsArray = if (_difficult) then {selectRandom (_faction get "groupSpecOpsRandom")} else {selectRandom ([_faction, "groupsTierSquads"] call SCRT_fnc_unit_flattenTier)};     ///
 private _specOpsArray2 = if (_difficult2) then {selectRandom (_faction2 get "groupSpecOpsRandom")} else {selectRandom ([_faction2, "groupsTierSquads"] call SCRT_fnc_unit_flattenTier)}; ///maybe move this into fuction and roll every time?
@@ -66,6 +66,7 @@ private _fnc_spawngroups = {
 			_UAVtype = selectRandom (_faction get "uavsPortable");
 			_uav = createVehicle [_UAVtype, _skirmishpositionActuall, [], 0, "FLY"];
 			[_side, _uav] call A3A_fnc_createVehicleCrew;
+			[_uav, _side] call A3A_fnc_AIVEHinit;
 			_vehiclesArray pushBack _uav;
 			_groupUAV = group (crew _uav select 1);
 			{[_x] joinSilent _InfGroup} forEach units _groupUAV;

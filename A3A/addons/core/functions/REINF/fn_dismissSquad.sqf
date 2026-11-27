@@ -10,7 +10,7 @@ private _resourcesFIA = 0;
 private _leave = false;
 
 {
-	if ((groupID _x) in ["MineF", "Watch", "Post", "Road"]
+	if ((groupId _x) in ["MineF", "Watch", "Post", "Road"]
 		|| { isPlayer (leader _x)
 		|| { (units _x) findIf { _x == petros } != -1 }})
 	exitWith { _leave = true; };
@@ -64,13 +64,18 @@ private _assignedVehicles =	[];
 {
 	private _veh = _x;
 	if !(typeOf _veh in FactionGet(all,"vehiclesReb")) then { continue };
-	_resourcesFIA = _resourcesFIA + ([typeOf _veh] call A3A_fnc_vehiclePrice);
+	[_veh, clientOwner, call HR_GRG_dLock, player] remoteExecCall ["HR_GRG_fnc_addVehicle",2];
 	{
 		if !(typeOf _x in FactionGet(all,"vehiclesReb")) then { continue };
-		_resourcesFIA = _resourcesFIA + ([typeOf _x] call A3A_fnc_vehiclePrice);
+		_resourcesFIA = _resourcesFIA + (([typeOf _x] call A3A_fnc_vehiclePrice) / 2);
 		deleteVehicle _x;
 	} forEach attachedObjects _veh;
-	deleteVehicle _veh;
+
+	uiSleep 1; // If vehicle is still alive (hasn't been garaged), just sell it
+	if (alive _veh) then {
+		_resourcesFIA = _resourcesFIA + (([typeOf _x] call A3A_fnc_vehiclePrice) / 2);
+		deleteVehicle _veh;
+	};
 } forEach _assignedVehicles;
 
 _nul = [_hr,_resourcesFIA] remoteExec ["A3A_fnc_resourcesFIA",2];

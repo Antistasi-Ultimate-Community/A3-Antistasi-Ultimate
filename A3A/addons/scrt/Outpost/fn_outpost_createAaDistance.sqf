@@ -29,7 +29,7 @@ private _veh = objNull;
 
 //overriden static position and direction
 private _staticPositionInfo = staticPositions getVariable [_markerX, []];
-if (!(_staticPositionInfo isEqualTo [])) then {
+if (_staticPositionInfo isNotEqualTo []) then {
     private _staticPosition = _staticPositionInfo select 0;
     private _staticDirection = _staticPositionInfo select 1;
     _veh = createVehicle [_aaClass, _positionX, [], 0, "CAN_COLLIDE"];
@@ -53,7 +53,7 @@ private _crewManIndex = _groupXUnits findIf  {(_x getVariable "unitType") == (A3
 if (_crewManIndex != -1) then {
     private _crewMan = _groupXUnits select _crewManIndex;
     _crewMan moveInGunner _veh;
-    [_crewMan, 300] spawn SCRT_fnc_common_scanHorizon;
+    [_crewMan, EGVAR(core,scanHorizonHeight)] spawn SCRT_fnc_common_scanHorizon;
 };
 
 _groupX setBehaviour "AWARE";
@@ -61,7 +61,7 @@ _groupX setCombatMode "YELLOW";
 
 [_veh, teamPlayer] call A3A_fnc_AIVEHinit;
 
-["locationSpawned", [_markerX, "RebelAaEmpl", true]] call EFUNC(Events,triggerEvent);
+[CBA_EVENT_SERVER_SPAWN_LOCATION, [_markerX, "RebelAaEmpl", true]] call FUNCMAIN(triggerLocalEvent);
 
 waitUntil {
 	sleep 1; 
@@ -93,4 +93,6 @@ deleteGroup _groupX;
 	deleteVehicle _x;
 } forEach _props;
 
-["locationSpawned", [_markerX, "RebelAaEmpl", false]] call EFUNC(Events,triggerEvent);
+[CBA_EVENT_SERVER_SPAWN_LOCATION, [_markerX, "RebelAaEmpl", false]] call FUNCMAIN(triggerLocalEvent);
+
+nil;

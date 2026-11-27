@@ -1,3 +1,5 @@
+#pragma hemtt ignore_variables ["_fnc_saveNames","_fnc_createLoadoutData","_fnc_copyLoadoutData","_fnc_generateAndSaveUnitsToTemplate","_fnc_saveToTemplate"]
+
 //////////////////////////
 //   Side Information   //
 //////////////////////////
@@ -12,6 +14,7 @@
 //////////////////////////
 //       Vehicles       //
 //////////////////////////
+["attributeLowAir", true] call _fnc_saveToTemplate;
 
 ["ammobox", "B_supplyCrate_F"] call _fnc_saveToTemplate;
 ["surrenderCrate", "Box_IND_Wps_F"] call _fnc_saveToTemplate; //Changeing this from default will require you to define logistics attachement offset for the box type
@@ -38,7 +41,7 @@
 ["vehiclesGunBoats", []] call _fnc_saveToTemplate;
 ["vehiclesAmphibious", ["Flex_CUP_NLAF_BTR80"]] call _fnc_saveToTemplate;
 
-["vehiclesPlanesCAS", []] call _fnc_saveToTemplate;
+["vehiclesPlanesCAS", ["Flex_CUP_BOC_Su25_Dyn"]] call _fnc_saveToTemplate;
 ["vehiclesPlanesAA", []] call _fnc_saveToTemplate;
 ["vehiclesPlanesTransport", ["Flex_CUP_NLAF_C47"]] call _fnc_saveToTemplate;
 

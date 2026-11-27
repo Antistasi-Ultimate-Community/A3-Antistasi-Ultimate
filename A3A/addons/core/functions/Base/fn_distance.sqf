@@ -56,7 +56,7 @@ private _processOccupantMarker = {
             // disable simulation for all marker units
             {
                 if (_x getVariable ["markerX", ""] == _marker
-                    && { vehicle _x == _x })
+                    && { isNull objectParent _x })
                 then { _x enableSimulationGlobal false; };
             } forEach allUnits;
         };
@@ -77,9 +77,9 @@ private _processOccupantMarker = {
                 // enable simulation for all marker units
                 {
                     if (_x getVariable ["markerX", ""] == _marker
-                        && { vehicle _x == _x })
+                        && { isNull objectParent _x })
                     then { _x enableSimulationGlobal true; };
-                } forEach allunits;
+                } forEach allUnits;
             }
             else
             {
@@ -175,7 +175,7 @@ private _processFIAMarker = {
             // disable simulation for all marker units
             {
                 if (_x getVariable ["markerX", ""] == _marker
-                    && { vehicle _x == _x }) then { _x enableSimulationGlobal false; };
+                    && { isNull objectParent _x }) then { _x enableSimulationGlobal false; };
             } forEach allUnits;
         };
 
@@ -197,8 +197,8 @@ private _processFIAMarker = {
                 // enable simulation for all marker units
                 {
                     if (_x getVariable ["markerX", ""] == _marker && {
-                        vehicle _x == _x }) then { _x enableSimulationGlobal true; };
-                } forEach allunits;
+                        isNull objectParent _x }) then { _x enableSimulationGlobal true; };
+                } forEach allUnits;
             }
             else
             {
@@ -276,7 +276,7 @@ private _processInvaderMarker = {
             // disable simulation for all marker units
             {
                 if (_x getVariable ["markerX", ""] == _marker
-                    && { vehicle _x == _x }) then { _x enableSimulationGlobal false; };
+                    && { isNull objectParent _x }) then { _x enableSimulationGlobal false; };
             } forEach allUnits;
         };
 
@@ -296,8 +296,8 @@ private _processInvaderMarker = {
                 // enable simulation for all marker units
                 {
                     if (_x getVariable ["markerX", ""] == _marker
-                        && { vehicle _x == _x }) then { _x enableSimulationGlobal true; };
-                } forEach allunits;
+                        && { isNull objectParent _x }) then { _x enableSimulationGlobal true; };
+                } forEach allUnits;
             }
             else
             {
@@ -412,9 +412,9 @@ private _processCityCivMarker = {
 /*                                    start                                   */
 /* -------------------------------------------------------------------------- */
 
-if !(isServer) exitwith {};
+if !(isServer) exitWith {};
 
-waitUntil { sleep 0.1; if !(isnil "theBoss") exitWith { true }; false };
+waitUntil { sleep 0.1; if !(isNil "theBoss") exitWith { true }; false };
 
 // Prepare spawner values for civ part of city spawning
 { spawner setVariable [_x + "_civ", 2] } forEach citiesX;
@@ -427,6 +427,7 @@ private _teamplayer = [];
 private _occupants = [];
 private _invaders = [];
 private _players = [];
+private _playerVehicles = [];
 
 private ["_markers", "_marker", "_position"];
 
@@ -456,10 +457,12 @@ do
         // Players array is used to spawn civilians in cities and rebel garrisons, so ignore remote controlled and airborne units
         // Players array is used to spawn civilians in cities and rebel garrisons, so ignore airborne units and translate remote-control
         _players = [];
+        _playerVehicles = [];
         {
             private _rp = _x getVariable ["owner", _x];         // real player unit in remote-control case
             private _veh = vehicle _rp;
-            if (_rp != effectiveCommander _veh) then { continue };
+            if (_veh in _playerVehicles) then { continue };
+            if (_veh isNotEqualTo _rp) then { _playerVehicles pushBackUnique _veh};
             if (_veh == _rp or {!(_veh isKindOf "Air" and speed _veh > 50)}) then { _players pushBack _rp };
         } forEach (allPlayers - entities "HeadlessClient_F");
     };
@@ -468,7 +471,7 @@ do
         sleep _time;
 
         _marker = _x;
-        _position = getmarkerPos (_marker);
+        _position = getMarkerPos (_marker);
 
         switch (sidesX getVariable [_marker, sideUnknown])
         do

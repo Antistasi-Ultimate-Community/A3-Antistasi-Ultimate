@@ -7,11 +7,14 @@ if (isNil "logLevel") then { logLevel = 2; A3A_logDebugConsole = 1 };
 
 Info("initClient started");
 A3A_clientVersion = QUOTE(VERSION);
-Info_1("Client version: %1", QUOTE(VERSION_FULL));
+Info_1("Client version: %1",QUOTE(VERSION_FULL));
 
 // *************************** Client pre-setup init *******************************
 
 if (call A3A_fnc_modBlacklist) exitWith {};
+
+private _enableInitMessages = profileNamespace getVariable ["A3U_setting_enableInitMessages", true];
+private _enableIntroAnimation = profileNamespace getVariable ["A3U_setting_enableIntroAnimation", true];
 
 player forceAddUniform "U_C_WorkerCoveralls";
 
@@ -27,8 +30,8 @@ hasHeadlessClients = false;     //check if has headless clients
 //enables Discord Rich Presence if game client uses English language and mod is turned on
 private _richPresenceFunc = missionNamespace getVariable "DiscordRichPresence_fnc_update";
 private _isEnglish = ((localize "STR_antistasi_dialogs_generic_button_yes_text") isEqualTo "Yes");
-isDiscordRichPresenceActive = if (isNil "_richPresenceFunc") then {false} else {true};
-Info_1("Discord Rich Presence: %1", str isDiscordRichPresenceActive);
+isDiscordRichPresenceActive = !(isNil "_richPresenceFunc");
+Info_1("Discord Rich Presence: %1",str isDiscordRichPresenceActive);
 
 //Disables rabbits and snakes, because they cause the log to be filled with "20:06:39 Ref to nonnetwork object Agent 0xf3b4a0c0"
 //Can re-enable them if we find the source of the bug.
@@ -55,8 +58,8 @@ if !(isServer) then {
         call A3A_fnc_addNodesNearMarkers;
     };
 
-    if ((isClass (configfile >> "CBA_Extended_EventHandlers")) && (
-        isClass (configfile >> "CfgPatches" >> "lambs_danger"))) then {
+    if ((isClass (configFile >> "CBA_Extended_EventHandlers")) && (
+        isClass (configFile >> "CfgPatches" >> "lambs_danger"))) then {
         // disable lambs danger fsm entrypoint
         ["CAManBase", "InitPost", {
             params ["_unit"];
@@ -163,7 +166,8 @@ private _colorInvaders = Invaders call BIS_fnc_sideColor;
 	_x set [3, 0.33]
 } forEach [_colourTeamPlayer, _colorInvaders];
 
-private _introShot = [
+private _introShot = scriptNull;
+if (_enableIntroAnimation) then { _introShot = [
 	(position petros), // Target position
 	format ["%1, %2 %3", worldName, (localize (rank player)), name player], // SITREP text
 	50, //  altitude
@@ -174,7 +178,7 @@ private _introShot = [
 		["\a3\ui_f\data\map\markers\Nato\o_inf.paa", _colourTeamPlayer, markerPos "insertMrk", 1, 1, 0, "Insertion Point", 0],
 		["\a3\ui_f\data\map\markers\Nato\o_inf.paa", _colorInvaders, markerPos "towerBaseMrk", 1, 1, 0, "Radio Towers", 0]
 	]
-] spawn BIS_fnc_establishingShot;
+] spawn BIS_fnc_establishingShot };
 
 if (playerMarkersEnabled) then {
     [] spawn A3A_fnc_playerMarkers;
@@ -190,7 +194,7 @@ if (!A3A_hasACE) then {
 };
 
 
-stragglers = creategroup teamPlayer;
+stragglers = createGroup teamPlayer;
 (group player) enableAttack false;
 
 if (isNil "ace_noradio_enabled" or {!ace_noradio_enabled}) then {
@@ -199,7 +203,7 @@ if (isNil "ace_noradio_enabled" or {!ace_noradio_enabled}) then {
 //Give the player the base loadout.
 [player] call A3A_fnc_dress;
 
-player setvariable ["compromised",0];
+player setVariable ["compromised",0];
 player addEventHandler ["FiredMan", {
     _player = _this select 0;
     if (captive _player) then {
@@ -211,12 +215,12 @@ player addEventHandler ["FiredMan", {
         else {
             _city = [citiesX,_player] call BIS_fnc_nearestPosition;
             _size = [_city] call A3A_fnc_sizeMarker;
-            _dataX = server getVariable _city;
+            _dataX = A3A_townData get _city;
             if (random 100 < _dataX select 2) then {
                 if (_player distance getMarkerPos _city < _size * 1.5) then {
                     [_player,false] remoteExec ["setCaptive",0,_player];
                     _player setCaptive false;
-                    if (vehicle _player != _player) then {
+                    if (!isNull objectParent _player) then {
                         {if (isPlayer _x) then {[_x,false] remoteExec ["setCaptive",0,_x]; _x setCaptive false}} forEach ((assignedCargo (vehicle _player)) + (crew (vehicle _player)) - [player]);
                     };
                 };
@@ -240,7 +244,7 @@ player addEventHandler ["InventoryOpened", {
             else {
                 _city = [citiesX,_playerX] call BIS_fnc_nearestPosition;
                 _size = [_city] call A3A_fnc_sizeMarker;
-                _dataX = server getVariable _city;
+                _dataX = A3A_townData get _city;
                 if (random 100 < _dataX select 2) then {
                     if (_playerX distance getMarkerPos _city < _size * 1.5) then {
                         [_playerX,false] remoteExec ["setCaptive",0,_playerX];
@@ -263,7 +267,7 @@ player addEventHandler ["HandleHeal", {
         else {
             _city = [citiesX,_player] call BIS_fnc_nearestPosition;
             _size = [_city] call A3A_fnc_sizeMarker;
-            _dataX = server getVariable _city;
+            _dataX = A3A_townData get _city;
             if (random 100 < _dataX select 2) then {
                 if (_player distance getMarkerPos _city < _size * 1.5) then {
                     [_player,false] remoteExec ["setCaptive",0,_player];
@@ -284,10 +288,7 @@ player addEventHandler ["WeaponAssembled", {
     private _veh = _this select 1;
     [_veh, teamPlayer] call A3A_fnc_AIVEHinit;		// will flip/capture if already initialized
     if (_veh isKindOf "StaticWeapon") then {
-        if (not(_veh in staticsToSave)) then {
-            staticsToSave pushBack _veh;
-            publicVariable "staticsToSave";
-        };
+        [_veh] call A3A_fnc_addToStaticsToSave;
         _markersX = markersX select {sidesX getVariable [_x,sideUnknown] == teamPlayer};
         _pos = position _veh;
         [_veh] call A3A_Logistics_fnc_addLoadAction;
@@ -296,8 +297,9 @@ player addEventHandler ["WeaponAssembled", {
 }];
 
 player addEventHandler ["WeaponDisassembled", {
-	[_this select 1] remoteExec ["A3A_fnc_postmortem", 2];
-	[_this select 2] remoteExec ["A3A_fnc_postmortem", 2];
+    params["","_primaryBag","_secondaryBag"];
+    [_primaryBag, true] remoteExecCall[QFUNCMAIN(despawnQueueEntity), 2];
+    [_secondaryBag, true] remoteExecCall[QFUNCMAIN(despawnQueueEntity), 2];
 }];
 
 if (areRivalsDiscovered) then {
@@ -335,11 +337,10 @@ player addEventHandler ["GetInMan", {
 
 private _blackMarketStock = call A3U_fnc_grabBlackMarketVehicles;
 
-if ((_blackMarketStock select {(_x select 2) isEqualTo "ARTILLERY"}) isNotEqualTo []) then {
+if ((_blackMarketStock get "ARTILLERY") isNotEqualTo createHashMap) then {
 	player addEventHandler ["GetInMan", {
 		params ["_unit", "_role", "_vehicle"];
-		private _vehType = typeOf _vehicle;
-		private _artyTypes = _blackMarketStock select {(_x select 2) isEqualTo "ARTILLERY"};
+		private _artyTypes = keys ((call A3U_fnc_grabBlackMarketVehicles) get "ARTILLERY");
 
 		if ((typeOf _vehicle) in _artyTypes) then {
 			enableEngineArtillery false;
@@ -348,7 +349,7 @@ if ((_blackMarketStock select {(_x select 2) isEqualTo "ARTILLERY"}) isNotEqualT
 
 	player addEventHandler ["GetOutMan", {
 		params ["_unit", "_role", "_vehicle"];
-        private _artyTypes = _blackMarketStock select {(_x select 2) isEqualTo "ARTILLERY"};
+        private _artyTypes = keys ((call A3U_fnc_grabBlackMarketVehicles) get "ARTILLERY");
 
 		if ((typeOf _vehicle) in _artyTypes) then {
 			enableEngineArtillery true;
@@ -360,15 +361,15 @@ if(isDiscordRichPresenceActive) then {
 	player addEventHandler ["GetInMan", {
 		params ["_unit", "_role", "_vehicle", "_turret"];
 
-		private _vehicleName = getText (configFile >> "CfgVehicles" >> typeOf _vehicle >> "displayName");
+		private _vehicleName = getText (configOf _vehicle >> "displayName");
 
 		switch (true) do {
 			case (_vehicle isKindOf "StaticWeapon"): {
 				[["UpdateState", format ["Operates %1", _vehicleName]]] call SCRT_fnc_misc_updateRichPresence;
 			};
 			case (_vehicle isKindOf "Air"): {
-				private _isDriver = if ((driver (vehicle player)) isEqualTo player) then {true} else {false};
-				private _isGunner = if ((gunner (vehicle player)) isEqualTo player) then {true} else {false};
+				private _isDriver = (driver (vehicle player)) isEqualTo player;
+				private _isGunner = (gunner (vehicle player)) isEqualTo player;
 
 				switch (true) do {
 					case (_isDriver): {
@@ -383,8 +384,8 @@ if(isDiscordRichPresenceActive) then {
 				};
 			};
 			default {
-				private _isDriver = if ((driver (vehicle player)) isEqualTo player) then {true} else {false};
-				private _isGunner = if ((gunner (vehicle player)) isEqualTo player) then {true} else {false};
+				private _isDriver = (driver (vehicle player)) isEqualTo player;
+				private _isGunner = (gunner (vehicle player)) isEqualTo player;
 
 				switch (true) do {
 					case (_isDriver): {
@@ -442,14 +443,14 @@ if (membershipEnabled) then {
     };
     if (serverCommandAvailable "#logout") then {
         _isMember = true;
-        [localize "STR_A3A_initClient_general_info", localize "STR_A3A_initClient_server_admin"] call A3A_fnc_customHint;
+        if (_enableInitMessages) then { [localize "STR_A3A_initClient_general_info", localize "STR_A3A_initClient_server_admin"] call A3A_fnc_customHint };
     };
 
     if (_isMember) then {
         membersX pushBack (getPlayerUID player);				// potential race condition, but there's only one admin so chance of hitting this is low
         publicVariable "membersX";
     } else {
-        [localize "STR_A3A_initClient_general_info", localize "STR_A3A_initClient_server_guest"] call A3A_fnc_customHint;
+        if (_enableInitMessages) then { [localize "STR_A3A_initClient_general_info", localize "STR_A3A_initClient_server_guest"] call A3A_fnc_customHint };
     };
 };
 
@@ -462,7 +463,7 @@ if !(isPlayer leader group player) then {
 
 waitUntil { scriptDone _introshot };
 
-cutText ["","BLACK IN", 3];
+if (_enableIntroAnimation) then { cutText ["","BLACK IN", 3] };
 
 [] remoteExecCall ["A3A_fnc_assignBossIfNone", 2];
 
@@ -477,13 +478,13 @@ if (isServer || (!isNil "theBoss" && {player isEqualTo theBoss}) || (call BIS_fn
     private _loadedTemplateInfoXML = A3A_loadedTemplateInfoXML apply {[true,_x#0,_x#1]};	// Remove and simplify when the list above is empty and can be deleted.
     _modsAndLoadText append _loadedTemplateInfoXML;
 
-    if (count _modsAndLoadText isEqualTo 0) exitWith {};
+    if (!_enableInitMessages || {count _modsAndLoadText isEqualTo 0}) exitWith {};
     private _textXML = "<t align='left'>" + ((_modsAndLoadText apply { "<t color='#f0d498'>" + _x#1 + ":</t>" + _x#2 }) joinString "<br/>") + "</t>";
     [localize "STR_A3A_initClient_mods_header",_textXML] call A3A_fnc_customHint;
 };
 
 // uh, what's this for exactly? What are we doing that needs the main display?
-waituntil {!isnull (finddisplay 46)};
+waitUntil {!isNull (findDisplay 46)};
 GVAR(keys_battleMenu) = false; //initilize key flags to false
 
 
@@ -506,7 +507,6 @@ if (A3A_hasACE) then
 
 boxX allowDamage false;			// hmm...
 boxX addAction [format ["<img image='\a3\ui_f\data\igui\cfg\simpletasks\types\container_ca.paa' size='1.6' shadow=2 /> <t>%1</t>", localize "STR_antistasi_actions_transfer_to_arsenal"], {[] spawn A3A_fnc_empty;}, 3];
-boxX addAction [localize "STR_antistasi_actions_move_this_asset", A3A_fnc_moveHQObject,nil,0,false,true,"","(_this == theBoss)", 4];
 if (A3A_hasACE) then { [boxX, boxX] call ace_common_fnc_claim;};	//Disables ALL Ace Interactions
 flagX allowDamage false;
 if(playerRecruitAI isEqualTo 1) then 
@@ -514,7 +514,6 @@ if(playerRecruitAI isEqualTo 1) then
     flagX addAction [format ["<img image='\A3\ui_f\data\igui\cfg\simpleTasks\types\meet_ca.paa' size='1.6' shadow=2 /> <t>%1</t>", localize "STR_antistasi_actions_recruit_units"], {if ([getPosATL player] call A3A_fnc_enemyNearCheck) then {["Recruit Unit", "You cannot recruit units while there are enemies near you."] call A3A_fnc_customHint;} else { [] spawn A3A_fnc_unit_recruit; }},nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull]) and (side (group _this) == teamPlayer)"];
 };
 flagX addAction [format ["<img image='\A3\ui_f\data\igui\cfg\simpleTasks\types\run_ca.paa' size='1.6' shadow=2 /> <t>%1</t>", localize "STR_antistasi_actions_rally_point_travel"], {[] spawn SCRT_fnc_rally_travelToRallyPoint},nil,0,false,true,"","(isPlayer _this) && (_this == _this getVariable ['owner',objNull]) && (side (group _this) == teamPlayer) && (!isNil 'isRallyPointPlaced' && {isRallyPointPlaced})",4];
-flagX addAction [localize "STR_antistasi_actions_move_this_asset", A3A_fnc_moveHQObject,nil,0,false,true,"","(_this == theBoss)", 4];
 
 //Adds a light to the flag
 private _flagLight = "#lightpoint" createVehicle (getPos flagX);
@@ -536,9 +535,7 @@ vehicleBox addAction [format ["<img image='a3\ui_f\data\igui\cfg\simpletasks\typ
         createDialog "A3A_BuyVehicleDialog";
     }
 },nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull]) and (side (group _this) == teamPlayer)", 4];
-vehicleBox addAction [localize "STR_antistasi_actions_move_this_asset", A3A_fnc_moveHQObject,nil,0,false,true,"","(_this == theBoss)", 4];
 
-call A3A_fnc_dropObject;
 mapX allowDamage false;
 mapX addAction [format ["<img image='\A3\ui_f\data\igui\cfg\simpleTasks\types\map_ca.paa' size='1.6' shadow=2 /> <t>%1</t>", localize "STR_antistasi_actions_map_info"], A3A_fnc_cityinfo,nil,0,false,true,"","(isPlayer _this) and (_this == _this getVariable ['owner',objNull]) && (side (group _this) == teamPlayer)", 4];
 
@@ -579,9 +576,13 @@ mapX addAction [
 	4
 ];
 mapX addAction [localize "STR_antistasi_actions_ai_load_info", { [] remoteExec ["A3A_fnc_AILoadInfo",2];},nil,0,false,true,"","((_this == theBoss) || (serverCommandAvailable ""#logout""))"];
-mapX addAction [localize "STR_antistasi_actions_move_this_asset", A3A_fnc_moveHQObject,nil,0,false,true,"","(_this == theBoss)", 4];
 
-[] spawn A3A_fnc_unitTraits;
+{
+    _x addAction [localize "STR_antistasi_actions_move_this_asset", A3A_fnc_carryItem, 
+        nil,0,false,true,"", "(_this == theBoss) and (isNull objectParent _this) and !(call A3A_fnc_isCarrying)", 4];
+} forEach [boxX, flagX, vehicleBox, mapX];
+
+[] call A3A_fnc_unitTraits;
 
 // Get list of buildable objects, has map (and template?) dependency
 call A3A_fnc_initBuildableObjects;
@@ -674,3 +675,26 @@ if (staminaEnabled isEqualTo false) then {
 
 private _newWeaponSway = swayEnabled / 100;
 player setCustomAimCoef _newWeaponSway;
+
+addMissionEventHandler ["Map", A3U_fnc_mapHoverEH];
+
+[markersX + milAdministrationsX + mrkAntennas] call A3U_fnc_mrkUpdateBulk;
+
+// Server requests player to provide their additional save data.
+// We only get a UUID which the server expects to be written to its mission
+// namespace with the relevant data as a notification mechanism.
+[CBA_EVENT_SERVER_PLAYER_SAVE, {
+    if !assert(params[
+        ["_uuid", nil, [""]]
+    ]) exitWith {};
+
+    private _pluginsData = createHashMap;
+
+    [CBA_EVENT_CLIENT_PLAYER_SAVE, [_pluginsData]] call FUNCMAIN(triggerLocalEvent);
+
+    missionNamespace setVariable[_uuid, _pluginsData, 2];
+}] call FUNCMAIN(addEventHandler);
+
+// Notify plugins that client init is done, so they can do any post-init setup
+// that needs to be done after A3U considers itself fully spun up.
+[CBA_EVENT_CLIENT_INIT_DONE, []] call FUNCMAIN(triggerLocalEvent);

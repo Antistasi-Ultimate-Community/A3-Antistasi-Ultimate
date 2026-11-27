@@ -1,3 +1,6 @@
+#include "..\..\script_component.hpp"
+FIX_LINE_NUMBERS()
+
 //Attempt to figure out our current ace medical target;
 if (A3A_hasACE) then {
 currentAceTarget = objNull;

@@ -1,3 +1,5 @@
+#pragma hemtt ignore_variables ["_fnc_saveNames","_fnc_createLoadoutData","_fnc_copyLoadoutData","_fnc_generateAndSaveUnitsToTemplate","_fnc_saveToTemplate"]
+
 ///////////////////////////
 //   Rebel Information   //
 ///////////////////////////
@@ -98,12 +100,12 @@ _rebUniforms = [
 
 private _dlcUniforms = [];
 
-if (allowDLCEnoch) then {_dlcUniforms append [
+if ("enoch" in A3A_enabledDLC) then {_dlcUniforms append [
     "U_I_L_Uniform_01_camo_F"
 ];
 };
 
-if (allowDLCExpansion) then {_dlcUniforms append [
+if ("expansion" in A3A_enabledDLC) then {_dlcUniforms append [
     "U_I_C_Soldier_Bandit_4_F",
     "U_I_C_Soldier_Bandit_1_F",
     "U_I_C_Soldier_Bandit_2_F",
@@ -133,6 +135,8 @@ if (allowDLCExpansion) then {_dlcUniforms append [
 "WhiteHead_15","WhiteHead_16","WhiteHead_17","WhiteHead_18","WhiteHead_19",
 "WhiteHead_20","WhiteHead_21"]] call _fnc_saveToTemplate;
 ["voices", ["gm_voice_male_deu_08", "gm_voice_male_deu_03", "gm_voice_male_deu_05","gm_voice_male_deu_07", "gm_voice_male_deu_01"]] call _fnc_saveToTemplate;
+
+"GermanMen" call _fnc_saveNames;
 
 //////////////////////////
 //       Loadouts       //

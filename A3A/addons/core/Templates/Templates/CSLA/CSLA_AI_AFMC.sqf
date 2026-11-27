@@ -1,3 +1,5 @@
+#pragma hemtt ignore_variables ["_fnc_saveNames","_fnc_createLoadoutData","_fnc_copyLoadoutData","_fnc_generateAndSaveUnitsToTemplate","_fnc_saveToTemplate"]
+
 //////////////////////////
 //   Side Information   //
 //////////////////////////
@@ -54,8 +56,8 @@
 ["uavsAttack", []] call _fnc_saveToTemplate;
 ["uavsPortable", []] call _fnc_saveToTemplate;
 
-["vehicleRadar", []] call _fnc_saveToTemplate;                  
-["vehicleSam", []] call _fnc_saveToTemplate;
+["vehicleRadar", ""] call _fnc_saveToTemplate;                  
+["vehicleSam", ""] call _fnc_saveToTemplate;
 
 //Config special vehicles
 ["vehiclesMilitiaLightArmed", ["AFMC_M1008_M2"]] call _fnc_saveToTemplate;

@@ -7,7 +7,7 @@ params ["_markerX"];
 //Not sure if that ever happens, but it reduces redundance
 if(spawner getVariable _markerX == 2) exitWith {};
 
-ServerInfo_1("Spawning Airbase %1", _markerX);
+ServerInfo_1("Spawning Airbase %1",_markerX);
 
 private _civs = [];
 private _soldiers = [];
@@ -27,12 +27,12 @@ private _isFIA = random 10 > (tierWar + difficultyCoef) and {!(_frontierX)};
 
 if (_frontierX) then {
 	_roads = _positionX nearRoads _size;
-	if (count _roads != 0) then
+	if (_roads isNotEqualTo []) then
 	{
 		private _dist = 0;
 		private _road = objNull;
 		{if ((position _x) distance _positionX > _dist) then {_road = _x;_dist = position _x distance _positionX}} forEach _roads;
-		private _roadscon = roadsConnectedto _road;
+		private _roadscon = roadsConnectedTo _road;
 		private _roadcon = objNull;
 		{if ((position _x) distance _positionX > _dist) then {_roadcon = _x}} forEach _roadscon;
 		private _dirveh = [_roadcon, _road] call BIS_fnc_DirTo;
@@ -112,12 +112,9 @@ if (_patrol) then {
 	[_markerX, _positionX, _sideX, _faction, 4] call SCRT_fnc_location_createPatrols;
 };
 
-private _typeVehX = _faction get "flag";
-private _flagX = createVehicle [_typeVehX, _positionX, [],0, "NONE"];
-_flagX allowDamage false;
-[_flagX,"take"] remoteExec ["A3A_fnc_flagaction",[teamPlayer,civilian],_flagX];
+([_markerX] call A3A_fnc_createZoneFlag) params ["_flagX", "_flagSpawn"];
 _vehiclesX pushBack _flagX;
-if (flagTexture _flagX != (_faction get "flagTexture")) then {[_flagX,(_faction get "flagTexture")] remoteExec ["setFlagTexture",_flagX]};
+if (!isNil "_flagSpawn") then { _spawnsUsed pushBack _flagSpawn };
 
 private _lowCiv = Faction(civilian) getOrDefault ["attributeLowCiv", false];
 private _civNonHuman = Faction(civilian) getOrDefault ["attributeCivNonHuman", false];
@@ -144,7 +141,7 @@ if (_spawnParameter isEqualType []) then {
 			_faction get "vehiclesMilitiaTrucks"
 		};
 		_types = _types select { _x in FactionGet(all,"vehiclesCargoTrucks") };
-		if (count _types == 0) then { _types = (_faction get "vehiclesCargoTrucks") } else { _types }; // failsafe didn't work?
+		if (_types isEqualTo []) then { _types = (_faction get "vehiclesCargoTrucks") } else { _types }; // failsafe didn't work?
 		selectRandom _types;
 	};
 	isNil {
@@ -183,7 +180,7 @@ for "_i" from 0 to (count _array - 1) do {
 
 	if (_i == 0) then {
 		private _garrisonGroup = [_groupX, getMarkerPos _markerX, _size] call A3A_fnc_patrolGroupGarrison;
-		if (count _garrisonGroup > 0) then {
+		if (_garrisonGroup isNotEqualTo []) then {
 			_groups append _garrisonGroup;
 		};
 	} else {
@@ -191,7 +188,7 @@ for "_i" from 0 to (count _array - 1) do {
 	};
 };
 
-["locationSpawned", [_markerX, "Resource", true]] call EFUNC(Events,triggerEvent);
+[CBA_EVENT_SERVER_SPAWN_LOCATION, [_markerX, "Resource", true]] call FUNCMAIN(triggerLocalEvent);
 
 waitUntil {sleep 1; (spawner getVariable _markerX == 2)};
 
@@ -207,8 +204,11 @@ deleteMarker _mrk;
 {
 	// delete all vehicles that haven't been captured
 	if (_x getVariable ["ownerSide", _sideX] == _sideX) then {
-		if (_x distance2d (_x getVariable "originalPos") < 100) then { deleteVehicle _x }
+		if (_x distance2D (_x getVariable "originalPos") < 100) then { deleteVehicle _x }
 		else { if !(_x isKindOf "StaticWeapon") then { [_x] spawn A3A_fnc_VEHdespawner } };
 	};
 } forEach _vehiclesX;
-["locationSpawned", [_markerX, "Resource", false]] call EFUNC(Events,triggerEvent);
+
+[CBA_EVENT_SERVER_SPAWN_LOCATION, [_markerX, "Resource", false]] call FUNCMAIN(triggerLocalEvent);
+
+nil;

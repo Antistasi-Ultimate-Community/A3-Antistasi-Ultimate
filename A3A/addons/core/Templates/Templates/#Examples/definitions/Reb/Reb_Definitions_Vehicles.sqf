@@ -1,0 +1,17 @@
+#pragma hemtt ignore_variables ["_vehiclesBasic","_vehiclesLightUnarmed","_vehiclesLightArmed","_vehiclesAT","_vehiclesAA","_vehiclesTruck","_vehiclesMedical","_vehiclesBoat","_vehiclesPlane","_vehiclesCivCar","_vehiclesCivTruck","_vehiclesCivSupply","_vehiclesCivHelicopter","_vehiclesCivBoat","_vehiclesCivPlane","_fnc_saveToTemplate"]
+
+["vehiclesBasic", _vehiclesBasic] call _fnc_saveToTemplate;
+["vehiclesLightUnarmed", _vehiclesLightUnarmed] call _fnc_saveToTemplate;
+["vehiclesLightArmed", _vehiclesLightArmed] call _fnc_saveToTemplate;
+["vehiclesAT", _vehiclesAT] call _fnc_saveToTemplate;
+["vehiclesAA", _vehiclesAA] call _fnc_saveToTemplate;
+["vehiclesTruck", _vehiclesTruck] call _fnc_saveToTemplate;
+["vehiclesMedical", _vehiclesMedical] call _fnc_saveToTemplate;
+["vehiclesBoat", _vehiclesBoat] call _fnc_saveToTemplate;
+["vehiclesPlane", _vehiclesPlane] call _fnc_saveToTemplate;
+["vehiclesCivCar", _vehiclesCivCar] call _fnc_saveToTemplate;
+["vehiclesCivTruck", _vehiclesCivTruck] call _fnc_saveToTemplate;
+["vehiclesCivSupply", _vehiclesCivSupply] call _fnc_saveToTemplate;
+["vehiclesCivHeli", _vehiclesCivHelicopter] call _fnc_saveToTemplate;
+["vehiclesCivBoat", _vehiclesCivBoat] call _fnc_saveToTemplate;
+["vehiclesCivPlane", _vehiclesCivPlane] call _fnc_saveToTemplate;

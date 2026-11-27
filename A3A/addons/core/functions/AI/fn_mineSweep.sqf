@@ -16,10 +16,13 @@ _unit = [_groupX, _typeExp, getMarkerPos respawnTeamPlayer, [], 0, "NONE"] call 
 _groupX setGroupIdGlobal [format ["MineSw%1",{side (leader _x) == teamPlayer} count allGroups]];
 _minesX = [];
 sleep 1;
-_road = [getMarkerPos respawnTeamPlayer] call A3A_fnc_findNearestGoodRoad;
-_pos = position _road findEmptyPosition [1,30,"B_G_Van_01_transport_F"];
 
-_truckX = _typeVeh createVehicle _pos;
+private _helperData = ["mineSweep"] call FUNCMAIN(findSpawnHelperPosition);
+
+_helperData params["_spawnPos", "_spawnDir"];
+
+_truckX = _typeVeh createVehicle _spawnPos;
+_truckX setDir _spawnDir;
 
 [_truckX, teamPlayer] call A3A_fnc_AIVEHinit;
 [_unit] spawn A3A_fnc_FIAinit;
@@ -42,22 +45,22 @@ while {alive _unit} do
 				sleep 30;
 				};
 			};
-		_minesX = allmines select {(_x distance _unit) < 100};
-		if (count _minesX == 0) then
+		_minesX = allMines select {(_x distance _unit) < 100};
+		if (_minesX isEqualTo []) then
 			{
 			waitUntil {sleep 1;(!alive _unit) or (!unitReady _unit)};
 			}
 		else
 			{
 			moveOut _unit;
-			[_unit] orderGetin false;
+			[_unit] orderGetIn false;
 			_minesX = [_minesX,[],{_unit distance _x},"ASCEND"] call BIS_fnc_sortBy;
 			_countX = 0;
 			_total = count _minesX;
 			while {(alive _unit) and (_countX < _total)} do
 				{
 				_mineX = _minesX select _countX;
-				[_unit] orderGetin false;
+				[_unit] orderGetIn false;
 				_unit doMove position _mineX;
 				_timeOut = time + 15;
 				waitUntil {sleep 0.5; (_unit distance _mineX < 8) or (!alive _unit) or (time > _timeOut)};
@@ -67,7 +70,7 @@ while {alive _unit} do
 					//_unit action ["deactivateMine", _unit];
 					sleep 3;
 					_toDelete = nearestObjects [position _unit, ["WeaponHolderSimulated", "GroundWeaponHolder", "WeaponHolder"], 9];
-					if (count _toDelete > 0) then
+					if (_toDelete isNotEqualTo []) then
 						{
 						_wh = _toDelete select 0;
 						if (alive _truckX) then {_truckX addMagazineCargoGlobal [((magazineCargo _wh) select 0),1]};

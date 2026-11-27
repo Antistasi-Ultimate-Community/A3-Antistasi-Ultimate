@@ -56,7 +56,7 @@ isNil {
     _storageNamespace = [localNamespace,"A3A_NapalmRegister",str _napalmID,"active",true] call A3A_fnc_setNestedObject;
 };
 
-playSound3D ["a3\sounds_f\weapons\explosion\expl_big_3.wss",_pos, false, AGLToASL _pos, 5, 0.6, 3000];   // Isn't actually audible at 3km, by 500m it's competing with footsteps.
+playSound3D ["a3\sounds_f\weapons\explosion\expl_big_3.wss", objNull, false, AGLToASL _pos, 5, 0.6, 3000];   // Isn't actually audible at 3km, by 500m it's competing with footsteps.
 [_pos,_endTime,_cancellationTokenUUID] spawn {
     params ["_pos","_endTime","_canTokUUID"];
 
@@ -65,12 +65,12 @@ playSound3D ["a3\sounds_f\weapons\explosion\expl_big_3.wss",_pos, false, AGLToAS
     private _audioEndTime = _endTime - _audioDuration;
 
     while {serverTime < _audioEndTime && !([_canTokUUID] call _fnc_cancelRequested)} do {
-        playSound3D ["a3\sounds_f\sfx\fire1_loop.wss",_pos, false, AGLToASL _pos, 5, 0.7, 3000];   // Isn't actually audible at 3km, by 500m it's competing with footsteps.
+        playSound3D ["a3\sounds_f\sfx\fire1_loop.wss", objNull, false, AGLToASL _pos, 5, 0.7, 3000];   // Isn't actually audible at 3km, by 500m it's competing with footsteps.
         uiSleep _audioDuration;
     };
 };
 
-{ _x hideObjectGlobal true } foreach (nearestTerrainObjects [_pos,["tree","bush","small tree"],_napalmRadius]);
+{ _x hideObjectGlobal true } forEach (nearestTerrainObjects [_pos,["tree","bush","small tree"],_napalmRadius]);
 
 private _fnc_cancelRequested = { false; };// Future provisioning for implementation of cancellationTokens.
 while {_endTime > serverTime && !([_cancellationTokenUUID] call _fnc_cancelRequested)} do {
@@ -81,7 +81,7 @@ while {_endTime > serverTime && !([_cancellationTokenUUID] call _fnc_cancelReque
     isNil {  // Run in unscheduled scope to prevent parallel filtering.
         _allRenderers = _allRenderers select {
             !isNull _x &&
-            {!(getPlayerUID _x isEqualTo "")} &&
+            {(getPlayerUID _x isNotEqualTo "")} &&
             {!(_storageNamespace getVariable [getPlayerUID _x, false])}
         };    // Per napalm as every effect needs to be rendered.
         { _storageNamespace setVariable [getPlayerUID _x, true]; } forEach _allRenderers;

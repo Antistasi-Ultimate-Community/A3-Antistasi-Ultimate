@@ -1,3 +1,5 @@
+#pragma hemtt ignore_variables ["_fnc_saveNames","_fnc_createLoadoutData","_fnc_copyLoadoutData","_fnc_generateAndSaveUnitsToTemplate","_fnc_saveToTemplate"]
+
 //////////////////////////
 //   Side Information   //
 //////////////////////////
@@ -96,7 +98,7 @@ if (isClass (configFile >> "CfgFactionClasses" >> "rhs_faction_usarmy") && !isCl
 };
 
 //RNT Vehicles
-if (isClass (configfile >> "CfgPatches" >> "Redd_Marder_1A5")) then {
+if (isClass (configFile >> "CfgPatches" >> "Redd_Marder_1A5")) then {
     _lightUnarmed append ["Redd_Tank_LKW_leicht_gl_Wolf_Tropentarn_FueFu"];
     _lightArmed append ["Redd_Tank_Fuchs_1A4_Pi_Tropentarn", "Redd_Tank_Fuchs_1A4_Jg_Tropentarn", "Redd_Tank_Wiesel_1A4_MK20_Tropentarn", "Redd_Tank_Wiesel_1A2_TOW_Tropentarn"];
     _trucks = ["rnt_lkw_5t_mil_gl_kat_i_transport_trope", "rnt_lkw_7t_mil_gl_kat_i_transport_trope"];
@@ -113,7 +115,7 @@ if (isClass (configfile >> "CfgPatches" >> "Redd_Marder_1A5")) then {
     _police = ["Redd_Tank_LKW_leicht_gl_Wolf_Tropentarn_FJg"];
 };
 
-if (isClass (configfile >> "CfgPatches" >> "Tornado_AWS")) then {
+if (isClass (configFile >> "CfgPatches" >> "Tornado_AWS")) then {
     _planesCAS = ["Tornado_AWS_camo_ger"];
     _planesAA = ["Tornado_AWS_GER", "Tornado_AWS_ecr_ger"];
 };
@@ -196,6 +198,8 @@ if (isClass (configfile >> "CfgPatches" >> "Tornado_AWS")) then {
 "WhiteHead_11", "WhiteHead_12", "WhiteHead_13", "WhiteHead_14", "WhiteHead_15", "WhiteHead_16", "WhiteHead_17",
 "WhiteHead_18", "WhiteHead_19", "WhiteHead_20", "WhiteHead_21"]] call _fnc_saveToTemplate;
 ["voices", ["MALE01ENG", "MALE02ENG", "MALE03ENG", "MALE04ENG", "MALE05ENG", "MALE06ENG", "MALE07ENG", "MALE08ENG", "MALE09ENG", "MALE10ENG", "MALE11ENG", "MALE12ENG"]] call _fnc_saveToTemplate;
+
+"GermanMen" call _fnc_saveNames;
 
 //////////////////////////
 //       Loadouts       //

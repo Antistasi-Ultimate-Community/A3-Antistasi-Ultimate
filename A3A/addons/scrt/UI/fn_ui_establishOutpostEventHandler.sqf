@@ -1,3 +1,4 @@
+#include "..\UILayouts\ids.inc"
 #include "..\defines.inc"
 FIX_LINE_NUMBERS()
 
@@ -10,6 +11,10 @@ if(_mode == "ADD") then {
         "onMapSingleClick",
         {
             playSound "readoutClick";
+
+            if ([] call FUNCMAIN(isTeardownEnabled)) exitWith {
+                [localize "STR_notifiers_fail_type", localize "STR_A3A_base_teardownMode_OFF", parseText localize "STR_A3A_Dialogs_teardownActivePleaseDisable_text", 30] spawn SCRT_fnc_ui_showMessage;
+            };
 
             if (outpostType == "WATCHPOST" && {isOnRoad _pos}) exitWith {
                 [
@@ -24,7 +29,7 @@ if(_mode == "ADD") then {
                 [_pos, outpostCost select 0, outpostCost select 1, clientOwner] remoteExec ["SCRT_fnc_outpost_createWatchpost", 2];
 
                 ["REMOVE"] call SCRT_fnc_ui_establishOutpostEventHandler;
-                ctrlSetFocus ((findDisplay 60000) displayCtrl 2700);
+                                ctrlSetFocus ((findDisplay A3A_IDD_COMMANDER_MENU) displayCtrl A3A_IDC_COMMANDER_MENU_GARRISON_DESCRIPTION_TITLE);
                 [] spawn {
                     sleep 0.01;
                     closeDialog 0;
@@ -45,7 +50,7 @@ if(_mode == "ADD") then {
                 [_pos, outpostCost select 0, outpostCost select 1, clientOwner] remoteExec ["SCRT_fnc_outpost_createRoadblock", 2];
 
                 ["REMOVE"] call SCRT_fnc_ui_establishOutpostEventHandler;
-                ctrlSetFocus ((findDisplay 60000) displayCtrl 2700);
+                                ctrlSetFocus ((findDisplay A3A_IDD_COMMANDER_MENU) displayCtrl A3A_IDC_COMMANDER_MENU_GARRISON_DESCRIPTION_TITLE);
                 [] spawn {
                     sleep 0.01;
                     closeDialog 0;
@@ -89,7 +94,7 @@ if(_mode == "ADD") then {
                 };
 
                 ["REMOVE"] call SCRT_fnc_ui_establishOutpostEventHandler;
-                ctrlSetFocus ((findDisplay 60000) displayCtrl 2700);
+                ctrlSetFocus ((findDisplay A3A_IDD_COMMANDER_MENU) displayCtrl A3A_IDC_COMMANDER_MENU_GARRISON_DESCRIPTION_TITLE);
                 [] spawn {
                     sleep 0.01;
                     closeDialog 0;

@@ -1,11 +1,14 @@
 .vscode/
-.github/
+.github/*
+!.github/workflows/
+.hemttout/
 .idea/
 *.biprivatekey
 *.log
 *.pbo
 *.pbo.bak
 *.png
+*.blend1
 AntistasiBuilder.cfg
 
 #Ignore mission files that have been copied to A3-Antistasi
@@ -24,7 +27,7 @@ Antistasi-Ultimate.biprivatekey
 #Ignore Python bytecode files and bytecode-cache folder
 __pycache__/
 build/
-release/
+release*/
 dev/
 Tools/TownGenerator/output.txt
 Tools/csvparser/output/*.txt

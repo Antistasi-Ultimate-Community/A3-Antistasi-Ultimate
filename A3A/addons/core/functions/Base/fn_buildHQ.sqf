@@ -18,5 +18,8 @@ petros setBehaviour "SAFE";
 
 [getPos petros, false] remoteExec ["A3A_fnc_relocateHQObjects", 2];
 
-sleep 5;
-["HQPlaced", [getPos petros]] call EFUNC(Events,triggerEvent);
+[{
+	[CBA_EVENT_CLIENT_HQ_PLACED, [getPos petros, player]] call FUNCMAIN(triggerGlobalEvent);
+}, nil, 5] call CBA_fnc_waitAndExecute;
+
+nil;

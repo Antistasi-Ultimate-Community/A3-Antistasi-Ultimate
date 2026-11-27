@@ -1,14 +1,23 @@
 #include "script_component.hpp"
+#pragma hemtt suppress pw3_padded_arg config
 
 class CfgPatches 
 {
     class ADDON 
     {
         name = COMPONENT_NAME;
-        units[] = {};
+        magazines[] = {QGVAR(LockpickKit_MultiUse), QGVAR(LockpickKit_SingleUse)};
+        units[] = {
+            "A3AU_RebHelipad_CircleNC_F",
+            "A3AU_RebHelipad_Circle_F",
+            "A3AU_RebHelipad_SquareNC_F",
+            "A3AU_RebHelipad_Square_F",
+            QGVAR(BaseAssemblyAreaSign),
+            QGVAR(BaseVehicleSpawnHelperArrow)
+        };
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {"A3A_Events"};
+        requiredAddons[] = {"A3A_events"};
         author = AUTHOR;
         authors[] = { AUTHORS };
         authorUrl = "";
@@ -18,6 +27,7 @@ class CfgPatches
 
 class CBA_Extended_EventHandlers_base; // Needed for CfgVehicles.hpp
 
+#include "CfgEventHandlers.hpp"
 #include "CfgFunctions.hpp"
 
 class A3U
@@ -27,42 +37,51 @@ class A3U
     #include "config\trader\cfgTraderMods.hpp"
 };
 
+class CfgMagazines
+{
+    #include "CfgMagazines.hpp"
+};
+
+class CfgSounds
+{
+    #include "CfgSounds.hpp"
+};
+
+class CfgEditorCategories
+{
+	class A3U_EditorCategory
+	{
+		displayName = "Antistasi Ultimate";
+	};
+};
+
+class CfgEditorSubcategories
+{
+	class A3U_EditorSubcategoryStatics
+	{
+		displayName = "Static Holders";
+	};
+};
+
 class CfgVehicles
 {
     #include "CfgVehicles.hpp"
 };
 
-class Extended_InitPost_EventHandlers
+class CfgMarkerClasses
 {
-    class A3AU_TerrainSmoother_Base_F 
+    class A3AU_MRK
     {
-        class ADDON 
-        {
-            clientInit = QUOTE(call A3A_fnc_handlerTerrainObjectHiderPostInitClient);
-        };
-    };
-
-    class A3AU_VegetationCleaner_Base_F 
-    {
-        class ADDON 
-        {
-            clientInit = QUOTE(call A3A_fnc_handlerTerrainObjectHiderPostInitClient);
-        };
-    };
-
-    class GVAR(BB_TerrainObjectHider_Base) 
-    {
-        class ADDON 
-        {
-            clientInit = QUOTE(call A3A_fnc_handlerTerrainObjectHiderPostInitClient);
-        };
+        displayName="Antistasi Ultimate Markers";
     };
 };
 
-class Extended_PreInit_EventHandlers 
+class CfgMarkers
 {
-    class A3U_init
-	{
-        init = "call A3U_fnc_init";
-    };
+    #include "CfgMarkers.hpp"
+};
+
+class CfgMarkerColors
+{
+    #include "CfgMarkerColors.hpp"
 };

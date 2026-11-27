@@ -1,3 +1,5 @@
+#pragma hemtt ignore_variables ["_fnc_saveNames","_fnc_createLoadoutData","_fnc_copyLoadoutData","_fnc_generateAndSaveUnitsToTemplate","_fnc_saveToTemplate"]
+
 private _hasLawsOfWar = "orange" in A3A_enabledDLC;
 private _hasTanks = "tank" in A3A_enabledDLC;
 private _hasApex = "expansion" in A3A_enabledDLC;
@@ -310,18 +312,8 @@ _loadoutData set ["Rangefinder", ["Rangefinder"]];
 
 private _facewear = [
 	"G_Aviator",
-	"G_Shades_Black",
-	"G_Shades_Blue",
-	"G_Shades_Green",
-	"G_Shades_Red",
 	"G_Spectacles",
 	"G_Spectacles_Tinted",
-	"G_Sport_Red",
-	"G_Sport_Blackyellow",
-	"G_Sport_BlackWhite",
-	"G_Sport_Checkered",
-	"G_Sport_Blackred",
-	"G_Sport_Greenblack",
 	"G_Bandanna_aviator",
 	"G_Bandanna_beast",
 	"G_Bandanna_blk",

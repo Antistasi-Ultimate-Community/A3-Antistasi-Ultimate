@@ -21,7 +21,7 @@ params [
 ];
 
 if (_markers isEqualTo []) exitWith {
-    Error("Function was called with incorrect parameters. Double check them!")
+    Error("Function was called with incorrect parameters. Double check them!");
 };
 
 {

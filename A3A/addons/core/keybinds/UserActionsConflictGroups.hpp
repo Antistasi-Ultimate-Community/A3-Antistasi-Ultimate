@@ -16,7 +16,11 @@ class UserActionsConflictsGroups {
             QGVAR(buildingPlacerRotateStepDecrease),
             QGVAR(buildingPlacerRotateStepIncrease),
             QGVAR(buildingPlacerSnapToSurface),
-            QGVAR(buildingPlacerUnsafeMode)
+            QGVAR(buildingPlacerUnsafeMode),
+            QGVAR(buildingPlacerZOffsetDecrease),
+            QGVAR(buildingPlacerZOffsetIncrease),
+            QGVAR(buildingPlacerZStepDecrease),
+            QGVAR(buildingPlacerZStepIncrease)
         };
     };
 

@@ -50,12 +50,8 @@ private _civNotHuman = Faction(civilian) getOrDefault ["attributeCivNonHuman", f
 
 if (_civNotHuman) exitWith
 {
-    _unit addEventHandler ["Killed",
-    {
-        params ["_victim", "_killer"];
-        [_victim] spawn A3A_fnc_postmortem;
-    }];
-    ["civInit", [_unit]] call EFUNC(Events,triggerEvent);
+    [_unit] call FUNCMAIN(preparePostMortem);
+    [CBA_EVENT_SERVER_INIT_CIVILIAN_UNIT, [_unit]] call FUNCMAIN(triggerServerEvent);
 };
 
 _unit addEventHandler["FiredNear", {
@@ -65,6 +61,8 @@ _unit addEventHandler["FiredNear", {
 
 _unit addEventHandler ["Killed", {
     params ["_victim", "_killer"];
+
+    call FUNCMAIN(postmortem);
 
     if (time - (_victim getVariable ["lastInjuredByPlayer", 0]) < 120) then {
         _killer = _victim getVariable ["injuredByPlayer", _killer];
@@ -77,11 +75,11 @@ _unit addEventHandler ["Killed", {
         _nul = [-1,-1,getPosATL _victim] remoteExec ["A3A_fnc_citySupportChange",2];
     } else {
         if (isPlayer _killer) then {
-            if (_victim getVariable "unitType" == FactionGet(civ, "unitWorker")) then {_killer addRating 1000};
+            if (_victim getVariable "unitType" == FactionGet(civ,"unitWorker")) then {_killer addRating 1000};
             [-10,_killer] call A3A_fnc_addScorePlayer;
         };
         _multiplier = 1;
-        if ((_victim getVariable "unitType") == FactionGet(civ, "unitPress")) then {_multiplier = 3};
+        if ((_victim getVariable "unitType") == FactionGet(civ,"unitPress")) then {_multiplier = 3};
         switch (true) do {
             //Must be group, in case they're undercover.
             case (side group _killer == teamPlayer): {
@@ -98,8 +96,8 @@ _unit addEventHandler ["Killed", {
             };
         };
     };
-
-    [_victim] spawn A3A_fnc_postmortem;
 }];
 
-["civInit", [_unit]] call EFUNC(Events,triggerEvent);
+[CBA_EVENT_SERVER_INIT_CIVILIAN_UNIT, [_unit]] call FUNCMAIN(triggerServerEvent);
+
+nil;

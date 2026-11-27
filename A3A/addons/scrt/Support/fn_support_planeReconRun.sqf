@@ -20,7 +20,7 @@ _plane setPosATL [getPosATL _plane select 0, getPosATL _plane select 1, 1000];
 _plane disableAI "TARGET";
 _plane disableAI "AUTOTARGET";
 _plane flyInHeight 250;
-private _minAltASL = ATLToASL [_positionX select 0, _positionX select 1, 0];
+private _minAltASL = ATLToASL (_positionDestination vectorMultiply [1,1,0]);
 _plane flyInHeightASL [(_minAltASL select 2) +100, (_minAltASL select 2) +100, (_minAltASL select 2) +100];
 
 driver _plane sideChat (localize "STR_chats_plane_run");
@@ -59,7 +59,9 @@ if (isSupportMarkerPlacingLocked) then {
     publicVariable "isSupportMarkerPlacingLocked";
 };
 
-if !(canMove _plane) then { sleep cleantime };
+if (A3A_GCThreshold isEqualTo -1) exitWith {};
+
+if !(canMove _plane) then { sleep A3A_GCThreshold };
 deleteVehicle _plane;
 {deleteVehicle _x} forEach _planeCrew;
 deleteGroup _groupPlane;

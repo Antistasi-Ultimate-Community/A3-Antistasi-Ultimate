@@ -218,6 +218,31 @@ class CfgMarkers
 		texture = QPATHTOFOLDER(Pictures\Markers\marker_old_soviet_co.paa);
 	};
 
+	class CUP_LC_LUF: flag_NATO 
+	{
+		name = "Lombakkan Union Front";
+		icon = QPATHTOFOLDER(Pictures\Markers\marker_cup_lc_luf_co.paa);
+		texture = QPATHTOFOLDER(Pictures\Markers\marker_cup_lc_luf_co.paa);
+	};
+	class CUP_LC_NLAF: flag_NATO 
+	{
+		name = "North Lombakkan Armed Forces";
+		icon = QPATHTOFOLDER(Pictures\Markers\marker_cup_lc_nlaf_co.paa);
+		texture = QPATHTOFOLDER(Pictures\Markers\marker_cup_lc_nlaf_co.paa);
+	};
+	class CUP_LC_SLDF: flag_NATO 
+	{
+		name = "South Lombakkan Defence Forces";
+		icon = QPATHTOFOLDER(Pictures\Markers\marker_cup_lc_sldf_co.paa);
+		texture = QPATHTOFOLDER(Pictures\Markers\marker_cup_lc_sldf_co.paa);
+	};
+	class a3u_flag_PLA : flag_NATO 
+	{
+		name = "People's Liberation Army";
+		icon = QPATHTOFOLDER(Pictures\Markers\PLA_Flag.paa);
+		texture = QPATHTOFOLDER(Pictures\Markers\PLA_Flag.paa);
+	};
+
 	// This ukraine flag is for the STALKER modset, not current day ukraine
 	// Please don't use it for current day, it desensitises people to the reality that ukraine is in a war
 	class a3u_flag_stalker_ukraine: a3u_flag_optre_unsc 
@@ -280,28 +305,94 @@ class CfgMarkers
 		icon = QPATHTOFOLDER(Pictures\Markers\Marker_GSB2022.paa);
 		texture = QPATHTOFOLDER(Pictures\Markers\Marker_GSB2022.paa);
 	};
-	class CUP_LC_LUF: flag_NATO 
+	class a3u_flag_E22_northstar : flag_NATO 
 	{
-		name = "Lombakkan Union Front";
-		icon = QPATHTOFOLDER(Pictures\Markers\marker_cup_lc_luf_co.paa);
-		texture = QPATHTOFOLDER(Pictures\Markers\marker_cup_lc_luf_co.paa);
+		name = "Jointcom";
+		icon = QPATHTOFOLDER(Pictures\Markers\marker_e22_northstar_ca.paa);
+		texture = QPATHTOFOLDER(Pictures\Markers\marker_e22_northstar_ca.paa);
 	};
-	class CUP_LC_NLAF: flag_NATO 
+	class a3u_flag_E22_raf : flag_NATO 
 	{
-		name = "North Lombakkan Armed Forces";
-		icon = QPATHTOFOLDER(Pictures\Markers\marker_cup_lc_nlaf_co.paa);
-		texture = QPATHTOFOLDER(Pictures\Markers\marker_cup_lc_nlaf_co.paa);
+		name = "RAF";
+		icon = QPATHTOFOLDER(Pictures\Markers\marker_e22_raf_ca.paa);
+		texture = QPATHTOFOLDER(Pictures\Markers\marker_e22_raf_ca.paa);
 	};
-	class CUP_LC_SLDF: flag_NATO 
+	class a3u_flag_tke_ucn : flag_NATO 
 	{
-		name = "South Lombakkan Defence Forces";
-		icon = QPATHTOFOLDER(Pictures\Markers\marker_cup_lc_sldf_co.paa);
-		texture = QPATHTOFOLDER(Pictures\Markers\marker_cup_lc_sldf_co.paa);
+		name = "UCN";
+		icon = QPATHTOFOLDER(Pictures\Markers\marker_tke_ucn_ca.paa);
+		texture = QPATHTOFOLDER(Pictures\Markers\marker_tke_ucn_ca.paa);
 	};
-	class a3u_flag_PLA : flag_NATO 
+	class a3u_flag_tke_md : flag_NATO 
 	{
-		name = "People's Liberation Army";
-		icon = QPATHTOFOLDER(Pictures\Markers\PLA_Flag.paa);
-		texture = QPATHTOFOLDER(Pictures\Markers\PLA_Flag.paa);
+		name = "MD";
+		icon = QPATHTOFOLDER(Pictures\Markers\marker_tke_md_ca.paa);
+		texture = QPATHTOFOLDER(Pictures\Markers\marker_tke_md_ca.paa);
+	};
+	class a3u_flag_tke_kmc : flag_NATO 
+	{
+		name = "KMC";
+		icon = QPATHTOFOLDER(Pictures\Markers\marker_tke_kmc_ca.paa);
+		texture = QPATHTOFOLDER(Pictures\Markers\marker_tke_kmc_ca.paa);
+	};
+	class a3u_flag_tke_wu : flag_NATO 
+	{
+		name = "KMC WU";
+		icon = QPATHTOFOLDER(Pictures\Markers\marker_tke_kmc_ca.paa);
+		texture = QPATHTOFOLDER(Pictures\Markers\marker_tke_kmc_ca.paa);
+	};
+	class a3u_flag_tke_fcf : flag_NATO 
+	{
+		name = "FCF";
+		icon = QPATHTOFOLDER(Pictures\Markers\marker_tke_fcf_ca.paa);
+		texture = QPATHTOFOLDER(Pictures\Markers\marker_tke_fcf_ca.paa);
+	};
+	class a3u_flag_tke_mf : flag_NATO 
+	{
+		name = "Meridian Frontier";
+		icon = QPATHTOFOLDER(Pictures\Markers\marker_tke_mf_ca.paa);
+		texture = QPATHTOFOLDER(Pictures\Markers\marker_tke_mf_ca.paa);
+	};
+	class a3u_flag_tke_mb : flag_NATO 
+	{
+		name = "Mercantile Bastion";
+		icon = QPATHTOFOLDER(Pictures\Markers\marker_tke_mb_ca.paa);
+		texture = QPATHTOFOLDER(Pictures\Markers\marker_tke_mb_ca.paa);
+	};
+	class a3u_flag_tke_echelon : flag_NATO 
+	{
+		name = "9th Echelon";
+		icon = QPATHTOFOLDER(Pictures\Markers\marker_tke_echelon_ca.paa);
+		texture = QPATHTOFOLDER(Pictures\Markers\marker_tke_echelon_ca.paa);
+	};
+	class a3u_flag_tke_hc : flag_NATO 
+	{
+		name = "Hyperion Corsairs";
+		icon = QPATHTOFOLDER(Pictures\Markers\marker_tke_hc_ca.paa);
+		texture = QPATHTOFOLDER(Pictures\Markers\marker_tke_hc_ca.paa);
+	};
+	class a3u_flag_tke_nakamura : flag_NATO 
+	{
+		name = "Nakamura";
+		icon = QPATHTOFOLDER(Pictures\Markers\marker_tke_nakamura_ca.paa);
+		texture = QPATHTOFOLDER(Pictures\Markers\marker_tke_nakamura_ca.paa);
+	};
+	class a3u_flag_tke_ita : flag_NATO 
+	{
+		name = "ITA";
+		icon = QPATHTOFOLDER(Pictures\Markers\marker_tke_ita_ca.paa);
+		texture = QPATHTOFOLDER(Pictures\Markers\marker_tke_ita_ca.paa);
+  };
+	class a3u_flag_NFtSCW_fssr : flag_NATO 
+	{
+		name = "FSSR";
+		icon = QPATHTOFOLDER(Pictures\Markers\marker_FSSR_ca.paa);
+		texture = QPATHTOFOLDER(Pictures\Markers\marker_FSSR_ca.paa);
+	};
+	class a3u_flag_kal : flag_NATO
+	{
+		name = "KOR";
+		icon = QPATHTOFOLDER(Pictures\Markers\marker_kor_co.paa);
+		texture = QPATHTOFOLDER(Pictures\Markers\marker_kor_co.paa);
 	};
 };

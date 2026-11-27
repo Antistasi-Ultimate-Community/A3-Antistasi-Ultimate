@@ -3,10 +3,32 @@
 class CfgPatches {
     class ADDON {
         name = COMPONENT_NAME;
-        units[] = {};
-        weapons[] = {};
+        units[] = {
+            "a3a_unit_reb_unarmed",
+            "a3a_unit_reb",
+            "a3a_unit_reb_medic",
+            "a3a_unit_reb_sniper",
+            "a3a_unit_reb_marksman",
+            "a3a_unit_reb_lat",
+            "a3a_unit_reb_mg",
+            "a3a_unit_reb_exp",
+            "a3a_unit_reb_gl",
+            "a3a_unit_reb_sl",
+            "a3a_unit_reb_eng",
+            "a3a_unit_reb_at",
+            "a3a_unit_reb_aa",
+            "a3a_unit_reb_petros",
+            "a3a_unit_west",
+            "a3a_unit_east",
+            "a3a_unit_riv",
+            "a3a_unit_civ"
+        };
+        weapons[] = {
+            "A3AP_SelfReviveKit"
+        };
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {"A3A_Events"};
+        requiredAddons[] = {"A3A_events"};
+        skipWhenAnyAddonPresent[] = {"a3uebet_main"};
         author = AUTHOR;
         authors[] = { AUTHORS };
         authorUrl = "";
@@ -14,6 +36,8 @@ class CfgPatches {
     };
 };
 
+#include "CfgDebriefing.hpp"
+#include "CfgEventHandlers.hpp"
 #include "CfgSounds.hpp" 
 // Base AI unit definitions
 #include "CfgVehicles.hpp"
@@ -23,6 +47,7 @@ class CfgPatches {
 class A3A {
     #include "IntelMessages.hpp"
     #include "Templates.hpp"
+    #include "UtilityItems.hpp"
     #include "Params.hpp"
 
 #if __A3_DEBUG__
@@ -44,6 +69,7 @@ class A3A {
 #endif
 
 // Load external member list if present
+#pragma hemtt flag pe23_ignore_has_include
 #if __has_include("\A3AMembers.hpp")
 #include "\A3AMembers.hpp"
 #endif

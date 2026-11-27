@@ -8,7 +8,7 @@ class EditorData
 	toggles=1025;
 	class ItemIDProvider
 	{
-		nextID=2460;
+		nextID=2469;
 	};
 	class MarkerIDProvider
 	{
@@ -16,18 +16,18 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=426;
+		nextID=455;
 	};
 	class Camera
 	{
-		pos[]={8355.7373,29.030001,7453.3296};
-		dir[]={0,-0.70710683,0.70710683};
-		up[]={0,0.70710677,0.70710677};
-		aside[]={0.99999994,0,-0};
+		pos[]={7529.3418,65.682335,1766.2214};
+		dir[]={0.14856149,-0.28252941,0.94779104};
+		up[]={0.043771677,0.95920867,0.27925092};
+		aside[]={0.98802197,-2.1937012e-07,-0.15486896};
 	};
 };
 binarizationWanted=0;
-sourceName="playerslotantistasi";
+sourceName="Antistasi_lingor3";
 addons[]=
 {
 	"A3_Ui_F",
@@ -269,7 +269,7 @@ class Mission
 					name="Airports";
 					class Entities
 					{
-						items=105;
+						items=113;
 						class Item0
 						{
 							dataType="Marker";
@@ -1438,7 +1438,7 @@ class Mission
 							colorName="ColorGreen";
 							a=5;
 							b=5;
-							angle=274.6712;
+							angle=274.67117;
 							id=1993;
 							atlOffset=237.733;
 						};
@@ -1465,7 +1465,7 @@ class Mission
 							colorName="ColorGreen";
 							a=5;
 							b=5;
-							angle=274.6712;
+							angle=274.67117;
 							id=1997;
 							atlOffset=237.733;
 						};
@@ -1479,7 +1479,7 @@ class Mission
 							colorName="ColorGreen";
 							a=5;
 							b=5;
-							angle=274.6712;
+							angle=274.67117;
 							id=1998;
 							atlOffset=237.733;
 						};
@@ -1493,7 +1493,7 @@ class Mission
 							colorName="ColorGreen";
 							a=5;
 							b=5;
-							angle=274.6712;
+							angle=274.67117;
 							id=1999;
 							atlOffset=237.73297;
 						};
@@ -1507,7 +1507,7 @@ class Mission
 							colorName="ColorGreen";
 							a=5;
 							b=5;
-							angle=274.67117;
+							angle=274.67114;
 							id=2001;
 							atlOffset=237.73297;
 						};
@@ -1521,7 +1521,7 @@ class Mission
 							colorName="ColorGreen";
 							a=5;
 							b=5;
-							angle=274.67117;
+							angle=274.67114;
 							id=2002;
 							atlOffset=237.73294;
 						};
@@ -1535,7 +1535,7 @@ class Mission
 							colorName="ColorGreen";
 							a=5;
 							b=5;
-							angle=274.67117;
+							angle=274.67114;
 							id=2003;
 							atlOffset=237.73299;
 						};
@@ -1549,7 +1549,7 @@ class Mission
 							colorName="ColorGreen";
 							a=5;
 							b=5;
-							angle=274.67117;
+							angle=274.67114;
 							id=2004;
 							atlOffset=237.73294;
 						};
@@ -1563,7 +1563,7 @@ class Mission
 							colorName="ColorGreen";
 							a=5;
 							b=5;
-							angle=3.5766752;
+							angle=3.5766749;
 							id=2005;
 							atlOffset=238.56038;
 						};
@@ -1591,7 +1591,7 @@ class Mission
 							colorName="ColorEAST";
 							a=110.97549;
 							b=107.83881;
-							angle=42.162239;
+							angle=42.162235;
 							id=2254;
 							atlOffset=0.90999985;
 						};
@@ -1673,7 +1673,7 @@ class Mission
 							colorName="ColorBrown";
 							a=18.086;
 							b=27.931;
-							angle=308.30994;
+							angle=308.30991;
 							id=2400;
 							atlOffset=272.48712;
 						};
@@ -1687,7 +1687,7 @@ class Mission
 							colorName="ColorBrown";
 							a=18.086;
 							b=36.578999;
-							angle=4.8049989;
+							angle=4.8049984;
 							id=2401;
 							atlOffset=272.60178;
 						};
@@ -1705,13 +1705,125 @@ class Mission
 							id=2402;
 							atlOffset=272.72803;
 						};
+						class Item105
+						{
+							dataType="Marker";
+							position[]={642.74194,258.3432,1775.5316};
+							name="airp_6_flag";
+							markerType="RECTANGLE";
+							type="rectangle";
+							colorName="ColorGreen";
+							a=2;
+							b=2;
+							angle=322.19299;
+							id=2460;
+							atlOffset=238.00443;
+						};
+						class Item106
+						{
+							dataType="Marker";
+							position[]={645.698,258.604,1765.33};
+							name="airp_6_ammo";
+							markerType="RECTANGLE";
+							type="rectangle";
+							colorName="ColorGreen";
+							a=2;
+							b=2;
+							angle=322.19299;
+							id=2461;
+							atlOffset=238.00403;
+						};
+						class Item107
+						{
+							dataType="Marker";
+							position[]={4170.3672,261.46399,1621.621};
+							name="airp_1_flag";
+							markerType="RECTANGLE";
+							type="rectangle";
+							colorName="ColorGreen";
+							a=2;
+							b=2;
+							angle=89.831993;
+							id=2463;
+							atlOffset=237.82399;
+						};
+						class Item108
+						{
+							dataType="Marker";
+							position[]={4181.4438,261.46399,1615.772};
+							name="airp_1_ammo";
+							markerType="RECTANGLE";
+							type="rectangle";
+							colorName="ColorGreen";
+							a=2;
+							b=2;
+							angle=89.831993;
+							id=2464;
+							atlOffset=237.82399;
+						};
+						class Item109
+						{
+							dataType="Marker";
+							position[]={2639.0291,241.899,6792.4702};
+							name="airp_2_flag";
+							markerType="RECTANGLE";
+							type="rectangle";
+							colorName="ColorGreen";
+							a=2;
+							b=2;
+							angle=279.68033;
+							id=2465;
+							atlOffset=234.909;
+						};
+						class Item110
+						{
+							dataType="Marker";
+							position[]={2621.458,241.899,6841.522};
+							name="airp_2_ammo";
+							markerType="RECTANGLE";
+							type="rectangle";
+							colorName="ColorGreen";
+							a=2;
+							b=2;
+							angle=279.67996;
+							id=2466;
+							atlOffset=234.909;
+						};
+						class Item111
+						{
+							dataType="Marker";
+							position[]={7500.0811,242.79401,1877.165};
+							name="airp_5_flag";
+							markerType="RECTANGLE";
+							type="rectangle";
+							colorName="ColorGreen";
+							a=2;
+							b=2;
+							angle=311.72296;
+							id=2467;
+							atlOffset=237.834;
+						};
+						class Item112
+						{
+							dataType="Marker";
+							position[]={7584.999,242.79401,1818.765};
+							name="airp_5_ammo";
+							markerType="RECTANGLE";
+							type="rectangle";
+							colorName="ColorGreen";
+							a=2;
+							b=2;
+							angle=94.652992;
+							id=2468;
+							atlOffset=237.834;
+						};
 					};
 					id=63;
-					atlOffset=225.02414;
+					atlOffset=240.92119;
 				};
 			};
 			id=65;
-			atlOffset=225.02414;
+			atlOffset=240.92119;
 		};
 		class Item1
 		{
@@ -2309,7 +2421,7 @@ class Mission
 							colorName="ColorGreen";
 							a=209.69115;
 							b=111.516;
-							angle=349.44931;
+							angle=349.44928;
 							id=1978;
 							atlOffset=-2.5324326;
 						};
@@ -2336,7 +2448,7 @@ class Mission
 							colorName="ColorGreen";
 							a=74.147156;
 							b=44.77552;
-							angle=228.27803;
+							angle=228.27802;
 							id=2403;
 						};
 						class Item46
@@ -2930,7 +3042,7 @@ class Mission
 							colorName="ColorGreen";
 							a=5;
 							b=5;
-							angle=345.45703;
+							angle=345.457;
 							id=1407;
 						};
 						class Item6
@@ -6490,7 +6602,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={4040.7915,24.403406,1623.3203};
-				angles[]={-0,3.193918,0};
+				angles[]={0,3.193918,0};
 			};
 			side="Empty";
 			flags=4;
@@ -30822,6 +30934,7 @@ class Mission
 			dataType="Layer";
 			name="antistasi player slots";
 			id=2441;
+			atlOffset=17.280001;
 		};
 		class Item1413
 		{

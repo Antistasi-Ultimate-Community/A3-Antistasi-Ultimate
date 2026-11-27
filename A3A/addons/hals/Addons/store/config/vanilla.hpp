@@ -3,11 +3,11 @@
 			displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_Vanilla", localize "STR_A3AU_handguns"]);
 			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\handgun_ca.paa";
 
-			ITEM(hgun_Pistol_heavy_01_F, 450, PISTOL_STOCK);
-			ITEM(hgun_ACPC2_F, 200, PISTOL_STOCK);
-			ITEM(hgun_P07_F, 150, PISTOL_STOCK);
-			ITEM(hgun_Rook40_F, 150, PISTOL_STOCK);
-			ITEM(hgun_Pistol_heavy_02_F, 600, PISTOL_STOCK);
+			ITEM(hgun_Pistol_heavy_01_F, 450, PISTOL_STOCK)
+			ITEM(hgun_ACPC2_F, 200, PISTOL_STOCK)
+			ITEM(hgun_P07_F, 150, PISTOL_STOCK)
+			ITEM(hgun_Rook40_F, 150, PISTOL_STOCK)
+			ITEM(hgun_Pistol_heavy_02_F, 600, PISTOL_STOCK)
 
 		};
 
@@ -16,27 +16,27 @@
 			displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_Vanilla", localize "STR_A3AU_rifles"]);
 			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\primaryWeapon_ca.paa";
 
-			ITEM(arifle_Mk20C_plain_F, 550, RIFLE_STOCK);
-			ITEM(arifle_Mk20_plain_F, 700, RIFLE_STOCK);
-			ITEM(arifle_Mk20_GL_plain_F, 850, RIFLE_STOCK);
+			ITEM(arifle_Mk20C_plain_F, 550, RIFLE_STOCK)
+			ITEM(arifle_Mk20_plain_F, 700, RIFLE_STOCK)
+			ITEM(arifle_Mk20_GL_plain_F, 850, RIFLE_STOCK)
 
-			ITEM(arifle_TRG20_F, 500, RIFLE_STOCK);
-			ITEM(arifle_TRG21_F, 600, RIFLE_STOCK);
-			ITEM(arifle_TRG21_GL_F, 750, RIFLE_STOCK);
+			ITEM(arifle_TRG20_F, 500, RIFLE_STOCK)
+			ITEM(arifle_TRG21_F, 600, RIFLE_STOCK)
+			ITEM(arifle_TRG21_GL_F, 750, RIFLE_STOCK)
 
-			ITEM(arifle_Katiba_F, 1000, RIFLE_STOCK);
-			ITEM(arifle_Katiba_C_F, 950, RIFLE_STOCK);
-			ITEM(arifle_Katiba_GL_F, 1150, RIFLE_STOCK);
+			ITEM(arifle_Katiba_F, 1000, RIFLE_STOCK)
+			ITEM(arifle_Katiba_C_F, 950, RIFLE_STOCK)
+			ITEM(arifle_Katiba_GL_F, 1150, RIFLE_STOCK)
 
-			ITEM(arifle_MX_F, 1250, RIFLE_STOCK);
-			ITEM(arifle_MXC_F, 1200, RIFLE_STOCK);
-			ITEM(arifle_MX_GL_F, 1400, RIFLE_STOCK);
+			ITEM(arifle_MX_F, 1250, RIFLE_STOCK)
+			ITEM(arifle_MXC_F, 1200, RIFLE_STOCK)
+			ITEM(arifle_MX_GL_F, 1400, RIFLE_STOCK)
 
-			ITEM(arifle_MX_Black_F, 1250, RIFLE_STOCK);
-			ITEM(arifle_MXC_Black_F, 1200, RIFLE_STOCK);
-			ITEM(arifle_MX_GL_Black_F, 1400, RIFLE_STOCK);
+			ITEM(arifle_MX_Black_F, 1250, RIFLE_STOCK)
+			ITEM(arifle_MXC_Black_F, 1200, RIFLE_STOCK)
+			ITEM(arifle_MX_GL_Black_F, 1400, RIFLE_STOCK)
 
-			ITEM(arifle_SDAR_F, 350, RIFLE_STOCK);
+			ITEM(arifle_SDAR_F, 350, RIFLE_STOCK)
 
 		};
 
@@ -45,18 +45,18 @@
 			displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_Vanilla", localize "STR_A3AU_sniperRifles"]);
 			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\primaryWeapon_ca.paa";
 
-			ITEM(arifle_MXM_F, 1600, RIFLE_STOCK);
-			ITEM(arifle_MXM_Black_F, 1600, RIFLE_STOCK);
+			ITEM(arifle_MXM_F, 1600, RIFLE_STOCK)
+			ITEM(arifle_MXM_Black_F, 1600, RIFLE_STOCK)
 
-			ITEM(srifle_DMR_01_F, 2200, RIFLE_STOCK);
+			ITEM(srifle_DMR_01_F, 2200, RIFLE_STOCK)
 
-			ITEM(srifle_EBR_F, 2550, RIFLE_STOCK);
+			ITEM(srifle_EBR_F, 2550, RIFLE_STOCK)
 
-			ITEM(srifle_LRR_F, 4000, 5);
-			ITEM(srifle_LRR_camo_F, 4000, 5);
+			ITEM(srifle_LRR_F, 4000, 5)
+			ITEM(srifle_LRR_camo_F, 4000, 5)
 
-			ITEM(srifle_GM6_F, 4500, 5);
-			ITEM(srifle_GM6_camo_F, 4500, 5);
+			ITEM(srifle_GM6_F, 4500, 5)
+			ITEM(srifle_GM6_camo_F, 4500, 5)
 
 		};
 
@@ -65,14 +65,14 @@
 			displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_Vanilla", localize "STR_A3AU_mgs"]);
 			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\primaryWeapon_ca.paa";
 
-			ITEM(arifle_MX_SW_F, 1600, RIFLE_STOCK);
-			ITEM(arifle_MX_SW_Black_F, 1600, RIFLE_STOCK);
+			ITEM(arifle_MX_SW_F, 1600, RIFLE_STOCK)
+			ITEM(arifle_MX_SW_Black_F, 1600, RIFLE_STOCK)
 
-			ITEM(LMG_03_F, 1250, RIFLE_STOCK);
+			ITEM(LMG_03_F, 1250, RIFLE_STOCK)
 			
-			ITEM(LMG_Mk200_F, 1850, RIFLE_STOCK);
+			ITEM(LMG_Mk200_F, 1850, RIFLE_STOCK)
 
-			ITEM(LMG_Zafir_F, 2900, RIFLE_STOCK);
+			ITEM(LMG_Zafir_F, 2900, RIFLE_STOCK)
 
 		};
 
@@ -81,29 +81,29 @@
 			displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_Vanilla", localize "STR_A3AU_smgs"]);
 			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\primaryWeapon_ca.paa";
 
-			ITEM(SMG_03C_TR_black, 350, RIFLE_STOCK);
-			ITEM(SMG_03C_TR_camo, 350, RIFLE_STOCK);
-			ITEM(SMG_03C_TR_hex, 350, RIFLE_STOCK);
-			ITEM(SMG_03C_TR_khaki, 350, RIFLE_STOCK);
+			ITEM(SMG_03C_TR_black, 350, RIFLE_STOCK)
+			ITEM(SMG_03C_TR_camo, 350, RIFLE_STOCK)
+			ITEM(SMG_03C_TR_hex, 350, RIFLE_STOCK)
+			ITEM(SMG_03C_TR_khaki, 350, RIFLE_STOCK)
 
-			ITEM(SMG_03C_black, 450, RIFLE_STOCK);
-			ITEM(SMG_03C_camo, 450, RIFLE_STOCK);
-			ITEM(SMG_03C_hex, 450, RIFLE_STOCK);
-			ITEM(SMG_03C_khaki, 450, RIFLE_STOCK);
+			ITEM(SMG_03C_black, 450, RIFLE_STOCK)
+			ITEM(SMG_03C_camo, 450, RIFLE_STOCK)
+			ITEM(SMG_03C_hex, 450, RIFLE_STOCK)
+			ITEM(SMG_03C_khaki, 450, RIFLE_STOCK)
 
-			ITEM(SMG_03_TR_black, 325, RIFLE_STOCK);
-			ITEM(SMG_03_TR_camo, 325, RIFLE_STOCK);
-			ITEM(SMG_03_TR_hex, 325, RIFLE_STOCK);
-			ITEM(SMG_03_TR_khaki, 325, RIFLE_STOCK);
+			ITEM(SMG_03_TR_black, 325, RIFLE_STOCK)
+			ITEM(SMG_03_TR_camo, 325, RIFLE_STOCK)
+			ITEM(SMG_03_TR_hex, 325, RIFLE_STOCK)
+			ITEM(SMG_03_TR_khaki, 325, RIFLE_STOCK)
 			
-			ITEM(SMG_03_black, 425, RIFLE_STOCK);
-			ITEM(SMG_03_camo, 425, RIFLE_STOCK);
-			ITEM(SMG_03_hex, 425, RIFLE_STOCK);
-			ITEM(SMG_03_khaki, 425, RIFLE_STOCK);
+			ITEM(SMG_03_black, 425, RIFLE_STOCK)
+			ITEM(SMG_03_camo, 425, RIFLE_STOCK)
+			ITEM(SMG_03_hex, 425, RIFLE_STOCK)
+			ITEM(SMG_03_khaki, 425, RIFLE_STOCK)
 
-			ITEM(SMG_05_F, 200, RIFLE_STOCK);
-			ITEM(SMG_01_F, 200, RIFLE_STOCK);
-			ITEM(hgun_PDW2000_F, 100, RIFLE_STOCK);
+			ITEM(SMG_05_F, 200, RIFLE_STOCK)
+			ITEM(SMG_01_F, 200, RIFLE_STOCK)
+			ITEM(hgun_PDW2000_F, 100, RIFLE_STOCK)
 
 		};
 
@@ -112,17 +112,17 @@
 			displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_Vanilla", localize "STR_A3AU_launchers"]);
 			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\secondaryWeapon_ca.paa";
 
-			ITEM(launch_NLAW_F, 2000, LAUNCHER_STOCK);
+			ITEM(launch_NLAW_F, 2000, LAUNCHER_STOCK)
 
-			ITEM(launch_RPG32_F, 1250, LAUNCHER_STOCK);
+			ITEM(launch_RPG32_F, 1250, LAUNCHER_STOCK)
 
-			ITEM(launch_B_Titan_F, 3500, 3);
-			ITEM(launch_I_Titan_F, 3500, 3);
-			ITEM(launch_O_Titan_F, 3500, 3);
+			ITEM(launch_B_Titan_F, 3500, 3)
+			ITEM(launch_I_Titan_F, 3500, 3)
+			ITEM(launch_O_Titan_F, 3500, 3)
 
-			ITEM(launch_B_Titan_short_F, 3250, 3);
-			ITEM(launch_I_Titan_short_F, 3250, 3);
-			ITEM(launch_O_Titan_short_F, 3250, 3);
+			ITEM(launch_B_Titan_short_F, 3250, 3)
+			ITEM(launch_I_Titan_short_F, 3250, 3)
+			ITEM(launch_O_Titan_short_F, 3250, 3)
 
 		};
 
@@ -166,14 +166,14 @@
 			displayName = __EVAL(formatText ["%1 %2, %3 %4 %5", localize "STR_A3AU_Vanilla", localize "STR_A3AU_gps", localize "STR_A3AU_binoculars", localize "STR_A3AU_and", localize "STR_A3AU_nvgs"]);
 			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\compass_ca.paa";
 
-			ITEM(ItemGPS, 300, NN_STOCK);
-			ITEM(ItemRadio, 45, NN_STOCK);
-			ITEM(Rangefinder, 400, NN_STOCK);
-			ITEM(Laserdesignator, 1200, NN_STOCK);
+			ITEM(ItemGPS, 300, NN_STOCK)
+			ITEM(ItemRadio, 45, NN_STOCK)
+			ITEM(Rangefinder, 400, NN_STOCK)
+			ITEM(Laserdesignator, 1200, NN_STOCK)
 
-			ITEM(NVGoggles, 500, NN_STOCK);
-			ITEM(NVGoggles_INDEP, 1000, NN_STOCK);
-			ITEM(NVGoggles_OPFOR, 1000, NN_STOCK);
+			ITEM(NVGoggles, 500, NN_STOCK)
+			ITEM(NVGoggles_INDEP, 1000, NN_STOCK)
+			ITEM(NVGoggles_OPFOR, 1000, NN_STOCK)
 
 		};
 
@@ -182,10 +182,10 @@
 			displayName = __EVAL(formatText ["%1 %2 %3 %4", localize "STR_A3AU_Vanilla", localize "STR_A3AU_pointers", localize "STR_A3AU_and", localize "STR_A3AU_flashlights"]);
 			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\itemAcc_ca.paa";
 
-			ITEM(acc_flashlight, 75, PN_STOCK);
-			ITEM(acc_flashlight_smg_01, 75, PN_STOCK);
-			ITEM(acc_pointer_IR, 100, PN_STOCK);
-			ITEM(acc_flashlight_pistol, 75, PN_STOCK);
+			ITEM(acc_flashlight, 75, PN_STOCK)
+			ITEM(acc_flashlight_smg_01, 75, PN_STOCK)
+			ITEM(acc_pointer_IR, 100, PN_STOCK)
+			ITEM(acc_flashlight_pistol, 75, PN_STOCK)
 
 		};
 
@@ -194,19 +194,19 @@
 			displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_Vanilla", localize "STR_A3AU_muzzles"]);
 			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\itemMuzzle_ca.paa";
 
-			ITEM(muzzle_snds_acp, 150, MZ_STOCK);
+			ITEM(muzzle_snds_acp, 150, MZ_STOCK)
 
-			ITEM(muzzle_snds_570, 150, MZ_STOCK);
+			ITEM(muzzle_snds_570, 150, MZ_STOCK)
 
-			ITEM(muzzle_snds_B, 200, MZ_STOCK);
+			ITEM(muzzle_snds_B, 200, MZ_STOCK)
 
-			ITEM(muzzle_snds_H, 200, MZ_STOCK);
+			ITEM(muzzle_snds_H, 200, MZ_STOCK)
 
-			ITEM(muzzle_snds_H_MG, 200, MZ_STOCK);
+			ITEM(muzzle_snds_H_MG, 200, MZ_STOCK)
 
-			ITEM(muzzle_snds_L, 200, MZ_STOCK);
+			ITEM(muzzle_snds_L, 200, MZ_STOCK)
 
-			ITEM(muzzle_snds_M, 200, MZ_STOCK);
+			ITEM(muzzle_snds_M, 200, MZ_STOCK)
 
 		};
 
@@ -710,126 +710,126 @@
 			displayName = __EVAL(formatText ["%1 %2", localize "STR_A3AU_Vanilla", localize "STR_A3AU_misc"]);
 			picture = "a3\ui_f\data\gui\Rsc\RscDisplayArsenal\backpack_ca.paa";
 
-			ITEM(U_I_HeliPilotCoveralls, 500, MISC_STOCK);
+			ITEM(U_I_HeliPilotCoveralls, 500, MISC_STOCK)
 
-			ITEM(H_CrewHelmetHeli_I, 750, MISC_STOCK);
+			ITEM(H_CrewHelmetHeli_I, 750, MISC_STOCK)
 
-			ITEM(H_PilotHelmetHeli_I, 500, MISC_STOCK);
+			ITEM(H_PilotHelmetHeli_I, 500, MISC_STOCK)
 
-			ITEM(H_PilotHelmetFighter_I, 1000, MISC_STOCK);
+			ITEM(H_PilotHelmetFighter_I, 1000, MISC_STOCK)
 
-			ITEM(U_I_pilotCoveralls, 1000, MISC_STOCK);
-			ITEM(U_O_PilotCoveralls, 3000, MISC_STOCK);
+			ITEM(U_I_pilotCoveralls, 1000, MISC_STOCK)
+			ITEM(U_O_PilotCoveralls, 3000, MISC_STOCK)
 
-			ITEM(H_HelmetCrew_I, 750, MISC_STOCK);
-			ITEM(H_HelmetCrew_B, 1000, MISC_STOCK);
+			ITEM(H_HelmetCrew_I, 750, MISC_STOCK)
+			ITEM(H_HelmetCrew_B, 1000, MISC_STOCK)
 
-			ITEM(U_I_FullGhillie_ard, 1000, MISC_STOCK);
-			ITEM(U_B_FullGhillie_ard, 1000, MISC_STOCK);
-			ITEM(U_O_FullGhillie_ard, 3000, MISC_STOCK);
+			ITEM(U_I_FullGhillie_ard, 1000, MISC_STOCK)
+			ITEM(U_B_FullGhillie_ard, 1000, MISC_STOCK)
+			ITEM(U_O_FullGhillie_ard, 3000, MISC_STOCK)
 
-			ITEM(U_I_FullGhillie_lsh, 1000, MISC_STOCK);
-			ITEM(U_B_FullGhillie_lsh, 1000, MISC_STOCK);
-			ITEM(U_O_FullGhillie_lsh, 3000, MISC_STOCK);
+			ITEM(U_I_FullGhillie_lsh, 1000, MISC_STOCK)
+			ITEM(U_B_FullGhillie_lsh, 1000, MISC_STOCK)
+			ITEM(U_O_FullGhillie_lsh, 3000, MISC_STOCK)
 
-			ITEM(U_I_FullGhillie_sard, 1000, MISC_STOCK);
-			ITEM(U_B_FullGhillie_sard, 1000, MISC_STOCK);
-			ITEM(U_O_FullGhillie_sard, 3000, MISC_STOCK);
+			ITEM(U_I_FullGhillie_sard, 1000, MISC_STOCK)
+			ITEM(U_B_FullGhillie_sard, 1000, MISC_STOCK)
+			ITEM(U_O_FullGhillie_sard, 3000, MISC_STOCK)
 
-			ITEM(U_I_GhillieSuit, 750, MISC_STOCK);
-			ITEM(U_O_GhillieSuit, 1500, MISC_STOCK);
+			ITEM(U_I_GhillieSuit, 750, MISC_STOCK)
+			ITEM(U_O_GhillieSuit, 1500, MISC_STOCK)
 
-			ITEM(B_Carryall_cbr, 400, MISC_STOCK);
-			ITEM(B_Carryall_ocamo, 400, MISC_STOCK);
-			ITEM(B_Carryall_khk, 400, MISC_STOCK);
-			ITEM(B_Carryall_mcamo, 400, MISC_STOCK);
-			ITEM(B_Carryall_oli, 400, MISC_STOCK);
-			ITEM(B_Carryall_oucamo, 400, MISC_STOCK);
+			ITEM(B_Carryall_cbr, 400, MISC_STOCK)
+			ITEM(B_Carryall_ocamo, 400, MISC_STOCK)
+			ITEM(B_Carryall_khk, 400, MISC_STOCK)
+			ITEM(B_Carryall_mcamo, 400, MISC_STOCK)
+			ITEM(B_Carryall_oli, 400, MISC_STOCK)
+			ITEM(B_Carryall_oucamo, 400, MISC_STOCK)
 
-			ITEM(V_TacVestIR_blk, 500, MISC_STOCK);
+			ITEM(V_TacVestIR_blk, 500, MISC_STOCK)
 
-			ITEM(V_Press_F, 800, MISC_STOCK);
+			ITEM(V_Press_F, 800, MISC_STOCK)
 
-			ITEM(V_PlateCarrierIA1_dgtl, 1000, MISC_STOCK);
-			ITEM(V_PlateCarrierIA2_dgtl, 1000, MISC_STOCK);
-			ITEM(V_PlateCarrier2_rgr_noflag_F, 1400, MISC_STOCK);
-			ITEM(V_PlateCarrier1_blk, 900, MISC_STOCK);
-			ITEM(V_PlateCarrier2_blk, 1250, MISC_STOCK);
-			ITEM(V_PlateCarrierIAGL_oli, 1300, MISC_STOCK);
+			ITEM(V_PlateCarrierIA1_dgtl, 1000, MISC_STOCK)
+			ITEM(V_PlateCarrierIA2_dgtl, 1000, MISC_STOCK)
+			ITEM(V_PlateCarrier2_rgr_noflag_F, 1400, MISC_STOCK)
+			ITEM(V_PlateCarrier1_blk, 900, MISC_STOCK)
+			ITEM(V_PlateCarrier2_blk, 1250, MISC_STOCK)
+			ITEM(V_PlateCarrierIAGL_oli, 1300, MISC_STOCK)
 
-			ITEM(G_Diving, 150, MISC_STOCK);
-			ITEM(G_I_Diving, 150, MISC_STOCK);
-			ITEM(V_RebreatherIA, 750, MISC_STOCK);
-			ITEM(U_B_survival_uniform, 750, MISC_STOCK);
-			ITEM(U_I_Wetsuit, 750, MISC_STOCK);
+			ITEM(G_Diving, 150, MISC_STOCK)
+			ITEM(G_I_Diving, 150, MISC_STOCK)
+			ITEM(V_RebreatherIA, 750, MISC_STOCK)
+			ITEM(U_B_survival_uniform, 750, MISC_STOCK)
+			ITEM(U_I_Wetsuit, 750, MISC_STOCK)
 
-			ITEM(MineDetector, 500, MISC_STOCK);
+			ITEM(MineDetector, 500, MISC_STOCK)
 
-			ITEM(I_IR_Grenade, 250, MISC_STOCK);
-			ITEM(O_IR_Grenade, 250, MISC_STOCK);
-			ITEM(B_IR_Grenade, 250, MISC_STOCK);
+			ITEM(I_IR_Grenade, 250, MISC_STOCK)
+			ITEM(O_IR_Grenade, 250, MISC_STOCK)
+			ITEM(B_IR_Grenade, 250, MISC_STOCK)
 
-			ITEM(Chemlight_blue, 30, MISC_STOCK);
-			ITEM(Chemlight_green, 30, MISC_STOCK);
-			ITEM(Chemlight_red, 30, MISC_STOCK);
-			ITEM(Chemlight_yellow, 30, MISC_STOCK);
+			ITEM(Chemlight_blue, 30, MISC_STOCK)
+			ITEM(Chemlight_green, 30, MISC_STOCK)
+			ITEM(Chemlight_red, 30, MISC_STOCK)
+			ITEM(Chemlight_yellow, 30, MISC_STOCK)
 
-			ITEM(MiniGrenade, 100, MISC_STOCK);
-			ITEM(HandGrenade, 200, MISC_STOCK);
+			ITEM(MiniGrenade, 100, MISC_STOCK)
+			ITEM(HandGrenade, 200, MISC_STOCK)
 
-			ITEM(SmokeShellBlue, 50, MISC_STOCK);
-			ITEM(SmokeShellGreen, MISC_STOCK);
-			ITEM(SmokeShellOrange, 50, MISC_STOCK);
-			ITEM(SmokeShellPurple, 50, MISC_STOCK);
-			ITEM(SmokeShellRed, 50, MISC_STOCK);
-			ITEM(SmokeShell, 50, MISC_STOCK);
-			ITEM(SmokeShellYellow, 50, MISC_STOCK);
+			ITEM(SmokeShellBlue, 50, MISC_STOCK)
+			ITEM(SmokeShellGreen, 50, MISC_STOCK)
+			ITEM(SmokeShellOrange, 50, MISC_STOCK)
+			ITEM(SmokeShellPurple, 50, MISC_STOCK)
+			ITEM(SmokeShellRed, 50, MISC_STOCK)
+			ITEM(SmokeShell, 50, MISC_STOCK)
+			ITEM(SmokeShellYellow, 50, MISC_STOCK)
 
-			ITEM(IEDUrbanSmall_Remote_Mag, 500, MISC_STOCK);
-			ITEM(IEDLandSmall_Remote_Mag, 500, MISC_STOCK);
-			ITEM(IEDLandBig_Remote_Mag, 750, MISC_STOCK);
-			ITEM(IEDUrbanBig_Remote_Mag, 750, MISC_STOCK);
+			ITEM(IEDUrbanSmall_Remote_Mag, 500, MISC_STOCK)
+			ITEM(IEDLandSmall_Remote_Mag, 500, MISC_STOCK)
+			ITEM(IEDLandBig_Remote_Mag, 750, MISC_STOCK)
+			ITEM(IEDUrbanBig_Remote_Mag, 750, MISC_STOCK)
 
-			ITEM(ClaymoreDirectionalMine_Remote_Mag, 300, MISC_STOCK);
-			ITEM(DemoCharge_Remote_Mag, 250, MISC_STOCK);
-			ITEM(SatchelCharge_Remote_Mag, 500, MISC_STOCK);
-			ITEM(SLAMDirectionalMine_Wire_Mag, 400, MISC_STOCK);
-			ITEM(ATMine_Range_Mag, 200, MISC_STOCK);
-			ITEM(APERSMine_Range_Mag, 200, MISC_STOCK);
-			ITEM(APERSBoundingMine_Range_Mag, 150, MISC_STOCK);
-			ITEM(APERSTripMine_Wire_Mag, 100, MISC_STOCK);
+			ITEM(ClaymoreDirectionalMine_Remote_Mag, 300, MISC_STOCK)
+			ITEM(DemoCharge_Remote_Mag, 250, MISC_STOCK)
+			ITEM(SatchelCharge_Remote_Mag, 500, MISC_STOCK)
+			ITEM(SLAMDirectionalMine_Wire_Mag, 400, MISC_STOCK)
+			ITEM(ATMine_Range_Mag, 200, MISC_STOCK)
+			ITEM(APERSMine_Range_Mag, 200, MISC_STOCK)
+			ITEM(APERSBoundingMine_Range_Mag, 150, MISC_STOCK)
+			ITEM(APERSTripMine_Wire_Mag, 100, MISC_STOCK)
 			
-			ITEM(I_UavTerminal, 800, MISC_STOCK);
-			ITEM(O_UavTerminal, 800, MISC_STOCK);
-			ITEM(B_UavTerminal, 800, MISC_STOCK);
+			ITEM(I_UavTerminal, 800, MISC_STOCK)
+			ITEM(O_UavTerminal, 800, MISC_STOCK)
+			ITEM(B_UavTerminal, 800, MISC_STOCK)
 
-			ITEM(U_C_Driver_1_black, 1000, MISC_STOCK);
-			ITEM(U_C_Driver_1_blue, 1000, MISC_STOCK);
-			ITEM(U_C_Driver_1_green, 1000, MISC_STOCK);
-			ITEM(U_C_Driver_1_orange, 1000, MISC_STOCK);
-			ITEM(U_C_Driver_1_red, 1000, MISC_STOCK);
-			ITEM(U_C_Driver_1_white, 1000, MISC_STOCK);
-			ITEM(U_C_Driver_1_yellow, 1000, MISC_STOCK);
-			ITEM(U_C_Driver_1, 1000, MISC_STOCK);
-			ITEM(U_C_Driver_2, 1000, MISC_STOCK);
-			ITEM(U_C_Driver_3, 1000, MISC_STOCK);
-			ITEM(U_C_Driver_4, 1000, MISC_STOCK);
+			ITEM(U_C_Driver_1_black, 1000, MISC_STOCK)
+			ITEM(U_C_Driver_1_blue, 1000, MISC_STOCK)
+			ITEM(U_C_Driver_1_green, 1000, MISC_STOCK)
+			ITEM(U_C_Driver_1_orange, 1000, MISC_STOCK)
+			ITEM(U_C_Driver_1_red, 1000, MISC_STOCK)
+			ITEM(U_C_Driver_1_white, 1000, MISC_STOCK)
+			ITEM(U_C_Driver_1_yellow, 1000, MISC_STOCK)
+			ITEM(U_C_Driver_1, 1000, MISC_STOCK)
+			ITEM(U_C_Driver_2, 1000, MISC_STOCK)
+			ITEM(U_C_Driver_3, 1000, MISC_STOCK)
+			ITEM(U_C_Driver_4, 1000, MISC_STOCK)
 
-			ITEM(H_RacingHelmet_1_black_F, 300, MISC_STOCK);
-			ITEM(H_RacingHelmet_1_blue_F, 300, MISC_STOCK);
-			ITEM(H_RacingHelmet_1_F, 300, MISC_STOCK);
-			ITEM(H_RacingHelmet_1_green_F, 300, MISC_STOCK);
-			ITEM(H_RacingHelmet_1_orange_F, 300, MISC_STOCK);
-			ITEM(H_RacingHelmet_1_red_F, 300, MISC_STOCK);
-			ITEM(H_RacingHelmet_1_white_F, 300, MISC_STOCK);
-			ITEM(H_RacingHelmet_1_yellow_F, 300, MISC_STOCK);
-			ITEM(H_RacingHelmet_2_F, 300, MISC_STOCK);
-			ITEM(H_RacingHelmet_3_F, 300, MISC_STOCK);
-			ITEM(H_RacingHelmet_4_F, 300, MISC_STOCK);
+			ITEM(H_RacingHelmet_1_black_F, 300, MISC_STOCK)
+			ITEM(H_RacingHelmet_1_blue_F, 300, MISC_STOCK)
+			ITEM(H_RacingHelmet_1_F, 300, MISC_STOCK)
+			ITEM(H_RacingHelmet_1_green_F, 300, MISC_STOCK)
+			ITEM(H_RacingHelmet_1_orange_F, 300, MISC_STOCK)
+			ITEM(H_RacingHelmet_1_red_F, 300, MISC_STOCK)
+			ITEM(H_RacingHelmet_1_white_F, 300, MISC_STOCK)
+			ITEM(H_RacingHelmet_1_yellow_F, 300, MISC_STOCK)
+			ITEM(H_RacingHelmet_2_F, 300, MISC_STOCK)
+			ITEM(H_RacingHelmet_3_F, 300, MISC_STOCK)
+			ITEM(H_RacingHelmet_4_F, 300, MISC_STOCK)
 
-			ITEM(U_I_Protagonist_VR, 50000, MISC_STOCK);
-			ITEM(U_C_Protagonist_VR, 50000, MISC_STOCK);
-			ITEM(U_O_Protagonist_VR, 50000, MISC_STOCK);
-			ITEM(U_B_Protagonist_VR, 50000, MISC_STOCK);
+			ITEM(U_I_Protagonist_VR, 50000, MISC_STOCK)
+			ITEM(U_C_Protagonist_VR, 50000, MISC_STOCK)
+			ITEM(U_O_Protagonist_VR, 50000, MISC_STOCK)
+			ITEM(U_B_Protagonist_VR, 50000, MISC_STOCK)
 
 		};

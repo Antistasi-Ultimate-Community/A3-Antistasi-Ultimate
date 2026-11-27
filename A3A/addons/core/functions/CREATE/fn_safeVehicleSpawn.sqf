@@ -7,6 +7,9 @@
 
 params ["_vehicleType", "_pos", ["_radius", 0], ["_attempts", 3], ["_force", false]];
 
+#include "..\..\script_component.hpp"
+FIX_LINE_NUMBERS()
+
 private _spawnPosition = [];
 private _willCollide = true;
 
@@ -35,7 +38,7 @@ for "_i" from 1 to _attempts do {
 		_spawnPosition = _spawnPosition findEmptyPosition [0, (_radius / 2), _vehicleType];
 	};
 
-	if !(_spawnPosition isEqualTo []) then {
+	if (_spawnPosition isNotEqualTo []) then {
 		_willCollide = [_vehicle, _spawnPosition] call A3A_fnc_vehicleWillCollideAtPosition;
 		_finished = !_willCollide;
 	};
@@ -48,8 +51,9 @@ if (_willCollide && _force) then {
 	_willCollide = false;
 };
 
-
 if !(_willCollide) exitWith {
+	[_vehicle] call FUNCMAIN(preparePostMortem);
+
 	_vehicle setPos _spawnPosition;
 	_vehicle enableSimulation true;
 	_vehicle;

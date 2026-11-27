@@ -1,3 +1,5 @@
+#pragma hemtt ignore_variables ["_fnc_saveNames","_fnc_createLoadoutData","_fnc_copyLoadoutData","_fnc_generateAndSaveUnitsToTemplate","_fnc_saveToTemplate"]
+
 private _hasLawsOfWar = "orange" in A3A_enabledDLC;
 
 ///////////////////////////
@@ -7,8 +9,8 @@ private _hasLawsOfWar = "orange" in A3A_enabledDLC;
 ["name", "NAPA"] call _fnc_saveToTemplate; 						
 
 ["flag", "Flag_EAF_F"] call _fnc_saveToTemplate;
-["flagTexture", "\a3\Data_F_Enoch\Flags\flag_EAF_CO.paa"] call _fnc_saveToTemplate;
-["flagMarkerType", "flag_EAF"] call _fnc_saveToTemplate;
+["flagTexture", "rhsgref\addons\rhsgref_main\data\Flags\flag_NAPA_co.paa"] call _fnc_saveToTemplate;
+["flagMarkerType", "a3a_flag_napa"] call _fnc_saveToTemplate;
 
 ["vehiclesBasic", ["I_G_Quadbike_01_F"]] call _fnc_saveToTemplate;
 ["vehiclesLightUnarmed", ["rhsgref_nat_uaz_open"]] call _fnc_saveToTemplate;

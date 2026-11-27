@@ -1,3 +1,5 @@
+#pragma hemtt ignore_variables ["_fnc_saveNames","_fnc_createLoadoutData","_fnc_copyLoadoutData","_fnc_generateAndSaveUnitsToTemplate","_fnc_saveToTemplate"]
+
 //////////////////////////
 //   Side Information   //
 //////////////////////////
@@ -12,8 +14,6 @@
 //////////////////////////
 //       Vehicles       //
 //////////////////////////
-
-["vehiclesDropPod", ["SpaceshipCapsule_01_F"]] call _fnc_saveToTemplate; 
 
 ["ammobox", "B_supplyCrate_F"] call _fnc_saveToTemplate;
 ["surrenderCrate", "Box_IND_Wps_F"] call _fnc_saveToTemplate;
@@ -280,7 +280,6 @@ _sfLoadoutData set ["sidearms", [
 /////////////////////////////////
 
 private _eliteLoadoutData = _loadoutData call _fnc_copyLoadoutData;
-_eliteLoadoutData set ["uniforms", ["CUP_V_CDF_6B3_1_SNW", "CUP_V_CDF_6B3_2_SNW"]];
 _eliteLoadoutData set ["vests", ["CUP_V_CDF_6B3_1_SNW", "CUP_V_CDF_6B3_2_SNW"]];
 _eliteLoadoutData set ["slVests", ["CUP_V_CDF_6B3_5_SNW"]];
 _eliteLoadoutData set ["mgVests", ["CUP_V_CDF_6B3_3_SNW"]];

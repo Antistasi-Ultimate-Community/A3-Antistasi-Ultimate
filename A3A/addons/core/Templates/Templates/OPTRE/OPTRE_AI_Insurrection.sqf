@@ -1,3 +1,5 @@
+#pragma hemtt ignore_variables ["_fnc_saveNames","_fnc_createLoadoutData","_fnc_copyLoadoutData","_fnc_generateAndSaveUnitsToTemplate","_fnc_saveToTemplate"]
+
 //////////////////////////
 //   Side Information   //
 //////////////////////////
@@ -266,7 +268,7 @@ _sfLoadoutData set ["ATLaunchers", [["OPTRE_M41_SSR", "", "", "", ["OPTRE_M41_Tw
 private _eliteLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 
 _eliteLoadoutData set ["uniforms", ["OPTRE_Ins_URF_Combat_Uniform", "OPTRE_Ins_URF_Combat_Flat_Uniform"]];
-_eliteLoadoutData set ["slUniform", ["OPTRE_Ins_ER_jacket_od_surplus"]];
+_eliteLoadoutData set ["slUniforms", ["OPTRE_Ins_ER_jacket_od_surplus"]];
 _eliteLoadoutData set ["vests", ["OPTRE_Ins_URF_Armor1"]];
 _eliteLoadoutData set ["mgVests", ["OPTRE_Ins_URF_Armor1_Flat"]];
 _eliteLoadoutData set ["medVests", ["OPTRE_Ins_URF_Woodland_Armor1_Flat"]];
@@ -317,7 +319,7 @@ _eliteLoadoutData set ["ATLaunchers", [["OPTRE_M41_SSR", "", "", "", ["OPTRE_M41
 
 private _militaryLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 _militaryLoadoutData set ["uniforms", ["OPTRE_Ins_URF_Combat_Uniform", "OPTRE_Ins_URF_Combat_Flat_Uniform"]];
-_militaryLoadoutData set ["slUniform", ["OPTRE_Ins_ER_jacket_od_surplus"]];
+_militaryLoadoutData set ["slUniforms", ["OPTRE_Ins_ER_jacket_od_surplus"]];
 _militaryLoadoutData set ["vests", ["OPTRE_Ins_URF_Armor1"]];
 _militaryLoadoutData set ["mgVests", ["OPTRE_Ins_URF_Armor1_Flat"]];
 _militaryLoadoutData set ["medVests", ["OPTRE_Ins_URF_Woodland_Armor1_Flat"]];

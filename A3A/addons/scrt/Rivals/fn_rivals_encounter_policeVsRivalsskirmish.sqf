@@ -15,6 +15,12 @@ if (isNil "_player") exitWith {
     publicVariableServer "isEventInProgress";
 };
 
+if (gameMode in [2, 3]) exitWith {
+	Info("Reb vs Occ/Reb vs Occ and Inv detected, aborting.");
+	isEventInProgress = false;
+	publicVariableServer "isEventInProgress";
+};
+
 private _cities = citiesX select {sidesX getVariable [_x, sideUnknown] != teamPlayer && {spawner getVariable _x != 2} && {!(_x in destroyedSites)}};
 
 if (_cities isEqualTo []) exitWith {
@@ -41,7 +47,7 @@ private _fnc_spawnPoliceForces = {
         while {!_foundRoad && _radius <= 300} do {
             private _nearRoads = _basePos nearRoads _radius;
 
-            if (count _nearRoads > 0) then {
+            if (_nearRoads isNotEqualTo []) then {
                 _road = selectRandom _nearRoads;
                 _foundRoad = true;
             } else {
@@ -54,13 +60,7 @@ private _fnc_spawnPoliceForces = {
             getPosATL _road
         } else {
             // Create position near base if no roads found
-            _basePos getPos [random 150, random 360]
-        };
-        
-        // Use random position if no roads found
-        if (isNull _road) then {
-            _road = _basePos getPos [random 150, random 360];
-            _road setPosATL [getPosATL _road#0, getPosATL _road#1, 0]; // Reset height to 0
+            (_basePos getPos [random 150, random 360]) vectorMultiply [1,1,0]
         };
         
         // Proper spawnVehicle call
@@ -103,7 +103,7 @@ private _fnc_spawnForces = {
         while {!_foundRoad && _radius <= 300} do {
             private _nearRoads = _basePos nearRoads _radius;
 
-            if (count _nearRoads > 0) then {
+            if (_nearRoads isNotEqualTo []) then {
                 _road = selectRandom _nearRoads;
                 _foundRoad = true;
             } else {
@@ -116,13 +116,7 @@ private _fnc_spawnForces = {
             getPosATL _road
         } else {
             // Create position near base if no roads found
-            _basePos getPos [random 150, random 360]
-        };
-        
-        // Use random position if no roads found
-        if (isNull _road) then {
-            _road = _basePos getPos [random 150, random 360];
-            _road setPosATL [getPosATL _road#0, getPosATL _road#1, 0]; // Reset height to 0
+            (_basePos getPos [random 150, random 360]) vectorMultiply [1,1,0]
         };
         
         // Proper spawnVehicle call

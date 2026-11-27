@@ -1,3 +1,5 @@
+#pragma hemtt ignore_variables ["_fnc_saveNames","_fnc_createLoadoutData","_fnc_copyLoadoutData","_fnc_generateAndSaveUnitsToTemplate","_fnc_saveToTemplate"]
+
 //////////////////////////
 //   Side Information   //
 //////////////////////////
@@ -134,7 +136,7 @@ _loadoutData set ["traitorUniforms", ["rhsgref_uniform_olive"]];
 _loadoutData set ["traitorVests", ["rhs_chicom_khk"]];
 _loadoutData set ["traitorHats", ["H_Cap_oli", "H_Cap_grn"]];
 
-_loadoutData set ["officerUniforms", ["UK3CB_ARD_B_H_Beret_OFF", "UK3CB_ARD_B_U_SF_Uniform_01"]];
+_loadoutData set ["officerUniforms", ["UK3CB_ARD_B_U_SF_Uniform_01"]];
 _loadoutData set ["officerVests", ["rhs_vest_pistol_holster", "rhs_gear_OFF", "rhs_vest_commander"]];
 _loadoutData set ["officerHats", ["UK3CB_ARD_B_H_Beret_OFF"]];
 

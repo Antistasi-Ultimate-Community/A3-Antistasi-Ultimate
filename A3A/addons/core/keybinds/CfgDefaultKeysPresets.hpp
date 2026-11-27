@@ -21,6 +21,10 @@ class CfgDefaultKeysPresets {
             GVAR(buildingPlacerRotateStepIncrease)[] = {};
             GVAR(buildingPlacerSnapToSurface)[] = {DIK_LALT};
             GVAR(buildingPlacerUnsafeMode)[] = {DIK_LSHIFT};
+            GVAR(buildingPlacerZOffsetDecrease)[] = {};
+            GVAR(buildingPlacerZOffsetIncrease)[] = {};
+            GVAR(buildingPlacerZStepDecrease)[] = {};
+            GVAR(buildingPlacerZStepIncrease)[] = {};
         };
     };
 };

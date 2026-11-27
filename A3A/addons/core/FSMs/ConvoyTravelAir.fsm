@@ -253,7 +253,7 @@ class FSM
                                         priority = 0.000000;
                                         to="Return__to_Base";
                                         precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-                                        condition=/*%FSM<CONDITION""">*/"{ vehicle _x != _x } count units _cargoGroup == 0;" \n
+                                        condition=/*%FSM<CONDITION""">*/"{ !isNull objectParent _x } count units _cargoGroup == 0;" \n
                                          ""/*%FSM</CONDITION""">*/;
                                         action=/*%FSM<ACTION""">*/"[3, ""Helicopter has unloaded cargo"", ""ConvoyTravelAir""] call A3A_fnc_log;"/*%FSM</ACTION""">*/;
                                 };

@@ -28,7 +28,7 @@ _unit forceAddUniform (selectRandom (A3A_faction_civ get "uniforms"));
 
 while {captive _leader && {captive _unit}} do{
 	sleep 1;
-	if ((vehicle _unit != _unit) and (not((typeOf vehicle _unit) in undercoverVehicles))) exitWith {};
+	if ((!isNull objectParent _unit) and (not((typeOf vehicle _unit) in undercoverVehicles))) exitWith {};
 	if ((primaryWeapon _unit != "") or (secondaryWeapon _unit != "") or (handgunWeapon _unit != "")) exitWith {};
 };
 

@@ -50,12 +50,11 @@ if (_part == "" && _damage > 0.1) then
 // Let ACE medical handle the rest (inc return value) if it's running
 if (A3A_hasACEMedical) exitWith {};
 
-// Don't bother with the unconscious nonsense, based on param values
-if (unconChanceReb < random 10) exitWith {};
-
-
 private _makeUnconscious =
 {
+	// Don't bother with the unconscious nonsense, based on param values
+	if (unconChanceReb < random 10) exitWith { _damage = 1 };
+	
 	params ["_unit", "_injurer"];
 	_unit setVariable ["incapacitated",true,true];
 	_unit setVariable ["helpFailed", 0];
@@ -67,7 +66,7 @@ private _makeUnconscious =
                 unassignVehicle _x;
             } forEach units player;
         };
-	if (vehicle _unit != _unit) then
+	if (!isNull objectParent _unit) then
 	{
 		moveOut _unit;
 	};

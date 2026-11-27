@@ -1,14 +1,18 @@
+#include "..\UILayouts\ids.inc"
+#include "..\script_component.hpp"
+FIX_LINE_NUMBERS()
+
 disableSerialization;
 
-params ["_severity", "_header", "_message", "_time", ["_displayId", 60000]];
+params ["_severity", "_header", "_message", "_time", ["_displayId", A3A_IDD_COMMANDER_MENU]];
 
 private _display = findDisplay _displayId;
 
 if (str (_display) == "no display") exitWith {};
 
 private _timeOut = time + _time;
-private _title = _display displayCtrl 1055;
-private _text = _display displayCtrl 1056;
+private _title = _display displayCtrl A3A_IDC_MENU_MESSAGEBOX_TITLE;
+private _text = _display displayCtrl A3A_IDC_MENU_MESSAGEBOX_TEXT;
 
 switch (true) do {
     case (_severity isEqualTo (localize "STR_notifiers_info_type")): {

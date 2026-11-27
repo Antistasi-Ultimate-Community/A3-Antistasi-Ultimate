@@ -116,9 +116,9 @@ class AddonVics
         requiredAddons[] = {"CSLA_CIV"};
         //format {side, file relative to path}
         files[] = { {"Civ", "csla_Civ.sqf"} };
-        displayName = "CSLA Iron Curtian Vehicle Pack";
-        description = "CSLA Iron Curtian civilian vehicle pack(don't forget to enable cdlc above!)";
-        loadedMessage = "CSLA Iron Curtian loaded, civilian vehicle pool expanded";
+        displayName = "CSLA Iron Curtain Vehicle Pack";
+        description = "CSLA Iron Curtain civilian vehicle pack(don't forget to enable cdlc above!)";
+        loadedMessage = "CSLA Iron Curtain loaded, civilian vehicle pool expanded";
     };
 
     class D3S
@@ -170,5 +170,15 @@ class AddonVics
         displayName = "CUP Civilian Vehicle Pack";
         description = "A vehicle pack from CUP that extends the civilian vehicle pool";
         loadedMessage = "CUP civilian loaded, civilian vehicle pool expanded";
+    };
+
+    class Alessio
+    {
+        path = QPATHTOFOLDER(Templates\AddonVics);
+        requiredAddons[] = {"Alessio_Base"};
+        files[] = { {"Civ", "alessio_Civ.sqf"} };
+        displayName = "Alessio Cars Pack V2";
+        description = "A sports car pack that extends the civilian vehicle pool";
+        loadedMessage = "Alessio Cars loaded, civilian vehicle pool expanded";
     };
 };

@@ -6,12 +6,12 @@ if (!isServer) exitWith {
 
 params ["_playerId", "_unit"];
 
-if !(_playerId in A3A_playerSaveData) then {
-    Info_1("No save found for player ID %1", _playerId);
+if !(_playerId in A3A_playerSaveData) exitWith {
+    Info_1("No save found for player ID %1",_playerId);
 	[_playerId, _unit] call A3A_fnc_resetPlayer;
 };
 
-Info_2("Loading player data for ID %1 into unit %2", _playerId, _unit);
+Info_2("Loading player data for ID %1 into unit %2",_playerId,_unit);
 
 private _playerHM = A3A_playerSaveData get _playerID;
 private _loadout = _playerHM get "loadoutPlayer";
@@ -38,7 +38,13 @@ _unit setUnitRank _rank;
 _unit setVariable ["rankX", _rank, true];
 _unit setVariable ["moneyX", _money, true];
 
+if (isNil { _playerHM get "pluginsData" }) then {
+    _playerHM set["pluginsData", createHashMap];
+};
+
+[CBA_EVENT_CLIENT_PLAYER_LOAD, [_playerHM get "pluginsData"], owner _unit] call FUNCMAIN(triggerOwnerEvent);
+
 [] remoteExec ["A3A_fnc_statistics", _unit];
 _unit setVariable ["canSave", true, true];
 
-Info_5("Player %1: Score %2, rank %3, money %4, garage count %5", _playerId, _score, _rank, _money, count _garage);
+Info_5("Player %1: Score %2, rank %3, money %4, garage count %5",_playerId,_score,_rank,_money,count _garage);

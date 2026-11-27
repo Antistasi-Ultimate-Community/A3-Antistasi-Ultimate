@@ -9,10 +9,9 @@ if (_veh isKindOf "Car") then {
 };
 
 [_veh] spawn A3A_fnc_cleanserVeh;
+[_veh] call FUNCMAIN(preparePostMortem);
 
-_veh addEventHandler ["Killed",{[_this select 0] spawn A3A_fnc_postmortem}];
-
-if (count _vehCrew == 0) then { //and {("vanilla" in A3A_factionEquipFlags)}
+if (_vehCrew isEqualTo []) then { //and {("vanilla" in A3A_factionEquipFlags)}
 	sleep 10;
 	[_veh,false] remoteExec ["enableSimulationGlobal",2];
 	_veh addEventHandler ["GetIn", { //ToDo: we should clean up the sim eh after as its a one of thing
@@ -25,4 +24,5 @@ if (count _vehCrew == 0) then { //and {("vanilla" in A3A_factionEquipFlags)}
 		if (!simulationEnabled _veh) then {[_veh,true] remoteExec ["enableSimulationGlobal",2]};
 	}];
 };
-["civVehInit", [_veh]] call EFUNC(Events,triggerEvent);
+
+[CBA_EVENT_SERVER_INIT_CIVILIAN_VEHICLE, [_veh]] call FUNCMAIN(triggerServerEvent);

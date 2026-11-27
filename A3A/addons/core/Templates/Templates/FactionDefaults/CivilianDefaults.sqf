@@ -1,3 +1,5 @@
+#pragma hemtt ignore_variables ["_fnc_saveNames","_fnc_createLoadoutData","_fnc_copyLoadoutData","_fnc_generateAndSaveUnitsToTemplate","_fnc_saveToTemplate"]
+
 //////////////////////////
 //       Loadout        //
 //////////////////////////
@@ -87,6 +89,9 @@ private _currencySymbol = switch (true) do {
     case ((toLowerANSI worldName) isEqualTo "taviana"): {
         "₽"
     };
+	case ((toLowerANSI worldName) in ["gm_weferlingen_summer", "gm_weferlingen_winter"]): {
+		"DM"
+	};
 	default {
         "€"
 	};

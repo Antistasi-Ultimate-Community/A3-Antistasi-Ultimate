@@ -1,3 +1,5 @@
+#pragma hemtt ignore_variables ["_fnc_saveNames","_fnc_createLoadoutData","_fnc_copyLoadoutData","_fnc_generateAndSaveUnitsToTemplate","_fnc_saveToTemplate"]
+
 //////////////////////////
 //   Side Information   //
 /////////////////////////
@@ -72,8 +74,8 @@
 ["staticMortars", ["CSLA_M52_Stat"]] call _fnc_saveToTemplate;
 ["mortarMagazineHE", "CSLA_8rnd_82EOM52"] call _fnc_saveToTemplate;               
 
-["vehicleRadar", []] call _fnc_saveToTemplate;                  
-["vehicleSam", []] call _fnc_saveToTemplate;                    
+["vehicleRadar", ""] call _fnc_saveToTemplate;                  
+["vehicleSam", ""] call _fnc_saveToTemplate;                    
 
 ["howitzerMagazineHE", ""] call _fnc_saveToTemplate;            
              

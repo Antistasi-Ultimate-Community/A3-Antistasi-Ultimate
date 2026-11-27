@@ -1,3 +1,5 @@
+#pragma hemtt ignore_variables ["_fnc_saveNames","_fnc_createLoadoutData","_fnc_copyLoadoutData","_fnc_generateAndSaveUnitsToTemplate","_fnc_saveToTemplate"]
+
 //////////////////////////
 //   Side Information   //
 //////////////////////////
@@ -276,7 +278,7 @@ _sfLoadoutData set ["sidearms", [
 
 private _eliteLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 _eliteLoadoutData set ["uniforms", ["tmt_multicam_combat_uniform_gloves_kneepad", "tmt_multicam_combat_uniform_gloves"]];
-_eliteLoadoutData set ["slUniform", ["tmt_multicam_combat_kn_sfshell_uniform"]];
+_eliteLoadoutData set ["slUniforms", ["tmt_multicam_combat_kn_sfshell_uniform"]];
 _eliteLoadoutData set ["vests", ["CPC_SAT", "CUP_V_B_Armatus_MCam"]];
 _eliteLoadoutData set ["mgVests", ["CPC_MG_S_SAT"]];
 _eliteLoadoutData set ["medVests", ["CPC_MEDIC_SAT"]];
@@ -341,7 +343,7 @@ _eliteLoadoutData set ["sidearms", [
 
 private _militaryLoadoutData = _loadoutData call _fnc_copyLoadoutData;
 _militaryLoadoutData set ["uniforms", ["tmt_digital_combat_uniform_gloves_kneepad", "tmt_digital_combat_uniform"]];
-_militaryLoadoutData set ["slUniform", ["tmt_digital_combat_sfshell_kn_uniform"]];
+_militaryLoadoutData set ["slUniforms", ["tmt_digital_combat_sfshell_kn_uniform"]];
 _militaryLoadoutData set ["vests", ["tmt_file_assault_vest", "TMT_TAN_WarriorAssaultVest_556_Belt"]];
 _militaryLoadoutData set ["mgVests", ["TMT_TAN_WarriorAssaultVest_MG_belt", "tmt_file_assault_vest_mg"]];
 _militaryLoadoutData set ["medVests", ["TMT_TAN_WarriorAssaultVest_Medic_Belt", "TMT_TAN_WarriorAssaultVest_Medic"]];

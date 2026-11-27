@@ -17,10 +17,10 @@ traderObjects = [];
 
 if (isTraderQuestCompleted) then {
 	traderMarker = createMarker ["TraderMarker", _position];
-	traderMarker setMarkerType "hd_objective";
-	traderMarker setMarkerSize [1, 1];
-	traderMarker setMarkerText (localize "STR_marker_arms_dealer");
-	traderMarker setMarkerColor "ColorUNKNOWN";
+	traderMarker setMarkerTypeLocal "A3AU_dealer_mrk";
+	traderMarker setMarkerSizeLocal [1, 1];
+	traderMarker setMarkerTextLocal "";
+	traderMarker setMarkerColorLocal "ColorUNKNOWN";
 	traderMarker setMarkerAlpha 1;
 	sidesX setVariable [traderMarker,teamPlayer,true];
 	publicVariable "traderMarker";

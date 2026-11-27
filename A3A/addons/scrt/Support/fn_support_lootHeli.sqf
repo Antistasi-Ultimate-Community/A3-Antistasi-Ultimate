@@ -42,10 +42,10 @@ clearMagazineCargoGlobal _lootCrate;
 _heli setSlingLoad _lootCrate;
 
 private _areaMarker = createMarkerLocal ["LootHeliAreaGlobalMarker", _positionDestination];
-_areaMarker setMarkerShape "ELLIPSE";
-_areaMarker setMarkerSize [250,250];
-_areaMarker setMarkerType "hd_warning";
-_areaMarker setMarkerColor "colorCivilian";
+_areaMarker setMarkerShapeLocal "ELLIPSE";
+_areaMarker setMarkerSizeLocal [250,250];
+_areaMarker setMarkerTypeLocal "hd_warning";
+_areaMarker setMarkerColorLocal "colorCivilian";
 _areaMarker setMarkerBrush "Grid";
 
 driver _heli sideChat (localize "STR_chats_loot_run");
@@ -64,7 +64,7 @@ waitUntil {_heli distance2D _positionDestination < 250 || {!alive _heli || !(can
 if (!alive _heli || !(canMove _heli) || {!([(driver _heli)] call A3A_fnc_canFight)}) exitWith {
     deleteMarker _areaMarker;
     deleteMarker "LootHeliAreaGlobalMarker";
-	Info_2("Helicopter is unable to loot area. Positions: %1, %2", str _positionOrigin, str _positionDestination);
+	Info_2("Helicopter is unable to loot area. Positions: %1, %2",str _positionOrigin,str _positionDestination);
 
 	if (isSupportMarkerPlacingLocked) then {
 		isSupportMarkerPlacingLocked = false;
@@ -83,7 +83,7 @@ waitUntil {time > _timeOut};
 if (!alive _heli || !(canMove _heli) || {!([(driver _heli)] call A3A_fnc_canFight)}) exitWith {
     deleteMarker _areaMarker;
     deleteMarker "LootHeliAreaGlobalMarker";
-	Info_2("Helicopter is unable to loot area. Positions: %1, %2", str _positionOrigin, str _positionDestination);
+	Info_2("Helicopter is unable to loot area. Positions: %1, %2",str _positionOrigin,str _positionDestination);
 
 	if (isSupportMarkerPlacingLocked) then {
 		isSupportMarkerPlacingLocked = false;
@@ -115,7 +115,9 @@ _lootCrate attachTo [_para, [0, 0, -1.2]];
 	params ["_obj","_para"];
 
 	private _smokeShellVariants = ["SmokeShellRed", "SmokeShellGreen", "SmokeShellYellow", "SmokeShellPurple", "SmokeShellBlue", "SmokeShellOrange"];
-		
+	
+	private _startTime = time;
+
 	waitUntil {
 		sleep 0.01;
 		((position _obj) select 2) < 2 
@@ -123,10 +125,17 @@ _lootCrate attachTo [_para, [0, 0, -1.2]];
 		isNull _para 
 		|| 
 		(count (lineIntersectsWith [getPosASL _obj, (getPosASL _obj) vectorAdd [0, 0, -0.5], _obj, _para])) > 0
+		|| 
+        (time - _startTime) > 30
 	};
 		
 	_para disableCollisionWith _obj;
-	_obj setVectorUp [0,0,1];
+
+	private _currentUp = vectorUp _obj;
+	private _angle = acos (_currentUp vectorDotProduct [0,0,1]);
+	if (_angle > 60) then {
+	    _obj setVectorUp [0,0,1];
+	};
 	_obj setVelocity [0,0,0];
 	detach _obj;
 	
@@ -158,7 +167,9 @@ if (!_isGatherSuccessful) then {
     deleteVehicle _lootCrate;
 };
 
-if !(canMove _heli) then { sleep cleantime };
+if (A3A_GCThreshold isEqualTo -1) exitWith {};
+
+if !(canMove _heli) then { sleep A3A_GCThreshold };
 deleteVehicle _heli;
 {deleteVehicle _x} forEach _heliCrew;
 deleteGroup _groupHeli;

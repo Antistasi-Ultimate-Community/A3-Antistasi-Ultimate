@@ -14,7 +14,7 @@ private _prestigeOPFOR = nil;
 private _prestigeBLUFOR = nil;
 
 {
-	_dataX = server getVariable _x;
+	_dataX = A3A_townData get _x;
 	_numCiv = _dataX select 0;
 	_prestigeOPFOR = _dataX select 2;
 	_prestigeBLUFOR = _dataX select 3;
@@ -26,7 +26,7 @@ private _prestigeBLUFOR = nil;
 _popFIA = round _popFIA;
 _popAAF = round _popAAF;
 
-[localize "STR_A3A_cityinfo_header", format [localize "STR_A3A_cityinfo_general_info",_pop, _popFIA, _popAAF, _popCSAT,FactionGet(occ,"name"),FactionGet(reb,"name"),getText (configfile >> "CfgWorlds" >> worldname >> "description")]] call A3A_fnc_customHint;
+[localize "STR_A3A_cityinfo_header", format [localize "STR_A3A_cityinfo_general_info",_pop, _popFIA, _popAAF, _popCSAT,FactionGet(occ,"name"),FactionGet(reb,"name"),getText (configFile >> "CfgWorlds" >> worldName >> "description")]] call A3A_fnc_customHint;
 
 if (!visibleMap) then {openMap true};
 
@@ -60,7 +60,7 @@ private _measureGarrison = {
 
 while {visibleMap} do {
 	sleep 1;
-	if (count positionTel > 0) then {
+	if (positionTel isNotEqualTo []) then {
 		_positionTel = positionTel;
 		_siteX = [markersX, _positionTel] call BIS_Fnc_nearestPosition;
 		_textX = localize "STR_A3A_cityinfo_zone_click";
@@ -71,7 +71,7 @@ while {visibleMap} do {
 			_textX = format ["%2 HQ%1",[_siteX] call A3A_fnc_garrisonInfo,FactionGet(reb,"name")];
 		};
 		if (_siteX in citiesX) then {
-			_dataX = server getVariable _siteX;
+			_dataX = A3A_townData get _siteX;
 
 			_numCiv = _dataX select 0;
 			_prestigeOPFOR = round (_dataX select 2);

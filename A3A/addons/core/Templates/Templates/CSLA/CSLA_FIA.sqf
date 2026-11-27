@@ -1,10 +1,12 @@
+#pragma hemtt ignore_variables ["_fnc_saveNames","_fnc_createLoadoutData","_fnc_copyLoadoutData","_fnc_generateAndSaveUnitsToTemplate","_fnc_saveToTemplate"]
+
 ///////////////////////////
 //   Rebel Information   //
 ///////////////////////////
 
 ["name", "FIA"] call _fnc_saveToTemplate;
 
-["flag", "FIA_Flag"] call _fnc_saveToTemplate;
+["flag", "Flag_FIA_F"] call _fnc_saveToTemplate;
 ["flagTexture", "\csla_misc\signs\flags\fia_flag.paa"] call _fnc_saveToTemplate;
 ["flagMarkerType", "flag_FIA"] call _fnc_saveToTemplate;
 

@@ -32,11 +32,11 @@ private _markerX = [airportsX + resourcesX + factories + outposts + seaports + m
 
 // private _hideEnemyMarkers = missionNamespace getVariable ["A3U_setting_hideEnemyMarkers",false];
 if (hideEnemyMarkers) then {
-    "Dum"+_markerX setMarkerAlpha 1;
+    [_markerX] call A3U_fnc_revealZone;
 };
 
 private _markerPos = getMarkerPos _markerX;
-private _outpostGridSquare = ((_markerPos#0 toFixed 0) call A3A_fnc_pad_3Digits) + ((_markerPos#1 toFixed 0) call A3A_fnc_pad_3Digits);  // NB: Check if this is the right order for pos-> grid square
+private _outpostGridSquare = mapGridPosition _markerPos;
 
 if (sidesX getVariable [_markerX,sideUnknown] == teamPlayer) exitWith {};
 
@@ -58,30 +58,19 @@ if(_flagCaptureETA > serverTime) exitWith
 _flagX setVariable ["A3A_flagCaptureETA", serverTime + 10, true];
 
 
-ServerInfo_3("Outpost at %1 (%2): Flag capture initiated by %3", _outpostGridSquare, _markerX, str player);
+ServerInfo_3("Outpost at %1 (%2): Flag capture initiated by %3",_outpostGridSquare,_markerX,str player);
 
-private _capRadius = ((markerSize _markerX select 0) + (markerSize _markerX select 1)) / 2;
-_capRadius = 50 max _capRadius;
+private _friendliesInArea = [];
+private _counts = [_markerX, A3A_diameterExtendedCaptureArea, {
+    player reveal (_this select 0);
+}, _friendliesInArea] call A3A_fnc_zoneCountUnits;
 
-private _rebelValue = 0;
-private _enemyValue = 0;
-{
-    if !(_x call A3A_fnc_canFight) then { continue };
-    private _value = linearConversion [_capRadius/2, _capRadius, _markerPos distance2d _x, 1, 0, true];
-    if (side _x == teamPlayer) then {
-        _rebelValue = _rebelValue + _value;
-        continue;
-    };
-    if (side _x == Occupants or side _x == Invaders) then {
-        _enemyValue = _enemyValue + _value;
-        player reveal _x;
-    };
-} forEach (allUnits inAreaArray [_markerPos, _capRadius, _capRadius]);
-
+private _rebelValue = _counts get teamPlayer;
+private _enemyValue = (_counts get Occupants) + (_counts get Invaders);
 
 if (_enemyValue > 2*_rebelValue) exitWith
 {
-    ServerInfo_4("Outpost at %1 (%2): Flag capture cancelled due to enemy value (%3) greater than 2*rebel value (%4)", _outpostGridSquare, _markerX, _enemyValue, _rebelValue);
+    ServerInfo_4("Outpost at %1 (%2): Flag capture cancelled due to enemy value (%3) greater than 2*rebel value (%4)",_outpostGridSquare,_markerX,_enemyValue,_rebelValue);
     [localize "STR_A3A_Base_mrkWin_header", localize "STR_A3A_Base_mrkWin_nearenemy"] call SCRT_fnc_misc_deniedHint;
 };
 
@@ -107,23 +96,26 @@ player setUserActionText [_cancelActionID, localize "STR_A3A_Base_mrkWin_abort",
 sleep 8;
 
 if (_cancellationToken #0) exitWith {
-    ServerInfo_3("Outpost at %1 (%2): Flag capture aborted by %3", _outpostGridSquare, _markerX, str player);
+    ServerInfo_3("Outpost at %1 (%2): Flag capture aborted by %3",_outpostGridSquare,_markerX,str player);
 };
 A3A_isPlayerCapturingFlag = nil;
 player removeAction _cancelActionID;
 player playMove "";
 
-{
-    if (isPlayer _x) then
-    {
-        [round (2 * tierWar),_x] remoteExec ["A3A_fnc_addScorePlayer",_x];
-        [round (100 * tierWar),_x] remoteExec ["A3A_fnc_addMoneyPlayer",_x];
-        if (captive _x) then
-        {
-            [_x,false] remoteExec ["setCaptive",_x];
-        };
-    }
-} forEach ([_capRadius,0,_markerPos,teamPlayer] call A3A_fnc_distanceUnits);
+if (_friendliesInArea isEqualTo []) then {
+    private _capRadius = ((markerSize _markerX select 0) + (markerSize _markerX select 1)) / 2;
+    _capRadius = 50 max _capRadius;
+    _friendliesInArea = ([_capRadius,0,_markerPos,teamPlayer] call A3A_fnc_distanceUnits) select { isPlayer _x };
+};
 
-ServerInfo_3("Outpost at %1 (%2): Flag capture completed by %3", _outpostGridSquare, _markerX, str player);
+_friendliesInArea apply {
+    [round (2 * tierWar), _x] remoteExec ["A3A_fnc_addScorePlayer", _x];
+    [round (100 * tierWar), _x] remoteExec ["A3A_fnc_addMoneyPlayer", _x];
+
+    if (captive _x) then {
+        [_x, false] remoteExec ["setCaptive", _x];
+    };
+};
+
+ServerInfo_3("Outpost at %1 (%2): Flag capture completed by %3",_outpostGridSquare,_markerX,str player);
 [teamPlayer,_markerX] remoteExec ["A3A_fnc_markerChange",2];

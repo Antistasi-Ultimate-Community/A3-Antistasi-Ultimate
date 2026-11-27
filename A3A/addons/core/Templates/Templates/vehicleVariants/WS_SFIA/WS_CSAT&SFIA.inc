@@ -1,0 +1,11 @@
+["O_SFIA_Truck_02_aa_lxWS", ["Opfor",1]],
+["O_SFIA_ZU23_lxWS", ["hex",0.5, "SFIA",0.5, "SFIA2",0.5, "Beige",0, "White",0, "Black",0.5, "Green",0, "Tan",0]],
+["O_G_Offroad_AA_lxWS", ["SFIA",0, "SFIA2",0, "WhiteUN",0, "Beige",0, "White",0, "Green",1, "Black",0, "Guerilla_01",0, "Guerilla_02",0,
+"Guerilla_03",0, "Guerilla_04",0, "Guerilla_05",0, "Guerilla_06",0, "Guerilla_07",0, "Guerilla_08",0, "Guerilla_09",0, "Guerilla_10",0, "Guerilla_11",0, "Guerilla_12",0]],
+["O_Tura_Offroad_armor_AA_lxWS", ["SFIA",0, "SFIA2",0, "WhiteUN",0, "Beige",0, "White",0, "Green",1, "Black",0, "Guerilla_01",0, "Guerilla_02",0,
+"Guerilla_03",0, "Guerilla_04",0, "Guerilla_05",0, "Guerilla_06",0, "Guerilla_07",0, "Guerilla_08",0, "Guerilla_09",0, "Guerilla_10",0, "Guerilla_11",0, "Guerilla_12",0]],
+["O_APC_Tracked_02_30mm_lxWS", ["Grey", 0.4, "Hex", 0.6]],
+["O_APC_Wheeled_02_hmg_lxWS", ["Hex", 0.7, "Black", 0.3]],
+["O_APC_Wheeled_02_unarmed_lxWS", ["Hex", 0.7, "Black", 0.3]],
+["B_ION_Heli_Light_02_unarmed_lxWS", ["Opfor",0.6, "Black", 0.2 , "Blackcustom", 0.2 ,"ION_BLACK", 0]],
+["a3a_ION_Heli_Light_02_dynamicLoadout_lxWS", ["Opfor",0.6, "Black", 0.2 , "Blackcustom", 0.2 ,"ION_BLACK", 0]]

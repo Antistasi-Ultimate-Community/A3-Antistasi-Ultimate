@@ -20,7 +20,7 @@ if (isServer) then {
 };
 
 removeAllActions _oldUnit;
-[_oldUnit] spawn A3A_fnc_postmortem;
+[_oldUnit] remoteExecCall[QFUNCMAIN(postmortem), 2];
 
 _oldUnit setVariable ["incapacitated",false,true];
 _newUnit setVariable ["incapacitated",false,true];
@@ -67,7 +67,7 @@ if (side group _newUnit == teamPlayer) then
     	_newUnit addOwnedMine _x;
     } count (getAllOwnedMines (_oldUnit));
 	{
-		if (_x getVariable ["owner", ObjNull] == _oldUnit) then {
+		if (_x getVariable ["owner", objNull] == _oldUnit) then {
 			_x setVariable ["owner", _newUnit, true];
 		};
 	} forEach (units group _newUnit);
@@ -108,18 +108,18 @@ if (side group _newUnit == teamPlayer) then
 				if(((server getVariable ["hr",0]) <= 10) && (tierWar >= 2)) then
 				{
 					_warningText = "<t font ='PuristaBold' align = 'center' size='0.8' color='#bd0000'>" + localize "STR_A3AU_respawn_warning" +"</t>"+"<br />"+"<t font ='PuristaSemibold' align = 'center' size='0.55' color='#ebebeb'>" + format [localize "STR_A3AU_respawn_warning_info", (A3A_faction_reb get "name"), ((server getVariable ["hr",0])-1)]+"</t>"+"<br />"+"<t font ='PuristaSemibold' align = 'center' size='0.4' color='#ebebeb'>" + format [localize "STR_chats_player_kia", _deathPenaltyNum]+"</t>";
-					[_warningText,0,safezoneY+0.05] spawn BIS_fnc_dynamicText;
+					[_warningText,0,safeZoneY+0.05] spawn BIS_fnc_dynamicText;
 				};
 
 				if(((server getVariable ["hr",0]) > 10) && (tierWar >= 2)) then
 				{
 					_warningText = "<t font ='PuristaSemibold' align = 'center' size='0.5' color='#ebebeb'>" + format [localize "STR_chats_player_kia", _deathPenaltyNum]+"</t>";
-					[_warningText,0,safezoneY+0.05] remoteExec ["BIS_fnc_dynamicText"];
+					[_warningText,0,safeZoneY+0.05] remoteExec ["BIS_fnc_dynamicText"];
 				};
 			};
         };
 
-		default {Error_1("Lose HR on death num was not recognized. Condition given: %1", loseHROnDeath)};
+		default {Error_1("Lose HR on death num was not recognized. Condition given: %1",loseHROnDeath)};
     };
 
 	disableUserInput false;
@@ -132,7 +132,7 @@ if (side group _newUnit == teamPlayer) then
 	[(selectRandom unlockedmaps),"","",(selectRandom unlockedCompasses),(selectRandom unlockedwatches),""]];
 
 	if (!isPlayer (leader group _newUnit)) then {(group _newUnit) selectLeader _newUnit};
-	_newUnit addEventHandler ["FIRED", 
+	_newUnit addEventHandler ["Fired", 
 	{
 		_player = _this select 0;
 		if (captive _player) then {
@@ -145,14 +145,14 @@ if (side group _newUnit == teamPlayer) then
 			{
 				_city = [citiesX,_player] call BIS_fnc_nearestPosition;
 				_size = [_city] call A3A_fnc_sizeMarker;
-				_dataX = server getVariable _city;
+				_dataX = A3A_townData get _city;
 				if (random 100 < _dataX select 2) then
 				{
 					if (_player distance getMarkerPos _city < _size * 1.5) then
 					{
 						[_player,false] remoteExec ["setCaptive",0,_player];
 						_player setCaptive false;
-						if (vehicle _player != _player) then
+						if (!isNull objectParent _player) then
 						{
 							{if (isPlayer _x) then {[_x,false] remoteExec ["setCaptive",0,_x]; _x setCaptive false}} forEach ((assignedCargo (vehicle _player)) + (crew (vehicle _player)) - [_player]);
 						};
@@ -182,7 +182,7 @@ if (side group _newUnit == teamPlayer) then
 				{
 					_city = [citiesX,_playerX] call BIS_fnc_nearestPosition;
 					_size = [_city] call A3A_fnc_sizeMarker;
-					_dataX = server getVariable _city;
+					_dataX = A3A_townData get _city;
 					if (random 100 < _dataX select 2) then
 					{
 						if (_playerX distance getMarkerPos _city < _size * 1.5) then
@@ -215,7 +215,7 @@ if (side group _newUnit == teamPlayer) then
 			{
 				_city = [citiesX,_player] call BIS_fnc_nearestPosition;
 				_size = [_city] call A3A_fnc_sizeMarker;
-				_dataX = server getVariable _city;
+				_dataX = A3A_townData get _city;
 				if (random 100 < _dataX select 2) then
 				{
 					if (_player distance getMarkerPos _city < _size * 1.5) then
@@ -232,10 +232,7 @@ if (side group _newUnit == teamPlayer) then
 		private _veh = _this select 1;
 		[_veh, teamPlayer] call A3A_fnc_AIVEHinit;		// will flip/capture if already initialized
 		if (_veh isKindOf "StaticWeapon") then {
-			if (not(_veh in staticsToSave)) then {
-				staticsToSave pushBack _veh;
-				publicVariable "staticsToSave";
-			};
+	        [_veh] call A3A_fnc_addToStaticsToSave;
 			_markersX = markersX select {sidesX getVariable [_x,sideUnknown] == teamPlayer};
 			_pos = position _veh;
 			if (_markersX findIf {_pos inArea _x} != -1) then {
@@ -243,12 +240,10 @@ if (side group _newUnit == teamPlayer) then
 			};
 		};
 	}];
-	_newUnit addEventHandler ["WeaponDisassembled",
-	{
-		_bag1 = _this select 1;
-		_bag2 = _this select 2;
-		[_bag1] remoteExec ["A3A_fnc_postmortem", 2];
-		[_bag2] remoteExec ["A3A_fnc_postmortem", 2];
+
+	_newUnit addEventHandler ["WeaponDisassembled", {
+		[_this select 1, true] remoteExecCall[QFUNCMAIN(despawnQueueEntity), 2];
+		[_this select 2, true] remoteExecCall[QFUNCMAIN(despawnQueueEntity), 2];
 	}];
 
 	if (areRivalsDiscovered) then {
@@ -260,9 +255,8 @@ if (side group _newUnit == teamPlayer) then
 		}];
 	};
 
-	[] spawn A3A_fnc_unitTraits;
+	[] call A3A_fnc_unitTraits;
 	[] spawn A3A_fnc_statistics;
-	call A3A_fnc_dropObject;
 } else {
 	_oldUnit setVariable ["spawner",nil,true];
 	_newUnit setVariable ["spawner",true,true];
@@ -279,4 +273,4 @@ if (staminaEnabled isEqualTo false) then {
 }; 
  
 private _newWeaponSway = swayEnabled / 100;
-_newunit setCustomAimCoef _newWeaponSway;
+_newUnit setCustomAimCoef _newWeaponSway;

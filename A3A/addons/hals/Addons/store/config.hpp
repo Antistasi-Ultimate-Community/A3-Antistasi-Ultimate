@@ -1,5 +1,5 @@
 /*
-	Macro: ERROR_WITH_TITLE()
+	Macro: ITEM(CLASSNAME, PRICE, STOCK)
 
 	Parameters:
 	0: CLASSNAME - Classname of item
@@ -33,7 +33,11 @@ class cfgHALsStore
 		#include "config\3cbbaf.hpp"
 		#include "config\3cbf.hpp"
 		#include "config\3cbfcw.hpp"
+		#include "config\a3u.hpp"
 		#include "config\aegis.hpp"
+		#include "config\atlas.hpp"
+		#include "config\opposingforces.hpp"
+		#include "config\police.hpp"
 		#include "config\bwa.hpp"
 		#include "config\csa38.hpp"
 		#include "config\csla.hpp"
@@ -50,7 +54,6 @@ class cfgHALsStore
 		#include "config\pla.hpp"
 		#include "config\rf.hpp"
 		#include "config\rhs.hpp"
-		#include "config\scion.hpp"
 		#include "config\sfp.hpp"
 		#include "config\sma.hpp"
 		#include "config\spearhead.hpp"
@@ -84,13 +87,18 @@ class cfgHALsStore
 		#include "config\JCAIE.hpp"
 		#include "config\hafm.hpp"
 		#include "config\mpp.hpp"
+		#include "config\qdi.hpp"
+		#include "config\mss.hpp"
+		#include "config\rearma_us.hpp"
+		#include "config\rearma_ru.hpp"
+		#include "config\rearma_cn.hpp"
 	};
 
 	class stores 
 	{
 		class vanilla 
 		{
-			displayName = $STR_ARMS_DEALER_STORE;
+			displayName = "$STR_ARMS_DEALER_STORE";
 			categories[] = {
 				"handgunsVanilla",
 				"riflesVanilla", 
@@ -107,10 +115,17 @@ class cfgHALsStore
 				"miscVanilla"
 			};
 		};
+		class a3u
+		{
+			displayName = "$STR_ARMS_DEALER_STORE";
+			categories[] = {
+				"miscA3U"
+			};
+		};
 		////DLC
 		class apex 
 		{
-			displayName = $STR_ARMS_DEALER_STORE;
+			displayName = "$STR_ARMS_DEALER_STORE";
 			categories[] = {
 				"handgunsApex",
 				"riflesApex", 
@@ -129,14 +144,14 @@ class cfgHALsStore
 		};
 		class lawsofwar 
 		{
-			displayName = $STR_ARMS_DEALER_STORE;
+			displayName = "$STR_ARMS_DEALER_STORE";
 			categories[] = { 
 				"miscLawsofwar"
 			};
 		};
 		class contact
 		{
-			displayName = $STR_ARMS_DEALER_STORE;
+			displayName = "$STR_ARMS_DEALER_STORE";
 			categories[] = {
 				"handgunsContact",
 				"riflesContact", 
@@ -154,7 +169,7 @@ class cfgHALsStore
 		};
 		class marksmen
 		{
-			displayName = $STR_ARMS_DEALER_STORE;
+			displayName = "$STR_ARMS_DEALER_STORE";
 			categories[] = {
 				"sniperRiflesMarksmen",
 				"mgMarksmen", 
@@ -167,14 +182,14 @@ class cfgHALsStore
 		};
 		class jets 
 		{
-			displayName = $STR_ARMS_DEALER_STORE;
+			displayName = "$STR_ARMS_DEALER_STORE";
 			categories[] = {
 				"miscJets"
 			};
 		};
 		class kart
 		{
-			displayName = $STR_ARMS_DEALER_STORE;
+			displayName = "$STR_ARMS_DEALER_STORE";
 			categories[] = {
 				"handgunsKart", 
 				"magazinesKart"
@@ -182,7 +197,7 @@ class cfgHALsStore
 		};
 		class tanks
 		{
-			displayName = $STR_ARMS_DEALER_STORE;
+			displayName = "$STR_ARMS_DEALER_STORE";
 			categories[] = {
 				"launchersTanks",
 				"launcherMagazinesTanks",
@@ -191,7 +206,7 @@ class cfgHALsStore
 		};
 		class artofwar
 		{
-			displayName = $STR_ARMS_DEALER_STORE;
+			displayName = "$STR_ARMS_DEALER_STORE";
 			categories[] = {
 				"miscArtofwar"
 			};
@@ -200,7 +215,7 @@ class cfgHALsStore
 		////CDLC
 		class rf 
 		{
-			displayName = $STR_ARMS_DEALER_STORE;
+			displayName = "$STR_ARMS_DEALER_STORE";
 			categories[] = {
 				"riflesRF", 
 				"sniperRiflesRF", 
@@ -218,7 +233,7 @@ class cfgHALsStore
 		};
 		class ef 
 		{
-			displayName = $STR_ARMS_DEALER_STORE;
+			displayName = "$STR_ARMS_DEALER_STORE";
 			categories[] = {
 				"riflesEF", 
 				"handgunsEF", 
@@ -232,7 +247,7 @@ class cfgHALsStore
 		};
 		class ws 
 		{
-			displayName = $STR_ARMS_DEALER_STORE;
+			displayName = "$STR_ARMS_DEALER_STORE";
 			categories[] = {
 				"riflesWs",
 				"launchersWs",
@@ -248,7 +263,7 @@ class cfgHALsStore
 		};
 		class csla 
 		{
-			displayName = $STR_ARMS_DEALER_STORE;
+			displayName = "$STR_ARMS_DEALER_STORE";
 			categories[] = {
 				"riflesCSLA",
 				"sniperRiflesCSLA",
@@ -264,7 +279,7 @@ class cfgHALsStore
 		};
 		class globmob 
 		{
-			displayName = $STR_ARMS_DEALER_STORE;
+			displayName = "$STR_ARMS_DEALER_STORE";
 			categories[] = {
 				"handgunsgm", 
 				"riflesgm", 
@@ -289,7 +304,7 @@ class cfgHALsStore
 		};
 		class vn
 		{
-			displayName = $STR_ARMS_DEALER_STORE;
+			displayName = "$STR_ARMS_DEALER_STORE";
 			categories[] = {
 				"handgunsvn",
 				"smgvn",
@@ -316,7 +331,7 @@ class cfgHALsStore
 		};
 		class nickelsteel
 		{
-			displayName = $STR_ARMS_DEALER_STORE;
+			displayName = "$STR_ARMS_DEALER_STORE";
 			categories[] = {
 				"handgunsnickelsteel",
 				"smgnickelsteel",
@@ -330,7 +345,7 @@ class cfgHALsStore
 		};
 		class ww2cdlc
 		{
-			displayName = $STR_ARMS_DEALER_STORE;
+			displayName = "$STR_ARMS_DEALER_STORE";
 			categories[] = {
 				"handgunsspe",
 				"smgspe",
@@ -356,7 +371,7 @@ class cfgHALsStore
 		};
 		class spex
 		{
-			displayName = $STR_ARMS_DEALER_STORE;
+			displayName = "$STR_ARMS_DEALER_STORE";
 			categories[] = {
 				"helmetsspex",
 				"launchersspex"
@@ -365,7 +380,7 @@ class cfgHALsStore
 		////
 		class kkiv2035
 		{
-			displayName = $STR_ARMS_DEALER_STORE;
+			displayName = "$STR_ARMS_DEALER_STORE";
 			categories[] = {
 				"sniperRifleskkiv2035",
 				"magazineskkiv2035"
@@ -374,22 +389,70 @@ class cfgHALsStore
     
 		class aegis 
 		{
-			displayName = $STR_ARMS_DEALER_STORE;
+			displayName = "$STR_ARMS_DEALER_STORE";
 			categories[] = {
-				"handgunsAegis", 
-				"launchersAegis",
-				"launcherMagazinesAegis",  
-				"riflesAegis", 
+				"handgunsAegis",
+				//"launcherMagazinesAegis",
+				"riflesAegis",
+				"specialWeaponsAegis", 
+				"mgAegis", 
 				"sniperRiflesAegis", 
-				"mgAegis",
 				"smgAegis", 
-				"magazinesAegis"
+				"pointersAegis", 
+				"muzzlesAegis", 
+				"opticsAegis", 
+				"magazinesAegis",
+				"navigationAegis",  
+				"miscAegis", 
+				"backpacksAegis", 
+				"vestsAegis",
+				"uniformsAegis", 
+				"helmetsAegis"
+			};
+		};
+
+		class atlas
+		{
+			displayName = "$STR_ARMS_DEALER_STORE";
+			categories[] = {
+				"launchersAtlas",
+				"launcherMagazinesAtlas",
+				"opticsAtlas",
+				"magazinesAtlas",
+				"sniperRiflesAtlas", 
+				"mgAtlas", 
+				"riflesAtlas", 
+				"miscAtlas", 
+				"backpacksAtlas", 
+				"vestsAtlas", 
+				"uniformsAtlas", 
+				"helmetsAtlas"
+			};
+		};
+
+		class opposingforces 
+		{
+			displayName = "$STR_ARMS_DEALER_STORE";
+			categories[] = {
+				"riflesOpposingForces",
+				"miscOpposingForces",
+				"uniformsOpposingForces",
+				"vestsOpposingForces",
+				"backpacksOpposingForces"
+			};
+		};
+
+		class police
+		{
+			displayName = "$STR_ARMS_DEALER_STORE";
+			categories[] = {
+				"miscPolice"
 			};
 		};
 
 		class rhs 
 		{
-			displayName = $STR_ARMS_DEALER_STORE;
+			displayName = "$STR_ARMS_DEALER_STORE";
 			categories[] = {
 				"handgunsRhs", 
 				"launchersRhs", 
@@ -404,14 +467,26 @@ class cfgHALsStore
 				"muzzlesRhs", 
 				"underbarrelRhs", 
 				"pointersRhs", 
-				"navigationRhs", 
+				"navigationRhs",
 				"miscRhs"
+			};
+		};
+
+		class mss
+		{
+			displayName = "$STR_ARMS_DEALER_STORE";
+			categories[] = {
+				"sniperRiflesMss",
+				"opticsMss",
+				"muzzlesMss",
+				"bipodsMss",
+				"magazinesMss"
 			};
 		};
 
 		class 3cbf 
 		{
-			displayName = $STR_ARMS_DEALER_STORE;
+			displayName = "$STR_ARMS_DEALER_STORE";
 			categories[] = {
 				"handguns3cbf", 
 				"launchers3cbf", 
@@ -427,7 +502,7 @@ class cfgHALsStore
 
 		class 3cbfcw
 		{
-			displayName = $STR_ARMS_DEALER_STORE;
+			displayName = "$STR_ARMS_DEALER_STORE";
 			categories[] = {
 				"handguns3cbfcw",
 				"smg3cbfcw",
@@ -449,7 +524,7 @@ class cfgHALsStore
 		
 		class cw
 		{
-			displayName = $STR_ARMS_DEALER_STORE;
+			displayName = "$STR_ARMS_DEALER_STORE";
 			categories[] = {
 				"handgunscw",
 				"smgcw",
@@ -470,7 +545,7 @@ class cfgHALsStore
 		
 		class emp
 		{
-			displayName = $STR_ARMS_DEALER_STORE;
+			displayName = "$STR_ARMS_DEALER_STORE";
 			categories[] = {
 				"handgunsemp",
 				"smgemp",
@@ -487,7 +562,7 @@ class cfgHALsStore
 
 		class wmemp
 		{
-			displayName = $STR_ARMS_DEALER_STORE;
+			displayName = "$STR_ARMS_DEALER_STORE";
 			categories[] = {
 				"handgunswmemp",
 				"rifleswmemp",
@@ -500,29 +575,29 @@ class cfgHALsStore
 		
 		class cup		
 		{
-			displayName = $STR_ARMS_DEALER_STORE;
+			displayName = "$STR_ARMS_DEALER_STORE";
 			categories[] = {
-			"handgunsCup", 
-			"launchersCup", 
-			"riflesCup", 
-			"sniperRiflesCup",
-			"specialWeaponsCup", 
-			"mgCup", 
-			"smgCup", 
-			"launcherMagazinesCup", 
-			"magazinesCup", 
-			"opticsCup", 
-			"muzzlesCup", 
-			"underbarrelCup", 
-			"pointersCup", 
-			"navigationCup", 
-			"miscCup"
+				"handgunsCup", 
+				"launchersCup", 
+				"riflesCup", 
+				"sniperRiflesCup",
+				"specialWeaponsCup", 
+				"mgCup", 
+				"smgCup", 
+				"launcherMagazinesCup", 
+				"magazinesCup", 
+				"opticsCup", 
+				"muzzlesCup", 
+				"underbarrelCup", 
+				"pointersCup", 
+				"navigationCup", 
+				"miscCup"
 			};
 		};
 
 		class fowstore
 		{
-			displayName = $STR_ARMS_DEALER_STORE;
+			displayName = "$STR_ARMS_DEALER_STORE";
 			categories[] = {
 				"handgunsfow",
 				"smgfow",
@@ -539,7 +614,7 @@ class cfgHALsStore
 
 		class ww2mod
 		{
-			displayName = $STR_ARMS_DEALER_STORE;
+			displayName = "$STR_ARMS_DEALER_STORE";
 			categories[] = {
 				"handgunsifaa",
 				"smgifaa",
@@ -561,7 +636,7 @@ class cfgHALsStore
 		
 		class unsstore
 		{
-			displayName = $STR_ARMS_DEALER_STORE;
+			displayName = "$STR_ARMS_DEALER_STORE";
 			categories[] = {
 				"handgunsuns",
 				"smguns",
@@ -583,137 +658,137 @@ class cfgHALsStore
 		
 		class optre
 		{
-			displayName = $STR_ARMS_DEALER_STORE;
+			displayName = "$STR_ARMS_DEALER_STORE";
 			categories[] = {
-			      "handgunshalo",
-			      "smghalo",
-			      "mghalo",
-			      "rifleshalo",
-			      "sniperrifleshalo",
-			      "launchershalo",
-			      "launchermagazineshalo",
-			      "riflegrenadeshalo",
-			      "muzzleshalo",
-			      "magazineshalo", 
-			      "pointershalo",
-			      "specialweaponshalo",
-			      "mischalo",
-			      "opticshalo",
-			      "underbarrelhalo"
+			    "handgunshalo",
+			    "smghalo",
+			    "mghalo",
+			    "rifleshalo",
+			    "sniperrifleshalo",
+			    "launchershalo",
+			    "launchermagazineshalo",
+			    "riflegrenadeshalo",
+			    "muzzleshalo",
+			    "magazineshalo", 
+			    "pointershalo",
+			    "specialweaponshalo",
+			    "mischalo",
+			    "opticshalo",
+			    "underbarrelhalo"
 			};
 		};
 		
 		class ffaastock
 		{
-			displayName = $STR_ARMS_DEALER_STORE;
+			displayName = "$STR_ARMS_DEALER_STORE";
 			categories[] = {
-			      "handgunsffaa",
-			      "smgffaa",
-			      "mgffaa",
-			      "riflesffaa",
-			      "sniperriflesffaa",
-			      "launchersffaa",
-			      "muzzlesffaa",
-			      "magazinesffaa", 
-			      "pointersffaa",
-			      "opticsffaa",
-			      "underbarrelffaa"
+			    "handgunsffaa",
+			    "smgffaa",
+			    "mgffaa",
+			    "riflesffaa",
+			    "sniperriflesffaa",
+			    "launchersffaa",
+			    "muzzlesffaa",
+			    "magazinesffaa", 
+			    "pointersffaa",
+			    "opticsffaa",
+			    "underbarrelffaa"
 			};
 		};
 		
 		class italystock
 		{
-			displayName = $STR_ARMS_DEALER_STORE;
+			displayName = "$STR_ARMS_DEALER_STORE";
 			categories[] = {
-			      "handgunsitaly",
-			      "mgitaly",
-			      "riflesitaly",
-			      "sniperriflesitaly",
-			      "launchersitaly",
-			      "launchermagazinesitaly",
-			      "muzzlesitaly",
-			      "magazinesitaly", 
-			      "pointersitaly",
-			      "specialweaponsitaly",
-			      "opticsitaly",
-			      "underbarrelitaly"
+			    "handgunsitaly",
+			    "mgitaly",
+			    "riflesitaly",
+			    "sniperriflesitaly",
+			    "launchersitaly",
+			    "launchermagazinesitaly",
+			    "muzzlesitaly",
+			    "magazinesitaly", 
+			    "pointersitaly",
+			    "specialweaponsitaly",
+			    "opticsitaly",
+			    "underbarrelitaly"
 			};
 		};
 		
 		class sfpstock
 		{
-			displayName = $STR_ARMS_DEALER_STORE;
+			displayName = "$STR_ARMS_DEALER_STORE";
 			categories[] = {
-			      "handgunsswe",
-			      "smgswe",
-			      "mgswe",
-			      "riflesswe",
-			      "sniperriflesswe",
-			      "launchersswe",
-			      "launchermagazinesswe",
-			      "magazinesswe", 
-			      "pointersswe",
-			      "specialweaponsswe",
-			      "opticsswe",
-			      "underbarrelswe"
+			    "handgunsswe",
+			    "smgswe",
+			    "mgswe",
+			    "riflesswe",
+			    "sniperriflesswe",
+			    "launchersswe",
+			    "launchermagazinesswe",
+			    "magazinesswe", 
+			    "pointersswe",
+			    "specialweaponsswe",
+			    "opticsswe",
+			    "underbarrelswe"
 			};
 		};
 		
 		class plastock
 		{
-			displayName = $STR_ARMS_DEALER_STORE;
+			displayName = "$STR_ARMS_DEALER_STORE";
 			categories[] = {
-			      "mgpla",
-			      "riflespla",
-			      "sniperriflespla",
-			      "launcherspla",
-			      "launchermagazinespla",
-			      "magazinespla"
+			    "mgpla",
+			    "riflespla",
+			    "sniperriflespla",
+			    "launcherspla",
+			    "launchermagazinespla",
+			    "magazinespla"
 			};
 		};
 		
 		class bwastock
 		{
-			displayName = $STR_ARMS_DEALER_STORE;
+			displayName = "$STR_ARMS_DEALER_STORE";
 			categories[] = {
-			      "handgunsbwa",
-			      "smgbwa",
-			      "mgbwa",
-			      "riflesbwa",
-			      "sniperriflesbwa",
-			      "launchersbwa",
-			      "launchermagazinesbwa",
-			      "muzzlesbwa",
-			      "magazinesbwa", 
-			      "pointersbwa",
-			      "opticsbwa",
-			      "underbarrelbwa"
+			    "handgunsbwa",
+			    "smgbwa",
+			    "mgbwa",
+			    "riflesbwa",
+			    "sniperriflesbwa",
+			    "launchersbwa",
+			    "launchermagazinesbwa",
+			    "muzzlesbwa",
+			    "magazinesbwa", 
+			    "pointersbwa",
+			    "opticsbwa",
+			    "underbarrelbwa"
 			};
 		};
 		
 		class 3cbbafstock
 		{
-			displayName = $STR_ARMS_DEALER_STORE;
+			displayName = "$STR_ARMS_DEALER_STORE";
 			categories[] = {
-			      "handguns3cbbaf",
-			      "smg3cbbaf",
-			      "mg3cbbaf",
-			      "rifles3cbbaf",
-			      "sniperrifles3cbbaf",
-			      "launchers3cbbaf",
-			      "riflegrenades3cbbaf",
-			      "muzzles3cbbaf",
-			      "magazines3cbbaf", 
-			      "pointers3cbbaf",
-			      "specialweapons3cbbaf",
-			      "optics3cbbaf",
-			      "underbarrel3cbbaf"
+			    "handguns3cbbaf",
+			    "smg3cbbaf",
+			    "mg3cbbaf",
+			    "rifles3cbbaf",
+			    "sniperrifles3cbbaf",
+			    "launchers3cbbaf",
+			    "riflegrenades3cbbaf",
+			    "muzzles3cbbaf",
+			    "magazines3cbbaf", 
+			    "pointers3cbbaf",
+			    "specialweapons3cbbaf",
+			    "optics3cbbaf",
+			    "underbarrel3cbbaf"
 			};
 		};
 		
 		class niarms 
 		{
-			displayName = $STR_ARMS_DEALER_STORE;
+			displayName = "$STR_ARMS_DEALER_STORE";
 			categories[] = {
 				"riflesniarms", 
 				"mgniarms",
@@ -729,22 +804,26 @@ class cfgHALsStore
 		
 		class fwa 
 		{
-			displayName = $STR_ARMS_DEALER_STORE;
+			displayName = "$STR_ARMS_DEALER_STORE";
 			categories[] = {
-				"riflesfwa", 
+				"handgunsFWA",
+				"smgfwa",
 				"mgfwa",
-				"sniperRiflesfwa", 
-				"smgfwa", 
-				"opticsfwa", 
-				"muzzlesfwa", 
-				"magazinesfwa",
-				"underbarrelfwa"
+				"riflesfwa",
+				"sniperRiflesfwa",
+				"launchersFWA",
+				"launchermagazinesFWA",
+				"riflegrenadesFWA",
+				"muzzlesfwa",
+				"opticsfwa",
+				"underbarrelfwa",
+				"magazinesfwa"
 			};
 		};
 		
 		class tow 
 		{
-			displayName = $STR_ARMS_DEALER_STORE;
+			displayName = "$STR_ARMS_DEALER_STORE";
 			categories[] = {
 				"riflestow", 
 				"mgtow",
@@ -757,7 +836,7 @@ class cfgHALsStore
 		
 		class sma 
 		{
-			displayName = $STR_ARMS_DEALER_STORE;
+			displayName = "$STR_ARMS_DEALER_STORE";
 			categories[] = {
 				"riflessma", 
 				"mgsma",
@@ -770,7 +849,7 @@ class cfgHALsStore
 		
 		class csa38
 		{
-			displayName = $STR_ARMS_DEALER_STORE;
+			displayName = "$STR_ARMS_DEALER_STORE";
 			categories[] = {
 				"handgunscsa", 
 				"smgcsa",
@@ -782,20 +861,9 @@ class cfgHALsStore
 				"launcherscsa"
 			};
 		};
-		class scion
-		{
-			displayName = $STR_ARMS_DEALER_STORE;
-			categories[] = {
-				"riflesScion", 
-				"magazinesriflesScion",
-				"sniperRiflesScion", 
-				"magazinessniperRiflesScion", 
-				"opticsScion"
-			};
-		};
 		class wrs
 		{
-			displayName = $STR_ARMS_DEALER_STORE;
+			displayName = "$STR_ARMS_DEALER_STORE";
 			categories[] = {
 				"riflesWRS", 
 				"magazinesriflesWRS",
@@ -805,7 +873,7 @@ class cfgHALsStore
 		};
 		class brafstock		
 		{
-			displayName = $STR_ARMS_DEALER_STORE;
+			displayName = "$STR_ARMS_DEALER_STORE";
 			categories[] = {
 				"handgunsBraf", 
 				"launchersBraf", 
@@ -824,7 +892,7 @@ class cfgHALsStore
 		};
 		class nftsstock
 		{
-			displayName = $STR_ARMS_DEALER_STORE;
+			displayName = "$STR_ARMS_DEALER_STORE";
 			categories[] = {
 				"handgunsnfts",
 				"smgnfts",
@@ -839,7 +907,7 @@ class cfgHALsStore
 		};
 		class ww2eaw
 		{
-			displayName = $STR_ARMS_DEALER_STORE;
+			displayName = "$STR_ARMS_DEALER_STORE";
 			categories[] = {
 				"handgunseaw",
 				"smgeaw",
@@ -853,7 +921,7 @@ class cfgHALsStore
 		};		
 		class cwrstock		
 		{
-			displayName = $STR_ARMS_DEALER_STORE;
+			displayName = "$STR_ARMS_DEALER_STORE";
 			categories[] = {
 				"handgunsCWR", 
 				"launchersCWR", 
@@ -869,7 +937,7 @@ class cfgHALsStore
 		};
 		class ffpstock		
 		{
-			displayName = $STR_ARMS_DEALER_STORE;
+			displayName = "$STR_ARMS_DEALER_STORE";
 			categories[] = {
 				"handgunsffp", 
 				"mgffp", 
@@ -883,7 +951,7 @@ class cfgHALsStore
 		};
 		class hafmstock		
 		{
-			displayName = $STR_ARMS_DEALER_STORE;
+			displayName = "$STR_ARMS_DEALER_STORE";
 			categories[] = {
 				"handgunsHAFM", 
 				"smgHAFM", 
@@ -902,7 +970,7 @@ class cfgHALsStore
 		};
 		class ylarmsstock		
 		{
-			displayName = $STR_ARMS_DEALER_STORE;
+			displayName = "$STR_ARMS_DEALER_STORE";
 			categories[] = {
 				"handgunsYLA",
 				"riflesYLA", 
@@ -919,7 +987,7 @@ class cfgHALsStore
 		};
 		class projinf_stock
 		{
-			displayName = $STR_ARMS_DEALER_STORE;
+			displayName = "$STR_ARMS_DEALER_STORE";
 			categories[] = {
 				"handgunsProjInfAD",
 				"riflesProjInfAD", 
@@ -932,7 +1000,7 @@ class cfgHALsStore
 		};
 		class jcaia_stock
 		{
-			displayName = $STR_ARMS_DEALER_STORE;
+			displayName = "$STR_ARMS_DEALER_STORE";
 			categories[] = {
 				"handgunsJCA",
 				"riflesJCA", 
@@ -950,7 +1018,7 @@ class cfgHALsStore
 		};
 		class jcaie_stock
 		{
-			displayName = $STR_ARMS_DEALER_STORE;
+			displayName = "$STR_ARMS_DEALER_STORE";
 			categories[] = {
 				"vestsJCA",
 				"facewearJCA"
@@ -958,13 +1026,76 @@ class cfgHALsStore
 		};
 		class mpp_stock
 		{
-			displayName = $STR_ARMS_DEALER_STORE;
+			displayName = "$STR_ARMS_DEALER_STORE";
 			categories[] = {
 				"handgunsMPP",
 				"pointersMPP",
 				"muzzlesMPP",
 				"opticsMPP",
 				"magazinesMPP"
+			};
+		};
+		class rearma_us_stock
+		{
+			displayName = "$STR_ARMS_DEALER_STORE";
+			categories[] = {
+				"riflesReArma_US",
+				"mgsReArma_US",
+				"sniperRiflesReArma_US",
+				"handgunsReArma_US",
+				"launcherReArma_US",
+				"specialReArma_US",
+				"opticsReArma_US",
+				"pointersReArma_US",
+				"muzzlesReArma_US",
+				"magazinesReArma_US",
+				"smgsReArma_US"
+			};
+		};
+		class rearma_ru_stock
+		{
+			displayName = "$STR_ARMS_DEALER_STORE";
+			categories[] = {
+				"riflesReArma_RU",
+				"mgsReArma_RU",
+				"sniperRiflesReArma_RU",
+				"handgunsReArma_RU",
+				"launcherReArma_RU",
+				"opticsReArma_RU",
+				"pointersReArma_RU",
+				"muzzlesReArma_RU",
+				"magazinesReArma_RU",
+				"launcherMagazinesReArma_RU"
+			};
+		};
+		class rearma_cn_stock
+		{
+			displayName = "$STR_ARMS_DEALER_STORE";
+			categories[] = {
+				"riflesReArma_CN",
+				"sniperRiflesReArma_CN",
+				"smgsReArma_CN",
+				"mgsReArma_CN",
+				"specialReArma_CN",
+				"handgunsReArma_CN",
+				"launchersReArma_CN",
+				"opticsReArma_CN",
+				"pointersReArma_CN",
+				"muzzlesReArma_CN",
+				"magazinesReArma_CN",
+				"launcherMagazinesReArma_CN"
+			};
+		};
+		class qdi_stock
+		{
+			displayName = "$STR_ARMS_DEALER_STORE";
+			categories[] = {
+				"handgunsQDI",
+				"riflesQDI",
+				"mgQDI",
+				"sniperRiflesQDI",
+				"opticsQDI",
+				"magazinesQDI"
 			};
 		};
 	};

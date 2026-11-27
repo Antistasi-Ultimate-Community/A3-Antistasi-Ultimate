@@ -26,7 +26,7 @@ _radGrad = [_traderPosition, 0] call BIS_fnc_terrainGradAngle;
 private _outOfBounds = _traderPosition findIf { (_x < 0) || {_x > worldSize}} != -1;
 
 private _enemyBases = (airportsX + milbases + outposts + seaports + factories + resourcesX) select {sidesX getVariable [_x, sideUnknown] != teamPlayer};
-private _isTooCloseToOutposts = _enemyBases findIf { _traderPosition distance2d (getMarkerPos _x) < 300 || _traderPosition inArea _x } != -1;
+private _isTooCloseToOutposts = _enemyBases findIf { _traderPosition distance2D (getMarkerPos _x) < 300 || _traderPosition inArea _x } != -1;
 
 //mitigation of negative terrain gradient
 if(!(_radGrad > -0.25 && _radGrad < 0.25) || {isOnRoad _traderPosition || {surfaceIsWater _traderPosition || {_outOfBounds || {_isTooCloseToOutposts}}}}) then {
@@ -45,7 +45,7 @@ if(!(_radGrad > -0.25 && _radGrad < 0.25) || {isOnRoad _traderPosition || {surfa
         ] call BIS_fnc_findSafePos;
         _radGrad = [_traderPosition, 0] call BIS_fnc_terrainGradAngle;
         _outOfBounds = _traderPosition findIf { (_x < 0) || {_x > worldSize}} != -1;
-        _isTooCloseToOutposts = _enemyBases findIf { _traderPosition distance2d (getMarkerPos _x) < 300 || _traderPosition inArea _x } != -1;
+        _isTooCloseToOutposts = _enemyBases findIf { _traderPosition distance2D (getMarkerPos _x) < 300 || _traderPosition inArea _x } != -1;
         if ((_radGrad > -0.25 && _radGrad < 0.25) && {!(isOnRoad _traderPosition) && {!(surfaceIsWater _traderPosition) && {!_outOfBounds && {!_isTooCloseToOutposts}}}}) exitWith {};
         _radiusX = _radiusX + 5;
     };
@@ -117,9 +117,9 @@ traderPosition = _traderPosition;
 publicVariable "traderPosition";
 
 _traderMarker = createMarkerLocal ["TraderMarker", _traderPosition];
-_traderMarker setMarkerTypeLocal "hd_objective";
+_traderMarker setMarkerTypeLocal "A3AU_dealer_mrk";
 _traderMarker setMarkerSizeLocal [1, 1];
-_traderMarker setMarkerTextLocal (localize "STR_marker_arms_dealer");
+_traderMarker setMarkerTextLocal "";
 _traderMarker setMarkerColorLocal "ColorUNKNOWN";
 _traderMarker setMarkerAlpha 1;
 traderMarker = _traderMarker;
@@ -135,5 +135,7 @@ deleteVehicle _barrel;
 deleteVehicle _smokeEffect;
 deleteVehicle _trigger;
 deleteMarker _traderMarkerVague;
+
+[traderMarker] call A3A_fnc_mrkUpdate;
 
 [_taskId, "TRADER", 5] spawn A3A_fnc_taskDelete;

@@ -18,14 +18,16 @@ if (_typeX == "delete") exitWith {
 	closeDialog 0;
 	closeDialog 0;
 	[localize "STR_A3A_Dialogs_mineDialog_header", localize "STR_A3A_Dialogs_mineDialog_desc"] call A3A_fnc_customHint;
+
+	if ([] call FUNCMAIN(isTeardownEnabled)) exitWith {
+		playSound "A3AP_UiFailure";
+		[localize "STR_A3A_Dialogs_mineDialog_header", localize "STR_A3A_Dialogs_teardownActivePleaseDisable_text"] call A3A_fnc_customHint;
+	};
+
 	[[],"A3A_fnc_mineSweep"] remoteExec ["A3A_fnc_scheduler",2];
 };
 
-private _quantityMax = if (_typeX == "ATMine") then {
-	20;
-} else {
-	40;
-};
+private _quantityMax = [40, 20] select (_typeX == "ATMine");
 
 if (_quantity > _quantityMax) then {
 	_quantity = _quantityMax;

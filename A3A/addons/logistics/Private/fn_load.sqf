@@ -21,6 +21,7 @@
     Example:
 */
 #include "..\script_component.hpp"
+#pragma hemtt ignore_variables ["_thisScript"]
 params ["_cargo", "_vehicle", "_node", "_weapon", ["_instant", false, [true]]];
 
 if (_vehicle getVariable ["LoadingCargo", false]) exitWith {
@@ -46,6 +47,7 @@ _updateList = {
 //find node point and seats
 private _nodeOffset = [0,0,0];
 private _seats = [];
+private _turrets = [];
 
 if ((_node#0) isEqualType []) then {
     //offset
@@ -55,9 +57,10 @@ if ((_node#0) isEqualType []) then {
     private _diff = _offsetOne vectorDiff _offsetTwo;
     _nodeOffset = _offsetTwo vectorAdd [0,(_diff#1)/2,0];
 
-    //seats
+    //seats & turrets
     {
         _seats append (_x#2);
+        _turrets append (_x#3);
     } forEach _node;
 
     //update cargo list
@@ -69,6 +72,8 @@ if ((_node#0) isEqualType []) then {
     _nodeOffset = (_node#1);
     //seats
     _seats append (_node#2);
+    //turrets
+    _turrets append (_node#3);
     //update list
     [_vehicle , _node] call _updateList;
 };
@@ -89,9 +94,9 @@ private _yStart = _bbVehicle + _bbCargo - 0.1;
 private _yEnd = _location#1;
 _cargo setVariable ["AttachmentOffset", _location];
 
-//block seats
+//block seats & turrets
 [_cargo, true] remoteExec ["A3A_Logistics_fnc_toggleLock", 0, "A3A_Logistics_toggleLock" + _objStringCargo];
-[_vehicle, true, _seats] remoteExecCall ["A3A_Logistics_fnc_toggleLock", 0, "A3A_Logistics_toggleLock" + _objStringVehicle];
+[_vehicle, true, [_seats, _turrets]] remoteExecCall ["A3A_Logistics_fnc_toggleLock", 0, "A3A_Logistics_toggleLock" + _objStringVehicle];
 _cargo engineOn false;
 
 //break undercover
@@ -104,7 +109,7 @@ if (_weapon && !_instant) then {
 _vectorUp = if (_cargo isKindOf "CAManBase") then {[0,0,0]} else {[0,0,1]};
 _location set [1, _yStart];
 _cargo hideObjectGlobal true;
-_cargo attachto [_vehicle,_location];
+_cargo attachTo [_vehicle,_location];
 [_cargo, [(_offsetAndDir#1),[0,0,1]]] remoteExecCall ["setVectorDirAndUp", owner _cargo]; //need to be done where cargo is local, command broadcast updated vector dir and up
 _cargo hideObjectGlobal false;
 
@@ -112,13 +117,13 @@ _vehicle animateDoor ["Door_rear", 1];
 //slideing attachment
 if (_instant) then {
     _location set [1, _yEnd+0.1];
-    _cargo attachto [_vehicle,_location];
+    _cargo attachTo [_vehicle,_location];
 } else {
     private _prevTime = time;
     while {(_location#1) < _yEnd} do {
         uiSleep 0.01;
         _location = _location vectorAdd [0,time-_prevTime,0];
-        _cargo attachto [_vehicle,_location];
+        _cargo attachTo [_vehicle,_location];
         _prevTime = time;
     };
 };

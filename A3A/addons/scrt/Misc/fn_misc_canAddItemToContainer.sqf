@@ -22,7 +22,7 @@ Returns:
     Whether the amount of items fit in the container <BOOL>
 
 Author:
-    goreSplatter
+    UnseenKill
 ---------------------------------------------------------------------------- */
 #include "..\script_component.hpp"
 
@@ -72,7 +72,7 @@ private _mass = switch true do {
     };
     default {
         // It's a croak out
-        Error_1("SCRT_fnc_misc_canAddItemToContainer(%1): item not item, magazine or weapon", _item);
+        Error_1("SCRT_fnc_misc_canAddItemToContainer(%1): item not item, magazine or weapon",_item);
 
         -1
     };

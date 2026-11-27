@@ -35,7 +35,7 @@ if (_markerX in destroyedSites) exitWith {
     nil;
 };
 
-if !(_daystate == "DAY") exitWith {
+if (_daystate != "DAY") exitWith {
     ServerDebug("Civilian Workers are outside of working hours and have not spawned.");
     nil;
 };
@@ -50,7 +50,7 @@ for "_i" from 1 to _maxResourceCivilians do {
         ServerDebug("Resource Civilian could not be spawned because no valid spawn position was found.");
         continue;
     };
-    private _civUnit = [_groupX, FactionGet(civ, "unitWorker"), _spawnPosition, [],0, "NONE"] call A3A_fnc_createUnit;
+    private _civUnit = [_groupX, FactionGet(civ,"unitWorker"), _spawnPosition, [],0, "NONE"] call A3A_fnc_createUnit;
     _civUnit setVariable ["markerX", _markerX, true];
     _civs pushBack _civUnit;
 
@@ -65,6 +65,7 @@ for "_i" from 1 to _maxResourceCivilians do {
                 private _nameX = [_markerX] call A3A_fnc_localizar;
                 destroyedSites pushBackUnique _markerX;
                 publicVariable "destroyedSites";
+                [_markerX] call A3A_fnc_mrkUpdate;
                 ["TaskFailed", ["", format [localize "STR_notifiers_resourcefactory_destoyed", _nameX]]] remoteExec ["BIS_fnc_showNotification",[teamPlayer, civilian]];
             };
         }

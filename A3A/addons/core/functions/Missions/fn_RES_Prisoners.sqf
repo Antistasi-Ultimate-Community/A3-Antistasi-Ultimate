@@ -36,7 +36,7 @@ for "_i" from 0 to (count _houses) - 1 do {
 	if (count _posHouse > 1) then {_potentials pushBack _houseX};
 };
 
-if (count _potentials > 0) then {
+if (_potentials isNotEqualTo []) then {
 	_houseX = selectRandom _potentials;
 	_posHouse = [_houseX] call BIS_fnc_buildingPositions;
 	_countX = (count _posHouse) - 1;
@@ -99,7 +99,7 @@ if (dateToNumber date > _dateLimitNum) then {
 
 waitUntil {sleep 1; {alive _x} count _POWs == 0 or {{(alive _x) and (_x distance getMarkerPos respawnTeamPlayer < 50)} count _POWs > 0}};
 
-private _bonus = if (_difficultX) then {2} else {1};
+private _bonus = [1, 2] select (_difficultX);
 
 if ({alive _x} count _POWs == 0) then {
 	[_taskId, "RES", "FAILED"] call A3A_fnc_taskSetState;
@@ -108,8 +108,12 @@ if ({alive _x} count _POWs == 0) then {
 } else {
 	sleep 5;
 	[_taskId, "RES", "SUCCEEDED"] call A3A_fnc_taskSetState;
+
+	private _hrMultiplier = overallHRGain / 100;
+	private _invertedMultiplier = 2 - _hrMultiplier; 
+
 	_countX = {(alive _x) and (_x distance getMarkerPos respawnTeamPlayer < 150)} count _POWs;
-	_hr = 2 * (_countX);
+	_hr = ceil((2 * _countX) * _invertedMultiplier);
 	_resourcesFIA = 100 * _countX*_bonus;
 	[_hr,_resourcesFIA] remoteExec ["A3A_fnc_resourcesFIA",2];
 	[0,10*_bonus,_positionX] remoteExec ["A3A_fnc_citySupportChange",2];
@@ -124,7 +128,7 @@ if ({alive _x} count _POWs == 0) then {
 	[_bonusAmount,theBoss] call A3A_fnc_addScorePlayer;
     [(_bonusAmount*10),theBoss, true] call A3A_fnc_addMoneyPlayer;
 
-	{[_x] join _grpPOW; [_x] orderGetin false} forEach _POWs;
+	{[_x] join _grpPOW; [_x] orderGetIn false} forEach _POWs;
 };
 
 sleep 60;

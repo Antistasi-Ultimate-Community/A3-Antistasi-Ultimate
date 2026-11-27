@@ -1,3 +1,5 @@
+#include "..\script_component.hpp"
+
 params ["_table", "_idc", ["_change", true], ["_action", "NONE"]];	
 private _optionData = [_table, _idc] call SCRT_fnc_ui_getSwitchLookup;
 
@@ -21,7 +23,7 @@ if (_change) then {
     ctrlSetText [(_idc + 3), _representation];
 
     if (_action isEqualTo "NONE") exitWith {};
-    if (_action isEqualTo "MUSIC") exitWith {call A3A_fnc_music;};
+    if (_action isEqualTo "MUSIC") exitWith { [] call EFUNC(DOUBLES(ultimate,tracklist_editor),music) };
     if (_action isEqualTo "PARADROP") exitWith {
         if (isPlayerParadropable) then {
             [] spawn {

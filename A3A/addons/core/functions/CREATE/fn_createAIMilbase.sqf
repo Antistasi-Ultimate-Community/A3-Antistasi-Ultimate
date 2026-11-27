@@ -7,7 +7,7 @@ params ["_markerX"];
 //Not sure if that ever happens, but it reduces redundance
 if(spawner getVariable _markerX == 2) exitWith {};
 
-ServerInfo_1("Spawning Military Base %1", _markerX);
+ServerInfo_1("Spawning Military Base %1",_markerX);
 
 private _vehiclesX = [];
 private _groups = [];
@@ -94,15 +94,16 @@ if (garrison getVariable [_markerX + "_samDestroyedCD", 0] == 0) then
 
 if (_frontierX) then {
 	private _roads = _positionX nearRoads _size;
-	if (count _roads != 0) then {
+	if (_roads isNotEqualTo []) then {
 		private _groupX = createGroup _sideX;
 		_groups pushBack _groupX;
 		private _typeVehX = selectRandom (_faction get "staticAT");
 
 		if (_faction getOrDefault ["noSandbag", false]) then {		
 			private _veh = _typeVehX createVehicle _positionX;
+			private _dirVeh = direction _veh;
 			_vehiclesX pushBack _veh;
-			_veh setPos _pos;
+			_veh setPos _positionX;
 			_veh setDir _dirVeh + 180;
 			private _typeUnit = [_faction get "unitTierStaticCrew"] call SCRT_fnc_unit_getTiered;
 			private _unit = [_groupX, _typeUnit, _positionX, [], 0, "NONE"] call A3A_fnc_createUnit;
@@ -111,13 +112,14 @@ if (_frontierX) then {
 			[_veh, _sideX] call A3A_fnc_AIVEHinit;
 			_soldiers pushBack _unit;
 		} else {
-			private _bunker = (_faction get "sandbag") createVehicle _pos;
+			private _bunker = (_faction get "sandbag") createVehicle _positionX;
+			private _dirVeh = direction _bunker;
 			_vehiclesX pushBack _bunker;
-			_bunker setDir _dirveh;
-			_pos = getPosATL _bunker;
+			_bunker setDir _dirVeh;
+			_positionX = getPosATL _bunker;
 			private _veh = _typeVehX createVehicle _positionX;
 			_vehiclesX pushBack _veh;
-			_veh setPos _pos;
+			_veh setPos _positionX;
 			_veh setDir _dirVeh + 180;
 			private _typeUnit = [_faction get "unitTierStaticCrew"] call SCRT_fnc_unit_getTiered;
 			private _unit = [_groupX, _typeUnit, _positionX, [], 0, "NONE"] call A3A_fnc_createUnit;
@@ -179,6 +181,9 @@ private _typeUnit = [_faction get "unitTierStaticCrew"] call SCRT_fnc_unit_getTi
 while {true} do {
 	private _spawnParameter = [_markerX, "Mortar"] call A3A_fnc_findSpawnPosition;
 	if (_spawnParameter isEqualType false) exitWith {};
+	if (A3U_disableMortars) exitWith {
+    	Debug("Exiting mortar creation; Param was set to disabled.");
+	};
 
 	_spawnsUsed pushBack _spawnParameter#2;
 
@@ -218,35 +223,14 @@ if(random 100 < (50 + tierWar * 3)) then {
 	[_markerX, _large] spawn A3A_fnc_placeIntel;
 };
 
-private _typeVehX = _faction get "flag";
-private _flagX = createVehicle [_typeVehX, _positionX, [],0, "NONE"];
-
-_flagX allowDamage false;
-[_flagX,"take"] remoteExec ["A3A_fnc_flagaction",[teamPlayer,civilian],_flagX];
-
+([_markerX] call A3A_fnc_createZoneFlag) params ["_flagX", "_flagSpawn"];
 _vehiclesX pushBack _flagX;
-if (flagTexture _flagX != (_faction get "flagTexture")) then {[_flagX,(_faction get "flagTexture")] remoteExec ["setFlagTexture",_flagX]};
+if (!isNil "_flagSpawn") then { _spawnsUsed pushBack _flagSpawn };
 
-
-private _fnc_createAmmobox = {
-	private _ammoBoxType = _faction get "ammobox";
-	private _ammoBox = [_ammoBoxType, _positionX, 15, 5, true] call A3A_fnc_safeVehicleSpawn;
-	// Otherwise when destroyed, ammoboxes sink 100m underground and are never cleared up
-	_ammoBox addEventHandler ["Killed", { [_this#0] spawn { sleep 10; deleteVehicle (_this#0) } }];
-	[_ammoBox] spawn A3A_fnc_fillLootCrate;
-	[_ammoBox, nil, true] call A3A_Logistics_fnc_addLoadAction;
-
-	_ammoBox;
-};
-
-private _ammobox1 = nil;
-private _ammobox2 = nil;
-
-// Only create ammoBox if it's been recharged (see reinforcementsAI)
-if (garrison getVariable [_markerX + "_lootCD", 0] == 0) then {
-	_ammobox1 = call _fnc_createAmmobox;
-	_ammobox2 = call _fnc_createAmmobox;
-};
+([_markerX] call A3A_fnc_createZoneAmmoBox) params ["_ammobox1", "_ammoBoxSpawn"];
+if (!isNil "_ammoBoxSpawn") then { _spawnsUsed pushBack _ammoBoxSpawn };
+([_markerX] call A3A_fnc_createZoneAmmoBox) params ["_ammobox2", "_ammoBoxSpawn"];
+if (!isNil "_ammoBoxSpawn") then { _spawnsUsed pushBack _ammoBoxSpawn };
 
 if (!_busy) then
 {
@@ -385,7 +369,7 @@ for "_i" from 0 to (count _array - 1) do {
 ////////////////////////////
 
 if (random 10 < (tierWar + difficultyCoef)) then {
-	private _max = if (_frontierX) then {2} else {1};
+	private _max = [1, 2] select (_frontierX);
 	for "_i" from 1 to _max do {
 		private _spawnParameter = [_markerX, "Vehicle"] call A3A_fnc_findSpawnPosition;
 		
@@ -407,7 +391,7 @@ if (random 10 < (tierWar + difficultyCoef)) then {
 		_vehiclesX pushBack _veh;
 
 		sleep 1;
-		[(gunner _veh), 300] spawn SCRT_fnc_common_scanHorizon;
+		[gunner _veh] spawn SCRT_fnc_common_scanHorizon;
 
 		_veh setVariable ["originalPos", getPosATL _veh];
 	};
@@ -420,8 +404,8 @@ if (random 10 < (tierWar + difficultyCoef)) then {
 
 private _boatType = selectRandom (_faction get "vehiclesGunBoats");
 private _mrkMar = seaSpawn select {getMarkerPos _x inArea _markerX};
-if (count _mrkMar > 0) then {
-	private _pos = (getMarkerPos (_mrkMar select 0)) findEmptyPosition [0,20,_typeVehX];
+if (_mrkMar isNotEqualTo []) then {
+	private _pos = (getMarkerPos (_mrkMar select 0)) findEmptyPosition [0,20,_boatType];
 	private _vehicle=[_pos, 0,_boatType, _sideX] call A3A_fnc_spawnVehicle;
 	private _veh = _vehicle select 0;
 	[_veh, _sideX] call A3A_fnc_AIVEHinit;
@@ -474,7 +458,7 @@ if (random 100 < (30 + tierWar * 6)) then {
 	_heavyVehicle setVariable ["originalPos", getPosATL _heavyVehicle];
 };
 
-["locationSpawned", [_markerX, "Milbase", true]] call EFUNC(Events,triggerEvent);
+[CBA_EVENT_SERVER_SPAWN_LOCATION, [_markerX, "Milbase", true]] call FUNCMAIN(triggerLocalEvent);
 
 waitUntil {sleep 1; (spawner getVariable _markerX == 2)};
 
@@ -483,7 +467,7 @@ _spawnsUsed call A3A_fnc_freeSpawnPositions;
 {
 	// delete all vehicles that haven't been stolen
 	if (_x getVariable ["ownerSide", _sideX] == _sideX) then {
-		if (_x distance2d (_x getVariable "originalPos") < 100) then { deleteVehicle _x }
+		if (_x distance2D (_x getVariable "originalPos") < 100) then { deleteVehicle _x }
 		else { if !(_x isKindOf "StaticWeapon") then { [_x] spawn A3A_fnc_VEHdespawner } };
 	};
 } forEach _vehiclesX;
@@ -498,16 +482,18 @@ _spawnsUsed call A3A_fnc_freeSpawnPositions;
 
 // If loot crate was stolen, set the cooldown
 if (!isNil "_ammoBox1") then {
-	if ((alive _ammoBox1) and (_ammoBox1 distance2d _positionX < 100)) exitWith { deleteVehicle _ammoBox1 };
+	if ((alive _ammoBox1) and (_ammoBox1 distance2D _positionX < 100)) exitWith { deleteVehicle _ammoBox1 };
 	if (alive _ammoBox1) then { [_ammoBox1] spawn A3A_fnc_VEHdespawner };
 	private _lootCD = 120*16 / ([_markerX] call A3A_fnc_garrisonSize);
 	garrison setVariable [_markerX + "_lootCD", _lootCD, true];
 };
 if (!isNil "_ammoBox2") then {
-	if ((alive _ammoBox2) and (_ammoBox2 distance2d _positionX < 100)) exitWith { deleteVehicle _ammoBox2 };
+	if ((alive _ammoBox2) and (_ammoBox2 distance2D _positionX < 100)) exitWith { deleteVehicle _ammoBox2 };
 	if (alive _ammoBox2) then { [_ammoBox2] spawn A3A_fnc_VEHdespawner };
 	private _lootCD = 120*16 / ([_markerX] call A3A_fnc_garrisonSize);
 	garrison setVariable [_markerX + "_lootCD", _lootCD, true];
 };
 
-["locationSpawned", [_markerX, "Milbase", false]] call EFUNC(Events,triggerEvent);
+[CBA_EVENT_SERVER_SPAWN_LOCATION, [_markerX, "Milbase", false]] call FUNCMAIN(triggerLocalEvent);
+
+nil;

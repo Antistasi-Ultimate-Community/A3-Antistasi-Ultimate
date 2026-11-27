@@ -18,10 +18,16 @@ Example:
 */
 #include "..\defines.inc"
 FIX_LINE_NUMBERS()
+#pragma hemtt ignore_variables ["_thisScript"]
 
 params ["_resAdd"];
 
 private _rebels = call SCRT_fnc_misc_getRebelPlayers;
+
+if (isNil "_resAdd" || {!finite _resAdd}) then {
+    Warning("_resAdd is invalid, returning 25000");
+    _resAdd = 25000;
+};
 
 if(_rebels isEqualTo []) exitWith {
 	Warning("No salary as no active rebels found.");
@@ -34,6 +40,7 @@ private _totalSalary = _resAdd / 4;
 _nul = [_totalSalary, _rebelsCount, _rebels] spawn {
 	params ["_totalSalary", "_rebelsCount", "_rebels"];
 	private _incomePerPlayer = round(_totalSalary / _rebelsCount);
+	if (!finite _incomePerPlayer) then { _incomePerPlayer = 300; };
 	
 	{
 		private _playerMoney = round (((_x getVariable ["moneyX", 0]) + _incomePerPlayer) max 0);
@@ -43,7 +50,7 @@ _nul = [_totalSalary, _rebelsCount, _rebels] spawn {
 			name _x,
 			_incomePerPlayer, 
 			A3A_faction_civ get "currencySymbol",
-			call SCRT_fnc_misc_getWorldName
+			[] call SCRT_fnc_misc_getWorldName
 		];
 
 		sleep 10;

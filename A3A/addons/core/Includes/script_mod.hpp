@@ -1,10 +1,9 @@
+#ifndef A3A_SCRIPT_MOD_HPP
+#define A3A_SCRIPT_MOD_HPP
 #define MAINPREFIX x
-#define MODFOLDER A3A
 #ifndef PREFIX
     #define PREFIX A3A
 #endif
-
-#include "common.inc"
 
 #include "script_version.hpp"
 #if PATCHLVL > 0
@@ -18,10 +17,13 @@
 #define VERSION_FULL MAJOR.MINOR.PATCHLVL.BUILD
 #define VERSION_AR_FULL MAJOR,MINOR,PATCHLVL,BUILD
 
+// CfgPatches `version` must be a valid number for HEMTT, so only use MAJOR.MINOR
+#define VERSION_CONFIG version = MAJOR.MINOR; versionStr = QUOTE(VERSION); versionAr[] = {VERSION_AR}
+
 // probably should move to script_version.hpp?
 #define MINIMUM_MISSION_VERSION_AR 10,0,0
 
-#define REQUIRED_VERSION 2.06
+#define REQUIRED_VERSION 2.20
 
 #ifdef COMPONENT_BEAUTIFIED
     #define COMPONENT_NAME QUOTE(PREFIX - COMPONENT_BEAUTIFIED)
@@ -37,11 +39,16 @@
     #define AUTHORS "Antistasi Dev Team, Barbolani"
 #endif
 
+#if __A3_DEBUG__
+    #define DEBUG_MODE_FULL
+    #define DISABLE_COMPILE_CACHE
+    #define RECOMPILE // [Disable for release]
+#else // __A3_DEBUG__
+    // Remove CfgFunction adding headers and disable SCRIPT macro (comment out to enable for debugging)
+    #define SKIP_FUNCTION_HEADER // [Enable for release]
+    #define SKIP_SCRIPT_NAME // [Enable for release]
+#endif // __A3_DEBUG__
+
 #include "script_macros.hpp"
-
-#define PATHTOFOLDER_SYS(var1,var2,var3) \MAINPREFIX\##var1\SUBPREFIX\##var2\##var3
-#define PATHTOFOLDER(var1) PATHTOFOLDER_SYS(MODFOLDER,COMPONENT,var1)
-#define QPATHTOFOLDER(var1) QUOTE(PATHTOFOLDER(var1))
-
-#define EPATHTOFOLDER(var1,var2) PATHTOFOLDER_SYS(MODFOLDER,var1,var2)
-#define EQPATHTOFOLDER(var1,var2) QUOTE(EPATHTOFOLDER(var1,var2))
+#include "common.inc"
+#endif

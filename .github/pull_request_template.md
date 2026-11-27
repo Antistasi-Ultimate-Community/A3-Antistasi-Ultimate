@@ -4,18 +4,6 @@
 - [ ] Feature
 - [ ] Miscellaneous
 
-<details><summary><i><b>
-Sub-categories:
-</b></i></summary>
-
-- [ ] Template
-- [ ] Map
-- [ ] Config
-- [ ] Function
-- [ ] Localization
-
-</details>
-
 ## What have you changed, and why?
 
 **Information:**
@@ -31,15 +19,11 @@ Sub-categories:
 - [ ] No
 - [ ] Yes (See below)
 
-<details><summary><i><b>
-Further info:
-</b></i></summary><br>
+***If yes:***
 
 - [ ] I confirm that I, and by extension this repository, can legally use these third-party changes. (Provide links or author attribution.)
 
 > ...
-
-</details>
 
 ## Please verify the following (If possible).
 
@@ -59,10 +43,6 @@ Is further work needed?
 ## Please specify which Issue this PR Resolves (If Applicable).
 This PR closes #XYZ.
 
-<hr><details><summary><i><b>
-Notes:
-</b></i></summary><br>
+## Notes
 
 > ...
-
-</details>

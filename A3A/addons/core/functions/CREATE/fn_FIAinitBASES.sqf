@@ -3,16 +3,16 @@ FIX_LINE_NUMBERS()
 
 private _unit = _this select 0;
 if (debug) then {
-    Debug_1("Unit: %1", _unit);
+    Debug_1("Unit: %1",_unit);
 };
 if ((isNil "_unit") || (isNull _unit)) exitWith {
-    Error_1("Problem with NATO Param: %1", _this);
+    Error_1("Problem with NATO Param: %1",_this);
 };
 private  _markerX = "";
 if (count _this > 1) then {
 	_markerX = _this select 1;
 	_unit setVariable ["markerX",_markerX,true];
-	if ((spawner getVariable _markerX != 0) and (vehicle _unit != _unit)) then {
+	if ((spawner getVariable _markerX != 0) and (!isNull objectParent _unit)) then {
 		[_unit,false] remoteExec ["enableSimulationGlobal",2];
 	};
 };
@@ -25,27 +25,27 @@ private _skill = (0.1 + 0.1*A3A_rebelSkillMul + 0.015 * skillFIA);
 _unit setSkill _skill;
 
 if (_typeX isEqualTo FactionGet(reb,"unitSL")) then {
-	_unit setskill ["courage",_skill + 0.2];
-	_unit setskill ["commanding",_skill + 0.2];
+	_unit setSkill ["courage",_skill + 0.2];
+	_unit setSkill ["commanding",_skill + 0.2];
 };
 if (_typeX isEqualTo FactionGet(reb,"unitSniper")) then {
-	_unit setskill ["aimingAccuracy",_skill + 0.2];
-	_unit setskill ["aimingShake",_skill + 0.2];
+	_unit setSkill ["aimingAccuracy",_skill + 0.2];
+	_unit setSkill ["aimingShake",_skill + 0.2];
 };
 
 [_unit, 2] call A3A_fnc_equipRebel;			// 2 = garrison unit
 _unit selectWeapon (primaryWeapon _unit);
 
-private _killedEhId = _unit addEventHandler ["killed", {
+_unit addEventHandler ["Killed", {
 	_victim = _this select 0;
 	_killer = _this select 1;
-	[_victim] remoteExec ["A3A_fnc_postmortem",2];
+	call FUNCMAIN(postmortem);
     [side _killer, -1, 30] remoteExec ["A3A_fnc_addAggression", 2];
 	if (side _killer == Occupants) then
 	{
 		[0,-0.25,getPos _victim] remoteExec ["A3A_fnc_citySupportChange",2];
 	};
-	_markerX = _victim getVariable "markerX";
+	private _markerX = _victim getVariable "markerX";
 	if (!isNil "_markerX") then {
 		if (sidesX getVariable [_markerX,sideUnknown] == teamPlayer) then {
 			[_victim getVariable "unitType",teamPlayer,_markerX,-1] remoteExec ["A3A_fnc_garrisonUpdate",2];

@@ -6,7 +6,7 @@ if (!isServer) exitWith {
 
 params ["_playerId", "_unit"];
 
-Info_2("Resetting player data for ID %1, unit %2", _playerId, _unit);
+Info_2("Resetting player data for ID %1, unit %2",_playerId,_unit);
 
 // Don't restore more money than this player had previously
 private _money = initialPlayerMoney;
@@ -19,6 +19,8 @@ _unit setVariable ["moneyX", _money, true];
 _unit setVariable ["score", 0, true];
 _unit setVariable ["rankX", "PRIVATE", true];
 _unit setUnitRank "PRIVATE";
+
+[CBA_EVENT_CLIENT_PLAYER_LOAD, [createHashMap], owner _unit] call FUNCMAIN(triggerOwnerEvent);
 
 [] remoteExec ["A3A_fnc_statistics", _unit];
 _unit setVariable ["canSave", true, true];

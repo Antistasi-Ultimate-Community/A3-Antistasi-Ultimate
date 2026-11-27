@@ -1,3 +1,5 @@
+#pragma hemtt ignore_variables ["_fnc_saveNames","_fnc_createLoadoutData","_fnc_copyLoadoutData","_fnc_generateAndSaveUnitsToTemplate","_fnc_saveToTemplate"]
+
 //////////////////////////
 //  Mission/HQ Objects  //
 //////////////////////////
@@ -14,7 +16,7 @@
 
 // The bellow are optional overrides
 
-["vehiclesDropPod", []] call _fnc_saveToTemplate; 
+["vehiclesDropPod", ["SpaceshipCapsule_01_F"]] call _fnc_saveToTemplate; 
 
 ["placeIntel_desk", ["Land_CampingTable_F",0]] call _fnc_saveToTemplate;  // [classname,azimuth].
 ["placeIntel_itemMedium", ["Land_Document_01_F",-155,false]] call _fnc_saveToTemplate;  // [classname,azimuth,isComputer].
@@ -28,6 +30,8 @@
 ["vehiclesPlanesLargeCAS", []] call _fnc_saveToTemplate;
 ["vehiclesPlanesLargeAA", []] call _fnc_saveToTemplate;
 ["vehiclesPlanesGunship", []] call _fnc_saveToTemplate;
+["vehicleRadar", ""] call _fnc_saveToTemplate;
+["vehicleSam", ""] call _fnc_saveToTemplate;
 
 ["flares", ["F_40mm_white", "F_40mm_Red", "F_40mm_Yellow", "F_40mm_Green"]] call _fnc_saveToTemplate;
 

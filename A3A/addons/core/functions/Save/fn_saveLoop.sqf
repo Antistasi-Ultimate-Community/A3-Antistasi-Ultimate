@@ -1,28 +1,121 @@
+// Context: server
+// Environment: unscheduled
 #include "..\..\script_component.hpp"
 FIX_LINE_NUMBERS()
 if (!isServer) exitWith {
     Error("Miscalled server-only function");
 };
 
+// Suspend ourselves so while-loops don't get suicidal.
+if !(canSuspend) exitWith { _this spawn FUNCMAIN(saveLoop) };
+
 if (savingServer) exitWith {[localize "STR_A3A_save_persisent_save", localize "STR_A3A_save_save_game_desc"] remoteExecCall ["A3A_fnc_customHint",theBoss]};
 savingServer = true;
 Info("Starting persistent save");
 [localize "STR_A3A_save_persisent_save",localize "STR_A3A_save_save_game_starting"] remoteExecCall ["A3A_fnc_customHint",0,false];
 
+// Tell third party mods we're saving the game. Do this very early in case
+// they attempt to overwrite stuff we're saving later below.
+private _saveDataPlugins = createHashMap;
+[CBA_EVENT_SERVER_GAME_SAVE, [_saveDataPlugins]] call FUNCMAIN(triggerLocalEvent);
+
+// Shouldn't be technically possible, but we validate anyways before making the
+// hashmap read-only...
+if assert(_saveDataPlugins isEqualType createHashMap) then {
+	// make it read-only
+	_saveDataPlugins = compileFinal _saveDataPlugins;
+} else {
+	Error_1("Some third-party save event subscriber changed data type of save data to ""%1""",typeName _saveDataPlugins);
+	_saveDataPlugins = createHashMap;
+};
+
 // Set next autosave time, so that we won't run another shortly after a manual save
 autoSaveTime = time + autoSaveInterval;
 
 // Select save namespace
-A3A_saveTarget params ["_serverID", "_campaignID"];
+A3A_saveTarget params ["_serverID", "_campaignID", "_worldName", "_oldCampaignID"];
 private _saveToNewNamespace = _serverID isEqualType false;
 if (!_saveToNewNamespace) then { profileNamespace setVariable ["ss_serverID", _serverID] };			// backwards compatibility
 private _namespace = [profileNamespace, missionProfileNamespace] select _saveToNewNamespace;
 
+// Create a temporary hashmap to hold the saveData before storing it as a single hashmap
+A3A_saveDataHM = createHashMap;
+A3A_saveDataHM set ["serverID", _serverID];
+A3A_saveDataHM set ["campaignID", _campaignID];
 
-// Save each player with global flag
-{
-	[getPlayerUID _x, _x, true] call A3A_fnc_savePlayer;
-} forEach (call A3A_fnc_playableUnits);
+// Build server-to-client wait map
+private _syncStartTick = diag_tickTime;
+private _waitData = createHashMapFromArray([] call FUNCMAIN(playableUnits) select {
+	// The `skipSaveOnce` variable is usually set on theBoss when a global save
+	// is triggered via the commander menu; here, the initiating player is
+	// always saved first, so we skip them here but reset the flag.
+	// (not really true anymore, but keep the check anyways for future needs...)
+	if (isNil { _x getVariable QGVAR(skipSaveOnce) }) then {
+		true;
+	} else {
+		_x setVariable[QGVAR(skipSaveOnce), nil];
+		false;
+	};
+} apply {
+	private _uuid = [] call CBA_fnc_createUUID;
+
+	[CBA_EVENT_SERVER_PLAYER_SAVE, [_uuid], _x] call FUNCMAIN(triggerTargetEvent);
+
+	[
+		_uuid, createHashMapFromArray[
+			["uid", getPlayerUID _x],
+			["uuid", _uuid],
+			["player", _x]
+		]
+	]
+});
+
+// Start checking for clients' responses. Wait a maximum of 10 seconds, which
+// should be enough for plugins data to be synched to from clients to server.
+// If you notice a lot of "Timeout waiting for player data save to complete"
+// errors after a save, consider increasing this in "varsHardcoded.hpp".
+private _waitUntil = diag_tickTime + GVAR(saveWaitClientDataTimeout);
+private _loops = 0;
+
+while { keys _waitData isNotEqualTo [] } do {
+	INC(_loops);
+	SNOOZE();
+
+	keys _waitData select {
+		!isNil { missionNamespace getVariable _x }
+	} apply {
+		private _uuid = _x;
+		private _uid = _waitData get _uuid get "uid";
+		private _player = _waitData get _uuid get "player";
+		private _pluginsData = missionNamespace getVariable _uuid;
+
+		_waitData deleteAt _uuid;
+		missionNamespace setVariable[_uuid, nil];
+
+		Debug_2("Received save acknowledgement from player %1 with UID %2",_player,_uid);
+		Verbose_2("UID=%1; pluginsData=%2",_uid,_pluginsData);
+
+		[_uid, _player, true, _pluginsData] call A3A_fnc_savePlayer;
+	};
+
+	if (diag_tickTime > _waitUntil) then {
+		Error("Timeout waiting for player data saves to complete. Continuing with main save.");
+		break;
+	};
+};
+
+if (keys _waitData isNotEqualTo []) then {
+	Error("Some clients failed to respond to server's save request.");
+	keys _waitData apply {
+		private _uuid = _x;
+		private _uid = _waitData get _uuid get "uid";
+		private _player = _waitData get _uuid get "player";
+
+		Error_3("No save data received from player %1 with UID %2 (UUID=%3)",_player,_uid,_uuid);
+	};
+};
+
+Info_2("Spent %1 seconds and %2 loops waiting for player data saves to complete",diag_tickTime - _syncStartTick,_loops);
 
 // Now write back all the player data
 {
@@ -31,7 +124,7 @@ private _namespace = [profileNamespace, missionProfileNamespace] select _saveToN
 	{
 		if (isNil {_playerData get _x}) then { continue };				// old game data will have missing entries
 		[_uid, _x, _playerData get _x] call A3A_fnc_savePlayerStat;
-	} forEach ["moneyX", "loadoutPlayer", "scorePlayer", "rankPlayer", "personalGarage"];
+	} forEach ["moneyX", "loadoutPlayer", "scorePlayer", "rankPlayer", "personalGarage", "pluginsData"];
 } forEach A3A_playerSaveData;
 
 ["savedPlayers", keys A3A_playerSaveData] call A3A_fnc_setStatVariable;
@@ -48,13 +141,7 @@ if (!_saveToNewNamespace) then { _namespace setVariable ["ss_campaignID", _campa
 
 
 // Save persistent global variables defined in params config
-private _savedParams = [];
-{
-    if (getArray (_x/"texts") isEqualTo [""]) then { continue };       // spacer/title
-	_savedParams pushBack [configName _x, missionNameSpace getVariable configName _x];
-} forEach ("true" configClasses (configFile/"A3A"/"Params"));
-Debug_1("Saving params: %1", _savedParams);
-
+private _savedParams = A3A_saveData get "params";
 ["params", _savedParams] call A3A_fnc_setStatVariable;
 
 // Save vars from save selector
@@ -67,9 +154,7 @@ private ["_garrison"];
 ["version", QUOTE(VERSION_FULL)] call A3A_fnc_setStatVariable;
 ["saveTime", systemTimeUTC] call A3A_fnc_setStatVariable;
 ["gameMode", gameMode] call A3A_fnc_setStatVariable;					// backwards compatibility
-["difficultyX", skillMult] call A3A_fnc_setStatVariable;				// backwards compatibiiity
 ["bombRuns", bombRuns] call A3A_fnc_setStatVariable;
-["smallCAmrk", smallCAmrk] call A3A_fnc_setStatVariable;
 ["membersX", membersX] call A3A_fnc_setStatVariable;
 private _antennasDeadPositions = [];
 { _antennasDeadPositions pushBack getPos _x; } forEach antennasDead;
@@ -83,7 +168,6 @@ private _antennasDeadPositions = [];
 ["destroyedSites", destroyedSites] call A3A_fnc_setStatVariable;
 ["distanceSPWN", distanceSPWN] call A3A_fnc_setStatVariable;		// backwards compatibility
 ["chopForest", chopForest] call A3A_fnc_setStatVariable;
-["nextTick", nextTick - time] call A3A_fnc_setStatVariable;
 ["weather",[fogParams,overcast,gusts,humidity,lightnings,rain,rainParams,rainbow,waves,wind,windDir,windStr]] call A3A_fnc_setStatVariable; //rrobably should be rain
 private _destroyedPositions = destroyedBuildings apply { getPosATL _x };
 ["destroyedBuildings",_destroyedPositions] call A3A_fnc_setStatVariable;
@@ -133,8 +217,13 @@ if (isNil "unlockedVehicleTypes") then {
 
 ["unlockedVehicleTypes", unlockedVehicleTypes] call A3A_fnc_setStatVariable;
 
-Info_1("Saving revealed zones: %1", _revealedZones);
-Info_1("Saving unlocked vehicle types: %1", unlockedVehicleTypes);
+["invaderRadioKeys", invaderRadioKeys] call A3A_fnc_setStatVariable;
+["occupantsRadioKeys", occupantsRadioKeys] call A3A_fnc_setStatVariable;
+
+Info_1("Saving revealed zones: %1",_revealedZones);
+Info_1("Saving unlocked vehicle types: %1",unlockedVehicleTypes);
+Info_1("Saving invaders radio keys: %1",invaderRadioKeys);
+Info_1("Saving occupants radio keys: %1",occupantsRadioKeys);
 //Antistasi Ultimate variables ^
 
 private ["_hrBackground","_resourcesBackground","_veh","_typeVehX","_weaponsX","_ammunition","_items","_backpcks","_containers","_arrayEst","_posVeh","_dierVeh","_prestigeOPFOR","_prestigeBLUFOR","_city","_dataX","_markersX","_garrison","_arrayMrkMF","_positionOutpost","_typeMine","_posMine","_detected","_typesX","_exists","_friendX"];
@@ -152,7 +241,7 @@ _resourcesBackground = server getVariable "resourcesFIA";
                     private _assemblesTo = getText (configFile/"CfgVehicles"/_backpck/"assembleInfo"/"assembleTo");
                     if (_backpck isNotEqualTo "") then {_resourcesBackground = _resourcesBackground + ([_assemblesTo] call A3A_fnc_vehiclePrice)/2};
 				};
-				if (vehicle _friendX != _friendX) then {
+				if (!isNull objectParent _friendX) then {
 					_veh = vehicle _friendX;
 					_typeVehX = typeOf _veh;
 					if (not(_veh in staticsToSave)) then {
@@ -186,38 +275,60 @@ if (!isNil "isRallyPointPlaced" && {isRallyPointPlaced}) then {
 ["HR_Garage", [] call HR_GRG_fnc_getSaveData] call A3A_fnc_setStatVariable;
 
 _arrayEst = [];
-{
-    // Include buyable items marked as saveable
-    // TODO: Do we need to refund the others?
-    if (typeof _x in A3A_utilityItemHM and {"save" in (A3A_utilityItemHM get typeof _x)#4}) then {
-        _arrayEst pushBack [typeof _x, getPosWorld _x, vectorUp _x, vectorDir _x, [_x] call HR_GRG_fnc_getState];
-        continue;
-    };
 
-    if (fullCrew [_x, "", true] isEqualTo []) then { continue };            // no crew seats, not in utilityItems, not saved
-    if (_x in staticsToSave) then { continue };  // Skip anything already being saved by staticsToSave
-    if ({(alive _x) and (!isPlayer _x)} count crew _x > 0) then { continue };        // no AI-crewed vehicles, those are refunded
+// Collect all vehicles to save
+vehicles select {
+	!(_x in staticsToSave) && // Skip anything already being saved by staticsToSave
+	{
+		!(typeOf _x in A3A_utilityItemHM) &&
+		{ fullCrew[_x, "", true] isNotEqualTo [] } && // no crew seats, not in utilityItems, not saved
+		{ crew _x findIf { (alive _x) && (!isPlayer _x) } == -1 } // no AI-crewed vehicles, those are refunded
+	}
+} apply {
+    _arrayEst pushBackUnique _x;
+};
 
-    _arrayEst pushBack [typeof _x, getPosWorld _x, vectorUp _x, vectorDir _x, [_x] call HR_GRG_fnc_getState];
+// Collect all statics to save
+staticsToSave select {
+	(!surfaceIsWater position _x) &&
+	{ isNull attachedTo _x }
+} apply {
+	_arrayEst pushBackUnique _x;
+};
 
-} forEach (vehicles inAreaArray [markerPos respawnTeamPlayer, 100, 100] select { alive _x });
+// Bring out your dead. Ignore vehicles not near friendly markers.
+_arrayEst = _arrayEst select {
+	(alive _x) && { [_x] call A3A_fnc_isWithinNearestFriendlyMarker };
+};
 
+// Push buildings to save; ignore dead or outside friendly markers.
+A3A_buildingsToSave select {
+	(A3A_builderAllowRoads || { !isOnRoad _x }) &&
+	{ !surfaceIsWater getPosASL _x }
+} apply {
+	_arrayEst pushBackUnique _x;
+};
 
-{
-	if ((alive _x) and !(surfaceIsWater position _x) and (isNull attachedTo _x)) then {
-		_arrayEst pushBack [typeOf _x,getPosWorld _x,vectorUp _x, vectorDir _x];
+// Build save data
+_arrayEst = _arrayEst apply {
+	private _properties = [typeOf _x, getPosWorld _x, vectorUp _x, vectorDir _x];
+
+	if !(_x isKindOf "Building") then {
+		_properties append[
+			[_x] call HR_GRG_fnc_getState,
+			[_x] call BIS_fnc_getVehicleCustomization,
+			_x in staticsToFlip
+		];
 	};
-} forEach staticsToSave;
 
+	private _saveData = [_x] call A3A_fnc_getObjectSaveData;
 
-private _rebMarkers = (airportsX + outposts + seaports + factories + resourcesX + milbases) select { sidesX getVariable _x == teamPlayer };
-_rebMarkers pushBack "Synd_HQ";
-{
-	if (isOnRoad _x && {A3A_builderAllowRoads isEqualTo false}) then {continue};
-	if (surfaceIsWater getPosASL _x) then {continue};
+	if !(isNil "_saveData") then {
+		_properties pushBack _saveData;
+	};
 
-	_arrayEst pushBack [typeOf _x,getPosWorld _x,vectorUp _x, vectorDir _x];
-} forEach A3A_buildingsToSave;
+	_properties;
+};
 
 reverse _arrayEst;
 ["staticsX", _arrayEst] call A3A_fnc_setStatVariable;
@@ -250,9 +361,9 @@ _prestigeBLUFOR = [];
 
 {
 	_city = _x;
-	_dataX = server getVariable _city;
-	_prestigeOPFOR = _prestigeOPFOR + [_dataX select 2];
-	_prestigeBLUFOR = _prestigeBLUFOR + [_dataX select 3];
+	_dataX = A3A_townData get _city;
+	_prestigeOPFOR pushBack (_dataX select 2);
+	_prestigeBLUFOR pushBack (_dataX select 3);
 } forEach citiesX;
 
 ["prestigeOPFOR", _prestigeOPFOR] call A3A_fnc_setStatVariable;
@@ -386,7 +497,7 @@ private _resDefInv = A3A_resourcesDefenceInv;
 {
 	private _veh = _x;
 	private _side = _veh getVariable ["ownerSide", teamPlayer];
-	private _vehCost = A3A_vehicleResourceCosts getOrDefault [typeof _veh, 0];
+	private _vehCost = A3A_vehicleResourceCosts getOrDefault [typeOf _veh, 0];
 	if (!alive _veh || (_side != Occupants && _side != Invaders) || _vehCost == 0) exitWith {};
 
 	private _vehDamage = damage _veh;
@@ -464,10 +575,10 @@ _fuelAmountleftArray = [];
 {
 	if (A3A_hasACE) then {
 		private _keyPairsFuel = [position _x, [_x] call ace_refuel_fnc_getFuel];
-		_fuelAmountleftArray pushback _keyPairsFuel;
+		_fuelAmountleftArray pushBack _keyPairsFuel;
 	} else {
 		private _keyPairsFuel = [position _x, getFuelCargo _x];
-		_fuelAmountleftArray pushback _keyPairsFuel;
+		_fuelAmountleftArray pushBack _keyPairsFuel;
 	};
 
 } forEach A3A_fuelStations;
@@ -476,7 +587,22 @@ _fuelAmountleftArray = [];
 //Saving the state of the testing timer
 ["testingTimerIsActive", testingTimerIsActive] call A3A_fnc_setStatVariable;
 
+// Save Petros location
+["petrosPosition", (getPosATL petros)] call A3A_fnc_setStatVariable;
+
+// Save third-party plugin data
+["saveDataPlugins", _saveDataPlugins] call A3A_fnc_setStatVariable;
+
+// Save world name for use in import / export functionality
+["map", _worldName] call A3A_fnc_setStatVariable;
+
+// Store the entire save data hashmap as a single hashmap in the selected namespace
+_namespace setVariable [format ["A3A_saveData_%1", _campaignID], A3A_saveDataHM];
+
 if (_saveToNewNamespace) then { saveMissionProfileNamespace } else { saveProfileNamespace };
+
+// Trigger local (server) event informing listeners that we're done saving the game, allowing them to perform actions with the finalized data
+[CBA_EVENT_SERVER_GAME_SAVED, [_saveToNewNamespace, _serverID, _campaignID, _worldName, RETNIL(_oldCampaignID)]] call FUNCMAIN(triggerLocalEvent);
 
 savingServer = false;
 _saveHintText = [

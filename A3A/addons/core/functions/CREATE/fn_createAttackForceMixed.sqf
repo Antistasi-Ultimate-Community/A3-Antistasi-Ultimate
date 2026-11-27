@@ -12,7 +12,7 @@ Arguments:
     <STRING> Resource pool to use
     <INTEGER> Total number of vehicles to create
     <SCALAR> Minimum arrival delay in seconds. -1 will force immediate spawn, otherwise will attempt to sync air/ground arrival  
-    <ARRAY> Array of modifier strings: ["tierboost", "specops", "airboost", "noairsupport"]
+    <ARRAY> Array of modifier strings: ["tierboost", "specops", "airboost", "noairsupport", "lowair", "militia", "police"]
     <STRING> Optional: Attack type for showInterceptedSetupCall. Won't show anything if missing
     <SCALAR> Optional: Reveal value for showInterceptedSetupCall
 
@@ -27,10 +27,11 @@ FIX_LINE_NUMBERS()
 
 params ["_side", "_airbase", "_target", "_resPool", "_vehCount", "_delay", "_modifiers", "_attackType", "_reveal"];
 private _targPos = if (_target isEqualType []) then { _target } else { markerPos _target };
-// _modifiers ["tierboost", "specops", "airboost", "noairsupport"]
+// _modifiers ["tierboost", "specops", "airboost", "noairsupport", "lowair", "militia", "police"]
 
-private _lowAir = Faction(_side) getOrDefault ["attributeLowAir", false];
+private _lowAir = Faction(_side) getOrDefault ["attributeLowAir", false] || ("lowair" in _modifiers);
 private _tier = [tierWar, tierWar+2] select ("tierboost" in _modifiers);
+private _isPolice = "police" in _modifiers;
 
 private _resourcesSpent = 0;
 private _vehicles = [];
@@ -49,7 +50,7 @@ private _landRatio = if ("airboost" in _modifiers) then {     // punishment, HQ 
         0.4 + random 0.4;
     };
 };
-ServerDebug_4("Land ratio %1 out of vehicle count %2 due to lowAir %3 and modifiers %4", _landRatio, _vehCount, _lowAir, _modifiers);
+ServerDebug_4("Land ratio %1 out of vehicle count %2 due to lowAir %3 and modifiers %4",_landRatio,_vehCount,_lowAir,_modifiers);
 private _landCount = round (_landRatio * _vehCount);
 
 if (_landCount > 0) then
@@ -58,20 +59,35 @@ if (_landCount > 0) then
     if (_delay >= 0 and !isNil "_landBase") then {
         private _navIndex = _landBase call A3A_fnc_getMarkerNavPoint;
         private _landTime = ([_targPos, _navIndex] call A3A_fnc_findNavDistance) / 15;
-        ServerDebug_2("Minimum delay %1 and land travel time %2", _delay, _landTime);
+        ServerDebug_2("Minimum delay %1 and land travel time %2",_delay,_landTime);
         if (_landTime < _delay) then { sleep (_delay - _landTime) };
         _delay = _landTime;
     };
+
+    private _data = nil;
 
     while { !isNil "_landBase" } do
     {
         [_landBase, 1] call A3A_fnc_addTimeForIdle;
         private _attackCount = round (_landCount * (0.25 + random 0.2));
         private _troops = ["Normal", "SpecOps"] select ("specops" in _modifiers and random 1 > 0.5);
-        ServerDebug_3("Attempting to spawn %1 land vehicles including %2 attack from %3", _landCount, _attackCount, _landBase);
+        private _hasChosenForce = false; // lazy way to do it
+        ServerDebug_3("Attempting to spawn %1 land vehicles including %2 attack from %3",_landCount,_attackCount,_landBase);
 
-        private _data = [_side, _landBase, _targPos, _resPool, _landCount, _attackCount, _tier, _troops] call A3A_fnc_createAttackForceLand;
-        if (_data#1 isEqualTo []) exitWith { Error_1("Land base %1 passed checks but failed vehicle spawning", _landBase) };
+        if ("militia" in _modifiers && {!_hasChosenForce}) then {
+            _hasChosenForce = true;
+            _data = [_side, _landBase, _targPos, _resPool, _landCount, _attackCount, _tier] call A3A_fnc_createAttackForceLandMilitia;
+        };
+
+        if (_isPolice && {!_hasChosenForce}) then {
+            _hasChosenForce = true;
+            _data = [_side, _landBase, _targPos, _resPool, (_landCount + _attackCount), _tier] call A3A_fnc_createAttackForcePolice;
+        };
+
+        if (!_hasChosenForce) then {
+            _data = [_side, _landBase, _targPos, _resPool, _landCount, _attackCount, _tier, _troops] call A3A_fnc_createAttackForceLand;
+        };
+        if (_data#1 isEqualTo []) exitWith { Error_1("Land base %1 passed checks but failed vehicle spawning",_landBase) };
         _resourcesSpent = _resourcesSpent + _data#0;
         _vehicles append _data#1;
         _crewGroups append _data#2;
@@ -79,7 +95,7 @@ if (_landCount > 0) then
 
         [-(_data#0), _side, _resPool] remoteExec ["A3A_fnc_addEnemyResources", 2];
 
-        ServerInfo_2("Spawn performed: Ground vehicles %1 from %2", _data#1 apply {typeOf _x}, _landBase);
+        ServerInfo_2("Spawn performed: Ground vehicles %1 from %2",_data#1 apply {typeOf _x},_landBase);
 
         // If we didn't manage to spawn enough land vehicles, try another base
         _landCount = _landCount - count (_data#1);
@@ -94,13 +110,18 @@ if (!isNil "_attackType") then {
 };
 
 // Now we delay to synchronize with ground vehicle arrival
-if (_delay > 0) then {
-    private _airTime = (markerPos _airbase distance2d _targPos) / 70;
-    ServerDebug_2("Remaining delay %1 and air travel time %2", _delay, _airTime);
+if (_delay > 0 && !(_isPolice)) then {
+    private _airTime = (markerPos _airbase distance2D _targPos) / 70;
+    ServerDebug_2("Remaining delay %1 and air travel time %2",_delay,_airTime);
     sleep (0 max (_delay - _airTime));
 };
 
-if (_airBase != "") then            // uh, is that a thing
+if !(_airbase in airportsX) then {
+    private _airportsSide = airportsX select {sidesX getVariable [_x, sideUnknown] isEqualTo _side};
+    _airbase = if (_airportsSide isNotEqualTo []) then {selectRandom _airportsSide} else {""};
+};
+
+if (_airBase != "" && !(_isPolice)) then
 {
     private _airCount = _vehCount - count (_vehicles);
     if (_airCount <= 0) exitWith {};
@@ -111,7 +132,7 @@ if (_airBase != "") then            // uh, is that a thing
         round (random 0.3 + _airCount * _AHratio);
     };
     private _troops = ["Normal", "SpecOps"] select ("specops" in _modifiers);
-    ServerDebug_3("Attempting to spawn %1 air vehicles including %2 attack from %3", _airCount, _attackCount, _airbase);
+    ServerDebug_3("Attempting to spawn %1 air vehicles including %2 attack from %3",_airCount,_attackCount,_airbase);
     private _roll = round (random 100);
     if (allowFuturisticUnfairSupports && _roll <= 25 && {(Faction(_side) get "vehiclesDropPod") isNotEqualTo []}) then {
         private _data = [_side, _airBase, _targPos, _resPool, _airCount, _attackCount, _tier, _troops] call A3A_fnc_createAttackForceOrbital;
@@ -121,7 +142,7 @@ if (_airBase != "") then            // uh, is that a thing
         _cargoGroups append _data#3;
         [-(_data#0), _side, _resPool] remoteExec ["A3A_fnc_addEnemyResources", 2];
 
-        ServerInfo_1("Spawn performed: Orbital vehicles %1", _data#1 apply {typeOf _x});
+        ServerInfo_1("Spawn performed: Orbital vehicles %1",_data#1 apply {typeOf _x});
     } else {
         private _data = [_side, _airBase, _targPos, _resPool, _airCount, _attackCount, _tier, _troops] call A3A_fnc_createAttackForceAir;
         _resourcesSpent = _resourcesSpent + _data#0;
@@ -130,7 +151,7 @@ if (_airBase != "") then            // uh, is that a thing
         _cargoGroups append _data#3;
         [-(_data#0), _side, _resPool] remoteExec ["A3A_fnc_addEnemyResources", 2];
 
-        ServerInfo_1("Spawn performed: Air vehicles %1", _data#1 apply {typeOf _x});
+        ServerInfo_1("Spawn performed: Air vehicles %1",_data#1 apply {typeOf _x});
     };
 };
 

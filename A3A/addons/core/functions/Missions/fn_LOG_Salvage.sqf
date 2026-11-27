@@ -21,19 +21,19 @@ private _mrk3Pos = (selectRandom (selectBestPlaces [_mrk2Pos, 300,"waterDepth", 
 
 //Create markers for treasure locations!
 private _mrk1 = createMarker ["salvageLocation1", _mrk1Pos];
-_mrk1 setMarkerShape "ELLIPSE";
+_mrk1 setMarkerShapeLocal "ELLIPSE";
 _mrk1 setMarkerSize [25, 25];
 private _mrk2 = createMarker ["salvageLocation2", _mrk2Pos];
-_mrk2 setMarkerShape "ELLIPSE";
+_mrk2 setMarkerShapeLocal "ELLIPSE";
 _mrk2 setMarkerSize [25, 25];
 private _mrk3 = createMarker ["salvageLocation3", _mrk3Pos];
-_mrk3 setMarkerShape "ELLIPSE";
+_mrk3 setMarkerShapeLocal "ELLIPSE";
 _mrk3 setMarkerSize [25, 25];
 
-Debug_3("Salvage Mission Positions: %1, %2, %3", _mrk1Pos, _mrk2Pos, _mrk3Pos);
+Debug_3("Salvage Mission Positions: %1, %2, %3",_mrk1Pos,_mrk2Pos,_mrk3Pos);
 
-private _difficultX = if (random 10 < tierWar) then {true} else {false};
-private _sideX = if (sidesX getVariable [_markerX,sideUnknown] == Occupants) then {Occupants} else {Invaders};
+private _difficultX = random 10 < tierWar;
+private _sideX = [Invaders, Occupants] select (sidesX getVariable [_markerX,sideUnknown] == Occupants);
 private _faction = Faction(_sideX);
 
 //Type of salvage crate to spawn
@@ -58,7 +58,7 @@ private _taskId = "LOG" + str A3A_taskCount;
 [] remoteExec ["A3A_fnc_SalvageRope", 0, true];
 
 Debug("Mission created, waiting for players to get near");
-waitUntil {sleep 1;(dateToNumber date > _dateLimitNum) or ((spawner getVariable _markerX != 2) and !(sidesX getVariable [_markerX,sideUnknown] == teamPlayer))};
+waitUntil {sleep 1;(dateToNumber date > _dateLimitNum) or ((spawner getVariable _markerX != 2) and (sidesX getVariable [_markerX,sideUnknown] != teamPlayer))};
 Debug("players in spawning range, starting spawning");
 
 private _boxPos = selectRandom [_mrk1Pos, _mrk2Pos, _mrk3Pos];
@@ -85,11 +85,14 @@ private _typeVeh = if (_difficultX) then { selectRandom (_faction get "vehiclesG
 private _typeGroup = if _difficultX then {selectRandom ([_faction, "groupsTierSquads"] call SCRT_fnc_unit_flattenTier)} else {selectRandom ([_faction, "groupsTierMedium"] call SCRT_fnc_unit_flattenTier)};
 private _boatSpawnLocation = selectRandom [_mrk1Pos, _mrk2Pos, _mrk3Pos];
 
+private _diversGroup = grpNull;
+private _diversGroup2 = grpNull;
+private _vehSDV = objNull;
 private _typeSDV = _faction getOrDefault ["vehiclesSDV", ""];
 if (_typeSDV != "") then {
 	private _diverType = "";
-	private _diversGroup = createGroup _sideX;
-	private _diversGroup2 = createGroup _sideX;
+	_diversGroup = createGroup _sideX;
+	_diversGroup2 = createGroup _sideX;
    _typeSDV = selectRandom (_faction get "vehiclesSDV");
    if (_typeSDV == "I_SDV_01_F") then {
 		_diverType = "I_diver_F";
@@ -105,7 +108,7 @@ if (_typeSDV != "") then {
    };
    for "_i" from 1 to 2 do {
 		private _SDVmarker = selectRandom [_mrk1Pos, _mrk2Pos, _mrk3Pos];
-		private _vehSDV = createVehicle [_typeSDV, _SDVmarker, [], 30, "NONE"];
+		_vehSDV = createVehicle [_typeSDV, _SDVmarker, [], 30, "NONE"];
 		_vehSDV setPos [getPos _vehSDV select 0, getPos _vehSDV select 1, (getPos _vehSDV select 2) - 7];
 		[_vehSDV, _sideX] call A3A_fnc_AIVEHinit;
 		for "_i" from 1 to 2 do {
@@ -162,7 +165,7 @@ if (dateToNumber date > _dateLimitNum) then {
 	waitUntil {sleep 1; (_box distance2D posHQ) < 100 || {allPlayers inAreaArray [getPos _box, 50, 50] isEqualTo [] || {isNull _box}}};
 };
 
-private _bonus = if (_difficultX) then {2} else {1};
+private _bonus = [1, 2] select (_difficultX);
 
 if (_timeout && alive _box) then {
 	[_taskId, "LOG", "FAILED"] call A3A_fnc_taskSetState;
@@ -191,7 +194,7 @@ deleteVehicle _ship;
 [_vehCrewGroup] spawn A3A_fnc_groupDespawner;
 [_veh] spawn A3A_fnc_vehDespawner;
 if (_typeSDV != "") then {
-	[_SDVcrewGroup] spawn A3A_fnc_groupDespawner;
+	[_diversGroup2] spawn A3A_fnc_groupDespawner;
 	[_diversGroup] spawn A3A_fnc_groupDespawner;
 	[_vehSDV] spawn A3A_fnc_vehDespawner;
 };

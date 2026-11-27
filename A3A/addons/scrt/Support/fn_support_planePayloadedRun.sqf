@@ -13,7 +13,7 @@ private _groupPlane = _planeData select 2;
 
 private _isHelicopter = _plane isKindOf "helicopter";
 
-_plane setPosATL [getPosATL _plane select 0, getPosATL _plane select 1, if (_isHelicopter) then {100} else {1000}];
+_plane setPosATL [getPosATL _plane select 0, getPosATL _plane select 1, [1000, 100] select (_isHelicopter)];
 _plane disableAI "TARGET";
 _plane disableAI "AUTOTARGET";
 _plane flyInHeight 120;
@@ -97,7 +97,9 @@ if (isSupportMarkerPlacingLocked) then {
     publicVariable "isSupportMarkerPlacingLocked";
 };
 
-if !(canMove _plane) then { sleep cleantime };
+if (A3A_GCThreshold isEqualTo -1) exitWith {};
+
+if !(canMove _plane) then { sleep A3A_GCThreshold };
 deleteVehicle _plane;
 {deleteVehicle _x} forEach _planeCrew;
 deleteGroup _groupPlane;

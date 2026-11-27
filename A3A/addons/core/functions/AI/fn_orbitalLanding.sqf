@@ -68,7 +68,7 @@ if (_podseats != 1) then {
 	sleep 0.45;
 	[_pod, "open"] spawn A3A_fnc_PodsDoors;
 
-	[_pod] call A3A_fnc_smokeCoverAuto;
+	// [_pod] call A3A_fnc_smokeCoverAuto;
 };
 
 
@@ -88,6 +88,7 @@ if (_podseats >= _groupcount) then {
 };
 sleep 2;
 private _SafeMovePos = [];
+private _podX = objNull;
 if (_podseats < _groupcount) then {
 	if (_podseats == 1) then {
 		{

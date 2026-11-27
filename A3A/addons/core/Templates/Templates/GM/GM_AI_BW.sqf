@@ -1,3 +1,5 @@
+#pragma hemtt ignore_variables ["_fnc_saveNames","_fnc_createLoadoutData","_fnc_copyLoadoutData","_fnc_generateAndSaveUnitsToTemplate","_fnc_saveToTemplate"]
+
 //////////////////////////
 //   Side Information   //
 //////////////////////////
@@ -113,6 +115,8 @@
     "gm_WhiteHead_16_camo_01","gm_WhiteHead_17_camo_01","gm_WhiteHead_18_camo_01",
     "gm_WhiteHead_19_camo_01","gm_WhiteHead_20_camo_01","gm_WhiteHead_21_camo_01"
 ]] call _fnc_saveToTemplate;
+
+"GermanMen" call _fnc_saveNames;
 
 //////////////////////////
 //       Loadouts       //

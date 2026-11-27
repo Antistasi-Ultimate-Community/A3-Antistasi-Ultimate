@@ -9,7 +9,7 @@ _positionX = getMarkerPos _markerX;
 _sideX = sidesX getVariable [_markerX,sideUnknown];
 private _faction = Faction(_sideX);
 
-ServerInfo_1("Spawning Control Point %1", _markerX);
+ServerInfo_1("Spawning Control Point %1",_markerX);
 
 if ((_sideX == teamPlayer) or (_sideX == sideUnknown)) exitWith {};
 if ({if ((sidesX getVariable [_x,sideUnknown] != _sideX) and (_positionX inArea _x)) exitWith {1}} count markersX >1) exitWith {};
@@ -20,25 +20,34 @@ private _groups = [];
 _pilots = [];
 _conquered = false;
 _groupX = grpNull;
-_isFIA = false;
+private _useVehicle = false;
+private _spawnRoadblock = false;
 _leave = false;
 A3A_hasIFA = false;
 
 //IFA Detection
-if (isClass (configfile >> "CfgPatches" >> "LIB_core")) then {
+if (isClass (configFile >> "CfgPatches" >> "LIB_core")) then {
     A3A_hasIFA = true;
     [2,"Iront Front Detected.",_fnc_scriptName] call A3A_fnc_log;
 };
 
-_isControl = if (isOnRoad _positionX) then {true} else {false};
+_isControl = isOnRoad _positionX;
+
+private _aggrRoadblock = [aggressionOccupants, aggressionInvaders] select (_sideX == Invaders);
+_aggrRoadblock = _aggrRoadblock max A3A_roadBlocksBaseChance;
+
+if (random 100 < _aggrRoadblock) then
+{
+    _spawnRoadblock = true;
+};
 
 if (_isControl) then
 {
+    if (!_spawnRoadblock) exitWith {};
     if (_sideX == Occupants) then
     {
-    if ((random 10 > (tierWar + difficultyCoef)) and (!([_markerX] call A3A_fnc_isFrontline))) then
-        {
-            _isFIA = true;
+        if (!([_markerX] call A3A_fnc_isFrontline)) then {
+            _useVehicle = true;
         }
     };
 
@@ -48,27 +57,27 @@ if (_isControl) then
     {
         _roads = _positionX nearRoads _radiusX;
         _roads = _roads select { count (roadsConnectedTo _x) == 2 };
-        if (count _roads > 0) exitWith {};
+        if (_roads isNotEqualTo []) exitWith {};
         _radiusX = _radiusX + 10;
     };
 
     if (_radiusX >= 100) then {
         // fallback case, shouldn't happen unless the map is very broken
-        Error_2("Roadblock error for %1 at %2", _markerX, _positionX);
+        Error_2("Roadblock error for %1 at %2",_markerX,_positionX);
         _roads = _positionX nearRoads 20;		// guaranteed due to isOnRoad check
         _dirveh = random 360;
     } else {
-        private _roadscon = roadsConnectedto (_roads select 0);
+        private _roadscon = roadsConnectedTo (_roads select 0);
         _dirveh = [_roads select 0, _roadscon select 0] call BIS_fnc_DirTo;
     };
-
-    if (!_isFIA) then
+    
+    if (!_useVehicle) then
     {
         _groupE = grpNull;
         if !(A3A_hasIFA) then
         {
             _pos = [getPos (_roads select 0), 7, _dirveh + 270] call BIS_Fnc_relPos;
-            if (worldname == "SPE_Normandy") then {
+            if (worldName == "SPE_Normandy") then {
                 _bunker = "Land_SPE_Sandbag_Nest" createVehicle _pos;
                 _bunker setDir _dirveh;
                 _pos = _bunker modelToWorld [-0.200684,-0.91333,-0.421184];
@@ -91,7 +100,7 @@ if (_isControl) then
             _soldiers pushBack _unit;
             sleep 1;
             _pos = [getPos (_roads select 0), 7, _dirveh + 90] call BIS_Fnc_relPos;
-            if (worldname == "SPE_Normandy") then {
+            if (worldName == "SPE_Normandy") then {
                 _bunker = "Land_SPE_Sandbag_Nest" createVehicle _pos;
                 _bunker setDir _dirveh + 180;
                 _pos = _bunker modelToWorld [-0.200684,-0.91333,-0.421184];
@@ -151,42 +160,45 @@ if (_isControl) then
     }
     else
     {
-        private _vehicleGet = "";
-        switch (true) do 
-        {
-            private _tier9Vehicle = (_faction getOrDefault ["vehiclesLightTanks", []]);
-            if (_tier9Vehicle isEqualTo []) then {
-                _tier9Vehicle = "vehiclesAirborne";
-            };
+        private _aggr = [aggressionOccupants, aggressionInvaders] select (_sideX == Invaders);
 
-            case (tierWar >= 9): // if higher or equal to 9, grab military light tank (or airborne, if light tank not found)
-            {
-                _vehicleGet = _tier9Vehicle;
-            };
-            case (tierWar >= 6): // if higher or equal to 6, grab military APC
-            {
-                _vehicleGet = "vehiclesAPCs";
-            };
-            case (tierWar >= 3): // if higher or equal to 3, grab militia light armed car
-            {
-                _vehicleGet = "vehiclesMilitiaLightArmed";
-            };
-            default // incase it's less than 3 (or something is broken), just grab militia car
-            {
-                _vehicleGet = "vehiclesMilitiaCars";
-            };
+        private _weightPolice = linearConversion [0, 60, _aggr, 1.0, 0.0, true]; 
+        private _weightMilitia = linearConversion [40, 60, _aggr, 0.2, 1.0, true] * linearConversion [60, 85, _aggr, 1.0, 0.3, true];
+        private _weightAPC = linearConversion [40, 80, _aggr, 0.0, 1.0, true]; 
+        private _weightTank = linearConversion [70, 120, _aggr, 0.0, 1.0, true];
+
+        private _vehicleCategories = [ 
+            "vehiclesPolice", _weightPolice, 
+            "vehiclesMilitiaLightArmed", _weightMilitia, 
+            "vehiclesAPCs", _weightAPC, 
+            "vehiclesLightTanks", _weightTank 
+        ];
+
+        private _vehicleCategory = selectRandomWeighted _vehicleCategories;
+        private _fallbackVehicles = _faction getOrDefault["vehiclesAPCs", []];
+
+        Debug_2("Chosen %1 as vehicle category. tierWar is %2",_vehicleCategory,tierWar);
+
+        _typeVehX = selectRandom (_faction getOrDefault [_vehicleCategory, _fallbackVehicles]);
+        if (isNil "_typeVehX" || { !isClass(configFile >> "CfgVehicles" >> _typeVehX) }) exitWith {
+            Warning_1("Failed to select a valid vehicle type for '%1'; fallback also failed.",_vehicleCategory);
         };
-        _typeVehX = selectRandom (_faction get _vehicleGet);
+
         _veh = _typeVehX createVehicle getPos (_roads select 0);
         _veh setDir _dirveh + 90;
         [_veh, _sideX] call A3A_fnc_AIVEHinit;
         _vehiclesX pushBack _veh;
         sleep 1;
-        _typeGroup = selectRandom (_faction get "groupsMilitiaMedium");
+        private _unitType = if (_vehicleCategory isEqualTo "vehiclesPolice") then {_faction get "unitPoliceOfficer"} else {
+            [_faction get "unitTierStaticCrew"] call SCRT_fnc_unit_getTiered;
+        };
+        private _typeGroup = if (_vehicleCategory isEqualTo "vehiclesPolice") then {_faction get "groupPoliceOfficers"} else {
+            [_faction get "groupTierFireteam"] call SCRT_fnc_unit_getTiered;
+        };
         _groupX = [_positionX, _sideX, _typeGroup, true] call A3A_fnc_spawnGroup;
         if !(isNull _groupX) then
         {
-            _unit = [_groupX, _faction get "unitMilitiaGrunt", _positionX, [], 0, "NONE"] call A3A_fnc_createUnit;
+            _unit = [_groupX, _unitType, _positionX, [], 0, "NONE"] call A3A_fnc_createUnit;
             _unit moveInGunner _veh;
             {_soldiers pushBack _x; [_x,"", false] call A3A_fnc_NATOinit} forEach units _groupX;
         };
@@ -196,7 +208,7 @@ else
 {
     _markersX = markersX select {(getMarkerPos _x distance _positionX < distanceSPWN) and (sidesX getVariable [_x,sideUnknown] == teamPlayer)};
     _markersX = _markersX - ["Synd_HQ"] - watchpostsFIA - roadblocksFIA - aapostsFIA - atpostsFIA - hmgpostsFIA;
-    _frontierX = if (count _markersX > 0) then {true} else {false};
+    _frontierX = _markersX isNotEqualTo [];
     if (_frontierX) then
     {
         _cfg =  selectRandom (_faction get "groupSpecOpsRandom");
@@ -207,7 +219,7 @@ else
         _size = [_markerX] call A3A_fnc_sizeMarker;
         if ({if (_x inArea _markerX) exitWith {1}} count allMines == 0) then
         {
-            Debug_1("Creating a Minefield at %1", _markerX);
+            Debug_1("Creating a Minefield at %1",_markerX);
             private _mines = (_faction get "minefieldAPERS");
             for "_i" from 1 to 45 do {
                 _mineX = createMine [ selectRandom _mines ,_positionX,[],_size];
@@ -260,11 +272,11 @@ while {(spawner getVariable _markerX != 2) and ({[_x,_markerX] call A3A_fnc_canC
         _spawnStatus = 1;
         if (isMultiplayer) then
         {
-            {if (vehicle _x == _x) then {[_x,false] remoteExec ["enableSimulationGlobal",2]}} forEach _soldiers
+            {if (isNull objectParent _x) then {[_x,false] remoteExec ["enableSimulationGlobal",2]}} forEach _soldiers
         }
         else
         {
-            {if (vehicle _x == _x) then {_x enableSimulationGlobal false}} forEach _soldiers
+            {if (isNull objectParent _x) then {_x enableSimulationGlobal false}} forEach _soldiers
         };
     }
     else
@@ -274,18 +286,18 @@ while {(spawner getVariable _markerX != 2) and ({[_x,_markerX] call A3A_fnc_canC
             _spawnStatus = 0;
             if (isMultiplayer) then
             {
-                {if (vehicle _x == _x) then {[_x,true] remoteExec ["enableSimulationGlobal",2]}} forEach _soldiers
+                {if (isNull objectParent _x) then {[_x,true] remoteExec ["enableSimulationGlobal",2]}} forEach _soldiers
             }
             else
             {
-                {if (vehicle _x == _x) then {_x enableSimulationGlobal true}} forEach _soldiers
+                {if (isNull objectParent _x) then {_x enableSimulationGlobal true}} forEach _soldiers
             };
         };
     };
     sleep 3;
 };
 
-["locationSpawned", [_markerX, "Control", true]] call EFUNC(Events,triggerEvent);
+[CBA_EVENT_SERVER_SPAWN_LOCATION, [_markerX, "Control", true]] call FUNCMAIN(triggerLocalEvent);
 
 waitUntil {sleep 1;((spawner getVariable _markerX == 2))  or ({[_x,_markerX] call A3A_fnc_canConquer} count _soldiers == 0)};
 
@@ -298,8 +310,8 @@ if (spawner getVariable _markerX != 2) then
     _closest = [_allUnits,_positionX] call BIS_fnc_nearestPosition;
     _winner = side _closest;
     _loser = Occupants;
-    Debug_3("Control %1 captured by %2. Is Roadblock: %3", _markerX, _winner, _isControl);
-    if (_isControl) then
+    Debug_3("Control %1 captured by %2. Is Roadblock: %3",_markerX,_winner,_isControl);
+    if (_isControl && _spawnRoadblock) then
     {
         ["TaskSucceeded", ["", "Roadblock Destroyed"]] remoteExec ["BIS_fnc_showNotification",_winner];
         ["TaskFailed", ["", "Roadblock Lost"]] remoteExec ["BIS_fnc_showNotification",_sideX];
@@ -343,7 +355,7 @@ waitUntil {sleep 1;(spawner getVariable _markerX == 2)};
 {
     // delete all vehicles that haven't been captured
     if (_x getVariable ["ownerSide", _sideX] == _sideX) then {
-        if (_x distance2d (_x getVariable "originalPos") < 100) then { deleteVehicle _x }
+        if (_x distance2D (_x getVariable "originalPos") < 100) then { deleteVehicle _x }
         else { if !(_x isKindOf "StaticWeapon") then { [_x] spawn A3A_fnc_VEHdespawner } };
     };
 } forEach _vehiclesX;
@@ -378,10 +390,14 @@ if (_conquered) then
             _size = [_markerX] call A3A_fnc_sizeMarker;
             for "_i" from 1 to 60 do
                 {
-                _mineX = createMine ["APERSMine",_positionX,[],_size];
-                if (_loser == Occupants) then {Occupants revealMine _mineX} else {Invaders revealMine _mineX};
+                    private _mines = selectRandom (Faction(_loser) getOrDefault ["minefieldAPERS", ["APERSMine"]]);
+                    private _mineX = createMine [_mines,_positionX,[],_size];
+                    _loser revealMine _mineX;
                 };
             };
     };
 };
-["locationSpawned", [_markerX, "Control", false]] call EFUNC(Events,triggerEvent);
+    
+[CBA_EVENT_SERVER_SPAWN_LOCATION, [_markerX, "Control", false]] call FUNCMAIN(triggerLocalEvent);
+
+nil;

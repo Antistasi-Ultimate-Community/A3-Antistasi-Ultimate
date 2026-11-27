@@ -66,7 +66,7 @@ call {
     private _target = _targPos getPos [random 100, random 360];
     private _vehicles = vehicles inAreaArray [_targPos, 100, 100];
     _vehicles = _vehicles select { canFire _x and _x isKindOf "StaticWeapon" };
-    if !(_vehicles isEqualTo []) then { _target = selectRandom _vehicles };
+    if (_vehicles isNotEqualTo []) then { _target = selectRandom _vehicles };
 
     // ["_side", "_target", "_pool", "_precision", "_reveal", "_delay"];
     [_side, _target, "attack", 2, 0, 0] call A3A_fnc_requestArtillery;
@@ -114,6 +114,7 @@ if (!alive _origPetros) then {
 };
 
 bigAttackInProgress = false; publicVariable "bigAttackInProgress";
+HQAttackInProgress = false; publicVariable "HQAttackInProgress";
 forcedSpawn = forcedSpawn - ["Synd_HQ"]; publicVariable "forcedSpawn";
 
 [_taskId, "DEF_HQ", 1200] spawn A3A_fnc_taskDelete;

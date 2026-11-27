@@ -6,9 +6,9 @@ if (!hasInterface) exitWith {};
 #endif
 disableSerialization;
 
-if (isNull (uiNameSpace getVariable "H8erHUD")) exitWith {};
+if (isNull (uiNamespace getVariable "H8erHUD")) exitWith {};
 
-private _display = uiNameSpace getVariable "H8erHUD";
+private _display = uiNamespace getVariable "H8erHUD";
 if (isNil "_display") exitWith {};
 
 private _textX = nil;
@@ -47,7 +47,7 @@ switch (gameMode) do {
 			case (!areInvadersDefeated && {areOccupantsDefeated}): {
 				_aggrString = format [localize "STR_info_bar_aggr", A3A_faction_inv get "name", [aggressionLevelInvaders] call A3A_fnc_getAggroLevelString];
 			};
-			case (areOccupantsDefeated && {areOccupantsDefeated}): {
+			case (areOccupantsDefeated && {areInvadersDefeated}): {
 				_aggrString = "";
 			};
 		};

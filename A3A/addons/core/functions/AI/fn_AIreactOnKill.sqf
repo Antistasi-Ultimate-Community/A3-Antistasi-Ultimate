@@ -39,7 +39,7 @@ private _enemy = objNull;
 private _activeGroupMembers = (units _group) select {_x call A3A_fnc_canFight};
 
 //No group member left in fighting condition, no reaction possible
-if(count _activeGroupMembers == 0) exitWith {};
+if(_activeGroupMembers isEqualTo []) exitWith {};
 
 //Call help if possible
 if(_group getVariable ["A3A_canCallSupportAt", -1] < time) then {
@@ -70,7 +70,7 @@ _group setVariable ["A3A_reactingToKill", true];
     private _enemy = _x findNearestEnemy _x;
 
     call {
-        if (fleeing _x && {!isNull _enemy && (_x distance _enemy < 50) && (vehicle _x == _x)} ) exitWith {
+        if (fleeing _x && {!isNull _enemy && (_x distance _enemy < 50) && (isNull objectParent _x)} ) exitWith {
             private _fleeChance = switch (true) do {
                 case (_x getVariable ["isRival", false]): {
                     random 25
@@ -101,7 +101,7 @@ _group setVariable ["A3A_reactingToKill", true];
         if (!isNull _enemy && (primaryWeapon _x in allMachineGuns)) exitWith {
             if (random 100 < 40) then { [_x,_enemy] spawn A3A_fnc_suppressingFire };
         };
-        private _noNvgIndex = (units _group) findIf {hmd _x == "" || {getArray (configFile >> "CfgWeapons" >> (hmd _x) >> "visionMode") isEqualTo ["Normal","Normal"]}};
+        private _noNvgIndex = (units _group) findIf {private _hmd = hmd _x; _hmd == "" || {_hmd in dummyNVGs}};
         if (sunOrMoon == 1 || _noNvgIndex == -1) exitWith {
             if (random 100 < 35) then { [_x,_x,_enemy] spawn A3A_fnc_chargeWithSmoke };
         };

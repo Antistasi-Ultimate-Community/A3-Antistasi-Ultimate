@@ -28,7 +28,7 @@ _unit disableAI "TARGET";
 _unit disableAI "ANIM";
 _unit setSkill 0;
 unassignVehicle _unit;			// stop them getting back into vehicles
-[_unit] orderGetin false;
+[_unit] orderGetIn false;
 _unit setUnitPos "UP";
 _unit playMoveNow "AmovPercMstpSnonWnonDnon_AmovPercMstpSsurWnonDnon";		// hands up?
 _unit setVariable ["A3U_PoW_unitType", _unit getVariable "unitType", true]; // in case the original unitType is needed for something else in the future
@@ -69,7 +69,7 @@ if (_unit getVariable ["hasLaptop", false] && {!(_unit getVariable ["hasLaptopSp
 // move all unit's equipment except uniform into the surrender crate
 private _loadout = getUnitLoadout _unit;
 for "_i" from 0 to 2 do {
-	if !(_loadout select _i isEqualTo []) then {
+	if (_loadout select _i isNotEqualTo []) then {
 		_boxX addWeaponWithAttachmentsCargoGlobal [_loadout select _i, 1];
 	};
 };
@@ -85,6 +85,11 @@ if (_backpack != "") then {
 };
 _unit setUnitLoadout [ [], [], [], [uniform _unit, []], [], [], "", "", [], ["","","","","",""] ];
 
+//find and properly dispose dropped weapons
+{
+	_boxX addWeaponWithAttachmentsCargoGlobal [(weaponsItemsCargo _x) select 0, 1];
+	deleteVehicle _x;
+} forEach nearestObjects [_unit,["WeaponHolderSimulated"],5,true];
 
 if (_unitSide == Occupants) then {
 	[-2, 0, getPos _unit] remoteExec ["A3A_fnc_citySupportChange", 2];
@@ -97,8 +102,8 @@ if (!isNil "_markerX") then { [_markerX, _unitSide] remoteExec ["A3A_fnc_zoneChe
 
 
 // timed cleanup functions
-[_unit] spawn A3A_fnc_postmortem;
-[_boxX] spawn A3A_fnc_postmortem;
+[_unit] call FUNCMAIN(preparePostMortem);
+[_boxX, true] remoteExec[QFUNCMAIN(despawnQueueEntity), 2];
 
 sleep 3;				// Also protects against box kills
 _unit allowDamage true;

@@ -3,8 +3,8 @@ FIX_LINE_NUMBERS()
 #define SPACING     1
 
 params ["_marker", "_placementMarker"];
-
-private ["_vehicleMarker", "_heliMarker", "_hangarMarker", "_mortarMarker", "_planeMarker", "_markerPrefix", "_markerSplit", "_first", "_fullName"];
+scopeName "main";
+private ["_vehicleMarker", "_heliMarker", "_hangarMarker", "_mortarMarker", "_planeMarker", "_flagMarker", "_ammoMarker", "_markerPrefix", "_markerSplit", "_first", "_fullName"];
 
 _vehicleMarker = [];
 _heliMarker = [];
@@ -12,6 +12,8 @@ _hangarMarker = [];
 _mortarMarker = [];
 _samMarker = [];
 _planeMarker = [];
+_flagMarker = [];
+_ammoMarker = [];
 
 //Calculating marker prefix
 _markerPrefix = "";
@@ -37,7 +39,7 @@ _mainMarker = getMarkerPos _marker;
   _fullName = format ["%1%2", _markerPrefix, _x];
   if(_mainMarker distance (getMarkerPos _fullName) > 500) then
   {
-    Error_2("Placementmarker %1 is more than 500 meter away from its mainMarker %2. You may want to check that!", _fullName, _marker);
+    Warning_2("Placementmarker %1 is more than 500 meter away from its mainMarker %2. You may want to check that!",_fullName,_marker);
   };
   switch (_first) do
   {
@@ -46,15 +48,17 @@ _mainMarker = getMarkerPos _marker;
     case ("hangar"): {_hangarMarker pushBack _fullName;};
     case ("plane"): {_planeMarker pushBack _fullName;};
     case ("mortar"): {_mortarMarker pushBack _fullName;};
-	case ("sam"): {_samMarker pushBack _fullName;};
+    case ("flag"): {_flagMarker pushBack _fullName;};
+    case ("ammo"): {_ammoMarker pushBack _fullName;};
+    case ("sam"): {_samMarker pushBack _fullName;};
   };
   _fullName setMarkerAlpha 0;
 } forEach _placementMarker;
 
-if(count _vehicleMarker == 0) then
+if(_vehicleMarker isEqualTo []) then
 {
   // Not automatically wrong. Some locations may not have any vehicle places
-  Info_1("InitSpawnPlaces: Could not find any vehicle places on %1!", _marker);
+  Warning_1("InitSpawnPlaces: Could not find any vehicle places on %1!",_marker);
 };
 
 private ["_markerSize", "_distance", "_buildings", "_hangars", "_garages", "_helipads", "_markerX"];
@@ -120,7 +124,7 @@ private _hangarCount = count _hangars;
 //All additional hangar and helipads found
 
 if (_heliCount != count _helipads or _hangarCount != count _hangars) then {
-  Debug_5("Marker %1 buildings diff: %2;%3 %4;%5", _marker, _heliCount, count _helipads, _hangarCount, count _hangars);
+  Debug_5("Marker %1 buildings diff: %2;%3 %4;%5",_marker,_heliCount,count _helipads,_hangarCount,count _hangars);
 };
 
 private ["_vehicleSpawns", "_size", "_width", "_height", "_vehicleCount", "_realLength", "_realSpace", "_markerDir", "_dis", "_pos", "_heliSpawns", "_dir", "_planeSpawns", "_vehSpawns", "_mortarSpawns", "_spawns"];
@@ -133,13 +137,13 @@ _vehicleSpawns = [];
     _height = (_size select 1) * 2;
     if(_width < (4 + 2 * SPACING)) then
     {
-      Error_2("InitSpawnPlaces: Marker %1 is not wide enough for vehicles, required are %2 meters!", _x , (4 + 2 * SPACING));
+      Error_2("InitSpawnPlaces: Marker %1 is not wide enough for vehicles, required are %2 meters!",_x,(4 + 2 * SPACING));
     }
     else
     {
       if(_height < 10) then
       {
-        Error_1("InitSpawnPlaces: Marker %1 is not long enough for vehicles, required are 10 meters!", _x);
+        Error_1("InitSpawnPlaces: Marker %1 is not long enough for vehicles, required are 10 meters!",_x);
       }
       else
       {
@@ -152,7 +156,7 @@ _vehicleSpawns = [];
             {
               _x hideObject true;
             };
-          } foreach (nearestTerrainObjects [getMarkerPos _markerX, ["Tree","Bush", "Hide", "Rock", "Fence"], _radius, true]);
+          } forEach (nearestTerrainObjects [getMarkerPos _markerX, ["Tree","Bush", "Hide", "Rock", "Fence"], _radius, true]);
         }
         else
         {
@@ -161,7 +165,7 @@ _vehicleSpawns = [];
             {
               [_x,true] remoteExec ["hideObjectGlobal",2];
             }
-          } foreach (nearestTerrainObjects [getMarkerPos _markerX, ["Tree","Bush", "Hide", "Rock", "Fence"], _radius, true]);
+          } forEach (nearestTerrainObjects [getMarkerPos _markerX, ["Tree","Bush", "Hide", "Rock", "Fence"], _radius, true]);
         };
 
         //Create the places
@@ -188,13 +192,13 @@ _heliSpawns = [];
     {
       {
         _x hideObject true;
-      } foreach (nearestTerrainObjects [_pos, ["Tree","Bush", "Hide", "Rock"], 5, true]);
+      } forEach (nearestTerrainObjects [_pos, ["Tree","Bush", "Hide", "Rock"], 5, true]);
     }
     else
     {
       {
         [_x,true] remoteExec ["hideObjectGlobal",2];
-      } foreach (nearestTerrainObjects [_pos, ["Tree","Bush", "Hide", "Rock"], 5, true]);
+      } forEach (nearestTerrainObjects [_pos, ["Tree","Bush", "Hide", "Rock"], 5, true]);
     };
     _dir = direction _x;
     _heliSpawns pushBack [_pos, _dir];
@@ -202,6 +206,8 @@ _heliSpawns = [];
 
 _planeSpawns = [];
 {
+    private _hangar = _x;
+    { if ([_hangar, _x] call A3A_fnc_isWithinMarkerArea) then { breakTo "main" } } forEach _hangarMarker;
     _pos = getPos _x;
     _pos set [2, ((_pos select 2) + 0.1) max 0.1];
     _dir = direction _x;
@@ -252,7 +258,21 @@ _samSpawns = [];
   _samSpawns pushBack [_pos, 0];
 } forEach _samMarker;
 
-_spawns = [_vehicleSpawns, _heliSpawns, _planeSpawns, _mortarSpawns, _samSpawns];
+_flagSpawns = [];
+{
+  _pos = getMarkerPos _x;
+  _pos set [2, ((_pos select 2) + 0.1) max 0.1];
+  _flagSpawns pushBack [_pos, 0];
+} forEach _flagMarker;
+
+_ammoSpawns = [];
+{
+  _pos = getMarkerPos _x;
+  _pos set [2, ((_pos select 2) + 0.1) max 0.1];
+  _ammoSpawns pushBack [_pos, 0];
+} forEach _ammoMarker;
+
+_spawns = [_vehicleSpawns, _heliSpawns, _planeSpawns, _mortarSpawns, _samSpawns, _flagSpawns, _ammoSpawns]; // ? What is this supposed to do or be used for?
 
 //Debug_2("%1 set to %2", _marker, [_vehicleSpawns, _heliSpawns, _planeSpawns, _mortarSpawns]);
 
@@ -262,4 +282,4 @@ _spawns = [_vehicleSpawns, _heliSpawns, _planeSpawns, _mortarSpawns, _samSpawns]
     private _varName = format ["%1_%2", _marker, _x#1];
     spawner setVariable [_varName + "_places", _x#0, true];
     spawner setVariable [_varName + "_used", (_x#0) apply {false}, true];
-} forEach [[_vehicleSpawns, "vehicle"], [_heliSpawns, "heli"], [_planeSpawns, "plane"], [_mortarSpawns, "mortar"], [_samSpawns, "sam"]];
+} forEach [[_vehicleSpawns, "vehicle"], [_heliSpawns, "heli"], [_planeSpawns, "plane"], [_mortarSpawns, "mortar"], [_samSpawns, "sam"], [_flagSpawns, "flag"], [_ammoSpawns, "ammo"]];
