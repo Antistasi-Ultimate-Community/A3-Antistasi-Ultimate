@@ -162,8 +162,20 @@ private _posOrigin = navGrid select ([_mrkOrigin] call A3A_fnc_getMarkerNavPoint
 private _posDest = navGrid select ([_mrkDest] call A3A_fnc_getMarkerNavPoint) select 0;
 
 private _taskId = "CONVOY" + str A3A_taskCount;
-[[teamPlayer,civilian],_taskId,[_textX,_taskTitle,_mrkDest],_posDest,false,0,true,_taskIcon,true] call BIS_fnc_taskCreate;
-[_taskId, "CONVOY", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
+[
+    "CONVOY",
+    [
+        [teamPlayer,civilian],
+        _taskId,
+        [_textX,_taskTitle,_mrkDest],
+        _posDest,
+        false,
+        0,
+        true,
+        _taskIcon,
+        true
+    ]
+] call A3A_fnc_taskCreate;
 
 ServerInfo_3("%1 convoy mission created from %2 to %3",_convoyType,_mrkOrigin,_mrkDest);
 

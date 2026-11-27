@@ -94,8 +94,24 @@ private _factionName = _faction get "name";
 
 private _nameDest = [_mrkDest] call A3A_fnc_localizar;
 private _taskId = format ["townBattle_%1_%2", _mrkDest, A3A_taskCount];
-[[teamPlayer,civilian,Occupants],_taskId,[format [localize "STR_townBattle_desc",_nameDest,_factionName],format [localize "STR_townBattle_task",_nameDest,_factionName],_mrkDest],_posDest,false,0,true,"Defend",true] call BIS_fnc_taskCreate;
-[_taskId, "townBattle", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
+[
+    "townBattle",
+    [
+        [teamPlayer,civilian,Occupants],
+        _taskId,
+        [
+            ["STR_townBattle_desc",_nameDest,_factionName],
+            ["STR_townBattle_task",_nameDest,_factionName],
+            _mrkDest
+        ],
+        _posDest,
+        false,
+        0,
+        true,
+        "Defend",
+        true
+    ]
+] call A3A_fnc_taskCreate;
 
 private _closestAdminMarker = [milAdministrationsX, _posDest] call BIS_fnc_nearestPosition;
 townSkirmishes append [_mrkDest, _closestAdminMarker]; // Should probably move to A3A_townData in future

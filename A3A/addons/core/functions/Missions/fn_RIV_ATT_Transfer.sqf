@@ -107,21 +107,23 @@ private _fnc_spawnConvoyVehicle = {
 //////////////////////////////////////////////
 private _taskId = "RIV_ATT" + str A3A_taskCount;
 [
-    [teamPlayer,civilian],
-    _taskId,
+    "RIV_ATT",
     [
-        [ "STR_RIV_ATT_transfer_text", A3A_faction_riv get "name", ([_marker] call A3A_fnc_localizar), _displayTime],
-        [ "STR_RIV_ATT_transfer_header", A3A_faction_riv get "name"],
-        _marker
-    ],
-    _hideoutPosition,
-    false,
-    0,
-    true,
-    "destroy",///maybe change the icon
-    true
-] call BIS_fnc_taskCreate;
-[_taskId, "RIV_ATT", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
+        [teamPlayer,civilian],
+        _taskId,
+        [
+            ["STR_RIV_ATT_transfer_text", A3A_faction_riv get "name", ([_marker] call A3A_fnc_localizar), _displayTime],
+            ["STR_RIV_ATT_transfer_header", A3A_faction_riv get "name"],
+            _marker
+        ],
+        _hideoutPosition,
+        false,
+        0,
+        true,
+        "destroy",///maybe change the icon
+        true
+    ]
+] call A3A_fnc_taskCreate;
 
 waitUntil {
     sleep 1;

@@ -28,20 +28,24 @@ private _taskString = [
 ];
 private _taskId = "AS" + str A3A_taskCount;
 
-[ [teamPlayer,civilian],
-  _taskId,
-  [ _taskString,
-    ["STR_A3A_Missions_AS_specOP_task_header"],
-    _markerX
-  ],
-  _positionX,
-  false,
-  0,
-  true,
-  "Kill",
-  true
-  ] call BIS_fnc_taskCreate;
-[_taskId, "AS", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
+[
+	"AS",
+	[
+		[teamPlayer,civilian],
+		_taskId,
+		[
+			_taskString,
+			["STR_A3A_Missions_AS_specOP_task_header"],
+			_markerX
+		],
+		_positionX,
+		false,
+		0,
+		true,
+		"Kill",
+		true
+	]
+] call A3A_fnc_taskCreate;
 
 waitUntil {sleep 1;dateToNumber date > _dateLimitNum or {(spawner getVariable _markerX != 2 and (sidesX getVariable [_markerX,sideUnknown] != teamPlayer))}};
 

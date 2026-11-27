@@ -43,14 +43,23 @@ _truckX addEventHandler ["GetIn", {
 // Creating the task
 private _taskId = "LOG" + str A3A_taskCount;
 [
-    [teamPlayer, civilian], _taskId,
-    [ [ "STR_A3A_Missions_LOG_Bank_task_desc", _nameDest, _displayTime],
-      [ "STR_A3A_Missions_LOG_Bank_task_header"],
-      _mrkFinal
-    ],
-    _positionX, false, 0, true, "Interact", true
-] call BIS_fnc_taskCreate;
-[_taskId, "LOG", "CREATED"] remoteExec ["A3A_fnc_taskUpdate", 2];
+    "LOG",
+    [
+        [teamPlayer, civilian],
+        _taskId,
+        [
+            ["STR_A3A_Missions_LOG_Bank_task_desc", _nameDest, _displayTime],
+            ["STR_A3A_Missions_LOG_Bank_task_header"],
+            _mrkFinal
+        ],
+        _positionX,
+        false,
+        0,
+        true,
+        "Interact",
+        true
+    ]
+] call A3A_fnc_taskCreate;
 
 // Creating guards
 private _groups = [];

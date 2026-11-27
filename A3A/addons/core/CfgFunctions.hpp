@@ -491,6 +491,7 @@ class CfgFunctions
             class RIV_AS_Traitor {};
             class RIV_SUPP_Salvage {};
             class RIV_RES_Prisoners {};
+            class taskCreate {};
             class taskDelete {};
             class taskSetState {};
             class taskUpdate {};

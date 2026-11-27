@@ -32,21 +32,23 @@ private _nameDest = [_markerX] call A3A_fnc_localizar;
 private _taskId = "LOG" + str A3A_taskCount;
 
 [
-    [teamPlayer,civilian],
-    _taskId,
+    "LOG",
     [
-        [ "STR_A3A_Missions_DES_Airdrop_task_desc", _nameDest, _displayTime],
-        [ "STR_A3A_Missions_LOG_Airdrop_task_header"],
-        _markerX
-    ],
-    _positionX,
-    false,
-    0,
-    true,
-    "plane",
-    true
-] call BIS_fnc_taskCreate;
-[_taskId, "LOG", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
+        [teamPlayer,civilian],
+        _taskId,
+        [
+            ["STR_A3A_Missions_DES_Airdrop_task_desc", _nameDest, _displayTime],
+            ["STR_A3A_Missions_LOG_Airdrop_task_header"],
+            _markerX
+        ],
+        _positionX,
+        false,
+        0,
+        true,
+        "plane",
+        true
+    ]
+] call A3A_fnc_taskCreate;
 
 waitUntil {sleep 1; (call SCRT_fnc_misc_getRebelPlayers) findIf {_x inArea [_positionX, 75, 75, 0, false]} != -1 or {dateToNumber date > _dateLimitNum}};
 

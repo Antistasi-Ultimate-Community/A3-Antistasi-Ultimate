@@ -142,21 +142,23 @@ _groups pushBack _targetGroup;
 private _taskId = "RIV_ATT" + str A3A_taskCount;
 
 [
-    [teamPlayer,civilian],
-    _taskId,
+    "RIV_ATT",
     [
-        [ "STR_RIV_ATT_cell_text", A3A_faction_riv get "name", ([_marker] call A3A_fnc_localizar), _displayTime],
-        [ "STR_RIV_ATT_cell_header", A3A_faction_riv get "name"],
-        _marker
-    ],
-    _targetPos,
-    false,
-    0,
-    true,
-    "kill",
-    true
-] call BIS_fnc_taskCreate;
-[_taskId, "RIV_ATT", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
+        [teamPlayer,civilian],
+        _taskId,
+        [
+            ["STR_RIV_ATT_cell_text", A3A_faction_riv get "name", ([_marker] call A3A_fnc_localizar), _displayTime],
+            ["STR_RIV_ATT_cell_header", A3A_faction_riv get "name"],
+            _marker
+        ],
+        _targetPos,
+        false,
+        0,
+        true,
+        "kill",
+        true
+    ]
+] call A3A_fnc_taskCreate;
 
 waitUntil {sleep 1; (call SCRT_fnc_misc_getRebelPlayers) inAreaArray [_targetPos, distanceSPWN1, distanceSPWN1] isNotEqualTo [] || {dateToNumber date > _dateLimitNum}};
 

@@ -12,17 +12,23 @@ private _nameDest = [_markerX] call A3A_fnc_localizar;
 
 private _taskId = "REP" + str A3A_taskCount;
 [
-	[teamPlayer, civilian],
-	_taskId,
+	"REP",
 	[
-		[ "STR_A3A_Missions_REP_Antenna_task_desc",FactionGet(occ,"name"),_nameDest,_displayTime],
-		[ "STR_A3A_Missions_REP_Antenna_task_header"],
-		_markerX
-	],
-	getPos _antennaDead,
-	false, 0, true, "Destroy", true
-] call BIS_fnc_taskCreate;
-[_taskId, "REP", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
+		[teamPlayer, civilian],
+		_taskId,
+		[
+			["STR_A3A_Missions_REP_Antenna_task_desc",FactionGet(occ,"name"),_nameDest,_displayTime],
+			["STR_A3A_Missions_REP_Antenna_task_header"],
+			_markerX
+		],
+		getPos _antennaDead,
+		false,
+		0,
+		true,
+		"Destroy",
+		true
+	]
+] call A3A_fnc_taskCreate;
 
 waitUntil {sleep 1;(dateToNumber date > _dateLimitNum) or (spawner getVariable _markerX != 2)};
 

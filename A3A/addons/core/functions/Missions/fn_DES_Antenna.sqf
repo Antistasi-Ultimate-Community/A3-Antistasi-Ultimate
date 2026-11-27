@@ -26,21 +26,24 @@ _mrkFinal setMarkerShape "ICON";
 
 private _taskId = "DES" + str A3A_taskCount;
 [
-	[teamPlayer,civilian],
-	_taskId,
+	"DES",
 	[
-		[ "STR_A3A_Missions_DES_Antenna_task_desc",_nameDest,_displayTime,FactionGet(occ,"name")],
-		[ "STR_A3A_Missions_DES_Antenna_task_header"],
-		_mrkFinal
-	],
-	_positionX,
-	false,
-	0,
-	true,
-	"Destroy",
-	true
-	] call BIS_fnc_taskCreate;
-[_taskId, "DES", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
+		[teamPlayer,civilian],
+		_taskId,
+		[
+			["STR_A3A_Missions_DES_Antenna_task_desc",_nameDest,_displayTime,FactionGet(occ,"name")],
+			["STR_A3A_Missions_DES_Antenna_task_header"],
+			_mrkFinal
+		],
+		_positionX,
+		false,
+		0,
+		true,
+		"Destroy",
+		true
+	]
+] call A3A_fnc_taskCreate;
+
 waitUntil {sleep 1; dateToNumber date > _dateLimitNum or {!alive _antenna or {(sidesX getVariable [_markerX,sideUnknown] != Occupants)}}};
 
 private _bonus = [1, 2] select (_difficultX);

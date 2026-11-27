@@ -25,20 +25,24 @@ _mrk setMarkerBrushLocal "DiagGrid";
 _mrk setMarkerText (localize "STR_marker_minefield");
 
 private _taskId = "Mines" + str A3A_taskCount;
-[ [teamPlayer,civilian],
-  _taskId,
-  [ [ "STR_A3A_reinf_minefield_task_desc",_quantity],
-    [ "STR_A3A_reinf_minefield_task_header"],
-    _mrk
-  ],
-  _positionTel,
-  false,
-  0,
-  true,
-  "map",
-  true
-  ] call BIS_fnc_taskCreate;
-[_taskId, "Mines", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
+[
+	"Mines",
+	[
+		[teamPlayer,civilian],
+		_taskId,
+		[
+			["STR_A3A_reinf_minefield_task_desc",_quantity],
+			["STR_A3A_reinf_minefield_task_header"],
+			_mrk
+		],
+		_positionTel,
+		false,
+		0,
+		true,
+		"map",
+		true
+	]
+] call A3A_fnc_taskCreate;
 
 private _groupX = createGroup teamPlayer;
 

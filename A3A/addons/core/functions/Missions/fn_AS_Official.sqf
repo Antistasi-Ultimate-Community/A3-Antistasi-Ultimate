@@ -30,20 +30,24 @@ private _taskString = [
 ];
 
 private _taskId = "AS" + str A3A_taskCount;
-[ [teamPlayer,civilian],
-  _taskId,
-  [ _taskString,
-    [ "STR_A3A_Missions_AS_Official_task_header", _faction get "name"],
-    _markerX
-  ],
-  _positionX,
-  false,
-  0,
-  true,
-  "Kill",
-  true
-  ] call BIS_fnc_taskCreate;
-[_taskId, "AS", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
+[
+	"AS",
+	[
+		[teamPlayer,civilian],
+		_taskId,
+		[
+			_taskString,
+			[ "STR_A3A_Missions_AS_Official_task_header", _faction get "name"],
+			_markerX
+		],
+		_positionX,
+		false,
+		0,
+		true,
+		"Kill",
+		true
+	]
+] call A3A_fnc_taskCreate;
 
 private _grp = createGroup _sideX;
 private _officialClass = _faction get "unitOfficial";

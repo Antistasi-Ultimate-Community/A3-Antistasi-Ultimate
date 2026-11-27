@@ -23,19 +23,24 @@ else
 };
 if (_sideX == teamPlayer) then {_sideX = [teamPlayer,civilian]};
 
-[ _sideX,
-  _markerX,
-  [ [ "STR_A3A_Missions_underattack_task_desc",_nameDest,_nameENY],
-    [localize "STR_A3A_Missions_underattack_task_header",_nameENY],
-    _markerX
-  ],
-  getMarkerPos _markerX,
-  false,
-  0,
-  true,
-  "Defend",
-  true
-  ] call BIS_fnc_taskCreate;
+[
+	"",
+	[
+		_sideX,
+		_markerX,
+		[
+			["STR_A3A_Missions_underattack_task_desc",_nameDest,_nameENY],
+			["STR_A3A_Missions_underattack_task_header",_nameENY],
+			_markerX
+		],
+		getMarkerPos _markerX,
+		false,
+		0,
+		true,
+		"Defend",
+		true
+	]
+] call A3A_fnc_taskCreate;
 
 if (_sideX isEqualType []) then {_sideX = teamPlayer};
 

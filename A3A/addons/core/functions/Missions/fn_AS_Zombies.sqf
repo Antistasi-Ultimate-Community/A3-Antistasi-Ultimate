@@ -43,21 +43,23 @@ private _nameDest = [_markerX] call A3A_fnc_localizar;
 private _posTask = _positionX getPos [random 100, random 360];
 private _taskId = "AS" + str A3A_taskCount;
 [
-	[teamPlayer,civilian],
-	_taskID,
+	"AS",
 	[
-		[ "STR_A3A_Missions_AS_Zombies_task_desc", _nameDest, _displayTime],
-		[ "STR_A3A_Missions_AS_Zombies_task_header"],
-		_markerX
-	],
-	_positionX,
-	false,
-	0,
-	true,
-	"Kill",
-	true
-] call BIS_fnc_taskCreate;
-[_taskId, "AS", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
+		[teamPlayer,civilian],
+		_taskId,
+		[
+			["STR_A3A_Missions_AS_Zombies_task_desc", _nameDest, _displayTime],
+			["STR_A3A_Missions_AS_Zombies_task_header"],
+			_markerX
+		],
+		_positionX,
+		false,
+		0,
+		true,
+		"Kill",
+		true
+	]
+] call A3A_fnc_taskCreate;
 
 // Wait until players are close enough to the city to trigger mission
 waitUntil {

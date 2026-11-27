@@ -242,21 +242,23 @@ private _taskId = "RIV_ENC" + str A3A_taskCount;
 private _intelLeaderPosition = position _intelLeader;
 
 [
-    [teamPlayer,civilian],
-    _taskId,
-    [
-        [ "STR_rivals_quest_description",A3A_faction_occ get "name"],
-        [ "STR_rivals_quest_header"],
-        _marker
-    ],
-    _intelLeaderPosition,
-    false,
-    0,
-    true,
-    "navigate",
-    true
-] call BIS_fnc_taskCreate;
-[_taskId, "RIV_ENC", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
+	"RIV_ENC",
+	[
+		[teamPlayer,civilian],
+		_taskId,
+		[
+			["STR_rivals_quest_description",A3A_faction_occ get "name"],
+			["STR_rivals_quest_header"],
+			_marker
+		],
+		_intelLeaderPosition,
+		false,
+		0,
+		true,
+		"navigate",
+		true
+	]
+] call A3A_fnc_taskCreate;
 
 waitUntil {
     sleep 2;
@@ -320,21 +322,24 @@ sleep 2;
 
 
 [
-    [teamPlayer,civilian],
-    _taskId,
-    [
-		[ "STR_rivals_quest_update_description", _displayTime],
-		[ "STR_rivals_quest_update_header", A3A_faction_riv get "name"],
-        _marker
-    ],
-    _roadPosition,
-    false,
-    0,
-    true,
-    "navigate",
-    true
-] call BIS_fnc_taskCreate;
-[_taskId, "RIV_ENC", "ASSIGNED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
+	"RIV_ENC",
+	[
+		[teamPlayer,civilian],
+		_taskId,
+		[
+			["STR_rivals_quest_update_description", _displayTime],
+			["STR_rivals_quest_update_header", A3A_faction_riv get "name"],
+			_marker
+		],
+		_roadPosition,
+		false,
+		0,
+		true,
+		"navigate",
+		true
+	],
+	"ASSIGNED"
+] call A3A_fnc_taskCreate;
 _taskId call BIS_fnc_taskSetCurrent;
 
 private _group1Position = [

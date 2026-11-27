@@ -129,21 +129,23 @@ private _nameDest = [_markerX] call A3A_fnc_localizar;
 private _taskId = "DES" + str A3A_taskCount;
 
 [
-    [teamPlayer,civilian],
-    _taskId,
+    "DES",
     [
-        [ "STR_A3A_Missions_DES_Artillery_task_desc", _nameDest, _displayTime],
-        [ "STR_A3A_Missions_DES_Artillery_task_header"],
-        _markerX
-    ],
-    _artilleryPosition,
-    false,
-    0,
-    true,
-    "destroy",
-    true
-] call BIS_fnc_taskCreate;
-[_taskId, "DES", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
+        [teamPlayer,civilian],
+        _taskId,
+        [
+            ["STR_A3A_Missions_DES_Artillery_task_desc", _nameDest, _displayTime],
+            ["STR_A3A_Missions_DES_Artillery_task_header"],
+            _markerX
+        ],
+        _artilleryPosition,
+        false,
+        0,
+        true,
+        "destroy",
+        true
+    ]
+] call A3A_fnc_taskCreate;
 
 _artilleryVeh allowDamage true;
 

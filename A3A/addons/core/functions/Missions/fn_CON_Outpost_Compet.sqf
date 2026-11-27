@@ -37,8 +37,21 @@ switch (true) do {
 	};
 };
 private _taskId = "CON" + str A3A_taskCount;
-[[teamPlayer,civilian],_taskId,[_textX,_taskName,_markerX],_positionX,false,0,true,"Target",true] call BIS_fnc_taskCreate;
-[_taskId, "CON", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
+[
+	"CON",
+	[
+		[teamPlayer,civilian],
+		_taskId,
+		[_textX,_taskName,_markerX],
+		_positionX,
+		false,
+		0,
+		true,
+		"Target",
+		true
+	]
+] call A3A_fnc_taskCreate;
+
 private _delay = 30 + (round random 20);
 private _targPos = markerPos _markerX;
 private _airbase = [_oppositeside, markerPos _markerX] call A3A_fnc_availableBasesAir;

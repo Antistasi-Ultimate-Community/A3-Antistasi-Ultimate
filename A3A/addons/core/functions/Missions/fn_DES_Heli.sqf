@@ -106,20 +106,23 @@ Info("Creating Helicopter Down mission");
 private _location = [_missionOrigin] call A3A_fnc_localizar;
 private _taskId = "DES" + str A3A_taskCount;
 [
-    [teamPlayer,civilian],
-    _taskId,
-    [ [ "STR_A3A_Missions_DES_Heli_task_desc",_faction get "name", _location, _displayTime],
-      [ "STR_A3A_Missions_DES_Heli_task_header"],
-      _taskMrk
-    ],
-    _posCrashMrk,
-    false,
-    0,
-    true,
-    "Destroy",
-    true
-    ] call BIS_fnc_taskCreate;
-[_taskId, "DES", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
+    "DES",
+    [
+        [teamPlayer,civilian],
+        _taskId,
+        [
+            ["STR_A3A_Missions_DES_Heli_task_desc", _faction get "name", _location, _displayTime],
+            ["STR_A3A_Missions_DES_Heli_task_header"],
+            _taskMrk
+        ],
+        _posCrashMrk,
+        false,
+        0,
+        true,
+        "Destroy",
+        true
+    ]
+] call A3A_fnc_taskCreate;
 
 ////////////////
 //convoy spawn//

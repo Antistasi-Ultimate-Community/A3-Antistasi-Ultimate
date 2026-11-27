@@ -90,22 +90,23 @@ missionNamespace setVariable [format ["A3U_rebuilding_%1", _site], true, true];
 private _taskId = "REBUILD_" + _site + str(round(random 10000));
 
 [
-    [teamPlayer, civilian],
-    _taskId,
+    "REBUILD",
     [
-        format [localize "STR_A3U_rebuild_task_desc", _nameDest],
-        localize "STR_A3U_rebuild_task_header",
-        _site
-    ],
-    _position,
-    false,
-    0,
-    true,
-    "Build",
-    true
-] call BIS_fnc_taskCreate;
-
-[_taskId, "REBUILD", "CREATED"] remoteExecCall ["A3A_fnc_taskUpdate", 2];
+        [teamPlayer, civilian],
+        _taskId,
+        [
+            ["STR_A3U_rebuild_task_desc", _nameDest],
+            ["STR_A3U_rebuild_task_header"],
+            _site
+        ],
+        _position,
+        false,
+        0,
+        true,
+        "Build",
+        true
+    ]
+] call A3A_fnc_taskCreate;
 
 // Spawn the construction materials box at HQ
 private _pos = (getMarkerPos respawnTeamPlayer) findEmptyPosition [1, 50, "C_IDAP_supplyCrate_F"];
