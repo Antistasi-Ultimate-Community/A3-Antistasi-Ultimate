@@ -7,7 +7,9 @@
         Wrapper around BIS_fnc_taskCreate, to simplify / centralize task localization and task update handling 
     
     Params:
-        See BIS_fnc_taskCreate (https://community.bistudio.com/wiki/BIS_fnc_taskCreate)
+        0. _type - Type of task (e.g. "AS", "CON", "CONVOY", etc) <STRING>
+        1. _params - Parameters to be passed to BIS_fnc_taskCreate (see https://community.bistudio.com/wiki/BIS_fnc_taskCreate) <ARRAY>
+        2. _state - State of the task (e.g. "CREATED", "ASSIGNED", "SUCCEEDED", "FAILED") <STRING>
     
     Dependencies:
         BIS_fnc_taskCreate, A3A_fnc_localize_format_taskSetDescription, A3A_fnc_taskUpdate
