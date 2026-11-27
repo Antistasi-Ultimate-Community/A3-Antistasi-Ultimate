@@ -49,8 +49,7 @@ waitUntil {
 	Info_1("SpecOps team alive count: %1",str _aliveCount);
 	dateToNumber date > _dateLimitNum or {sidesX getVariable [_markerX,sideUnknown] == teamPlayer or {_aliveCount == 0}}};
 
-if (dateToNumber date > _dateLimitNum) then
-	{
+if (dateToNumber date > _dateLimitNum) then{
 	[_taskId, "AS", "FAILED"] call A3A_fnc_taskSetState;
 	if (_difficultX) then {
 		[10,0,_positionX] remoteExec ["A3A_fnc_citySupportChange",2];

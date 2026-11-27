@@ -45,7 +45,7 @@ if (player == leader _unit) then {
 		params ["_victim", "_killer"];
 		call FUNCMAIN(postmortem);
 		if (side _killer == Occupants) then {
-			_nul = [0.25,0,getPos _victim] remoteExec ["A3A_fnc_citySupportChange",2];
+			[0.25,0,getPos _victim] remoteExec ["A3A_fnc_citySupportChange",2];
 			[Occupants, -1, 30] remoteExec ["A3A_fnc_addAggression",2];
 		} else {
 			if (side _killer == Invaders) then {
@@ -93,7 +93,7 @@ if (player == leader _unit) then {
 		if ((isPlayer _killer) and (side _killer == teamPlayer)) then {
 		} else {
 			if (side _killer == Occupants) then {
-				_nul = [0.25,0,getPos _victim] remoteExec ["A3A_fnc_citySupportChange",2];
+				[0.25,0,getPos _victim] remoteExec ["A3A_fnc_citySupportChange",2];
 				[Occupants, -1, 30] remoteExec ["A3A_fnc_addAggression",2];
 			} else {
 				if (side _killer == Invaders) then {

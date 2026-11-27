@@ -90,7 +90,7 @@ if (dateToNumber date > _dateLimitNum) then {
 
 	if (_difficultX) then {
 		[0,800] remoteExec ["A3A_fnc_resourcesFIA",2];
-		[-25,0,_positionX] remoteExec ["A3A_fnc_citySupportChange",2];
+		[0,20,_positionX] remoteExec ["A3A_fnc_citySupportChange",2];
 		[1800, _markerSide] remoteExec ["A3A_fnc_timingCA",2];
 		{ 
 			[450, _x] call A3A_fnc_addMoneyPlayer;
@@ -100,7 +100,7 @@ if (dateToNumber date > _dateLimitNum) then {
         [200,theBoss, true] call A3A_fnc_addMoneyPlayer;
 	} else {
 		[0,600] remoteExec ["A3A_fnc_resourcesFIA",2];
-		[-20,0,_positionX] remoteExec ["A3A_fnc_citySupportChange",2];
+		[0,10,_positionX] remoteExec ["A3A_fnc_citySupportChange",2];
 		[1200, _markerSide] remoteExec ["A3A_fnc_timingCA",2];
 		{ 
 			[250, _x] call A3A_fnc_addMoneyPlayer;

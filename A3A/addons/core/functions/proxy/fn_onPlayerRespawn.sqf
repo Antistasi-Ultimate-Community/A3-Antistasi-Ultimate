@@ -38,8 +38,6 @@ if (side group _newUnit == teamPlayer) then
 		deleteVehicle _newUnit
 	};
 
-	_nul = [0,-1,getPos _oldUnit] remoteExec ["A3A_fnc_citySupportChange",2];
-
 	_score = _oldUnit getVariable ["score",0];
 	_punish = _oldUnit getVariable ["punish",0];
 	_moneyX = _oldUnit getVariable ["moneyX",0];

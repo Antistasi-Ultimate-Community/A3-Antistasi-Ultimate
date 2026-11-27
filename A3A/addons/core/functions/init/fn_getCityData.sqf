@@ -48,9 +48,12 @@ _cityConfigs apply {
 	};
 	_numVeh = (count _roads) min (_numCiv / 3);
 
-	private _info = [_numCiv, _numVeh, 75, 0];
+	// Aim here is to give a bit of natural variance to the initial support values, e.g each city will have varying gov/reb support
+	private _supportGov = round (random [90, 95, 100]);
+	private _supportReb = 100 - _supportGov;
+	private _info = [_numCiv, _numVeh, _supportGov, _supportReb];
     _citiesX pushBack _nameX;
-    _citiesXData append [[_nameX, _info]]; // initial 75% gov, 0% rebel support
+    _citiesXData append [[_nameX, _info]]; // initial ~90-100% gov, ~0-10% rebel support
 	server setVariable [_nameX, _info, true];
 
     if (_isInit) then {
