@@ -84,8 +84,6 @@ while {(spawner getVariable _markerX != 2) and (_countX < _num)} do {
 		_soldiers pushBack _x;
 	} forEach units _groupX;
 
-	sleep 1;
-
 	// Only spawn dog units with Occupant forces.
 	if (_isAAF) then {
 		if (random 10 < 2.5) then {
