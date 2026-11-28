@@ -210,6 +210,9 @@ if (_startType != "load") then {
 
 // ********************** Post-load init ****************************************************
 
+// Now that markers have been loaded and set to appropriate side, update the support corridors for each faction
+[] call A3A_fnc_updateSupportCorridors;
+
 if (isClass (configFile >> "AntistasiServerMembers")) then
 {
     Info("Loading external member list");
